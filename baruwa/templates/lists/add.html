@@ -1,0 +1,58 @@
+% if request.is_xhr:
+<div id="ajaxformoverlay">
+<div id="ajaxformheading" class="grid_10 alpha omega">
+	<div class="grid_9 alpha omega">${_('Add Sender to a list')}</div>
+	<div class="grid_1 alpha omega"><a href="#" title="Close">x</a></div>
+</div>
+<%include file="/includes/flash.html"/>
+<div id="ajaxform">
+	${h.form(url(controller='lists', action='new'), id="list-form", method='post')}
+	<%include file="/forms/ajaxformbase.html"/>
+	<div class="grid_9 drow">
+	    <div class="grid_3 alpha omega">${h.checkbox('iptoggle', label=_('Use IP address'))}</div>
+	    <div class="grid_3 alpha omega">${h.checkbox('domaintoggle', label=_('Use Domain'))}</div>
+	    <div class="grid_3">
+			${h.submit('submit', _('Add to list'), id="ajaxsubmit")}
+	    </div>
+	</div>
+	${h.end_form()}
+</div>
+</div>
+% else:
+<div id="content">
+<div class="grid_16">
+    <h3 class="head">${_('Add sender to a list')}</h3>
+</div>
+${h.form(url(controller='lists', action='new'), id="list-form", method='post')}
+<%include file="/forms/base.html"/>
+<div class="grid_16 drow">
+    <div class="grid_7">&nbsp;</div>
+    <div class="grid_8">
+        <input id="cancel-button" type="reset" value="${_('Reset')}" />&nbsp;
+		${h.submit('submit', _('Add to list'))}
+    </div>
+</div>
+${h.end_form()}
+</div>
+% endif
+
+<%def name="title()">
+${_('Adding to list')}
+</%def>
+
+<%def name="heading()">
+${_('Adding to Lists')} 
+</%def>
+
+<%def name="submenu()">
+<ul>
+  <li>${h.link_to(_('Approved senders'), url('lists-index', list_type=1))}</li>
+  <li>${h.link_to(_('Banned senders'), url('lists-index', list_type=2))}</li>
+</ul>
+</%def>
+
+<%def name="headers()">
+</%def>
+<%def name="localscripts()">
+</%def>
+<%inherit file="${None if context.get('c').is_ajax else '/base.html'}"/>

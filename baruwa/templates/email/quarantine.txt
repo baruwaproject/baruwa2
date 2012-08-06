@@ -1,0 +1,30 @@
+
+Baruwa
+======
+<% 
+	spam_items = [spam for spam in messages if spam.spam]
+	policy_items = [spam for spam in messages if spam.policy]
+%>
+% if spam_items:
+Spam Report
+============
+
+Date/Time   From            To          Subject          
+==================================================================================================	
+% for item in spam_items:
++ ${str(item.timestamp) + '\t' + item.from_address + '\t' + item.subject}              
+% endfor
+% endif
+% if policy_items:
+Policy Blocked Report
+=====================
+
+Date/Time   From            To          Subject             
+=================================================================================================
+% for item in policy_items:
++ ${str(item.timestamp) + '\t' + item.from_address + '\t' +item.subject}              
+% endfor
+% endif
+
+=================================================================================================
+Powered by Baruwa Hosted http://www.baruwa.net

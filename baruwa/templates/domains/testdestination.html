@@ -1,0 +1,31 @@
+<div class="clear"></div>
+<div id="content">
+	<div class="grid_16">
+		<h3 class="head">${_('Testing Destination server connectivity')}</h3>
+		<div class="clear"></div>
+		<div class="sp10"></div>
+	</div>
+	<div class="grid_16" id="testprogress">
+		<div class="prefix_7">${h.portable_img('imgs/large-progress.gif', 'Loading')}</div>
+		<div class="prefix_6">${_(_('Please wait while i test the connections.....'))}</div>
+	</div>
+</div>
+
+
+<%def name="title()">
+${_('Settings :: Test Destination server :: %s') % c.server.address}
+</%def>
+
+<%def name="heading()">
+${_('Settings :: Test Destination server :: %s') % c.server.address}
+</%def>
+
+<%def name="headers()">
+% if not c.finished:
+<meta http-equiv="refresh" content="5" url="${url.current(taskid=c.taskid)}" />
+% endif
+</%def>
+<%def name="localscripts()">
+</%def>
+
+<%inherit file="/base.html"/>

@@ -1,0 +1,47 @@
+% if request.is_xhr:
+<%include file="/includes/flash.html"/>
+% endif
+<div id="content">
+<div class="grid_16">
+    <h3 class="head">${_('Delete sender to a list')}</h3>
+</div>
+${h.form(url('list-delete', listid=c.id), id="list-form", method='post')}
+% if not hasattr(c, 'delflag'):
+<%include file="/forms/disabled.base.html"/>
+% endif
+<div class="grid_16 drow">
+    <div class="grid_7">
+	% if request.is_xhr:
+	<input id="cancel-button" type="reset" value="${_('Close')}" />
+	% else:
+	&nbsp;
+	% endif
+	</div>
+    <div class="grid_8">
+	% if not hasattr(c, 'delflag'):
+		${h.submit('submit', _('Delete from list'))}
+	% endif
+    </div>
+</div>
+${h.end_form()}
+</div>
+<%def name="title()">
+${_('Delete from list')}
+</%def>
+
+<%def name="heading()">
+${_('Delete from List')} 
+</%def>
+
+<%def name="submenu()">
+<ul>
+  <li>${h.link_to(_('Approved senders'), url('lists-index', list_type=1))}</li>
+  <li>${h.link_to(_('Banned senders'), url('lists-index', list_type=2))}</li>
+</ul>
+</%def>
+
+<%def name="headers()">
+</%def>
+<%def name="localscripts()">
+</%def>
+<%inherit file="${None if context.get('c').is_ajax else '/base.html'}"/>

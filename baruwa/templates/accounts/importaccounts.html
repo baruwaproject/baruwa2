@@ -1,0 +1,35 @@
+<div class="alpos">
+	<ul id="msgops">
+		<li>${h.link_to(_('Domain Settings'), url('domain-settings', domainid=c.domain.id))}</li>
+		<li>${h.link_to(_('Domain details'), url(controller='domains', action='detail', domainid=c.domain.id))}</li>
+	</ul>
+</div>
+<div id="content">
+<div class="grid_16">
+    <h3 class="head">${_('Import accounts')}</h3>
+</div>
+${h.form(url('accounts-import', domainid=c.domain.id), method='post', multipart=True)}
+<%include file="/forms/base.html"/>
+<div class="grid_16 drow">
+    <div class="grid_7">&nbsp;</div>
+    <div class="grid_8">
+		${h.submit('submit', _('Import'))}
+    </div>
+</div>
+${h.end_form()}\
+</div>
+
+<%def name="title()">
+${_('Accounts :: %(dom)s :: Import accounts') % dict(dom=c.domain.name)}
+</%def>
+
+<%def name="heading()">
+${_('Accounts :: %(dom)s :: Import accounts') % dict(dom=c.domain.name)}
+</%def>
+
+<%def name="headers()">
+</%def>
+<%def name="localscripts()">
+</%def>
+
+<%inherit file="/base.html"/>

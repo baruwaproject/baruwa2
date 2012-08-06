@@ -1,0 +1,12 @@
+## -*- coding: utf-8 -*-
+<%!
+    from pylons.i18n.translation import set_lang, get_lang
+%>
+<div class="clear"></div>
+<div class="sp10"></div>
+<div id="applied_filters" class="alpos">
+${filter.select_filter()}\
+</div>
+<!-- <div class="clear"></div>
+<div class="sp10"></div> -->
+<%namespace name="filter" file="/reports/form.html"/>

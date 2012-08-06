@@ -1,0 +1,116 @@
+<!-- <div class="alpos">
+	<ul id="msgops">
+		<li><a href="#">${_('List Search')}</a></li>
+	</ul>
+</div>
+<div class="clear"></div>
+<div class="sp10"></div> -->
+<div class="alpos">
+	<div class="toolbar">${self.paging(h.do_pagination(c.page), 'statusnumitemstop')}</div>
+</div>
+<div id="content">
+<table class="settings">
+<thead>
+<tr class="grid">
+	<th class="scanners_heading_hash">&nbsp;</th>
+	<th class="scanners_heading_name">${_('Hostname')}</th>
+	<th class="scanners_heading_status">${_('Enabled')}</th>
+	<th class="scanners_heading_action" colspan="3">${_('Actions')}</th>
+</tr>
+</thead>
+<tbody>
+% if not c.page.items:
+<tr><td class="spanrow" colspan="5">${_('No scanning hosts found')}</td></tr>
+% endif
+% for server in c.page.items:
+<tr>
+	<td class="scanners_hash">&nbsp;</td>
+	<td class="scanners_name">${server.hostname}</td>
+	<td class="scanners_status">
+		${h.enabled_or_not(server.enabled)}
+	</td>
+	<td class="scanners_action_settings">${h.link_to(h.portable_img('imgs/cog.png', _('Settings')), url('scanner-section', serverid=server.id, sectionid=1))}</td>
+	<td class="scanners_action_edit">${h.link_to(h.portable_img('imgs/edit.png', _('Edit')), url('scanner-edit', serverid=server.id))}</td>
+	<td class="scanners_action_delete">${h.link_to(h.portable_img('imgs/action_delete.png', _('Delete')), url('scanner-delete', serverid=server.id))}</td>
+</tr>
+% endfor
+</tbody>
+</table>
+</div>
+<div class="alpos">
+	<div class="toolbar">${self.paging(h.do_pagination(c.page), 'statusnumitemsbottom')}</div>
+</div>
+<div class="clear"></div>
+<div class="sp10"></div>
+
+<%def name="paging(page_nums, fieldname)">
+% if c.page.page_count != 0:
+<p>${_('Showing items %(i)d to %(l)d of %(count)d' % dict(i=c.page.first_item, l=c.page.last_item, count=c.page.item_count))}.</p>
+<div class="limiter">
+${_('Show items:')}
+${h.pager_select(fieldname, str(c.page.items_per_page))}
+${_('per page')}
+</div>
+<div class="pages">
+% if c.page.page_count == 1:
+-
+% endif
+% else:
+<p>No items found</p>
+% endif
+% if c.page.next_page != c.page.first_page and c.page.page != c.page.first_page:
+<span>
+	${h.link_to(h.pager_img('first'), url('settings-pages', page=c.page.first_page))}
+</span>
+<span>...</span>
+% endif
+% if c.page.previous_page:
+<span>
+	${h.link_to(h.pager_img('previous'), url('settings-pages', page=c.page.previous_page))}
+</span>
+% endif
+% for linkpage in page_nums:
+% 	if linkpage == c.page.page:
+<span><b>${linkpage}</b></span>
+% 	else:
+<span>
+	${h.link_to(h.literal(linkpage), url('settings-pages', page=linkpage))}
+</span>
+% 	endif
+% endfor
+% if c.page.next_page:
+<span>
+	${h.link_to(h.pager_img('next'), url('settings-pages', page=c.page.next_page))}
+</span>
+% endif
+% if c.page.next_page != c.page.page_count and c.page.page != c.page.page_count and c.page.page_count != 0:
+<span>...</span>
+<span>
+	${h.link_to(h.pager_img('last'), url('settings-pages', page=c.page.page_count))}
+</span>
+% endif
+% if c.page.page_count != 0:
+</div>
+% else:
+<div class="pages">-</div>
+% endif
+</%def>
+
+<%def name="title()">
+${_('Settings :: Nodes :: Showing page %(page)d of %(count)d pages.') % dict(page=c.page.page, count=c.page.page_count) if c.page.page_count != 0 else _('Settings :: Nodes')}
+</%def>
+
+<%def name="heading()">
+${_('Settings :: Nodes :: Showing page %(page)d of %(count)d pages.') % dict(page=c.page.page, count=c.page.page_count) if c.page.page_count != 0 else _('Settings :: Nodes')}
+</%def>
+
+<%def name="headers()">
+</%def>
+<%def name="localscripts()">
+<script type="text/javascript">
+var setitems_url = "${url(controller='settings', action='setnum')}";
+</script>
+${h.javascript_link(h.media_url() + 'js/jquery.address-1.4.min.js',
+h.media_url() + 'js/baruwa/settings.js')}
+</%def>
+<%inherit file="/base.html"/>

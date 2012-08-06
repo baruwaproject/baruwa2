@@ -1,0 +1,5 @@
+loadplugin Mail::SpamAssassin::Plugin::BaruwaSAPhishingChecks /etc/mail/spamassassin/BaruwaSAPhishingChecks.pm
+header          BARUWA_PHISH    eval:baruwa_check_spf()
+describe        BARUWA_PHISH    Phishing of South African Banks suspected
+score           BARUWA_PHISH    7.0
+tflags          BARUWA_PHISH    net

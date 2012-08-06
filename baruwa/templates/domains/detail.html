@@ -1,0 +1,263 @@
+<%!
+	from baruwa.forms.domains import DELIVERY_MODES, LANGUAGES, SPAM_ACTIONS, REPORT_FREQ
+	from baruwa.lib.filters import default
+%>
+<div class="alpos">
+	<ul id="msgops">
+	    <li>${h.link_to(_('Domain Settings'), url('domain-settings', domainid=c.domain.id))}</li>
+		<li>${h.link_to(_('Edit domain'), url(controller='domains', action='edit', domainid=c.domain.id))}</li>
+		<li>${h.link_to(_('Delete domain'), url(controller='domains', action='delete', domainid=c.domain.id))}</li>
+	</ul>
+</div>
+<div class="clear"></div>
+<div id="content">
+<div class="grid_16">
+    <h3 class="head">
+		${_('Domain information')}
+	</h3>
+</div>
+<div class="grid_16 drow">
+	<div class="grid_7">
+		${_('Domain name')}:
+	</div>
+	<div class="grid_8">
+		${c.domain.name}
+	</div>
+</div>
+<div class="grid_16 drow">
+	<div class="grid_7">
+		${_('Status')}:
+	</div>
+	<div class="grid_8">
+		${h.enabled_or_not(c.domain.status)}
+	</div>
+</div>
+<div class="grid_16 drow">
+	<div class="grid_7">
+		${_('Owners')}:
+	</div>
+	<div class="grid_8">
+		<%
+		orglinks = []
+		for org in c.domain.organizations:
+			link = h.link_to(org.name, url('org-detail', orgid=org.id)) if c.user.is_superadmin else org.name
+			orglinks.append(link)
+		orglinks = ', '.join(orglinks)
+		%>
+		${orglinks|n}
+	</div>
+</div>
+<div class="grid_16 drow">
+	<div class="grid_7">
+		${_('Multi destination delivery mode')}:
+	</div>
+	<div class="grid_8">
+		${dict(DELIVERY_MODES)[str(c.domain.delivery_mode)]}
+	</div>
+</div>
+<div class="grid_16 drow">
+	<div class="grid_7">
+		${_('What to do with Spam')}:
+	</div>
+	<div class="grid_8">
+		${dict(SPAM_ACTIONS)[str(c.domain.spam_actions)]}
+	</div>
+</div>
+<div class="grid_16 drow">
+	<div class="grid_7">
+		${_('What to do with High Spam')}:
+	</div>
+	<div class="grid_8">
+		${dict(SPAM_ACTIONS)[str(c.domain.highspam_actions)]}
+	</div>
+</div>
+<div class="grid_16 drow">
+	<div class="grid_7">
+		${_('SMTP recipient checks')}
+	</div>
+	<div class="grid_8">
+		${h.enabled_or_not(c.domain.smtp_callout)}
+	</div>
+</div>
+<div class="grid_16 drow">
+	<div class="grid_7">
+		${_('LDAP recipient checks')}
+	</div>
+	<div class="grid_8">
+		${h.enabled_or_not(c.domain.ldap_callout)}
+	</div>
+</div>
+<div class="grid_16 drow">
+	<div class="grid_7">
+		${_('Spam Checks')}
+	</div>
+	<div class="grid_8">
+		${h.enabled_or_not(c.domain.spam_checks)}
+	</div>
+</div>
+<div class="grid_16 drow">
+	<div class="grid_7">
+		${_('Virus Checks')}
+	</div>
+	<div class="grid_8">
+		${h.enabled_or_not(c.domain.virus_checks)}
+	</div>
+</div>
+<div class="grid_16 drow">
+	<div class="grid_7">
+		${_('Spam low score')}
+	</div>
+	<div class="grid_8">
+		${c.domain.low_score|default}
+	</div>
+</div>
+<div class="grid_16 drow">
+	<div class="grid_7">
+		${_('Spam high score')}
+	</div>
+	<div class="grid_8">
+		${c.domain.high_score|default}
+	</div>
+</div>
+<div class="grid_16 drow">
+	<div class="grid_7">
+		${_('Maximum Message Size')}
+	</div>
+	<div class="grid_8">
+		${c.domain.message_size|default}
+	</div>
+</div>
+<div class="grid_16 drow">
+	<div class="grid_7">
+		${_('Language')}
+	</div>
+	<div class="grid_8">
+		${dict(LANGUAGES)[c.domain.language]}
+	</div>
+</div>
+<div class="grid_16 drow">
+	<div class="grid_7">
+		${_('Site url')}
+	</div>
+	<div class="grid_8">
+		${c.domain.site_url}
+	</div>
+</div>
+<div class="grid_16 drow">
+	<div class="grid_7">
+		${_('Send summary reports')}
+	</div>
+	<div class="grid_8">
+		${dict(REPORT_FREQ)[str(c.domain.report_every)]}
+	</div>
+</div>
+<div class="grid_16">
+    <h3 class="head">
+		${_('Domain Aliases')}
+	</h3>
+</div>
+% for alias in c.domain.aliases:
+<div class="grid_16 drow">
+	<div class="grid_12">
+		${alias.name}
+	</div>
+	<div class="grid_1 omega">
+		${h.enabled_or_not(alias.status)}
+	</div>
+	<div class="grid_1 omega">
+		&nbsp;
+	</div>
+	<div class="grid_1 omega">
+		${h.link_to(h.portable_img('imgs/edit.png', _('Edit'), title=_('Edit'), class_="positio"), url('domains-edit-alias', aliasid=alias.id))}
+	</div>
+	<div class="grid_1 omega">
+		${h.link_to(h.portable_img('imgs/action_delete.png', _('Delete'), title=_('Delete'), class_="positio"), url('domains-delete-alias', aliasid=alias.id))}
+	</div>
+</div>
+% endfor
+% if not c.domain.aliases:
+<div class="grid_16 drow">
+	<div class="grid_15">${_('No domain aliases configured')}</div>
+</div>
+% endif
+<div class="grid_16">
+    <h3 class="head">
+		${_('Delivery Servers')}
+	</h3>
+</div>
+% for server in c.domain.servers:
+<div class="grid_16 drow">
+	<div class="grid_12">
+		${server.address}:${server.port}
+	</div>
+	<div class="grid_1 omega">
+		${h.enabled_or_not(server.enabled)}
+	</div>
+	<div class="grid_1 omega">
+		${h.link_to(h.portable_img('imgs/connect.png', _('Test'), title=_('Test'), class_="positio"), url('dserver-test', destinationid=server.id))}
+	</div>
+	<div class="grid_1 omega">
+		${h.link_to(h.portable_img('imgs/edit.png', _('Edit'), title=_('Edit'), class_="positio"), url('dserver-edit', destinationid=server.id))}
+	</div>
+	<div class="grid_1 omega">
+		${h.link_to(h.portable_img('imgs/action_delete.png', _('Delete'), title=_('Delete'), class_="positio"), url('dserver-delete', destinationid=server.id))}
+	</div>
+</div>
+% endfor
+% if not c.domain.servers:
+<div class="grid_16 drow">
+	<div class="grid_15">${_('No delivery servers configured')}</div>
+</div>
+% endif
+<div class="grid_16">
+    <h3 class="head">
+		${_('Authentication Servers')}
+	</h3>
+</div>
+% for server in c.domain.authservers:
+<div class="grid_16 drow">
+	<div class="grid_12">
+<% from baruwa.forms.domains import AUTH_PROTOCOLS
+protocols = dict(AUTH_PROTOCOLS) %>
+		Server address: ${server.address} Protocol: ${protocols[str(server.protocol)]}
+	</div>
+	<div class="grid_1 omega">
+		${h.enabled_or_not(server.enabled)}
+	</div>
+	<div class="grid_1 omega">
+		% if server.protocol in [4, 5, 6, 7]:
+		 ${h.link_to(h.portable_img('imgs/server_edit.png', _('Settings'), title=_('Settings'), class_="positio"), url('domains-auth-settings-with-protocol', proto=server.protocol, domainid=c.domain.id))}
+		% else:
+		  ${h.portable_img('imgs/cog.png', _('Settings'), title=_('Settings'), class_="positio")}
+		% endif
+	</div>
+	<div class="grid_1 omega">
+		 ${h.link_to(h.portable_img('imgs/edit.png', _('Edit'), title=_('Edit'), class_="positio"), url('domains-edit-auth', authid=server.id))}
+	</div>
+	<div class="grid_1 omega">
+		${h.link_to(h.portable_img('imgs/action_delete.png', _('Delete'), title=_('Delete'), class_="positio"), url('domains-delete-auth', authid=server.id))}
+	</div>
+</div>
+% endfor
+% if not c.domain.authservers:
+<div class="grid_16 drow">
+	<div class="grid_15">${_('No authentication servers configured')}</div>
+</div>
+% endif
+</div>
+<div class="clear"></div>
+<div class="sp20"></div>
+
+<%def name="title()">
+${_('Domains :: %s') % c.domain.name}
+</%def>
+
+<%def name="heading()">
+${_('Domains :: %s') % c.domain.name}
+</%def>
+
+<%def name="headers()">
+</%def>
+<%def name="localscripts()">\
+</%def>
+<%inherit file="/base.html"/>

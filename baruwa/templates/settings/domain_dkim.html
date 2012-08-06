@@ -1,0 +1,73 @@
+<div class="alpos">
+	<div class="grid_16">
+		<ul id="msgops">
+			<li>${h.link_to(_('Domain Settings'), url('domain-settings', domainid=c.domain.id))}</li>
+			<li>${h.link_to(_('Domain details'), url(controller='domains', action='detail', domainid=c.domain.id))}</li>
+			% if len(c.domain.dkimkeys):
+			<li>${h.link_to(_('Regenerate DKIM keys'), url('domain-dkim-generate', domainid=c.domain.id))}</li>
+			<li>${h.link_to(_('Enable/Disable DKIM signing'), url('domain-dkim-enable', domainid=c.domain.id))}</li>
+			% endif
+		</ul>
+	</div>
+</div>
+<div class="clear"></div>
+<div id="content">
+	<div class="grid_16">
+		<h3 class="head">${_('Domain DKIM settings')}</h3>
+	</div>
+	% if c.domain.dkimkeys:
+	<%
+	from baruwa.lib.ssl import remove_pub_pem_headers
+	tmpslt = remove_pub_pem_headers(c.domain.dkimkeys[0].pub_key)
+	tmpslt = tmpslt.split('\n')
+	tmpslt = ["\"%s\"" % chunk for chunk in tmpslt]
+	dkim_key = "\n".join(tmpslt)
+	%>
+	<div class="grid_16 drow">
+		<div class="grid_15">${_('Add the following DNS record to the %s DNS zone') % c.domain.name}</div>
+	</div>
+	<div class="grid_16 drow">
+		<div class="grid_6">${_('DNS record')}</div>
+		<div class="grid_9">
+			baruwa._domainkey.${c.domain.name}. IN TXT ("v=DKIM1; g=*; k=rsa;
+			p=${h.linebreaksbr(dkim_key)})
+		</div>
+	</div>
+	% for alias in c.domain.aliases:
+	<div class="grid_16 drow">
+		<div class="grid_15">${_('Add the following DNS record to the %s DNS zone') % alias.name}</div>
+	</div>
+	<div class="grid_16 drow">
+		<div class="grid_6">${_('DNS record')}</div>
+		<div class="grid_9">
+			baruwa._domainkey.${alias.name}. IN TXT ("v=DKIM1; g=*; k=rsa;
+			p=${h.linebreaksbr(dkim_key)})
+		</div>
+	</div>
+	% endfor
+	<div class="grid_16 drow">
+		<div class="grid_7">${_('DKIM status')}</div>
+		<div class="grid_8">${h.enabled_or_not(c.domain.dkimkeys[0].enabled)}</div>
+	</div>
+	% else:
+	<div class="grid_16 drow">
+		<div class="grid_15">${_('DKIM keys not yet configured:  ')}&nbsp;${h.link_to(_('Generate DKIM keys'), url('domain-dkim-generate', domainid=c.domain.id))} </div>
+	</div>
+	% endif
+</div>
+
+
+<%def name="title()">
+${_('Settings :: Domain DKIM settings :: %s') % c.domain.name}
+</%def>
+
+<%def name="heading()">
+${_('Settings :: Domain DKIM settings :: %s') % c.domain.name}
+</%def>
+
+<%def name="headers()">
+</%def>
+<%def name="localscripts()">
+</%def>
+
+<%inherit file="/base.html"/>

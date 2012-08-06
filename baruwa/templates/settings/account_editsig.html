@@ -1,0 +1,63 @@
+<div class="alpos">
+	<div class="grid_16">
+		<ul id="msgops">
+			<li>${h.link_to(_('Account details'), url(controller='accounts', action='detail', userid=c.sign.user_id))}</li>
+		</ul>
+	</div>
+</div>
+<div class="clear"></div>
+<div id="content">
+	<div class="grid_16">
+		<h3 class="head">${_('Edit email signature')}</h3>
+	</div>
+	${h.form(url('account-sigs-edit', sigid=c.sign.id), method='post')}
+	${h.HTML.div(c.form.csrf_token, style="display: none;")}
+	% if c.form.signature_content.errors:
+	<div class="grid_16 drow"><div class="formerror">${', '.join(c.form.signature_content.errors)}</div></div>
+	% endif
+	<div class="grid_16 drow">
+	    ${c.form.signature_content}
+	</div>
+	<div class="grid_16 drow">
+	    <div class="grid_5">${c.form.enabled.label}</div>
+	    <div class="grid_5">${c.form.enabled}</div>
+		<div class="grid_5"></div>
+	</div>
+	<div class="grid_16 drow">
+	    <div class="grid_7">&nbsp;</div>
+	    <div class="grid_8">
+			${h.submit('submit', _('Update signature'))}
+	    </div>
+	</div>
+	${h.end_form()}\
+</div>
+
+
+<%def name="title()">
+${_('Settings :: Edit email signatures')}
+</%def>
+
+<%def name="heading()">
+${_('Settings :: Edit email signatures')}
+</%def>
+
+<%def name="headers()">
+% if c.sign.signature_type == 2:
+${h.stylesheet_link(h.media_url() + 'css/jquery.cleditor.css',
+h.media_url() + 'css/jquery.wysiwyg.css',
+h.media_url() + 'css/wysiwyg.fileManager.css')}
+<script type="text/javascript">
+var fm_url = "${url('fm-users', userid=c.sign.user_id)}";
+</script>
+% endif
+</%def>
+<%def name="localscripts()">
+% if c.sign.signature_type == 2:
+${h.javascript_link(h.media_url() + 'js/jquery.cleditor.min.js',
+h.media_url() + 'js/jquery.cleditor.imgs.js',
+h.media_url() + 'js/baruwa/signatures.edit.js')}
+<%include file="/includes/signaturejs.html"/>
+% endif
+</%def>
+
+<%inherit file="/base.html"/>

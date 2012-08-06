@@ -1,0 +1,84 @@
+<div class="alpos">
+	<div class="grid_16">
+		<ul id="msgops">
+			<li>${h.link_to(_("Spam"), url(controller='messages', action='quarantine', section='spam'))}</li>
+			<li>${h.link_to(_("Non Spam"), url(controller='messages', action='quarantine', section='policyblocked'))}</li>
+			<li>${h.link_to(_("Quarantine"), url(controller='messages', action='quarantine'))}</li>
+		</ul>
+	</div>
+</div>
+<div class="clear"></div>
+<div id="content">
+<table class="taskstatus">
+	<thead>
+		<tr class="grid">
+			<th class="date_heading">${_('Message-ID')}</th>
+			<th>${_('From address')}</th>
+			<th>${_('To address')}</th>
+			<th>${_('Status')}</th>
+			<th class="status_heading">${_('Errors')}</th>
+		</tr>
+	</thead>
+	<tbody>
+		% if c.finished:
+		% for msg in c.results:
+		<tr>
+			<td>${msg['message_id']}</td>
+			<td>${msg['from_address']}</td>
+			<td>${msg['to_address']}</td>
+			<td>
+				% if msg['errors']:
+				${h.portable_img('imgs/failed.png', alt="FAILED")}
+				% else:
+				${h.portable_img('imgs/passed.png', alt="OK")}
+				% endif
+			</td>
+			<td>
+				% for error in msg['errors']:
+				${error[0]} : ${error[1]}<br />
+				% endfor
+			</td>
+		</tr>
+		% endfor
+		% else:
+		<tr>
+			<td colspan="2" id="stateupdates">
+			${h.portable_img('imgs/ajax-pager.gif', alt="")} ${_('The request is being processed. Current status: ')}<span id="status">${c.status}</span> <span id="percent">${c.completed}</span>%
+			</td>
+			<td colspan="3">
+				<div id="progbar"></div>
+			</td>
+		</tr>
+		% endif
+	</tbody>
+</table>
+</div>
+<noscript>
+	% if not c.finished:
+	<meta http-equiv="refresh" content="5" />
+	% endif
+</noscript>
+
+
+<%def name="headers()">\
+${h.stylesheet_link(h.media_url() + 'css/progressbar.css')}
+</%def>
+<%def name="title()">\
+${_('Messages :: Quarantine :: Bulk processing status')}
+</%def>
+<%def name="heading()">\
+${_('Messages :: Quarantine :: Bulk processing status')}
+</%def>
+<%def name="submenu()">
+<ul>
+	
+</ul>
+</%def>
+<%def name="localscripts()">\
+<script type="text/javascript">
+var should_run = ${'true' if not c.finished else 'false'};
+</script>
+${h.javascript_link(h.media_url() + 'js/jquery.progressbar.min.js',
+h.media_url() + 'js/baruwa/messages.taskstatus.js')}
+</%def>
+<%inherit file="/base.html"/>

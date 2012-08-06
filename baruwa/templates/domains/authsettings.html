@@ -1,0 +1,38 @@
+<div class="alpos">
+	<div class="grid_16">
+		<ul id="msgops">
+			<li>${h.link_to(_('Domain Settings'), url('domain-settings', domainid=c.domain.id))}</li>
+			<li>${h.link_to(_('Domain details'), url(controller='domains', action='detail', domainid=c.domain.id))}</li>
+		</ul>
+	</div>
+</div>
+<div class="clear"></div>
+<div id="content">
+${h.form(url('domains-auth-settings-with-protocol', domainid=c.domain.id, proto=c.proto), method='post')}
+<div class="grid_16">
+    <h3 class="head">${_("Add Auth Settings")}</h3>
+</div>
+<%include file="/forms/base.html"/>
+<div class="grid_16 drow">
+    <div class="grid_7">&nbsp;</div>
+    <div class="grid_8">
+        <input id="submit-button" type="submit" value="${_("Save settings")}" />
+    </div>
+    
+</div>
+${h.end_form()}\
+</div>
+
+<%def name="title()">
+${_('Domains :: %(name)s :: Authentication settings') % dict(name=c.domain.name)}
+</%def>
+
+<%def name="heading()">
+${_('Domains :: %(name)s :: Authentication settings') % dict(name=c.domain.name)}
+</%def>
+
+<%def name="headers()">
+</%def>
+<%def name="localscripts()">\
+</%def>
+<%inherit file="/base.html"/>

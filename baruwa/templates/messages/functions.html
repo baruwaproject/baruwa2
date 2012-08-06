@@ -1,0 +1,312 @@
+<%def name="print_rows(route, isqtne=None)">\
+% if isqtne:
+<% ids = [field(class_='selector') for field in c.form.message_id] %>
+% endif
+<tbody>
+% if c.page.items:
+% for index, msg in enumerate(c.page.items):
+<%
+value = 'white'
+if (msg.spam and not msg.highspam and not msg.blacklisted
+	and not msg.nameinfected and not msg.otherinfected 
+	and not msg.virusinfected):
+	value = 'spam'
+if msg.highspam and (not msg.blacklisted):
+	value = 'highspam'
+if msg.whitelisted:
+	value = 'whitelisted'
+if msg.blacklisted:
+	value = 'blacklisted'
+if msg.nameinfected or msg.virusinfected or msg.otherinfected:
+    value = 'infected'
+if not msg.scaned:
+       value = 'gray'
+view_url = url(route, id=msg.id)
+#view_url = url(controller='messages', action='detail', id=msg.id)
+
+if (msg.spam and (not msg.blacklisted) 
+	and (not msg.virusinfected) 
+	and (not msg.nameinfected) 
+	and (not msg.otherinfected)):
+       status = _('Spam')
+if msg.blacklisted:
+       status = _('BS')
+if (msg.virusinfected or 
+       msg.nameinfected or 
+       msg.otherinfected):
+       status = _('Infected')
+if ((not msg.spam) and (not msg.virusinfected) 
+       and (not msg.nameinfected) 
+       and (not msg.otherinfected) 
+       and (not msg.whitelisted)):
+       status = _('Clean')
+if msg.whitelisted:
+       status = _('AS')
+if not msg.scaned:
+       status = _('NS')
+if msg.from_address == '':
+	from_addr = '<>'
+else:
+	from_addr =  msg.from_address
+%>
+% if isqtne:
+<tr class="${value}_row">
+	<td class="select_row">${ids[index]}</td>
+	<td class="date_td">${h.link_to(msg.timestamp, view_url)}</td>
+	<td class="from_row">${h.link_to(h.wrap_paragraphs(from_addr,32), view_url)}</td>
+	<td class="to_row">${h.link_to(h.wrap_paragraphs(msg.to_address or '---', 32), view_url)}</td>
+	<td class="subject_row">${h.link_to(h.truncate((msg.subject and msg.subject.strip()) or '---', 50), view_url)}</td>
+	<td class="score_row">${h.link_to(msg.sascore, view_url)}</td>
+	<td class="status_row">${h.link_to(status, view_url)}</td>                        
+</tr>
+% else:
+<tr class="${value}_row">
+	<td class="date_td">${h.link_to(msg.timestamp, view_url)}</td>
+	<td class="from_td">${h.link_to(h.wrap_paragraphs(from_addr,32), view_url)}</td>
+	<td class="to_td">${h.link_to(h.wrap_paragraphs(msg.to_address or '---', 32), view_url)}</td>
+	<td class="subject_td">${h.link_to(h.truncate((msg.subject and msg.subject.strip()) or '---', 50), view_url)}</td>
+	<td class="size_td">${h.link_to(h.format_byte_size(msg.size), view_url)}</td>
+	<td class="score_td">${h.link_to(msg.sascore, view_url)}</td>
+	<td class="status_td">${h.link_to(status, view_url)}</td>                        
+</tr>
+% endif
+% endfor
+% else:
+<tr>
+<td colspan="7" class="spanrow">${_('No messages found')}</td>
+</tr>
+% endif
+</tbody>
+</%def>
+
+<%def name="grid_heading(action, isqtne=None)">
+<thead>
+<tr class="grid">
+% if isqtne:
+    <th class="selector_heading"><input type="checkbox" name="selector" id="allchecker" /></th>
+	<th class="qdate_heading">
+%	if c.order_by == 'timestamp':
+		${_('Date/Time')}&nbsp;${self.sorter(action)}
+%	else:
+		${self.heading_links(_('Date/Time'), 'timestamp', action)}\
+%	endif
+	</th>
+	<th class="from_heading">
+%	if c.order_by == 'from_address':
+		${_('From')}&nbsp;${self.sorter(action)}
+%	else:
+		${self.heading_links(_('From'), 'from_address', action)}
+%	endif
+	</th>
+	<th class="to_heading">
+%	if c.order_by == 'to_address':
+		${_('To')}&nbsp;${self.sorter(action)}
+%	else:
+		${self.heading_links(_('To'), 'to_address', action)}
+%	endif
+	</th>
+	<th class="subject_heading">
+%	if c.order_by == 'subject':
+		${_('Subject')}&nbsp;${self.sorter(action)}
+%	else:
+		${self.heading_links(_('Subject'), 'subject', action)}
+%	endif
+	</th>
+	<th class="score_heading">
+%	if c.order_by == 'sascore':
+		${_('Score')}&nbsp;${self.sorter(action)}
+%	else:
+		${self.heading_links(_('Score'), 'sascore', action)}
+%	endif
+	</th>
+	<th class="status_heading">
+		${_('Status')}
+	</th>
+% else:
+	<th class="date_heading">
+%	if c.order_by == 'timestamp':
+		${_('Date/Time')}&nbsp;${self.sorter(action)}
+%	else:
+		${self.heading_links(_('Date/Time'), 'timestamp', action)}
+%	endif
+	</th>
+	<th class="from_heading">
+%	if c.order_by == 'from_address':
+		${_('From')}&nbsp;${self.sorter(action)}
+%	else:
+		${self.heading_links(_('From'), 'from_address', action)}
+%	endif
+	</th>
+	<th class="to_heading">
+%	if c.order_by == 'to_address':
+		${_('To')}&nbsp;${self.sorter(action)}
+%	else:
+		${self.heading_links(_('To'), 'to_address', action)}
+%	endif
+	</th>
+	<th class="subject_heading">
+%	if c.order_by == 'subject':
+		${_('Subject')}&nbsp;${self.sorter(action)}
+%	else:
+		${self.heading_links(_('Subject'), 'subject', action)}
+%	endif
+	</th>
+	<th class="size_heading">
+%	if c.order_by == 'size':
+		${_('Size')}&nbsp;${self.sorter(action)}
+%	else:
+		${self.heading_links(_('Size'), 'size', action)}
+%	endif
+	</th>
+	<th class="score_heading">
+%	if c.order_by == 'sascore':
+		${_('Score')}&nbsp;${self.sorter(action)}
+%	else:
+		${self.heading_links(_('Score'), 'sascore', action)}
+%	endif
+	</th>
+	<th class="status_heading">
+		${_('Status')}
+	</th>
+% endif
+</tr>
+</thead>
+</%def>
+
+<%def name="sorter(action)">\
+% if c.direction == 'dsc':
+  % if hasattr(c, 'section') and c.section:
+      ${h.link_to(h.literal('&uarr;'), url('messages-qtn-paging', action=action, 
+      page=c.page.page, direction='asc', order_by=c.order_by, section=c.section))}
+  % else:
+      ${h.link_to(h.literal('&uarr;'), url('messages-paging', action=action, 
+      page=c.page.page, direction='asc', order_by=c.order_by))}
+  % endif
+% else:
+  % if hasattr(c, 'section') and c.section:
+      ${h.link_to(h.literal('&darr;'), url('messages-qtn-paging', action=action, 
+      page=c.page.page, direction='dsc', order_by=c.order_by, section=c.section))}
+  % else:
+      ${h.link_to(h.literal('&darr;'), url('messages-paging', action=action, 
+      page=c.page.page, direction='dsc', order_by=c.order_by))}
+  % endif
+% endif
+</%def>
+
+<%def name="heading_links(link_text, order_by, action)">
+% if hasattr(c, 'section') and c.section:
+  ${h.link_to(link_text, url('messages-qtn-paging', action=action,
+  page=c.page.page, direction=c.direction, order_by=order_by, section=c.section))}
+% else:
+  ${h.link_to(link_text, url('messages-paging', action=action,
+  page=c.page.page, direction=c.direction, order_by=order_by))}
+% endif
+</%def>
+
+<%def name="paging(page_nums, action, fieldname)">
+% if c.page.page_count != 0:
+<p>${_('Showing items %(i)d to %(l)d of %(count)d' % dict(i=c.page.first_item, l=c.page.last_item, count=c.page.item_count))}.</p>
+<div class="limiter">
+${_('Show items:')}
+${h.pager_select(fieldname, str(c.page.items_per_page))}
+${_('per page')}
+</div>
+<div class="pages">
+% if c.page.page_count == 1:
+-
+% endif
+% else:
+<p>${_('No items found')}</p>
+% endif
+% if c.page.next_page != c.page.first_page and c.page.page != c.page.first_page:
+<span>
+% if hasattr(c, 'section') and c.section:
+  ${h.link_to(h.pager_img('first'), 
+  url('messages-qtn-paging', action=action, page=c.page.first_page, direction=c.direction,
+  order_by=c.order_by, section=c.section))}
+% else:
+  ${h.link_to(h.pager_img('first'), 
+  url('messages-paging', action=action, page=c.page.first_page, direction=c.direction,
+  order_by=c.order_by))}
+% endif
+</span>
+<span>...</span>
+% endif
+% if c.page.previous_page:
+<span>
+% if hasattr(c, 'section') and c.section:
+  ${h.link_to(h.pager_img('previous'), 
+  url('messages-qtn-paging', action=action, page=c.page.previous_page, direction=c.direction,
+  order_by=c.order_by, section=c.section))}
+% else:
+  ${h.link_to(h.pager_img('previous'), 
+  url('messages-paging', action=action, page=c.page.previous_page, 
+  direction=c.direction, order_by=c.order_by))}
+% endif
+</span>
+% endif
+% for linkpage in page_nums:
+% 	if linkpage == c.page.page:
+<span class="curpage">${linkpage}</span>
+% 	else:
+<span>
+% if hasattr(c, 'section') and c.section:
+  ${h.link_to(h.literal(linkpage), url('messages-qtn-paging', action=action, page=linkpage,
+  direction=c.direction, order_by=c.order_by, section=c.section))}
+% else:
+  ${h.link_to(h.literal(linkpage), url('messages-paging', action=action, 
+  page=linkpage, direction=c.direction, order_by=c.order_by))}
+% endif
+</span>
+% 	endif
+% endfor
+% if c.page.next_page:
+<span>
+% if hasattr(c, 'section') and c.section:
+  ${h.link_to(h.pager_img('next'), 
+  url('messages-qtn-paging', action=action, page=c.page.next_page, direction=c.direction,
+  order_by=c.order_by, section=c.section))}
+% else:
+  ${h.link_to(h.pager_img('next'), 
+  url('messages-paging', action=action, page=c.page.next_page, 
+  direction=c.direction, order_by=c.order_by))}
+% endif
+</span>
+% endif
+% if c.page.next_page != c.page.page_count and c.page.page != c.page.page_count and c.page.page_count != 0:
+<span>...</span>
+<span>
+% if hasattr(c, 'section') and c.section:
+  ${h.link_to(h.pager_img('last'), url('messages-qtn-paging', action=action,
+  page=c.page.page_count, direction=c.direction, order_by=c.order_by, section=c.section))}
+% else:
+  ${h.link_to(h.pager_img('last'), url('messages-paging', action=action,
+  page=c.page.page_count, direction=c.direction, order_by=c.order_by))}
+% endif
+</span>
+% endif
+% if c.page.page_count != 0:
+</div>
+% else:
+<div class="pages">-</div>
+% endif
+</%def>
+<%def name="search(action, q=None)">
+<div class="alpos">
+	<div class="toolbar">
+		${h.form(url(controller='messages', action='search'), method='get', id='msgsearch')}
+		<div class="grid_16 alpha omega">
+			% if q:
+			<div class="grid_4" id="searchinfo">${_('About %(n)s results (%(t)s seconds)') % dict(n=c.total_found, t=c.search_time)}</div>
+			<div class="grid_8"><div class="toright"><input type="text" size="65" name="q" id="q" value="${c.page['q']}" /></div></div>
+			% else:
+			<div class="grid_4" id="searchinfo">&nbsp;</div>
+			<div class="grid_8"><div class="toright"><input type="text" size="65" name="q" id="q" /></div></div>
+			% endif
+			<div class="grid_3"><input type="submit" value="Search" /></div>
+		</div>
+		<div style="display: none;"><input type="hidden" id="a" name="a" value="${action}" /></div>
+		${h.end_form()}
+	</div>
+</div>
+</%def>

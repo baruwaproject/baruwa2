@@ -1,0 +1,166 @@
+#
+# baruwa - Pylons configuration
+#
+# The %(here)s variable will be replaced with the parent directory of this file
+#
+[DEFAULT]
+debug = true
+email_to = andrew@topdog.za.net
+smtp_server = 127.0.0.1
+error_email_from = baruwa@localhost
+
+[uwsgi]
+socket = /var/run/baruwa/baruwa.sock
+master = true
+processes = 1
+
+[server:main]
+use = egg:Paste#http
+host = 0.0.0.0
+port = 5000
+
+[app:main]
+use = egg:baruwa
+full_stack = true
+static_files = false
+
+cache_dir = /var/lib/baruwa/data
+beaker.session.key = baruwa
+beaker.session.secret = ${app_instance_secret}
+beaker.session.httponly = true
+beaker.session.secure = true
+app_instance_uuid = ${app_instance_uuid}
+
+# If you'd like to fine-tune the individual locations of the cache data dirs
+# for the Cache data, or the Session saves, un-comment the desired settings
+# here:
+beaker.cache.data_dir = /var/lib/baruwa/data/cache
+beaker.session.data_dir = /var/lib/baruwa/data/sessions
+beaker.cache.regions=default,short_term,long_term,sql_cache_short,sql_cache_med,sql_cache_long,system_status
+
+beaker.cache.default.type=memcached
+beaker.cache.default.url = 127.0.0.1:11211
+beaker.cache.default.expire=360
+
+beaker.cache.short_term.type=memcached
+beaker.cache.short_term.url = 127.0.0.1:11211
+beaker.cache.short_term.expire=60
+
+beaker.cache.long_term.type=file
+beaker.cache.long_term.expire=36000
+
+beaker.cache.sql_cache_short.type=memcached
+beaker.cache.sql_cache_short.url = 127.0.0.1:11211
+beaker.cache.sql_cache_short.expire=60
+
+beaker.cache.sql_cache_med.type=memcached
+beaker.cache.sql_cache_med.url = 127.0.0.1:11211
+beaker.cache.sql_cache_med.expire=360
+
+beaker.cache.sql_cache_long.type=file
+beaker.cache.sql_cache_long.expire=3600
+
+beaker.cache.system_status.type=memcached
+beaker.cache.system_status.url = 127.0.0.1:11211
+beaker.cache.system_status.expire=180
+
+beaker.session.type = ext:memcached
+beaker.session.url = 127.0.0.1:11211
+
+# SQLAlchemy database URL
+sqlalchemy.url = postgresql://baruwa:@127.0.0.1:6432/baruwa
+
+# SphinxSQL URL
+sphinx.url = mysql://root:@127.0.0.1:9306
+
+# WARNING: *THE LINE BELOW MUST BE UNCOMMENTED ON A PRODUCTION ENVIRONMENT*
+# Debug mode will enable the interactive debugging tool, allowing ANYONE to
+# execute malicious code after an exception is raised.
+set debug = false
+
+# authentication settings
+what_config_file = %(here)s/what.ini
+who_config_file = %(here)s/who.ini
+what_log_file = /var/log/baruwa/what-who.log
+
+# MailScanner settings
+ms.config = /etc/MailScanner/MailScanner.conf
+ms.quickpeek = /usr/sbin/Quick.Peek
+ms.quarantine.days_to_keep = 30
+ms.saprefs = /etc/MailScanner/spam.assassin.prefs.conf
+ms.signatures.base = /etc/MailScanner/baruwa/signatures
+
+# Spamassassin settings
+spamassassin.salearn = /usr/bin/sa-learn
+spamassassin.dirs = /usr/share/spamassassin, /var/lib/spamassassin/3.003001, /etc/mail/spamassassin
+
+# Marrow.mailer
+mail.manager.use = dynamic
+mail.transport.use = smtp
+mail.transport.host = 127.0.0.1
+mail.transport.tls = optional
+mail.transport.local_hostname = localhost
+mail.transport.username =
+mail.transport.password =
+mail.transport.max_messages_per_connection = 10
+
+# baruwa settings
+baruwa.media.url = /
+baruwa.default.url = http://localhost
+baruwa.ipv6db = /usr/share/GeoIP/GeoIPv6.dat
+baruwa.reports.sender = baruwa@ms.home.topdog-software.com
+baruwa.locks.dir = /var/lock/baruwa
+baruwa.dkim.dir = /etc/MailScanner/baruwa/dkim
+
+# celery settings
+broker.host = 127.0.0.1
+broker.port = 5672
+broker.user = baruwa
+broker.password = 
+broker.vhost = baruwa
+broker.pool.limit = 10
+celeryd.pool = eventlet
+#celeryd.force.execv = true
+celeryd.concurrency = 100
+# workaround for broken pastedeploy
+celeryd.log.format = %|asctime|s Baruwa[%|process|d]: %|message|s
+celeryd.task.log.format = %|asctime|s Baruwa[%|process|d]: %|task_name|s %|task_id|s %|message|s
+celery.message.compression = bzip2
+celery.task.result.expires = 300
+celery.result.serialier = json
+celery.result.backend = amqp
+celery.result.dburi = amqp://
+celery.result.engine.options = {"echo": False}
+celery.result.exchange = celeryresults2
+celery.imports = baruwa.tasks
+celery.disable.rate.limits = True
+#celery.queues = {"snowy.local":{"exchange": "host", "exchange_type": "direct","binding_key":"snowy.local",},"msbackend":{"exchange":"ms", "exchange_type":"fanout","binding_key":"mstasks"},"default": {"exchange": "default","binding_key": "default"}}
+celery.default.queue = default
+celery.default.exchange = default
+celery.default.exchange_type = direct
+celery.default.routing_key = default
+celery.create.missing.queues = False
+
+
+# Logging configuration
+[loggers]
+keys = root
+
+[handlers]
+keys = console
+
+[formatters]
+keys = generic
+
+[logger_root]
+level = INFO
+handlers = console
+
+[handler_console]
+class = StreamHandler
+args = (sys.stderr,)
+level = NOTSET
+formatter = generic
+
+[formatter_generic]
+format = %(asctime)s %(levelname)-5.5s [%(name)s] [%(threadName)s] %(message)s

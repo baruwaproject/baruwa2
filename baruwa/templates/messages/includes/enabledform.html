@@ -1,0 +1,11 @@
+<div class="grid_16 alpha drow">
+    ${h.form(url('message-detail', id=c.msg.id), id='qform', method='post')}
+    <div class="grid_2 omega">${h.highlight_errors(c.form.release)}</div>
+    <div class="grid_2 omega">${h.highlight_errors(c.form.delete)}</div>
+    <div class="grid_2 omega">${h.highlight_errors(c.form.learn)}&nbsp;${h.highlight_errors(c.form.learnas)}</div>
+    <div class="grid_2 omega">${h.highlight_errors(c.form.usealt)}</div>
+    <div class="grid_6 omega">${h.highlight_errors(c.form.altrecipients, size=50)}</div>
+    <div class="grid_2 omega">${h.submit('submit_q_request', _('Submit'), 'submit_q_request')}</div>
+	${c.form.csrf_token}
+    ${h.end_form()}
+</div>

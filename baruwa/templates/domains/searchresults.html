@@ -1,0 +1,142 @@
+${s.searchbox(url('domains-search'), [('o', c.org),]) if c.org else s.searchbox(url('domains-search'))}
+<div class="clear"></div>
+<div class="sp10"></div>
+<div class="alpos">
+	<div class="toolbar">${self.paging(h.do_pagination(c.page), 'seldomaintop')}</div>
+</div>
+<div id="content">
+% if c.page.items:
+${h.form(url(controller='domains'), method='post')}
+<div class="mkbox">
+	<div class="grid_16 formcontrols">
+	<div class="grid_2 prefix_7">${h.radio('whatdo', 'delete', label='Delete', class_='fieldcontrols')}</div>
+	<div class="grid_2">${h.radio('whatdo', 'disable', label='Disable', class_='fieldcontrols')}</div>
+	<div class="grid_2">${h.radio('whatdo', 'enable', label='Enable', class_='fieldcontrols')}</div>
+	<div class="grid_2">${h.submit('submit', _('Submit'))}</div>
+	</div>
+</div>
+<div class="clear"></div>
+<div class="sp10"></div>
+% endif
+<table class="domains">
+<thead>
+<tr class="grid">
+	<th class="domains_heading_hash domains_check">${h.checkbox('checkall')}</th>
+	<th class="domains_heading_name">${_('Domain Name')}</th>
+	<th class="domains_heading_owner">${_('Organization')}</th>
+	<th class="domains_heading_owner">${_('Accounts')}</th>
+	<th class="domains_heading_status">${_('Status')}</th>
+	<th class="domains_heading_action" colspan="2">${_('Actions')}</th>
+</tr>
+</thead>
+<tbody>
+% if not c.page.items:
+<tr><td class="spanrow" colspan="7">${_('No domains found matching: %s') % c.q}</td></tr>
+% endif
+% for domain in c.page.items:
+<tr id="domain-id-${domain.id}">
+	<td class="domains_check">${h.checkbox('domainid', value=domain.id)}</td>
+	<td class="domains_name">
+		${h.link_to(domain.name, url(controller='domains', action='detail', domainid=domain.id))}
+	</td>
+	<td class="domains_owner inl">
+		<%
+		orglinks = []
+		for index, org in enumerate(domain.organizations):
+			link = h.link_to(org.name, url('org-detail', orgid=org.id)) if c.user.is_superadmin else org.name
+			orglinks.append(link)
+		orglinks = ', '.join(orglinks)
+		%>
+		${orglinks|n}
+	</td>
+	<td class="domains_accounts">${h.link_to(h.portable_img('imgs/user.png', _('List accounts')), url('accounts-bydom', domid=domain.id))}</td>
+	<td class="domains_status">${h.enabled_or_not(domain.status)}</td>
+	<td class="domains_edit">${h.link_to(h.portable_img('imgs/edit.png', _('Edit')), url(controller='domains', action='edit', domainid=domain.id))}</td>
+	<td class="domains_delete">${h.link_to(h.portable_img('imgs/action_delete.png', _('Delete')), url(controller='domains', action='delete', domainid=domain.id))}</td>
+</tr>
+% endfor
+</tbody>
+</table>
+% if c.page.items:
+${h.end_form()}\
+% endif
+</div>
+<div class="alpos">
+	<div class="toolbar">${self.paging(h.do_pagination(c.page), 'seldomainbottom')}</div>
+</div>
+<div class="clear"></div>
+<div class="sp10"></div>
+
+<%def name="title()">\
+${_('Domains :: Search results :: %(q)s :: Showing page %(page)d of %(count)d pages.') % dict(page=c.page.page, count=c.page.page_count, q=c.q) if c.page.page_count != 0 else _('Domains :: Search results :: %s') % c.q}
+</%def>
+
+<%def name="heading()">\
+${_('Domains :: Search results :: %(q)s :: Showing page %(page)d of %(count)d pages.') % dict(page=c.page.page, count=c.page.page_count, q=c.q) if c.page.page_count != 0 else _('Domains :: Search results :: %s') % c.q}
+</%def>
+
+<%def name="headers()">\
+</%def>
+
+<%def name="paging(page_nums, fieldname)">
+% if c.page.page_count != 0:
+<%
+kwd = {}
+if c.org:
+	kwd['o'] = c.org
+%>
+<p>${_('Showing results %(i)d to %(l)d of %(count)d' % dict(i=c.page.first_item, l=c.page.last_item, count=c.page.item_count))}.</p>
+<div class="limiter">
+${_('Show:')}
+${h.pager_select(fieldname, str(c.page.items_per_page))}
+${_('results per page')}
+</div>
+<div class="pages">
+% if c.page.page_count == 1:
+-
+% endif
+% else:
+<p>${_('No items found')}</p>
+% endif
+% if c.page.next_page != c.page.first_page and c.page.page != c.page.first_page:
+<span>
+	${h.link_to(h.pager_img('first'), url.current(q=c.q, p=c.page.first_page, **kwd))}
+</span>
+<span>...</span>
+% endif
+% if c.page.previous_page:
+<span>
+	${h.link_to(h.pager_img('previous'), url.current(q=c.q, p=c.page.previous_page, **kwd))}
+</span>
+% endif
+% for linkpage in page_nums:
+% 	if linkpage == c.page.page:
+<span class="curpage">${linkpage}</span>
+% 	else:
+<span>
+	${h.link_to(h.literal(linkpage), url.current(q=c.q, p=linkpage, **kwd))}
+</span>
+% 	endif
+% endfor
+% if c.page.next_page:
+<span>
+	${h.link_to(h.pager_img('next'), url.current(q=c.q, p=c.page.next_page, **kwd))}
+</span>
+% endif
+% if c.page.next_page != c.page.page_count and c.page.page != c.page.page_count and c.page.page_count != 0:
+<span>...</span>
+<span>
+	${h.link_to(h.pager_img('last'), url.current(q=c.q, p=c.page.page_count, **kwd))}
+</span>
+% endif
+% if c.page.page_count != 0:
+</div>
+% else:
+<div class="pages">-</div>
+% endif
+</%def>
+
+<%def name="localscripts()">\
+</%def>
+<%namespace name="s" file="/includes/search.html"/>
+<%inherit file="/base.html"/>

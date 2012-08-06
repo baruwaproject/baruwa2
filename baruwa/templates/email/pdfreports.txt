@@ -1,0 +1,19 @@
+
+
+
+Dear ${user.firstname} (${user.username}),
+
+Please find attached your Baruwa usage report. For the most recent 
+reports use the online reports at ${url}
+
+Best regards,
+
+Mail Hostmaster,
+
+
+
+
+
+
+Powered by Baruwa Hosted - http://www.baruwa.net
+====================================================

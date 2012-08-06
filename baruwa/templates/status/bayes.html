@@ -1,0 +1,70 @@
+<div class="alpos">
+	<ul id="msgops">
+		<li>${h.link_to(_('Node details'), url('server-status', serverid=c.server.id))}</li>
+	</ul>
+</div>
+<div class="clear"></div>
+<div class="sp10"></div>
+<div id="content">
+<div class="grid_16 alpha">
+    <h3 class="head">${_("Bayes Database Information") }</h3>
+</div>
+% if hasattr(c, 'data') and c.data:
+<div class="grid_16 alpha drow">
+    <div class="grid_7">${_("Bayes Version") }</div>
+    <div class="grid_8">${c.data['version']}</div>
+</div>
+<div class="LightGray_div">
+    <div class="grid_7">${_("Number of Spam messages")}</div>
+    <div class="grid_8">${c.data['spam']}</div>
+</div>
+<div class="grid_16 alpha drow">
+    <div class="grid_7">${_("Number of Ham messages")}</div>
+    <div class="grid_8">${c.data['ham']}</div>
+</div>
+<div class="LightGray_div">
+    <div class="grid_7">${_("Number of Tokens")}</div>
+    <div class="grid_8">${c.data['tokens']}</div>
+</div>
+<div class="grid_16 alpha drow">
+    <div class="grid_7">${_("Newest Token")}</div>
+    <div class="grid_8">${c.data['ntoken']}</div>
+</div>
+<div class="LightGray_div">
+    <div class="grid_7">${_("Oldest Token")}</div>
+    <div class="grid_8">${c.data['otoken']}</div>
+</div>
+<div class="grid_16 alpha drow">
+    <div class="grid_7">${_("Last Journal Sync")}</div>
+    <div class="grid_8">${c.data['ljournal']}</div>
+</div>
+<div class="LightGray_div">
+    <div class="grid_7">${_("Last Expiry")}</div>
+    <div class="grid_8">${c.data['expiry']}</div>
+</div>
+<div class="grid_16 alpha drow">
+    <div class="grid_7">${_("Last Expiry Reduction Count")}</div>
+    <div class="grid_8">${c.data['rcount']}</div>
+</div>
+% else:
+<div class="grid_16 alpha drow">
+<div class="grid_15">
+${_("Bayes information could not be collected.")}
+</div>
+</div>
+% endif
+</div>
+
+<%def name="title()">\
+${_('Status :: Bayes info :: %(server)s') % dict(server=c.server.hostname)}
+</%def>
+
+<%def name="heading()">\
+${_('Status :: Bayes info :: %(server)s') % dict(server=c.server.hostname)}
+</%def>
+
+<%def name="headers()">\
+</%def>
+<%def name="localscripts()">\
+</%def>
+<%inherit file="/base.html"/>

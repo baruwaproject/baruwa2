@@ -1,0 +1,41 @@
+<div class="alpos">
+	<ul id="msgops">
+		<li>${h.link_to(_('Node details'), url('server-status', serverid=c.id))}</li>
+	</ul>
+</div>
+<div class="clear"></div>
+<div id="content">
+<div class="grid_16 alpha">
+    <h3 class="head">${_('Delete scanning Node')}</h3>
+</div>
+${h.form(url('scanner-delete', serverid=c.id), method='post')}
+<%include file="/forms/disabled.base.html"/>
+<div class="grid_16 alpha drow">
+    <div class="grid_7">&nbsp;</div>
+    <div class="grid_8">
+		${h.submit('submit', _('Delete Node'))}
+    </div>
+    
+</div>
+${h.end_form()}\
+</div>
+
+<%def name="title()">
+${_('Settings :: Delete scanning Node')}
+</%def>
+
+<%def name="heading()">
+${_('Settings :: Delete scanning Node')}
+</%def>
+
+<%def name="submenu()">
+<ul>
+  <li>${h.link_to(_('Node details'), url('settings-scanner', serverid=c.id))}</li>
+</ul>
+</%def>
+<%def name="headers()">
+</%def>
+<%def name="localscripts()">
+</%def>
+
+<%inherit file="/base.html"/>

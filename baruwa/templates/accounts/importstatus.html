@@ -1,0 +1,67 @@
+<div id="content">
+<table class="taskstatus">
+	<thead>
+		<tr class="grid">
+			<th class="date_heading">${_('Username')}</th>
+			<th>${_('Status')}</th>
+			<th class="status_heading">${_('Errors')}</th>
+		</tr>
+	</thead>
+	<tbody>
+		% if c.finished:
+			% if c.results and 'rows' in c.results:
+				% for result in c.results['rows']:
+				<tr>
+					<td>${h.link_to(result['username'], url('account-detail', userid=result['id'])) if result['id'] else result['username']}</td>
+					<td>
+						% if result['imported']:
+						${h.portable_img('imgs/passed.png', alt="OK")}
+						% else:
+						${h.portable_img('imgs/failed.png', alt="FAILED")}
+						% endif
+					</td>
+					<td class="eimportstatus">
+						${h.wrap_paragraphs(result['error'], 50) if result['error'] else 'None'}
+					</td>
+				</tr>
+				% endfor
+			% else:
+				<tr>
+					<td colspan="3">
+					${_('The CSV import failed: %s' % c.results['global_error'])}
+					</td>
+				</tr>
+			% endif
+		% else:
+		<tr>
+			<td colspan="3">
+				<%
+				count = session['acimport-count']
+				if count > 10:
+					count = 10
+				percent = (count / 10.0) * 100
+				%>
+			${h.portable_img('imgs/ajax-pager.gif', alt="")} ${_('The request is being processed. %d%%' % percent)}
+			</td>
+		</tr>
+		% endif
+	</tbody>
+</table>
+</div>
+
+
+<%def name="headers()">\
+% if not c.finished:
+<meta http-equiv="refresh" content="5" />
+% endif
+</%def>
+<%def name="title()">\
+${_('Accounts :: User import status')}
+</%def>
+<%def name="heading()">\
+${_('Accounts :: User import status')}
+</%def>
+
+<%def name="localscripts()">\
+</%def>
+<%inherit file="/base.html"/>

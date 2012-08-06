@@ -1,0 +1,45 @@
+<div class="alpos">
+	<ul id="msgops">
+		<li>${h.link_to(_('Node details'), url('server-status', serverid=c.server.id))}</li>
+	</ul>
+</div>
+<div class="clear"></div>
+<div class="sp10"></div>
+<div id="content">
+<div class="grid_16 alpha">
+    <h3 class="head">${_("Spamassassin Lint")}</h3>
+</div>
+% if hasattr(c, 'data') and c.data:
+% for item in c.data:
+<div class="grid_16 alpha drow">
+    <div class="grid_15">${h.wrap_paragraphs(item, 120)}</div>
+</div>
+% endfor
+% else:
+<div class="grid_16 alpha drow">
+<div class="grid_15">
+${_("Backend did not return response, try again later")}
+</div>
+</div>
+% endif
+</div>
+
+<%def name="title()">\
+${_('Status :: Spamassassin lint :: %(server)s') % dict(server=c.server.hostname)}
+</%def>
+
+<%def name="heading()">\
+${_('Status :: Spamassassin lint :: %(server)s') % dict(server=c.server.hostname)}
+</%def>
+<%def name="submenu()">\
+<ul>
+	<li>${h.link_to(_('Server status'), url('server-status', serverid=c.server.id))}</li>
+	<li>${h.link_to(_('Bayes info'), url('server-status-bayes', serverid=c.server.id))}</li>
+	<li>${h.link_to(_('Graphs'))}</li>
+</ul>
+</%def>
+<%def name="headers()">\
+</%def>
+<%def name="localscripts()">\
+</%def>
+<%inherit file="/base.html"/>

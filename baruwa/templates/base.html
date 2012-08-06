@@ -1,0 +1,159 @@
+## -*- coding: utf-8 -*-
+<%!
+    from pylons.i18n.translation import set_lang, get_lang
+    from baruwa.lib.filters import totals
+%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>.:. Baruwa :: ${next.title()}</title>
+<link href="${h.media_url()}css/grid.css" media="screen, projection" rel="stylesheet" type="text/css" />
+<link href="${h.media_url()}css/text.css" media="screen, projection" rel="stylesheet" type="text/css" />
+<link rel="icon" href="${h.media_url()}imgs/favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="${h.media_url()}imgs/favicon.ico" type="image/x-icon" />
+<script type="text/javascript">
+var media_url = "${h.media_url()}";
+</script>
+${h.javascript_link(h.media_url() + 'js/jquery.min.js',
+h.media_url() + 'js/jquery.mustache.min.js',
+url('jsi18n'),
+h.media_url() + 'js/baruwa/common.js')}
+${next.headers()}\
+</head>
+<body>
+<div id="wrap">
+	<div id="header-bar">
+		<div id="header">
+			${h.link_to(h.portable_img('imgs/logo.png', 'Baruwa', class_='logo'), url('home'))}
+			<ul>
+				<li>
+					${_('Language: ')}<select name="language" id="globallang">
+						% for lang in h.get_languages():
+						  % if lang.keys()[0] == get_lang()[0]:
+						<option value="${lang.keys()[0]}" selected='selected'>${lang[lang.keys()[0]]}</option>
+						  % else:
+						<option value="${lang.keys()[0]}">${lang[lang.keys()[0]]}</option>
+						  % endif
+					    % endfor
+					</select>
+				</li>
+				<%
+				status_button = h.portable_img('imgs/active.png', _('OK'), class_='positio', title=_('OK'), id='statusimg') if hasattr(c, 'baruwa_status') and c.baruwa_status else h.portable_img('imgs/inactive.png', _('FAULTY'), class_='positio', title=_('FAULTY'), id='statusimg')
+				%>
+				<li>
+					${h.link_to(status_button, url(controller='status')) if c.user.is_admin else ''}
+				</li>
+				% if hasattr(c, 'baruwa_totals'):
+				<%
+				status_items = _('Total ') + h.HTML.span(totals(c.baruwa_totals.total), id='smailtotal') + h.literal('&nbsp;') + _('Spam ') + h.HTML.span(totals(c.baruwa_totals.spam), id='sspamtotal') + h.literal('&nbsp;') + _('Virus ') + h.HTML.span(totals(c.baruwa_totals.virii), id='svirustotal')
+				%>
+				<li>
+					${_('Msgs: ')}${h.link_to(status_items, url(controller='status')) if c.user.is_admin else status_items}
+				</li>
+				<li>${_('In: ')}
+					<span id="inq">${h.link_to(c.baruwa_inbound, url('mailq-status-directed', queue='inbound'))}</span>
+					${_('Out: ')}
+					<span id="outq">${h.link_to(c.baruwa_outbound, url('mailq-status-directed', queue='outbound'))}</span>
+				</li>
+				% endif
+				% if c.user:
+				<li>${_('Signed in as ')}${h.link_to(c.user.username, url('account-detail', userid=c.user.id))}</li>
+				<li>${h.link_to(_('Logout'), url('/logout'))}</li>
+				% else:
+				<li>${_('Not logged in :: ')}${h.link_to(_('Login'), url('/accounts/login'))}</li>
+				% endif
+			</ul>
+		</div>
+	</div>
+	<div id="navigation">
+		<div id="nav">
+			% if c.user:
+			<ul>
+				<li>
+					${h.link_to(_('Messages'), url(controller='messages'))}
+					<ul>
+						<li>${h.link_to(_('Full message list'), url(controller='messages', action='listing'))}</li>
+						<li>${h.link_to(_('Quarantine'), url(controller='messages', action='quarantine'))}</li>
+						<li>${h.link_to(_('Archive'), url(controller='messages', action='archive'))}</li>
+					</ul>
+				</li>
+				<li>
+					${h.link_to(_('Lists'), url(controller='lists'))}
+					<ul>
+						<li>${h.link_to(_('Approved senders'), url('lists-index', list_type=1))}</li>
+					  	<li>${h.link_to(_('Banned senders'), url('lists-index', list_type=2))}</li>
+					  	<li>${h.link_to(_('Add to List'), url('lists-add'), id='list-add')}</li>
+					</ul>
+				</li>
+				<li>${h.link_to(_('Reports'), url(controller='reports'))}</li>
+				% if c.user.is_admin:
+				<li>
+					${h.link_to(_('Status'), url(controller='status'))}
+					<ul>
+						<li><a href="${url('mailq-status')}">${_("Mail Queues")}</a></li>
+						% if c.user.is_superadmin:
+						<li><a href="${url('status-audit-logs')}">${_("Audit Logs")}</a></li>
+						% endif
+					</ul>
+				</li>
+				<li>
+					${h.link_to(_('Domains'), url(controller='domains'))}
+					% if c.user.is_superadmin:
+					<ul>
+					  <li>${h.link_to(_('Add a domain'), url(controller='domains', action='add'))}</li>
+					</ul>
+					% endif
+				</li>
+				<li>
+					${h.link_to(_('Accounts'), url(controller='accounts'))}
+					<ul>
+					  <li>${h.link_to(_('Add account'), url(controller='accounts', action='add'), id="user-add")}</li>
+					</ul>
+				</li>
+					% if c.user.is_superadmin:
+				<li>
+					${h.link_to(_('Settings'), url(controller='settings'))}
+					<ul>
+					  <li>${h.link_to(_('Add scanning node'), url('settings-addserver'))}</li>
+					  <li>${h.link_to(_('MailScanner settings'), url(controller='settings', action='section'))}</li>
+					</ul>
+				</li>
+				<li>
+					${h.link_to(_('Organizations'), url(controller='organizations'))}
+					<ul>
+					  <li>${h.link_to(_('Add organization'), url('orgs-add'))}</li>
+					</ul>
+				</li>
+					% endif
+				% else:
+				<li><a href="${url('account-detail', userid=c.user.id)}">${_("Account")}</a></li>
+	 			% endif
+			</ul>
+			% endif
+		</div>
+	</div>
+	<div id="heading">
+		<div id="title">
+			${self.heading()}
+		</div>
+		<div id="spinner">Loading...</div>
+	</div>
+	<%include file="/includes/flash.html"/>
+	${next.body()}
+	<div id="footer-bar">
+		<div id="footer">
+			<div id="copyright">
+				<a href="http://www.baruwa.net/">Baruwa Hosted</a> &copy; 2012 Andrew Colin Kissa 
+			</div>
+		</div>
+	</div>
+</div>
+${self.localscripts()}
+</body>
+</html>
+<%def name="tab_class(name)">\
+Baruwa ::
+</%def>

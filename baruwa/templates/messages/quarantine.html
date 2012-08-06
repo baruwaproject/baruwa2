@@ -1,0 +1,96 @@
+<div class="alpos" id="sublinks">
+	<ul id="msgops">
+		<li><a href="${url(controller='messages', action='quarantine', section='spam')}">${_("Spam")}</a></li>
+		<li><a href="${url(controller='messages', action='quarantine', section='policyblocked')}">${_("Non Spam")}</a></li>
+		<li>${h.link_to(_('Apply Filters'), url(controller='reports', action='index', anchor='form-area'), class_='filter_add')}</li>
+		<li>${h.link_to(_('Show applied filters'), url(controller='reports', action='index', anchor='active_filters'), class_='filter_show')}</li>
+	</ul>
+</div>
+<div class="clear"></div>
+<div class="sp10"></div>
+${functions.search('quarantine')}
+<div id="content">
+${h.form(url(controller='messages', action='quarantine'), method='post')}
+<div id="form-area">
+	<div class="grid_16 drow">
+		<div class="grid_2 omega">${c.form.release.label}</div>
+		<div class="grid_2 omega">${c.form.delete.label}</div>
+		<div class="grid_2 omega">${c.form.learn.label}</div>
+		<div class="grid_2 omega">${c.form.usealt.label}</div>
+	</div>
+	<div class="grid_16 drowlast">
+		<div class="grid_2 omega">${c.form.release()}</div>
+		<div class="grid_2 omega">${c.form.delete}</div>
+		<div class="grid_2 omega">${c.form.learn}&nbsp;${c.form.learnas}</div>
+		<div class="grid_2 omega">${c.form.usealt}</div>
+		<div class="grid_6 omega">${c.form.altrecipients(size=50)}</div>
+		<div class="grid_2 omega">${h.submit('submit_q_request', _('Process'), 'submit_q_request')}</div>
+	</div>
+</div>
+${h.HTML.div(c.form.csrf_token, style="display: none;")}
+<div class="clear"></div>
+<div class="sp10"></div>
+<div class="alpos">
+	<div class="toolbar">
+		${self.paging(h.do_pagination(c.page), 'squarantinetop')}\
+	</div>
+</div>
+<div class="clear"></div>
+<div class="sp10"></div>
+<table class="messages">
+${functions.grid_heading('quarantine', True)}
+${functions.print_rows('message-detail', True)}
+</table>
+<div class="clear"></div>
+<div class="sp10"></div>
+<div class="alpos">
+	<div class="toolbar">
+		${self.paging(h.do_pagination(c.page), 'squarantinebottom')}\
+	</div>
+</div>
+<div class="clear"></div>
+${h.end_form()}
+</div>
+
+<%def name="heading()">\
+% if c.page.page_count > 0:
+${_('Messages :: Quarantine :: Showing page %(page)d of %(count)d pages.') % dict(page=c.page.page, count=c.page.page_count)}
+% else:
+${_('Messages :: Quarantine')}
+% endif
+% if 'filter_by' in session and session['filter_by']:
+(<small>${h.link_to(_('Filters'), url(controller='reports', action='index', anchor='active_filters'), class_='filter_show')} ${_("have been applied")}</small>)
+% endif
+</%def>
+
+<%def name="title()">\
+% if c.page.page_count > 0:
+${_('Messages :: Quarantine :: Showing page %(page)d of %(count)d pages.') % dict(page=c.page.page, count=c.page.page_count)}\
+% else:
+${_('Messages :: Quarantine')}
+% endif
+</%def>
+
+<%def name="status()">\
+</%def>
+
+<%def name="headers()">\
+</%def>
+
+<%def name="paging(page_nums, fieldname)">
+${functions.paging(page_nums, 'quarantine', fieldname)}
+</%def>
+<%def name="localscripts()">\
+<script type="text/javascript">
+var setitems_url = "${url(controller='messages', action='setnum')}";
+var filter_url = "${url('reports-ajax-filters')}";
+var filter_add_url = "${url('reports-ajax-filter-form')}";
+</script>
+${h.javascript_link(h.media_url() + 'js/jquery.address-1.4.min.js',
+h.media_url() + 'js/baruwa/reports.common.js',
+h.media_url() + 'js/baruwa/messages.filters.js',
+h.media_url() + 'js/baruwa/messages.quarantine.js')}
+</%def>
+<%namespace name="functions" file="functions.html"/>
+<%inherit file="/base.html"/>
+

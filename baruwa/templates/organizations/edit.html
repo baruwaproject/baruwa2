@@ -1,0 +1,36 @@
+<div class="alpos">
+	<ul id="msgops">
+		<li>${h.link_to(_('Organization details'), url('org-detail', orgid=c.id))}</li>
+	</ul>
+</div>
+<div class="clear"></div>
+<div id="content">
+<div class="grid_16">
+    <h3 class="head">${_('Edit organization')}</h3>
+</div>
+${h.form(url('orgs-edit', orgid=c.id), method='post')}
+<%include file="/forms/base.html"/>
+<div class="grid_16 drow">
+    <div class="grid_7">&nbsp;</div>
+    <div class="grid_8">
+		${h.submit('submit', _('Update organization'))}
+    </div>
+    
+</div>
+${h.end_form()}\
+</div>
+
+<%def name="title()">
+${_('Organizations :: Edit organization')}
+</%def>
+
+<%def name="heading()">
+${_('Organizations :: Edit organization')}
+</%def>
+
+<%def name="headers()">
+</%def>
+<%def name="localscripts()">
+</%def>
+
+<%inherit file="/base.html"/>

@@ -1,0 +1,18 @@
+<% 
+messages = h.flash.pop_messages()
+if not messages and hasattr(c, 'form') and 'csrf_token' in c.form.errors:
+	message = c.form.errors.pop('csrf_token')[0]
+	msg = h.Msg('error', message)
+	messages.append(msg)
+%>
+% if messages:
+% if request.is_xhr:
+<div class="grid_10 alpha omega">
+	<div class="${messages[0].category  or 'ok'}">${messages[0]}</div>
+</div>
+% else:
+<div class="alpos">
+	<div class="${messages[0].category  or 'ok'}"><a class="closeflash" title="Close" href="#">x</a>${messages[0]}</div>
+</div>
+% endif
+% endif

@@ -1,0 +1,57 @@
+<div class="alpos">
+	<div class="grid_16">
+		<ul id="msgops">
+			<li>${h.link_to(_('Domain Settings'), url('domain-settings', domainid=c.domain.id))}</li>
+			<li>${h.link_to(_('Domain details'), url(controller='domains', action='detail', domainid=c.domain.id))}</li>
+			% if len(c.domain.signatures) < 2:
+			<li>${h.link_to(_('Add signature'), url('domain-sigs-add', domainid=c.domain.id))}</li>
+			% endif
+		</ul>
+	</div>
+</div>
+<div class="clear"></div>
+<div id="content">
+	<div class="grid_16">
+		<h3 class="head">${_('Domain email signatures')}</h3>
+	</div>
+	% for signature in c.domain.signatures:
+	<div class="grid_16 drow">
+		<div class="grid_12">
+			${_('Text signature') if signature.signature_type == 1 else _('HTML Signature')}
+		</div>
+		<div class="grid_1 omega">
+			${h.enabled_or_not(signature.enabled)}
+		</div>
+		<div class="grid_1 omega">
+			&nbsp;
+		</div>
+		<div class="grid_1 omega">
+			${h.link_to(h.portable_img('imgs/edit.png', _('Edit'), title=_('Edit'), class_="positio"), url('domain-sigs-edit', sigid=signature.id))}
+		</div>
+		<div class="grid_1 omega">
+			${h.link_to(h.portable_img('imgs/action_delete.png', _('Delete'), title=_('Delete'), class_="positio"), url('domain-sigs-delete', sigid=signature.id))}
+		</div>
+	</div>
+	% endfor
+	% if not c.domain.signatures:
+	<div class="grid_16 drow">
+		<div class="grid_15">${_('No domain signatures configured')}</div>
+	</div>
+	% endif
+</div>
+
+
+<%def name="title()">
+${_('Settings :: Domain email signatures :: %s') % c.domain.name}
+</%def>
+
+<%def name="heading()">
+${_('Settings :: Domain email signatures :: %s') % c.domain.name}
+</%def>
+
+<%def name="headers()">
+</%def>
+<%def name="localscripts()">
+</%def>
+
+<%inherit file="/base.html"/>

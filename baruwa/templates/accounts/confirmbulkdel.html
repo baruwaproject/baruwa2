@@ -1,0 +1,65 @@
+<div id="content">
+${h.form(url.current(), method='post')}
+<table class="accounts">
+<thead>
+<tr class="grid">
+    <th class="users_heading_hash domains_check">${h.literal('&nbsp;')}</th>
+    <th>&nbsp;</th>
+    <th class="users_heading_username">${_('Username')}</th>
+    <th class="users_heading_fullname">${_('Full names')}</th>
+    <th class="users_heading_email">${_('Email address')}</th>
+    <th class="users_heading_email">${_('Status')}</th>
+	<th class="users_heading_del" colspan="2">${_('Actions')}</th>
+</tr>
+</thead>
+<tbody>
+% for user in c.page.items:
+<% 
+	if user.is_superadmin:
+		user_icon = h.media_url() + 'imgs/user_admin.png'
+	elif user.is_domain_admin:
+		user_icon = h.media_url() + 'imgs/user_dadmin.png'
+	else:
+		user_icon = h.media_url() + 'imgs/user.png'
+%>
+<tr class="todel">
+	<td class="domains_check">${h.literal('&nbsp;')}</td>
+    <td class="users_hash">${h.image(user_icon, 'x')}</td>
+    <td class="users_username">${user.username}</td>
+    <td class="users_fullname">${user.firstname} ${user.lastname}</td>
+    <td class="users_email">${user.email}</td>
+    <td class="users_status">${h.enabled_or_not(user.active)}</td>
+	<td class="users_delete">${h.portable_img('imgs/edit.png', 'Edit')}</td>
+	<td class="users_edit">${h.portable_img('imgs/action_delete.png', 'Delete')}</td>
+</tr>
+% endfor
+% if not c.page.items:
+<tr><td class="spanrow" colspan="8">${_('No accounts found')}</td></tr>
+% endif
+</tbody>
+</table>
+<div class="mkbox">
+	<div class="grid_16 formcontrols">
+	<div class="grid_2 prefix_7">&nbsp;</div>
+	<div class="grid_2">&nbsp;</div>
+	<div class="grid_2">&nbsp;</div>
+	<div class="grid_2">${h.submit('submit', _('Yes Delete'))}</div>
+	</div>
+</div>
+<div class="clear"></div>
+${h.end_form()}\
+</div>
+<%def name="title()">
+${_('Accounts :: Confirm bulk account deletion')} 
+</%def>
+
+<%def name="heading()">
+${_('Accounts :: Confirm bulk account deletion')} 
+</%def>
+
+<%def name="headers()">
+</%def>
+
+<%def name="localscripts()">\
+</%def>
+<%inherit file="/base.html"/>

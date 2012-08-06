@@ -1,0 +1,35 @@
+<div class="alpos">
+	<ul id="msgops">
+		<li>${h.link_to(_('Domain details'), url(controller='domains', action='detail', domainid=c.domainid))}</li>
+	</ul>
+</div>
+<div class="clear"></div>
+<div id="content">
+${h.form(url('domains-edit-alias', aliasid=c.aliasid), method='post')}
+<div class="grid_16">
+    <h3 class="head">${_("Edit Domain Alias")}</h3>
+</div>
+<%include file="/forms/base.html"/>
+<div class="grid_16 drow">
+    <div class="grid_7">&nbsp;</div>
+    <div class="grid_8">
+        <input id="submit-button" type="submit" value="${_("Update")}" />
+    </div>
+    
+</div>
+${h.end_form()}\
+</div>
+
+<%def name="title()">
+${_('Domains :: %(name)s :: Edit Domain Alias') % dict(name=c.domainname)}
+</%def>
+
+<%def name="heading()">
+${_('Domains :: %(name)s :: Edit Domain Alias') % dict(name=c.domainname)}
+</%def>
+
+<%def name="headers()">
+</%def>
+<%def name="localscripts()">\
+</%def>
+<%inherit file="/base.html"/>

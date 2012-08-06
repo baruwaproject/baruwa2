@@ -1,0 +1,47 @@
+<div class="alpos">
+	<div class="grid_16">
+		<ul id="msgops">
+			<li>${h.link_to(_('Domain details'), url(controller='domains', action='detail', domainid=c.domain.id))}</li>
+		</ul>
+	</div>
+</div>
+<div class="clear"></div>
+<div id="content">
+	<div class="grid_16">
+		<h3 class="head">${_('Domain settings')}</h3>
+		<div class="clear"></div>
+		<div class="sp10"></div>
+		<div class="grid_8 alpha">
+			<ul class="reports">
+	            <li>${h.link_to(_('Signatures'), url('domain-settings-sigs', domainid=c.domain.id))}</li>
+	            <li>${_('Rulesets')}</li>
+				<li>${h.link_to(_('Import Accounts'), url('accounts-import', domainid=c.domain.id))}</li>
+				<li>${h.link_to(_('Export Accounts'), url('accounts-export-bydom', domainid=c.domain.id))}</li>
+	        </ul>
+		</div>
+		<div class="grid_8 alpha">
+			<ul class="reports">
+				<li>${h.link_to(_('Add delivery server'), url('dserver-add', domainid=c.domain.id))}</li>
+				<li>${h.link_to(_('Add authentication settings'), url('domains-add-auth', domainid=c.domain.id))}</li>
+				<li>${h.link_to(_('Add Alias Domain'), url('domains-add-alias', domainid=c.domain.id))}</li>
+				<li>${h.link_to(_('DKIM'), url('domain-dkim', domainid=c.domain.id))}</li>
+	        </ul>
+		</div>
+	</div>
+</div>
+
+
+<%def name="title()">
+${_('Settings :: Domain settings :: %s') % c.domain.name}
+</%def>
+
+<%def name="heading()">
+${_('Settings :: Domain settings :: %s') % c.domain.name}
+</%def>
+
+<%def name="headers()">
+</%def>
+<%def name="localscripts()">
+</%def>
+
+<%inherit file="/base.html"/>

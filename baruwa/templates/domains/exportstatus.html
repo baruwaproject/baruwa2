@@ -1,0 +1,39 @@
+<div id="content">
+<div class="grid_16 omega">
+	<h3 class="head">${_('Domains Export Status')}</h3>
+	<div class="clear"></div>
+	<div class="sp10"></div>
+</div>
+<div class="grid_16 omega">
+	% if c.finished:
+		<div class="grid_15">
+		% if c.results and c.results['f']:
+		${_('The export has been processed, ')}${h.link_to(_('Download the csv file'), url('domains-export-status', taskid=c.results['id'], d='y'))}
+		% else:
+			${_('The CSV export failed: %s' % c.results['global_error'])}
+		% endif
+		</div>
+	% else:
+	<div class="grid_15">
+		${h.portable_img('imgs/ajax-pager.gif', alt="")} ${_('The request is being processed.')}
+	</div>
+	% endif
+</div>
+</div>
+
+
+<%def name="headers()">\
+% if not c.finished:
+<meta http-equiv="refresh" content="5" />
+% endif
+</%def>
+<%def name="title()">\
+${_('Domains :: export status')}
+</%def>
+<%def name="heading()">\
+${_('Domains :: export status')}
+</%def>
+
+<%def name="localscripts()">\
+</%def>
+<%inherit file="/base.html"/>

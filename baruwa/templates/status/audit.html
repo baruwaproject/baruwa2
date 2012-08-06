@@ -1,0 +1,146 @@
+<div class="alpos">
+	<ul id="msgops">
+		% if c.q:
+		<li>${h.link_to(_('Export to CSV'), url('status-audit-search-export', format='csv', q=c.q))}</li>
+		<li>${h.link_to(_('Export to PDF'), url('status-audit-search-export', format='pdf', q=c.q))}</li>
+		% else:
+		<li>${h.link_to(_('Export to CSV'), url('status-audit-export', format='csv'))}</li>
+		<li>${h.link_to(_('Export to PDF'), url('status-audit-export', format='pdf'))}</li>
+		% endif
+	</ul>
+</div>
+<div class="clear"></div>
+<div class="sp10"></div>
+${s.searchbox(url('status-audit-logs'))}
+<div class="clear"></div>
+<div class="sp10"></div>
+<div class="alpos">
+	<div class="toolbar">${self.paging(h.do_pagination(c.page), 'auditlogtop')}</div>
+</div>
+<div class="clear"></div>
+<div class="sp10"></div>
+<div id="content">
+<table class="messages">
+<thead>
+<tr class="grid">
+	<th class="audit_date_th">${_('Date/Time')}</th>
+	<th class="audit_user_th">${_('Username')}</th>
+	<th class="audit_info_th">${_('Info')}</th>
+	<th class="audit_host_th">${_('Hostname')}</th>
+	<th class="audit_remote_th">${_('Remote IP')}</th>
+	<th class="audit_cat_th">${_('Category')}</th>
+</tr>
+</thead>
+<tbody>
+% if not c.page.items:
+<tr>
+<td colspan="6" class="spanrow">${_('No audit logs found')}</td>
+</td>
+% endif
+<%
+from baruwa.model.status import CATEGORY_MAP
+value = 'white'
+%>
+% for item in c.page.items:
+<tr class="${value}_row">
+	<td class="audit_date_td">${h.datetimeformat(item.timestamp)}</td>
+	<td class="audit_user_td">${item.username}</td>
+	<td class="audit_info_td">${item.info}</td>
+	<td class="audit_host_td">${item.hostname}</td>
+	<td class="audit_remote_td">${item.remoteip}</td>
+	<td class="audit_cat_td">${CATEGORY_MAP[item.category]}</td>                        
+</tr>
+% endfor
+</tbody>
+</table>
+</div>
+<div class="alpos">
+	<div class="toolbar">${self.paging(h.do_pagination(c.page), 'auditlogbottom')}</div>
+</div>
+<div class="clear"></div>
+<div class="sp10"></div>
+
+<%def name="heading()">\
+${_('Status :: Audit log ')} 
+% if c.page.page_count != 0:
+${ungettext(':: Showing page %(n)d of %(c)d page.', ':: Showing page %(n)d of %(c)d pages.', c.page.page_count) % dict(n=c.page.page, c=c.page.page_count)}
+% endif
+</%def>
+
+<%def name="title()">\
+${_('Status :: Audit log ')}
+% if c.page.page_count != 0:
+${ungettext(':: Showing page %(n)d of %(c)d page.', ':: Showing page %(n)d of %(c)d pages.', c.page.page_count) % dict(n=c.page.page, c=c.page.page_count)}
+% endif
+</%def>
+
+<%def name="paging(page_nums, fieldname)">
+% if c.page.page_count != 0:
+<%
+kwd = {}
+if c.q:
+	kwd['q'] = c.q
+%>
+<p>${_('Showing items %(i)d to %(l)d of %(count)d' % dict(i=c.page.first_item, l=c.page.last_item, count=c.page.item_count))}.</p>
+<div class="limiter">
+${_('Show items:')}
+${h.pager_select(fieldname, str(c.page.items_per_page))}
+${_('per page')}
+</div>
+<div class="pages">
+% if c.page.page_count == 1:
+-
+% endif
+% else:
+<p>${_('No items found')}</p>
+% endif
+% if c.page.next_page != c.page.first_page and c.page.page != c.page.first_page:
+<span>
+	${h.link_to(h.pager_img('first'), url('status-audit-log-paged', page=1, **kwd))}
+</span>
+<span>...</span>
+% endif
+% if c.page.previous_page:
+<span>
+	${h.link_to(h.pager_img('previous'), url('status-audit-log-paged', page=c.page.previous_page, **kwd))}
+</span>
+% endif
+% for linkpage in page_nums:
+% 	if linkpage == c.page.page:
+<span class="curpage">${linkpage}</span>
+% 	else:
+<span>
+	${h.link_to(h.literal(linkpage), url('status-audit-log-paged', page=linkpage, **kwd))}
+</span>
+% 	endif
+% endfor
+% if c.page.next_page:
+<span>
+	${h.link_to(h.pager_img('next'), url('status-audit-log-paged', page=c.page.next_page, **kwd))}
+</span>
+% endif
+% if c.page.next_page != c.page.page_count and c.page.page != c.page.page_count and c.page.page_count != 0:
+<span>...</span>
+<span>
+	${h.link_to(h.pager_img('last'), url('status-audit-log-paged', page=c.page.page_count, **kwd))}
+</span>
+% endif
+% if c.page.page_count != 0:
+</div>
+% else:
+<div class="pages">-</div>
+% endif
+</%def>
+<%def name="headers()">\
+</%def>
+
+<%def name="localscripts()">\
+<script type="text/javascript">
+var setitems_url = "${url(controller='status', action='setnum')}";
+var base_url = "${url('status-audit-logs')}";
+</script>
+${h.javascript_link(h.media_url() + 'js/jquery.address-1.4.min.js',
+h.media_url() + 'js/baruwa/status.audit.js')}
+</%def>
+<%namespace name="s" file="/includes/search.html"/>
+<%inherit file="/base.html"/>

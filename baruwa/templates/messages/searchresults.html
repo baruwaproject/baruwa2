@@ -1,0 +1,177 @@
+<!-- <div class="alpos">
+	<ul id="msgops">
+		<li><a href="#">${_('Show applied filters')}</a></li>
+	</ul>
+</div> -->
+<div class="clear"></div>
+<div class="sp10"></div>
+${functions.search(c.action, c.page['q'])}
+<div class="clear"></div>
+<div class="sp10"></div>
+${self.pager('sresultstop')}
+<div class="clear"></div>
+<div id="content">
+<table class="messages">
+	<thead>
+	<tr class="grid">
+		<th class="date_heading">${_('Date/Time')}</th>
+		<th class="from_heading">${_('From')}</th>
+		<th class="to_heading">${_('To')}</th>
+		<th class="subject_heading">${_('Subject')}</th>
+		<th class="size_heading">${_('Size')}</th>
+		<th class="score_heading">${_('Score')}</th>
+		<th class="status_heading">${_('Status')}</th>
+	</tr>
+	</thead>
+<tbody>
+% if c.messages:
+% for index, msg in enumerate(c.messages):
+<%
+value = 'white'
+if (msg.spam and not msg.highspam and not msg.blacklisted
+	and not msg.nameinfected and not msg.otherinfected 
+	and not msg.virusinfected):
+	value = 'spam'
+if msg.highspam and (not msg.blacklisted):
+	value = 'highspam'
+if msg.whitelisted:
+	value = 'whitelisted'
+if msg.blacklisted:
+	value = 'blacklisted'
+if msg.nameinfected or msg.virusinfected:
+    value = 'infected'
+if not msg.scaned:
+       value = 'gray'
+#view_url = url(route, messageid=msg.id)
+if c.action == 'archive':
+	view_url = url('message-archive', id=msg.id)
+else:
+	view_url = url('message-detail', id=msg.id)
+
+if (msg.spam and (not msg.blacklisted) 
+	and (not msg.virusinfected) 
+	and (not msg.nameinfected) 
+	and (not msg.otherinfected)):
+       status = _('Spam')
+if msg.blacklisted:
+       status = _('BL')
+if (msg.virusinfected or 
+       msg.nameinfected or 
+       msg.otherinfected):
+       status = _('Infected')
+if ((not msg.spam) and (not msg.virusinfected) 
+       and (not msg.nameinfected) 
+       and (not msg.otherinfected) 
+       and (not msg.whitelisted)):
+       status = _('Clean')
+if msg.whitelisted:
+       status = _('WL')
+if not msg.scaned:
+       status = _('NS')
+if msg.from_address == '':
+	from_addr = '---'
+else:
+	from_addr =  msg.from_address
+%>
+<tr class="${value}_row">
+	<td class="date_td">${h.link_to(msg.timestamp, view_url)}</td>
+	<td class="from_td">${h.link_to(h.wrap_paragraphs(from_addr,32), view_url)}</td>
+	<td class="to_td">${h.link_to(h.truncate(h.do_breaks(msg.to_address), 50), view_url)}</td>
+	<td class="subject_td">${h.link_to(h.truncate((msg.subject and msg.subject.strip()) or '---', 50), view_url)}</td>
+	<td class="size_td">${h.link_to(h.format_byte_size(msg.size), view_url)}</td>
+	<td class="score_td">${h.link_to(msg.sascore, view_url)}</td>
+	<td class="status_td">${h.link_to(status, view_url)}</td>                        
+</tr>
+% endfor
+% else:
+<tr>
+<td colspan="7" class="spanrow">${_('No messages found matching search query: %(q)s !') % dict(q=c.page['q'])}</td>
+</tr>
+% endif
+</tbody>
+</table>
+</div>
+${self.pager('sresultsbottom')}
+<div class="clear"></div>
+<div class="sp20"></div>
+
+<%def name="pager(name)">
+<div class="alpos">
+	<div class="toolbar">
+		% if c.page['total'] != 0:
+		<p>${_('Showing items %(i)d to %(l)d of %(count)d' % dict(i=c.page['first'], l=c.page['last'], count=c.page['total']))}.</p>
+		<div class="limiter">
+		${_('Show items:')}
+		${h.pager_select(name, str(c.page['results_per_page']))}
+		${_('per page')}
+		</div>
+		<div class="pages">
+		% if not c.page['page_numbers']:
+		-
+		% endif
+		% else:
+		<p>${_('No items found')}</p>
+		% endif
+		% if c.page['total'] and c.page['show_first']:
+		<span>${h.link_to(h.pager_img('first'), url.current(q=c.page['q'], page=c.page['first_page'], a=c.action))}</span>
+		<span>...</span>
+		% endif
+		% if c.page['total'] and c.page['has_previous']:
+		<span>
+		  ${h.link_to(h.pager_img('previous'), url.current(q=c.page['q'], page=c.page['previous'], a=c.action))}
+		</span>
+		% endif
+		% for linkpage in c.page['page_numbers']:
+		% 	if linkpage == c.page['page']:
+		<span class="curpage">${linkpage}</span>
+		% 	else:
+		<span>
+		  ${h.link_to(h.literal(linkpage), url.current(q=c.page['q'], page=linkpage, a=c.action))}
+		</span>
+		% 	endif
+		% endfor
+		% if c.page['total'] and c.page['has_next']:
+		<span>
+		  ${h.link_to(h.pager_img('next'), url.current(q=c.page['q'], page=c.page['next'], a=c.action))}
+		% endif
+		</span>
+		% if c.page['total'] and c.page['show_last']:
+		<span>...</span>
+		<span>
+		  ${h.link_to(h.pager_img('last'), url.current(q=c.page['q'], page=c.page['last_page'], a=c.action))}
+		% endif
+		</span>
+		% if c.page['total'] != 0:
+		</div>
+		% else:
+		<div class="pages">-</div>
+		% endif
+	</div>
+</div>
+</%def>
+
+<%def name="heading()">\
+${_('Messages :: Search results :: %(q)s') % dict(q=c.page['q'])}
+</%def>
+
+<%def name="title()">\
+${_('Messages :: Search results :: %(q)s') % dict(q=c.page['q'])}\
+</%def>
+
+<%def name="status()">\
+</%def>
+
+<%def name="headers()">\
+</%def>
+
+<%def name="localscripts()">\
+<script type="text/javascript">
+var setitems_url = "${url(controller='messages', action='setnum')}";
+var search_url = "${url(controller='messages', action='search')}";
+</script>
+${h.javascript_link(h.media_url() + 'js/jquery.address-1.4.min.js',
+h.media_url() + 'js/baruwa/messages.search.js')}
+</%def>
+<%namespace name="functions" file="functions.html"/>
+<%inherit file="/base.html"/>
+

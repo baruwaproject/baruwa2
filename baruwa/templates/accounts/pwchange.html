@@ -1,0 +1,43 @@
+<div class="alpos">
+	<div class="grid_16">
+		<ul id="msgops">
+		  <li>${h.link_to(_('Return to account'), url('account-detail', userid=c.id))}</li>
+		</ul>
+	</div>
+</div>
+<div id="content">
+<div class="grid_16">
+    <h3 class="head">${_('Change password')}</h3>
+</div>
+${h.form(url(c.posturl, userid=c.id), method='post')}
+<%include file="/forms/base.html"/>
+    <div class="grid_16 drow">
+        <div class="grid_7">&nbsp;</div>
+        <div class="grid_8">
+            <input id="cancel-button" type="reset" value="${_('Reset')}" />&nbsp;
+            ${h.submit('submit', _('Change password'))}
+        </div>
+        
+    </div>
+${h.end_form()}
+</div>
+
+<%def name="title()">
+${_('Accounts :: %(name)s :: Change password') % dict(name=c.username)}
+</%def>
+
+<%def name="heading()">
+${_('Accounts :: %(name)s :: Change password') % dict(name=c.username)} 
+</%def>
+
+<%def name="submenu()">
+<ul>
+  <li>${h.link_to(_('Account details'), url('account-detail', userid=c.id))}</li>
+</ul>
+</%def>
+
+<%def name="headers()">
+</%def>
+<%def name="localscripts()">\
+</%def>
+<%inherit file="/base.html"/>

@@ -1,0 +1,92 @@
+<div class="alpos">
+	<div class="grid_16">
+		<ul id="msgops">
+		  	<li>${h.link_to(_('Inbound Queue'), url('mailq-status-directed', queue='inbound'))}</li>
+		    <li>${h.link_to(_('Outbound Queue'), url('mailq-status-directed', queue='outbound'))}</li>
+		    <li>${h.link_to(_('Preview message'), url('mailq-preview', queueid=c.mailqitem.id))}</li>
+		</ul>
+	</div>
+</div>
+<div class="clear"></div>
+<div id="content">
+		<div class="grid_16 alpha">
+			<h3 class="head">${_('Message Details')}</h3>
+		</div>
+		<div class="clear"></div>
+		<div class="grid_16 alpha drow">
+			<div class="grid_7">${_('Message ID')}</div>
+			<div class="grid_8">${h.wrap_paragraphs(c.mailqitem.messageid, 60)}</div>
+		</div>
+		<div class="grid_16 alpha drow">
+			<div class="grid_7">${_('Received on')}</div>
+			<div class="grid_8">${c.mailqitem.timestamp}</div>
+		</div>
+		<div class="grid_16 alpha drow">
+			<div class="grid_7">${_('Subject')}</div>
+			<div class="grid_8">${c.mailqitem.subject or '---'}</div>
+		</div>
+		<div class="grid_16 alpha drow">
+			<div class="grid_7">${_('From address')}</div>
+			<div class="grid_8">${c.mailqitem.from_address or '---'}</div>
+		</div>
+		<div class="grid_16 alpha drow">
+			<div class="grid_7">${_('To address')}</div>
+			<div class="grid_8">${h.do_breaks(c.mailqitem.to_address)}</div>
+		</div>
+		<div class="grid_16 alpha drow">
+			<div class="grid_7">${_('From domain')}</div>
+			<div class="grid_8">${c.mailqitem.from_domain or '---'}</div>
+		</div>
+		<div class="grid_16 alpha drow">
+			<div class="grid_7">${_('To domain')}</div>
+			<div class="grid_8">${c.mailqitem.to_domain or '---'}</div>
+		</div>
+		<div class="grid_16 alpha drow">
+			<div class="grid_7">${_('Received by')}</div>
+			<div class="grid_8">${c.mailqitem.hostname}</div>
+		</div>
+		<div class="grid_16 alpha drow">
+			<div class="grid_7">${_('Size')}</div>
+			<div class="grid_8">${h.format_byte_size(c.mailqitem.size)}</div>
+		</div>
+		<div class="grid_16 alpha drow">
+			<div class="grid_7">${_('Number of delivery attempts')}</div>
+			<div class="grid_8">${c.mailqitem.attempts}</div>
+		</div>
+		<div class="grid_16 alpha drow">
+			<div class="grid_7">${_('Last delivery attempt at')}</div>
+			<div class="grid_8">${c.mailqitem.lastattempt}</div>
+		</div>
+		<div class="grid_16 alpha drow">
+			<div class="grid_7">${_('Reason for queuing')}</div>
+			<div class="grid_8">${h.linebreaksbr(c.mailqitem.reason) or 'undetermined'}</div>
+		</div>
+		<div class="grid_16 alpha">
+			<h3 class="head" id="q">${_('Process message')}</h3>
+		</div>
+		<div class="grid_16 alpha drow bold">
+			<div class="prefix_12 grid_2 omega">${_('Action')}</div>
+			<div class="grid_2 omega">${_('Process')}</div>
+		</div>
+		${h.form(url('mailq-process'), method='post')}
+		<div class="grid_16 alpha drow">
+			<div class="prefix_10 grid_2 omega">${', '.join(c.form.queue_action.errors) if c.form.queue_action.errors else h.literal('&nbsp;')}</div>
+			<div class="grid_2 omega">${c.form.queue_action(class_="searchrow")}</div>
+			<div class="grid_2 omega">${h.submit('mqs', _("Process"))}</div>
+		</div>
+		${h.HTML.div(c.form.csrf_token, style="display: none;")}
+		${h.HTML.div(h.hidden('id', c.mailqitem.id), style="display: none;")}
+		${h.end_form()}\
+		<div class="clear"></div>
+</div>
+<%def name="headers()">\
+</%def>
+<%def name="title()">\
+ ${_('Showing Mail queue message :: %(i)s') % dict(i=h.wrap_paragraphs(c.mailqitem.messageid, 60))}
+</%def>
+<%def name="heading()">\
+${self.title()}
+</%def>
+<%def name="localscripts()">\
+</%def>
+<%inherit file="/base.html"/>

@@ -1,0 +1,96 @@
+<div class="alpos">
+	<ul id="msgops">
+		<li>${h.link_to(_('Export accounts'), url('accounts-export-byorg', orgid=c.org.id))}</li>
+		<li>${h.link_to(_('Import domains'), url('orgs-import-domains', orgid=c.org.id))}</li>
+		<li>${h.link_to(_('Add relay settings'), url('orgs-add-relay', orgid=c.org.id))}</li>
+		<li>${h.link_to(_('Edit'), url('orgs-edit', orgid=c.org.id))}</li>
+		<li>${h.link_to(_('Delete'), url(controller='organizations', action='delete', orgid=c.org.id))}</li>
+	</ul>
+</div>
+<div class="clear"></div>
+<div id="content">
+<div class="grid_16">
+    <h3 class="head">
+		${_('Organization information')}
+	</h3>
+</div>
+<div class="grid_16 drow">
+	<div class="grid_7">
+		${_('Organization name')}:
+	</div>
+	<div class="grid_8">
+		${c.org.name}
+	</div>
+</div>
+<div class="grid_16 drow">
+	<div class="grid_7">
+		${_('Number of Domains')}:
+	</div>
+	<div class="grid_8">
+		${len(c.org.domains)}
+	</div>
+</div>
+<div class="grid_16 drow">
+	<div class="grid_7">
+		${_('List Domains')}:
+	</div>
+	<div class="grid_8">
+		${h.link_to(_('Organization domains'), url('domains-byorg', orgid=c.org.id))}
+	</div>
+</div>
+<div class="grid_16 drow">
+	<div class="grid_7">
+		${_('Organization Admins')}:
+	</div>
+	<div class="grid_8">
+		% for index, admin in enumerate(c.org.admins):
+		${h.link_to(admin.username, url('account-detail', userid=admin.id))}
+		% if index != (len(c.org.admins) - 1):
+		,
+		% endif
+		% endfor
+	</div>
+</div>
+<div class="grid_16">
+    <h3 class="head">${_('Outbound relay settings')}</h3>
+</div>
+% for settings in c.org.relaysettings:
+<div class="grid_16 drow">
+	<div class="grid_12">
+		% if settings.address:
+		${_('Relay Host: %(name)s') % dict(name=settings.address)}
+		% else:
+		${_('SMTP-AUTH: %(name)s') % dict(name=settings.username)}
+		% endif
+	</div>
+	<div class="grid_1">
+		${h.enabled_or_not(settings.enabled)}
+	</div>
+	<div class="grid_1">
+		${h.link_to(h.portable_img('imgs/edit.png', _('Edit'), class_="positio"), url('orgs-edit-relay', settingid=settings.id))}
+	</div>
+	<div class="grid_1">
+		${h.link_to(h.portable_img('imgs/del_red.png', _('Delete'), class_="positio"), url('orgs-del-relay', settingid=settings.id))}
+	</div>
+</div>
+% endfor
+% if not c.org.relaysettings:
+<div class="grid_16 drow">
+	<div class="spanrow">${_('No outbound relay settings configured')}</div>
+</div>
+% endif
+</div>
+
+<%def name="title()">
+${_('Organizations :: ') + c.org.name}
+</%def>
+
+<%def name="heading()">
+${_('Organizations :: ') + c.org.name}
+</%def>
+
+<%def name="headers()">
+</%def>
+<%def name="localscripts()">\
+</%def>
+<%inherit file="/base.html"/>

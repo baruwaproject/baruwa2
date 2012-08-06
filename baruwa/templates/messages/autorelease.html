@@ -1,0 +1,53 @@
+## -*- coding: utf-8 -*-
+<%!
+    from pylons.i18n.translation import set_lang, get_lang
+%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>Baruwa :: ${_('Auto Quarantine release result:')}</title>
+<link href="${h.media_url()}css/grid.css" media="screen, projection" rel="stylesheet" type="text/css" />
+<link href="${h.media_url()}css/text.css" media="screen, projection" rel="stylesheet" type="text/css" />
+<link rel="icon" href="${h.media_url()}imgs/favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="${h.media_url()}imgs/favicon.ico" type="image/x-icon" />
+</head>
+<body>
+<div id="wrap">
+	<div id="header-bar">
+		<div id="header">
+			<img src="${h.media_url()}imgs/logo.png" alt="Baruwa" class="logo" />
+		</div>
+	</div>
+	<div id="login-wrapper">
+		<div id="login-box">
+			<h2>${_('Auto Quarantine release result:')}</h2>
+			<p>
+				% if c.released:
+				${h.image(h.media_url() + 'imgs/passed.png', _('Passed'))} ${_('Message released')}
+				% else:
+				${h.image(h.media_url() + 'imgs/failed.png', _('Failed'))} ${_('Message not released')}
+				% endif 
+			</p>
+			<hr/>
+			<p>
+				% if not c.released:
+				${c.errormsg}
+				% else:
+				${_('Message with Message-ID: %s released from quarantine to: %s') % (c.messageid, c.releaseaddress)}
+				% endif
+			</p>
+		</div>
+	</div>
+	<div id="footer-bar">
+		<div id="footer">
+			<div id="copyright">
+				<a href="http://www.baruwa.org/">Baruwa</a> &copy; 2011 Andrew Colin Kissa 
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

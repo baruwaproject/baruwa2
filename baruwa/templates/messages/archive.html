@@ -1,0 +1,67 @@
+<div class="alpos">
+	<ul id="msgops">
+		<li><a href="#">${_('Apply filters')}</a></li>
+		<li><a href="#">${_('Show applied filters')}</a></li>
+	</ul>
+</div>
+<div class="clear"></div>
+<div class="sp10"></div>
+${functions.search('archive')}
+<div class="clear"></div>
+<div class="sp10"></div>
+<div class="alpos">
+	<div class="toolbar">${self.paging(h.do_pagination(c.page), 'sarchivetop')}</div>
+</div>
+<div id="content">
+<table class="messages">
+${functions.grid_heading('archive')}
+${functions.print_rows('message-archive')}
+</table>
+</div>
+<div class="alpos">
+	<div class="toolbar">${self.paging(h.do_pagination(c.page), 'sarchivebottom')}</div>
+</div>
+<div class="clear"></div>
+<div class="sp10"></div>
+<%def name="heading()">\
+% if c.page.page_count > 0:
+${_('Messages :: Archive :: Showing page %(page)d of %(count)d pages.') % dict(page=c.page.page, count=c.page.page_count)}
+% if 'filter_by' in session and session['filter_by']:
+(<small><a href="${url(controller='reports')}#active_filters">${_("Filters")}</a> ${_("have been applied")}</small>)
+% endif
+% else:
+${_('Messages :: Archive')}
+% endif
+</%def>
+
+<%def name="title()">\
+% if c.page.page_count > 0:
+${_('Messages :: Archive :: Showing page %(page)d of %(count)d pages.') % dict(page=c.page.page, count=c.page.page_count)}\
+% else:
+${_('Messages :: Archive')}
+% endif
+</%def>
+
+<%def name="status()">\
+</%def>
+
+<%def name="heading_links(link_text, order_by)">
+	${h.link_to(link_text, url('messages-paging', action='archive', 
+	page=c.page.page, direction=c.direction, order_by=order_by))}
+</%def>
+
+<%def name="headers()">\
+</%def>
+<%def name="localscripts()">\
+<script type="text/javascript">
+var setitems_url = "${url(controller='messages', action='setnum')}";
+</script>
+${h.javascript_link(h.media_url() + 'js/jquery.address-1.4.min.js',
+h.media_url() + 'js/baruwa/messages.common.js',
+h.media_url() + 'js/baruwa/messages.archive.js')}
+</%def>
+<%def name="paging(page_nums, fieldname)">
+${functions.paging(page_nums, 'archive', fieldname)}
+</%def>
+<%namespace name="functions" file="functions.html"/>
+<%inherit file="/base.html"/>

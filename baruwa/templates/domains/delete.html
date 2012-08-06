@@ -1,0 +1,37 @@
+<div class="alpos">
+	<ul id="msgops">
+		<li>${h.link_to(_('Domain details'), url(controller='domains', action='detail', domainid=c.id))}</li>
+	</ul>
+</div>
+<div class="clear"></div>
+<div id="content">
+<div class="grid_16">
+    <h3 class="head">${_('Delete Domain')}</h3>
+</div>
+${h.form(url('domain-delete', domainid=c.id), method='post')}
+<%include file="/forms/disabled.base.html"/>
+<div class="grid_16 drow">
+    <div class="grid_7">&nbsp;</div>
+    <div class="grid_8">
+		${h.submit('submit', _('Delete domain'))}
+    </div>
+    
+</div>
+${h.end_form()}\
+</div>
+<div class="clear"></div>
+<div class="sp10"></div>
+
+<%def name="title()">
+${_('Domains :: Delete Domain')}
+</%def>
+
+<%def name="heading()">
+${_('Domains :: Delete Domain')}
+</%def>
+
+<%def name="headers()">
+</%def>
+<%def name="localscripts()">\
+</%def>
+<%inherit file="/base.html"/>

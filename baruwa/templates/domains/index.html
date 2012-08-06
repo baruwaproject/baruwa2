@@ -1,0 +1,152 @@
+<div class="alpos">
+	<ul id="msgops">
+		<li>${h.link_to(_('Export Domains'), url('domains-export-byorg', orgid=c.orgid) if c.orgid else url('domains-export'))}</li>
+	</ul>
+</div>
+${s.searchbox(url('domains-search'), [('o', c.orgid),]) if c.orgid else s.searchbox(url('domains-search'))}
+<div class="clear"></div>
+<div class="sp10"></div>
+<div class="alpos">
+	<div class="toolbar">${self.paging(h.do_pagination(c.page), 'seldomaintop')}</div>
+</div>
+<div id="content">
+${h.form(url.current(), method='post')}
+<div class="mkbox">
+	<div class="grid_16 formcontrols">
+	<div class="grid_2 prefix_7">${h.radio('whatdo', 'delete', label='Delete', class_='fieldcontrols')}</div>
+	<div class="grid_2">${h.radio('whatdo', 'disable', label='Disable', class_='fieldcontrols')}</div>
+	<div class="grid_2">${h.radio('whatdo', 'enable', label='Enable', class_='fieldcontrols')}</div>
+	<div class="grid_2">${h.submit('submit', _('Submit'))}</div>
+	</div>
+</div>
+<div class="clear"></div>
+<div class="sp10"></div>
+<table class="domains">
+<thead>
+<tr class="grid">
+	<th class="domains_heading_hash domains_check">${h.checkbox('checkall')}</th>
+	<th class="domains_heading_name">${_('Domain Name')}</th>
+	<th class="domains_heading_owner">${_('Organization')}</th>
+	<th class="domains_heading_owner">${_('Accounts')}</th>
+	<th class="domains_heading_status">${_('Status')}</th>
+	<th class="domains_heading_action" colspan="3">${_('Actions')}</th>
+</tr>
+</thead>
+<tbody>
+% if not c.page.items:
+<tr><td class="spanrow" colspan="7">${_('No domains found')}</td></tr>
+% endif
+% for domain in c.page.items:
+<tr id="domain-id-${domain.id}">
+	<td class="domains_check">${h.checkbox('domainid', value=domain.id, class_='selector')}</td>
+	<td class="domains_name">
+		${h.link_to(domain.name, url(controller='domains', action='detail', domainid=domain.id))}
+	</td>
+	<td class="domains_owner inl">
+		<%
+		orglinks = []
+		for org in domain.organizations:
+			link = h.link_to(org.name, url('org-detail', orgid=org.id)) if c.user.is_superadmin else org.name
+			orglinks.append(link)
+		orglinks = ', '.join(orglinks)
+		%>
+		${orglinks|n}
+	</td>
+	<td class="domains_accounts">${h.link_to(h.portable_img('imgs/user.png', _('List accounts')), url('accounts-bydom', domid=domain.id))}</td>
+	<td class="domains_status">${h.enabled_or_not(domain.status)}</td>
+	<td class="domains_settings">${h.link_to(h.portable_img('imgs/cog.png', _('settings')), url('domain-settings', domainid=domain.id))}</td>
+	<td class="domains_edit">${h.link_to(h.portable_img('imgs/edit.png', _('Edit')), url(controller='domains', action='edit', domainid=domain.id))}</td>
+	<td class="domains_delete">${h.link_to(h.portable_img('imgs/action_delete.png', _('Delete')), url(controller='domains', action='delete', domainid=domain.id))}</td>
+</tr>
+% endfor
+</tbody>
+</table>
+${h.end_form()}\
+</div>
+<div class="alpos">
+	<div class="toolbar">${self.paging(h.do_pagination(c.page), 'seldomainbottom')}</div>
+</div>
+<div class="clear"></div>
+<div class="sp10"></div>
+
+<%def name="title()">\
+% if c.page.page_count != 0:
+${ungettext('Domains :: Showing page %(page)d of %(count)d page.', 'Domains :: Showing page %(page)d of %(count)d pages.', c.page.page_count) % dict(page=c.page.page, count=c.page.page_count)}
+% else:
+${_('Domains ::')}
+% endif
+</%def>
+
+<%def name="heading()">\
+% if c.page.page_count != 0:
+${ungettext('Domains :: Showing page %(page)d of %(count)d page.', 'Domains :: Showing page %(page)d of %(count)d pages.', c.page.page_count) % dict(page=c.page.page, count=c.page.page_count)}
+% else:
+${_('Domains ::')}
+% endif
+</%def>
+
+<%def name="headers()">\
+</%def>
+
+<%def name="paging(page_nums, fieldname)">
+% if c.page.page_count != 0:
+<p>${_('Showing items %(i)d to %(l)d of %(count)d' % dict(i=c.page.first_item, l=c.page.last_item, count=c.page.item_count))}.</p>
+<div class="limiter">
+${_('Show items:')}
+${h.pager_select(fieldname, str(c.page.items_per_page))}
+${_('per page')}
+</div>
+<div class="pages">
+% if c.page.page_count == 1:
+-
+% endif
+% else:
+<p>${_('No items found')}</p>
+% endif
+% if c.page.next_page != c.page.first_page and c.page.page != c.page.first_page:
+<span>
+	${h.link_to(h.pager_img('first'), url('domains-byorg-pages', orgid=c.orgid, page=c.page.first_page) if c.orgid else url('domain-pages', page=c.page.first_page))}
+</span>
+<span>...</span>
+% endif
+% if c.page.previous_page:
+<span>
+	${h.link_to(h.pager_img('previous'), url('domains-byorg-pages', orgid=c.orgid, page=c.page.previous_page) if c.orgid else url('domain-pages', page=c.page.previous_page))}
+</span>
+% endif
+% for linkpage in page_nums:
+% 	if linkpage == c.page.page:
+<span class="curpage">${linkpage}</span>
+% 	else:
+<span>
+	${h.link_to(h.literal(linkpage), url('domains-byorg-pages', orgid=c.orgid, page=linkpage) if c.orgid else url('domain-pages', page=linkpage))}
+</span>
+% 	endif
+% endfor
+% if c.page.next_page:
+<span>
+	${h.link_to(h.pager_img('next'), url('domains-byorg-pages', orgid=c.orgid, page=c.page.next_page) if c.orgid else url('domain-pages', page=c.page.next_page))}
+</span>
+% endif
+% if c.page.next_page != c.page.page_count and c.page.page != c.page.page_count and c.page.page_count != 0:
+<span>...</span>
+<span>
+	${h.link_to(h.pager_img('last'), url('domains-byorg-pages', orgid=c.orgid, page=c.page.page_count) if c.orgid else url('domain-pages', page=c.page.page_count))}
+</span>
+% endif
+% if c.page.page_count != 0:
+</div>
+% else:
+<div class="pages">-</div>
+% endif
+</%def>
+
+<%def name="localscripts()">\
+<script type="text/javascript">
+var setitems_url = "${url(controller='domains', action='setnum')}";
+</script>
+${h.javascript_link(h.media_url() + 'js/jquery.address-1.4.min.js',
+h.media_url() + 'js/baruwa/domains.js')}
+</%def>
+<%namespace name="s" file="/includes/search.html"/>
+<%inherit file="/base.html"/>

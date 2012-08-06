@@ -1,0 +1,216 @@
+<div class="alpos">
+	<div class="grid_16">
+		<ul id="msgops">
+		  <li><a href="#" id="listsender">${_('Add sender to list')}</a></li>
+		% if c.msg.isquarantined:
+		  <li>${h.link_to(_('Preview message'), url('message-archive-preview', id=c.msg.id) if c.archived else url('message-preview', id=c.msg.id))}</li>
+		  <li>${h.link_to(_('Release message'), url.current(anchor="q"))}</li>
+		% endif
+		</ul>
+	</div>
+</div>
+<div class="clear"></div>
+<div id="content">
+		<div class="grid_16">
+			<h3 class="head">${_('Message Details')}</h3>
+		</div>
+		<div class="clear"></div>
+		<div class="grid_16 drow">
+			<div class="grid_7">${_('Message ID')}</div>
+			<div class="grid_8">${h.wrap_paragraphs(c.msg.messageid, 60)}</div>
+		</div>
+		<div class="grid_16 drow">
+			<div class="grid_7">${_('From address')}</div>
+			<div class="grid_8" id="from_addr">${c.msg.from_address or '---'}</div>
+		</div>
+		<div class="grid_16 drow">
+			<div class="grid_7">${_('To address')}</div>
+			<div class="grid_8" id="to_addr">${h.do_breaks(c.msg.to_address or '---')}</div>
+		</div>
+		<div class="grid_16 drow">
+			<div class="grid_7">${_('Subject')}</div>
+			<div class="grid_8">${c.msg.subject or '---'}</div>
+		</div>
+		<div class="grid_16 drow">
+			<div class="grid_7">${_('Received on')}</div>
+			<div class="grid_8">${c.msg.timestamp}</div>
+		</div>
+		<div class="grid_16 drow">
+			<div class="grid_7">${_('Received by')}</div>
+			<div class="grid_8">${c.msg.hostname}</div>
+		</div>
+		<div class="grid_16 drow">
+			<div class="grid_7">${_('Received from')}</div>
+			<div class="grid_8" id="clientip">${c.msg.clientip}</div>
+		</div>
+		<div class="grid_16 drow">
+			<div class="grid_7">${_('Received via')}</div>
+			<div class="grid_8">
+				% if c.show_trail:
+				<%include file="includes/relayedvia.html"/>
+				% endif
+				<div class="toggle" id="rvtoggle">
+				${h.link_to(h.portable_img("imgs/minimize.png", '.') + h.literal('&nbsp;') + _('Hide hosts'), url.current()) if c.show_trail else h.link_to(h.portable_img("imgs/maximize.png", '^') + h.literal('&nbsp;') + _('Show hosts'), url.current(t='y'))}
+				</div>
+			</div>
+		</div>
+		<div class="grid_16 drow">
+			<div class="grid_7">${_('Size')}</div>
+			<div class="grid_8">${h.format_byte_size(c.msg.size)}</div>
+		</div>
+		<div class="grid_16 drow">
+			<div class="grid_7">${_('Message Headers')}</div>
+			<div class="grid_8">
+				<div id="mail-headers" style="display:${'block' if c.show_trail else 'none'};">
+				<%include file="includes/mailheaders.html"/>
+				</div>
+				<div class="toggle" id="mhtoggle">
+				${h.link_to(h.portable_img("imgs/minimize.png", '.') + h.literal('&nbsp;') + _('Hide headers'), url.current()) if c.show_trail else h.link_to(h.portable_img("imgs/maximize.png", '^') + h.literal('&nbsp;') + _('Show headers'), url.current(t='y'))}
+				</div>
+			</div>
+		</div>
+		<div class="grid_16 drow">
+			<div class="grid_7">${_('Quarantined')}</div>
+			<div class="grid_8">${h.value_yes_no(c.msg.isquarantined)}</div>
+		</div>
+		<div class="grid_16 drow">
+			<div class="grid_7">${_('Virus infected')}</div>
+			<div class="grid_8">${h.value_yes_no(c.msg.virusinfected)}</div>
+		</div>
+		<div class="grid_16 drow">
+			<div class="grid_7">${_('Prohibited File')}</div>
+			<div class="grid_8">${h.value_yes_no(c.msg.nameinfected)}</div>
+		</div>
+		<div class="grid_16 drow">
+			<div class="grid_7">${_('Other infection')}</div>
+			<div class="grid_8">${h.value_yes_no(c.msg.otherinfected)}</div>
+		</div>
+		<div class="clear"></div>
+		<div class="sp20"></div>
+		<div class="grid_16">
+			<h3 class="head">${_('Spam checks results')}</h3>
+		</div>
+		<div class="grid_16">
+			<div class="grid_6 alpha">
+				<h3 class="head">${_('Results')}</h3>
+				<div class="clear"></div>
+				<div class="grid_6 alpha drow">
+					<div class="grid_4">${_('Message Score')}</div>
+					<div class="grid_1">${c.msg.sascore}</div>
+				</div>
+				<div class="grid_6 alpha drow">
+					<div class="grid_4">${_('Identified as Spam')}</div>
+					<div class="grid_1">${h.spam_actions(c.msg, 1)}</div>
+				</div>
+				<div class="grid_6 alpha drow">
+					<div class="grid_4">${_('Definite Spam')}</div>
+					<div class="grid_1">${h.spam_actions(c.msg, 2)}	</div>
+				</div>
+				<div class="grid_6 alpha drow">
+					<div class="grid_4">${_('Sender in RBL')}</div>
+					<div class="grid_1">${h.value_yes_no(c.msg.rblspam)}\
+					% if c.msg.rblspam:
+					RBL's: ${h.get_rbl_name(c.msg.spamreport)}
+					% endif
+					</div>
+				</div>
+				<div class="grid_6 alpha drow">
+					<div class="grid_4">${_('Approved Sender')}</div>
+					<div class="grid_1">${h.value_yes_no(c.msg.whitelisted)}</div>
+				</div>
+				<div class="grid_6 alpha drow">
+					<div class="grid_4">${_('Blocked Sender')}</div>
+					<div class="grid_1">${h.value_yes_no(c.msg.blacklisted)}</div>
+				</div>
+				<div class="grid_6 alpha drow">
+					<div class="grid_4">${_('Bayesian Auto Learned')}</div>
+					<div class="grid_1">${h.sa_learned(c.msg.spamreport)}</div>
+				</div>
+			</div>
+			<div class="grid_10 omega">
+				<h3 class="head">${_('Rules matched')}</h3>
+				<div class="grid_10 alpha drow bold">
+					<div class="grid_1">${_('Score')}</div>
+					<div class="grid_4 omega">${_('Rule name')}</div>
+					<div class="grid_5 omega">${_('Rule description')}</div>
+				</div>
+				% for rule in h.spam_report(c.msg.spamreport):
+				<div class="grid_10 alpha drow">
+					<div class="grid_1">${rule['score']}</div>
+					<div class="grid_4 omega">${rule['rule']}</div>
+					<div class="grid_5 omega">${rule['description']}</div>
+				</div>
+				% endfor
+			</div>
+		</div>
+		% if c.msg.isquarantined:
+		<div class="clear"></div>
+		<div class="sp20"></div>
+		<div class="grid_16">
+			<h3 class="head" id="q">${_('Quarantine')}</h3>
+		</div>
+		<div class="grid_16 drow bold">
+			<div class="grid_2 omega">${c.form.release.label}</div>
+			<div class="grid_2 omega">${c.form.delete.label}</div>
+			<div class="grid_2 omega">${c.form.learn.label}</div>
+			<div class="grid_2 omega">${c.form.usealt.label}</div>
+		</div>
+			% if c.msg.virusinfected or c.msg.nameinfected or c.msg.otherinfected:
+			  % if c.user.account_type != 3:
+			     <%include file="includes/enabledform.html"/>
+			  % else:
+			     <%include file="includes/disabledform.html"/>
+			  % endif
+			% else:
+			  <%include file="includes/enabledform.html"/>
+			% endif
+		% endif
+		<div class="clear"></div>
+		<div class="sp20"></div>
+		<div class="grid_16">
+			<h3 class="head">${_('Delivery information')}</h3>
+		</div>
+		% if c.msgstatus:
+		<div class="grid_16 drow bold">
+			<div class="grid_2 omega">${_('Status')}</div>
+			<div class="grid_4 omega">${_('Hostname')}</div>
+			<div class="grid_6 omega">${_('Message')}</div>
+			<div class="grid_4 omega">${_('Date/Time')}</div>
+		</div>
+		% else:
+		<div class="grid_16 drow">
+			<div class="grid_15 prefix_1">
+			% if not 'deliver' in c.msg.actions.split(','):
+			${_('Message is quarantined')}
+			% else:
+		    ${_('No delivery status information available')}
+		    % endif
+			</div>
+		</div>
+		% endif
+		% for status in c.msgstatus:
+		<div class="grid_16 drow">
+			<div class="grid_2 omega">${h.portable_img('imgs/passed_relay.png', _('Ok'), class_="positio") if status.errorno == 0 else h.portable_img('imgs/failed_relay.png', _('Fail'), class_="positio")}</div>
+			<div class="grid_4 omega">${status.hostname}</div>
+			<div class="grid_6 omega">${status.confirmation if status.errorno == 0 else status.errorstr}</div>
+			<div class="grid_4 omega">${h.datetimeformat(status.timestamp)}</div>
+		</div>
+		% endfor
+		<div class="clear"></div>
+</div>
+<%def name="headers()">\
+</%def>
+<%def name="title()">\
+ ${_('Showing message :: %(i)s') % dict(i=h.wrap_paragraphs(c.msg.messageid, 60))}
+</%def>
+<%def name="heading()">\
+${self.title()}
+</%def>
+<%def name="localscripts()">\
+<script type="text/javascript">
+var list_add_url = "${url('lists-add')}";
+var relayedvia_url = "${url('messages-archived-ajax-relayedvia', id=c.msg.id) if c.archived else url('messages-ajax-relayedvia', id=c.msg.id)}";
+</script>
+${h.javascript_link(h.media_url() + 'js/baruwa/messages.detail.js')}
+</%def>
+<%inherit file="/base.html"/>

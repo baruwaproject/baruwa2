@@ -1,0 +1,49 @@
+<div class="alpos">
+	<div class="grid_16">
+		<ul id="msgops">
+			<li>${h.link_to(_('General'), url.current(sectionid=1))}</li>
+			<li>${h.link_to(_('Message Processing'), url.current(sectionid=2))}</li>
+			<li>${h.link_to(_('Virus checks'), url.current(sectionid=3))}</li>
+			<li>${h.link_to(_('Content checks'), url.current(sectionid=4))}</li>
+			<li>${h.link_to(_('Reporting'), url.current(sectionid=5))}</li>
+			<li>${h.link_to(_('Notice'), url.current(sectionid=6))}</li>
+			<li>${h.link_to(_('Spam checks'), url.current(sectionid=7))}</li>
+			<li>${h.link_to(_('Logging'), url.current(sectionid=8))}</li>
+		</ul>
+	</div>
+</div>
+<div class="clear"></div>
+<div id="content">
+	<div class="grid_16">
+		<h3 class="head">${c.sections[int(c.sectionid)]}</h3>
+	</div>
+	<div class="clear"></div>
+	<div class="sp10"></div>
+	${h.form(url('scanner-section', sectionid=c.sectionid, serverid=c.serverid), id='settingform', method='post')}
+	<%include file="/forms/base.html"/>
+	<div class="grid_16 drow">
+	    <div class="grid_7">&nbsp;</div>
+	    <div class="grid_8">
+			${h.submit('submit', _('Save settings'))}
+	    </div>
+	</div>
+	${h.end_form()}\
+	<div class="clear"></div>
+	<div class="sp10"></div>
+</div>
+
+
+<%def name="title()">
+${_('Settings :: MailScanner :: %(section)s :: %(name)s') % dict(section=c.sections[int(c.sectionid)], name=c.scanner.hostname)}
+</%def>
+
+<%def name="heading()">
+${_('Settings :: MailScanner :: %(section)s :: %(name)s') % dict(section=c.sections[int(c.sectionid)], name=c.scanner.hostname)}
+</%def>
+
+<%def name="headers()">
+</%def>
+<%def name="localscripts()">
+</%def>
+
+<%inherit file="/base.html"/>

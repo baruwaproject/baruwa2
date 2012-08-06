@@ -1,0 +1,70 @@
+<div class="alpos">
+	<ul id="msgops">
+		<li id="addfilter">${h.link_to(_('Apply Filters'), url(controller='reports', action='index', anchor='form-area'))}</li>
+		<li>${h.link_to(_('Download PDF'), url(controller='reports', action='display', reportid=c.reportid) + '.pdf')}</li>
+		<li><a href="#">${_('Download CSV')}</a></li>
+	</ul>
+</div>
+<div class="clear"></div>
+<div class="sp10"></div>
+<div id="content">
+	<div id="form-area">
+		${forms.form()}
+	</div>
+	<div class="clear"></div>
+	<div class="sp20"></div>
+	${forms.select_filter()}\
+	<div class="clear"></div>
+	<div class="sp20"></div>
+	<div class="grid_16">
+		<div id="chart" style="width: 940px; height: 250px;">
+			<!--<noscript>${_('Enable javascript to view graphs')}</noscript>-->
+			<img src="${url(controller='reports', action='display', reportid=request.environ['pylons.routes_dict']['reportid'])}.png" alt="graph" />
+		</div>
+	</div>
+	<div class="grid_16 omega drow">
+		<div class="grid_7">
+			${_('Score')}
+		</div>
+		<div class="grid_8">
+			${_('Count')}
+		</div>
+	</div>
+	<div id="graphrows">
+	% for i, item in enumerate(c.top_items):
+		<div class="grid_16 omega drow">
+			<div class="grid_7">
+				${item.score}
+			</div>
+			<div class="grid_8">
+				${item.count}
+			</div>
+		</div>	
+	% endfor
+	% if not c.top_items:
+		<div class="grid_16 alpha omega drow">
+			${_('No items returned')}
+		</div>
+	% endif
+	</div>
+	<div class="clear"></div>
+	<div class="sp10"></div>
+</div>
+
+<%def name="headers()">\
+</%def>
+
+<%def name="submenu()">
+<ul>
+  <li>${h.link_to(_('Download'), url('reports-download', reportid=c.reportid))}</li>
+</ul>
+</%def>
+<%def name="title()">${_('Reports :: ')}${_(c.report_title)}</%def>
+<%def name="heading()">${_('Reports :: ')}${_(c.report_title)}</%def>
+<%def name="localscripts()">\
+${h.javascript_link(h.media_url() + 'js/jquery.clearform.min.js',
+h.media_url() + 'js/baruwa/reports.common.js',
+h.media_url() + 'js/baruwa/reports.spam.js')}
+</%def>
+<%namespace name="forms" file="/reports/form.html"/>
+<%inherit file="/base.html"/>

@@ -1,0 +1,40 @@
+<div class="alpos">
+	<div class="grid_16">
+		<ul id="msgops">
+			<li>${h.link_to(_('Domain DKIM'), url('domain-dkim', domainid=c.domain.id))}</li>
+			<li>${h.link_to(_('Domain Settings'), url('domain-settings', domainid=c.domain.id))}</li>
+			<li>${h.link_to(_('Domain details'), url(controller='domains', action='detail', domainid=c.domain.id))}</li>
+		</ul>
+	</div>
+</div>
+<div class="clear"></div>
+<div id="content">
+	<div class="grid_16">
+		<h3 class="head">${_('Enable DKIM signing')}</h3>
+	</div>
+	${h.form(url('domain-dkim-enable', domainid=c.domain.id), method='post')}
+	<%include file="/forms/base.html"/>
+	<div class="grid_16 drow">
+	    <div class="grid_7">&nbsp;</div>
+	    <div class="grid_8">
+			${h.submit('submit', _('Submit'))}
+	    </div>
+	</div>
+	${h.end_form()}\
+</div>
+
+
+<%def name="title()">
+${_('Settings :: Enable DKIM signing :: %s') % c.domain.name}
+</%def>
+
+<%def name="heading()">
+${_('Settings :: Enable DKIM signing :: %s') % c.domain.name}
+</%def>
+
+<%def name="headers()">
+</%def>
+<%def name="localscripts()">
+</%def>
+
+<%inherit file="/base.html"/>

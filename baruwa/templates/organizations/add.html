@@ -1,0 +1,32 @@
+<div id="content">
+<div class="grid_16">
+    <h3 class="head">${_('Add an organization')}</h3>
+</div>
+${h.form(url('orgs-add'), method='post')}
+<%include file="/forms/base.html"/>
+<div class="grid_16 drow">
+    <div class="grid_7">&nbsp;</div>
+    <div class="grid_8">
+        <input id="cancel-button" type="reset" value="${_('Reset')}" />&nbsp;
+		${h.submit('submit', _('Add organization'))}
+    </div>
+</div>
+${h.end_form()}\
+</div>
+
+<%def name="title()">
+${_('Organizations :: Add an organization')}
+</%def>
+
+<%def name="heading()">
+${_('Organizations :: Add an organization')}
+</%def>
+
+<%def name="submenu()">
+</%def>
+<%def name="headers()">
+</%def>
+<%def name="localscripts()">
+</%def>
+
+<%inherit file="/base.html"/>

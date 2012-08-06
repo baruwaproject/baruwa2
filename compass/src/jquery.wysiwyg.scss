@@ -1,0 +1,330 @@
+@mixin user-select{
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+div.wysiwyg { 
+    border: 1px solid #999;
+    padding: 5px;
+    background: #fff url("imgs/jquery.wysiwyg.bg.png") repeat-x top;
+    iframe {
+        border: 1px solid #999;
+        clear: left;
+        -moz-box-shadow    :inset 0 0 10px rgba(0, 0, 0, 0.4);
+        -webkit-box-shadow :inset 0 0 10px rgba(0, 0, 0, 0.4);
+        box-shadow         :inset 0 0 10px rgba(0, 0, 0, 0.4);
+        background-color:white;
+        padding:0px;
+        margin:0;
+        display:block;
+        width: 100%;
+    }
+    ul.toolbar{
+        border-bottom:1px solid #ccc;
+        float:left;
+        width:100%;
+        padding: 0;
+
+        li.jwysiwyg-custom-command{
+            overflow: hidden;
+        }
+        li{
+            list-style: none;
+            float: left;
+            margin: 1px 2px 3px 0;
+            background: rgb(240, 240, 240);
+            @include user-select;
+            clear: none;
+            padding: 0;
+            text-indent: -5000px;
+            opacity: 0.85;
+            filter: alpha(opacity=85);
+            display: block;
+            width: 16px;
+            height: 16px;
+            background: url('/css/imgs/jquery.wysiwyg.gif') no-repeat -64px -80px;
+            border: 1px dotted rgb(240, 240, 240);
+            cursor: pointer;
+            margin: 0px;
+        }
+        li.separator {
+            width: 1px;
+            height: 16px;
+            margin: 0 4px;
+            border-left: 1px solid #ccc;
+        }
+        li.wysiwyg-button-hover, li.active{
+            opacity: 1.00;
+            filter:alpha(opacity=100);
+            border: 1px outset rgb(224, 224, 224);
+        }
+        li.active{
+            background-color: rgb(255, 255, 64);
+            border: 1px solid rgb(208, 208, 208);
+            border-left-color: #aaa;
+            border-top-color: #aaa;
+            margin: 0;
+        }
+        li.disabled, li.wysiwyg-button-hover.disabled, li.active.disabled{
+            opacity: 0.5;
+            filter:alpha(opacity=50);
+            border: 0px none transparent;
+            padding: 1px;
+            cursor: auto;
+        }
+        li.bold {
+            background-position: 0 -16px;
+        }
+        li.italic {
+            background-position: -16px -16px;
+        }
+        li.strikeThrough {
+            background-position: -32px -16px;
+        }
+        li.underline {
+            background-position: -48px -16px;
+        }
+        li.highlight {
+            background-position: -48px -96px;
+        }
+        li.justifyLeft {
+            background-position: 0 0;
+        }
+        li.justifyCenter {
+            background-position: -16px 0;
+        }
+        li.justifyRight {
+            background-position: -32px 0;
+        }
+        li.justifyFull {
+            background-position: -48px 0;
+        }
+        li.indent { 
+        	background-position: -64px 0;
+        }
+        li.outdent { 
+        	background-position: -80px 0;
+        }
+        li.subscript { 
+        	background-position: -64px -16px;
+        }
+        li.superscript { 
+        	background-position: -80px -16px;
+        }
+        li.undo { 
+        	background-position: 0 -64px;
+        }
+        li.redo { 
+        	background-position: -16px -64px;
+        }
+        li.insertOrderedList { 
+        	background-position: -32px -48px;
+        }
+        li.insertUnorderedList { 
+        	background-position: -16px -48px;
+        }
+        li.insertHorizontalRule { 
+        	background-position: 0 -48px;
+        }
+        li.h1 { 
+        	background-position: 0 -32px;
+        }
+        li.h2 { 
+        	background-position: -16px -32px;
+        }
+        li.h3 { 
+        	background-position: -32px -32px;
+        }
+        li.h4 { 
+        	background-position: -48px -32px;
+        }
+        li.h5 { 
+        	background-position: -64px -32px;
+        }
+        li.h6 { 
+        	background-position: -80px -32px;
+        }
+        li.paragraph { 
+        	background-position: 0px -96px;
+        }
+        li.colorpicker { 
+        	background-position: -16px -96px;
+        }
+        li.fullscreen { 
+        	background-position: -32px -96px;
+        }
+        li.cut { 
+        	background-position: -32px -64px;
+        }
+        li.copy { 
+        	background-position: -48px -64px;
+        }
+        li.paste { 
+        	background-position: -64px -64px;
+        }
+        li.insertTable { 
+        	background-position: -64px -48px;
+        }
+        li.increaseFontSize { 
+        	background-position: -16px -80px;
+        }
+        li.decreaseFontSize { 
+        	background-position: -32px -80px;
+        }
+        li.createLink { 
+        	background-position: -80px -48px;
+        }
+        li.insertImage { 
+        	background-position: -80px -80px;
+        }
+        li.html { 
+        	background-position: -48px -48px;
+        }
+        li.removeFormat { 
+        	background-position: -80px -64px;
+        }
+        li.empty { 
+        	background-position: -64px -80px;
+        }
+        li.code { 
+        	background-position: -64px -96px;
+        }
+        li.cssWrap { 
+        	background-position: -80px -96px;
+        }
+    }
+}
+div.wysiwyg * {
+    margin: 0;
+    padding: 0;
+}
+
+div.wysiwyg-dialogRow {
+    float:left;
+    width:100%;
+    font-size: 16px;
+}
+
+
+.wysiwyg-dialog {
+    position:fixed;
+    top:50px;
+    left:50px;
+    width:450px;
+    height:300px;
+    background:transparent;
+    font:14px "Helvetic Neue", Helvetica,Arial,sans-serif;
+    .wysiwyg-dialog-topbar {
+        background:#333;
+        border:1px #111 solid;
+        color:white;
+        padding:10px;
+        position:relative;
+        .wysiwyg-dialog-close-wrapper{
+            .wysiwyg-dialog-close-button {
+                color:white;
+                text-decoration:none;
+                display:block;
+                padding:6px 10px;
+                position:absolute;
+                right:12px;
+                top:50%;
+                height:14px;
+                margin-top:-12px;
+            }
+            a.wysiwyg-dialog-close-button:hover{
+                background:#666;
+            }
+        }
+        .wysiwyg-dialog-title { 
+            font-size:20px;
+            font-weight:bold;
+            padding:5px;
+        }
+    }
+    .wysiwyg-dialog-content {
+        border:1px #ccc solid;
+        border-top:0;
+        padding:15px;
+        background:white;
+    }
+    form.wysiwyg{
+        .form-row{
+            .form-row-key {
+                display:block;
+                float:left;
+                width:35%;
+                text-align:right;
+                padding:4px 5px;
+            }
+        }
+        select {
+            padding:2px;
+            width:100%;
+            margin:2px;
+        }
+        input[type=reset] {
+            padding:2px 7px;
+            width:auto;
+        }
+    }
+}
+
+.wysiwyg-dialog-modal-div {
+    position:absolute;
+    top:0px;
+    left:0px;
+    width:100%;
+    height:100%;
+    background-color:rgb(255,255,255);
+    background-color:rgba(0,0,0,0.5);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
+    -ms-filter:"progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
+}
+.wysiwyg-dialog-content{
+    form.wysiwyg{
+        fieldset {
+            border:1px #ccc solid;
+        }
+        legend {
+            padding:7px;
+        }
+        .form-row {
+            clear:both;
+            padding:4px 0;
+            label{
+                display:block;
+                float:left;
+                width:35%;
+                text-align:right;
+                padding:4px 5px;
+            }
+            .form-row-value {
+                display:block;
+                float:left;
+                width:55%;
+            }
+            input.width-auto {
+                width:auto;
+            }
+            input.width-small {
+                width:50px;
+                min-width:50px;
+                max-width:50px;
+            }
+            input{
+                padding:2px;
+                width:100%;
+                margin:2px;
+            }
+        }
+        input[type=submit]{
+            padding:2px 7px;
+            width:auto;
+        }
+    }
+}
+

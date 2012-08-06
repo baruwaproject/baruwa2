@@ -1,0 +1,5 @@
+% if c.success:
+${_('The message id: %(id)s has been deleted from the quarantine') % dict(id=c.id)}
+% else:
+${_('The message id: %(id)s could not be deleted: %(error_msg)s') % dict(id=c.id, error_msg=c.error_msg if hasattr(c, 'error_msg') else 'backend error occured')}
+% endif

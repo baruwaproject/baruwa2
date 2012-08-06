@@ -1,0 +1,10 @@
+<div class="alpos">
+	<div class="toolbar">
+		${self.paging(h.do_pagination(c.page))}\
+	</div>
+</div>
+
+<%def name="paging(page_nums, fieldname)">
+${functions.paging(page_nums, 'listing', fieldname)}
+</%def>
+<%namespace name="functions" file="../functions.html"/>

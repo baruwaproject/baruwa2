@@ -1,0 +1,158 @@
+<div class="alpos">
+	<ul id="msgops">
+		<li>${h.link_to(_('Inbound Queue'), url('server-status-mq-in', serverid=c.server.id)) if c.server else h.link_to(_('Inbound Queue'), url('mailq-status-directed', queue='inbound'))}</li>
+	    <li>${h.link_to(_('Outbound Queue'), url('server-status-mq-out', serverid=c.server.id)) if c.server else h.link_to(_('Outbound Queue'), url('mailq-status-directed', queue='outbound'))}</li>
+		% if c.server:
+		<li>${h.link_to(_('Node details'), url('server-status', serverid=c.server.id))}</li>
+		% endif
+	</ul>
+</div>
+<div class="clear"></div>
+<div class="sp10"></div>
+<div class="alpos">
+	<div class="toolbar">${self.paging(h.do_pagination(c.page), 'mailqnumitemstop')}</div>
+</div>
+<div class="clear"></div>
+<div id="content">
+${h.form(url('mailq-process'), method='post')}
+<div id="form-area">
+	<div class="grid_16 drowlast">
+		<div class="grid_10">&nbsp;</div>
+		<div class="grid_3">${c.form.queue_action(class_="searchrow")}</div>
+		<div class="grid_2">
+			${h.submit('mqs', _("Process"))}
+		</div>
+	</div>
+</div>
+<div class="clear"></div>
+<div class="sp10"></div>
+<table class="lists">
+<thead>
+<tr class="grid">
+	<th class="select_heading"><input type="checkbox" name="selector" id="allchecker" /></th>
+	<th class="date_time_heading">${header_url('timestamp', 'Received')}</th>
+	<th class="from_heading">${header_url('from_address', 'From')}</th>
+	<th class="to_heading">${header_url('to_address', 'To')}</th>
+	<th class="subject_heading">${header_url('subject', 'Subject')}</th>
+	<th class="size_heading">${header_url('size', 'Size')}</th>
+	<th class="attempts_heading">${header_url('attempts', 'Attempts')}</th>
+</tr>
+</thead>
+<tbody>
+% if hasattr(c, 'page') and c.page.items:
+% for item in c.page.items:
+<tr>
+	<td class="mailq_select_td"><input class="selector" type="checkbox" name="id" value="${item.id}" /></td>
+	<td class="mailq_date_td"><a href="${url('mailq-detail', queueid=item.id)}">${item.timestamp}</a></td>
+	<td class="mailq_from_td"><a href="${url('mailq-detail', queueid=item.id)}">${h.truncate(item.from_address, 30)}</a></td>
+	<td class="mailq_to_td"><a href="${url('mailq-detail', queueid=item.id)}">${item.to_address}</a></td>
+	<td class="mailq_subject_td"><a href="${url('mailq-detail', queueid=item.id)}">${h.truncate(item.subject, 45)}</a></td>
+	<td class="mailq_size_td"><a href="${url('mailq-detail', queueid=item.id)}">${h.format_byte_size(item.size)}</a></td>
+	<td class="mailq_attempts_td"><a href="${url('mailq-detail', queueid=item.id)}">${item.attempts}</a></td>
+</tr>
+% endfor
+% else:
+<tr><td class="spanrow" colspan="7">${_('No items found')}</td></tr>
+% endif
+</tbody>
+</table>
+${h.HTML.div(c.form.csrf_token, style="display: none;")}
+${h.end_form()}\
+</div>
+<div class="alpos">
+	<div class="toolbar">${self.paging(h.do_pagination(c.page), 'mailqnumitemsbottom')}</div>
+</div>
+<div class="clear"></div>
+<div class="sp10"></div>
+
+<%def name="paging(page_nums, fieldname)">
+% if c.page.page_count != 0:
+<p>${_('Showing items %(i)d to %(l)d of %(count)d' % dict(i=c.page.first_item, l=c.page.last_item, count=c.page.item_count))}.</p>
+<div class="limiter">
+${_('Show items:')}
+${h.pager_select(fieldname, str(c.page.items_per_page))}
+${_('per page')}
+</div>
+<div class="pages">
+% if c.page.page_count == 1:
+-
+% endif
+% else:
+<p>No items found</p>
+% endif
+% if c.page.next_page != c.page.first_page and c.page.page != c.page.first_page:
+<span>
+	${h.link_to(h.pager_img('first'), url('server-status-mq-paged', page=c.page.first_page, queue=c.queue) if c.server else url('mailq-status-paged', page=c.page.first_page, queue=c.queue))}
+</span>
+<span>...</span>
+% endif
+% if c.page.previous_page:
+<span>
+	${h.link_to(h.pager_img('previous'), url('server-status-mq-paged', page=c.page.previous_page, queue=c.queue) if c.server else url('mailq-status-paged', page=c.page.previous_page, queue=c.queue))}
+</span>
+% endif
+% for linkpage in page_nums:
+% 	if linkpage == c.page.page:
+<span><b>${linkpage}</b></span>
+% 	else:
+<span>
+	${h.link_to(h.literal(linkpage), url('server-status-mq-paged', page=linkpage, queue=c.queue) if c.server else url('mailq-status-paged', page=linkpage, queue=c.queue))}
+</span>
+% 	endif
+% endfor
+% if c.page.next_page:
+<span>
+	${h.link_to(h.pager_img('next'), url('server-status-mq-paged', page=c.page.next_page, queue=c.queue) if c.server else url('mailq-status-paged', page=c.page.next_page, queue=c.queue))}
+</span>
+% endif
+% if c.page.next_page != c.page.page_count and c.page.page != c.page.page_count and c.page.page_count != 0:
+<span>...</span>
+<span>
+	${h.link_to(h.pager_img('last'), url('server-status-mq-paged', page=c.page.page_count, queue=c.queue) if c.server else url('mailq-status-paged', page=c.page.page_count, queue=c.queue))}
+</span>
+% endif
+% if c.page.page_count != 0:
+</div>
+% else:
+<div class="pages">-</div>
+% endif
+</%def>
+
+<%def name="sorter()">\
+% if c.direction == 'dsc':
+     ${h.link_to(h.literal('&uarr;'), url('server-status-mq', serverid=c.server.id,
+     queue=c.queue, direction='asc', order_by=c.order_by) if hasattr(c, 'server') and c.server else url('mailq-status-full',
+     queue=c.queue, direction='asc', order_by=c.order_by))}
+% else:
+    ${h.link_to(h.literal('&darr;'), url('server-status-mq', serverid=c.server.id,
+     queue=c.queue, direction='dsc', order_by=c.order_by) if hasattr(c, 'server') and c.server else url('mailq-status-full',
+     queue=c.queue, direction='dsc', order_by=c.order_by))}
+% endif
+</%def>
+
+<%def name="header_url(field, text)">
+% if c.order_by == field:
+${_(text)}&nbsp;${sorter()} 
+% else:
+${h.link_to(_(text), url('server-status-mq', serverid=c.server.id, queue=c.queue, direction=c.direction, order_by=field)) if hasattr(c, 'server') and c.server else h.link_to(_(text), url('mailq-status-full', queue=c.queue, direction=c.direction, order_by=field))}
+% endif
+</%def>
+
+<%def name="title()">\
+${_('Status :: Mail queue :: %(queue)s :: %(s)s') % dict(queue=c.queue, s=c.server.hostname) if c.server else _('Status :: Mail queue :: %(queue)s') % dict(queue=c.queue)}
+</%def>
+
+<%def name="heading()">\
+${_('Status :: Mail queue :: %(queue)s :: %(s)s') % dict(queue=c.queue, s=c.server.hostname) if c.server else _('Status :: Mail queue :: %(queue)s') % dict(queue=c.queue)}
+</%def>
+
+<%def name="headers()">\
+</%def>
+<%def name="localscripts()">\
+<script type="text/javascript">
+var setitems_url = "${url(controller='status', action='setnum')}";
+</script>
+${h.javascript_link(h.media_url() + 'js/baruwa/mailq.js')}
+</%def>
+
+<%inherit file="/base.html"/>

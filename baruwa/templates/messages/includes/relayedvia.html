@@ -1,0 +1,18 @@
+<div id="relayedhosts">
+<% relay_hosts = h.relayed_via(c.msg.headers) %>
+% if not relay_hosts:
+&nbsp;&nbsp;&nbsp;-- direct connection --
+% else:
+% for relay in relay_hosts:
+<div class="grid_8 alpha omega">
+	<div class="alpha grid_3 omega">${h.wrap_paragraphs(relay['ip_address'], 18)}</div>
+	<div class="grid_4 omega">${h.wrap_paragraphs(relay['hostname'], 35)}</div>
+	<div class="grid_1 omega">
+		% if relay['country_code'] and relay['country_code'] != 'unknown':
+		${h.portable_img("imgs/flags/"+relay['country_code']+".png", relay['country_code'], class_="positio", title=relay['country_name'])}
+		% endif
+	</div>
+</div>
+% endfor
+% endif
+</div>

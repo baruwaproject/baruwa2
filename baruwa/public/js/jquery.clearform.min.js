@@ -1,0 +1,1 @@
+$.fn.clearForm=function(){return this.each(function(){var b=this.type,a=this.tagName.toLowerCase();if(a=="form"){return $(":input",this).clearForm()}if(b=="text"||b=="password"||a=="textarea"){this.value=""}else{if(b=="checkbox"||b=="radio"){this.checked=false}else{if(a=="select"){this.selectedIndex=0}}}})};

@@ -1,0 +1,34 @@
+<div id="content">
+<div class="grid_16">
+    <h3 class="head">${_('Create User account')}</h3>
+</div>
+${h.form(url(controller='accounts', action='add'), method='post')}
+<%include file="/forms/base.html"/>
+    <div class="grid_16 drow">
+        <div class="grid_7">&nbsp;</div>
+        <div class="grid_8">
+            <input id="cancel-button" type="reset" value="${_('Reset')}" />&nbsp;
+            ${h.submit('submit', _('Create account'))}
+        </div>
+    </div>
+${h.end_form()}
+<div class="clear"></div>
+<div class="sp20"></div>
+</div>
+
+<%def name="title()">
+${_('Accounts :: Create account')}
+</%def>
+
+<%def name="heading()">
+${_('Accounts :: Create account')} 
+</%def>
+
+<%def name="submenu()">
+</%def>
+
+<%def name="headers()">
+</%def>
+<%def name="localscripts()">\
+</%def>
+<%inherit file="/base.html"/>

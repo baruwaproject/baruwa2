@@ -1,0 +1,226 @@
+<%!
+from baruwa.lib.filters import default
+%>
+<% 
+account_types = {1: 'Administrator', 2: 'Domain Administrator', 3: 'User'}
+account_type = account_types[c.account.account_type]
+%>
+<div class="alpos">
+	<div class="grid_16">
+		<ul id="msgops">
+		  % if len(c.account.signatures) < 2:
+			<li>${h.link_to(_('Add signatures'), url('account-sigs-add', userid=c.account.id))}</li>
+		  % endif
+		  % if c.user.is_admin:
+		    <li>${h.link_to(_('Add alias address'), url(controller='accounts', action='addaddress', userid=c.account.id))}</li>
+			<li>${h.link_to(_('Update account'), url(controller='accounts', action='edit', userid=c.account.id))}</li>
+			<li>${h.link_to(_('Delete account'), url('account-delete', userid=c.account.id))}</li>
+		    % if not c.account.is_superadmin and c.account.local:
+		  	 <li>${h.link_to(_('Change password'), url('accounts-pw-change', userid=c.account.id))}</li>
+		    % endif
+		  % else:
+		    % if c.account.local:
+		  	<li>${h.link_to(_('Change password'), url('accounts-pw-uchange', userid=c.account.id))}</li>
+		    % else:
+		    <li>${_('Change password')}</li>
+		    % endif
+			<li>${h.link_to(_('Update account'), url('account-edit', userid=c.account.id))}</li>
+		  % endif
+		</ul>
+	</div>
+</div>
+<div id="content">
+<div class="grid_16">
+    <h3 class="head">${_("Showing: %(a)s account details") % dict(a=c.account.username)}</h3>
+</div>
+<div class="grid_16 drow">
+	<div class="grid_7">
+		${_('Username')}:
+	</div>
+	<div class="grid_8">
+		${c.account.username}
+	</div>
+</div>	
+<div class="grid_16 drow">
+	<div class="grid_7">
+		${_('Full names')}:
+	</div>
+	<div class="grid_8">
+		${c.account.firstname} ${c.account.lastname}
+	</div>
+</div>
+<div class="grid_16 drow">
+	<div class="grid_7">
+		${_('Email Address')}:
+	</div>
+	<div class="grid_8">
+		${c.account.email}
+	</div>
+</div>
+<div class="grid_16 drow">
+	<div class="grid_7">
+		${_('Account status')}:
+	</div>
+	<div class="grid_8">
+		${h.enabled_or_not(c.account.active)}
+	</div>
+</div>
+<div class="grid_16 drow">
+	<div class="grid_7">
+		${_('Last login')}:
+	</div>
+	<div class="grid_8">
+		${c.account.last_login}
+	</div>
+</div>
+<div class="grid_16 drow">
+	<div class="grid_7">
+		${_('Account created on')}:
+	</div>
+	<div class="grid_8">
+		${c.account.created_on}
+	</div>
+</div>
+<div class="grid_16 drow">
+	<div class="grid_7">
+		${_('Account type')}:
+	</div>
+	<div class="grid_8">
+		${account_type} [ ${_('Local account') if c.account.local else _('External account')} ]
+	</div>
+</div>
+% if c.account.is_domain_admin:
+<div class="grid_16 drow">
+	<div class="grid_7">
+		${_('Organizations')}:
+	</div>
+	<div class="grid_8">
+		<%
+		orglinks = []
+		for org in c.account.organizations:
+			link = h.link_to(org.name, url('org-detail', orgid=org.id)) if c.user.is_superadmin else org.name
+			orglinks.append(link)
+		orglinks = ', '.join(orglinks)
+		%>
+		${orglinks|n}
+	</div>
+</div>
+% endif
+% if c.account.is_peleb:
+<div class="grid_16 drow">
+	<div class="grid_7">
+		${_('Domains')}:
+	</div>
+	<div class="grid_8">
+		<%
+		domlinks = [domain.name for domain in c.account.domains]
+		%>
+		${', '.join(domlinks)}
+	</div>
+</div>
+% endif
+<div class="grid_16 drow">
+	<div class="grid_7">
+		${_('Perform Spam checks')}:
+	</div>
+	<div class="grid_8">
+		${h.enabled_or_not(c.account.spam_checks)}
+	</div>
+</div>
+<div class="grid_16 drow">
+	<div class="grid_7">
+		${_('Send reports')}:
+	</div>
+	<div class="grid_8">
+		${h.enabled_or_not(c.account.send_report)}
+	</div>
+</div>
+<div class="grid_16 drow">
+	<div class="grid_7">
+		${_('Spam Low Score')}:
+	</div>
+	<div class="grid_8">
+		${c.account.low_score|default}
+	</div>
+</div>
+<div class="grid_16 drow">
+	<div class="grid_7">
+		${_('Spam High Score')}:
+	</div>
+	<div class="grid_8">
+		${c.account.high_score|default}
+	</div>
+</div>
+<div class="grid_16">
+    <h3 class="head">${_('Alias Addresses')}</h3>
+</div>
+% if c.account.addresses:
+% 	for address in c.account.addresses:
+	<div class="grid_16 drow">
+		<div class="grid_12">
+			${address.address}
+		</div>
+		<div class="grid_1">
+			${h.enabled_or_not(address.enabled)}
+		</div>
+		<div class="grid_1">
+			% if c.user.is_admin:
+			${h.link_to(h.portable_img('imgs/edit.png', _('Edit'), class_="positio"), url('address-edit', addressid=address.id))}
+			% else:
+			${h.portable_img('imgs/edit.png', _('Edit'), class_="positio")}
+			% endif
+		</div>
+		<div class="grid_1">
+			% if c.user.is_admin:
+			${h.link_to(h.portable_img('imgs/action_delete.png', _('Delete'), class_="positio"), url('address-delete', addressid=address.id))}
+			% else:
+			${h.portable_img('imgs/action_delete.png', _('Delete'), class_="positio")}
+			% endif
+		</div>
+	</div>
+% 	endfor
+% else:
+	<div class="grid_16 drow">
+		<div class="grid_15">${_('No alias addresses configured')}</div>	 
+	</div>
+% endif
+<div class="grid_16">
+    <h3 class="head">${_('Email Signatures')}</h3>
+</div>
+% if c.account.signatures:
+% 	for sig in c.account.signatures:
+	<div class="grid_16 drow">
+		<div class="grid_12">
+			${_('Text signature') if sig.signature_type == 1 else _('HTML Signature')}
+		</div>
+		<div class="grid_1">
+			${h.enabled_or_not(sig.enabled)}
+		</div>
+		<div class="grid_1">
+			${h.link_to(h.portable_img('imgs/edit.png', _('Edit'), class_="positio"), url('account-sigs-edit', sigid=sig.id))}
+		</div>
+		<div class="grid_1">
+			${h.link_to(h.portable_img('imgs/action_delete.png', _('Delete'), class_="positio"), url('account-sigs-delete', sigid=sig.id))}
+		</div>
+	</div>
+% 	endfor
+% else:
+	<div class="grid_16 drow">
+		<div class="grid_15">${_('No Email Signatures configured')}</div>	 
+	</div>
+% endif
+<div class="clear"></div>
+<div class="sp20"></div>
+</div>
+
+<%def name="title()">\
+${_('Accounts :: Account details :: %(a)s') % dict(a=c.account.username)}
+</%def>
+<%def name="heading()">\
+${self.title()}
+</%def>
+<%def name="headers()">
+</%def>
+<%def name="localscripts()">\
+</%def>
+<%inherit file="/base.html"/>

@@ -1,0 +1,180 @@
+<div class="alpos">
+	<div class="toolbar">
+		${h.form(url('lists-index', list_type=c.list_type), method='get', id='msgsearch')}
+		<div class="grid_16 alpha omega">
+			% if hasattr(c, 'q') and c.q:
+			<div class="grid_4">${_('About %(n)s results (%(t)s seconds)') % dict(n=c.total_found, t=c.search_time)}</div>
+			<div class="grid_8"><div class="toright"><input type="text" size="65" name="q" value="${c.q}" /></div></div>
+			% else:
+			<div class="grid_4">&nbsp;</div>
+			<div class="grid_8"><div class="toright"><input type="text" size="65" name="q" /></div></div>
+			% endif
+			<div class="grid_3"><input type="submit" value="Search" /></div>
+		</div>
+		${h.end_form()}
+	</div>
+</div>
+<div class="clear"></div>
+<div class="sp10"></div>
+<div class="alpos">
+	<div class="toolbar">${self.paging(h.do_pagination(c.page), 'sliststop')}</div>
+</div>
+<div id="content">
+<table class="lists">
+<thead>
+<tr class="grid">
+    <th class="lists_heading_hash">${_('#')}</th>
+	<th class="lists_heading_from">${_('From address')}</th>
+    <th class="lists_heading_to">${_('To address')}</th>
+    <th class="lists_heading_action">${_('Action')}</th>
+</tr>
+</thead>
+<tbody>
+% for i, listitem in enumerate(c.page.items):
+    <tr id="list-id-${listitem.id}">
+        <td class="lists_hash">${listitem.id}</td>
+		<td class="lists_from">${listitem.from_address}</td>
+        <td class="lists_to">${listitem.to_address}</td>
+        <td class="lists_action">${h.link_to(h.portable_img('imgs/action_delete.png', 'Delete'), url('list-delete', listid=listitem.id))}</td>
+    </tr>
+% endfor
+% if not c.page.items:
+<tr><td class="spanrow" colspan="4">${_('No items found')}</td></tr>
+% endif
+</tbody>
+</table>
+</div>
+<div class="alpos">
+	<div class="toolbar">${self.paging(h.do_pagination(c.page), 'slistsbottom')}</div>
+</div>
+<div class="clear"></div>
+<div class="sp10"></div>
+<%def name="list_sorter(text, col)">
+% if c.direction == 'dsc':
+<% 
+   rlink = '&uarr;'
+   rdirection = 'asc'
+%>
+% else:
+<% 
+   rlink = '&darr;'
+   rdirection = 'dsc'
+%>
+% endif
+% if c.order_by == col:
+${text} ${h.link_to(h.literal(rlink), url('list-pages-byfield', list_type=c.list_type, page=c.page.page, direction=rdirection, order_by=col))}
+% else:
+${h.link_to(h.literal(text), url('list-pages-byfield', list_type=c.list_type, page=c.page.page, direction=c.direction, order_by=col))}
+% endif
+</%def>
+<%def name="headers()">
+</%def>
+<%def name="localscripts()">
+<script type="text/javascript">
+var setitems_url = "${url(controller='lists', action='setnum')}";
+</script>
+${h.javascript_link(h.media_url() + 'js/jquery.address-1.4.min.js',
+h.media_url() + 'js/baruwa/lists.js')}
+</%def>
+
+<%def name="title()">${_('List management')}</%def>
+
+<%def name="heading()">
+% if int(c.list_type) == 1:
+% if c.page.page_count > 0:
+ ${_('Lists :: Approved senders :: Showing page %(page)d of %(count)d pages.') % dict(page=c.page.page, count=c.page.page_count)}\
+% else:
+ ${_('Lists :: Approved senders')}
+% endif
+% else:
+% if c.page.page_count > 0:
+ ${_('Lists :: Banned senders :: Showing page %(page)d of %(count)d pages.') % dict(page=c.page.page, count=c.page.page_count)}\
+% else:
+ ${_('Lists :: Banned senders')}
+% endif
+% endif
+</%def>
+
+<%def name="paging(page_nums, fieldname)">
+% if c.page.page_count != 0:
+<%
+kwd = {}
+if hasattr(c, 'q') and c.q:
+	kwd['q'] = c.q
+%>
+<p>${_('Showing items %(i)d to %(l)d of %(count)d' % dict(i=c.page.first_item, l=c.page.last_item, count=c.page.item_count))}.</p>
+<div class="limiter">
+${_('Show items:')}
+${h.pager_select(fieldname, str(c.page.items_per_page))}
+${_('per page')}
+</div>
+<div class="pages">
+% if c.page.page_count == 1:
+-
+% endif
+% else:
+<p>${_('No items found')}</p>
+% endif
+% if c.page.next_page != c.page.first_page and c.page.page != c.page.first_page:
+<span>
+	% if c.direction != 'dsc' or c.order_by != 'id':
+	<% link_url =  url('list-pages-byfield', list_type=c.list_type, page=c.page.first_page, direction=c.direction, order_by=c.order_by, **kwd) %>
+	% else:
+	<% link_url = url('list-pages', list_type=c.list_type, page=c.page.first_page, **kwd) %>
+	% endif
+	${h.link_to(h.pager_img('first'), link_url)}
+</span>
+<span>...</span>
+% endif
+% if c.page.previous_page:
+<span>
+	% if c.direction != 'dsc' or c.order_by != 'id':
+	<% link_url =  rl('list-pages-byfield', list_type=c.list_type, page=c.page.previous_page, direction=c.direction, order_by=c.order_by, **kwd) %>
+	% else:
+	<% link_url =  url('list-pages', list_type=c.list_type, page=c.page.previous_page, **kwd) %>
+	% endif
+	${h.link_to(h.pager_img('previous'), link_url)}
+</span>
+% endif
+% for linkpage in page_nums:
+% 	if linkpage == c.page.page:
+<span><b>${linkpage}</b></span>
+% 	else:
+<span>
+    % if c.direction != 'dsc' or c.order_by != 'id':
+    <% link_url =  url('list-pages-byfield', list_type=c.list_type, page=linkpage, direction=c.direction, order_by=c.order_by, **kwd) %>
+    % else:
+    <% link_url =  url('list-pages', list_type=c.list_type, page=linkpage, **kwd) %>
+    % endif
+	${h.link_to(h.literal(linkpage), link_url)}
+</span>
+% 	endif
+% endfor
+% if c.page.next_page:
+<span>
+    % if c.direction != 'dsc' or c.order_by != 'id':
+    <% link_url =  url('list-pages-byfield', list_type=c.list_type, page=c.page.next_page, direction=c.direction, order_by=c.order_by, **kwd) %>
+    % else:
+    <% link_url = url('list-pages', list_type=c.list_type, page=c.page.next_page, **kwd) %>
+    % endif
+	${h.link_to(h.pager_img('next'), link_url)}
+</span>
+% endif
+% if c.page.next_page != c.page.page_count and c.page.page != c.page.page_count and c.page.page_count != 0:
+<span>...</span>
+<span>
+    % if c.direction != 'dsc' or c.order_by != 'id':
+    <% link_url =  url('list-pages-byfield', list_type=c.list_type, page=c.page.page_count, direction=c.direction, order_by=c.order_by, **kwd) %>
+    % else:
+    <% link_url = url('list-pages', list_type=c.list_type, page=c.page.page_count, **kwd) %>
+    % endif
+	${h.link_to(h.pager_img('last'), link_url)}
+</span>
+% endif
+% if c.page.page_count != 0:
+</div>
+% else:
+<div class="pages">-</div>
+% endif
+</%def>
+<%inherit file="/base.html"/>

@@ -1,0 +1,42 @@
+<div class="alpos">
+	<div class="grid_16">
+		<ul id="msgops">
+		  <li>${h.link_to(_('Return to account'), url('account-detail', userid=c.userid))}</li>
+		</ul>
+	</div>
+</div>
+<div id="content">
+<div class="grid_16">
+    <h3 class="head">${_('Edit alias address')}</h3>
+</div>
+${h.form(url(controller='accounts', action='editaddress', addressid=c.id), method='post')}
+<%include file="/forms/base.html"/>
+    <div class="grid_16 drow">
+        <div class="grid_7">&nbsp;</div>
+        <div class="grid_8">
+            <input id="cancel-button" type="reset" value="${_('Reset')}" />&nbsp;
+            ${h.submit('submit', _('Update'))}
+        </div>
+    </div>
+${h.end_form()}
+</div>
+
+<%def name="title()">
+${_('Accounts :: Update alias address')}
+</%def>
+
+<%def name="heading()">
+${_('Accounts :: Update alias address')} 
+</%def>
+
+<%def name="submenu()">
+<ul>
+  <li>${h.link_to(_('Account details'), url('account-detail', userid=c.userid))}</li>
+</ul>
+</%def>
+
+<%def name="headers()">
+</%def>
+<%def name="localscripts()">\
+</%def>
+<%inherit file="/base.html"/>

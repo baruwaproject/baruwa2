@@ -1,0 +1,19 @@
+<%def name="title()">
+${_('Domains :: %(name)s :: Rulesets') % dict(name=c.domainname)}
+</%def>
+
+<%def name="heading()">
+${_('Domains :: %(name)s :: Rulesets') % dict(name=c.domainname)}
+</%def>
+
+<%def name="submenu()">
+<ul>
+  <li>${h.link_to(_('Domain details'), url(controller='domains', action='detail', domainid=c.domainid))}</li>
+</ul>
+</%def>
+
+<%def name="headers()">
+</%def>
+<%def name="localscripts()">\
+</%def>
+<%inherit file="/base.html"/>

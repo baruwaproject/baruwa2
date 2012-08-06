@@ -1,0 +1,172 @@
+<div class="alpos">
+	<ul id="msgops">
+		% if c.domid:
+		<li>${h.link_to(_('Import Accounts'), url('accounts-import', domainid=c.domid))}</li>
+		<li>${h.link_to(_('Export Accounts'), url('accounts-export-bydom', domainid=c.domid))}</li>
+		% else:
+		<li>${h.link_to(_('Export Accounts'), url('accounts-export-byorg', orgid=c.orgid) if c.orgid else url('accounts-export'))}</li>
+		% endif
+	</ul>
+</div>
+${s.searchbox(url('accounts-search'), [('d', c.domid),]) if c.domid else s.searchbox(url('accounts-search'))}
+<div class="clear"></div>
+<div class="sp10"></div>
+<div class="alpos">
+	<div class="toolbar">${self.paging(h.do_pagination(c.page), 'saccountstop')}</div>
+</div>
+<div id="content">
+${h.form(url.current(), method='post')}
+<div class="mkbox">
+	<div class="grid_16 formcontrols">
+	<div class="grid_2 prefix_7">${h.radio('whatdo', 'delete', label='Delete', class_='fieldcontrols')}</div>
+	<div class="grid_2">${h.radio('whatdo', 'disable', label='Disable', class_='fieldcontrols')}</div>
+	<div class="grid_2">${h.radio('whatdo', 'enable', label='Enable', class_='fieldcontrols')}</div>
+	<div class="grid_2">${h.submit('submit', _('Submit'))}</div>
+	</div>
+</div>
+<div class="clear"></div>
+<div class="sp10"></div>
+<table class="accounts">
+<thead>
+<tr class="grid">
+    <th class="users_heading_hash domains_check">${h.checkbox('checkall')}</th>
+    <th>&nbsp;</th>
+    <th class="users_heading_username">${_('Username')}</th>
+    <th class="users_heading_fullname">${_('Full names')}</th>
+    <th class="users_heading_email">${_('Email address')}</th>
+    <th class="users_heading_email">${_('Status')}</th>
+	<th class="users_heading_del" colspan="3">${_('Actions')}</th>
+</tr>
+</thead>
+<tbody>
+% for user in c.page.items:
+<% 
+	if user.account_type == 1:
+		user_icon = h.media_url() + 'imgs/user_admin.png'
+	elif user.account_type == 2:
+		user_icon = h.media_url() + 'imgs/user_dadmin.png'
+	else:
+		user_icon = h.media_url() + 'imgs/user.png'
+%>
+<tr id="account-id-${user.id}">
+	<td class="domains_check">${h.checkbox('accountid', value=user.id, class_='selector')}</td>
+    <td class="users_hash">${h.link_to(h.image(user_icon, 'x'), url('account-detail', userid=user.id))}</td>
+    <td class="users_username">${h.link_to(user.username, url('account-detail', userid=user.id))}</td>
+    <td class="users_fullname">${user.firstname} ${user.lastname}</td>
+    <td class="users_email">${h.link_to(user.email, url('account-detail', userid=user.id))}</td>
+    <td class="users_status">${h.enabled_or_not(user.active)}</td>
+    <td class="users_settings">${h.link_to(h.portable_img('imgs/cog.png', 'Settings'), url('account-edit', userid=user.id))}</td>
+	<td class="users_edit">${h.link_to(h.portable_img('imgs/edit.png', 'Edit'), url('account-edit', userid=user.id))}</td>
+	<td class="users_delete">${h.link_to(h.portable_img('imgs/action_delete.png', 'Delete'), url('account-delete', userid=user.id))}</td>
+</tr>
+% endfor
+% if not c.page.items:
+<tr><td class="spanrow" colspan="8">${_('No accounts found')}</td></tr>
+% endif
+</tbody>
+</table>
+${h.end_form()}\
+</div>
+<div class="alpos">
+	<div class="toolbar">${self.paging(h.do_pagination(c.page), 'saccountsbottom')}</div>
+</div>
+<div class="clear"></div>
+<div class="sp10"></div>
+<%def name="title()">
+${_('Accounts ')}
+% if c.page.page_count != 0:
+${ungettext(':: Showing page %(n)d of %(c)d page.', ':: Showing page %(n)d of %(c)d pages.', c.page.page_count) % dict(n=c.page.page, c=c.page.page_count)}
+% endif
+</%def>
+
+<%def name="heading()">
+${_('Accounts ')} 
+% if c.page.page_count != 0:
+${ungettext(':: Showing page %(n)d of %(c)d page.', ':: Showing page %(n)d of %(c)d pages.', c.page.page_count) % dict(n=c.page.page, c=c.page.page_count)}
+% endif
+</%def>
+
+<%def name="headers()">
+</%def>
+
+<%def name="paging(page_nums, fieldname)">
+% if c.page.page_count != 0:
+<p>${_('Showing items %(i)d to %(l)d of %(count)d' % dict(i=c.page.first_item, l=c.page.last_item, count=c.page.item_count))}.</p>
+<div class="limiter">
+${_('Show items:')}
+${h.pager_select(fieldname, str(c.page.items_per_page))}
+${_('per page')}
+</div>
+<div class="pages">
+% if c.page.page_count == 1:
+-
+% endif
+% else:
+<p>${_('No items found')}</p>
+% endif
+% if c.page.next_page != c.page.first_page and c.page.page != c.page.first_page:
+<span>
+	% if c.domid:
+	${h.link_to(h.pager_img('first'), url('accounts-bydom-pages', page=c.page.first_page, domid=c.domid))}
+	% else:
+	${h.link_to(h.pager_img('first'), url('accounts-byorg-pages', page=c.page.first_page, orgid=c.orgid) if orgid else url('account-pages', page=c.page.first_page))}
+	% endif
+</span>
+<span>...</span>
+% endif
+% if c.page.previous_page:
+<span>
+	% if c.domid:
+	${h.link_to(h.pager_img('previous'), url('accounts-bydom-pages', page=c.page.previous_page, domid=c.domid))}
+	% else:
+	${h.link_to(h.pager_img('previous'), url('accounts-byorg-pages', page=c.page.previous_page, orgid=c.orgid) if orgid else url('account-pages', page=c.page.previous_page))}
+	% endif
+</span>
+% endif
+% for linkpage in page_nums:
+% 	if linkpage == c.page.page:
+<span class="curpage">${linkpage}</span>
+% 	else:
+<span>
+	% if c.domid:
+	${h.link_to(h.literal(linkpage), url('accounts-bydom-pages', page=linkpage, domid=c.domid))}
+	% else:
+	${h.link_to(h.literal(linkpage), url('accounts-byorg-pages', page=linkpage, orgid=c.orgid) if orgid else url('account-pages', page=linkpage))}
+	% endif
+</span>
+% 	endif
+% endfor
+% if c.page.next_page:
+<span>
+	% if c.domid:
+	${h.link_to(h.pager_img('next'), url('accounts-bydom-pages', page=c.page.next_page, domid=c.domid))}
+	% else:
+	${h.link_to(h.pager_img('next'), url('accounts-byorg-pages', page=c.page.next_page, orgid=c.orgid) if orgid else url('account-pages', page=c.page.next_page))}
+	% endif
+</span>
+% endif
+% if c.page.next_page != c.page.page_count and c.page.page != c.page.page_count and c.page.page_count != 0:
+<span>...</span>
+<span>
+	% if c.domid:
+	${h.link_to(h.pager_img('last'), url('accounts-bydom-pages', page=c.page.page_count, domid=c.domid))}
+	% else:
+	${h.link_to(h.pager_img('last'), url('accounts-byorg-pages', page=c.page.page_count, orgid=c.orgid) if orgid else url('account-pages', page=c.page.page_count))}
+	% endif
+</span>
+% endif
+% if c.page.page_count != 0:
+</div>
+% else:
+<div class="pages">-</div>
+% endif
+</%def>
+<%def name="localscripts()">\
+<script type="text/javascript">
+var setitems_url = "${url(controller='accounts', action='setnum')}";
+</script>
+${h.javascript_link(h.media_url() + 'js/jquery.address-1.4.min.js',
+h.media_url() + 'js/baruwa/accounts.js')}
+</%def>
+<%namespace name="s" file="/includes/search.html"/>
+<%inherit file="/base.html"/>

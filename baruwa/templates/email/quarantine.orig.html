@@ -1,0 +1,133 @@
+<%
+spam = [item for item in messages if item.spam == True]
+policy = [item for item in messages if item.policy == True]
+%>
+<html>
+<body leftmagin="0" maginwidth="0" topmargin="0" marginheight="0" offset="0" bgcolor='#FFFFFF' >
+<style>
+ a { color:#FF6600; color:#FF6600; color:#FF6600; }
+</style>
+<table width="100%" cellpadding="10" cellspacing="0" bgcolor='#FFFFFF'>
+    <tr>
+    <td valign="center" align="center">
+    <table width="600" cellpadding="0" cellspacing="0">
+        <tr>
+            <td style="background-color:#FFFFFF;border-top:0px solid #333333;">
+            <h1 style="color:#525252; padding-left:10px; padding-top:5px; padding-bottom:5px; padding-right:10px;">
+            	<img src="cid:logo.png" alt="Baruwa"/>
+            </h1>
+            </td>
+        </tr>
+    </table>
+    <table width="600" cellpadding="10" cellspacing="0" bgcolor="#FFFFFF" style="border-bottom:1px solid #DDDDDD;border-top:1px solid #DDDDDD;border-left:1px solid #DDDDDD;border-right:1px solid #DDDDDD;">
+		% if spam:
+		<tr>
+			<td colspan="5" style="font-weight:bold;font-size:14px;color:#000000;line-height:100%;font-family:trebuchet ms;border-bottom:1px solid #DDDDDD;">${'Spam Report'}</td>
+		</tr>
+        <tr>
+            <td bgcolor="#EEEEEE" valign="center" style="font-weight:bold;font-size:12px;color:#000000;line-height:100%;font-family:trebuchet ms;border-bottom:1px solid #DDDDDD;">
+                ${'Date/Time'}
+            </td>
+            <td bgcolor="#EEEEEE" valign="center" style="font-weight:bold;font-size:12px;color:#000000;line-height:100%;font-family:trebuchet ms;border-bottom:1px solid #DDDDDD;">
+                ${'From'}
+            </td>
+            <td bgcolor="#EEEEEE" valign="center" style="font-weight:bold;font-size:12px;color:#000000;line-height:100%;font-family:trebuchet ms;border-bottom:1px solid #DDDDDD;">
+                ${'To'}
+            </td>
+            <td bgcolor="#EEEEEE" valign="center" style="font-weight:bold;font-size:12px;color:#000000;line-height:100%;font-family:trebuchet ms;border-bottom:1px solid #DDDDDD;">
+                ${'Subject'}
+            </td>
+            <td bgcolor="#EEEEEE" valign="center" style="font-weight:bold;font-size:12px;color:#000000;line-height:100%;font-family:trebuchet ms;border-bottom:1px solid #DDDDDD;">
+                ${'Release'}
+            </td>
+        </tr>
+        % for i, item in enumerate(spam):
+        <%
+        if item.to_domain in host_urls:
+            host = host_urls[item['to_domain']]
+        else:
+            host = default_url
+        protocol = host.split('://')[0]
+        host = host.split('://')[1]
+        %>
+        <tr bgcolor="${i%2 and '#FFFFFF' or '#EEEEEE'}">
+            <td valign="center" style="font-size:12px;color:#000000;line-height:100%;font-family:trebuchet ms;border-bottom:1px solid #DDDDDD;">
+                ${item.timestamp}
+            </td>
+            <td valign="center" style="font-size:12px;color:#000000;line-height:100%;font-family:trebuchet ms;border-bottom:1px solid #DDDDDD;">
+                ${item.from_address}
+            </td>
+            <td valign="center" style="font-size:12px;color:#000000;line-height:100%;font-family:trebuchet ms;border-bottom:1px solid #DDDDDD;">
+                ${item.to_address}
+            </td>
+            <td valign="center" style="font-size:12px;color:#000000;line-height:100%;font-family:trebuchet ms;border-bottom:1px solid #DDDDDD;">
+                ${item.subject}
+            </td>
+            <td valign="center" style="font-size:12px;color:#000000;line-height:100%;font-family:trebuchet ms;border-bottom:1px solid #DDDDDD;">
+                <a style="text-decoration:none;" href="${url('message-autorelease', uuid=item.uuid, host=host, protocol=protocol)}">Release</a>
+            </td>
+        </tr>
+        % endfor
+		% endif
+		% if policy:
+		<tr>
+			<td colspan="5" style="font-weight:bold;font-size:14px;color:#000000;line-height:100%;font-family:trebuchet ms;border-bottom:1px solid #DDDDDD;">${'Policy Blocked Report'}</td>
+		</tr>
+        <tr>
+            <td bgcolor="#EEEEEE" valign="center" style="font-weight:bold;font-size:12px;color:#000000;line-height:100%;font-family:trebuchet ms;border-bottom:1px solid #DDDDDD;">
+                ${'Date/Time'}
+            </td>
+            <td bgcolor="#EEEEEE" valign="center" style="font-weight:bold;font-size:12px;color:#000000;line-height:100%;font-family:trebuchet ms;border-bottom:1px solid #DDDDDD;">
+                ${'From'}
+            </td>
+            <td bgcolor="#EEEEEE" valign="center" style="font-weight:bold;font-size:12px;color:#000000;line-height:100%;font-family:trebuchet ms;border-bottom:1px solid #DDDDDD;">
+                ${'To'}
+            </td>
+            <td bgcolor="#EEEEEE" valign="center" style="font-weight:bold;font-size:12px;color:#000000;line-height:100%;font-family:trebuchet ms;border-bottom:1px solid #DDDDDD;">
+                ${'Subject'}
+            </td>
+            <td bgcolor="#EEEEEE" valign="center" style="font-weight:bold;font-size:12px;color:#000000;line-height:100%;font-family:trebuchet ms;border-bottom:1px solid #DDDDDD;">
+                ${'Release'}
+            </td>
+        </tr>
+		% for i, item in enumerate(policy):
+        <%
+        if item.to_domain in host_urls:
+            host = host_urls[item['to_domain']]
+        else:
+            host = default_url
+        protocol = host.split('://')[0]
+        host = host.split('://')[1]
+        %>
+        <tr bgcolor="${i%2 and '#FFFFFF' or '#EEEEEE'}">
+            <td valign="center" style="font-size:12px;color:#000000;line-height:100%;font-family:trebuchet ms;border-bottom:1px solid #DDDDDD;">
+                ${item.timestamp}
+            </td>
+            <td valign="center" style="font-size:12px;color:#000000;line-height:100%;font-family:trebuchet ms;border-bottom:1px solid #DDDDDD;">
+                ${item.from_address}
+            </td>
+            <td valign="center" style="font-size:12px;color:#000000;line-height:100%;font-family:trebuchet ms;border-bottom:1px solid #DDDDDD;">
+                ${item.to_address}
+            </td>
+            <td valign="center" style="font-size:12px;color:#000000;line-height:100%;font-family:trebuchet ms;border-bottom:1px solid #DDDDDD;">
+                ${item.subject}
+            </td>
+            <td valign="center" style="font-size:12px;color:#000000;line-height:100%;font-family:trebuchet ms;border-bottom:1px solid #DDDDDD;">
+                <a style="text-decoration:none;" href="${url('message-autorelease', messageid=item.id, host=host, protocol=protocol)}">Release</a>
+            </td>
+        </tr>			
+		% endfor	
+		% endif
+        <tr>
+            <td colspan="5" style="background-color:#FFFFCC;border-top:10px;" valign="center">
+                <span style="font-size:10px;color:#996600;line-height:10%;font-family:verdana;">
+                    &copy; 2012 Powered by <a style="text-decoration:none;" href="http://www.baruwa.net/">Baruwa Hosted</a>
+                </span>
+            </td>
+        </tr>
+    </table>
+</td>
+</tr>
+</table>
+</body>
+</html>

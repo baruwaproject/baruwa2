@@ -1,0 +1,70 @@
+<div class="alpos">
+	<ul id="msgops">
+		<li id="addfilter">${h.link_to(_('Apply Filters'), url(controller='reports', action='index', anchor='form-area'))}</li>
+		<li>${h.link_to(_('Download PDF'), url(controller='reports', action='display', reportid=c.reportid) + '.pdf')}</li>
+		<li>${h.link_to(_('Download CSV'), url(controller='reports', action='display', reportid=c.reportid) + '.csv')}</li>
+	</ul>
+</div>
+<div class="clear"></div>
+<div class="sp10"></div>
+<div id="content">
+	<div id="form-area">
+		${forms.form()}
+	</div>
+	<div class="clear"></div>
+	<div class="sp20"></div>
+	${forms.select_filter()}\
+	<div class="clear"></div>
+	<div class="sp20"></div>
+<div class="grid_16 alpha omega">
+    <div id="graphrows" class="grid_10 alpha omega">
+		<table class="graphrows">
+			<thead>
+				<tr class="drow">
+					<th>${_('#')}</th>
+					<th>${_('IP address')}</th>
+					<th>${_('Hostname')}</th>
+					<th>${_('Country')}</th>
+					<th>${_('Total')}</th>
+					<th>${_('Volume')}</th>
+				</tr>
+			</thead>
+		<tbody id='pietbody'>
+        % for i, item in enumerate(c.top_items):
+		<% counter = i + 1 %>
+        <tr class="graph_row">
+            <td class="graph_hash_td">${counter}.</td>
+            <td class="graph_ip_td"><div class="pie_${counter} pie"></div>&nbsp;${item.address.strip()}</td>
+            <td class="graph_hostname_td">${h.get_hostname(item.address.strip())}</td>
+            <td class="graph_country_td">${h.country_flag(item.address.strip())}</td>
+            <td class="graph_count_td">${item.count}</td>
+            <td class="graph_volume_td">${h.format_byte_size(item.size)}</td>
+        </tr>
+        % endfor
+        % if not c.top_items:
+        <tr class="graph_row"><td colspan="6">${_('No items found')}</td></tr>
+        % endif
+       </tbody>
+       </table>
+    </div>
+    <div class="grid_5 graphcol">
+        <div id="chart" style="width: 350px; height: 284px;">
+% if c.top_items:
+           <img src="${url(controller='reports', action='display', reportid=request.environ['pylons.routes_dict']['reportid'])}.png" alt="graph" />
+% endif
+        </div>
+    </div>
+</div>
+</div>
+<%def name="headers()">\
+</%def>
+
+<%def name="title()">${_('Reports :: %(t)s') % dict(t=c.report_title)}</%def>
+<%def name="heading()">${_('Reports :: %(t)s') % dict(t=c.report_title)}</%def>
+<%def name="localscripts()">
+${h.javascript_link(h.media_url() + 'js/jquery.clearform.min.js',
+h.media_url() + 'js/baruwa/reports.common.js',
+h.media_url() + 'js/baruwa/reports.relays.js')}
+</%def>
+<%namespace name="forms" file="/reports/form.html"/>
+<%inherit file="/base.html"/>

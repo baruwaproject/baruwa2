@@ -1,0 +1,45 @@
+<div id="content">
+<div class="grid_16 omega">
+	<h3 class="head">${_('Accounts Export Status')}</h3>
+	<div class="clear"></div>
+	<div class="sp10"></div>
+</div>
+<div class="grid_16 omega">
+	% if c.finished:
+		<div class="grid_15">
+		% if c.results and c.results['f']:
+		${_('The export has been processed, ')}${h.link_to(_('Download the csv file'), url('accounts-export-status', taskid=c.results['id'], d='y'))}
+		% else:
+			${_('The CSV export failed: %s' % c.results['global_error'])}
+		% endif
+		</div>
+	% else:
+	<div class="grid_15">
+		<%
+		count = session['acexport-count']
+		if count > 10:
+			count = 10
+		percent = (count / 10.0) * 100
+		%>
+		${h.portable_img('imgs/ajax-pager.gif', alt="")} ${_('The request is being processed. %d%%' % percent)}
+	</div>
+	% endif
+</div>
+</div>
+
+
+<%def name="headers()">\
+% if not c.finished:
+<meta http-equiv="refresh" content="5" />
+% endif
+</%def>
+<%def name="title()">\
+${_('Accounts :: User export status')}
+</%def>
+<%def name="heading()">\
+${_('Accounts :: User export status')}
+</%def>
+
+<%def name="localscripts()">\
+</%def>
+<%inherit file="/base.html"/>

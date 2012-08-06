@@ -1,0 +1,101 @@
+<div class="alpos">
+	<ul id="msgops">
+		<li id="addfilter">${h.link_to(_('Apply Filters'), url(controller='reports', action='index', anchor='form-area'))}</li>
+		<li>${h.link_to(_('Download PDF'), url(controller='reports', action='display', reportid=c.reportid) + '.pdf')}</li>
+		<li>${h.link_to(_('Download CSV'), url(controller='reports', action='display', reportid=c.reportid) + '.csv')}</li>
+	</ul>
+</div>
+<div class="clear"></div>
+<div class="sp10"></div>
+<div id="content">
+	<div id="form-area">
+		${forms.form()}
+	</div>
+	<div class="clear"></div>
+	<div class="sp20"></div>
+	${forms.select_filter()}\
+	<div class="clear"></div>
+	<div class="sp20"></div>
+<table class="listing">
+<thead>
+<tr>
+	<td colspan="7">
+	<div id="chart" style="width: 950px; height: 260px;">
+		<!--<noscript>${_('Enable Javascript to view graphs')}</noscript>-->
+		<img src="${url(controller='reports', action='display', reportid=request.environ['pylons.routes_dict']['reportid'])}.png" alt="graph" />
+	</div>
+	</td>	
+</tr>
+<tr>
+	<td colspan="7">
+	<div id="mail_legend"></div>
+	</td>
+</tr>
+<tr class="grid">
+	<th class="totals_date">
+		${_('Date')}
+	</th>
+	<th class="totals_mail">
+		${_('Mail')}
+	</th>
+	<th class="totals_virii">
+		${_('Virii')}
+	</th>
+	<th class="totals_viriip">
+		${_('Virii %')}
+	</th>
+	<th class="totals_spam">
+		${_('Spam')}
+	</th>
+	<th class="totals_spamp">
+		${_('Spam %')}
+	</th>
+	<th class="totals_volume">
+		${_('Volume')}
+	</th>
+</tr>
+</thead>
+<tbody id="chartbody">
+% for i, row in enumerate(c.top_items):
+<tr>
+	<td class="totals_date">
+		${row.date}
+	</td>
+	<td class="totals_mail">
+		${row.mail_total}
+	</td>
+	<td class="totals_virii">
+		${row.virus_total}
+	</td>
+	<td class="totals_viriip">
+		${"%.1f" % ((1.0 * row.virus_total / row.mail_total) * 100)}%
+	</td>
+	<td class="totals_spam">
+		${row.spam_total}
+	</td>
+	<td class="totals_spamp">
+		${"%.1f" % ((1.0 * row.spam_total / row.mail_total) * 100)}%
+	</td>
+	<td class="totals_volume">
+		${h.format_byte_size(row.total_size)}
+	</td>
+</tr>
+% endfor
+% if not c.top_items:
+<tr><td class="spanrow" colspan="7">${_('No records found')}</td></tr>
+% endif
+</tbody>
+</table>
+</div>
+<%def name="headers()">\
+</%def>
+
+<%def name="title()">${c.report_title}</%def>
+<%def name="heading()">${c.report_title}</%def>
+<%def name="localscripts()">\
+${h.javascript_link(h.media_url() + 'js/jquery.clearform.min.js',
+h.media_url() + 'js/baruwa/reports.common.js',
+h.media_url() + 'js/baruwa/reports.listings.js')}
+</%def>
+<%namespace name="forms" file="/reports/form.html"/>
+<%inherit file="/base.html"/>

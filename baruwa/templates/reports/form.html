@@ -1,0 +1,45 @@
+<%def name="form()">
+<div id="afform" class="grid_16 drow">
+    <div><a class="closeflash" title="Close" href="#">x</a>${_('Add Filter')}</div>
+</div>
+% if c.form.errors:
+<div id="filter-error" class="grid_16 drow formerror">
+<% 
+allerrors = []
+[allerrors.extend(l) for l in c.form.errors.values()]
+%>
+    ${', '.join(allerrors)}
+</div>
+% endif
+<div class="grid_16 alpha drowlast">
+	${h.form(url(controller='reports'), id='filter-form', method='post')}
+    <div class="grid_4">${c.form.filtered_field}</div>
+    <div class="grid_4 alpha">${c.form.filtered_by}</div>
+    <div class="grid_4 alpha">${c.form.filtered_value(size=30)}</div>
+    <div class="grid_4 alpha">${h.submit('filter_form_submit', _('Add filter'), 'filter_form_submit')}</div>
+	${h.HTML.div(c.form.csrf_token, style="display: none;")}
+    ${h.end_form()}
+</div>\
+</%def>
+<%def name="select_filter()">
+<%
+if not c.active_filters:
+  filter_class = ' hide'
+else:
+  filter_class = ' show'
+filterdict = dict(c.FILTER_ITEMS)
+filterbydict = dict(c.FILTER_BY)
+%>
+<div class="mkbox${filter_class}">
+<div id="filterrow" class="grid_16 drowlast">
+    <div class="grid_3 alpha">
+        ${_('Filters have been applied')} :
+     </div>
+     <div id="fhl" class="grid_13 alpha">
+            % for i, f in enumerate(c.active_filters):
+            	&nbsp;${h.link_to(h.image(url(h.media_url() + 'imgs/sm-del.png'), alt='x', title='Remove'), url('delete-filter', filterid=i)) + ' '+ filterdict[f['field']]} ${filterbydict[f['filter']]} ${f['value']}
+            % endfor
+    </div>
+</div>
+</div>
+</%def>

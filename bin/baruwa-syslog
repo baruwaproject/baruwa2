@@ -1,0 +1,150 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# vim: ai ts=4 sts=4 et sw=4
+# Baruwa - Web 2.0 MailScanner front-end.
+# Copyright (C) 2010-2012  Andrew Colin Kissa <andrew@topdog.za.net>
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+# 
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+# 
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#
+"""baruwa-syslog, Listens for syslog messages on the mail.*
+channel and parses delivery confirmations which get stored
+in the sql database for use by the baruwa web front end.
+"""
+
+import os
+import time
+import datetime
+
+from optparse import OptionParser
+from ConfigParser import SafeConfigParser
+
+from twisted.internet import reactor
+from twisted.enterprise import adbapi
+from twisted.internet.protocol import DatagramProtocol
+from pyparsing import (Word, alphas, Suppress, Combine, nums,
+                    string, Optional, Regex, ParseException)
+
+from baruwa.lib.regex import DBURL_RE, EXIM_DELIVERY_RE, EXIM_HOST_RE
+
+DB_DRIVER = 'psycopg2'
+
+
+def parser():
+    """Set up pyparser"""
+    month = Word(string.uppercase, string.lowercase, exact=3)
+    integer = Word(nums)
+    serverdatetime = Combine(month + " " + integer + " " +
+                    integer + ":" + integer + ":" + integer)
+    hostname = Word(alphas + nums + "_" + "-")
+    daemon = Word(alphas + "/" + "-" + "_") + Optional(Suppress("[")
+                + integer + Suppress("]")) + Suppress(":")
+    message = Regex(".*")
+    return serverdatetime + hostname + daemon + message
+
+
+def load_config(conffile):
+    "load pylons configuration"
+    config_parser = SafeConfigParser()
+    config_parser.read(conffile)
+    return config_parser
+
+
+def url2args(url):
+    "convert a sqlalchemy url to DBI arguments"
+    match = DBURL_RE.match(url)
+    if match:
+        return match.groupdict()
+    return {}
+
+
+class Logger(DatagramProtocol):
+    "UDP protocol extension to handle syslog messages"
+    def __init__(self, dbconn):
+        "Overide to provide connection pool"
+        self.dbconn = dbconn
+        self.parser = parser()
+        self.query = """INSERT INTO deliveryinfo
+                        (id, hostname, destination, status, timestamp)
+                        VALUES (%s, %s, %s, %s, %s)"""
+        self.items = {}
+
+    def _dberror(self, dberror):
+        "Print the DB error"
+        print "Error occured: %s" % dberror.getErrorMessage()
+
+    def _save2db(self, *args):
+        "Save to DB"
+        self.dbconn.runOperation(self.query, args).addErrback(self._dberror)
+
+    def _process_exim(self, fields):
+        "process an exim log entry"
+        line = fields[4]
+        hostname = fields[1]
+        parsed = time.strptime(fields[0], '%b %d %H:%M:%S')
+        timestamp = time.struct_time([datetime.date.today().year] +
+                                    list(parsed[1:]))
+        timestamp = datetime.datetime.fromtimestamp(time.mktime(timestamp))
+        match = EXIM_DELIVERY_RE.match(line)
+        if match:
+            if match.group('direction') == '=>':
+                # delivery
+                dmatch = EXIM_HOST_RE.match(match.group('rest'))
+                if dmatch:
+                    destination = dmatch.group('destination')
+                else:
+                    destination = 'undetermined'
+                args = [
+                            match.group('message_id'),
+                            hostname,
+                            destination,
+                            'Pending',
+                            timestamp,
+                        ]
+                self.items[match.group('message_id')] = args
+            if match.group('direction') == 'Completed':
+                # completed
+                try:
+                    args = self.items[match.group('message_id')]
+                    args[3] = 'Completed'
+                    self._save2db(*tuple(args))
+                    del self.items[match.group('message_id')]
+                except KeyError:
+                    pass
+
+    def datagramReceived(self, data, (host, port)):
+        "process data"
+        #print "connection from: %s" % host
+        try:
+            fields = self.parser.parseString(data[4:])
+            mta = fields[2]
+            if mta == 'exim':
+                self._process_exim(fields)
+        except ParseException:
+            pass
+
+if __name__ == "__main__":
+    parser = OptionParser()
+    parser.add_option('-c', '--config', dest="settingsfile",
+                    help="Baruwa configuration file",
+                    default='development.ini')
+    options, args = parser.parse_args()
+    basepath = os.path.dirname(os.path.dirname(__file__))
+    configfile = os.path.join(basepath, options.settingsfile)
+    config = load_config(configfile)
+    dburl = config.get('app:main', 'sqlalchemy.url',
+                        vars=dict(here=basepath))
+    db_args = url2args(dburl)
+    dbconnection = adbapi.ConnectionPool(DB_DRIVER, **db_args)
+    reactor.listenUDP(10514, Logger(dbconnection))
+    reactor.run()

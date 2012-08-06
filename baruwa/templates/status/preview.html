@@ -1,0 +1,65 @@
+<div class="alpos">
+	<div class="grid_16">
+		<ul id="msgops">
+			<li>${h.link_to(_('Inbound Queue'), url('mailq-status-directed', queue='inbound'))}</li>
+		    <li>${h.link_to(_('Outbound Queue'), url('mailq-status-directed', queue='outbound'))}</li>
+		    <li>${h.link_to(_('Return to message'), url('mailq-detail', queueid=c.queueid))}</li>
+		</ul>
+	</div>
+</div>
+<div class="clear"></div>
+<div id="content">
+% if c.message:
+	<div class="grid_16">
+		<h3 class="head">${_('Message headers')}</h3>
+	</div>
+	<div class="clear"></div>
+% for header in c.message['headers']:
+<div class="grid_16 drow">
+    <div class="grid_7">${header.capitalize()}:</div>
+    <div class="grid_8">${h.wrap_paragraphs(c.message['headers'][header], 60) if c.message['headers'][header] else ''}</div>
+</div>
+% endfor
+% if c.message['attachments']:
+<div class="grid_16 drow">
+    <div class="grid_7">${_('Attachments')}:</div>
+    <div class="grid_8">
+    	% 	for index, name in enumerate(c.message['attachments']):
+		<% counter = index + 1 %>
+			${h.link_to(h.portable_img('imgs/dl.png', alt="dl") + h.literal('&nbsp;') + name['filename'], url('queue-attach-dw', queueid=c.queueid, attachid=counter))}&nbsp;
+		%	endfor
+    </div>
+</div>
+% endif
+<div class="grid_16">
+	<h3 class="head">${_('Message content')}</h3>
+</div>
+<div class="grid_16">
+    <div id="mailpreview">
+% if c.message['parts'][0]['type'] == "text":
+        ${h.linebreaksbr(c.message['parts'][0]['content'])}
+% else:
+        ${c.message['parts'][0]['content']|n}
+% endif
+    </div>
+</div>
+% else:
+<div class="grid_16 drow">
+    <div>${_('Queued Message: %(msgid)s could not be previewed') % dict(msgid=c.messageid)}</div>
+</div>
+% endif
+</div>
+
+<%def name="title()">
+ ${_('Status :: Mail Queue :: Previewing Queued message : %(msgid)s') % dict(msgid=c.messageid)}
+</%def>
+
+<%def name="heading()">
+${_('Status :: Mail Queue :: Previewing Queued message : %(msgid)s') % dict(msgid=h.wrap_paragraphs(c.messageid, 70))}
+</%def>
+
+<%def name="headers()">\
+</%def>
+<%def name="localscripts()">\
+</%def>
+<%inherit file="/base.html"/>

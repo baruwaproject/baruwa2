@@ -1,0 +1,32 @@
+% if 'csrf_token' in c.form.errors:
+<div class="grid_16 drow">
+	<div class="grid_15 formglobalerror">${_('Form validation failed due to: %s') % c.form.errors.pop('csrf_token')[0]}</div>
+</div>
+% endif
+% for field in c.form:
+% if field.type == 'HiddenField' or field.type == 'CSRFTokenField':
+	${h.HTML.div(field, style="display: none;")}
+% else:
+<div class="grid_16 drow">
+    <div class="grid_5">${field.label}</div>
+    <div class="grid_5">\
+	% if (field.type == 'TextField' and field.name != 'message_size' and field.name != 'port') or field.type == 'PasswordField':
+		${h.highlight_errors(field, size=50)}\
+	% elif field.type == 'IntegerField' or field.name == 'message_size' or field.name == 'port':
+		${h.highlight_errors(field, size=10)}\
+	% elif field.type == 'FileField':
+		${h.highlight_errors(field, size=30)}\
+	% elif field.type == 'TextAreaField':
+	    ${h.highlight_errors(field, style='height: 53px; width: 326px;')}\
+	% else:
+		${h.highlight_errors(field)}\
+	% endif
+	</div>
+	<div class="grid_5">
+		% if field.errors:
+		<div class="formerror">${', '.join(field.errors)}</div>
+		% endif
+	</div>
+</div>
+% endif
+% endfor

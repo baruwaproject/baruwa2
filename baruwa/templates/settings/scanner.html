@@ -1,0 +1,46 @@
+<div id="content">
+	<div class="grid_16">
+	    <h3 class="head">${_('Configuration Settings')}</h3>
+	</div>
+	<div class="grid_16 drow">
+	    <div class="grid_7">
+	        <ul class="reports">
+				% for i, section in enumerate(c.sections):
+				%  if not i % 2:
+				<li>${h.link_to(c.sections[section], url('scanner-section', serverid=c.scanner.id, sectionid=section))}</li>
+				%  endif	
+				% endfor
+	        </ul>
+	    </div>
+	    <div class="grid_7">
+	        <ul class="reports">
+				% for i, section in enumerate(c.sections):
+				%  if i % 2:
+				<li>${h.link_to(c.sections[section], url('scanner-section', serverid=c.scanner.id, sectionid=section))}</li>
+				%  endif	
+				% endfor
+	        </ul>
+	    </div>
+	</div>
+</div>
+
+<%def name="title()">
+${_('Settings :: scanning server :: %(name)s') % dict(name=c.scanner.hostname)}
+</%def>
+
+<%def name="heading()">
+${_('Settings :: scanning server :: %(name)s') % dict(name=c.scanner.hostname)}
+</%def>
+
+<%def name="submenu()">
+<ul>
+  <li>${h.link_to(_('Update server'), url('scanner-edit', serverid=c.scanner.id))}</li>
+</ul>
+</%def>
+
+<%def name="headers()">
+</%def>
+<%def name="localscripts()">
+</%def>
+
+<%inherit file="/base.html"/>

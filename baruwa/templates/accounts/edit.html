@@ -1,0 +1,37 @@
+<div class="alpos">
+	<div class="grid_16">
+		<ul id="msgops">
+		  <li>${h.link_to(_('Return to account'), url('account-detail', userid=c.id))}</li>
+		</ul>
+	</div>
+</div>
+<div id="content">
+<div class="grid_16">
+    <h3 class="head">${_('Update User account')}</h3>
+</div>
+${h.form(url(controller='accounts', action='edit', userid=c.id), method='post')}
+<%include file="/forms/base.html"/>
+    <div class="grid_16 drow">
+        <div class="grid_7">&nbsp;</div>
+        <div class="grid_8">
+            ${h.submit('submit', _('Update account'))}
+        </div>
+    </div>
+${h.end_form()}
+<div class="clear"></div>
+<div class="sp20"></div>
+</div>
+
+<%def name="title()">
+${_('Accounts :: Edit account')}
+</%def>
+
+<%def name="heading()">
+${_('Accounts :: Edit account')} 
+</%def>
+
+<%def name="headers()">
+</%def>
+<%def name="localscripts()">\
+</%def>
+<%inherit file="/base.html"/>

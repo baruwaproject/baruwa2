@@ -1,0 +1,66 @@
+<div id="content">
+${h.form(url.current(), method='post')}
+<table class="domains">
+<thead>
+<tr class="grid">
+	<th class="domains_heading_hash domains_check">&nbsp;</th>
+	<th class="domains_heading_name">${_('Domain Name')}</th>
+	<th class="domains_heading_owner">${_('Organization')}</th>
+	<th class="domains_heading_owner">${_('Accounts')}</th>
+	<th class="domains_heading_status">${_('Status')}</th>
+	<th class="domains_heading_action" colspan="2">${_('Actions')}</th>
+</tr>
+</thead>
+<tbody>
+% if not c.page.items:
+<tr><td class="spanrow" colspan="7">${_('No domains found')}</td></tr>
+% endif
+% for domain in c.page.items:
+<tr class="todel">
+	<td class="domains_check">&nbsp;</td>
+	<td class="domains_name">
+		${domain.name}
+	</td>
+	<td class="domains_owner inl">
+		<%
+		orglinks = []
+		for index, org in enumerate(domain.organizations):
+			orglinks.append(org.name)
+		orglinks = ', '.join(orglinks)
+		%>
+		${orglinks|n}
+	</td>
+	<td class="domains_accounts">${h.portable_img('imgs/user.png', _('List accounts'))}</td>
+	<td class="domains_status">${h.enabled_or_not(domain.status)}</td>
+	<td class="domains_edit">${h.portable_img('imgs/edit.png', _('Edit'))}</td>
+	<td class="domains_delete">${h.portable_img('imgs/action_delete.png', _('Delete'))}</td>
+</tr>
+% endfor
+</tbody>
+</table>
+<div class="mkbox">
+	<div class="grid_16 formcontrols">
+	<div class="grid_2 prefix_7">&nbsp;</div>
+	<div class="grid_2">&nbsp;</div>
+	<div class="grid_2">&nbsp;</div>
+	<div class="grid_2">${h.submit('submit', _('Yes Delete'))}</div>
+	</div>
+</div>
+<div class="clear"></div>
+${h.end_form()}\
+</div>
+
+<%def name="title()">\
+${_('Domains :: Confirm bulk domain deletion')}
+</%def>
+
+<%def name="heading()">\
+${_('Domains :: Confirm bulk domain deletion')}
+</%def>
+
+<%def name="headers()">\
+</%def>
+
+<%def name="localscripts()">\
+</%def>
+<%inherit file="/base.html"/>

@@ -1,0 +1,23 @@
+<%def name="searchbox(link, fields=[])">
+<div class="clear"></div>
+<div class="sp10"></div>
+<div class="alpos">
+	<div class="toolbar">
+		${h.form(link, method='get', id='msgsearch')}
+		<div class="grid_16 alpha omega">
+			% if hasattr(c, 'q') and c.q:
+			<div class="grid_4">${_('About %(n)s results (%(t)s seconds)') % dict(n=c.total_found, t=c.search_time)}</div>
+			<div class="grid_8"><div class="toright"><input type="text" size="65" name="q" value="${c.q}" /></div></div>
+			% else:
+			<div class="grid_4">&nbsp;</div>
+			<div class="grid_8"><div class="toright"><input type="text" size="65" name="q" /></div></div>
+			% endif
+			<div class="grid_3"><input type="submit" value="Search" /></div>
+		</div>
+		% for field in fields:
+		<div style="display: none;"><input type="hidden" name="${field[0]}" value="${field[1]}"></div>
+		% endfor
+		${h.end_form()}
+	</div>
+</div>
+</%def>

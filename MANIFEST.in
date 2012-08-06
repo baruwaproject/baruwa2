@@ -1,0 +1,14 @@
+include README.rst
+include what.ini
+include who.ini
+include baruwa.wsgi
+include baruwa/config/deployment.ini_tmpl
+include baruwa/config/sql/integration.sql
+include baruwa/config/sql/functions.sql
+include extras/perl/BS.pm
+include extras/perl/baruwa-backup2db.pl
+include extras/perl/exim-bcrypt.pl
+include extras/packaging/baruwa.*
+recursive-include baruwa/public *
+recursive-include baruwa/templates *
+recursive-include baruwa/i18n *

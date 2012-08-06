@@ -1,0 +1,74 @@
+## -*- coding: utf-8 -*-
+<%!
+    from pylons.i18n.translation import set_lang, get_lang
+%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>Baruwa :: ${_("Login") if url.current() == url('accounts-login') else _('Reset my password')}</title>
+<link href="${h.media_url()}css/grid.css" media="screen, projection" rel="stylesheet" type="text/css" />
+<link href="${h.media_url()}css/text.css" media="screen, projection" rel="stylesheet" type="text/css" />
+<link rel="icon" href="${h.media_url()}imgs/favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="${h.media_url()}imgs/favicon.ico" type="image/x-icon" />
+<script type="text/javascript">
+var media_url = "${h.media_url()}";
+</script>
+${h.javascript_link(h.media_url() + 'js/jquery.min.js',
+h.media_url() + 'js/jquery.mustache.min.js',
+url('jsi18n'),
+h.media_url() + 'js/baruwa/common.js',
+h.media_url() + 'js/baruwa/login.js')}
+</head>
+<body>
+<div id="wrap">
+	<div id="header-bar">
+		<div id="header">
+			<img src="${h.media_url()}imgs/logo.png" alt="Baruwa" class="logo" />
+		</div>
+	</div>
+	<div id="login-wrapper">
+		<div id="login-box"${'' if url.current() == url('accounts-login') else ' class="hide"'|n}>
+			<h2>${_('Login')}</h2>
+			% if c.login_counter > 0:
+			    <p class="error">${_("The username or password you entered is incorrect.")}</p>
+			% endif
+			${h.form(url('/login', came_from=c.came_from, __logins=c.login_counter), id='loginform', method='post')}
+			<label>${_('Username')}</label><input type='text' name="login" />
+			<label>${_('Password')}</label><input type='password' name="password" />
+			<select name="lang" id="globallang">
+				% for lang in h.get_languages():
+	              % if lang.keys()[0] == get_lang()[0]:
+	            <option value="${lang.keys()[0]}" selected='selected'>${lang[lang.keys()[0]]}</option>
+	              % else:
+	            <option value="${lang.keys()[0]}">${lang[lang.keys()[0]]}</option>
+	              % endif
+	            % endfor
+			</select>
+			<input type='submit' value="${_("Login")}" />
+			${h.end_form()}
+			<p><a id="iforgot" href="${url('accounts-pwreset', came_from=c.came_from)}">${_('Forgotten password ?')}</a></p>
+		</div>
+		<div id="forgottenpw"${'' if url.current() == url('accounts-pwreset') else ' class="hide"'|n}>
+		<p>${_("Forgotten your password? Enter your e-mail address below, and we'll e-mail instructions on setting a new one.")}</p>
+		<br />
+		${h.form(url('accounts-pwreset', came_from=c.came_from), id='resetform', method='post')}
+			<label>${_('Email address')}</label>
+			<input type="text" name="email" class="field" id="email" />
+			<a id="cancelrset" href="${url('accounts-login', came_from=c.came_from)}">${_('Cancel')}</a>
+			<input type="submit" class="button" id="pwreset" value="${_('Reset my password')}" />
+		${h.end_form()}
+		</div>
+	</div>
+	<div id="footer-bar">
+		<div id="footer">
+			<div id="copyright">
+				<a href="http://www.baruwa.org/">Baruwa</a> &copy; 2011 Andrew Colin Kissa 
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

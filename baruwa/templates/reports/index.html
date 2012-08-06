@@ -1,0 +1,125 @@
+<div id="content">
+	<div id="form-area">
+		${filter.form()}
+	</div>
+	<div class="clear"></div>
+	<div class="sp20"></div>
+	<div class="grid_10">
+		<h3 class="head">${_('Reports')}</h3>
+		<div class="clear"></div>
+		<div class="sp10"></div>
+		<div class="grid_5 alpha">
+			<ul class="reports">
+	            <li>${h.link_to(_('Top Senders by Quantity'), url('reports-display', reportid=1))}</li>
+	            <li>${h.link_to(_('Top Senders by Volume'), url('reports-display', reportid=2))}</li>
+	            <li>${h.link_to(_('Top Sender Domains by Quantity'), url('reports-display', reportid=3))}</li>
+	            <li>${h.link_to(_('Top Sender Domains by Volume'), url('reports-display', reportid=4))}</li>
+	            <li>${h.link_to(_('Spam Score Distribution'), url('reports-display', reportid=9))}</li>
+	            <li>${h.link_to(_('Top Mail hosts'), url('reports-display', reportid=10))}</li>
+	        </ul>
+		</div>
+		<div class="grid_5 alpha">
+			<ul class="reports">
+	            <li>${h.link_to(_('Top Recipients by Quantity'), url('reports-display', reportid=5))}</li>
+	            <li>${h.link_to(_('Top Recipients by Volume'), url('reports-display', reportid=6))}</li>
+				% if c.user.account_type != 3:
+	            <li>${h.link_to(_('Top Recipient Domains By Quantity'), url('reports-display', reportid=7))}</li>
+	            <li>${h.link_to(_('Top Recipient Domains By Volume'), url('reports-display', reportid=8))}</li>
+				% endif
+	            <li>${h.link_to(_('Message Totals'), url('reports-display', reportid=11))}</li>
+	            <li>${h.link_to(_('Full message list'), url(controller='messages', action='listing'))}</li>
+	        </ul>
+		</div>
+	</div>
+	<div class="grid_6">
+		<h3 class="head">${_('Statistics')}</h3>
+		<div class="clear"></div>
+		<div class="sp10"></div>
+		<div class="grid_6 drow alpha">
+			<div class="grid_3 alpha">${_('Message count')}</div>
+			<div class="grid_3 alpha" id="msgcount">${c.count}</div>
+		</div>
+		<div class="grid_6 drow alpha">
+			<div class="grid_3 alpha">${_('Oldest message')}</div>
+			<div class="grid_3 alpha" id="newestmsg">${c.data[0].newest}</div>
+		</div>
+		<div class="grid_6 drow alpha">
+			<div class="grid_3 alpha">${_('Newest message')}</div>
+			<div class="grid_3 alpha" id="oldestmsg">${c.data[0].oldest}</div>
+		</div>
+	</div>
+	<div class="grid_8">
+	<div class="grid_8 alpha">
+		<h3 class="head" id="active_filters">${_('Active Filter(s)')}</h3>
+	</div>
+	<div id="afilters"><!-- afilters start -->
+	<%
+	filterdict = dict(c.FILTER_ITEMS)
+	filterbydict = dict(c.FILTER_BY) 
+	%>
+	% for index, f in enumerate(c.active_filters): 
+	<div class="grid_8 drow alpha">
+        <div class="grid_1 omega">
+            ${h.link_to(h.image(url(h.media_url() + 'imgs/action_remove.png'), alt='x', title='Remove', class_="positio"), url('delete-filter', filterid=index))}
+        </div>
+        <div class="grid_1 omega">
+	        ${h.link_to(h.image(url(h.media_url() + 'imgs/save.png'), alt='Save', title='Save', class_="positio"), url('save-filter', filterid=index))}
+        </div>
+        <div class="grid_6">
+            ${filterdict[f['field']]} ${filterbydict[f['filter']]} ${f['value']}
+        </div>
+	</div>
+	% endfor
+	% if not c.active_filters:
+	<div class="grid_8 drow alpha">
+	    <div class="grid_6">${_('No active filters at the moment')}</div>
+	</div>
+	% endif
+	</div><!-- afilters end -->
+	</div>
+	<div class="grid_8">
+	<div class="grid_8 alpha">
+		<h3 class="head">${_('Saved Filter(s)')}</h3>
+	</div>
+	<div id="sfilters"><!-- sfilters start -->
+	% for sf in c.saved_filters:
+	<div class="grid_8 drow alpha">
+        <div class="grid_1 omega">
+            ${h.link_to(h.image(url(h.media_url() + 'imgs/action_delete.png'), alt='x', title='Delete', class_="positio"), url('delete-storedfilter', filterid=sf['id']))}
+        </div>
+        <div class="grid_1 omega">
+			% if not sf['loaded']:
+				${h.link_to(h.image(url(h.media_url() + 'imgs/action_add.png'), alt='Load', title='Load', class_="positio"), url('load-filter', filterid=sf['id']))}
+			% else:
+				${h.image(url(h.media_url() + 'imgs/action_add.png'), alt='Load', title='Load', class_="positio")}
+			% endif
+        </div>
+        <div class="grid_6">
+            ${sf['name']}
+        </div>
+	</div>
+	% endfor
+	% if not c.saved_filters:
+	<div class="grid_8 drow alpha">
+	    <div class="grid_7">${_('No saved filters at the moment')}</div>
+	</div>
+	% endif
+	</div><!-- sfilters end -->
+	</div>
+<div class="clear"></div>
+<div class="sp20"></div>
+</div>
+
+<%def name="headers()">
+</%def>
+
+<%def name="title()">${_('Reports')}</%def>
+<%def name="heading()">${_('Reports')}</%def>
+<%def name="submenu()"></%def>
+<%def name="localscripts()">
+${h.javascript_link(h.media_url() + 'js/jquery.clearform.min.js',
+h.media_url() + 'js/baruwa/reports.common.js',
+h.media_url() + 'js/baruwa/reports.js')}
+</%def>
+<%namespace name="filter" file="/reports/form.html"/>
+<%inherit file="/base.html"/>
