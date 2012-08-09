@@ -5,7 +5,7 @@
 #
 [DEFAULT]
 debug = true
-email_to = andrew@topdog.za.net
+email_to = you@yourdomain
 smtp_server = 127.0.0.1
 error_email_from = baruwa@localhost
 
