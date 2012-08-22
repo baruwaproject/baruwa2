@@ -16,7 +16,7 @@ Tweak the config file as appropriate and then setup the application::
 
     paster setup-app config.ini
 
-Run the paste server
+Run the paste server::
 
 	paster serve config.ini
 
