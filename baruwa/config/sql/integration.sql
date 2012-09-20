@@ -149,7 +149,7 @@ CREATE VIEW approvedlistinner AS
 	WHERE from_address NOT LIKE '%@%' AND (to_address='any' OR to_address='') AND list_type=1
 	--emailto(domain|email)
 	UNION
-	SELECT ARRAY_TO_STRING(ARRAY['From:', from_address, 'and To: ', CASE WHEN to_address LIKE '%@%' THEN to_address
+	SELECT ARRAY_TO_STRING(ARRAY['From:', from_address, ' and To: ', CASE WHEN to_address LIKE '%@%' THEN to_address
 	    ELSE '*@' || to_address END, 'yes'], ' ') ruleset, 2 num FROM lists 
 	WHERE from_address LIKE '%@%' AND (to_address!='any' AND to_address!='') AND list_type=1
 	--nonemailto(domain|email)
@@ -157,7 +157,7 @@ CREATE VIEW approvedlistinner AS
 	SELECT ARRAY_TO_STRING(ARRAY['From:',
 	    CASE WHEN from_address ~* E'^(?:[A-Z0-9](?:[A-Z0-9-]{0,61}[A-Z0-9])?\\.)+[a-zA-Z]{2,6}\\.?$' THEN '*@' || from_address
 	    ELSE from_address
-	    END, 'and To: ', 
+	    END, ' and To: ', 
 	    CASE WHEN to_address LIKE '%@%' THEN to_address
 	    WHEN to_address ~* E'^(?:[A-Z0-9](?:[A-Z0-9-]{0,61}[A-Z0-9])?\\.)+[a-zA-Z]{2,6}\\.?$' THEN '*@' || to_address
 	    ELSE to_address END, 'yes'], ' ') ruleset, 3 num FROM lists 
@@ -189,7 +189,7 @@ CREATE VIEW bannedlistinner AS
 	WHERE from_address NOT LIKE '%@%' AND (to_address='any' OR to_address='') AND list_type=2
 	--emailto(domain|email)
 	UNION
-	SELECT ARRAY_TO_STRING(ARRAY['From: ', from_address, 'and To: ', CASE WHEN to_address LIKE '%@%' THEN to_address
+	SELECT ARRAY_TO_STRING(ARRAY['From: ', from_address, ' and To: ', CASE WHEN to_address LIKE '%@%' THEN to_address
 	    ELSE '*@' || to_address END, ' yes'], ' ') ruleset, 2 num FROM lists 
 	WHERE from_address LIKE '%@%' AND (to_address!='any' AND to_address!='') AND list_type=2
 	--nonemailto(domain|email)
@@ -197,7 +197,7 @@ CREATE VIEW bannedlistinner AS
 	SELECT ARRAY_TO_STRING(ARRAY['From: ',
 	    CASE WHEN from_address ~* E'^(?:[A-Z0-9](?:[A-Z0-9-]{0,61}[A-Z0-9])?\\.)+[a-zA-Z]{2,6}\\.?$' THEN '*@' || from_address
 	    ELSE from_address
-	    END, 'and To: ', 
+	    END, ' and To: ', 
 	    CASE WHEN to_address LIKE '%@%' THEN to_address
 	    WHEN to_address ~* E'^(?:[A-Z0-9](?:[A-Z0-9-]{0,61}[A-Z0-9])?\\.)+[a-zA-Z]{2,6}\\.?$' THEN '*@' || to_address
 	    ELSE to_address END, ' yes'], '') ruleset, 3 num FROM lists 
