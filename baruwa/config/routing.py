@@ -283,9 +283,9 @@ def make_map(config):
                 '/ajax/relayed/{id}',
                 action='relayed_via')
         submap.connect('messages-archived-ajax-relayedvia',
-                '/ajax/relayed/{id}',
+                '/ajax-relayed-archived/{id}',
                 action='relayed_via',
-                achive=True)
+                archive=True)
         submap.connect('messages-set-items',
                 '/setitems{.format}',
                 action='setnum')
