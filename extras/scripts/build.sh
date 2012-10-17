@@ -24,22 +24,17 @@ bugsemail="andrew@topdog.za.net"
 echo "Compiling coffeescript"
 coffee -b -c -o extras/js coffee
 echo "Minifying javascript"
-for infile in $(find extras/js -type f); do
-    output_file=$(echo $infile|sed -e 's:extras/js:baruwa/public/js/baruwa:')
-    java -jar ~/Documents/devel/java/yuicompressor-2.4.7.jar --charset utf-8 --type js -o $output_file  $infile
-    #echo -e "\t$output_file"
-done
+python setup.py tsantsa_js
 echo "Compiling compass"
 compass compile compass
 if [ "$1" == "full" ]; then
 echo "Updating i18n"
 pybabel extract -F babel.cfg -o baruwa/i18n/baruwajs.pot --msgid-bugs-address="${bugsemail}" --copyright-holder="${copyholder}" baruwa/public/
-#pybabel init -D baruwajs -i baruwa/i18n/baruwajs.pot -d baruwa/i18n -l en
 pybabel update -D baruwajs -i baruwa/i18n/baruwajs.pot -d baruwa/i18n
 pybabel compile -D baruwajs -f -d baruwa/i18n
 python setup.py extract_messages
 python setup.py update_catalog
 python setup.py compile_catalog
 echo "Building baruwa"
-python setup.py sdist --formats bztar
+python setup.py sdist
 fi

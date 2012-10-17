@@ -57,6 +57,7 @@ required_packages = [
         "repoze.who.plugins.sa",
         "repoze.who.plugins.ldap",
         "repoze.who-friendlyform",
+	"tsantsa",
     ]
 
 def read(fname):

@@ -18,3 +18,4 @@ baruwa/public/js/baruwa/*.js
 baruwa.egg-info
 *invite*
 Lena-eximconf-run.txt
+extras/sql/encoding-issues.sql
