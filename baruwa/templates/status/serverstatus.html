@@ -62,7 +62,7 @@
 		<div class="grid_10">
 		    <h3 class="head">${_("Hardware status")}</h3>
 			<div class="grid_10 drow alpha omega">
-				% if c.status['cpu']:
+				% if not c.status['cpu'] is None:
 				<div class="grid_4 alpha">${_('CPU')}</div>
 				<div class="grid_6 omega">
 					<div class="ometer">
