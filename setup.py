@@ -57,7 +57,6 @@ required_packages = [
         "repoze.who.plugins.sa",
         "repoze.who.plugins.ldap",
         "repoze.who-friendlyform",
-	"tsantsa",
     ]
 
 def read(fname):
@@ -68,12 +67,12 @@ setup(
     name='baruwa',
     version='2.0.0',
     description='Baruwa email security',
-    long_description=read('README.rst'),
+    long_description=read('README'),
     author='Andrew Colin Kissa',
     author_email='andrew@topdog.za.net',
     url='http://www.baruwa.org',
     install_requires=required_packages,
-    setup_requires=["PasteScript>=1.6.3"],
+    setup_requires=["PasteScript>=1.6.3", "tsantsa",],
     packages=find_packages(exclude=['ez_setup']),
     include_package_data=True,
     scripts=['bin/import-mbox.py', 'bin/eximqf2mbox.py', 'bin/test-smtpauth.py'],
