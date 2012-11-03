@@ -65,6 +65,7 @@ dbbackend = DatabaseBackend(dburi=Session.bind.url,
 
 
 def ajax_code(code, msg):
+    "Return AJAX coded message"
     #response.headers['Content-Type'] = 'application/json'
     response.status = code
     response.body = msg
@@ -540,7 +541,9 @@ class MessagesController(BaseController):
                             1, info, request.host,
                             request.remote_addr, datetime.now())
                     response.content_type = task.result['mimetype']
-                    response.headers['Content-Disposition'] = 'attachment; filename="%s"' % task.result['name']
+                    content_disposition = 'attachment; filename="%s"' % \
+                        task.result['name'].encode('ascii', 'replace')
+                    response.headers['Content-Disposition'] = content_disposition
                     response.headers['Content-Length'] = len(task.result['attachment'])
                     response.headers['Pragma'] = 'public'
                     response.headers['Cache-Control'] = 'max-age=0'

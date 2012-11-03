@@ -183,6 +183,7 @@ class EmailParser(object):
                         data = part.as_string()
                     else:
                         data = part.get_payload(decode=True)
+                    filename = get_header(filename)
                     return dict(attachment=base64.encodestring(data),
                                 name=filename,
                                 mimetype=part.get_content_type())
