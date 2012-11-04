@@ -67,9 +67,9 @@ def systemstatus():
                 load=None,
                 net=[],
                 mta=None,
+                scanners=None,
                 time=None,
                 uptime=None,
-                scanners=None,
                 av=None,
                 partitions=[])
     def _obj2dict(obj):
