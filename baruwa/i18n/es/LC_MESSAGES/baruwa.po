@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: baruwa 2.0.0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2012-11-03 15:08+0200\n"
+"POT-Creation-Date: 2012-11-04 09:53+0200\n"
 "PO-Revision-Date: 2011-03-24 14:29+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: es <LL@li.org>\n"
@@ -811,7 +811,7 @@ msgid "Please select atleast one domain"
 msgstr ""
 
 #: baruwa/forms/accounts.py:74 baruwa/forms/accounts.py:110
-#: baruwa/tasks/status.py:294 baruwa/templates/accounts/account.html:38
+#: baruwa/tasks/status.py:296 baruwa/templates/accounts/account.html:38
 #: baruwa/templates/accounts/confirmbulkdel.html:8
 #: baruwa/templates/accounts/importstatus.html:5
 #: baruwa/templates/accounts/index.html:34
@@ -1247,7 +1247,7 @@ msgid "Delete Organization domains"
 msgstr ""
 
 #: baruwa/forms/organizations.py:60 baruwa/forms/settings.py:161
-#: baruwa/forms/settings.py:301 baruwa/tasks/status.py:296
+#: baruwa/forms/settings.py:301 baruwa/tasks/status.py:298
 #: baruwa/templates/messages/detail.html:176
 #: baruwa/templates/reports/relays.html:26
 #: baruwa/templates/settings/index.html:16
@@ -2692,78 +2692,78 @@ msgstr ""
 msgid "Checking system status"
 msgstr ""
 
-#: baruwa/tasks/status.py:114
+#: baruwa/tasks/status.py:116
 msgid "Running Spamassassin lint checks"
 msgstr ""
 
-#: baruwa/tasks/status.py:140
+#: baruwa/tasks/status.py:142
 msgid "Generating Bayesian stats"
 msgstr ""
 
-#: baruwa/tasks/status.py:197
+#: baruwa/tasks/status.py:199
 #, python-format
 msgid "Download attachment: %(attachid)s of message: %(id)s"
 msgstr ""
 
-#: baruwa/tasks/status.py:202
+#: baruwa/tasks/status.py:204
 #, python-format
 msgid "Image access: %(img)s"
 msgstr ""
 
-#: baruwa/tasks/status.py:204
+#: baruwa/tasks/status.py:206
 #, python-format
 msgid "Preview of message: %(id)s"
 msgstr ""
 
-#: baruwa/tasks/status.py:209
+#: baruwa/tasks/status.py:211
 #, python-format
 msgid "Accessing message: %(id)s, Failed: %(error)s"
 msgstr ""
 
-#: baruwa/tasks/status.py:224
+#: baruwa/tasks/status.py:226
 #, python-format
 msgid "Invalid exim command: %s"
 msgstr ""
 
-#: baruwa/tasks/status.py:227 baruwa/tasks/status.py:242
+#: baruwa/tasks/status.py:229 baruwa/tasks/status.py:244
 #, python-format
 msgid "Invalid action: %s"
 msgstr ""
 
-#: baruwa/tasks/status.py:234
+#: baruwa/tasks/status.py:236
 #, python-format
 msgid "STDOUT: %s"
 msgstr ""
 
-#: baruwa/tasks/status.py:237
+#: baruwa/tasks/status.py:239
 #, python-format
 msgid "STDERR: %s"
 msgstr ""
 
-#: baruwa/tasks/status.py:240
+#: baruwa/tasks/status.py:242
 #, python-format
 msgid "Invalid input: %s"
 msgstr ""
 
-#: baruwa/tasks/status.py:264
+#: baruwa/tasks/status.py:266
 #, python-format
 msgid "Audit Log update for: %s from: %s"
 msgstr ""
 
-#: baruwa/tasks/status.py:267
+#: baruwa/tasks/status.py:269
 #, python-format
 msgid "Audit Log FAILURE: %s %s %s %s %s %s Error: %s"
 msgstr ""
 
-#: baruwa/tasks/status.py:287
+#: baruwa/tasks/status.py:289
 msgid "Audit Log exported report"
 msgstr ""
 
-#: baruwa/tasks/status.py:292 baruwa/templates/base.html:98
+#: baruwa/tasks/status.py:294 baruwa/templates/base.html:98
 msgid "Audit Logs"
 msgstr ""
 
-#: baruwa/tasks/status.py:293 baruwa/templates/email/quarantine.html:63
+#: baruwa/tasks/status.py:295 baruwa/templates/email/quarantine.html:63
 #: baruwa/templates/email/quarantine.html:92
 #: baruwa/templates/messages/detail.html:178
 #: baruwa/templates/messages/functions.html:89
@@ -2776,29 +2776,29 @@ msgstr ""
 msgid "Date/Time"
 msgstr ""
 
-#: baruwa/tasks/status.py:295 baruwa/templates/status/audit.html:28
+#: baruwa/tasks/status.py:297 baruwa/templates/status/audit.html:28
 msgid "Info"
 msgstr ""
 
-#: baruwa/tasks/status.py:297 baruwa/templates/status/audit.html:30
+#: baruwa/tasks/status.py:299 baruwa/templates/status/audit.html:30
 msgid "Remote IP"
 msgstr ""
 
-#: baruwa/tasks/status.py:298 baruwa/templates/lists/index.html:29
+#: baruwa/tasks/status.py:300 baruwa/templates/lists/index.html:29
 #: baruwa/templates/status/detail.html:68
 msgid "Action"
 msgstr ""
 
-#: baruwa/tasks/status.py:311
+#: baruwa/tasks/status.py:313
 msgid "Baruwa Audit log export"
 msgstr ""
 
-#: baruwa/tasks/status.py:363
+#: baruwa/tasks/status.py:365
 #, python-format
 msgid "Audit Log export complete: %s"
 msgstr ""
 
-#: baruwa/tasks/status.py:367
+#: baruwa/tasks/status.py:369
 #, python-format
 msgid "Audit Log export FAILURE: %s"
 msgstr ""
