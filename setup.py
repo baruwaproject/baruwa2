@@ -72,7 +72,7 @@ setup(
     author_email='andrew@topdog.za.net',
     url='http://www.baruwa.org',
     install_requires=required_packages,
-    setup_requires=["PasteScript>=1.6.3", "tsantsa",],
+    setup_requires=["PasteScript>=1.6.3"],
     packages=find_packages(exclude=['ez_setup']),
     include_package_data=True,
     scripts=['bin/import-mbox.py', 'bin/eximqf2mbox.py', 'bin/test-smtpauth.py'],
