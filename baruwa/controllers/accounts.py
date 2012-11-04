@@ -992,7 +992,7 @@ class AccountsController(BaseController):
             response.headers['Cache-Control'] = 'max-age=0'
             csvdata = result.result['f']
             disposition = 'attachment; filename=accounts-export-%s.csv' % taskid
-            response.headers['Content-Disposition'] = disposition
+            response.headers['Content-Disposition'] = str(disposition)
             response.headers['Content-Length'] = len(csvdata)
             return csvdata
         return render('/accounts/exportstatus.html')

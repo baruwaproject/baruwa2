@@ -205,7 +205,7 @@ class ReportsController(BaseController):
             csvdata = self.csvfile.getvalue()
             disposition = ('attachment; filename=%s.csv' %
                             REPORTS[reportid]['title'].replace(' ', '_'))
-            response.headers['Content-Disposition'] = disposition
+            response.headers['Content-Disposition'] = str(disposition)
             response.headers['Content-Length'] = len(csvdata)
         except:
             abort(404)
@@ -237,7 +237,7 @@ class ReportsController(BaseController):
             response.headers['Content-Type'] = PDF_HEADER
             disposition = ('attachment; filename=%s.pdf' %
             REPORTS[reportid]['title'].replace(' ', '_'))
-            response.headers['Content-Disposition'] = disposition
+            response.headers['Content-Disposition'] = str(disposition)
             pdfdata = pdfcreator.build()
             response.headers['Content-Length'] = len(pdfdata)
         finally:

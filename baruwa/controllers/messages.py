@@ -543,7 +543,7 @@ class MessagesController(BaseController):
                     response.content_type = task.result['mimetype']
                     content_disposition = 'attachment; filename="%s"' % \
                         task.result['name'].encode('ascii', 'replace')
-                    response.headers['Content-Disposition'] = content_disposition
+                    response.headers['Content-Disposition'] = str(content_disposition)
                     response.headers['Content-Length'] = len(task.result['attachment'])
                     response.headers['Pragma'] = 'public'
                     response.headers['Cache-Control'] = 'max-age=0'

@@ -287,7 +287,7 @@ class StatusController(BaseController):
                             request.remote_addr, datetime.now())
                     response.content_type = task.result['mimetype']
                     dispos = 'attachment; filename="%s"' % task.result['name']
-                    response.headers['Content-Disposition'] = dispos
+                    response.headers['Content-Disposition'] = str(dispos)
                     content_len = len(task.result['attachment'])
                     response.headers['Content-Length'] = content_len
                     response.headers['Pragma'] = 'public'
@@ -530,7 +530,7 @@ class StatusController(BaseController):
             response.headers['Cache-Control'] = 'max-age=0'
             respdata = result.result['f']
             disposition = 'attachment; filename=%s' % result.result['filename']
-            response.headers['Content-Disposition'] = disposition
+            response.headers['Content-Disposition'] = str(disposition)
             response.headers['Content-Length'] = len(respdata)
             return respdata
         return render('/status/auditexportstatus.html')

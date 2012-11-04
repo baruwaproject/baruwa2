@@ -906,7 +906,7 @@ class DomainsController(BaseController):
             response.headers['Cache-Control'] = 'max-age=0'
             csvdata = result.result['f']
             disposition = 'attachment; filename=domains-export-%s.csv' % taskid
-            response.headers['Content-Disposition'] = disposition
+            response.headers['Content-Disposition'] = str(disposition)
             response.headers['Content-Length'] = len(csvdata)
             return csvdata
         return render('/domains/exportstatus.html')
