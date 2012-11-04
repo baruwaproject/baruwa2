@@ -67,6 +67,8 @@ def systemstatus():
                 load=None,
                 net=[],
                 mta=None,
+                time=None,
+                uptime=None,
                 scanners=None,
                 av=None,
                 partitions=[])
