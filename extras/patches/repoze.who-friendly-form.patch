@@ -1,0 +1,41 @@
+Index: repoze/who/plugins/friendlyform.py
+===================================================================
+--- repoze/who/plugins/friendlyform.py	(revision 11049)
++++ repoze/who/plugins/friendlyform.py	(working copy)
+@@ -67,7 +67,7 @@
+ 
+     def __init__(self, login_form_url, login_handler_path, post_login_url,
+                  logout_handler_path, post_logout_url, rememberer_name,
+-                 login_counter_name=None, charset="iso-8859-1"):
++                 login_counter_name=None, charset=None):
+         """
+ 
+         :param login_form_url: The URL/path where the login form is located.
+@@ -119,8 +119,11 @@
+         the ``environ``.
+ 
+         """
+-        request = Request(environ, charset=self.charset)
+ 
++        request = Request(environ)
++        if self.charset not in ['utf8', 'utf-8', 'UTF8', 'UTF-8']:
++            request = request.decode(self.charset)
++
+         path_info = environ['PATH_INFO']
+         script_name = environ.get('SCRIPT_NAME') or '/'
+         query = request.GET
+@@ -138,13 +141,7 @@
+             except KeyError:
+                 credentials = None
+             else:
+-                if request.charset == "us-ascii":
+-                    credentials = {
+-                        'login': str(login),
+-                        'password': str(password),
+-                        }
+-                else:
+-                    credentials = {'login': login,'password': password}
++                credentials = {'login': login, 'password': password}
+ 
+             try:
+                 credentials['max_age'] = form['remember']

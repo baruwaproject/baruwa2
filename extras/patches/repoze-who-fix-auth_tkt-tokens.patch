@@ -1,0 +1,27 @@
+diff -ruN repoze.who-1.0.19.orig/repoze/who/plugins/auth_tkt.py repoze.who-1.0.19/repoze/who/plugins/auth_tkt.py
+--- repoze.who-1.0.19.orig/repoze/who/plugins/auth_tkt.py	2010-11-13 00:50:30.000000000 +0200
++++ repoze.who-1.0.19/repoze/who/plugins/auth_tkt.py	2012-03-26 11:45:34.961253992 +0200
+@@ -143,7 +143,7 @@
+                 pass
+ 
+         who_userid = identity['repoze.who.userid']
+-        who_tokens = identity.get('tokens', '')
++        who_tokens = identity.get('tokens', [])
+         who_userdata = identity.get('userdata', '')
+ 
+         encoding_data = self.userid_type_encoders.get(type(who_userid))
+@@ -152,12 +152,8 @@
+             who_userid = encoder(who_userid)
+             who_userdata = 'userid_type:%s' % encoding
+         
+-        if not isinstance(tokens, basestring):
+-            tokens = ','.join(tokens)
+-        if not isinstance(who_tokens, basestring):
+-            who_tokens = ','.join(who_tokens)
+-        old_data = (userid, tokens, userdata)
+-        new_data = (who_userid, who_tokens, who_userdata)
++        old_data = (userid, list(tokens), userdata)
++        new_data = (who_userid, list(who_tokens), who_userdata)
+ 
+         if old_data != new_data or (self.reissue_time and
+                 ( (timestamp + self.reissue_time) < time.time() )):

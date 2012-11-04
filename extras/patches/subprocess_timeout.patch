@@ -1,0 +1,14 @@
+https://bitbucket.org/which_linden/eventlet/issue/89/add-a-timeout-argument-to-subprocesspopen
+
+diff -r 6e6a02e7ac7c eventlet/green/subprocess.py
+--- a/eventlet/green/subprocess.py	Tue Apr 19 09:51:35 2011 -0700
++++ b/eventlet/green/subprocess.py	Thu May 26 09:56:14 2011 +1000
+@@ -32,7 +32,7 @@
+                     setattr(self, attr, wrapped_pipe)
+         __init__.__doc__ = subprocess_orig.Popen.__init__.__doc__
+ 
+-    def wait(self, check_interval=0.01):
++    def wait(self, check_interval=0.01, timeout=None):
+         # Instead of a blocking OS call, this version of wait() uses logic
+         # borrowed from the eventlet 0.2 processes.Process.wait() method.
+         try:
