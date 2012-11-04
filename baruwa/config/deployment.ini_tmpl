@@ -12,7 +12,7 @@ error_email_from = baruwa@localhost
 [uwsgi]
 socket = /var/run/baruwa/baruwa.sock
 master = true
-processes = 1
+processes = 5
 
 [server:main]
 use = egg:Paste#http
@@ -28,7 +28,7 @@ cache_dir = /var/lib/baruwa/data
 beaker.session.key = baruwa
 beaker.session.secret = ${app_instance_secret}
 beaker.session.httponly = true
-beaker.session.secure = true
+beaker.session.secure = false
 app_instance_uuid = ${app_instance_uuid}
 
 # If you'd like to fine-tune the individual locations of the cache data dirs
@@ -68,7 +68,7 @@ beaker.session.type = ext:memcached
 beaker.session.url = 127.0.0.1:11211
 
 # SQLAlchemy database URL
-sqlalchemy.url = postgresql://baruwa:@127.0.0.1:6432/baruwa
+sqlalchemy.url = postgresql://baruwa:@127.0.0.1:5432/baruwa
 
 # SphinxSQL URL
 sphinx.url = mysql://root:@127.0.0.1:9306
