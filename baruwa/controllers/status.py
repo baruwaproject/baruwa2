@@ -349,6 +349,7 @@ class StatusController(BaseController):
                         outq=outbound,
                         otherinfected=totals.infected,
                         uptime='Unknown',
+                        time=None,
                         load=(0, 0, 0),
                         mem=dict(free=0, used=0, total=0,
                                 percent=0),
@@ -386,7 +387,7 @@ class StatusController(BaseController):
             audit_log(c.user.username,
                     1, info, request.host,
                     request.remote_addr, datetime.now())
-        except (TimeoutError, QueueNotFound):
+        except (TimeoutError, QueueNotFound, OSError):
             result = {}
         c.server = server
         c.data = result
@@ -407,7 +408,7 @@ class StatusController(BaseController):
             audit_log(c.user.username,
                     1, info, request.host,
                     request.remote_addr, datetime.now())
-        except (TimeoutError, QueueNotFound):
+        except (TimeoutError, QueueNotFound, OSError):
             result = []
         c.server = server
         c.data = result
