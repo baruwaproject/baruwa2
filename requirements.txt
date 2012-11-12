@@ -56,6 +56,5 @@ repoze.who.plugins.ldap==1.1a1
 repoze.who.plugins.sa==1.0.1
 simplejson
 six
-slimit
 wsgiref
 zope.interface
