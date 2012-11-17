@@ -14,6 +14,7 @@ Contents:
    install/enterprise/install
    install/enterprise/puppet
    commands
+   mta/index
    clustering
    guide/user/index
    guide/admin/index

@@ -13,7 +13,8 @@ monitoring the health of the services and a lot more.
 
 Baruwa is implemented using web 2.0 features (AJAX) where deemed fit.
 Baruwa has full support for i18n, enabling you to translate it any
-language of your choosing.
+language of your choosing. Baruwa has already been translated to over
+25 languages.
 
 It includes reporting functionality with an easy to use query builder,
 results can be displayed as message lists or graphed as colorful and
@@ -32,7 +33,7 @@ Framework and uses a PostgreSQL backend, it is released under the GPLv3
 and is available for free download.
 
 Features
---------
+========
 
 	* AJAX support for most operations
 	* Ultra fast full text search
@@ -46,11 +47,11 @@ Features
 	* Emailed PDF reports
 	* Audit trails
 	* Archiving of old message logs
-	* SQLite backup prevents data loss PostgreSQL is unavailable
+	* SQLite backup prevents data loss when DB is unavailable
 	* MTA integration
 	* Multi Tenancy
-	* User profile aware white/blacklist management
-	* IP / network addresses supported in white/blacklist manager
+	* User profile aware approved/banned sender management
+	* IP / network addresses supported in approved/banned list manager
 	* SQL based MailScanner configuration management
 	* System status information
 	* IPv6 Support
@@ -63,3 +64,8 @@ Features
 	* Easy clustering of multiple servers
 	* Works both with and without Javascript enabled
 
+Baruwa Versions
+===============
+
+  .. toctree::
+    versions

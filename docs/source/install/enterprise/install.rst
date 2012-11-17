@@ -1,7 +1,7 @@
 
-============================
-Manual Packaged installation
-============================
+======================================
+Manual Enterprise Edition installation
+======================================
 
 Overview
 --------

@@ -1,7 +1,7 @@
 
-===============================
-Automated Packaged installation
-===============================
+=========================================
+Automated Enterprise Edition installation
+=========================================
 
 Overview
 --------

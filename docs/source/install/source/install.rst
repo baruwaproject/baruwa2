@@ -122,11 +122,11 @@ are going to run the database on the system system as Baruwa.
 
 For CentOS/RHEL/SL::
 
-	yum install postgresql-server -y
+	yum install postgresql-server postgresql-plpython -y
 
 For Debian/Ubuntu::
 
-	sudo apt-get install postgresql -y
+	sudo apt-get install postgresql postgresql-plpython -y
 
 For FreeBSD::
 
@@ -200,6 +200,13 @@ Create the database::
 
 	su - postgres -c 'createdb -E UTF8 -O baruwa -T template1 baruwa'
 
+Baruwa uses functions written in the ``plpgsql`` and ``plpythonu`` procedural languages.
+Enable the languages in the db::
+
+	su - postgres -c "psql baruwa -c \"CREATE LANGUAGE plpgsql;\""
+	su - postgres -c "psql baruwa -c \"CREATE LANGUAGE plpythonu;\""
+
+
 Step 3b: RabbitMQ
 -----------------
 
@@ -271,6 +278,7 @@ Extract the supplied file::
 CentOS/RHEL/SL::
 
 	cp sphinx.conf /etc/sphinx/
+	service searchd start
 
 Debian/Ubuntu::
 
@@ -307,6 +315,38 @@ Step 3e: MailScanner
 MailScanner is the integrated engine that performs the various checks used to 
 identify and classify spam and various threats.
 
+Baruwa manages the MailScanner configuration by storing the configurations in
+the PostgreSQL Database. MailScanner signatures can also be managed using
+Baruwa for both domains and individual users.
+
+The configuration of MailScanner is beyond the scope of this documentation. If
+you are not familiar with MailScanner please refer to the
+`documentation <http://mailscanner.info/documentation.html>`_ on the
+MailScanner website or read the
+`MailScanner book <http://mailscanner.info/files/MailScanner-Guide.pdf>`_ which
+is freely available online.
+
+In order to use Baruwa with mailscanner you need to make a few changes to the
+MailScanner code. Patches are provided to assist you in doing that.
+
+The changes made enable the following
+
+	+ Passing the lint flag to custom modules
+ 	+ Fixes to the SQL configuration module
+
+It is assumed that your MailScanner file is located at ``/usr/sbin/MailScanner``
+and your modules at ``/usr/share/MailScanner/MailScanner``. If on your system
+they are in different locations please modify the commands below to reflect that::
+
+	cd /usr/sbin
+	patch -i /usr/local/src/mailscanner-baruwa-iwantlint.patch
+	cd /usr/share/MailScanner/MailScanner
+	patch -p3 -i /usr/local/src/mailscanner-baruwa-sql-config.patch
+
+Sample configuration files for MailScanner and exim are provided in the source
+tar ball under ``extras/config/exim`` and ``extras/config/mailscanner``.
+Please review and reuse.
+
 
 Step 4: Install Baruwa
 ==========================
@@ -337,7 +377,7 @@ Create the configuration file::
 
 Set the sqlalchemy database url::
 
-	sed -i -e 's|baruwa:@127.0.0.1:6432/baruwa|baruwa:verysecretpw@127.0.0.1:6432/baruwa|' \
+	sed -i -e 's|baruwa:@127.0.0.1:5432/baruwa|baruwa:verysecretpw@127.0.0.1:5432/baruwa|' \
 		production.ini
 
 Set the broker password and enable the queues::
@@ -384,7 +424,7 @@ Step 5c: Create the required directories
 
 Create log, pid and data directories::
 
-	mkdir -p /var/log/baruwa /var/run/baruwa /var/lib/baruwa/data/{cache,sessions}
+	mkdir -p /var/log/baruwa /var/run/baruwa /var/lib/baruwa/data/{cache,sessions,upload}
 
 .. _start_celeryd:
 

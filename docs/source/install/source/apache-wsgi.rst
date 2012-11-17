@@ -66,8 +66,9 @@ Create the template directory ``/var/lib/baruwa/data/templates`` and set the
 correct ownership on the template, sessions and cache directories::
 
 	mkdir /var/lib/baruwa/data/templates
-	chown apache.apache /var/lib/baruwa/data/templates
 	chown apache.apache /var/lib/baruwa/data/cache
+	chown apache.apache /var/lib/baruwa/data/upload
+	chown apache.apache /var/lib/baruwa/data/templates
 	chown apache.apache /var/lib/baruwa/data/sessions
 
 A sample configuration file is provided in the source tar ball with the

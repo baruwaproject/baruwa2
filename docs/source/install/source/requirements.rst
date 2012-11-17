@@ -19,6 +19,15 @@ Step 1a: Preliminary Requirements for CentOS/RHEL/SL
 Depending on how you configured your CentOS Distro at install time you may need
 to install extra packages:
 
+EPEL Requirements 
+
+**You need to install this repo in order to access certain packages that are
+required by Baruwa.**
+::
+
+	rpm -Uvh http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-7.noarch.rpm
+
+
 Run the following command to install the required packages.
 
 .. sourcecode:: bash
@@ -46,15 +55,6 @@ Python Requirements
 Baruwa supports Python 2.x versions 2.6 and up. CentOS/RHEL 6.x ships with
 Python 2.6, so you should be OK with the system default as a base for your
 operations.
-
-EPEL Requirements 
-
-**You need to install this repo in order to access certain packages that are
-required by Baruwa.**
-::
-
-	rpm -Uvh http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-7.noarch.rpm
-
 
 Now you can proceed with :ref:`installing_setuptools`.
 

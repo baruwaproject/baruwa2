@@ -17,10 +17,12 @@ Baruwa writes to::
 	chown baruwa.baruwa -R /var/lib/baruwa \
 		/var/run/baruwa /var/log/baruwa
 
-Download the CentOS init file from the celery repository on github::
+A CentOS init file is provided in the source tar ball. Extract the init file
+from the tar ball and install to the init directory ``/etc/init.d`` ::
 
-	wget https://raw.github.com/celery/celery/3.0/extra/centos/celeryd.init \
-		-O /etc/init.d/baruwa
+	tar xjvf baruwa-2.0.0.tar.bz2 --strip-components=5 \
+		baruwa-2.0.0/extras/scripts/init/centos/baruwa.init
+	mv baruwa.init /etc/init.d/baruwa
 
 Create a configuration file for celeryd in ``/etc/sysconfig/baruwa`` with the
 following contents:
@@ -28,8 +30,7 @@ following contents:
 .. sourcecode:: bash
 
 	CELERYD_CHDIR="/home/baruwa"
-	ENV_PYTHON="$CELERYD_CHDIR/px/bin/python"
-	CELERYD_MULTI="$CELERYD_CHDIR/px/bin/paster celeryd /etc/baruwa/production.ini"
+	CELERYD="$CELERYD_CHDIR/px/bin/paster celeryd /etc/baruwa/production.ini"
 	CELERYD_LOG_LEVEL="INFO"
 	CELERYD_LOG_FILE="/var/log/baruwa/celeryd.log"
 	CELERYD_PID_FILE="/var/run/baruwa/celeryd.pid"
@@ -40,8 +41,7 @@ following contents:
 
 	cat > /etc/sysconfig/baruwa << 'EOF'
 	CELERYD_CHDIR="/home/baruwa"
-	ENV_PYTHON="$CELERYD_CHDIR/px/bin/python"
-	CELERYD_MULTI="$CELERYD_CHDIR/px/bin/paster celeryd /etc/baruwa/production.ini"
+	CELERYD="$CELERYD_CHDIR/px/bin/paster celeryd /etc/baruwa/production.ini"
 	CELERYD_LOG_LEVEL="INFO"
 	CELERYD_LOG_FILE="/var/log/baruwa/celeryd.log"
 	CELERYD_PID_FILE="/var/run/baruwa/celeryd.pid"
@@ -69,23 +69,21 @@ Baruwa writes to::
 	chown baruwa.baruwa -R /var/lib/baruwa \
 		/var/run/baruwa /var/log/baruwa
 
-Download the generic init file from the celery repository on github::
+A Debian init file is provided in the source tar ball. Extract it and install
+to the init directory ``/etc/init.d`` ::
 
-	sudo wget https://raw.github.com/celery/celery/3.0/extra/generic-init.d/celeryd \
-		-O /etc/init.d/baruwa
+	tar xjvf baruwa-2.0.0.tar.bz2 --strip-components=5 \
+		baruwa-2.0.0/extras/scripts/init/debian/baruwa.init
+	sudo mv baruwa.init /etc/init.d/baruwa
 
 Create a configuration file for celeryd in ``/etc/default/celeryd`` with the following
 contents:
 
 .. sourcecode:: bash
 
-	CELERYD_NODES="w1"
 	CELERYD_CHDIR="/home/baruwa"
-	ENV_PYTHON="$CELERYD_CHDIR/px/bin/python"
-	CELERYD_MULTI="$ENV_PYTHON paster celeryd /etc/baruwa/production.ini"
-	CELERYCTL="$ENV_PYTHON paster celeryctl /etc/baruwa/production.ini"
-	CELERYD_OPTS="--time-limit=300 --concurrency=8"
-	CELERY_CONFIG_MODULE="baruwa.lib.mq.loader.PylonsLoader"
+	CELERYD="$CELERYD_CHDIR/px/bin/paster celeryd /etc/baruwa/production.ini"
+	CELERYD_LOG_LEVEL="INFO"
 	CELERYD_LOG_FILE="/var/log/baruwa/celeryd.log"
 	CELERYD_PID_FILE="/var/run/baruwa/celeryd.pid"
 	CELERYD_USER="baruwa"
@@ -94,13 +92,9 @@ contents:
 ::
 
 	cat > /etc/default/celeryd << 'EOF'
-	CELERYD_NODES="w1"
 	CELERYD_CHDIR="/home/baruwa"
-	ENV_PYTHON="$CELERYD_CHDIR/px/bin/python"
-	CELERYD_MULTI="$ENV_PYTHON paster celeryd /etc/baruwa/production.ini"
-	CELERYCTL="$ENV_PYTHON paster celeryctl /etc/baruwa/production.ini"
-	CELERYD_OPTS="--time-limit=300 --concurrency=8"
-	CELERY_CONFIG_MODULE="baruwa.lib.mq.loader.PylonsLoader"
+	CELERYD="$CELERYD_CHDIR/px/bin/paster celeryd /etc/baruwa/production.ini"
+	CELERYD_LOG_LEVEL="INFO"
 	CELERYD_LOG_FILE="/var/log/baruwa/celeryd.log"
 	CELERYD_PID_FILE="/var/run/baruwa/celeryd.pid"
 	CELERYD_USER="baruwa"
