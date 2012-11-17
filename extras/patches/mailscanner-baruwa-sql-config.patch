@@ -1,0 +1,54 @@
+diff -ruN MailScanner-4.84.3-1.orig/lib/MailScanner/Config.pm MailScanner-4.84.3-1/lib/MailScanner/Config.pm
+--- MailScanner-4.84.3-1.orig/lib/MailScanner/Config.pm	2010-11-25 17:12:05.000000000 +0200
++++ MailScanner-4.84.3-1/lib/MailScanner/Config.pm	2012-02-04 13:55:17.538190609 +0200
+@@ -985,7 +985,7 @@
+ 
+ # Process and setup the configuration
+ sub Read {
+-  my($filename) = @_;
++  my($filename, $WantLintOnly) = @_;
+ 
+   # Save the configuration filename and directory for later potential use
+   # in Custom Functions.
+@@ -1054,7 +1054,7 @@
+     $param = $CustomFunctionsParams{$key};
+     MailScanner::Log::InfoLog("Config: calling custom init function %s%s",
+                               $custom, $param);
+-    $fn = 'MailScanner::CustomConfig::Init' . $custom . $param;
++    $fn = 'MailScanner::CustomConfig::Init' . $custom . $param . '(' . $WantLintOnly . ')';
+     no strict 'refs';
+     eval ($fn);
+     if ($@) {
+diff -ruN MailScanner-4.84.3-1.orig/lib/MailScanner/ConfigSQL.pm MailScanner-4.84.3-1/lib/MailScanner/ConfigSQL.pm
+--- MailScanner-4.84.3-1.orig/lib/MailScanner/ConfigSQL.pm	2010-05-26 17:57:47.000000000 +0200
++++ MailScanner-4.84.3-1/lib/MailScanner/ConfigSQL.pm	2012-02-04 13:58:08.035941768 +0200
+@@ -172,8 +172,8 @@
+   MailScanner::Log::WarnLog("ConfigSQL statement error %s",$sth->errstr);
+   return undef;
+  } else {
+-  my($opt, $val);
+-  $sth->bind_columns(undef, \$opt, \$val);
++  my($opt, $val, $host, %baruwavars);
++  $sth->bind_columns(undef, \$opt, \$val, \$host);
+   while($sth->fetch()) {
+    $opt = lc($opt);
+    if ($opt eq 'confserialnumber') {
+@@ -188,6 +188,8 @@
+     next;
+    }
+    # next if $opt =~ /^%.*?%$/;
++   next if defined $baruwavars{$opt} and $baruwavars{$opt} == $hostname;
++   $baruwavars{$opt} = $host;
+    # Store percent variables
+    if($opt =~ /^\%([^%]+)\%$/) {
+     # Always use the first definition of the %variable%
+@@ -208,7 +210,8 @@
+     }
+    }
+    $File->{$opt} = $val;
+-  }	
++  }
++  undef(%baruwavars);
+  }
+  return undef;
+ }

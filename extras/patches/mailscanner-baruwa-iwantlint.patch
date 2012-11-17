@@ -1,0 +1,38 @@
+--- MailScanner.orig	2012-11-17 08:44:36.785244761 +0200
++++ MailScanner	2012-11-17 08:47:10.343054688 +0200
+@@ -399,7 +399,7 @@
+ # default values hard-coded into ConfigDefs.pl. These values may well be
+ # different from those supplied in the default MailScanner.conf file.
+ if ($WantChangedOnly) {
+-  MailScanner::Config::Read($ConfFile);
++  MailScanner::Config::Read($ConfFile, $WantLintOnly);
+   MailScanner::Config::PrintNonDefaults();
+   exit 0;
+ }
+@@ -434,7 +434,7 @@
+ 
+   # Read the configuration file properly
+   print STDERR "\n";
+-  MailScanner::Config::Read($ConfFile);
++  MailScanner::Config::Read($ConfFile, $WantLintOnly);
+   print STDERR "\n";
+ 
+   # Tried to set [u,g]id after writing pid, but then it fails when it re-execs
+@@ -622,7 +622,7 @@
+   my($rule,$user,$domain,$to,$msg,$result);
+ 
+   # Read the configuration file properly
+-  MailScanner::Config::Read($ConfFile);
++  MailScanner::Config::Read($ConfFile, $WantLintOnly);
+ 
+   # Need to fake that we're running sendmail for the static code to work,
+   # just like in --lint ($WantLintOnly).
+@@ -959,7 +959,7 @@
+                                   'customfunctionsdir'));
+ 
+   # Read the configuration file properly
+-  MailScanner::Config::Read($ConfFile);
++  MailScanner::Config::Read($ConfFile, 0);
+ 
+   # If they have set Debug SpamAssassin = yes, ignore unless Debug is also set
+   unless (MailScanner::Config::Value('debug') =~ /1/) {
