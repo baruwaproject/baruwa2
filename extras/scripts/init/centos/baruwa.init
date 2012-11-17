@@ -1,0 +1,116 @@
+#!/bin/sh
+#
+# baruwa Baruwa Celeryd worker daemon
+#
+# chkconfig:   - 81 06
+# description: Baruwa Celery worker daemon
+#
+# config: /etc/sysconfig/baruwa
+# pidfile: /var/run/baruwa/celeryd.pid
+
+### BEGIN INIT INFO
+# Provides: baruwa
+# Required-Start: $local_fs $network
+# Required-Stop: 
+# Should-Start: 
+# Should-Stop: 
+# Default-Start: 
+# Default-Stop: 0 1 6
+# Short-Description: Baruwa Celeryd worker
+# Description:      Baruwa Celeryd worker daemon
+### END INIT INFO
+
+SYSTEMCTL_SKIP_REDIRECT=1
+# Source function library.
+. /etc/rc.d/init.d/functions
+
+prog="baruwa"
+
+[ -e /etc/sysconfig/$prog ] && . /etc/sysconfig/$prog
+
+retval=0
+
+DEFAULT_CELERYD="/usr/bin/paster celeryd /etc/baruwa/production.ini"
+CELERYD_LOG_FILE=${CELERYD_LOG_FILE:-${CELERYD_LOGFILE:-"/var/log/baruwa/celeryd.log"}}
+CELERYD_PID_FILE=${CELERYD_PID_FILE:-${CELERYD_PIDFILE:-"/var/run/baruwa/celeryd.pid"}}
+CELERYD_LOG_LEVEL=${CELERYD_LOG_LEVEL:-${CELERYD_LOGLEVEL:-"INFO"}}
+CELERYD_USER=${CELERYD_USER:-${CELERYD_USER:-"celeryd"}}
+
+CELERYD=${CELERYD:-$DEFAULT_CELERYD}
+
+
+CELERYD_OPTS="$CELERYD_OPTS -f $CELERYD_LOG_FILE --pidfile=$CELERYD_PID_FILE -l $CELERYD_LOG_LEVEL"
+
+lockfile=/var/lock/subsys/$prog
+
+start() {
+    echo -n $"Starting Baruwa celeryd worker: "
+    daemon --pidfile=$CELERYD_PID_FILE --user=$CELERYD_USER $CELERYD $CELERYD_OPTS >/dev/null 2>&1 &
+    retval=$?
+    sleep 3;
+    if [ $retval -eq 0 ]; then
+        touch $lockfile
+        success
+    else
+        failure
+    fi
+}
+
+stop() {
+    echo -n $"Stopping Baruwa celeryd worker: "
+    killproc -p $CELERYD_PID_FILE $CELERYD -15 2>/dev/null
+    retval=$?
+    sleep 3; echo
+    if [ $retval -eq 0 ]; then
+        rm -f $lockfile 2>/dev/null
+        rm -f $CELERYD_PID_FILE 2>/dev/null
+    fi
+    return $retval
+}
+
+restart() {
+    stop
+    start
+}
+
+reload() {
+    restart
+}
+
+rh_status() {
+    status -p $CELERYD_PID_FILE baruwa
+}
+
+rh_status_q() {
+    rh_status >/dev/null 2>&1
+}
+
+
+case "$1" in
+    start)
+        rh_status_q && exit 0
+        $1
+        ;;
+    stop)
+        rh_status_q || exit 0
+        $1
+        ;;
+    restart)
+        $1
+        ;;
+    reload)
+        rh_status_q || exit 7
+        $1
+        ;;
+    status)
+        rh_status
+        ;;
+    condrestart|try-restart)
+        rh_status_q || exit 0
+        restart
+        ;;
+    *)
+        echo $"Usage: $0 {start|stop|status|restart|condrestart|try-restart|reload}"
+        exit 2
+esac
+exit $?

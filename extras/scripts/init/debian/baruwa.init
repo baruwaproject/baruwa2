@@ -1,0 +1,176 @@
+#!/bin/bash -e
+# =================================================
+#  baruwa - Starts the Baruwa Celery worker daemon.
+# =================================================
+#
+# :Usage: /etc/init.d/baruwa {start|stop|force-reload|restart|try-restart|status}
+#
+# :Configuration file: /etc/default/baruwa
+#
+### BEGIN INIT INFO
+# Provides:          baruwa
+# Required-Start:    $network $local_fs $remote_fs
+# Required-Stop:     $network $local_fs $remote_fs
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: celery task worker daemon
+### END INIT INFO
+
+set -e
+
+DEFAULT_CELERYD="/usr/bin/paster celeryd /etc/baruwa/production.ini"
+
+# /etc/init.d/ssh: start and stop the celery task worker daemon.
+
+if test -f /etc/default/baruwa; then
+    . /etc/default/baruwa
+fi
+
+CELERYD_LOG_FILE=${CELERYD_LOG_FILE:-${CELERYD_LOGFILE:-"/var/log/celeryd.log"}}
+CELERYD_PID_FILE=${CELERYD_PID_FILE:-${CELERYD_PIDFILE:-"/var/run/celeryd.pid"}}
+CELERYD_LOG_LEVEL=${CELERYD_LOG_LEVEL:-${CELERYD_LOGLEVEL:-"INFO"}}
+
+CELERYD=${CELERYD:-$DEFAULT_CELERYD}
+
+. /lib/lsb/init-functions
+
+CELERYD_USER=${CELERYD_USER:-${CELERYD_USER:-"celeryd"}}
+CELERYD_GROUP=${CELERYD_GROUP:-${CELERYD_GROUP:-"celeryd"}}
+
+if [ ! -d /var/run/baruwa ] ; then
+        mkdir /var/run/baruwa
+        chown $CELERYD_USER:$CELERYD_GROUP /var/run/baruwa
+        chmod 0760 /var/run/baruwa
+fi
+
+CELERYD_OPTS="$CELERYD_OPTS -f $CELERYD_LOG_FILE -l $CELERYD_LOG_LEVEL"
+
+if [ -n "$2" ]; then
+    CELERYD_OPTS="$CELERYD_OPTS $2"
+fi
+
+# Extra start-stop-daemon options, like user/group.
+if [ -n "$CELERYD_USER" ]; then
+    DAEMON_OPTS="$DAEMON_OPTS --chuid $CELERYD_USER"
+fi
+if [ -n "$CELERYD_GROUP" ]; then
+    DAEMON_OPTS="$DAEMON_OPTS --group $CELERYD_GROUP"
+fi
+
+if [ -n "$CELERYD_CHDIR" ]; then
+    DAEMON_OPTS="$DAEMON_OPTS --chdir $CELERYD_CHDIR"
+fi
+
+
+# Are we running from init?
+run_by_init() {
+    ([ "$previous" ] && [ "$runlevel" ]) || [ "$runlevel" = S ]
+}
+
+
+check_dev_null() {
+    if [ ! -c /dev/null ]; then
+    if [ "$1" = log_end_msg ]; then
+        log_end_msg 1 || true
+    fi
+    if ! run_by_init; then
+        log_action_msg "/dev/null is not a character device!"
+    fi
+    exit 1
+    fi
+}
+
+
+export PATH="${PATH:+$PATH:}/usr/sbin:/sbin"
+
+
+stop_worker () {
+    cmd="start-stop-daemon --stop \
+                           --quiet \
+                           $* \
+                           --pidfile $CELERYD_PID_FILE"
+    if $cmd; then
+        log_end_msg 0
+    else
+        log_end_msg 1
+    fi
+}
+
+start_worker () {
+    cmd="start-stop-daemon --start $DAEMON_OPTS \
+                           --quiet \
+                           --oknodo \
+                           --background \
+                           --make-pidfile \
+                           $* \
+                           --pidfile $CELERYD_PID_FILE
+                           --exec $CELERYD -- $CELERYD_OPTS"
+    if [ -n "$VIRTUALENV" ]; then
+        source $VIRTUALENV/bin/activate
+    fi
+    if $cmd; then
+        log_end_msg 0
+    else
+        log_end_msg 1
+    fi
+}
+
+
+
+case "$1" in
+  start)
+    check_dev_null
+    log_daemon_msg "Starting Baruwa celery task worker server" "celeryd"
+    start_worker
+    ;;
+  stop)
+    log_daemon_msg "Stopping Baruwa celery task worker server" "celeryd"
+    stop_worker --oknodo
+    ;;
+
+  reload|force-reload)
+    echo "Use start+stop"
+    ;;
+
+  restart)
+    log_daemon_msg "Restarting Baruwa celery task worker server" "celeryd"
+    stop_worker --oknodo --retry 30
+    check_dev_null log_end_msg
+    start_worker
+    ;;
+
+  try-restart)
+    log_daemon_msg "Restarting Baruwa celery task worker server" "celeryd"
+    set +e
+    stop_worker --retry 30
+    RET="$?"
+    set -e
+    case $RET in
+        0)
+        # old daemon stopped
+        check_dev_null log_end_msg
+        start_worker
+        ;;
+        1)
+        # daemon not running
+        log_progress_msg "(not running)"
+        log_end_msg 0
+        ;;
+        *)
+        # failed to stop
+        log_progress_msg "(failed to stop)"
+        log_end_msg 1
+        ;;
+    esac
+    ;;
+
+  status)
+    status_of_proc -p $CELERYD_PID_FILE $CELERYD celeryd && exit 0 || exit $?
+    ;;
+
+  *)
+    log_action_msg "Usage: /etc/init.d/baruwa {start|stop|force-reload|restart|try-restart|status}"
+    exit 1
+esac
+
+exit 0

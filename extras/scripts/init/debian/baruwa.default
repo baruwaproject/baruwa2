@@ -1,0 +1,10 @@
+# Baruwa Celery worker daemon configuration
+#
+CELERYD_CHDIR="/home/baruwa"
+CELERYD="$CELERYD_CHDIR/px/bin/paster celeryd /etc/baruwa/production.ini"
+CELERYD_LOG_LEVEL="INFO"
+CELERYD_LOG_FILE="/var/log/baruwa/celeryd.log"
+CELERYD_PID_FILE="/var/run/baruwa/celeryd.pid"
+CELERYD_USER="baruwa"
+CELERYD_GROUP="baruwa"
+#CELERYD_OPTS="--time-limit=300 -E --beat -s /var/lib/baruwa/celerybeat-schedule"
