@@ -24,7 +24,7 @@
 	</div>
 	<div class="grid_3">
 		% if field.errors:
-		<div class="formerror">${', '.join(field.errors)}</div>
+		<div class="formerror">${u', '.join([str(ferr) for ferr in field.errors])}</div>
 		% endif
 	</div>
 </div>

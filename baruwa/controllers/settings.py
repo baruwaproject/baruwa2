@@ -248,10 +248,10 @@ class SettingsController(BaseController):
                             external = global_settings_dict[field.name]
                             internal = external
                         else:
-                            external = CONFIG_RE.sub('', field.label.text)
+                            external = CONFIG_RE.sub(u'', unicode(field.label.text))
                             internal = field.name
                     else:
-                        external = CONFIG_RE.sub('', field.label.text)
+                        external = CONFIG_RE.sub(u'', unicode(field.label.text))
                         internal = field.name
                     conf = self._get_setting(serverid, internal)
                     if conf is None:

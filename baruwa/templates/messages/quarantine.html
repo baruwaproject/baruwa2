@@ -1,7 +1,7 @@
 <div class="alpos" id="sublinks">
 	<ul id="msgops">
 		<li><a href="${url(controller='messages', action='quarantine', section='spam')}">${_("Spam")}</a></li>
-		<li><a href="${url(controller='messages', action='quarantine', section='policyblocked')}">${_("Non Spam")}</a></li>
+		<li><a href="${url(controller='messages', action='quarantine', section='policyblocked')}">${_("Not Spam")}</a></li>
 		<li>${h.link_to(_('Apply Filters'), url(controller='reports', action='index', anchor='form-area'), class_='filter_add')}</li>
 		<li>${h.link_to(_('Show applied filters'), url(controller='reports', action='index', anchor='active_filters'), class_='filter_show')}</li>
 	</ul>

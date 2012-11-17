@@ -291,7 +291,7 @@ class MessagesController(BaseController):
                 response.headers['Content-Type'] = 'application/json'
                 return json.dumps(dict(result=html))
         elif request.POST and not c.form.validate():
-            flash_alert(_(', '.join([c.form.errors[err][0]
+            flash_alert(_(u', '.join([unicode(c.form.errors[err][0])
                                 for err in c.form.errors])))
             if format == 'json':
                 html = flash.pop_messages()
@@ -452,7 +452,7 @@ class MessagesController(BaseController):
                     flash_alert(_('The messages could not processed'
                                 ', try again later'))
         elif request.POST and not c.form.validate():
-            flash_alert(_(', '.join([c.form.errors[err][0]
+            flash_alert(_(u', '.join([unicode(c.form.errors[err][0])
                                     for err in c.form.errors])))
         pages = paginate.Page(messages, page=int(page),
                                 items_per_page=num_items,

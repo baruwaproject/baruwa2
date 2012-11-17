@@ -12,7 +12,7 @@
 			<div class="grid_4">&nbsp;</div>
 			<div class="grid_8"><div class="toright"><input type="text" size="65" name="q" /></div></div>
 			% endif
-			<div class="grid_3"><input type="submit" value="Search" /></div>
+			<div class="grid_3">${h.submit('sbtn', _('Search'), 'sbtn')}</div>
 		</div>
 		% for field in fields:
 		<div style="display: none;"><input type="hidden" name="${field[0]}" value="${field[1]}"></div>

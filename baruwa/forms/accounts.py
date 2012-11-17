@@ -21,7 +21,7 @@
 from wtforms import PasswordField, validators, DecimalField, RadioField
 from wtforms import BooleanField, TextField, SelectField
 from wtforms.ext.sqlalchemy.fields import QuerySelectMultipleField
-from pylons.i18n.translation import _
+from pylons.i18n.translation import lazy_ugettext as _
 from sqlalchemy.orm.exc import NoResultFound
 
 from baruwa.model.domains import Domain

@@ -19,7 +19,7 @@
 "Misc forms"
 
 from wtforms import SelectField, TextField, FileField
-from pylons.i18n.translation import _
+from pylons.i18n.translation import lazy_ugettext as _
 
 NO_ITEMS = ((50, 50), (20, 20), (10, 10),)
 

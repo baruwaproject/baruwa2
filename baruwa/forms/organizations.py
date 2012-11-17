@@ -23,7 +23,7 @@ import cracklib
 from wtforms import validators, TextField, BooleanField, PasswordField
 from wtforms import FileField
 from wtforms.ext.sqlalchemy.fields import QuerySelectMultipleField
-from pylons.i18n.translation import _
+from pylons.i18n.translation import lazy_ugettext as _
 
 from baruwa.forms import Form
 from baruwa.lib.regex import DOM_RE

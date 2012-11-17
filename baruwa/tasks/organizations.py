@@ -181,9 +181,10 @@ def importdomains(orgid, filename, skipfirst):
                             if isinstance(form.errors, dict):
                                 errors = []
                                 for field in form.errors:
-                                    errors.append('%s: %s' % (field,
-                                                form.errors[field][0]))
-                                result['error'] = ', '.join(errors)
+                                    themsg = u'%s: %s' % (field,
+                                                unicode(form.errors[field][0]))
+                                    errors.append(themsg)
+                                result['error'] = u', '.join(errors)
                             else:
                                 result['error'] = form.errors
                     except TypeError, err:

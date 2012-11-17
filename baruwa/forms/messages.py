@@ -21,7 +21,7 @@
 from wtforms import BooleanField, SelectField, validators
 from wtforms import TextField, SelectMultipleField
 from wtforms.widgets import CheckboxInput, ListWidget
-from pylons.i18n.translation import _
+from pylons.i18n.translation import lazy_ugettext as _
 
 try:
     x = _('hi')

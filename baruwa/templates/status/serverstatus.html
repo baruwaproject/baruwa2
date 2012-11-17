@@ -19,42 +19,42 @@
 		<tbody>
 		<tr>
 			<td class="status_color_col">&nbsp;</td>
-			<td class="status_name_col">Processed</td>
+			<td class="status_name_col">${_("Processed")}</td>
 			<td class="status_value_col">${c.status['total']|totals}</td>
 		</tr>
 		<tr>
 			<td class="status_color_col"><div class="pie_6 pie"></div></td>
-			<td class="status_name_col">Clean</td>
+			<td class="status_name_col">${_("Clean")}</td>
 			<td class="status_value_col">${c.status['clean_mail']|totals}</td>
 		</tr>
 		<tr>
 			<td class="status_color_col"><div class="pie_1 pie"></div></td>
-			<td class="status_name_col">High scoring spam</td>
+			<td class="status_name_col">${_("High scoring spam")}</td>
 			<td class="status_value_col">${c.status['high_spam']|totals}</td>
 		</tr>
 		<tr>
 			<td class="status_color_col"><div class="pie_2 pie"></div></td>
-			<td class="status_name_col">Low scoring spam</td>
+			<td class="status_name_col">${_("Low scoring spam")}</td>
 			<td class="status_value_col">${c.status['spam_mail']|totals}</td>
 		</tr>
 		<tr>
 			<td class="status_color_col"><div class="pie_10 pie"></div></td>
-			<td class="status_name_col">Virus infected</td>
+			<td class="status_name_col">${_("Virus infected")}</td>
 			<td class="status_value_col">${c.status['virii']|totals}</td>
 		</tr>
 		<tr>
 			<td class="status_color_col"><div class="pie_4 pie"></div></td>
-			<td class="status_name_col">Policy blocked</td>
+			<td class="status_name_col">${_("Policy blocked")}</td>
 			<td class="status_value_col">${c.status['otherinfected']|totals}</td>
 		</tr>
 		<tr>
 			<td class="status_color_col">&nbsp;</td>
-			<td class="status_name_col">Inbound queues</td>
+			<td class="status_name_col">${_("Inbound queues")}</td>
 			<td class="status_value_col">${h.link_to(c.status['inq'], url('server-status-mq-in', serverid=c.server.id))}</td>
 		</tr>
 		<tr>
 			<td class="status_color_col">&nbsp;</td>
-			<td class="status_name_col">Outbound queues</td>
+			<td class="status_name_col">${_("Outbound queues")}</td>
 			<td class="status_value_col">${h.link_to(c.status['outq'], url('server-status-mq-out', serverid=c.server.id))}</td>
 		</tr>
 		</tbody>

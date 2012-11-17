@@ -17,42 +17,42 @@ from baruwa.lib.cluster import host_status
 	<tbody>
 	<tr>
 		<td class="status_color_col">&nbsp;</td>
-		<td class="status_name_col">Processed</td>
+		<td class="status_name_col">${_("Processed")}</td>
 		<td class="status_value_col">${c.baruwa_totals.total|totals}</td>
 	</tr>
 	<tr>
 		<td class="status_color_col"><div class="pie_6 pie"></div></td>
-		<td class="status_name_col">Clean</td>
+		<td class="status_name_col">${_("Clean")}</td>
 		<td class="status_value_col">${c.baruwa_totals.clean|totals}</td>
 	</tr>
 	<tr>
 		<td class="status_color_col"><div class="pie_1 pie"></div></td>
-		<td class="status_name_col">High scoring spam</td>
+		<td class="status_name_col">${_("High scoring spam")}</td>
 		<td class="status_value_col">${c.baruwa_totals.highspam|totals}</td>
 	</tr>
 	<tr>
 		<td class="status_color_col"><div class="pie_2 pie"></div></td>
-		<td class="status_name_col">Low scoring spam</td>
+		<td class="status_name_col">${_("Low scoring spam")}</td>
 		<td class="status_value_col">${c.baruwa_totals.lowspam|totals}</td>
 	</tr>
 	<tr>
 		<td class="status_color_col"><div class="pie_10 pie"></div></td>
-		<td class="status_name_col">Virus infected</td>
+		<td class="status_name_col">${_("Virus infected")}</td>
 		<td class="status_value_col">${c.baruwa_totals.virii|totals}</td>
 	</tr>
 	<tr>
 		<td class="status_color_col"><div class="pie_4 pie"></div></td>
-		<td class="status_name_col">Policy blocked</td>
+		<td class="status_name_col">${_("Policy blocked")}</td>
 		<td class="status_value_col">${c.baruwa_totals.infected|totals}</td>
 	</tr>
 	<tr>
 		<td class="status_color_col">&nbsp;</td>
-		<td class="status_name_col">Inbound queues</td>
+		<td class="status_name_col">${_("Inbound queues")}</td>
 		<td class="status_value_col">${h.link_to(c.baruwa_inbound, url('mailq-status-directed', queue='inbound'))}</td>
 	</tr>
 	<tr>
 		<td class="status_color_col">&nbsp;</td>
-		<td class="status_name_col">Outbound queues</td>
+		<td class="status_name_col">${_("Outbound queues")}</td>
 		<td class="status_value_col">${h.link_to(c.baruwa_outbound, url('mailq-status-directed', queue='outbound'))}</td>
 	</tr>
 	</tbody>

@@ -8,7 +8,7 @@
 allerrors = []
 [allerrors.extend(l) for l in c.form.errors.values()]
 %>
-    ${', '.join(allerrors)}
+    ${u', '.join(allerrors)}
 </div>
 % endif
 <div class="grid_16 alpha drowlast">
@@ -37,7 +37,7 @@ filterbydict = dict(c.FILTER_BY)
      </div>
      <div id="fhl" class="grid_13 alpha">
             % for i, f in enumerate(c.active_filters):
-            	&nbsp;${h.link_to(h.image(url(h.media_url() + 'imgs/sm-del.png'), alt='x', title='Remove'), url('delete-filter', filterid=i)) + ' '+ filterdict[f['field']]} ${filterbydict[f['filter']]} ${f['value']}
+            	&nbsp;${h.link_to(h.image(url(h.media_url() + 'imgs/sm-del.png'), alt='x', title='Remove'), url('delete-filter', filterid=i)) + u' '+ unicode(filterdict[f['field']])} ${filterbydict[f['filter']]} ${f['value']}
             % endfor
     </div>
 </div>

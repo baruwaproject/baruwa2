@@ -290,9 +290,9 @@ class ReportsController(BaseController):
                 data = data[0]
                 filterdict = dict(FILTER_ITEMS)
                 filterbydict = dict(FILTER_BY)
-                active_filters = [dict(filter_field=filterdict[filt['field']],
-                                    filter_by=filterbydict[filt['filter']],
-                                    filter_value=filt['value'])
+                active_filters = [dict(filter_field=unicode(filterdict[filt['field']]),
+                                    filter_by=unicode(filterbydict[filt['filter']]),
+                                    filter_value=unicode(filt['value']))
                                     for filt in filters]
                 try:
                     newest = data.newest.strftime("%Y-%m-%d %H:%M")
@@ -319,7 +319,8 @@ class ReportsController(BaseController):
         elif request.POST and not c.form.validate():
             success = False
             key = c.form.errors.keys()
-            errors = dict(field=key[0], msg=', '.join(c.form.errors[key[0]]))
+            msgs = [unicode(gkey) for gkey in c.form.errors[key[0]]] 
+            errors = dict(field=key[0], msg=', '.join(msgs))
         if success:
             self.invalidate = True
         if format == 'json':
@@ -523,10 +524,11 @@ class ReportsController(BaseController):
             filt = filters[int(filterid)]
             filteritems = dict(FILTER_ITEMS)
             filterby = dict(FILTER_BY)
+            name = u"%s %s %s" % (filteritems[filt["field"]],
+                                filterby[filt["filter"]],
+                                filt["value"])
             saved = SavedFilter(
-                        name="%s %s %s" % (filteritems[filt["field"]],
-                        filterby[filt["filter"]],
-                        filt["value"]),
+                        name=name,
                         field=filt["field"],
                         option=filt["filter"],
                         user=c.user

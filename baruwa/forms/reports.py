@@ -24,7 +24,7 @@ import datetime
 
 from wtforms import SelectField, validators, TextField
 from webhelpers.html import escape
-from pylons.i18n.translation import _
+from pylons.i18n.translation import lazy_ugettext as _
 
 from baruwa.forms import Form
 from baruwa.lib.regex import ADDRESS_RE, DOM_RE, IPV4_RE

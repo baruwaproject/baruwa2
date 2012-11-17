@@ -18,8 +18,8 @@
 #
 """Domain forms"""
 
-from pylons.i18n.translation import _
 from wtforms import TextAreaField
+from pylons.i18n.translation import lazy_ugettext as _
 from wtforms import BooleanField, TextField, IntegerField, RadioField
 from wtforms import SelectField, validators, DecimalField, PasswordField
 from wtforms.ext.sqlalchemy.fields import QuerySelectField
@@ -51,7 +51,7 @@ SPAM_ACTIONS = (
 )
 
 REPORT_FREQ = (
-    ('3', _('Monthy')),
+    ('3', _('Monthly')),
     ('2', _('Weekly')),
     ('1', _('Daily')),
     ('0', _('Disabled')),

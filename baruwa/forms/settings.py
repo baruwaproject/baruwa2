@@ -21,7 +21,7 @@
 from wtforms import BooleanField, validators, TextField
 from wtforms import IntegerField, SelectField, TextAreaField
 from wtforms import SelectMultipleField
-from pylons.i18n.translation import _
+from pylons.i18n.translation import lazy_ugettext as _
 
 from baruwa.forms import Form
 from baruwa.lib.regex import HOST_OR_IPV4_RE

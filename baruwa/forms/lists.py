@@ -20,7 +20,7 @@
 
 from wtforms import validators, TextField, SelectField, BooleanField
 from sqlalchemy.orm.exc import NoResultFound
-from pylons.i18n.translation import _
+from pylons.i18n.translation import lazy_ugettext as _
 
 from baruwa.forms import Form
 from baruwa.model.meta import Session
