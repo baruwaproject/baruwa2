@@ -1,7 +1,6 @@
 include README.rst
 include what.ini
 include who.ini
-include baruwa.wsgi
 include requirements.txt
 include baruwa/baruwa.wsgi
 include baruwa/config/deployment.ini_tmpl
