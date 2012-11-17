@@ -1,0 +1,359 @@
+# Translations template for PROJECT.
+# Copyright (C) 2012 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# 
+# Translators:
+msgid ""
+msgstr ""
+"Project-Id-Version: baruwa\n"
+"Report-Msgid-Bugs-To: baruwa@lists.baruwa.org\n"
+"POT-Creation-Date: 2012-11-14 14:04+0200\n"
+"PO-Revision-Date: 2012-11-15 02:00+0200\n"
+"Last-Translator: Andrew Colin Kissa <andrew@topdog.za.net>\n"
+"Language-Team: (http://www.transifex.com/projects/p/baruwa/language/el/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: auto-translate.py\n"
+"Language: el\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: baruwa/public/js/baruwa/accounts.js:1 baruwa/public/js/baruwa/domains.js:1
+#: baruwa/public/js/baruwa/lists.js:1
+#: baruwa/public/js/baruwa/messages.archive.js:1
+#: baruwa/public/js/baruwa/messages.js:1
+#: baruwa/public/js/baruwa/messages.quarantine.js:1
+#: baruwa/public/js/baruwa/organizations.js:1
+#: baruwa/public/js/baruwa/settings.js:1
+#: baruwa/public/js/baruwa/status.audit.js:1
+msgid "Showing items {{first_item}} to {{last_item}} of {{item_count}}."
+msgstr ""
+"Εμφάνιση των στοιχείων {{first_item}} να {{last_item}} των {{item_count}}."
+
+#: baruwa/public/js/baruwa/accounts.js:1
+msgid "Accounts :: Showing page {{page}} of {{page_count}} pages."
+msgstr "Λογαριασμοί:: Εμφάνιση σελίδας {{page}} των {{page_count}} σελίδες."
+
+#: baruwa/public/js/baruwa/accounts.js:1 baruwa/public/js/baruwa/domains.js:1
+#: baruwa/public/js/baruwa/lists.js:1
+#: baruwa/public/js/baruwa/messages.archive.js:1
+#: baruwa/public/js/baruwa/messages.js:1
+#: baruwa/public/js/baruwa/messages.quarantine.js:1
+#: baruwa/public/js/baruwa/messages.search.js:1
+#: baruwa/public/js/baruwa/organizations.js:1
+#: baruwa/public/js/baruwa/reports.pie.js:1
+#: baruwa/public/js/baruwa/reports.relays.js:1
+#: baruwa/public/js/baruwa/reports.spam.js:1
+#: baruwa/public/js/baruwa/settings.js:1
+#: baruwa/public/js/baruwa/status.audit.js:1
+msgid "No items found"
+msgstr "Δεν βρέθηκαν στοιχεία"
+
+#: baruwa/public/js/baruwa/accounts.js:1
+msgid "Accounts"
+msgstr "Λογαριασμοί"
+
+#: baruwa/public/js/baruwa/common.js:1
+msgid "AJAX Error:"
+msgstr "AJAX σφάλμα:"
+
+#: baruwa/public/js/baruwa/common.js:1
+msgid "Error Occured:"
+msgstr "Παρουσιάστηκε σφάλμα:"
+
+#: baruwa/public/js/baruwa/common.js:1
+#: baruwa/public/js/baruwa/messages.filters.js:1
+#: baruwa/public/js/baruwa/reports.common.js:1
+#: baruwa/public/js/baruwa/reports.js:1
+#: baruwa/public/js/baruwa/reports.listings.js:1
+#: baruwa/public/js/baruwa/reports.pie.js:1
+#: baruwa/public/js/baruwa/reports.relays.js:1
+#: baruwa/public/js/baruwa/reports.spam.js:1
+msgid "Loading"
+msgstr "Φόρτωση"
+
+#: baruwa/public/js/baruwa/common.js:1
+msgid "Unknown error occured !"
+msgstr "Παρουσιάστηκε άγνωστο σφάλμα!"
+
+#: baruwa/public/js/baruwa/domains.js:1
+msgid "No domains found"
+msgstr "Δεν βρέθηκαν τομείς"
+
+#: baruwa/public/js/baruwa/domains.js:1
+msgid "Domains :: Showing page {{page}} of {{page_count}} pages."
+msgstr "Τομείς:: Εμφάνιση σελίδας {{page}} των {{page_count}} σελίδες."
+
+#: baruwa/public/js/baruwa/domains.js:1
+msgid "Domains"
+msgstr "Τομείς"
+
+#: baruwa/public/js/baruwa/lists.js:1
+msgid "Lists :: {{listname}} Showing page {{page}} of {{page_count}} pages."
+msgstr ""
+"Λίστες:: {{listname}} Εμφάνιση σελίδας {{page}} των {{page_count}} σελίδες."
+
+#: baruwa/public/js/baruwa/lists.js:1
+msgid "Lists"
+msgstr "Λίστες"
+
+#: baruwa/public/js/baruwa/login.js:1
+msgid "Login"
+msgstr "Σύνδεση"
+
+#: baruwa/public/js/baruwa/login.js:1
+msgid "Reset my password"
+msgstr "Επαναφέρετε τον κωδικό πρόσβασής μου"
+
+#: baruwa/public/js/baruwa/messages.archive.js:1
+msgid "Messages :: Archive :: Showing page {{page}} of {{page_count}} pages."
+msgstr ""
+"Μηνύματα:: Αρχειοθέτηση:: Εμφάνιση σελίδας {{page}} των {{page_count}} "
+"σελίδες."
+
+#: baruwa/public/js/baruwa/messages.archive.js:1
+msgid "Messages :: Archive"
+msgstr "Μηνύματα:: αρχειοθέτηση"
+
+#: baruwa/public/js/baruwa/messages.archive.js:1
+#: baruwa/public/js/baruwa/messages.js:1
+#: baruwa/public/js/baruwa/messages.quarantine.js:1
+msgid "Date/Time"
+msgstr "Ημερομηνία/ώρα"
+
+#: baruwa/public/js/baruwa/messages.archive.js:1
+#: baruwa/public/js/baruwa/messages.js:1
+#: baruwa/public/js/baruwa/messages.quarantine.js:1
+msgid "From"
+msgstr "Από"
+
+#: baruwa/public/js/baruwa/messages.archive.js:1
+#: baruwa/public/js/baruwa/messages.js:1
+#: baruwa/public/js/baruwa/messages.quarantine.js:1
+msgid "To"
+msgstr "Να"
+
+#: baruwa/public/js/baruwa/messages.archive.js:1
+#: baruwa/public/js/baruwa/messages.js:1
+#: baruwa/public/js/baruwa/messages.quarantine.js:1
+msgid "Subject"
+msgstr "Θέμα"
+
+#: baruwa/public/js/baruwa/messages.archive.js:1
+#: baruwa/public/js/baruwa/messages.js:1
+msgid "Size"
+msgstr "Μέγεθος"
+
+#: baruwa/public/js/baruwa/messages.archive.js:1
+#: baruwa/public/js/baruwa/messages.js:1
+#: baruwa/public/js/baruwa/messages.quarantine.js:1
+msgid "Score"
+msgstr "Βαθμολογία"
+
+#: baruwa/public/js/baruwa/messages.common.js:1
+#: baruwa/public/js/baruwa/messages.quarantine.js:1
+msgid "No messages found"
+msgstr "Δεν βρέθηκαν μηνύματα"
+
+#: baruwa/public/js/baruwa/messages.detail.js:1
+msgid "Show hosts"
+msgstr "Παρουσίαση κεντρικών υπολογιστών"
+
+#: baruwa/public/js/baruwa/messages.detail.js:1
+msgid "Hide hosts"
+msgstr "Απόκρυψη κεντρικούς υπολογιστές"
+
+#: baruwa/public/js/baruwa/messages.detail.js:1
+msgid "Processing......"
+msgstr "Γίνεται επεξεργασία..."
+
+#: baruwa/public/js/baruwa/messages.detail.js:1
+msgid "Show headers"
+msgstr "Εμφάνιση κεφαλίδων"
+
+#: baruwa/public/js/baruwa/messages.detail.js:1
+msgid "Hide headers"
+msgstr "Απόκρυψη κεφαλίδες"
+
+#: baruwa/public/js/baruwa/messages.filters.js:1
+#: baruwa/public/js/baruwa/reports.js:1
+#: baruwa/public/js/baruwa/reports.listings.js:1
+#: baruwa/public/js/baruwa/reports.pie.js:1
+#: baruwa/public/js/baruwa/reports.relays.js:1
+#: baruwa/public/js/baruwa/reports.spam.js:1
+msgid "Processing request............."
+msgstr "Επεξεργασία αίτησης..."
+
+#: baruwa/public/js/baruwa/messages.filters.js:1
+#: baruwa/public/js/baruwa/reports.js:1
+#: baruwa/public/js/baruwa/reports.listings.js:1
+#: baruwa/public/js/baruwa/reports.pie.js:1
+#: baruwa/public/js/baruwa/reports.relays.js:1
+#: baruwa/public/js/baruwa/reports.spam.js:1
+msgid "Add Filter"
+msgstr "Προσθήκη φίλτρου"
+
+#: baruwa/public/js/baruwa/messages.filters.js:1
+msgid "Non applied at the moment"
+msgstr "Μη εφαρμόζονται αυτή τη στιγμή"
+
+#: baruwa/public/js/baruwa/messages.js:1
+#: baruwa/public/js/baruwa/messages.quarantine.js:1
+msgid ""
+"Messages :: Full message listing :: Showing page {{page}} of {{page_count}} "
+"pages."
+msgstr ""
+"Μηνύματα:: Πλήρες ενημερωτικό μήνυμα:: Εμφάνιση σελίδας {{page}} των "
+"{{page_count}} σελίδες."
+
+#: baruwa/public/js/baruwa/messages.js:1
+#: baruwa/public/js/baruwa/messages.quarantine.js:1
+msgid "Messages :: Full message listing"
+msgstr "Μηνυμάτων:: Λίστα πλήρες μήνυμα"
+
+#: baruwa/public/js/baruwa/messages.recent.js:1
+msgid "network connection failure, reconnecting in 60 seconds"
+msgstr "Αποτυχία σύνδεσης δικτύου, επανασύνδεση σε 60 δευτερόλεπτα"
+
+#: baruwa/public/js/baruwa/messages.recent.js:1
+msgid "OK"
+msgstr "Ok"
+
+#: baruwa/public/js/baruwa/messages.recent.js:1
+msgid "FAULTY"
+msgstr "ΕΛΑΤΤΩΜΑΤΙΚΌΣ"
+
+#: baruwa/public/js/baruwa/messages.search.js:1
+msgid "No messages found matching search query:"
+msgstr "Τα μηνύματα δεν βρέθηκε αντίστοιχο ερώτημα αναζήτησης:"
+
+#: baruwa/public/js/baruwa/messages.search.js:1
+msgid "Showing items {{first}} to {{last}} of {{total}}."
+msgstr "Εμφάνιση των στοιχείων {{first}} να {{last}} των {{total}}."
+
+#: baruwa/public/js/baruwa/messages.search.js:1
+msgid "About {{total_found}} results ({{search_time}} seconds)"
+msgstr "Σχετικά {{total_found}} αποτελέσματα ({{search_time}} δευτερόλεπτα)"
+
+#: baruwa/public/js/baruwa/messages.search.js:1
+msgid "0 Results found ({{search_time}} seconds)"
+msgstr "0 Αποτελέσματα βρέθηκαν ({{search_time}} δευτερόλεπτα)"
+
+#: baruwa/public/js/baruwa/messages.search.js:1
+msgid "Messages :: Search results :: {{q}}"
+msgstr "Μηνύματα:: Αποτελέσματα αναζήτησης:: {{q}}"
+
+#: baruwa/public/js/baruwa/messages.taskstatus.js:1
+msgid "An unknown error occured"
+msgstr "Παρουσιάστηκε ένα άγνωστο σφάλμα"
+
+#: baruwa/public/js/baruwa/messages.taskstatus.js:1
+msgid "FAILED"
+msgstr "ΑΠΈΤΥΧΕ"
+
+#: baruwa/public/js/baruwa/messages.taskstatus.js:1
+msgid "PASSED"
+msgstr "ΠΈΡΑΣΕ"
+
+#: baruwa/public/js/baruwa/organizations.js:1
+msgid "No organizations found"
+msgstr "Δεν βρέθηκαν οργανώσεις"
+
+#: baruwa/public/js/baruwa/organizations.js:1
+msgid "Organizations :: Showing page {{page}} of {{page_count}} pages."
+msgstr "Οργανώσεις:: Εμφάνιση σελίδας {{page}} των {{page_count}} σελίδες."
+
+#: baruwa/public/js/baruwa/organizations.js:1
+msgid "Organizations"
+msgstr "Οργανώσεις"
+
+#: baruwa/public/js/baruwa/reports.common.js:1
+msgid "is equal to"
+msgstr "είναι ίση με"
+
+#: baruwa/public/js/baruwa/reports.common.js:1
+msgid "is not equal to"
+msgstr "δεν είναι ίσο με"
+
+#: baruwa/public/js/baruwa/reports.common.js:1
+msgid "is greater than"
+msgstr "είναι μεγαλύτερη από"
+
+#: baruwa/public/js/baruwa/reports.common.js:1
+msgid "is less than"
+msgstr "είναι μικρότερο από"
+
+#: baruwa/public/js/baruwa/reports.common.js:1
+msgid "is null"
+msgstr "είναι null"
+
+#: baruwa/public/js/baruwa/reports.common.js:1
+msgid "is not null"
+msgstr "δεν είναι null"
+
+#: baruwa/public/js/baruwa/reports.common.js:1
+msgid "contains"
+msgstr "περιέχει"
+
+#: baruwa/public/js/baruwa/reports.common.js:1
+msgid "does not contain"
+msgstr "δεν περιέχουν"
+
+#: baruwa/public/js/baruwa/reports.common.js:1
+msgid "matches regex"
+msgstr "ταιριάζει με regex"
+
+#: baruwa/public/js/baruwa/reports.common.js:1
+msgid "does not match regex"
+msgstr "δεν συμφωνεί με το regex"
+
+#: baruwa/public/js/baruwa/reports.common.js:1
+msgid "is true"
+msgstr "είναι αλήθεια"
+
+#: baruwa/public/js/baruwa/reports.common.js:1
+msgid "is false"
+msgstr "είναι ψευδής"
+
+#: baruwa/public/js/baruwa/reports.common.js:1
+msgid "Please select"
+msgstr "Παρακαλούμε επιλέξτε"
+
+#: baruwa/public/js/baruwa/reports.js:1
+msgid "No active filters at the moment"
+msgstr "Χωρίς ενεργά φίλτρα αυτή τη στιγμή"
+
+#: baruwa/public/js/baruwa/reports.js:1
+msgid "No saved filters at the moment"
+msgstr "Δεν αποθηκευμένα φίλτρα αυτή τη στιγμή"
+
+#: baruwa/public/js/baruwa/reports.listings.js:1
+msgid "No records found"
+msgstr "Δεν βρέθηκαν εγγραφές"
+
+#: baruwa/public/js/baruwa/settings.js:1
+msgid "No scanning hosts found"
+msgstr "Δεν σάρωσης κεντρικούς υπολογιστές που βρέθηκαν"
+
+#: baruwa/public/js/baruwa/settings.js:1
+msgid "Settings :: Nodes :: Showing page {{page}} of {{page_count}} pages."
+msgstr ""
+"Ρυθμίσεων:: Κόμβοι:: Εμφάνιση σελίδας {{page}} των {{page_count}} σελίδες."
+
+#: baruwa/public/js/baruwa/settings.js:1
+msgid "Settings :: Nodes"
+msgstr "Ρυθμίσεις:: κόμβοι"
+
+#: baruwa/public/js/baruwa/status.audit.js:1
+msgid "No audit logs found"
+msgstr "Δεν αρχείων καταγραφής ελέγχου διαπιστώθηκε"
+
+#: baruwa/public/js/baruwa/status.audit.js:1
+msgid "Status :: Audit log :: Showing page {{page}} of {{page_count}} pages."
+msgstr ""
+"Κατάστασης:: Αρχείο καταγραφής ελέγχου:: Εμφάνιση σελίδας {{page}} των "
+"{{page_count}} σελίδες."
+
+#: baruwa/public/js/baruwa/status.audit.js:1
+msgid "Status :: Audit log"
+msgstr "Κατάστασης:: Αρχείο καταγραφής ελέγχου"

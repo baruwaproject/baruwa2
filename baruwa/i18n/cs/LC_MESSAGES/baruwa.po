@@ -1,74 +1,73 @@
-# Czech translations for baruwa.
+# English translations for baruwa.
 # Copyright (C) 2011 ORGANIZATION
 # This file is distributed under the same license as the baruwa project.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2011.
-#
+# 
+# Translators:
 msgid ""
 msgstr ""
-"Project-Id-Version: baruwa 2.0.0\n"
-"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2012-11-04 09:53+0200\n"
-"PO-Revision-Date: 2011-06-29 11:22+0200\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: cs <LL@li.org>\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+"Project-Id-Version: baruwa\n"
+"Report-Msgid-Bugs-To: baruwa@lists.baruwa.org\n"
+"POT-Creation-Date: 2012-11-16 17:45+0200\n"
+"PO-Revision-Date: 2012-11-16 17:53+0200\n"
+"Last-Translator: Andrew Colin Kissa <andrew@topdog.za.net>\n"
+"Language-Team: Baruwa Project\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 0.9.6\n"
+"Generated-By: auto-translate.py 0.0.1\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2\n"
 
 #: baruwa/commands/pdfreport.py:116 baruwa/controllers/reports.py:62
 #: baruwa/templates/reports/index.html:13
 msgid "Top Senders by Quantity"
-msgstr "Největší odesílatelé podle množství"
+msgstr "Nejlepší odesílatelé množství"
 
 #: baruwa/commands/pdfreport.py:118 baruwa/controllers/reports.py:64
 #: baruwa/templates/reports/index.html:14
 msgid "Top Senders by Volume"
-msgstr "Největší odesílatelé podle objemu"
+msgstr "Nejlepší odesílatelé podle objemu"
 
 #: baruwa/commands/pdfreport.py:120 baruwa/controllers/reports.py:66
 #: baruwa/templates/reports/index.html:15
 msgid "Top Sender Domains by Quantity"
-msgstr "Nejvíce odesílající domény podle množství"
+msgstr "Top domény odesílatele podle množství"
 
 #: baruwa/commands/pdfreport.py:122 baruwa/controllers/reports.py:68
 #: baruwa/templates/reports/index.html:16
 msgid "Top Sender Domains by Volume"
-msgstr "Nejvíce odesílající domény podle objemu"
+msgstr "Top domény odesílatele podle objemu"
 
 #: baruwa/commands/pdfreport.py:124 baruwa/controllers/reports.py:70
 #: baruwa/templates/reports/index.html:23
 msgid "Top Recipients by Quantity"
-msgstr "Největší příjemci podle množství"
+msgstr "Nejlepší příjemci podle množství"
 
 #: baruwa/commands/pdfreport.py:126 baruwa/controllers/reports.py:72
 #: baruwa/templates/reports/index.html:24
 msgid "Top Recipients by Volume"
-msgstr "Největší příjemci podle objemu"
+msgstr "Nejlepší příjemci podle objemu"
 
 #: baruwa/commands/pdfreport.py:128 baruwa/controllers/reports.py:74
 #: baruwa/templates/reports/index.html:26
 msgid "Top Recipient Domains By Quantity"
-msgstr "Nejvíce přijímající domény podle množství"
+msgstr "Top domény příjemce podle množství"
 
 #: baruwa/commands/pdfreport.py:130 baruwa/controllers/reports.py:76
 #: baruwa/templates/reports/index.html:27
 msgid "Top Recipient Domains By Volume"
-msgstr "Nejvíce přijímající domény podle objemu"
+msgstr "Top domény příjemce podle objemu"
 
 #: baruwa/commands/pdfreport.py:132 baruwa/controllers/reports.py:78
 msgid "Spam Score distribution"
-msgstr "Rozdělení spamového skóre"
+msgstr "Spam skóre distribuce"
 
 #: baruwa/commands/pdfreport.py:134 baruwa/controllers/reports.py:80
 msgid "Top mail hosts by quantity"
-msgstr "Největší e-mailoví hostitelé podle množství"
+msgstr "Nejvyšší poštovní hostitele podle množství"
 
 #: baruwa/commands/pdfreport.py:136 baruwa/controllers/reports.py:82
 msgid "Total messages [ After SMTP ]"
-msgstr "Zpráv celkem [ Po SMTP ]"
+msgstr "Zpráv celkem [po SMTP]"
 
 #: baruwa/commands/pdfreport.py:138 baruwa/controllers/reports.py:226
 #: baruwa/templates/reports/piereport.html:25
@@ -95,328 +94,335 @@ msgstr "Datum"
 
 #: baruwa/commands/pdfreport.py:139 baruwa/controllers/reports.py:230
 msgid "Mail totals"
-msgstr "Message Totals"
+msgstr "Poštovní součty"
 
 #: baruwa/commands/pdfreport.py:140 baruwa/controllers/reports.py:231
 msgid "Spam totals"
-msgstr ""
+msgstr "Spam součty"
 
 #: baruwa/commands/pdfreport.py:140 baruwa/controllers/reports.py:232
 msgid "Virus totals"
-msgstr ""
+msgstr "Virus celkem"
 
 #: baruwa/commands/pdfreport.py:141 baruwa/controllers/reports.py:233
 msgid "Mail volume"
-msgstr ""
+msgstr "Mail objem"
 
 #: baruwa/commands/pdfreport.py:141 baruwa/controllers/reports.py:234
 msgid "Totals"
-msgstr ""
+msgstr "Součty"
 
 #: baruwa/commands/pdfreport.py:142 baruwa/controllers/reports.py:223
 msgid "Baruwa mail report"
-msgstr "Baruwa e-mailové hlášení"
+msgstr "Baruwa poštovní zpráva"
 
 #: baruwa/commands/pdfreport.py:176 baruwa/controllers/reports.py:235
 #: baruwa/templates/reports/index.html:29
 msgid "Message Totals"
-msgstr ""
+msgstr "Zprávy celkem"
 
 #: baruwa/commands/pdfreport.py:183 baruwa/commands/quarantinereport.py:156
-#, fuzzy
 msgid "Baruwa Reports"
-msgstr "Baruwa e-mailové hlášení"
+msgstr "Baruwa zprávy"
 
 #: baruwa/commands/pdfreport.py:186
-#, fuzzy
 msgid "Baruwa usage report"
-msgstr "Baruwa e-mailové hlášení"
+msgstr "Zprávu o využití Baruwa"
 
 #: baruwa/commands/quarantinereport.py:159
-#, fuzzy
 msgid "Baruwa quarantine report"
-msgstr "Baruwa e-mailové hlášení"
+msgstr "Baruwa karantény zprávy"
 
 #: baruwa/controllers/accounts.py:98
 msgid "You have been banned after several failed logins"
-msgstr ""
+msgstr "Jste zakázali po několika se nezdařilo přihlášení"
 
 #: baruwa/controllers/accounts.py:150
 msgid "First time Login from external auth, your local account was created"
-msgstr ""
+msgstr "Poprvé přihlášení z externího ověření, místní účet byl vytvořen."
 
 #: baruwa/controllers/accounts.py:266
 #, python-format
 msgid "Login successful, Welcome back %(username)s !"
-msgstr ""
+msgstr "Přihlášení úspěšné, Vítejte zpět %(username)s!"
 
 #: baruwa/controllers/accounts.py:318 baruwa/controllers/accounts.py:348
 #, python-format
 msgid "The account password for %(name)s has been reset"
-msgstr ""
+msgstr "Heslo k účtu pro %(name)s byla resetována"
 
 #: baruwa/controllers/accounts.py:325 baruwa/controllers/accounts.py:355
 msgid "This is an external account, use external system to reset the password"
-msgstr ""
+msgstr "Jedná se externí účet, použijte externí systém k obnovení hesla"
 
 #: baruwa/controllers/accounts.py:361
 msgid "The old password supplied does not match our records"
-msgstr ""
+msgstr "Staré heslo se neshoduje s našich záznamů"
 
 #: baruwa/controllers/accounts.py:537
 #, python-format
 msgid "The account: %(user)s was created successfully"
-msgstr ""
+msgstr "Účet: %(user)s byla úspěšně vytvořena."
 
 #: baruwa/controllers/accounts.py:543
 msgid "Either the username or email address already exist"
-msgstr ""
+msgstr "Uživatelské jméno nebo e-mailovou adresu již existují"
 
 #: baruwa/controllers/accounts.py:574
 msgid "The account has been updated"
-msgstr ""
+msgstr "Účet byl aktualizován"
 
 #: baruwa/controllers/accounts.py:583
 #, python-format
 msgid "The account: %(acc)s could not be updated"
-msgstr ""
+msgstr "Účet: %(acc)s nelze aktualizovat."
 
 #: baruwa/controllers/accounts.py:589
 msgid "No changes made to the account"
-msgstr ""
+msgstr "Žádné změny provedené na účet"
 
 #: baruwa/controllers/accounts.py:611
 msgid "The account has been deleted"
-msgstr ""
+msgstr "Účet byl odstraněn"
 
 #: baruwa/controllers/accounts.py:620
 #, python-format
 msgid ""
-"The account: %(a)s and all associated data will be deleted, This action "
-"is not reversible."
+"The account: %(a)s and all associated data will be deleted, This action is "
+"not reversible."
 msgstr ""
+"Účet: %(a)s a všechna související data budou odstraněna, tato akce není "
+"reverzibilní."
 
 #: baruwa/controllers/accounts.py:677
 msgid "The accounts have been deleted"
-msgstr ""
+msgstr "Účty byly odstraněny"
 
 #: baruwa/controllers/accounts.py:680
 msgid ""
 "The following accounts are about to be deleted, this action is not "
 "reversible, Do you wish to continue ?"
 msgstr ""
+"Tyto účty se chystáte odstranit, tato akce není reverzibilní, přejete si "
+"pokračovat?"
 
 #: baruwa/controllers/accounts.py:689 baruwa/controllers/domains.py:384
 msgid "An error occured try again"
-msgstr ""
+msgstr "Došlo k chybě opakujte"
 
 #: baruwa/controllers/accounts.py:726
 #, python-format
 msgid "The alias address %(address)s was successfully created."
-msgstr ""
+msgstr "Adresa alias %(address)s byl úspěšně vytvořen."
 
 #: baruwa/controllers/accounts.py:728 baruwa/controllers/accounts.py:775
 #, python-format
 msgid "The address %(addr)s already exists"
-msgstr ""
+msgstr "Adresa %(addr)s již existuje"
 
 #: baruwa/controllers/accounts.py:731 baruwa/controllers/accounts.py:778
 #, python-format
 msgid "Domain: %(d)s does not belong to you"
-msgstr ""
+msgstr "Doména: %(d)s nepatří"
 
 #: baruwa/controllers/accounts.py:771
 msgid "The alias address has been updated"
-msgstr ""
+msgstr "Byl aktualizován alias adresy"
 
 #: baruwa/controllers/accounts.py:773
 msgid "No changes were made to the address"
-msgstr ""
+msgstr "Nebyly provedeny žádné změny na adresu"
 
 #: baruwa/controllers/accounts.py:806
 msgid "The address has been deleted"
-msgstr ""
+msgstr "Adresa byla odstraněna"
 
 #: baruwa/controllers/accounts.py:874 baruwa/controllers/organizations.py:358
 msgid ""
-"File uploaded, and is being processed, this page will automatically "
-"refresh to show the status"
+"File uploaded, and is being processed, this page will automatically refresh "
+"to show the status"
 msgstr ""
+"Soubor nahrál a zpracování, tato stránka bude automaticky aktualizovat "
+"zobrazíte stav"
 
 #: baruwa/controllers/accounts.py:881 baruwa/controllers/organizations.py:364
 #, python-format
 msgid "The file: %s is not a CSV file"
-msgstr ""
+msgstr "Soubor: %s není souboru CSV"
 
 #: baruwa/controllers/accounts.py:884 baruwa/controllers/organizations.py:367
 #, python-format
 msgid "The file: %s already exists and is being processed."
-msgstr ""
+msgstr "Soubor: %s již existuje a je zpracováván."
 
 #: baruwa/controllers/accounts.py:888 baruwa/controllers/organizations.py:371
 msgid "No CSV was file uploaded, try again"
-msgstr ""
+msgstr "Žádný CSV byl soubor nahrán, zkuste to znovu"
 
 #: baruwa/controllers/accounts.py:898 baruwa/controllers/accounts.py:954
 #: baruwa/controllers/domains.py:867 baruwa/controllers/messages.py:640
 #: baruwa/controllers/messages.py:642 baruwa/controllers/organizations.py:380
-#: baruwa/controllers/status.py:496
+#: baruwa/controllers/status.py:497
 msgid "The task status requested has expired or does not exist"
-msgstr ""
+msgstr "Stav úkolu požadováno vypršela nebo neexistuje"
 
 #: baruwa/controllers/accounts.py:906 baruwa/controllers/accounts.py:962
 #: baruwa/controllers/domains.py:875 baruwa/controllers/organizations.py:388
-#: baruwa/controllers/status.py:504
+#: baruwa/controllers/status.py:505
 #, python-format
 msgid "Error occured in processing %s"
-msgstr ""
+msgstr "Ve zpracování %s došlo k chybě"
 
 #: baruwa/controllers/accounts.py:909 baruwa/controllers/accounts.py:965
 #: baruwa/controllers/domains.py:878 baruwa/controllers/organizations.py:391
-#: baruwa/controllers/status.py:507
+#: baruwa/controllers/status.py:508
 msgid "Backend error occured during processing."
-msgstr ""
+msgstr "Backend došlo k chybě při zpracování."
 
 #: baruwa/controllers/accounts.py:926 baruwa/controllers/organizations.py:411
 msgid "The import could not be processed, try again later"
-msgstr ""
+msgstr "Import nelze zpracovat, opakujte akci později"
 
 #: baruwa/controllers/accounts.py:946
 msgid "Accounts export is being processed"
-msgstr ""
+msgstr "Zpracování účtů exportu"
 
 #: baruwa/controllers/accounts.py:981 baruwa/controllers/domains.py:888
 msgid "The export could not be processed, try again later"
-msgstr ""
+msgstr "Export nemůže být zpracován, opakujte akci později"
 
 #: baruwa/controllers/domains.py:238
 #, python-format
 msgid "The domain: %(dom)s has been created"
-msgstr ""
+msgstr "Doména: %(dom)s byla vytvořena"
 
 #: baruwa/controllers/domains.py:243
 #, python-format
 msgid "The domain name %(dom)s already exists"
-msgstr ""
+msgstr "Název domény %(dom)s již existuje"
 
 #: baruwa/controllers/domains.py:291
 #, python-format
 msgid "The domain: %(dom)s has been updated"
-msgstr ""
+msgstr "Doména: %(dom)s byl aktualizován"
 
 #: baruwa/controllers/domains.py:296
 #, python-format
 msgid "The domain %(dom)s could not be updated"
-msgstr ""
+msgstr "Doména %(dom)s nelze aktualizovat."
 
 #: baruwa/controllers/domains.py:299
 msgid "No changes were made to the domain"
-msgstr ""
+msgstr "Nebyly provedeny žádné změny v doméně"
 
 #: baruwa/controllers/domains.py:321
 msgid "The domain has been deleted"
-msgstr ""
+msgstr "Doména byla odstraněna"
 
 #: baruwa/controllers/domains.py:324
 #, python-format
 msgid ""
-"The domain: %(name)s and all associated data will be deleted, This action"
-" cannot be reversed."
+"The domain: %(name)s and all associated data will be deleted, This action "
+"cannot be reversed."
 msgstr ""
+"Doména: %(name)s a všechna související data budou odstraněna, tuto akci "
+"nelze vrátit zpět."
 
 #: baruwa/controllers/domains.py:372
 msgid "The domains have been deleted"
-msgstr ""
+msgstr "Domény byly odstraněny"
 
 #: baruwa/controllers/domains.py:375
 msgid ""
 "The following domains are about to be deleted, this action is not "
 "reversible, Do you wish to continue ?"
 msgstr ""
+"Následující domény se chystáte odstranit, tato akce není reverzibilní, "
+"přejete si pokračovat?"
 
 #: baruwa/controllers/domains.py:410
 msgid "The destination server has been created"
-msgstr ""
+msgstr "Byla vytvořena na cílový server"
 
 #: baruwa/controllers/domains.py:416
 #, python-format
 msgid "The destination server %(dest)s already exists "
-msgstr ""
+msgstr "Cílový server %(dest)s již existuje "
 
 #: baruwa/controllers/domains.py:441
 msgid "The destination server has been updated"
-msgstr ""
+msgstr "Cílový server byl aktualizován"
 
 #: baruwa/controllers/domains.py:452 baruwa/controllers/domains.py:816
 msgid "The update failed"
-msgstr ""
+msgstr "Aktualizace se nezdařila"
 
 #: baruwa/controllers/domains.py:454
 msgid "No changes were made to the destination server"
-msgstr ""
+msgstr "Nebyly provedeny žádné změny na cílový server"
 
 #: baruwa/controllers/domains.py:485
 msgid "The connection test failed try again later"
-msgstr ""
+msgstr "Selhal test připojení zopakujte akci později"
 
 #: baruwa/controllers/domains.py:490
 #, python-format
 msgid "The server: %s is up and accepting mail from us"
-msgstr ""
+msgstr "Server: %s je nahoru a přijímat poštu od nás"
 
 #: baruwa/controllers/domains.py:497
 #, python-format
 msgid "The server: %s is not accepting mail from us: %s"
-msgstr ""
+msgstr "Server: %s není přijímat poštu od nás: %s"
 
 #: baruwa/controllers/domains.py:533
 msgid "The destination server has been deleted"
-msgstr ""
+msgstr "Cílový server byla odstraněna"
 
 #: baruwa/controllers/domains.py:540
 #, python-format
 msgid ""
-"The destination server: %(s)s will be deleted, This action is not "
-"reversible"
-msgstr ""
+"The destination server: %(s)s will be deleted, This action is not reversible"
+msgstr "Cílový server: %(s)s bude odstraněna, tato akce není reverzibilní"
 
 #: baruwa/controllers/domains.py:567
 msgid "The authentication settings have been created"
-msgstr ""
+msgstr "Nastavení ověřování byly vytvořeny"
 
 #: baruwa/controllers/domains.py:574
 #, python-format
 msgid ""
-"The host %(dest)s already configured for %(auth)s authentication for this"
-" domain"
+"The host %(dest)s already configured for %(auth)s authentication for this "
+"domain"
 msgstr ""
+"Hostitel %(dest)s již nakonfigurován pro %(auth)s ověřování pro tuto doménu"
 
 #: baruwa/controllers/domains.py:607
 msgid "The authentication settings have been updated"
-msgstr ""
+msgstr "Nastavení ověřování byly aktualizovány"
 
 #: baruwa/controllers/domains.py:618
 msgid "The authentication settings update failed"
-msgstr ""
+msgstr "Ověření nastavení aktualizace se nezdařila"
 
 #: baruwa/controllers/domains.py:620
 msgid "No changes were made to the authentication settings"
-msgstr ""
+msgstr "Nebyly provedeny žádné změny v nastavení ověřování"
 
 #: baruwa/controllers/domains.py:641
 msgid "The authentication settings have been deleted"
-msgstr ""
+msgstr "Nastavení ověřování byly odstraněny"
 
 #: baruwa/controllers/domains.py:648
 #, python-format
 msgid ""
 "The authentication server: %(s)s will be deleted, This action is not "
 "reversible"
-msgstr ""
+msgstr "Ověřovací server: %(s)s bude odstraněna, tato akce není reverzibilní"
 
 #: baruwa/controllers/domains.py:671
 msgid "The protocol supplied does not use extra settings"
-msgstr ""
+msgstr "Dodané protokol nepoužívá zvláštní nastavení"
 
 #: baruwa/controllers/domains.py:676
 #, python-format
@@ -424,395 +430,418 @@ msgid ""
 "Please add an authentication server for the %(proto)s protocol Before "
 "attempting to configure the %(proto)s settings"
 msgstr ""
+"Prosím, přidejte server ověřování pro %(proto)s Než se pokusíte "
+"nakonfigurovat protokol %(proto)s nastavení"
 
 #: baruwa/controllers/domains.py:715
 #, python-format
 msgid "The %(proto)s settings have been updated"
-msgstr ""
+msgstr "%(proto)s nastavení byly aktualizovány"
 
 #: baruwa/controllers/domains.py:718
 #, python-format
 msgid "The %(proto)s settings have been created"
-msgstr ""
+msgstr "%(proto)s nastavení byly vytvořeny"
 
 #: baruwa/controllers/domains.py:729
 msgid "The auth settings already exist, use update to modify them"
-msgstr ""
+msgstr "Ověření nastavení již existují, použijte aktualizaci upravit"
 
 #: baruwa/controllers/domains.py:733
 msgid ""
-"The Radius secret is not be displayed in the form, To update type the new"
-" secret in \"Radius secret\" below."
+"The Radius secret is not be displayed in the form, To update type the new "
+"secret in \"Radius secret\" below."
 msgstr ""
+"Tajemství je poloměr nebyla zobrazí ve formuláři, k aktualizaci typ nové "
+"tajemství v \"Radius secret\" níže."
 
 #: baruwa/controllers/domains.py:774
 #, python-format
 msgid "The domain alias: %s has been created"
-msgstr ""
+msgstr "Alias domény: %s byla vytvořena"
 
 #: baruwa/controllers/domains.py:779
 #, python-format
 msgid "The domain alias: %s already exists"
-msgstr ""
+msgstr "Alias domény: %s již existuje."
 
 #: baruwa/controllers/domains.py:811
 #, python-format
 msgid "The domain alias: %s has been updated"
-msgstr ""
+msgstr "Alias domény: %s byl aktualizován"
 
 #: baruwa/controllers/domains.py:818
 msgid "No changes were made to the domain alias"
-msgstr ""
+msgstr "Alias domény byly provedeny žádné změny"
 
 #: baruwa/controllers/domains.py:845
 #, python-format
 msgid "The domain alias: %s has been deleted"
-msgstr ""
+msgstr "Alias domény: %s byla odstraněna"
 
 #: baruwa/controllers/domains.py:860
 msgid "Domains export is being processed"
-msgstr ""
+msgstr "Zpracování domény exportu"
 
 #: baruwa/controllers/error.py:48
 msgid "No status code found"
-msgstr ""
+msgstr "Nalezen žádný kód stavu"
 
 #: baruwa/controllers/filemanager.py:59 baruwa/controllers/filemanager.py:178
 msgid "Action not supported"
-msgstr ""
+msgstr "Akce není podporována"
 
 #: baruwa/controllers/filemanager.py:131
 msgid "Only one image is permitted per signature"
-msgstr ""
+msgstr "Je povolen pouze jeden obrázek za podpis"
 
 #: baruwa/controllers/filemanager.py:139
 msgid "The uploaded file is not acceptable"
-msgstr ""
+msgstr "Načtený soubor není přijatelné"
 
 #: baruwa/controllers/filemanager.py:150
 msgid "File has been uploaded"
-msgstr ""
+msgstr "Soubor byl nahrán"
 
 #: baruwa/controllers/filemanager.py:156
 msgid "Invalid upload request"
-msgstr ""
+msgstr "Neplatné odeslání žádosti"
 
 #: baruwa/controllers/filemanager.py:173
 msgid "The file has been deleted"
-msgstr ""
+msgstr "Soubor byl odstraněn."
+
+#: baruwa/controllers/invite.py:118
+msgid "Baruwa Hosted"
+msgstr "Baruwa hospoda"
+
+#: baruwa/controllers/invite.py:121
+msgid "Baruwa Hosted Registration"
+msgstr "Baruwa hostil registrace"
+
+#: baruwa/controllers/invite.py:136
+msgid "System was unable to process your request"
+msgstr "Systém nebyl schopen zpracovat váš požadavek"
 
 #: baruwa/controllers/lists.py:248 baruwa/controllers/lists.py:291
 #: baruwa/forms/lists.py:39 baruwa/templates/base.html:86
 #: baruwa/templates/lists/add.html:49 baruwa/templates/lists/delete.html:38
 msgid "Approved senders"
-msgstr ""
+msgstr "Schválený odesílatel"
 
 #: baruwa/controllers/lists.py:250 baruwa/controllers/lists.py:293
 #: baruwa/forms/lists.py:40 baruwa/templates/base.html:87
 #: baruwa/templates/lists/add.html:50 baruwa/templates/lists/delete.html:39
 msgid "Banned senders"
-msgstr ""
+msgstr "Zakázaných odesílatelů"
 
 #: baruwa/controllers/lists.py:255
 msgid "The item has been added to the list"
-msgstr ""
+msgstr "Položka byla přidána do seznamu"
 
 #: baruwa/controllers/lists.py:261
 msgid "The list item already exists"
-msgstr ""
+msgstr "Seznamu položka již existuje."
 
 #: baruwa/controllers/lists.py:302
 msgid "The item has been deleted"
-msgstr ""
+msgstr "Položka byla odstraněna"
 
 #: baruwa/controllers/messages.py:284 baruwa/controllers/messages.py:287
 msgid "Processing the request failed"
-msgstr ""
+msgstr "Zpracování požadavku se nezdařilo"
 
 #: baruwa/controllers/messages.py:294 baruwa/controllers/messages.py:455
 msgid ", "
-msgstr ""
+msgstr ", "
 
 #: baruwa/controllers/messages.py:452
 msgid "The messages could not processed, try again later"
-msgstr ""
+msgstr "Zprávy nemohl zpracovat, opakujte akci později"
 
 #: baruwa/controllers/messages.py:559 baruwa/controllers/status.py:304
 msgid "This message contains external images, which have been blocked. "
-msgstr ""
+msgstr "Tato zpráva obsahuje externí obrázky, které byly zablokovány. "
 
 #: baruwa/controllers/messages.py:560 baruwa/controllers/status.py:305
 msgid "Display images"
-msgstr ""
+msgstr "Zobrazit obrázky"
 
 #: baruwa/controllers/messages.py:577
 msgid "The message could not be previewed, try again later"
-msgstr ""
+msgstr "Zpráva nemůže být náhled, opakujte akci později"
 
 #: baruwa/controllers/messages.py:593
 msgid "Unknown"
-msgstr ""
+msgstr "Neznámý"
 
 #: baruwa/controllers/messages.py:594
 msgid ""
 "The message has already been released, you can only use the release link "
 "once"
-msgstr ""
+msgstr "Zpráva již byla uvolněna, lze použít pouze na uvolnění odkaz jednou"
 
 #: baruwa/controllers/messages.py:622
 msgid "Processing of message failed"
-msgstr ""
+msgstr "Zpracování zprávy se nezdařilo"
 
 #: baruwa/controllers/messages.py:660 baruwa/controllers/messages.py:661
 msgid "An error occured in processing, try again later"
-msgstr ""
+msgstr "Došlo k chybě při zpracování, opakujte akci později"
 
 #: baruwa/controllers/organizations.py:166
 msgid "The organization has been created"
-msgstr ""
+msgstr "Organizace byla vytvořena"
 
 #: baruwa/controllers/organizations.py:169
 msgid "The organization already exists"
-msgstr ""
+msgstr "Organizace již existuje"
 
 #: baruwa/controllers/organizations.py:198
 msgid "The organization has been updated"
-msgstr ""
+msgstr "Organizace byla aktualizována"
 
 #: baruwa/controllers/organizations.py:201
 msgid "The organization could not be updated"
-msgstr ""
+msgstr "Organizace nelze aktualizovat."
 
 #: baruwa/controllers/organizations.py:203
 msgid "No changes made, Organization not updated"
-msgstr ""
+msgstr "Žádné změny, organizace nejsou aktualizovány"
 
 #: baruwa/controllers/organizations.py:229
 msgid "The organization has been deleted"
-msgstr ""
+msgstr "Organizace byla odstraněna"
 
 #: baruwa/controllers/organizations.py:232
 #, python-format
 msgid "The organization: %(s)s will be deleted, This action is not reversible"
-msgstr ""
+msgstr "Organizace: %(s)s bude odstraněna, tato akce není reverzibilní"
 
 #: baruwa/controllers/organizations.py:259
 msgid "The outbound settings have been created"
-msgstr ""
+msgstr "Výstupní nastavení byly vytvořeny"
 
 #: baruwa/controllers/organizations.py:262
 msgid "The outbound settings could not created, Try again"
-msgstr ""
+msgstr "Výstupní nastavení nelze vytvořit, zkuste to znovu"
 
 #: baruwa/controllers/organizations.py:298
 msgid "The outbound settings have been updated"
-msgstr ""
+msgstr "Výstupní nastavení byly aktualizovány"
 
 #: baruwa/controllers/organizations.py:301
 msgid "The outbound settings could not be updated"
-msgstr ""
+msgstr "Výstupní nastavení nelze aktualizovat."
 
 #: baruwa/controllers/organizations.py:303
 msgid "No changes made, The outbound settings not updated"
-msgstr ""
+msgstr "Provedeny žádné změny, výstupní nastavení nejsou aktualizovány"
 
 #: baruwa/controllers/organizations.py:326
 msgid "The outbound settings have been deleted"
-msgstr ""
+msgstr "Výstupní nastavení byla odstraněna"
 
 #: baruwa/controllers/organizations.py:328
 msgid "The outbound settings could not be deleted"
-msgstr ""
+msgstr "Výstupní nastavení nelze odstranit"
 
-#: baruwa/controllers/reports.py:376
+#: baruwa/controllers/reports.py:377
 msgid "Score "
-msgstr ""
+msgstr "Skóre "
 
-#: baruwa/controllers/reports.py:421
+#: baruwa/controllers/reports.py:422
 msgid "Mail totals on "
-msgstr ""
+msgstr "Pošty celkem na "
 
-#: baruwa/controllers/reports.py:425
+#: baruwa/controllers/reports.py:426
 msgid "Spam totals on "
-msgstr ""
+msgstr "Spam součty "
 
-#: baruwa/controllers/reports.py:429
+#: baruwa/controllers/reports.py:430
 msgid "Virus totals on "
-msgstr ""
+msgstr "Virus celkem na "
 
-#: baruwa/controllers/reports.py:506 baruwa/controllers/reports.py:542
+#: baruwa/controllers/reports.py:507 baruwa/controllers/reports.py:544
 msgid "The filter does not exist"
-msgstr ""
+msgstr "Filtr neexistuje."
 
-#: baruwa/controllers/reports.py:516
+#: baruwa/controllers/reports.py:517
 msgid "The filter has been removed"
-msgstr ""
+msgstr "Filtr odstraněn"
 
-#: baruwa/controllers/reports.py:545
+#: baruwa/controllers/reports.py:547
 msgid "The filter already exists"
-msgstr ""
+msgstr "Filtr již existuje"
 
-#: baruwa/controllers/reports.py:552
+#: baruwa/controllers/reports.py:554
 msgid "The filter has been saved"
-msgstr ""
+msgstr "Filtr byl uložen"
 
-#: baruwa/controllers/reports.py:585
+#: baruwa/controllers/reports.py:587
 msgid "The filter has been deleted"
-msgstr ""
+msgstr "Filtr byl odstraněn"
 
 #: baruwa/controllers/settings.py:154
 msgid "The scanning server has been added"
-msgstr ""
+msgstr "Skenovací server byl přidán"
 
 #: baruwa/controllers/settings.py:158
 msgid "The server already exists"
-msgstr ""
+msgstr "Server již existuje"
 
 #: baruwa/controllers/settings.py:184
 msgid "The scanning server has been updated"
-msgstr ""
+msgstr "Skenovací server byl aktualizován"
 
 #: baruwa/controllers/settings.py:187
 msgid "Update of server failed"
-msgstr ""
+msgstr "Aktualizace serveru se nezdařilo"
 
 #: baruwa/controllers/settings.py:189
 msgid "No changes were made to the server"
-msgstr ""
+msgstr "Nebyly provedeny žádné změny na server"
 
 #: baruwa/controllers/settings.py:211
 msgid "The scanning server has been deleted"
-msgstr ""
+msgstr "Skenovací server byla odstraněna"
 
 #: baruwa/controllers/settings.py:290
 #, python-format
 msgid "%(settings)s updated"
-msgstr ""
+msgstr "%(settings)s Aktualizováno"
 
 #: baruwa/controllers/settings.py:294
 msgid "No configuration changes made"
-msgstr ""
+msgstr "Žádné změny konfigurace provedené"
 
 #: baruwa/controllers/settings.py:341
 msgid "DKIM keys successfully generated"
-msgstr ""
+msgstr "DKIM klíče generované úspěšně"
 
 #: baruwa/controllers/settings.py:343
 msgid "Generation of DKIM keys failed"
-msgstr ""
+msgstr "Generování klíčů DKIM selhal"
 
 #: baruwa/controllers/settings.py:361
 msgid "enabled"
-msgstr ""
+msgstr "povoleno"
 
 #: baruwa/controllers/settings.py:370
 msgid "disabled"
-msgstr ""
+msgstr "zakázáno"
 
 #: baruwa/controllers/settings.py:375
 #, python-format
 msgid "DKIM signing for: %s has been %s"
-msgstr ""
+msgstr "DKIM podpis pro: %s byla %s"
 
 #: baruwa/controllers/settings.py:378
 msgid "DKIM signing status: No changes made"
-msgstr ""
+msgstr "DKIM podpis stav: žádné změny provedené"
 
 #: baruwa/controllers/settings.py:424 baruwa/controllers/settings.py:536
 msgid "The signature has been created"
-msgstr ""
+msgstr "Podpis byl vytvořen"
 
 #: baruwa/controllers/settings.py:428 baruwa/controllers/settings.py:540
 msgid "This signature type already exists"
-msgstr ""
+msgstr "Tento typ podpisu již existuje"
 
 #: baruwa/controllers/settings.py:457 baruwa/controllers/settings.py:569
 msgid "The signature has been updated"
-msgstr ""
+msgstr "Podpis byl aktualizován"
 
 #: baruwa/controllers/settings.py:459 baruwa/controllers/settings.py:571
 msgid "No changes made, signature not updated"
-msgstr ""
+msgstr "Žádné změny, podpis nebyl aktualizován"
 
 #: baruwa/controllers/settings.py:463 baruwa/controllers/settings.py:575
 msgid "Error occured updating the signature"
-msgstr ""
+msgstr "Došlo k chybě aktualizaci podpis"
 
 #: baruwa/controllers/settings.py:508 baruwa/controllers/settings.py:620
 msgid "The signature has been deleted"
-msgstr ""
+msgstr "Podpis byl odstraněn"
 
 #: baruwa/controllers/status.py:96 baruwa/lib/misc.py:176
 #: baruwa/model/messages.py:146 baruwa/templates/messages/functions.html:42
 #: baruwa/templates/messages/index.html:71
 #: baruwa/templates/messages/searchresults.html:66
+#: baruwa/templates/status/index.html:25
+#: baruwa/templates/status/serverstatus.html:27
 msgid "Clean"
-msgstr ""
+msgstr "Vyčistit"
 
-#: baruwa/controllers/status.py:97
+#: baruwa/controllers/status.py:97 baruwa/templates/status/index.html:30
+#: baruwa/templates/status/serverstatus.html:32
 msgid "High scoring spam"
-msgstr ""
+msgstr "Vysoké bodování spamu"
 
-#: baruwa/controllers/status.py:98
+#: baruwa/controllers/status.py:98 baruwa/templates/status/index.html:35
+#: baruwa/templates/status/serverstatus.html:37
 msgid "Low scoring spam"
-msgstr ""
+msgstr "Nízké hodnocení spamu"
 
 #: baruwa/controllers/status.py:99 baruwa/templates/messages/detail.html:77
+#: baruwa/templates/status/index.html:40
+#: baruwa/templates/status/serverstatus.html:42
 msgid "Virus infected"
-msgstr ""
+msgstr "Virus infikovaný"
 
-#: baruwa/controllers/status.py:100
+#: baruwa/controllers/status.py:100 baruwa/templates/status/index.html:45
+#: baruwa/templates/status/serverstatus.html:47
 msgid "Policy blocked"
-msgstr ""
+msgstr "Politika blokován"
 
 #: baruwa/controllers/status.py:226
 msgid "The request has been queued for processing"
-msgstr ""
+msgstr "Požadavek byl do fronty ke zpracování"
 
 #: baruwa/controllers/status.py:245 baruwa/controllers/status.py:263
 msgid "The requested queued message was not found."
-msgstr ""
+msgstr "Nebyl nalezen požadovaný zprávu ve frontě."
 
 #: baruwa/controllers/status.py:321
 msgid "The message could not be processed"
-msgstr ""
+msgstr "Zprávu nelze zpracovat."
 
-#: baruwa/controllers/status.py:480
+#: baruwa/controllers/status.py:481
 msgid "No query specified for audit log export"
-msgstr ""
+msgstr "Žádný dotaz zadaný pro export protokolu auditu"
 
-#: baruwa/controllers/status.py:517
+#: baruwa/controllers/status.py:518
 msgid "The audit log export failed, try again later"
-msgstr ""
+msgstr "Export protokolu auditu selhal, opakujte akci později"
 
 #: baruwa/forms/accounts.py:32 baruwa/forms/domains.py:34
-#: baruwa/forms/lists.py:33 baruwa/forms/messages.py:27 baruwa/forms/misc.py:28
-#: baruwa/forms/organizations.py:33 baruwa/forms/reports.py:33
-#: baruwa/forms/settings.py:30 baruwa/model/status.py:32
-#: baruwa/tasks/status.py:45
+#: baruwa/forms/lists.py:33 baruwa/forms/messages.py:27
+#: baruwa/forms/misc.py:28 baruwa/forms/organizations.py:33
+#: baruwa/forms/reports.py:33 baruwa/forms/settings.py:30
+#: baruwa/model/status.py:32 baruwa/tasks/status.py:45
 msgid "hi"
-msgstr ""
+msgstr "Ahoj"
 
 #: baruwa/forms/accounts.py:41
 msgid "User"
-msgstr ""
+msgstr "Uživatel"
 
 #: baruwa/forms/accounts.py:42
 msgid "Domain admin"
-msgstr ""
+msgstr "Správce domény"
 
 #: baruwa/forms/accounts.py:43
 msgid "Administrator"
-msgstr ""
+msgstr "Správce"
 
 #: baruwa/forms/accounts.py:59
 #, python-format
 msgid "The domain: %(dom)s is not local"
-msgstr ""
+msgstr "Doména: %(dom)s není místní"
 
 #: baruwa/forms/accounts.py:68 baruwa/forms/accounts.py:105
 msgid "Please select atleast one domain"
-msgstr ""
+msgstr "Vyberte prosím alespoň jednu doménu"
 
 #: baruwa/forms/accounts.py:74 baruwa/forms/accounts.py:110
 #: baruwa/tasks/status.py:296 baruwa/templates/accounts/account.html:38
@@ -826,29 +855,32 @@ msgid "Username"
 msgstr "Uživatelské jméno"
 
 #: baruwa/forms/accounts.py:77 baruwa/forms/accounts.py:112
+#: baruwa/forms/invite.py:98
 msgid "First name"
-msgstr ""
+msgstr "Křestní jméno"
 
 #: baruwa/forms/accounts.py:79 baruwa/forms/accounts.py:113
+#: baruwa/forms/invite.py:99
 msgid "Last name"
-msgstr ""
+msgstr "Příjmení"
 
 #: baruwa/forms/accounts.py:81 baruwa/forms/accounts.py:138
+#: baruwa/forms/invite.py:101
 msgid "New Password"
-msgstr ""
+msgstr "Nové heslo"
 
 #: baruwa/forms/accounts.py:84 baruwa/forms/accounts.py:141
-#: baruwa/forms/organizations.py:65
+#: baruwa/forms/invite.py:105 baruwa/forms/organizations.py:65
 msgid "Passwords must match"
-msgstr ""
+msgstr "Heslo se musí shodovat."
 
 #: baruwa/forms/accounts.py:85 baruwa/forms/accounts.py:142
-#: baruwa/forms/organizations.py:64
+#: baruwa/forms/invite.py:106 baruwa/forms/organizations.py:64
 msgid "Retype Password"
-msgstr ""
+msgstr "Zadejte heslo znovu"
 
 #: baruwa/forms/accounts.py:87 baruwa/forms/accounts.py:114
-#: baruwa/templates/accounts/confirmbulkdel.html:10
+#: baruwa/forms/invite.py:100 baruwa/templates/accounts/confirmbulkdel.html:10
 #: baruwa/templates/accounts/index.html:36
 #: baruwa/templates/accounts/login.html:58
 #: baruwa/templates/accounts/searchresults.html:26
@@ -857,13 +889,13 @@ msgstr "E-mailová adresa"
 
 #: baruwa/forms/accounts.py:91 baruwa/templates/accounts/account.html:86
 msgid "Account type"
-msgstr ""
+msgstr "Typ účtu"
 
 #: baruwa/forms/accounts.py:93 baruwa/forms/accounts.py:115
 #: baruwa/forms/organizations.py:49 baruwa/templates/base.html:103
 #: baruwa/templates/accounts/account.html:112
 msgid "Domains"
-msgstr ""
+msgstr "Domény"
 
 #: baruwa/forms/accounts.py:96 baruwa/forms/accounts.py:117
 #: baruwa/forms/accounts.py:133 baruwa/forms/domains.py:95
@@ -873,43 +905,42 @@ msgstr ""
 #: baruwa/forms/settings.py:696 baruwa/forms/settings.py:701
 #: baruwa/lib/templates/helpers.py:225 baruwa/templates/settings/index.html:17
 msgid "Enabled"
-msgstr ""
+msgstr "Povoleno"
 
 #: baruwa/forms/accounts.py:97 baruwa/forms/accounts.py:118
 #: baruwa/templates/accounts/account.html:132
 msgid "Send reports"
-msgstr ""
+msgstr "Odeslání zprávy"
 
 #: baruwa/forms/accounts.py:98 baruwa/forms/accounts.py:119
 msgid "Enable spam checks"
-msgstr ""
+msgstr "Povolit kontroly spamu"
 
 #: baruwa/forms/accounts.py:99 baruwa/forms/domains.py:104
 msgid "Probable spam score"
-msgstr ""
+msgstr "Pravděpodobný spam skóre"
 
 #: baruwa/forms/accounts.py:100 baruwa/forms/domains.py:105
 msgid "Definite spam score"
-msgstr ""
+msgstr "Definitivní spam skóre"
 
 #: baruwa/forms/accounts.py:120 baruwa/templates/domains/detail.html:108
 msgid "Spam low score"
-msgstr ""
+msgstr "Nízké skóre spamu"
 
 #: baruwa/forms/accounts.py:121 baruwa/templates/domains/detail.html:116
 msgid "Spam high score"
-msgstr ""
+msgstr "Vysoké skóre spamu"
 
 #: baruwa/forms/accounts.py:147
-#, fuzzy
 msgid "Old Password"
-msgstr "Heslo"
+msgstr "Staré heslo"
 
 #: baruwa/forms/domains.py:48 baruwa/templates/base.html:79
 #: baruwa/templates/messages/detail.html:150
 #: baruwa/templates/messages/taskstatus.html:6
 msgid "Quarantine"
-msgstr ""
+msgstr "Karanténa"
 
 #: baruwa/forms/domains.py:49 baruwa/forms/messages.py:79
 #: baruwa/model/status.py:41 baruwa/templates/accounts/account.html:175
@@ -931,122 +962,123 @@ msgstr ""
 #: baruwa/templates/settings/domain_sigs.html:32
 #: baruwa/templates/settings/index.html:34
 msgid "Delete"
-msgstr ""
+msgstr "Smazat"
 
 #: baruwa/forms/domains.py:50
 msgid "Deliver"
-msgstr ""
+msgstr "Doručit"
 
 #: baruwa/forms/domains.py:54
-msgid "Monthy"
-msgstr ""
+#, fuzzy
+msgid "Monthly"
+msgstr "Monthy"
 
 #: baruwa/forms/domains.py:55
 msgid "Weekly"
-msgstr ""
+msgstr "Týdně"
 
 #: baruwa/forms/domains.py:56
 msgid "Daily"
-msgstr ""
+msgstr "Denně"
 
 #: baruwa/forms/domains.py:57 baruwa/lib/templates/helpers.py:228
 msgid "Disabled"
-msgstr ""
+msgstr "Zakázáno"
 
 #: baruwa/forms/domains.py:61 baruwa/forms/domains.py:68
 msgid "SMTP"
-msgstr ""
+msgstr "SMTP"
 
 #: baruwa/forms/domains.py:62
 msgid "LMTP"
-msgstr ""
+msgstr "LMTP"
 
 #: baruwa/forms/domains.py:66
 msgid "POP3"
-msgstr ""
+msgstr "POP3"
 
 #: baruwa/forms/domains.py:67
 msgid "IMAP"
-msgstr ""
+msgstr "IMAP"
 
 #: baruwa/forms/domains.py:69
 msgid "RADIUS/RSA SECUREID"
-msgstr ""
+msgstr "POLOMĚR/SECUREID RSA"
 
 #: baruwa/forms/domains.py:70
 msgid "LDAP"
-msgstr ""
+msgstr "LDAP"
 
 #: baruwa/forms/domains.py:71
 msgid "YUBIKEY"
-msgstr ""
+msgstr "YUBIKEY"
 
 #: baruwa/forms/domains.py:72
-#, fuzzy
 msgid "OAUTH"
-msgstr "Počet"
+msgstr "OAUTH"
 
 #: baruwa/forms/domains.py:76
 msgid "SUBTREE"
-msgstr ""
+msgstr "PODSTROM"
 
 #: baruwa/forms/domains.py:77
 msgid "ONE LEVEL"
-msgstr ""
+msgstr "JEDNA ÚROVEŇ"
 
 #: baruwa/forms/domains.py:85
 msgid "Invalid Domain name or IP address"
-msgstr ""
+msgstr "Neplatný název domény nebo IP adresa"
 
-#: baruwa/forms/domains.py:90 baruwa/forms/lists.py:85
-#: baruwa/templates/domains/detail.html:21
+#: baruwa/forms/domains.py:90 baruwa/forms/invite.py:108
+#: baruwa/forms/lists.py:85 baruwa/templates/domains/detail.html:21
 #: baruwa/templates/organizations/importstatus.html:5
 msgid "Domain name"
-msgstr ""
+msgstr "Název domény"
 
 #: baruwa/forms/domains.py:92 baruwa/forms/domains.py:132
+#: baruwa/forms/invite.py:110
 msgid "Invalid Domain name"
-msgstr ""
+msgstr "Neplatný název domény"
 
 #: baruwa/forms/domains.py:93 baruwa/templates/domains/detail.html:140
 msgid "Site url"
-msgstr ""
+msgstr "Adresa url webu"
 
 #: baruwa/forms/domains.py:96
 msgid "Enable SMTP callouts"
-msgstr ""
+msgstr "Povolit popisky SMTP"
 
 #: baruwa/forms/domains.py:97
 msgid "Enable LDAP callouts"
-msgstr ""
+msgstr "Povolit popisky LDAP"
 
 #: baruwa/forms/domains.py:98
 msgid "Enable Virus checks"
-msgstr ""
+msgstr "Povolit Virus kontroly"
 
 #: baruwa/forms/domains.py:99
 msgid "Enable SPAM checks"
-msgstr ""
+msgstr "Povolit kontroly spamu"
 
 #: baruwa/forms/domains.py:100
 msgid "What to do with probable spam"
-msgstr ""
+msgstr "Co dělat s pravděpodobný spam"
 
 #: baruwa/forms/domains.py:102
 msgid "What to do with definite spam"
-msgstr ""
+msgstr "Co dělat s definitivní spam"
 
 #: baruwa/forms/domains.py:106 baruwa/templates/domains/detail.html:124
 msgid "Maximum Message Size"
-msgstr ""
+msgstr "Maximální velikost zprávy"
 
 #: baruwa/forms/domains.py:108
 msgid "Invalid message size, only B, K, M accepted"
-msgstr ""
+msgstr "Neplatné zprávy velikost, jen B, K, M, přijal"
 
 #: baruwa/forms/domains.py:111 baruwa/templates/domains/detail.html:52
 msgid "Multi destination delivery mode"
-msgstr ""
+msgstr "Více cílový režim doručení"
 
 #: baruwa/forms/domains.py:113 baruwa/templates/domains/detail.html:132
 msgid "Language"
@@ -1054,116 +1086,152 @@ msgstr "Jazyk"
 
 #: baruwa/forms/domains.py:114
 msgid "Report frequency"
-msgstr ""
+msgstr "Zpráva frekvence"
 
 #: baruwa/forms/domains.py:116 baruwa/templates/base.html:125
 #: baruwa/templates/accounts/account.html:95
 msgid "Organizations"
-msgstr ""
+msgstr "Organizace"
 
 #: baruwa/forms/domains.py:130
 msgid "Domain alias name"
-msgstr ""
+msgstr "Název aliasu domény"
 
 #: baruwa/forms/domains.py:134
 msgid "Parent domain"
-msgstr ""
+msgstr "Nadřazená doména"
 
 #: baruwa/forms/domains.py:146 baruwa/forms/domains.py:155
 #: baruwa/forms/domains.py:160
 msgid "Server address"
-msgstr ""
+msgstr "Adresa serveru"
 
 #: baruwa/forms/domains.py:148 baruwa/forms/domains.py:162
+#: baruwa/forms/invite.py:113
 msgid "Protocol"
-msgstr ""
+msgstr "Protokol"
 
 #: baruwa/forms/domains.py:149 baruwa/forms/domains.py:163
+#: baruwa/forms/invite.py:114
 msgid "Port"
-msgstr ""
+msgstr "Přístav"
 
 #: baruwa/forms/domains.py:164
 msgid "must be numeric"
-msgstr ""
+msgstr "musí být číslo"
 
 #: baruwa/forms/domains.py:166
-#, fuzzy
 msgid "Split address"
-msgstr "E-mailová adresa"
+msgstr "Rozdělení adresa"
 
 #: baruwa/forms/domains.py:167
 msgid "Username map template"
-msgstr ""
+msgstr "Šablona uživatelské jméno mapy"
 
 #: baruwa/forms/domains.py:172
 msgid "Base DN"
-msgstr ""
+msgstr "Základní rozlišující název"
 
 #: baruwa/forms/domains.py:173
 msgid "Username attribute"
-msgstr ""
+msgstr "Atribut uživatelského jména"
 
 #: baruwa/forms/domains.py:176
 msgid "Email attribute"
-msgstr ""
+msgstr "Atribut e-mailu"
 
 #: baruwa/forms/domains.py:179
 msgid "Bind DN"
-msgstr ""
+msgstr "Vázat DN"
 
 #: baruwa/forms/domains.py:180
-#, fuzzy
 msgid "Bind password"
-msgstr "Heslo"
+msgstr "Vázat hesla"
 
 #: baruwa/forms/domains.py:181
 msgid "Use TLS"
-msgstr ""
+msgstr "Použít TLS"
 
 #: baruwa/forms/domains.py:182
 msgid "Search for UserDN"
-msgstr ""
+msgstr "Hledat Rozlišující_uživatelské_jméno"
 
 #: baruwa/forms/domains.py:183
 msgid "Auth Search Filter"
-msgstr ""
+msgstr "Auth vyhledávací filtr"
 
 #: baruwa/forms/domains.py:184
 msgid "Auth Search Scope"
-msgstr ""
+msgstr "Obor hledání auth"
 
 #: baruwa/forms/domains.py:186
 msgid "Email Search Filter"
-msgstr ""
+msgstr "Vyhledávací filtr e-mailové"
 
 #: baruwa/forms/domains.py:187
 msgid "Email Search Scope"
-msgstr ""
+msgstr "Obor hledání e-mailu"
 
 #: baruwa/forms/domains.py:202
 msgid "Unsupported search scope"
-msgstr ""
+msgstr "Obor nepodporovaný hledání"
 
 #: baruwa/forms/domains.py:208
 msgid "Radius secret"
-msgstr ""
+msgstr "Tajný klíč RADIUS"
 
 #: baruwa/forms/domains.py:209
 msgid "Request timeout"
-msgstr ""
+msgstr "Časový limit požadavku vypršel"
+
+#: baruwa/forms/invite.py:60
+msgid "The domain is already registered"
+msgstr "Doména je již registrován"
+
+#: baruwa/forms/invite.py:69
+msgid "The username cannot be an email address"
+msgstr "Uživatelské jméno nemůže být e-mailová adresa"
+
+#: baruwa/forms/invite.py:71 baruwa/forms/invite.py:73
+msgid "The username is not available"
+msgstr "Uživatelské jméno není k dispozici"
+
+#: baruwa/forms/invite.py:83
+msgid "Email from a domain that is already registered"
+msgstr "E-mail od domény, která je již registrován"
+
+#: baruwa/forms/invite.py:91
+msgid "You must accept the terms and conditions"
+msgstr "Musíte přijmout podmínky"
+
+#: baruwa/forms/invite.py:96
+msgid "Admin Username"
+msgstr "Uživatelské jméno správce"
+
+#: baruwa/forms/invite.py:107 baruwa/forms/organizations.py:48
+#: baruwa/templates/organizations/detail.html:19
+#: baruwa/templates/organizations/index.html:11
+msgid "Organization name"
+msgstr "Název organizace"
+
+#: baruwa/forms/invite.py:111
+msgid "Delivery Server address"
+msgstr "Dodací adresa serveru"
 
 #: baruwa/forms/lists.py:51
-msgid "Provide either a valid IP, email, Domain address, or IP network or range"
+msgid ""
+"Provide either a valid IP, email, Domain address, or IP network or range"
 msgstr ""
+"Poskytnout buď platná IP, e-mail, adresu domény nebo IP sítí nebo rozsah"
 
 #: baruwa/forms/lists.py:68
 #, python-format
 msgid "The domain %(dom)s is not local"
-msgstr ""
+msgstr "Doména %(dom)s není místní"
 
 #: baruwa/forms/lists.py:71
 msgid "Provide either a valid email or domain address"
-msgstr ""
+msgstr "Poskytnout platný e-mail nebo adresu domény"
 
 #: baruwa/forms/lists.py:76 baruwa/forms/lists.py:83 baruwa/forms/lists.py:98
 #: baruwa/templates/lists/index.html:27
@@ -1171,7 +1239,7 @@ msgstr ""
 #: baruwa/templates/messages/taskstatus.html:16
 #: baruwa/templates/status/detail.html:29
 msgid "From address"
-msgstr ""
+msgstr "Z adresy"
 
 #: baruwa/forms/lists.py:77 baruwa/forms/lists.py:99
 #: baruwa/templates/lists/index.html:28
@@ -1179,80 +1247,74 @@ msgstr ""
 #: baruwa/templates/messages/taskstatus.html:17
 #: baruwa/templates/status/detail.html:33
 msgid "To address"
-msgstr ""
+msgstr "Na adresu"
 
 #: baruwa/forms/lists.py:78 baruwa/forms/lists.py:86 baruwa/forms/lists.py:100
 msgid "List type"
-msgstr ""
+msgstr "Typ seznamu"
 
 #: baruwa/forms/lists.py:84
 msgid "User account"
-msgstr ""
+msgstr "Uživatelský účet"
 
 #: baruwa/forms/lists.py:87 baruwa/forms/lists.py:101
 msgid "Add to aliases as well"
-msgstr ""
+msgstr "Přidat aliasy a také"
 
 #: baruwa/forms/lists.py:93
 msgid "Invalid user account supplied"
-msgstr ""
+msgstr "Platný uživatelský účet zadán"
 
 #: baruwa/forms/messages.py:53
 msgid "Select atleast one action to perform"
-msgstr ""
+msgstr "Vyberte alespoň jednu akci provést"
 
 #: baruwa/forms/messages.py:69
 msgid "Provide atleast one alternative recipient"
-msgstr ""
+msgstr "Poskytnout aspoň jednu alternativní příjemce"
 
 #: baruwa/forms/messages.py:76
 msgid "Invalid email address"
-msgstr ""
+msgstr "Neplatná e-mailová adresa"
 
 #: baruwa/forms/messages.py:78 baruwa/templates/email/quarantine.html:66
 #: baruwa/templates/email/quarantine.html:81
 #: baruwa/templates/email/quarantine.html:95
 msgid "Release"
-msgstr ""
+msgstr "Vydání"
 
 #: baruwa/forms/messages.py:80
 msgid "Bayesian Learn"
-msgstr ""
+msgstr "Bayesian učit"
 
 #: baruwa/forms/messages.py:81
 msgid "Alt recipients"
-msgstr ""
+msgstr "ALT příjemci"
 
 #: baruwa/forms/misc.py:36
 msgid "Show items"
-msgstr ""
+msgstr "Zobrazit položky"
 
 #: baruwa/forms/misc.py:41
 msgid "Image file"
-msgstr ""
+msgstr "Soubor s obrázkem"
 
 #: baruwa/forms/misc.py:42
 msgid "File name"
-msgstr ""
+msgstr "Název souboru"
 
 #: baruwa/forms/organizations.py:43 baruwa/forms/organizations.py:95
 #, python-format
 msgid "Password %(msg)s."
-msgstr ""
-
-#: baruwa/forms/organizations.py:48
-#: baruwa/templates/organizations/detail.html:19
-#: baruwa/templates/organizations/index.html:11
-msgid "Organization name"
-msgstr ""
+msgstr "Heslo %(msg)s."
 
 #: baruwa/forms/organizations.py:51
 msgid "Admins"
-msgstr ""
+msgstr "Admins"
 
 #: baruwa/forms/organizations.py:56
 msgid "Delete Organization domains"
-msgstr ""
+msgstr "Odstranění domény organizace"
 
 #: baruwa/forms/organizations.py:60 baruwa/forms/settings.py:161
 #: baruwa/forms/settings.py:301 baruwa/tasks/status.py:298
@@ -1261,66 +1323,65 @@ msgstr ""
 #: baruwa/templates/settings/index.html:16
 #: baruwa/templates/status/audit.html:29
 msgid "Hostname"
-msgstr ""
+msgstr "Název hostitele"
 
 #: baruwa/forms/organizations.py:62
 msgid "SMTP-AUTH username"
-msgstr ""
+msgstr "Uživatelské jméno SMTP auth."
 
 #: baruwa/forms/organizations.py:63
 msgid "SMTP-AUTH password"
-msgstr ""
+msgstr "Heslo SMTP AUTH"
 
 #: baruwa/forms/organizations.py:70
 msgid "Provide either a hostname or username & password"
-msgstr ""
+msgstr "Poskytnout buď název hostitele nebo uživatelské jméno & heslo"
 
 #: baruwa/forms/organizations.py:74
 msgid "Provide a valid hostname or IP address"
-msgstr ""
+msgstr "Platný název hostitele nebo adresu IP"
 
 #: baruwa/forms/organizations.py:78
 msgid "Required"
-msgstr ""
+msgstr "Požadováno"
 
 #: baruwa/forms/organizations.py:81
 msgid "Email usernames not supported"
-msgstr ""
+msgstr "E-mailová uživatelská jména není podporován"
 
 #: baruwa/forms/organizations.py:101
 msgid "CSV file"
-msgstr ""
+msgstr "CSV souboru"
 
 #: baruwa/forms/organizations.py:102
 msgid "Skip first line"
-msgstr ""
+msgstr "Přeskočit první řádek"
 
 #: baruwa/forms/reports.py:39 baruwa/templates/messages/detail.html:19
 #: baruwa/templates/status/detail.html:17
 msgid "Message ID"
-msgstr ""
+msgstr "ID zprávy"
 
 #: baruwa/forms/reports.py:40
-#, fuzzy
 msgid "Message size"
-msgstr "Zprávy"
+msgstr "Velikost zprávy"
 
 #: baruwa/forms/reports.py:41 baruwa/templates/email/quarantine.html:64
 #: baruwa/templates/email/quarantine.html:93
 msgid "From Address"
-msgstr ""
+msgstr "Z adresy"
 
 #: baruwa/forms/reports.py:42
 msgid "From Domain"
-msgstr ""
+msgstr "Z domény"
 
 #: baruwa/forms/reports.py:43
 msgid "To Address"
-msgstr ""
+msgstr "Na adresu"
 
 #: baruwa/forms/reports.py:44
 msgid "To Domain"
-msgstr ""
+msgstr "Do domény"
 
 #: baruwa/forms/reports.py:45 baruwa/templates/email/quarantine.html:65
 #: baruwa/templates/email/quarantine.html:94
@@ -1333,962 +1394,962 @@ msgstr ""
 #: baruwa/templates/messages/searchresults.html:20
 #: baruwa/templates/status/detail.html:25
 msgid "Subject"
-msgstr ""
+msgstr "Předmět"
 
 #: baruwa/forms/reports.py:46 baruwa/templates/messages/detail.html:43
 msgid "Received from"
-msgstr ""
+msgstr "Od"
 
 #: baruwa/forms/reports.py:48
 msgid "Was scanned"
-msgstr ""
+msgstr "Byla provedena"
 
 #: baruwa/forms/reports.py:49
 msgid "Is Spam"
-msgstr ""
+msgstr "Je to Spam"
 
 #: baruwa/forms/reports.py:50
 msgid "Is Definite spam"
-msgstr ""
+msgstr "Je to definitivní spam"
 
 #: baruwa/forms/reports.py:52
 msgid "Is RBL listed"
-msgstr ""
+msgstr "Je uvedena RBL"
 
 #: baruwa/forms/reports.py:53
 msgid "Is approved sender"
-msgstr ""
+msgstr "Je schválený odesílatel"
 
 #: baruwa/forms/reports.py:54
 msgid "Is banned sender"
-msgstr ""
+msgstr "Je zakázané odesílatele"
 
 #: baruwa/forms/reports.py:55
 msgid "Spam score"
-msgstr ""
+msgstr "Spam skóre"
 
 #: baruwa/forms/reports.py:56
 msgid "Spam report"
-msgstr ""
+msgstr "Zpráva spam"
 
 #: baruwa/forms/reports.py:57
 msgid "Is virus infected"
-msgstr ""
+msgstr "Je napaden virem"
 
 #: baruwa/forms/reports.py:58
 msgid "Is name infected"
-msgstr ""
+msgstr "Napaden jméno"
 
 #: baruwa/forms/reports.py:59
 msgid "Is other infected"
-msgstr ""
+msgstr "Napaden jiné"
 
 #: baruwa/forms/reports.py:61
 msgid "Time"
-msgstr ""
+msgstr "Čas"
 
 #: baruwa/forms/reports.py:62
 msgid "Headers"
-msgstr ""
+msgstr "Záhlaví"
 
 #: baruwa/forms/reports.py:63
 msgid "Is quarantined"
-msgstr ""
+msgstr "Je v karanténě"
 
 #: baruwa/forms/reports.py:64
 msgid "Processed by host"
-msgstr ""
+msgstr "Zpracováno hostitelem"
 
 #: baruwa/forms/reports.py:68
 msgid "is equal to"
-msgstr ""
+msgstr "je rovno"
 
 #: baruwa/forms/reports.py:69
 msgid "is not equal to"
-msgstr ""
+msgstr "není rovno"
 
 #: baruwa/forms/reports.py:70
 msgid "is greater than"
-msgstr ""
+msgstr "je větší než"
 
 #: baruwa/forms/reports.py:71
 msgid "is less than"
-msgstr ""
+msgstr "je menší než"
 
 #: baruwa/forms/reports.py:72
 msgid "contains"
-msgstr ""
+msgstr "obsahuje"
 
 #: baruwa/forms/reports.py:73
 msgid "does not contain"
-msgstr ""
+msgstr "neobsahuje žádné"
 
 #: baruwa/forms/reports.py:74
 msgid "matches regex"
-msgstr ""
+msgstr "odpovídá regex"
 
 #: baruwa/forms/reports.py:75
 msgid "does not match regex"
-msgstr ""
+msgstr "se neshoduje s regex"
 
 #: baruwa/forms/reports.py:76
 msgid "is null"
-msgstr ""
+msgstr "NULL"
 
 #: baruwa/forms/reports.py:77
 msgid "is not null"
-msgstr ""
+msgstr "není null"
 
 #: baruwa/forms/reports.py:78
 msgid "is true"
-msgstr ""
+msgstr "je pravda"
 
 #: baruwa/forms/reports.py:79
 msgid "is false"
-msgstr ""
+msgstr "pravdivá"
 
 #: baruwa/forms/reports.py:117
 #, python-format
 msgid "%(field)s does not support the \"%(filt)s\" filter"
-msgstr ""
+msgstr "%(field)s není podporováno \"%(filt)s\" filtr"
 
 #: baruwa/forms/reports.py:124
 msgid "Please supply a value to query"
-msgstr ""
+msgstr "Zadejte hodnotu pro dotaz"
 
 #: baruwa/forms/reports.py:127
 msgid "The value has to be numeric"
-msgstr ""
+msgstr "Hodnota musí být číselný"
 
 #: baruwa/forms/reports.py:133
 #, python-format
 msgid "%(email)s is not a valid e-mail address."
-msgstr ""
+msgstr "%(email)s není platná e-mailová adresa."
 
 #: baruwa/forms/reports.py:140
 #, python-format
 msgid "%(dom)s is not a valid domain address."
-msgstr ""
+msgstr "%(dom)s není platné domény adresa."
 
 #: baruwa/forms/reports.py:147
 msgid "Invalid regex supplied"
-msgstr ""
+msgstr "Zadán neplatný regex"
 
 #: baruwa/forms/reports.py:153
 msgid "Please provide a valid ipv4 address"
-msgstr ""
+msgstr "Zadejte platný ipv4 adresu"
 
 #: baruwa/forms/reports.py:159
 msgid "Please provide a valid hostname or ipv4 address"
-msgstr ""
+msgstr "Zadejte platný název hostitele nebo ipv4 adresu"
 
 #: baruwa/forms/reports.py:167
 msgid "Please provide a valid date in YYYY-MM-DD format"
-msgstr ""
+msgstr "Zadejte platné datum ve formátu Rrrr-MM-DD"
 
 #: baruwa/forms/reports.py:174
 msgid "Please provide valid time in HH:MM format"
-msgstr ""
+msgstr "Zadejte platný čas ve formátu hh: mm"
 
 #: baruwa/forms/settings.py:164
 msgid "Invalid Domain name or IPv4 address"
-msgstr ""
+msgstr "Neplatný název domény nebo adresa IPv4"
 
 #: baruwa/forms/settings.py:170
 msgid "Sitename"
-msgstr ""
+msgstr "SiteName"
 
 #: baruwa/forms/settings.py:171
 msgid "Your Organisation Name"
-msgstr ""
+msgstr "Název organizace"
 
 #: baruwa/forms/settings.py:173
 msgid "Organisation website"
-msgstr ""
+msgstr "Webové stránky organizace"
 
 #: baruwa/forms/settings.py:175
 msgid "Max Children"
-msgstr ""
+msgstr "Max dětí"
 
 #: baruwa/forms/settings.py:177
 msgid "Queue Scan Interval"
-msgstr ""
+msgstr "Interval kontroly fronty"
 
 #: baruwa/forms/settings.py:179
 msgid "Restart Every"
-msgstr ""
+msgstr "Restartujte každý"
 
 #: baruwa/forms/settings.py:181
 msgid "Use Default Rules With Multiple Recipients"
-msgstr ""
+msgstr "Použít výchozí pravidla s více příjemci"
 
 #: baruwa/forms/settings.py:184
 msgid "Read IP Address From Received Header"
-msgstr ""
+msgstr "Přečtěte si IP adresu z přijaté hlavičky"
 
 #: baruwa/forms/settings.py:187
 msgid "Debug"
-msgstr ""
+msgstr "Ladění"
 
 #: baruwa/forms/settings.py:190
 msgid "Debug SpamAssassin"
-msgstr ""
+msgstr "Ladění SpamAssassin"
 
 #: baruwa/forms/settings.py:193
 msgid "Deliver In Background"
-msgstr ""
+msgstr "Doručit v pozadí"
 
 #: baruwa/forms/settings.py:196
 msgid "Delivery Method"
-msgstr ""
+msgstr "Způsob doručení"
 
 #: baruwa/forms/settings.py:199
 msgid "Automatic Syntax Check"
-msgstr ""
+msgstr "Automatická kontrola syntaxe"
 
 #: baruwa/forms/settings.py:202
 msgid "Minimum Code Status"
-msgstr ""
+msgstr "Minimální stav kódu"
 
 #: baruwa/forms/settings.py:209
 msgid "Max Unscanned Bytes Per Scan"
-msgstr ""
+msgstr "Maximální neprověřené bajty na skenování"
 
 #: baruwa/forms/settings.py:211
 msgid "Max Unsafe Bytes Per Scan"
-msgstr ""
+msgstr "Max nebezpečné bajty na skenování"
 
 #: baruwa/forms/settings.py:213
 msgid "Max Unscanned Messages Per Scan"
-msgstr ""
+msgstr "Maximální neprověřené zprávy na skenování"
 
 #: baruwa/forms/settings.py:215
 msgid "Max Unsafe Messages Per Scan"
-msgstr ""
+msgstr "Max nebezpečných zpráv na skenování"
 
 #: baruwa/forms/settings.py:217
 msgid "Max Normal Queue Size"
-msgstr ""
+msgstr "Max normální velikost fronty"
 
 #: baruwa/forms/settings.py:219
 msgid "Maximum Processing Attempts"
-msgstr ""
+msgstr "Maximální zpracování pokusy"
 
 #: baruwa/forms/settings.py:221
 msgid "Maximum Attachments Per Message"
-msgstr ""
+msgstr "Maximální přílohy jednotlivých zpráv"
 
 #: baruwa/forms/settings.py:223
 msgid "Expand TNEF"
-msgstr ""
+msgstr "Rozšířit TNEF"
 
 #: baruwa/forms/settings.py:226
 msgid "Use TNEF Contents"
-msgstr ""
+msgstr "Použít obsah TNEF"
 
 #: baruwa/forms/settings.py:229
 msgid "Deliver Unparsable TNEF"
-msgstr ""
+msgstr "Dodat nelze analyzovat TNEF"
 
 #: baruwa/forms/settings.py:232
 msgid "TNEF Timeout"
-msgstr ""
+msgstr "Časový limit TNEF"
 
 #: baruwa/forms/settings.py:234
 msgid "File Timeout"
-msgstr ""
+msgstr "Časový limit souboru"
 
 #: baruwa/forms/settings.py:236
 msgid "Gunzip Timeout"
-msgstr ""
+msgstr "Gunzip časový limit"
 
 #: baruwa/forms/settings.py:238
 msgid "Unrar Timeout"
-msgstr ""
+msgstr "Časový limit unrar"
 
 #: baruwa/forms/settings.py:240
 msgid "Maximum Archive Depth"
-msgstr ""
+msgstr "Maximální hloubka archiv"
 
 #: baruwa/forms/settings.py:242
 msgid "Find Archives By Content"
-msgstr ""
+msgstr "Najít Archiv podle obsahu"
 
 #: baruwa/forms/settings.py:245
 msgid "Unpack Microsoft Documents"
-msgstr ""
+msgstr "Rozbalit Microsoft dokumentů"
 
 #: baruwa/forms/settings.py:248
 msgid "Zip Attachments"
-msgstr ""
+msgstr "Zip příloh"
 
 #: baruwa/forms/settings.py:251
 msgid "Attachments Zip Filename"
-msgstr ""
+msgstr "Název souboru přílohy Zip"
 
 #: baruwa/forms/settings.py:253
 msgid "Attachments Min Total Size To Zip"
-msgstr ""
+msgstr "Velikost přílohy Min celkem na Zip"
 
 #: baruwa/forms/settings.py:255
 msgid "Attachment Extensions Not To Zip"
-msgstr ""
+msgstr "Přípon se Zip"
 
 #: baruwa/forms/settings.py:257
 msgid "Add Text Of Doc"
-msgstr ""
+msgstr "Přidat Text dokumentu"
 
 #: baruwa/forms/settings.py:260
 msgid "Antiword Timeout"
-msgstr ""
+msgstr "Antiword časový limit"
 
 #: baruwa/forms/settings.py:262
 msgid "Unzip Maximum Files Per Archive"
-msgstr ""
+msgstr "Rozbalte soubory Maximum za archiv"
 
 #: baruwa/forms/settings.py:264
 msgid "Unzip Maximum File Size"
-msgstr ""
+msgstr "Maximální velikost souboru rozbalte"
 
 #: baruwa/forms/settings.py:266
 msgid "Unzip Filenames"
-msgstr ""
+msgstr "Rozbalení souborů"
 
 #: baruwa/forms/settings.py:268
 msgid "Unzip MimeType"
-msgstr ""
+msgstr "Rozbalte MimeType"
 
 #: baruwa/forms/settings.py:270
 msgid "Mail Header"
-msgstr ""
+msgstr "Hlavička pošty"
 
 #: baruwa/forms/settings.py:272
 msgid "Information Header"
-msgstr ""
+msgstr "Informace záhlaví"
 
 #: baruwa/forms/settings.py:274
 msgid "Add Envelope From Header"
-msgstr ""
+msgstr "Přidání obálku z hlavičky"
 
 #: baruwa/forms/settings.py:277
 msgid "Add Envelope To Header"
-msgstr ""
+msgstr "Přidat záhlaví obálky"
 
 #: baruwa/forms/settings.py:280
 msgid "Envelope From Header"
-msgstr ""
+msgstr "Obálka z hlavičky"
 
 #: baruwa/forms/settings.py:282
 msgid "Envelope To Header"
-msgstr ""
+msgstr "Obálka do záhlaví"
 
 #: baruwa/forms/settings.py:284
 msgid "ID Header"
-msgstr ""
+msgstr "ID záhlaví"
 
 #: baruwa/forms/settings.py:286
 msgid "IP Protocol Version Header"
-msgstr ""
+msgstr "Hlavičky protokolu IP"
 
 #: baruwa/forms/settings.py:288
 msgid "Clean Header Value"
-msgstr ""
+msgstr "Čistá hodnota hlavičky"
 
 #: baruwa/forms/settings.py:290
 msgid "Infected Header Value"
-msgstr ""
+msgstr "Infikované hodnota hlavičky"
 
 #: baruwa/forms/settings.py:292
 msgid "Disinfected Header Value"
-msgstr ""
+msgstr "Dezinfekci hodnota hlavičky"
 
 #: baruwa/forms/settings.py:294
 msgid "Information Header Value"
-msgstr ""
+msgstr "Hodnota hlavičky informací"
 
 #: baruwa/forms/settings.py:295
 msgid "Multiple Headers"
-msgstr ""
+msgstr "Více záhlaví"
 
 #: baruwa/forms/settings.py:298
 msgid "Place New Headers At Top Of Message"
-msgstr ""
+msgstr "Místo nové záhlaví v horní části zprávy"
 
 #: baruwa/forms/settings.py:303
 msgid "Sign Messages Already Processed"
-msgstr ""
+msgstr "Podpis zprávy již zpracované"
 
 #: baruwa/forms/settings.py:306
 msgid "Allow Multiple HTML Signatures"
-msgstr ""
+msgstr "Povolit více podpisů HTML"
 
 #: baruwa/forms/settings.py:309
 msgid "Dont Sign HTML If Headers Exist"
-msgstr ""
+msgstr "Dont podepsat v případě HTML záhlaví existují"
 
 #: baruwa/forms/settings.py:310
 msgid "Mark Infected Messages"
-msgstr ""
+msgstr "Označit infikované zprávy"
 
 #: baruwa/forms/settings.py:313
 msgid "Mark Unscanned Messages"
-msgstr ""
+msgstr "Označit neprověřené zprávy"
 
 #: baruwa/forms/settings.py:316
 msgid "Unscanned Header Value"
-msgstr ""
+msgstr "Nezkontrolované hodnota hlavičky"
 
 #: baruwa/forms/settings.py:318
 msgid "Remove These Headers"
-msgstr ""
+msgstr "Odstranit tato záhlaví"
 
 #: baruwa/forms/settings.py:320
 msgid "Deliver Cleaned Messages"
-msgstr ""
+msgstr "Doručovat zprávy vyčištěné"
 
 #: baruwa/forms/settings.py:323
 msgid "Scanned Modify Subject"
-msgstr ""
+msgstr "Naskenované upravit předmět"
 
 #: baruwa/forms/settings.py:326
 msgid "Scanned Subject Text"
-msgstr ""
+msgstr "Naskenovaný Text předmětu"
 
 #: baruwa/forms/settings.py:328
 msgid "Virus Modify Subject"
-msgstr ""
+msgstr "Virus upravit předmět"
 
 #: baruwa/forms/settings.py:331
 msgid "Virus Subject Text"
-msgstr ""
+msgstr "Text předmětu virus"
 
 #: baruwa/forms/settings.py:333
 msgid "Filename Modify Subject"
-msgstr ""
+msgstr "Název souboru upravit předmět"
 
 #: baruwa/forms/settings.py:336
 msgid "Filename Subject Text"
-msgstr ""
+msgstr "Text předmětu název souboru"
 
 #: baruwa/forms/settings.py:338
 msgid "Content Modify Subject"
-msgstr ""
+msgstr "Obsah upravit předmět"
 
 #: baruwa/forms/settings.py:341
 msgid "Content Subject Text"
-msgstr ""
+msgstr "Text obsahu předmětu"
 
 #: baruwa/forms/settings.py:343
 msgid "Size Modify Subject"
-msgstr ""
+msgstr "Velikost upravit předmět"
 
 #: baruwa/forms/settings.py:346
 msgid "Size Subject Text"
-msgstr ""
+msgstr "Text velikosti předmětu"
 
 #: baruwa/forms/settings.py:348
 msgid "Disarmed Modify Subject"
-msgstr ""
+msgstr "Odzbrojil upravit předmět"
 
 #: baruwa/forms/settings.py:351
 msgid "Disarmed Subject Text"
-msgstr ""
+msgstr "Odzbrojit Text předmětu"
 
 #: baruwa/forms/settings.py:353
 msgid "Phishing Modify Subject"
-msgstr ""
+msgstr "Phishing upravit předmět"
 
 #: baruwa/forms/settings.py:356
 msgid "Phishing Subject Text"
-msgstr ""
+msgstr "Text předmětu phishing"
 
 #: baruwa/forms/settings.py:358
 msgid "Spam Modify Subject"
-msgstr ""
+msgstr "Spam upravit předmět"
 
 #: baruwa/forms/settings.py:361
 msgid "Spam Subject Text"
-msgstr ""
+msgstr "Text předmětu spam"
 
 #: baruwa/forms/settings.py:363
 msgid "High Scoring Spam Modify Subject"
-msgstr ""
+msgstr "Vysoké bodování Spam upravit předmět"
 
 #: baruwa/forms/settings.py:366
 msgid "High Scoring Spam Subject Text"
-msgstr ""
+msgstr "Vysoké bodování Text předmětu Spam"
 
 #: baruwa/forms/settings.py:368
 msgid "Warning Is Attachment"
-msgstr ""
+msgstr "Varování je příloha"
 
 #: baruwa/forms/settings.py:371
 msgid "Attachment Warning Filename"
-msgstr ""
+msgstr "Název souboru přílohy varování"
 
 #: baruwa/forms/settings.py:373
 msgid "Attachment Encoding Charset"
-msgstr ""
+msgstr "Příloha kódování znakové sady"
 
 #: baruwa/forms/settings.py:379
 msgid "Virus Scanners"
-msgstr ""
+msgstr "Antivirové programy"
 
 #: baruwa/forms/settings.py:381
 msgid "Virus Scanner Timeout"
-msgstr ""
+msgstr "Časový limit pro virus Scanner"
 
 #: baruwa/forms/settings.py:383
 msgid "Deliver Disinfected Files"
-msgstr ""
+msgstr "Dodat dezinfekci souborů"
 
 #: baruwa/forms/settings.py:386
 msgid "Silent Viruses"
-msgstr ""
+msgstr "Tiché viry"
 
 #: baruwa/forms/settings.py:388
 msgid "Still Deliver Silent Viruses"
-msgstr ""
+msgstr "Ještě dodat tiché viry"
 
 #: baruwa/forms/settings.py:391
 msgid "Non-Forging Viruses"
-msgstr ""
+msgstr "Viry kování"
 
 #: baruwa/forms/settings.py:392
 msgid "Spam-Virus Header"
-msgstr ""
+msgstr "Spam-Virus záhlaví"
 
 #: baruwa/forms/settings.py:394
 msgid "Virus Names Which Are Spam"
-msgstr ""
+msgstr "Virus názvy, které jsou Spam"
 
 #: baruwa/forms/settings.py:396
 msgid "Block Encrypted Messages"
-msgstr ""
+msgstr "Šifrované zprávy blokovat"
 
 #: baruwa/forms/settings.py:399
 msgid "Block Unencrypted Messages"
-msgstr ""
+msgstr "Blokovat nezašifrované zprávy"
 
 #: baruwa/forms/settings.py:402
 msgid "Allow Password-Protected Archives"
-msgstr ""
+msgstr "Povolit chráněné heslem archivy"
 
 #: baruwa/forms/settings.py:403
 msgid "Check Filenames In Password-Protected Archives"
-msgstr ""
+msgstr "Zkontrolovat názvy souborů v archivech chráněné heslem"
 
 #: baruwa/forms/settings.py:404
 msgid "Clamd Use Threads"
-msgstr ""
+msgstr "Clamd použití vláken"
 
 #: baruwa/forms/settings.py:407
 msgid "ClamAV Full Message Scan"
-msgstr ""
+msgstr "ClamAV Full Scan zpráva"
 
 #: baruwa/forms/settings.py:410
 msgid "Fpscand Port"
-msgstr ""
+msgstr "Fpscand přístav"
 
 #: baruwa/forms/settings.py:417
 msgid "Allow Partial Messages"
-msgstr ""
+msgstr "Povolit částečné zpráv"
 
 #: baruwa/forms/settings.py:420
 msgid "Allow External Message Bodies"
-msgstr ""
+msgstr "Povolit externí obsah zpráv"
 
 #: baruwa/forms/settings.py:423
 msgid "Also Find Numeric Phishing"
-msgstr ""
+msgstr "Také najít číselného typu Phishing"
 
 #: baruwa/forms/settings.py:426
 msgid "Use Stricter Phishing Net"
-msgstr ""
+msgstr "Použít přísnější Phishing Net"
 
 #: baruwa/forms/settings.py:429
 msgid "Highlight Phishing Fraud"
-msgstr ""
+msgstr "Zvýraznění Phishing podvody"
 
 #: baruwa/forms/settings.py:432
 msgid "Allow IFrame Tags"
-msgstr ""
+msgstr "Povolit značky IFrame"
 
 #: baruwa/forms/settings.py:435
 msgid "Allow Form Tags"
-msgstr ""
+msgstr "Povolit Form Tagy"
 
 #: baruwa/forms/settings.py:438
 msgid "Allow Script Tags"
-msgstr ""
+msgstr "Povolit značky Script"
 
 #: baruwa/forms/settings.py:441
 msgid "Allow WebBugs"
-msgstr ""
+msgstr "Povolit WebBugs"
 
 #: baruwa/forms/settings.py:444
 msgid "Ignored Web Bug Filenames"
-msgstr ""
+msgstr "Ignorovat chyby souborů webových"
 
 #: baruwa/forms/settings.py:446
 msgid "Known Web Bug Servers"
-msgstr ""
+msgstr "Známé chyby webové servery"
 
 #: baruwa/forms/settings.py:448
 msgid "Web Bug Replacement"
-msgstr ""
+msgstr "Web Bug náhrada"
 
 #: baruwa/forms/settings.py:450
 msgid "Allow Object Codebase Tags"
-msgstr ""
+msgstr "Povolit Object Codebase značky"
 
 #: baruwa/forms/settings.py:453
 msgid "Convert Dangerous HTML To Text"
-msgstr ""
+msgstr "Převést nebezpečné HTML na Text"
 
 #: baruwa/forms/settings.py:456
 msgid "Convert HTML To Text"
-msgstr ""
+msgstr "Převod HTML na Text"
 
 #: baruwa/forms/settings.py:459
 msgid "Archives Are"
-msgstr ""
+msgstr "Archivy jsou"
 
 #: baruwa/forms/settings.py:461
 msgid "Allow Filenames"
-msgstr ""
+msgstr "Povolit názvy souborů"
 
 #: baruwa/forms/settings.py:462
 msgid "Deny Filenames"
-msgstr ""
+msgstr "Odepření názvy souborů"
 
 #: baruwa/forms/settings.py:463
 msgid "Allow Filetypes"
-msgstr ""
+msgstr "Povolit typy souborů"
 
 #: baruwa/forms/settings.py:464
 msgid "Allow File MIME Types"
-msgstr ""
+msgstr "Povolit MIME typy souborů"
 
 #: baruwa/forms/settings.py:465
 msgid "Deny Filetypes"
-msgstr ""
+msgstr "Odepření typy souborů"
 
 #: baruwa/forms/settings.py:466
 msgid "Deny File MIME Types"
-msgstr ""
+msgstr "Odepřít MIME typy souborů"
 
 #: baruwa/forms/settings.py:467
 msgid "Archives: Allow Filenames"
-msgstr ""
+msgstr "Archiv: Povolit názvy souborů"
 
 #: baruwa/forms/settings.py:468
 msgid "Archives: Deny Filenames"
-msgstr ""
+msgstr "Archiv: Zakázat názvy souborů"
 
 #: baruwa/forms/settings.py:469
 msgid "Archives: Allow Filetypes"
-msgstr ""
+msgstr "Archiv: Umožnit typy souborů"
 
 #: baruwa/forms/settings.py:470
 msgid "Archives: Allow File MIME Types"
-msgstr ""
+msgstr "Archiv: Povolit MIME typy souborů"
 
 #: baruwa/forms/settings.py:471
 msgid "Archives: Deny Filetypes"
-msgstr ""
+msgstr "Archiv: Zakázat typy souborů"
 
 #: baruwa/forms/settings.py:472
 msgid "Archives: Deny File MIME Types"
-msgstr ""
+msgstr "Archiv: Zakázat MIME typy souborů"
 
 #: baruwa/forms/settings.py:477
 msgid "Quarantine Infections"
-msgstr ""
+msgstr "Karanténní infekce"
 
 #: baruwa/forms/settings.py:480
 msgid "Quarantine Silent Viruses"
-msgstr ""
+msgstr "Tichý karantény viry"
 
 #: baruwa/forms/settings.py:483
 msgid "Quarantine Modified Body"
-msgstr ""
+msgstr "Karanténní upravené tělo"
 
 #: baruwa/forms/settings.py:486
 msgid "Keep Spam And MCP Archive Clean"
-msgstr ""
+msgstr "Udržovat čisté Spam a MCP archiv"
 
 #: baruwa/forms/settings.py:489
 msgid "Hide Incoming Work Dir"
-msgstr ""
+msgstr "Skrýt příchozí práce Dir"
 
 #: baruwa/forms/settings.py:492
 msgid "Include Scanner Name In Reports"
-msgstr ""
+msgstr "Do zprávy zahrnout název skeneru"
 
 #: baruwa/forms/settings.py:499
 msgid "Notify Senders"
-msgstr ""
+msgstr "Upozornit odesílatele"
 
 #: baruwa/forms/settings.py:502
 msgid "Notify Senders Of Viruses"
-msgstr ""
+msgstr "Oznámení odesílatelé virů"
 
 #: baruwa/forms/settings.py:505
 msgid "Notify Senders Of Blocked Filenames Or Filetypes"
-msgstr ""
+msgstr "Informovat odesílatele blokovaných souborů nebo typů souborů"
 
 #: baruwa/forms/settings.py:508
 msgid "Notify Senders Of Blocked Size Attachments"
-msgstr ""
+msgstr "Informovat odesílatele blokovaných velikost příloh"
 
 #: baruwa/forms/settings.py:511
 msgid "Notify Senders Of Other Blocked Content"
-msgstr ""
+msgstr "Oznámit odesílatelé jiných blokovaný obsah"
 
 #: baruwa/forms/settings.py:514
 msgid "Never Notify Senders Of Precedence"
-msgstr ""
+msgstr "Nikdy neupozorňovat odesílatelé přednost"
 
 #: baruwa/forms/settings.py:516
 msgid "Send Notices"
-msgstr ""
+msgstr "Odeslat oznámení"
 
 #: baruwa/forms/settings.py:519
 msgid "Notices Include Full Headers"
-msgstr ""
+msgstr "Oznámení patří celé záhlaví"
 
 #: baruwa/forms/settings.py:522
 msgid "Hide Incoming Work Dir in Notices"
-msgstr ""
+msgstr "Skrýt příchozí práce Dir v oznámení"
 
 #: baruwa/forms/settings.py:525
 msgid "Notice Signature"
-msgstr ""
+msgstr "Podpis upozornění"
 
 #: baruwa/forms/settings.py:527
 msgid "Notices From"
-msgstr ""
+msgstr "Oznámení od"
 
 #: baruwa/forms/settings.py:529
 msgid "Notices To"
-msgstr ""
+msgstr "Oznámení"
 
 #: baruwa/forms/settings.py:531
 msgid "Local Postmaster"
-msgstr ""
+msgstr "Místní poštmistr"
 
 #: baruwa/forms/settings.py:537
 msgid "Max SpamAssassin Size"
-msgstr ""
+msgstr "Maximální velikost SpamAssassin"
 
 #: baruwa/forms/settings.py:539
 msgid "SpamAssassin Auto Whitelist"
-msgstr ""
+msgstr "SpamAssassin Auto Whitelist"
 
 #: baruwa/forms/settings.py:542
 msgid "SpamAssassin Timeout"
-msgstr ""
+msgstr "Časový limit pro SpamAssassin"
 
 #: baruwa/forms/settings.py:544
 msgid "Max SpamAssassin Timeouts"
-msgstr ""
+msgstr "Časové limity max SpamAssassin"
 
 #: baruwa/forms/settings.py:546
 msgid "SpamAssassin Timeouts History"
-msgstr ""
+msgstr "SpamAssassin časové limity historie"
 
 #: baruwa/forms/settings.py:548
 msgid "Check SpamAssassin If On Spam List"
-msgstr ""
+msgstr "Zkontrolujte, je-li SpamAssassin na Spam seznam"
 
 #: baruwa/forms/settings.py:551
 msgid "Include Binary Attachments In SpamAssassin"
-msgstr ""
+msgstr "Zahrnout binární přílohy SpamAssassin"
 
 #: baruwa/forms/settings.py:554
 msgid "Spam Score"
-msgstr ""
+msgstr "Spam skóre"
 
 #: baruwa/forms/settings.py:557
 msgid "Cache SpamAssassin Results"
-msgstr ""
+msgstr "Výsledky cache SpamAssassin"
 
 #: baruwa/forms/settings.py:560
 msgid "Rebuild Bayes Every"
-msgstr ""
+msgstr "Znovu Bayes každých"
 
 #: baruwa/forms/settings.py:562
 msgid "Wait During Bayes Rebuild"
-msgstr ""
+msgstr "Čekat během sestavení Bayes"
 
 #: baruwa/forms/settings.py:567
 msgid "Spam List"
-msgstr ""
+msgstr "Seznam nevyžádané pošty"
 
 #: baruwa/forms/settings.py:569
 msgid "Spam Domain List"
-msgstr ""
+msgstr "Seznam domén spam"
 
 #: baruwa/forms/settings.py:571
 msgid "Spam Lists To Be Spam"
-msgstr ""
+msgstr "Seznamy nevyžádané pošty považována za nevyžádanou"
 
 #: baruwa/forms/settings.py:573
 msgid "Spam Lists To Reach High Score"
-msgstr ""
+msgstr "Spam seznamy dosáhnout vysokého skóre"
 
 #: baruwa/forms/settings.py:575
 msgid "Spam List Timeout"
-msgstr ""
+msgstr "Časový limit pro spam seznam"
 
 #: baruwa/forms/settings.py:577
 msgid "Max Spam List Timeouts"
-msgstr ""
+msgstr "Max spamu seznamu časové limity"
 
 #: baruwa/forms/settings.py:579
 msgid "Spam List Timeouts History"
-msgstr ""
+msgstr "Historie spamu seznamu časových limitů"
 
 #: baruwa/forms/settings.py:581
 msgid "Definite Spam Is High Scoring"
-msgstr ""
+msgstr "Definitivní Spam je vysoké bodování"
 
 #: baruwa/forms/settings.py:584
 msgid "Ignore Spam Whitelist If Recipients Exceed"
-msgstr ""
+msgstr "Ignorovat Spam Whitelist, pokud překročí příjemci"
 
 #: baruwa/forms/settings.py:586
 msgid "Max Spam Check Size"
-msgstr ""
+msgstr "Velikost max Spam kontrola"
 
 #: baruwa/forms/settings.py:588
 msgid "Enable Spam Bounce"
-msgstr ""
+msgstr "Povolit Spam Bounce"
 
 #: baruwa/forms/settings.py:591
 msgid "Bounce Spam As Attachment"
-msgstr ""
+msgstr "Bounce Spam jako přílohu"
 
 #: baruwa/forms/settings.py:594
 msgid "Detailed Spam Report"
-msgstr ""
+msgstr "Podrobná zpráva Spam"
 
 #: baruwa/forms/settings.py:597
 msgid "Include Scores In SpamAssassin Report"
-msgstr ""
+msgstr "SpamAssassin sestavy zahrnout skóre"
 
 #: baruwa/forms/settings.py:600
 msgid "Always Include SpamAssassin Report"
-msgstr ""
+msgstr "Vždy zahrnují SpamAssassin zpráva"
 
 #: baruwa/forms/settings.py:603
 msgid "Spam Header"
-msgstr ""
+msgstr "Spam hlavičky"
 
 #: baruwa/forms/settings.py:605
 msgid "Spam Score Header"
-msgstr ""
+msgstr "Spam skóre hlavička"
 
 #: baruwa/forms/settings.py:607
 msgid "Spam Score Number Format"
-msgstr ""
+msgstr "Spam skóre číselný formát"
 
 #: baruwa/forms/settings.py:609
 msgid "Spam Score Character"
-msgstr ""
+msgstr "Spam skóre charakter"
 
 #: baruwa/forms/settings.py:611
 msgid "SpamScore Number Instead Of Stars"
-msgstr ""
+msgstr "SpamScore číslo hvězdy"
 
 #: baruwa/forms/settings.py:614
 msgid "Minimum Stars If On Spam List"
-msgstr ""
+msgstr "Minimální hvězdy Pokud na Spam seznam"
 
 #: baruwa/forms/settings.py:616
 msgid "Use Watermarking"
-msgstr ""
+msgstr "Použít vodoznaků"
 
 #: baruwa/forms/settings.py:619
 msgid "Add Watermark"
-msgstr ""
+msgstr "Přidání vodoznaku"
 
 #: baruwa/forms/settings.py:622
 msgid "Check Watermarks With No Sender"
-msgstr ""
+msgstr "Zkontrolovat vodoznaky s bez odesilatele"
 
 #: baruwa/forms/settings.py:625
 msgid "Treat Invalid Watermarks With No Sender as Spam"
-msgstr ""
+msgstr "Neplatné vodoznaky s bez odesílatele považovat za Spam"
 
 #: baruwa/forms/settings.py:628
 msgid "Check Watermarks To Skip Spam Checks"
-msgstr ""
+msgstr "Kontrolu vodoznaků na Spam přeskočit kontroly"
 
 #: baruwa/forms/settings.py:631
 msgid "Watermark Secret"
-msgstr ""
+msgstr "Vodoznak tajemství"
 
 #: baruwa/forms/settings.py:633
 msgid "Watermark Lifetime"
-msgstr ""
+msgstr "Vodoznak života"
 
 #: baruwa/forms/settings.py:635
 msgid "Watermark Header"
-msgstr ""
+msgstr "Vodoznak hlavička"
 
 #: baruwa/forms/settings.py:641
 msgid "Syslog Facility"
-msgstr ""
+msgstr "Syslog zařízení"
 
 #: baruwa/forms/settings.py:644
 msgid "Log Speed"
-msgstr ""
+msgstr "Log rychlost"
 
 #: baruwa/forms/settings.py:647
 msgid "Log Spam"
-msgstr ""
+msgstr "Log Spam"
 
 #: baruwa/forms/settings.py:650
 msgid "Log Non Spam"
-msgstr ""
+msgstr "Protokol není Spam"
 
 #: baruwa/forms/settings.py:653
 msgid "Log Delivery And Non-Delivery"
-msgstr ""
+msgstr "Protokolovat dodávky a Non-Delivery"
 
 #: baruwa/forms/settings.py:656
 msgid "Log Permitted Filenames"
-msgstr ""
+msgstr "Povolené názvy souborů protokolu"
 
 #: baruwa/forms/settings.py:659
 msgid "Log Permitted Filetypes"
-msgstr ""
+msgstr "Povolené typy souborů protokolu"
 
 #: baruwa/forms/settings.py:662
 msgid "Log Permitted File MIME Types"
-msgstr ""
+msgstr "Protokolu povoleno MIME typy souborů"
 
 #: baruwa/forms/settings.py:665
 msgid "Log Silent Viruses"
-msgstr ""
+msgstr "Protokol Silent viry"
 
 #: baruwa/forms/settings.py:668
 msgid "Log Dangerous HTML Tags"
-msgstr ""
+msgstr "Protokol nebezpečné HTML Tagy"
 
 #: baruwa/forms/settings.py:671
 msgid "Log SpamAssassin Rule Actions"
-msgstr ""
+msgstr "Protokol pravidlo SpamAssassin akce"
 
 #: baruwa/forms/settings.py:690
 msgid "Signature type"
-msgstr ""
+msgstr "Typ podpisu"
 
 #: baruwa/forms/settings.py:694
 msgid "Signature"
-msgstr ""
+msgstr "Podpis"
 
 #: baruwa/lib/misc.py:165 baruwa/model/messages.py:135
 #: baruwa/templates/messages/functions.html:31
@@ -2298,481 +2359,479 @@ msgstr ""
 #: baruwa/templates/messages/taskstatus.html:4
 #: baruwa/templates/reports/listing.html:48
 msgid "Spam"
-msgstr ""
+msgstr "Spam"
 
 #: baruwa/lib/misc.py:167 baruwa/templates/messages/index.html:62
 #: baruwa/templates/messages/searchresults.html:57
 msgid "BL"
-msgstr ""
+msgstr "BL"
 
 #: baruwa/lib/misc.py:171 baruwa/model/messages.py:141
 #: baruwa/templates/messages/functions.html:37
 #: baruwa/templates/messages/index.html:66
 #: baruwa/templates/messages/searchresults.html:61
 msgid "Infected"
-msgstr ""
+msgstr "Infikovaných"
 
 #: baruwa/lib/misc.py:178 baruwa/templates/messages/index.html:73
 #: baruwa/templates/messages/searchresults.html:68
 msgid "WL"
-msgstr ""
+msgstr "WL"
 
 #: baruwa/lib/misc.py:180 baruwa/model/messages.py:150
 #: baruwa/templates/messages/functions.html:46
 #: baruwa/templates/messages/index.html:75
 #: baruwa/templates/messages/searchresults.html:70
 msgid "NS"
-msgstr ""
+msgstr "NS"
 
 #: baruwa/lib/audit/msgs/accounts.py:27
 #, python-format
 msgid "User account: %(u)s created"
-msgstr ""
+msgstr "Uživatelský účet: %(u)s vytvořil(a)"
 
 #: baruwa/lib/audit/msgs/accounts.py:28
 #, python-format
 msgid "User account: %(u)s updated"
-msgstr ""
+msgstr "Uživatelský účet: %(u)s Aktualizováno"
 
 #: baruwa/lib/audit/msgs/accounts.py:29
 #, python-format
 msgid "User account: %(u)s deleted"
-msgstr ""
+msgstr "Uživatelský účet: %(u)s odstraněno"
 
 #: baruwa/lib/audit/msgs/accounts.py:30
 #, python-format
 msgid "User account: %(u)s password changed"
-msgstr ""
+msgstr "Uživatelský účet: %(u)s změnil heslo"
 
 #: baruwa/lib/audit/msgs/accounts.py:31
 #, python-format
 msgid "Alias: %(a)s added to account: %(ac)s"
-msgstr ""
+msgstr "Alias: %(a)s přidán k účtu: %(ac)s"
 
 #: baruwa/lib/audit/msgs/accounts.py:32
 #, python-format
 msgid "Email Alias: %(a)s on account: %(ac)s updated"
-msgstr ""
+msgstr "E-mail Alias: %(a)s na účet: %(ac)s Aktualizováno"
 
 #: baruwa/lib/audit/msgs/accounts.py:33
 #, python-format
 msgid "Email Alias: %(a)s on account: %(ac)s deleted"
-msgstr ""
+msgstr "E-mail Alias: %(a)s na účet: %(ac)s odstraněno"
 
 #: baruwa/lib/audit/msgs/accounts.py:34
 msgid "Accounts exported"
-msgstr ""
+msgstr "Účty exportovány"
 
 #: baruwa/lib/audit/msgs/accounts.py:35
 msgid "Accounts imported"
-msgstr ""
+msgstr "Účty importovat"
 
 #: baruwa/lib/audit/msgs/accounts.py:36
 #, python-format
 msgid "User: %(u)s logged in"
-msgstr ""
+msgstr "Uživatel: %(u)s přihlášen"
 
 #: baruwa/lib/audit/msgs/domains.py:27
 #, python-format
 msgid "Domain: %(d)s created"
-msgstr ""
+msgstr "Doména: %(d)s vytvořil(a)"
 
 #: baruwa/lib/audit/msgs/domains.py:28
 #, python-format
 msgid "Domain: %(d)s updated"
-msgstr ""
+msgstr "Doména: %(d)s Aktualizováno"
 
 #: baruwa/lib/audit/msgs/domains.py:29
 #, python-format
 msgid "Domain: %(d)s deleted"
-msgstr ""
+msgstr "Doména: %(d)s odstraněno"
 
 #: baruwa/lib/audit/msgs/domains.py:30
 #, python-format
 msgid "Domain Alias: %(d)s created"
-msgstr ""
+msgstr "Alias domény: %(d)s vytvořil(a)"
 
 #: baruwa/lib/audit/msgs/domains.py:31
 #, python-format
 msgid "Domain Alias: %(d)s updated"
-msgstr ""
+msgstr "Alias domény: %(d)s Aktualizováno"
 
 #: baruwa/lib/audit/msgs/domains.py:32
 #, python-format
 msgid "Domain Alias: %(d)s deleted"
-msgstr ""
+msgstr "Alias domény: %(d)s odstraněno"
 
 #: baruwa/lib/audit/msgs/domains.py:33
 #, python-format
 msgid "Domain: %(d)s accounts exported"
-msgstr ""
+msgstr "Doména: %(d)s účty exportovány"
 
 #: baruwa/lib/audit/msgs/domains.py:35
 #, python-format
 msgid "Domain: %(d)s Delivery server: %(ds)s added"
-msgstr ""
+msgstr "Doména: %(d)s Dodávka serveru: %(ds)s Přidáno"
 
 #: baruwa/lib/audit/msgs/domains.py:36
 #, python-format
 msgid "Domain: %(d)s Delivery server: %(ds)s updated"
-msgstr ""
+msgstr "Doména: %(d)s Dodávka serveru: %(ds)s Aktualizováno"
 
 #: baruwa/lib/audit/msgs/domains.py:37
 #, python-format
 msgid "Domain: %(d)s Delivery server: %(ds)s deleted"
-msgstr ""
+msgstr "Doména: %(d)s Dodávka serveru: %(ds)s odstraněno"
 
 #: baruwa/lib/audit/msgs/domains.py:38
 #, python-format
 msgid "Domain: %(d)s AUTH server: %(ds)s added"
-msgstr ""
+msgstr "Doména: %(d)s Ověřování serveru: %(ds)s Přidáno"
 
 #: baruwa/lib/audit/msgs/domains.py:39
 #, python-format
 msgid "Domain: %(d)s AUTH server: %(ds)s updated"
-msgstr ""
+msgstr "Doména: %(d)s Ověřování serveru: %(ds)s Aktualizováno"
 
 #: baruwa/lib/audit/msgs/domains.py:40
 #, python-format
 msgid "Domain: %(d)s AUTH server: %(ds)s deleted"
-msgstr ""
+msgstr "Doména: %(d)s Ověřování serveru: %(ds)s odstraněno"
 
 #: baruwa/lib/audit/msgs/domains.py:41
 #, python-format
 msgid "Domain: %(d)s AUTH settings updated for: %(a)s"
-msgstr ""
+msgstr "Doména: %(d)s OVĚŘENÍ nastavení pro: %(a)s"
 
 #: baruwa/lib/audit/msgs/lists.py:27
 #, python-format
 msgid "Sender: %(s)s added to %(l)s"
-msgstr ""
+msgstr "Odesílatel: %(s)s Přidáno do %(l)s"
 
 #: baruwa/lib/audit/msgs/lists.py:28
 #, python-format
 msgid "Sender: %(s)s deleted from %(l)s"
-msgstr ""
+msgstr "Odesílatel: %(s)s odstraněno z %(l)s"
 
 #: baruwa/lib/audit/msgs/messages.py:27
 #, python-format
 msgid "Message with id: %(m)s released to %(a)s"
-msgstr ""
+msgstr "Zpráva s id: %(m)s vydáno k %(a)s"
 
 #: baruwa/lib/audit/msgs/messages.py:28
 #, python-format
 msgid "Message with id: %(m)s learnt as %(l)s"
-msgstr ""
+msgstr "Zpráva s id: %(m)s naučil jako %(l)s"
 
 #: baruwa/lib/audit/msgs/messages.py:29
 #, python-format
 msgid "Message with id: %(m)s deleted from quarantine"
-msgstr ""
+msgstr "Zpráva s id: %(m)s odstraněné z karantény"
 
 #: baruwa/lib/audit/msgs/messages.py:30
 #, python-format
 msgid "Message with id: %(m)s previewed"
-msgstr ""
+msgstr "Zpráva s id: %(m)s Náhled"
 
 #: baruwa/lib/audit/msgs/messages.py:31
 #, python-format
 msgid "Message with id: %(m)s attachment %(a)s downloaded"
-msgstr ""
+msgstr "Zpráva s id: %(m)s Příloha %(a)s Staženo"
 
 #: baruwa/lib/audit/msgs/organizations.py:27
 #, python-format
 msgid "Organization: %(o)s added"
-msgstr ""
+msgstr "Organizace: %(o)s Přidáno"
 
 #: baruwa/lib/audit/msgs/organizations.py:28
 #, python-format
 msgid "Organization: %(o)s updated"
-msgstr ""
+msgstr "Organizace: %(o)s Aktualizováno"
 
 #: baruwa/lib/audit/msgs/organizations.py:29
 #, python-format
 msgid "Organization: %(o)s deleted"
-msgstr ""
+msgstr "Organizace: %(o)s odstraněno"
 
 #: baruwa/lib/audit/msgs/organizations.py:30
 #, python-format
 msgid "Organization: %(o)s domains imported"
-msgstr ""
+msgstr "Organizace: %(o)s domény importu"
 
 #: baruwa/lib/audit/msgs/organizations.py:32
 #, python-format
 msgid "Relay: %(r)s added"
-msgstr ""
+msgstr "Relé: %(r)s Přidáno"
 
 #: baruwa/lib/audit/msgs/organizations.py:33
 #, python-format
 msgid "Relay: %(r)s updated"
-msgstr ""
+msgstr "Relé: %(r)s Aktualizováno"
 
 #: baruwa/lib/audit/msgs/organizations.py:34
-#, fuzzy, python-format
+#, python-format
 msgid "Relay: %(r)s deleted"
-msgstr "Hlášení"
+msgstr "Relé: %(r)s odstraněno"
 
 #: baruwa/lib/audit/msgs/reports.py:27
-#, fuzzy, python-format
+#, python-format
 msgid "Report: %(r)s viewed"
-msgstr "Hlášení"
+msgstr "Zpráva: %(r)s Zobrazeno"
 
 #: baruwa/lib/audit/msgs/reports.py:28
 #, python-format
 msgid "Report: %(r)s downloaded as %(f)s"
-msgstr ""
+msgstr "Zpráva: %(r)s Staženo jako %(f)s"
 
 #: baruwa/lib/audit/msgs/settings.py:27
 #, python-format
 msgid "Account: %(u)s signature created"
-msgstr ""
+msgstr "Účet: %(u)s podpis vytvořený"
 
 #: baruwa/lib/audit/msgs/settings.py:28
 #, python-format
 msgid "Account: %(u)s signature updated"
-msgstr ""
+msgstr "Účet: %(u)s podpis aktualizovat"
 
 #: baruwa/lib/audit/msgs/settings.py:29
 #, python-format
 msgid "Account: %(u)s signature deleted"
-msgstr ""
+msgstr "Účet: %(u)s podpis odstraněn"
 
 #: baruwa/lib/audit/msgs/settings.py:30
 #, python-format
 msgid "Domain: %(d)s signature created"
-msgstr ""
+msgstr "Doména: %(d)s podpis vytvořený"
 
 #: baruwa/lib/audit/msgs/settings.py:31
 #, python-format
 msgid "Domain: %(d)s signature updated"
-msgstr ""
+msgstr "Doména: %(d)s podpis aktualizovat"
 
 #: baruwa/lib/audit/msgs/settings.py:32
 #, python-format
 msgid "Domain: %(d)s signature deleted"
-msgstr ""
+msgstr "Doména: %(d)s podpis odstraněn"
 
 #: baruwa/lib/audit/msgs/settings.py:33
 #, python-format
 msgid "Node: %(n)s created"
-msgstr ""
+msgstr "Uzel: %(n)s vytvořil(a)"
 
 #: baruwa/lib/audit/msgs/settings.py:34
 #, python-format
 msgid "Node: %(n)s updated"
-msgstr ""
+msgstr "Uzel: %(n)s Aktualizováno"
 
 #: baruwa/lib/audit/msgs/settings.py:35
 #, python-format
 msgid "Node: %(n)s deleted"
-msgstr ""
+msgstr "Uzel: %(n)s odstraněno"
 
 #: baruwa/lib/audit/msgs/settings.py:36
 #, python-format
 msgid "Scanner %(svr)s setting: %(s)s set to %(a)s"
-msgstr ""
+msgstr "Skener %(svr)s nastavení: %(s)s Nastavte %(a)s"
 
 #: baruwa/lib/audit/msgs/settings.py:38
 #, python-format
 msgid "DKIM keys generated for: %(d)s"
-msgstr ""
+msgstr "DKIM klíče pro: %(d)s"
 
 #: baruwa/lib/audit/msgs/settings.py:39
 #, python-format
 msgid "DKIM signing enabled for: %(d)s"
-msgstr ""
+msgstr "DKIM podpis povoleno: %(d)s"
 
 #: baruwa/lib/audit/msgs/settings.py:40
 #, python-format
 msgid "DKIM signing disabled for: %(d)s"
-msgstr ""
+msgstr "DKIM podpis pro: %(d)s"
 
 #: baruwa/lib/audit/msgs/status.py:27
 #, python-format
 msgid "Queued Message-ID: %(m)s released to %(a)s"
-msgstr ""
+msgstr "Ve frontě Message-ID: %(m)s vydáno k %(a)s"
 
 #: baruwa/lib/audit/msgs/status.py:28
 #, python-format
 msgid "Queued Message-ID: %(m)s deleted from %(q)s queue"
-msgstr ""
+msgstr "Ve frontě Message-ID: %(m)s odstraněno z %(q)s fronta"
 
 #: baruwa/lib/audit/msgs/status.py:29
 #, python-format
 msgid "Queued Message-ID: %(m)s preview"
-msgstr ""
+msgstr "Ve frontě Message-ID: %(m)s Náhled"
 
 #: baruwa/lib/audit/msgs/status.py:30
 #, python-format
 msgid "Queued Message-ID: %(m)s downloaded attachment %(a)s"
-msgstr ""
+msgstr "Ve frontě Message-ID: %(m)s Stáhnout přílohu %(a)s"
 
 #: baruwa/lib/audit/msgs/status.py:31
 #, python-format
 msgid "Node status for: %(n)s viewed"
-msgstr ""
+msgstr "Stav uzlu pro: %(n)s Zobrazeno"
 
 #: baruwa/lib/audit/msgs/status.py:32
 #, python-format
 msgid "Node lint status for: %(n)s viewed"
-msgstr ""
+msgstr "Uzel hadříkem stav: %(n)s Zobrazeno"
 
 #: baruwa/lib/audit/msgs/status.py:33
 #, python-format
 msgid "Node bayes stats for: %(n)s viewed"
-msgstr ""
+msgstr "Uzel bayes statistiky pro: %(n)s Zobrazeno"
 
 #: baruwa/lib/audit/msgs/status.py:34
 msgid "Audit log exported"
-msgstr ""
+msgstr "Protokol auditu exportováno"
 
 #: baruwa/lib/auth/predicates.py:35
 msgid "Only System Administrators can access this page"
-msgstr ""
+msgstr "Pouze správci systému mohou přistupovat k této stránce"
 
 #: baruwa/lib/auth/predicates.py:47
 msgid "Only Administrators can access this page"
-msgstr ""
+msgstr "Pouze správci mohou přistupovat k této stránce"
 
 #: baruwa/lib/auth/predicates.py:70
 msgid "Only Administrators or owners can view domain details"
-msgstr ""
+msgstr "Pouze správci nebo vlastníci mohou zobrazit podrobnosti domény"
 
 #: baruwa/lib/auth/predicates.py:105
 msgid "Only Administrators or owners can view account details"
-msgstr ""
+msgstr "Pouze správci nebo vlastníci mohou zobrazit podrobnosti účtu"
 
 #: baruwa/lib/templates/helpers.py:68
 msgid "unknown"
-msgstr ""
+msgstr "neznámé"
 
 #: baruwa/lib/templates/helpers.py:142
-#, fuzzy
 msgid "IPv6 Link local address"
-msgstr "E-mailová adresa"
+msgstr "Místní adresa IPv6 propojení"
 
 #: baruwa/lib/templates/helpers.py:145
 msgid "RFC1918 Private address"
-msgstr ""
+msgstr "RFC1918 privátní adresa"
 
 #: baruwa/lib/templates/helpers.py:147
 msgid "Reverse lookup failed"
-msgstr ""
+msgstr "Zpětné vyhledávání selhalo"
 
 #: baruwa/lib/templates/helpers.py:168 baruwa/lib/templates/helpers.py:175
 #: baruwa/lib/templates/helpers.py:218
 msgid "N"
-msgstr ""
+msgstr "N"
 
 #: baruwa/lib/templates/helpers.py:172 baruwa/lib/templates/helpers.py:217
 msgid "Y"
-msgstr ""
+msgstr "A"
 
 #: baruwa/model/messages.py:137 baruwa/templates/messages/functions.html:33
 msgid "BS"
-msgstr ""
+msgstr "BS"
 
 #: baruwa/model/messages.py:148 baruwa/templates/messages/functions.html:44
 msgid "AS"
-msgstr ""
+msgstr "JAKO"
 
 #: baruwa/model/status.py:38
 msgid "Read"
-msgstr ""
+msgstr "Čtení"
 
 #: baruwa/model/status.py:39 baruwa/templates/accounts/editaddress.html:18
 #: baruwa/templates/domains/editalias.html:16
 #: baruwa/templates/domains/editauth.html:16
 msgid "Update"
-msgstr ""
+msgstr "Aktualizovat"
 
 #: baruwa/model/status.py:40 baruwa/templates/accounts/addaddress.html:18
 msgid "Create"
-msgstr ""
+msgstr "Vytvořit"
 
 #: baruwa/model/status.py:42
-#, fuzzy
 msgid "Export"
-msgstr "Hlášení"
+msgstr "Exportovat"
 
 #: baruwa/model/status.py:43
 msgid "Auth"
-msgstr ""
+msgstr "Ověření"
 
 #: baruwa/tasks/status.py:63
 msgid "Checking system status"
-msgstr ""
+msgstr "Kontrola stavu systému"
 
 #: baruwa/tasks/status.py:116
 msgid "Running Spamassassin lint checks"
-msgstr ""
+msgstr "Spuštění kontroly hadříkem Spamassassin"
 
 #: baruwa/tasks/status.py:142
 msgid "Generating Bayesian stats"
-msgstr ""
+msgstr "Generování Bayesian statistiky"
 
 #: baruwa/tasks/status.py:199
 #, python-format
 msgid "Download attachment: %(attachid)s of message: %(id)s"
-msgstr ""
+msgstr "Přílohy ke stažení: %(attachid)s zprávy: %(id)s"
 
 #: baruwa/tasks/status.py:204
 #, python-format
 msgid "Image access: %(img)s"
-msgstr ""
+msgstr "Obrázek přístup: %(img)s"
 
 #: baruwa/tasks/status.py:206
 #, python-format
 msgid "Preview of message: %(id)s"
-msgstr ""
+msgstr "Náhled zprávy: %(id)s"
 
 #: baruwa/tasks/status.py:211
 #, python-format
 msgid "Accessing message: %(id)s, Failed: %(error)s"
-msgstr ""
+msgstr "Přístup k zpráva: %(id)s, Neúspěšný: %(error)s"
 
 #: baruwa/tasks/status.py:226
 #, python-format
 msgid "Invalid exim command: %s"
-msgstr ""
+msgstr "Exim neplatný příkaz: %s"
 
 #: baruwa/tasks/status.py:229 baruwa/tasks/status.py:244
 #, python-format
 msgid "Invalid action: %s"
-msgstr ""
+msgstr "Neplatná akce: %s"
 
 #: baruwa/tasks/status.py:236
-#, fuzzy, python-format
+#, python-format
 msgid "STDOUT: %s"
-msgstr "Message Totals"
+msgstr "STDOUT: %s"
 
 #: baruwa/tasks/status.py:239
 #, python-format
 msgid "STDERR: %s"
-msgstr ""
+msgstr "STDERR: %s"
 
 #: baruwa/tasks/status.py:242
 #, python-format
 msgid "Invalid input: %s"
-msgstr ""
+msgstr "Neplatný vstup: %s"
 
 #: baruwa/tasks/status.py:266
 #, python-format
 msgid "Audit Log update for: %s from: %s"
-msgstr ""
+msgstr "Auditu protokolu aktualizace pro: %s od: %s"
 
 #: baruwa/tasks/status.py:269
 #, python-format
 msgid "Audit Log FAILURE: %s %s %s %s %s %s Error: %s"
-msgstr ""
+msgstr "Protokol auditu selhání: %s %s %s %s %s %s chyba: %s"
 
 #: baruwa/tasks/status.py:289
 msgid "Audit Log exported report"
-msgstr ""
+msgstr "Protokol auditu exportovat zprávy"
 
 #: baruwa/tasks/status.py:294 baruwa/templates/base.html:98
 msgid "Audit Logs"
-msgstr ""
+msgstr "Protokoly auditu"
 
 #: baruwa/tasks/status.py:295 baruwa/templates/email/quarantine.html:63
 #: baruwa/templates/email/quarantine.html:92
@@ -2785,85 +2844,82 @@ msgstr ""
 #: baruwa/templates/messages/searchresults.html:17
 #: baruwa/templates/status/audit.html:26
 msgid "Date/Time"
-msgstr ""
+msgstr "Datum a čas"
 
 #: baruwa/tasks/status.py:297 baruwa/templates/status/audit.html:28
 msgid "Info"
-msgstr ""
+msgstr "Informace"
 
 #: baruwa/tasks/status.py:299 baruwa/templates/status/audit.html:30
 msgid "Remote IP"
-msgstr ""
+msgstr "Vzdálená IP"
 
 #: baruwa/tasks/status.py:300 baruwa/templates/lists/index.html:29
 #: baruwa/templates/status/detail.html:68
 msgid "Action"
-msgstr ""
+msgstr "Akce"
 
 #: baruwa/tasks/status.py:313
-#, fuzzy
 msgid "Baruwa Audit log export"
-msgstr "Baruwa e-mailové hlášení"
+msgstr "Export protokolu auditu Baruwa"
 
 #: baruwa/tasks/status.py:365
 #, python-format
 msgid "Audit Log export complete: %s"
-msgstr ""
+msgstr "Kompletní exportní protokolu auditování: %s"
 
 #: baruwa/tasks/status.py:369
 #, python-format
 msgid "Audit Log export FAILURE: %s"
-msgstr ""
+msgstr "Auditu Log exportu selhání: %s"
 
 #: baruwa/templates/base.html:33
-#, fuzzy
 msgid "Language: "
-msgstr "Jazyk"
+msgstr "Jazyk: "
 
 #: baruwa/templates/base.html:44 baruwa/templates/status/index.html:83
 msgid "OK"
-msgstr ""
+msgstr "Ok"
 
 #: baruwa/templates/base.html:44 baruwa/templates/status/index.html:83
 msgid "FAULTY"
-msgstr ""
+msgstr "VADNÝ"
 
 #: baruwa/templates/base.html:51
-#, fuzzy
 msgid "Total "
-msgstr "Celkem"
+msgstr "Celkem "
 
 #: baruwa/templates/base.html:51
 msgid "Spam "
-msgstr ""
+msgstr "Spam "
 
 #: baruwa/templates/base.html:51
 msgid "Virus "
-msgstr ""
+msgstr "Virus "
 
 #: baruwa/templates/base.html:54
 msgid "Msgs: "
-msgstr ""
+msgstr "Počet zpráv: "
 
 #: baruwa/templates/base.html:56
 msgid "In: "
-msgstr "Do:"
+msgstr "V: "
 
 #: baruwa/templates/base.html:58
 msgid "Out: "
-msgstr "Ven:"
+msgstr "Ven: "
 
 #: baruwa/templates/base.html:63
 msgid "Signed in as "
-msgstr ""
+msgstr "Jste přihlášeni jako "
 
 #: baruwa/templates/base.html:64
 msgid "Logout"
-msgstr ""
+msgstr "Odhlášení"
 
 #: baruwa/templates/base.html:66
 msgid "Not logged in :: "
-msgstr ""
+msgstr "Nepřihlášen:: "
 
 #: baruwa/templates/base.html:66 baruwa/templates/accounts/login.html:11
 #: baruwa/templates/accounts/login.html:34
@@ -2872,31 +2928,30 @@ msgid "Login"
 msgstr "Přihlášení"
 
 #: baruwa/templates/base.html:76
-#, fuzzy
 msgid "Messages"
 msgstr "Zprávy"
 
 #: baruwa/templates/base.html:78 baruwa/templates/reports/index.html:30
 msgid "Full message list"
-msgstr ""
+msgstr "Seznam plný zpráv"
 
 #: baruwa/templates/base.html:80
 msgid "Archive"
-msgstr ""
+msgstr "Archiv"
 
 #: baruwa/templates/base.html:84
 msgid "Lists"
-msgstr ""
+msgstr "Seznamy"
 
 #: baruwa/templates/base.html:88
 msgid "Add to List"
-msgstr ""
+msgstr "Přidat do seznamu"
 
 #: baruwa/templates/base.html:91 baruwa/templates/reports/index.html:8
 #: baruwa/templates/reports/index.html:116
 #: baruwa/templates/reports/index.html:117
 msgid "Reports"
-msgstr "Hlášení"
+msgstr "Zprávy"
 
 #: baruwa/templates/base.html:94
 #: baruwa/templates/accounts/confirmbulkdel.html:11
@@ -2919,11 +2974,11 @@ msgstr "Stav"
 
 #: baruwa/templates/base.html:96
 msgid "Mail Queues"
-msgstr ""
+msgstr "Poštovní fronty"
 
 #: baruwa/templates/base.html:106
 msgid "Add a domain"
-msgstr ""
+msgstr "Přidat doménu"
 
 #: baruwa/templates/base.html:111
 #: baruwa/templates/domains/confirmbulkdel.html:9
@@ -2934,7 +2989,7 @@ msgstr "Účty"
 
 #: baruwa/templates/base.html:113
 msgid "Add account"
-msgstr ""
+msgstr "Přidat účet"
 
 #: baruwa/templates/base.html:118 baruwa/templates/domains/detail.html:229
 #: baruwa/templates/domains/detail.html:231
@@ -2944,39 +2999,38 @@ msgstr "Nastavení"
 
 #: baruwa/templates/base.html:120
 msgid "Add scanning node"
-msgstr ""
+msgstr "Přidat uzel, skenování"
 
 #: baruwa/templates/base.html:121
 msgid "MailScanner settings"
-msgstr ""
+msgstr "MailScanner nastavení"
 
 #: baruwa/templates/base.html:127 baruwa/templates/organizations/add.html:11
 msgid "Add organization"
-msgstr ""
+msgstr "Přidat organizace"
 
 #: baruwa/templates/base.html:132
 msgid "Account"
-msgstr ""
+msgstr "Účet"
 
 #: baruwa/templates/accounts/account.html:12
 msgid "Add signatures"
-msgstr ""
+msgstr "Přidávat podpisy"
 
 #: baruwa/templates/accounts/account.html:15
-#, fuzzy
 msgid "Add alias address"
-msgstr "E-mailová adresa"
+msgstr "Přidat alias adresy"
 
 #: baruwa/templates/accounts/account.html:16
 #: baruwa/templates/accounts/account.html:27
 #: baruwa/templates/accounts/edit.html:17
 msgid "Update account"
-msgstr ""
+msgstr "Aktualizovat účet"
 
 #: baruwa/templates/accounts/account.html:17
 #: baruwa/templates/accounts/delete.html:17
 msgid "Delete account"
-msgstr ""
+msgstr "Odstranit účet"
 
 #: baruwa/templates/accounts/account.html:19
 #: baruwa/templates/accounts/account.html:23
@@ -2984,59 +3038,59 @@ msgstr ""
 #: baruwa/templates/accounts/pwchange.html:10
 #: baruwa/templates/accounts/pwchange.html:18
 msgid "Change password"
-msgstr ""
+msgstr "Změnit heslo"
 
 #: baruwa/templates/accounts/account.html:34
 #, python-format
 msgid "Showing: %(a)s account details"
-msgstr ""
+msgstr "Zobrazeno: %(a)s podrobnosti o účtu"
 
 #: baruwa/templates/accounts/account.html:46
 #: baruwa/templates/accounts/confirmbulkdel.html:9
 #: baruwa/templates/accounts/index.html:35
 #: baruwa/templates/accounts/searchresults.html:25
 msgid "Full names"
-msgstr ""
+msgstr "Celá jména"
 
 #: baruwa/templates/accounts/account.html:54
 msgid "Email Address"
-msgstr ""
+msgstr "E-mailová adresa"
 
 #: baruwa/templates/accounts/account.html:62
 msgid "Account status"
-msgstr ""
+msgstr "Stav účtu"
 
 #: baruwa/templates/accounts/account.html:70
 msgid "Last login"
-msgstr ""
+msgstr "Poslední přihlášení"
 
 #: baruwa/templates/accounts/account.html:78
 msgid "Account created on"
-msgstr ""
+msgstr "Účet na"
 
 #: baruwa/templates/accounts/account.html:89
 msgid "Local account"
-msgstr ""
+msgstr "Místní účet"
 
 #: baruwa/templates/accounts/account.html:89
 msgid "External account"
-msgstr ""
+msgstr "Externí účet"
 
 #: baruwa/templates/accounts/account.html:124
 msgid "Perform Spam checks"
-msgstr ""
+msgstr "Provést kontroly spamu"
 
 #: baruwa/templates/accounts/account.html:140
 msgid "Spam Low Score"
-msgstr ""
+msgstr "Nízké skóre spamu"
 
 #: baruwa/templates/accounts/account.html:148
 msgid "Spam High Score"
-msgstr ""
+msgstr "Vysoké skóre spamu"
 
 #: baruwa/templates/accounts/account.html:155
 msgid "Alias Addresses"
-msgstr ""
+msgstr "Alias adresy"
 
 #: baruwa/templates/accounts/account.html:168
 #: baruwa/templates/accounts/account.html:170
@@ -3054,35 +3108,34 @@ msgstr ""
 #: baruwa/templates/settings/domain_sigs.html:29
 #: baruwa/templates/settings/index.html:33
 msgid "Edit"
-msgstr ""
+msgstr "Úpravy"
 
 #: baruwa/templates/accounts/account.html:184
 msgid "No alias addresses configured"
-msgstr ""
+msgstr "Žádný alias adresy konfigurovány"
 
 #: baruwa/templates/accounts/account.html:188
-#, fuzzy
 msgid "Email Signatures"
-msgstr "E-mailová adresa"
+msgstr "Email podpisy"
 
 #: baruwa/templates/accounts/account.html:194
 #: baruwa/templates/settings/domain_sigs.html:20
 msgid "Text signature"
-msgstr ""
+msgstr "Textový podpis"
 
 #: baruwa/templates/accounts/account.html:194
 #: baruwa/templates/settings/domain_sigs.html:20
 msgid "HTML Signature"
-msgstr ""
+msgstr "HTML podpis"
 
 #: baruwa/templates/accounts/account.html:209
 msgid "No Email Signatures configured"
-msgstr ""
+msgstr "Žádný Email podpisy nakonfigurován"
 
 #: baruwa/templates/accounts/account.html:217
 #, python-format
 msgid "Accounts :: Account details :: %(a)s"
-msgstr ""
+msgstr "Účty:: Účet informace:: %(a)s"
 
 #: baruwa/templates/accounts/addaddress.html:4
 #: baruwa/templates/accounts/delete.html:4
@@ -3091,30 +3144,31 @@ msgstr ""
 #: baruwa/templates/accounts/editaddress.html:4
 #: baruwa/templates/accounts/pwchange.html:4
 msgid "Return to account"
-msgstr ""
+msgstr "Návrat do účet"
 
 #: baruwa/templates/accounts/addaddress.html:10
 msgid "Create alias address"
-msgstr ""
+msgstr "Vytvoření aliasu adresu"
 
 #: baruwa/templates/accounts/addaddress.html:17
 #: baruwa/templates/accounts/editaddress.html:17
 #: baruwa/templates/accounts/new.html:10
 #: baruwa/templates/accounts/pwchange.html:17
 #: baruwa/templates/domains/adddestination.html:17
-#: baruwa/templates/domains/new.html:10 baruwa/templates/lists/add.html:31
+#: baruwa/templates/domains/new.html:10 baruwa/templates/invite/index.html:45
+#: baruwa/templates/lists/add.html:31
 #: baruwa/templates/organizations/add.html:10
 #: baruwa/templates/organizations/addrelay.html:16
 #: baruwa/templates/organizations/deleterelay.html:16
 #: baruwa/templates/organizations/editrelay.html:16
 #: baruwa/templates/settings/addserver.html:10
 msgid "Reset"
-msgstr ""
+msgstr "Obnovit"
 
 #: baruwa/templates/accounts/addaddress.html:25
 #: baruwa/templates/accounts/addaddress.html:29
 msgid "Accounts :: Create alias address"
-msgstr ""
+msgstr "Účty:: Vytvořit alias adresy"
 
 #: baruwa/templates/accounts/confirmbulkdel.html:12
 #: baruwa/templates/accounts/index.html:38
@@ -3124,31 +3178,31 @@ msgstr ""
 #: baruwa/templates/domains/searchresults.html:29
 #: baruwa/templates/settings/index.html:18
 msgid "Actions"
-msgstr ""
+msgstr "Akce"
 
 #: baruwa/templates/accounts/confirmbulkdel.html:37
 #: baruwa/templates/accounts/index.html:64
 msgid "No accounts found"
-msgstr ""
+msgstr "Nenalezeny žádné účty"
 
 #: baruwa/templates/accounts/confirmbulkdel.html:46
 #: baruwa/templates/domains/confirmbulkdel.html:46
 msgid "Yes Delete"
-msgstr ""
+msgstr "Ano, odstranění"
 
 #: baruwa/templates/accounts/confirmbulkdel.html:53
 #: baruwa/templates/accounts/confirmbulkdel.html:57
 msgid "Accounts :: Confirm bulk account deletion"
-msgstr ""
+msgstr "Účty:: Potvrzovat hromadné smazání účtu"
 
 #: baruwa/templates/accounts/delete.html:10
 msgid "Delete User account"
-msgstr ""
+msgstr "Odstranit uživatelský účet"
 
 #: baruwa/templates/accounts/delete.html:27
 #: baruwa/templates/accounts/delete.html:31
 msgid "Accounts :: Delete account"
-msgstr ""
+msgstr "Účty:: Odstranit účet"
 
 #: baruwa/templates/accounts/delete.html:36
 #: baruwa/templates/accounts/deleteaddress.html:34
@@ -3158,67 +3212,67 @@ msgstr ""
 #: baruwa/templates/settings/account_deletesig.html:4
 #: baruwa/templates/settings/account_editsig.html:4
 msgid "Account details"
-msgstr ""
+msgstr "Podrobnosti o účtu"
 
 #: baruwa/templates/accounts/deleteaddress.html:10
 msgid "Delete alias address"
-msgstr ""
+msgstr "Odstranit alias adresy"
 
 #: baruwa/templates/accounts/deleteaddress.html:24
 #: baruwa/templates/accounts/deleteaddress.html:28
 msgid "Accounts :: Delete alias address"
-msgstr ""
+msgstr "Účty:: Odstranit alias adresy"
 
 #: baruwa/templates/accounts/edit.html:10
 msgid "Update User account"
-msgstr ""
+msgstr "Aktualizovat uživatelský účet"
 
 #: baruwa/templates/accounts/edit.html:26
 #: baruwa/templates/accounts/edit.html:30
 msgid "Accounts :: Edit account"
-msgstr ""
+msgstr "Účty:: Účet Edit"
 
 #: baruwa/templates/accounts/editaddress.html:10
 msgid "Edit alias address"
-msgstr ""
+msgstr "Upravit adresu aliasu"
 
 #: baruwa/templates/accounts/editaddress.html:25
 #: baruwa/templates/accounts/editaddress.html:29
 msgid "Accounts :: Update alias address"
-msgstr ""
+msgstr "Účty:: Aktualizace alias adresy"
 
 #: baruwa/templates/accounts/exportstatus.html:3
 msgid "Accounts Export Status"
-msgstr ""
+msgstr "Účty exportu Status"
 
 #: baruwa/templates/accounts/exportstatus.html:11
 #: baruwa/templates/domains/exportstatus.html:11
 #: baruwa/templates/status/auditexportstatus.html:11
 msgid "The export has been processed, "
-msgstr ""
+msgstr "Export bylo zpracováno, "
 
 #: baruwa/templates/accounts/exportstatus.html:11
 #: baruwa/templates/domains/exportstatus.html:11
 msgid "Download the csv file"
-msgstr ""
+msgstr "Stáhnout soubor csv"
 
 #: baruwa/templates/accounts/exportstatus.html:13
 #: baruwa/templates/domains/exportstatus.html:13
-#, python-format
-msgid "The CSV export failed: %sglobal_error"
-msgstr ""
+#, fuzzy, python-format
+msgid "The CSV export failed: %s"
+msgstr "Export protokolu auditu se nezdařilo: % serrormsg"
 
 #: baruwa/templates/accounts/exportstatus.html:24
 #: baruwa/templates/accounts/importstatus.html:44
 #: baruwa/templates/organizations/importstatus.html:44
 #, python-format
 msgid "The request is being processed. %d%%"
-msgstr ""
+msgstr "Požadavek je zpracováván. % d %%"
 
 #: baruwa/templates/accounts/exportstatus.html:37
 #: baruwa/templates/accounts/exportstatus.html:40
 msgid "Accounts :: User export status"
-msgstr ""
+msgstr "Účty:: Stav exportní uživatelské"
 
 #: baruwa/templates/accounts/importaccounts.html:3
 #: baruwa/templates/domains/addalias.html:3
@@ -3232,9 +3286,8 @@ msgstr ""
 #: baruwa/templates/settings/domain_dkim_enable.html:5
 #: baruwa/templates/settings/domain_editsig.html:4
 #: baruwa/templates/settings/domain_sigs.html:4
-#, fuzzy
 msgid "Domain Settings"
-msgstr "Nastavení"
+msgstr "Nastavení domény"
 
 #: baruwa/templates/accounts/importaccounts.html:4
 #: baruwa/templates/domains/addalias.html:4
@@ -3258,55 +3311,50 @@ msgstr "Nastavení"
 #: baruwa/templates/settings/domain_settings.html:4
 #: baruwa/templates/settings/domain_sigs.html:5
 msgid "Domain details"
-msgstr ""
+msgstr "Doména podrobnosti"
 
 #: baruwa/templates/accounts/importaccounts.html:9
-#, fuzzy
 msgid "Import accounts"
-msgstr "Účty"
+msgstr "Importovat účty"
 
 #: baruwa/templates/accounts/importaccounts.html:16
 #: baruwa/templates/organizations/importdomains.html:16
-#, fuzzy
 msgid "Import"
-msgstr "Hlášení"
+msgstr "Importovat"
 
 #: baruwa/templates/accounts/importaccounts.html:23
 #: baruwa/templates/accounts/importaccounts.html:27
 #, python-format
 msgid "Accounts :: %(dom)s :: Import accounts"
-msgstr ""
+msgstr "Účty:: %(dom)s :: Import účtů"
 
 #: baruwa/templates/accounts/importstatus.html:7
 #: baruwa/templates/messages/taskstatus.html:19
 #: baruwa/templates/organizations/importstatus.html:7
-#, fuzzy
 msgid "Errors"
-msgstr "Hlášení"
+msgstr "Chyby"
 
 #: baruwa/templates/accounts/importstatus.html:31
 #: baruwa/templates/organizations/importstatus.html:31
-#, python-format
-msgid "The CSV import failed: %sglobal_error"
-msgstr ""
+#, fuzzy, python-format
+msgid "The CSV import failed: %s"
+msgstr "Export protokolu auditu se nezdařilo: % serrormsg"
 
 #: baruwa/templates/accounts/importstatus.html:59
 #: baruwa/templates/accounts/importstatus.html:62
 msgid "Accounts :: User import status"
-msgstr ""
+msgstr "Účty:: Stav importu uživatelské"
 
 #: baruwa/templates/accounts/index.html:4
 #: baruwa/templates/settings/domain_settings.html:18
-#, fuzzy
 msgid "Import Accounts"
-msgstr "Účty"
+msgstr "Importovat účty"
 
 #: baruwa/templates/accounts/index.html:5
 #: baruwa/templates/accounts/index.html:7
 #: baruwa/templates/settings/domain_settings.html:19
-#, fuzzy
 msgid "Export Accounts"
-msgstr "Účty"
+msgstr "Exportovat účty"
 
 #: baruwa/templates/accounts/index.html:24
 #: baruwa/templates/accounts/searchresults.html:14
@@ -3315,13 +3363,12 @@ msgstr "Účty"
 #: baruwa/templates/messages/includes/enabledform.html:8
 #: baruwa/templates/settings/domain_dkim_enable.html:20
 msgid "Submit"
-msgstr ""
+msgstr "Předložit"
 
 #: baruwa/templates/accounts/index.html:76
 #: baruwa/templates/accounts/index.html:83
-#, fuzzy
 msgid "Accounts "
-msgstr "Účty"
+msgstr "Účty "
 
 #: baruwa/templates/accounts/index.html:78
 #: baruwa/templates/accounts/index.html:85
@@ -3329,12 +3376,13 @@ msgstr "Účty"
 #, python-format
 msgid ":: Showing page %(n)d of %(c)d page."
 msgid_plural ":: Showing page %(n)d of %(c)d pages."
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] ":: Page zobrazeno %(n)d z %(c)d stránka."
+msgstr[1] ":: Page zobrazeno %(n)d z %(c)d stránky."
+msgstr[2] ":: Page zobrazeno %(n)d z %(c)d stránky."
 
 #: baruwa/templates/accounts/index.html:94
-#: baruwa/templates/domains/index.html:93 baruwa/templates/lists/index.html:105
+#: baruwa/templates/domains/index.html:93
+#: baruwa/templates/lists/index.html:105
 #: baruwa/templates/messages/functions.html:208
 #: baruwa/templates/messages/searchresults.html:102
 #: baruwa/templates/organizations/index.html:50
@@ -3342,27 +3390,29 @@ msgstr[2] ""
 #: baruwa/templates/status/audit.html:84 baruwa/templates/status/mailq.html:70
 #, python-format
 msgid "Showing items %(i)d to %(l)d of %(count)d"
-msgstr ""
+msgstr "Zobrazení položek %(i)d pro %(l)d z %(count)d"
 
 #: baruwa/templates/accounts/index.html:96
-#: baruwa/templates/domains/index.html:95 baruwa/templates/lists/index.html:107
+#: baruwa/templates/domains/index.html:95
+#: baruwa/templates/lists/index.html:107
 #: baruwa/templates/messages/functions.html:210
 #: baruwa/templates/messages/searchresults.html:104
 #: baruwa/templates/organizations/index.html:52
 #: baruwa/templates/settings/index.html:50
 #: baruwa/templates/status/audit.html:86 baruwa/templates/status/mailq.html:72
 msgid "Show items:"
-msgstr ""
+msgstr "Zobrazit položky:"
 
 #: baruwa/templates/accounts/index.html:98
-#: baruwa/templates/domains/index.html:97 baruwa/templates/lists/index.html:109
+#: baruwa/templates/domains/index.html:97
+#: baruwa/templates/lists/index.html:109
 #: baruwa/templates/messages/functions.html:212
 #: baruwa/templates/messages/searchresults.html:106
 #: baruwa/templates/organizations/index.html:54
 #: baruwa/templates/settings/index.html:52
 #: baruwa/templates/status/audit.html:88 baruwa/templates/status/mailq.html:74
 msgid "per page"
-msgstr ""
+msgstr "na stránce"
 
 #: baruwa/templates/accounts/index.html:105
 #: baruwa/templates/domains/index.html:104
@@ -3375,167 +3425,167 @@ msgstr ""
 #: baruwa/templates/reports/relays.html:45
 #: baruwa/templates/status/audit.html:95 baruwa/templates/status/mailq.html:55
 msgid "No items found"
-msgstr ""
+msgstr "Nebyly nalezeny žádné položky."
 
 #: baruwa/templates/accounts/login.html:11
 #: baruwa/templates/accounts/login.html:61
-#, fuzzy
 msgid "Reset my password"
-msgstr "Heslo"
+msgstr "Obnovení hesla"
 
 #: baruwa/templates/accounts/login.html:36
 msgid "The username or password you entered is incorrect."
-msgstr ""
+msgstr "Uživatelské jméno nebo heslo není správné."
 
 #: baruwa/templates/accounts/login.html:40
 msgid "Password"
 msgstr "Heslo"
 
 #: baruwa/templates/accounts/login.html:52
-#, fuzzy
 msgid "Forgotten password ?"
-msgstr "Heslo"
+msgstr "Zapomněli jste heslo?"
 
 #: baruwa/templates/accounts/login.html:55
 msgid ""
-"Forgotten your password? Enter your e-mail address below, and we'll "
-"e-mail instructions on setting a new one."
+"Forgotten your password? Enter your e-mail address below, and we'll e-mail "
+"instructions on setting a new one."
 msgstr ""
+"Zapomněli jste své heslo? Zadejte svou e-mailovou adresu níže, a my si "
+"e-pokyny k nastavování nového."
 
 #: baruwa/templates/accounts/login.html:60
 msgid "Cancel"
-msgstr ""
+msgstr "Zrušit"
 
 #: baruwa/templates/accounts/new.html:3
 msgid "Create User account"
-msgstr ""
+msgstr "Vytvořit uživatelský účet"
 
 #: baruwa/templates/accounts/new.html:11
 msgid "Create account"
-msgstr ""
+msgstr "Vytvořit účet"
 
 #: baruwa/templates/accounts/new.html:20 baruwa/templates/accounts/new.html:24
 msgid "Accounts :: Create account"
-msgstr ""
+msgstr "Účty:: Vytvořit účet"
 
 #: baruwa/templates/accounts/pwchange.html:26
 #: baruwa/templates/accounts/pwchange.html:30
 #, python-format
 msgid "Accounts :: %(name)s :: Change password"
-msgstr ""
+msgstr "Účty:: %(name)s :: Změna hesla"
 
 #: baruwa/templates/accounts/searchresults.html:53
 #, python-format
 msgid "No accounts found matching: %s"
-msgstr ""
+msgstr "Odpovídající nalezeny žádné účty: %s"
 
 #: baruwa/templates/accounts/searchresults.html:65
 #: baruwa/templates/accounts/searchresults.html:69
 #, python-format
 msgid "Accounts :: Search results :: Showing page %(n)d of %(c)d pages."
-msgstr ""
+msgstr "Účty:: Výsledky hledání:: zobrazeno page %(n)d z %(c)d stránky."
 
 #: baruwa/templates/accounts/searchresults.html:65
 #: baruwa/templates/accounts/searchresults.html:69
 msgid "Accounts :: Search results"
-msgstr ""
+msgstr "Účty:: Výsledky hledání"
 
 #: baruwa/templates/accounts/searchresults.html:82
 #: baruwa/templates/domains/searchresults.html:88
 #, python-format
 msgid "Showing results %(i)d to %(l)d of %(count)d"
-msgstr ""
+msgstr "Zobrazuji výsledky %(i)d pro %(l)d z %(count)d"
 
 #: baruwa/templates/accounts/searchresults.html:84
 #: baruwa/templates/domains/searchresults.html:90
 #: baruwa/templates/messages/index.html:8
 msgid "Show:"
-msgstr ""
+msgstr "Zobrazit:"
 
 #: baruwa/templates/accounts/searchresults.html:86
 #: baruwa/templates/domains/searchresults.html:92
 msgid "results per page"
-msgstr ""
+msgstr "výsledků na stránce"
 
 #: baruwa/templates/accounts/searchresults.html:93
 #, python-format
 msgid "No items found matching: %s"
-msgstr ""
+msgstr "Nalezeny žádné položky odpovídající: %s"
 
 #: baruwa/templates/domains/addalias.html:11
 msgid "Add Domain Alias"
-msgstr ""
+msgstr "Přidat Alias domény"
 
 #: baruwa/templates/domains/addalias.html:17
 #: baruwa/templates/domains/addauth.html:17
 msgid "Clear"
-msgstr ""
+msgstr "Jasné"
 
 #: baruwa/templates/domains/addalias.html:18
 #: baruwa/templates/domains/addauth.html:18
 msgid "Add"
-msgstr ""
+msgstr "Přidat"
 
 #: baruwa/templates/domains/addalias.html:26
 #: baruwa/templates/domains/addalias.html:30
 #, python-format
 msgid "Domains :: %(name)s :: Add Domain Alias"
-msgstr ""
+msgstr "Domény:: %(name)s :: Přidat Alias domény"
 
 #: baruwa/templates/domains/addauth.html:11
 msgid "Add Authentication server"
-msgstr ""
+msgstr "Přidat ověřování serveru"
 
 #: baruwa/templates/domains/addauth.html:26
 #: baruwa/templates/domains/addauth.html:30
 #, python-format
 msgid "Domains :: %(name)s :: Add authentication settings"
-msgstr ""
+msgstr "Domény:: %(name)s :: Přidat nastavení ověřování"
 
 #: baruwa/templates/domains/adddestination.html:10
 msgid "Add a Destination server"
-msgstr ""
+msgstr "Přidat cílový server"
 
 #: baruwa/templates/domains/adddestination.html:18
 msgid "Add server"
-msgstr ""
+msgstr "Přidat server"
 
 #: baruwa/templates/domains/adddestination.html:26
 #: baruwa/templates/domains/adddestination.html:30
 msgid "Domains :: Add a Destination server"
-msgstr ""
+msgstr "Domény:: Přidat cílový server"
 
 #: baruwa/templates/domains/authsettings.html:13
 msgid "Add Auth Settings"
-msgstr ""
+msgstr "Přidat nastavení ověřování"
 
 #: baruwa/templates/domains/authsettings.html:19
 #: baruwa/templates/settings/section.html:27
 msgid "Save settings"
-msgstr ""
+msgstr "Uložit nastavení"
 
 #: baruwa/templates/domains/authsettings.html:27
 #: baruwa/templates/domains/authsettings.html:31
 #, python-format
 msgid "Domains :: %(name)s :: Authentication settings"
-msgstr ""
+msgstr "Domény:: %(name)s :: Nastavení ověřování"
 
 #: baruwa/templates/domains/confirmbulkdel.html:7
 #: baruwa/templates/domains/index.html:28
 #: baruwa/templates/domains/searchresults.html:25
 msgid "Domain Name"
-msgstr ""
+msgstr "Název domény"
 
 #: baruwa/templates/domains/confirmbulkdel.html:8
 #: baruwa/templates/domains/index.html:29
 #: baruwa/templates/domains/searchresults.html:26
 msgid "Organization"
-msgstr ""
+msgstr "Organizace"
 
 #: baruwa/templates/domains/confirmbulkdel.html:16
 #: baruwa/templates/domains/index.html:37
 msgid "No domains found"
-msgstr ""
+msgstr "Žádné domény nalezen"
 
 #: baruwa/templates/domains/confirmbulkdel.html:33
 #: baruwa/templates/domains/index.html:55
@@ -3543,238 +3593,237 @@ msgstr ""
 #: baruwa/templates/organizations/index.html:13
 #: baruwa/templates/organizations/index.html:28
 msgid "List accounts"
-msgstr ""
+msgstr "Seznam účty"
 
 #: baruwa/templates/domains/confirmbulkdel.html:54
 #: baruwa/templates/domains/confirmbulkdel.html:58
 msgid "Domains :: Confirm bulk domain deletion"
-msgstr ""
+msgstr "Domény:: Potvrzovat hromadné odstranění domény"
 
 #: baruwa/templates/domains/delete.html:9
 msgid "Delete Domain"
-msgstr ""
+msgstr "Odstranit doménu"
 
 #: baruwa/templates/domains/delete.html:16
 #: baruwa/templates/domains/detail.html:9
 msgid "Delete domain"
-msgstr ""
+msgstr "Odstranit doménu"
 
 #: baruwa/templates/domains/delete.html:26
 #: baruwa/templates/domains/delete.html:30
 msgid "Domains :: Delete Domain"
-msgstr ""
+msgstr ":: Odstranění domény"
 
 #: baruwa/templates/domains/deletealias.html:10
 msgid "Delete Domain Alias"
-msgstr ""
+msgstr "Odstranit Alias domény"
 
 #: baruwa/templates/domains/deletealias.html:24
 #: baruwa/templates/domains/deletealias.html:28
 #, python-format
 msgid "Domains :: %(name)s :: Delete Domain Alias"
-msgstr ""
+msgstr "Domény:: %(name)s :: Odstranit Alias domény"
 
 #: baruwa/templates/domains/deleteauth.html:10
 msgid "Delete Authentication server"
-msgstr ""
+msgstr "Odstranit ověřovací server"
 
 #: baruwa/templates/domains/deleteauth.html:24
 #: baruwa/templates/domains/deleteauth.html:28
 #, python-format
 msgid "Domains :: %(name)s :: Delete authentication settings"
-msgstr ""
+msgstr "Domény:: %(name)s :: Odstranění nastavení ověřování"
 
 #: baruwa/templates/domains/deletedestination.html:9
 msgid "Delete Destination server"
-msgstr ""
+msgstr "Odstranit cílový server"
 
 #: baruwa/templates/domains/deletedestination.html:16
 msgid "Delete server"
-msgstr ""
+msgstr "Odstranit server"
 
 #: baruwa/templates/domains/deletedestination.html:24
 #: baruwa/templates/domains/deletedestination.html:28
 msgid "Domains :: Delete Destination server"
-msgstr ""
+msgstr "Domény:: Odstranit cílový server"
 
 #: baruwa/templates/domains/detail.html:8
 msgid "Edit domain"
-msgstr ""
+msgstr "Editovat domény"
 
 #: baruwa/templates/domains/detail.html:16
 msgid "Domain information"
-msgstr ""
+msgstr "Informace o doméně"
 
 #: baruwa/templates/domains/detail.html:37
 msgid "Owners"
-msgstr ""
+msgstr "Vlastníci"
 
 #: baruwa/templates/domains/detail.html:60
 msgid "What to do with Spam"
-msgstr ""
+msgstr "Co dělat s nevyžádanou poštou"
 
 #: baruwa/templates/domains/detail.html:68
 msgid "What to do with High Spam"
-msgstr ""
+msgstr "Co dělat s vysokým Spam"
 
 #: baruwa/templates/domains/detail.html:76
 msgid "SMTP recipient checks"
-msgstr ""
+msgstr "SMTP příjemce kontroly"
 
 #: baruwa/templates/domains/detail.html:84
 msgid "LDAP recipient checks"
-msgstr ""
+msgstr "Kontroly příjemců LDAP"
 
 #: baruwa/templates/domains/detail.html:92
 msgid "Spam Checks"
-msgstr ""
+msgstr "Spam kontrola"
 
 #: baruwa/templates/domains/detail.html:100
 msgid "Virus Checks"
-msgstr ""
+msgstr "Virus kontroly"
 
 #: baruwa/templates/domains/detail.html:148
 msgid "Send summary reports"
-msgstr ""
+msgstr "Souhrnné zprávy Neodesílat"
 
 #: baruwa/templates/domains/detail.html:156
 msgid "Domain Aliases"
-msgstr ""
+msgstr "Aliasy domén"
 
 #: baruwa/templates/domains/detail.html:180
 msgid "No domain aliases configured"
-msgstr ""
+msgstr "Žádné aliasy domény nakonfigurován"
 
 #: baruwa/templates/domains/detail.html:185
 msgid "Delivery Servers"
-msgstr ""
+msgstr "Dodávky serverů"
 
 #: baruwa/templates/domains/detail.html:197
 msgid "Test"
-msgstr ""
+msgstr "Test"
 
 #: baruwa/templates/domains/detail.html:209
 msgid "No delivery servers configured"
-msgstr ""
+msgstr "Žádné dodávky servery nakonfigurované"
 
 #: baruwa/templates/domains/detail.html:214
 msgid "Authentication Servers"
-msgstr ""
+msgstr "Ověřovací servery"
 
 #: baruwa/templates/domains/detail.html:244
 msgid "No authentication servers configured"
-msgstr ""
+msgstr "Žádné ověřovací servery nakonfigurované"
 
 #: baruwa/templates/domains/detail.html:252
 #: baruwa/templates/domains/detail.html:256
 #, python-format
 msgid "Domains :: %s"
-msgstr ""
+msgstr "Domény:: %s"
 
 #: baruwa/templates/domains/edit.html:9
 msgid "Edit Domain"
-msgstr ""
+msgstr "Editovat domény"
 
 #: baruwa/templates/domains/edit.html:16
 msgid "Update domain"
-msgstr ""
+msgstr "Aktualizace domény"
 
 #: baruwa/templates/domains/edit.html:26 baruwa/templates/domains/edit.html:30
 msgid "Domains :: Edit Domain"
-msgstr ""
+msgstr "Domény:: Doména Edit"
 
 #: baruwa/templates/domains/editalias.html:10
 msgid "Edit Domain Alias"
-msgstr ""
+msgstr "Upravit Alias domény"
 
 #: baruwa/templates/domains/editalias.html:24
 #: baruwa/templates/domains/editalias.html:28
 #, python-format
 msgid "Domains :: %(name)s :: Edit Domain Alias"
-msgstr ""
+msgstr "Domény:: %(name)s :: Alias domény editovat"
 
 #: baruwa/templates/domains/editauth.html:10
 msgid "Update Authentication server"
-msgstr ""
+msgstr "Aktualizace ověřování serveru"
 
 #: baruwa/templates/domains/editauth.html:24
 #: baruwa/templates/domains/editauth.html:28
 #, python-format
 msgid "Domains :: %(name)s :: Update authentication settings"
-msgstr ""
+msgstr "Domény:: %(name)s :: Aktualizovat nastavení ověřování"
 
 #: baruwa/templates/domains/editdestination.html:9
 msgid "Edit Destination server"
-msgstr ""
+msgstr "Editovat cílový server"
 
 #: baruwa/templates/domains/editdestination.html:16
 #: baruwa/templates/settings/scanner.html:37
 msgid "Update server"
-msgstr ""
+msgstr "Update server"
 
 #: baruwa/templates/domains/editdestination.html:24
 #: baruwa/templates/domains/editdestination.html:28
 msgid "Domains :: Edit Destination server"
-msgstr ""
+msgstr "Domény:: Editovat cílový server"
 
 #: baruwa/templates/domains/exportstatus.html:3
 msgid "Domains Export Status"
-msgstr ""
+msgstr "Stav domény exportu"
 
 #: baruwa/templates/domains/exportstatus.html:18
 msgid "The request is being processed."
-msgstr ""
+msgstr "Požadavek je zpracováván."
 
 #: baruwa/templates/domains/exportstatus.html:31
 #: baruwa/templates/domains/exportstatus.html:34
 msgid "Domains :: export status"
-msgstr ""
+msgstr "Domény:: stav exportu"
 
 #: baruwa/templates/domains/index.html:3
 msgid "Export Domains"
-msgstr ""
+msgstr "Exportovat domén"
 
 #: baruwa/templates/domains/index.html:57
-#, fuzzy
 msgid "settings"
-msgstr "Nastavení"
+msgstr "nastavení"
 
 #: baruwa/templates/domains/index.html:74
 #: baruwa/templates/domains/index.html:82
 #, python-format
 msgid "Domains :: Showing page %(page)d of %(count)d page."
 msgid_plural "Domains :: Showing page %(page)d of %(count)d pages."
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Domény:: Zobrazení stránky %(page)d z %(count)d stránka."
+msgstr[1] "Domény:: Zobrazení stránky %(page)d z %(count)d stránky."
+msgstr[2] "Domény:: Zobrazení stránky %(page)d z %(count)d stránky."
 
 #: baruwa/templates/domains/index.html:76
 #: baruwa/templates/domains/index.html:84
 msgid "Domains ::"
-msgstr ""
+msgstr "Domény::"
 
 #: baruwa/templates/domains/new.html:3
 msgid "Add a Domain"
-msgstr ""
+msgstr "Přidat doménu"
 
 #: baruwa/templates/domains/new.html:11
 msgid "Add Domain"
-msgstr ""
+msgstr "Přidat doménu"
 
 #: baruwa/templates/domains/new.html:19 baruwa/templates/domains/new.html:23
 msgid "Domains :: Add a Domain"
-msgstr ""
+msgstr "Domény:: Přidat doménu"
 
 #: baruwa/templates/domains/rulesets.html:2
 #: baruwa/templates/domains/rulesets.html:6
 #, python-format
 msgid "Domains :: %(name)s :: Rulesets"
-msgstr ""
+msgstr "Domény:: %(name)s :: LARPu"
 
 #: baruwa/templates/domains/searchresults.html:34
 #, python-format
 msgid "No domains found matching: %s"
-msgstr ""
+msgstr "Žádné domény nalezen odpovídající: %s"
 
 #: baruwa/templates/domains/searchresults.html:71
 #: baruwa/templates/domains/searchresults.html:75
@@ -3783,247 +3832,281 @@ msgid ""
 "Domains :: Search results :: %(q)s :: Showing page %(page)d of %(count)d "
 "pages."
 msgstr ""
+"Domény:: Výsledky hledání:: %(q)s :: Page zobrazeno %(page)d z %(count)d "
+"stránky."
 
 #: baruwa/templates/domains/searchresults.html:71
 #: baruwa/templates/domains/searchresults.html:75
 #, python-format
 msgid "Domains :: Search results :: %s"
-msgstr ""
+msgstr "Domény:: Výsledky hledání:: %s"
 
 #: baruwa/templates/domains/testdestination.html:4
 msgid "Testing Destination server connectivity"
-msgstr ""
+msgstr "Testování připojení cílového serveru"
 
 #: baruwa/templates/domains/testdestination.html:16
 #: baruwa/templates/domains/testdestination.html:20
 #, python-format
 msgid "Settings :: Test Destination server :: %s"
-msgstr ""
+msgstr "Nastavení:: Test cílový server:: %s"
 
 #: baruwa/templates/email/quarantine.html:59
-#, fuzzy
 msgid "Spam Report"
-msgstr "Baruwa e-mailové hlášení"
+msgstr "Zpráva spam"
 
 #: baruwa/templates/email/quarantine.html:88
 msgid "Policy Blocked Report"
-msgstr ""
+msgstr "Politika blokovány zprávy"
 
 #: baruwa/templates/email/quarantine.html:110
 msgid "Request release"
-msgstr ""
+msgstr "Žádost o vydání"
 
 #: baruwa/templates/forms/ajaxformbase.html:3
 #: baruwa/templates/forms/base.html:3
 #: baruwa/templates/forms/disabled.base.html:3
 #, python-format
 msgid "Form validation failed due to: %s"
-msgstr ""
+msgstr "Formulář ověření se nezdařilo kvůli: %s"
 
 #: baruwa/templates/general/error.html:10
 #, python-format
 msgid "Error Occured: %s"
-msgstr ""
+msgstr "Došlo k chybě: %s"
 
 #: baruwa/templates/general/error.html:25
-#, fuzzy, python-format
+#, python-format
 msgid "ERROR: %s"
-msgstr "Hlášení"
+msgstr "Chyba: %s"
 
 #: baruwa/templates/general/error.html:28
 msgid ""
-"You do not have sufficient permissions to access this page. Please sign "
-"in using an account with sufficient permissions"
+"You do not have sufficient permissions to access this page. Please sign in "
+"using an account with sufficient permissions"
 msgstr ""
+"Nemáte dostatečná oprávnění pro přístup k této stránce. Přihlaste se pomocí "
+"účtu s dostatečnými oprávněními"
 
 #: baruwa/templates/general/error.html:30
 msgid ""
-"The system was unable to complete your request, the support team has been"
-" notified"
+"The system was unable to complete your request, the support team has been "
+"notified"
 msgstr ""
+"Systém nebyl schopen dokončit váš požadavek, tým podpory bylo oznámeno"
 
 #: baruwa/templates/includes/search.html:9 baruwa/templates/lists/index.html:6
 #: baruwa/templates/messages/functions.html:300
 #, python-format
 msgid "About %(n)s results (%(t)s seconds)"
+msgstr "O %(n)s výsledky (%(t)s sekund)"
+
+#: baruwa/templates/includes/search.html:15
+#: baruwa/templates/messages/functions.html:306
+#: baruwa/templates/messages/search.html:7
+#, fuzzy
+msgid "Search"
+msgstr "Seznam hledání"
+
+#: baruwa/templates/invite/index.html:31
+msgid "Baruwa hosted Beta registration"
+msgstr "Baruwa hostil Beta registrace"
+
+#: baruwa/templates/invite/index.html:38
+msgid "Registration"
+msgstr "Registrace"
+
+#: baruwa/templates/invite/index.html:46
+msgid "Register"
+msgstr "Registrace"
+
+#: baruwa/templates/invite/thankyou.html:25
+msgid "Thank you."
+msgstr "Děkuju."
+
+#: baruwa/templates/invite/thankyou.html:27
+msgid ""
+"Your registration request is being reviewed, you will be notified when it is"
+" approved."
 msgstr ""
+"Váš požadavek na registraci se přezkoumává, budete upozorněni při schválení."
 
 #: baruwa/templates/lists/add.html:4
 msgid "Add Sender to a list"
-msgstr ""
+msgstr "Přidat odesílatele do seznamu"
 
 #: baruwa/templates/lists/add.html:12
-#, fuzzy
 msgid "Use IP address"
-msgstr "E-mailová adresa"
+msgstr "Použít IP adresu"
 
 #: baruwa/templates/lists/add.html:13
 msgid "Use Domain"
-msgstr ""
+msgstr "Používat doménu"
 
 #: baruwa/templates/lists/add.html:15 baruwa/templates/lists/add.html:32
 msgid "Add to list"
-msgstr ""
+msgstr "Přidat do seznamu"
 
 #: baruwa/templates/lists/add.html:24
 msgid "Add sender to a list"
-msgstr ""
+msgstr "Přidat odesílatele do seznamu"
 
 #: baruwa/templates/lists/add.html:40
 msgid "Adding to list"
-msgstr ""
+msgstr "Přidání do seznamu"
 
 #: baruwa/templates/lists/add.html:44
 msgid "Adding to Lists"
-msgstr ""
+msgstr "Přidání do seznamu"
 
 #: baruwa/templates/lists/delete.html:6
 msgid "Delete sender to a list"
-msgstr ""
+msgstr "Odstranit odesílatele do seznamu"
 
 #: baruwa/templates/lists/delete.html:15
 msgid "Close"
-msgstr ""
+msgstr "Zavřít"
 
 #: baruwa/templates/lists/delete.html:22 baruwa/templates/lists/delete.html:29
 msgid "Delete from list"
-msgstr ""
+msgstr "Odstranit ze seznamu"
 
 #: baruwa/templates/lists/delete.html:33
 msgid "Delete from List"
-msgstr ""
+msgstr "Odstranit ze seznamu"
 
 #: baruwa/templates/lists/index.html:26
 #: baruwa/templates/reports/piereport.html:24
 #: baruwa/templates/reports/relays.html:24
 msgid "#"
-msgstr ""
+msgstr "#"
 
 #: baruwa/templates/lists/index.html:80
 msgid "List management"
-msgstr ""
+msgstr "Správa seznamu"
 
 #: baruwa/templates/lists/index.html:85
 #, python-format
 msgid "Lists :: Approved senders :: Showing page %(page)d of %(count)d pages."
 msgstr ""
+"Seznamy:: Schválený odesílatel:: zobrazeno page %(page)d z %(count)d "
+"stránky."
 
 #: baruwa/templates/lists/index.html:87
 msgid "Lists :: Approved senders"
-msgstr ""
+msgstr "Seznamy:: Schválený odesílatel"
 
 #: baruwa/templates/lists/index.html:91
 #, python-format
 msgid "Lists :: Banned senders :: Showing page %(page)d of %(count)d pages."
 msgstr ""
+"Seznamy:: Zakázaných odesílatelů:: zobrazeno page %(page)d z %(count)d "
+"stránky."
 
 #: baruwa/templates/lists/index.html:93
 msgid "Lists :: Banned senders"
-msgstr ""
+msgstr "Seznamy:: Zakázaných odesílatelů"
 
 #: baruwa/templates/messages/archive.html:3
 msgid "Apply filters"
-msgstr ""
+msgstr "Použít filtry"
 
 #: baruwa/templates/messages/archive.html:4
 #: baruwa/templates/messages/listing.html:4
 #: baruwa/templates/messages/quarantine.html:6
 #: baruwa/templates/messages/searchresults.html:3
 msgid "Show applied filters"
-msgstr ""
+msgstr "Zobrazit použité filtry"
 
 #: baruwa/templates/messages/archive.html:28
 #: baruwa/templates/messages/archive.html:39
 #, python-format
 msgid "Messages :: Archive :: Showing page %(page)d of %(count)d pages."
-msgstr ""
+msgstr "Zprávy:: Archiv:: zobrazeno page %(page)d z %(count)d stránky."
 
 #: baruwa/templates/messages/archive.html:30
 #: baruwa/templates/messages/listing.html:39
 #: baruwa/templates/messages/quarantine.html:62
 msgid "Filters"
-msgstr ""
+msgstr "Filtry"
 
 #: baruwa/templates/messages/archive.html:30
 #: baruwa/templates/messages/listing.html:39
 #: baruwa/templates/messages/quarantine.html:62
 msgid "have been applied"
-msgstr ""
+msgstr "VVV"
 
 #: baruwa/templates/messages/archive.html:33
 #: baruwa/templates/messages/archive.html:41
 msgid "Messages :: Archive"
-msgstr ""
+msgstr "Zprávy:: archiv"
 
 #: baruwa/templates/messages/autorelease.html:11
 #: baruwa/templates/messages/autorelease.html:26
-#, fuzzy
 msgid "Auto Quarantine release result:"
-msgstr "Baruwa e-mailové hlášení"
+msgstr "Auto karantény vydání výsledek:"
 
 #: baruwa/templates/messages/autorelease.html:29
 msgid "Passed"
-msgstr ""
+msgstr "Prošel"
 
 #: baruwa/templates/messages/autorelease.html:29
-#, fuzzy
 msgid "Message released"
-msgstr "Zprávy"
+msgstr "Zpráva vydána"
 
 #: baruwa/templates/messages/autorelease.html:31
 msgid "Failed"
-msgstr ""
+msgstr "Selhal"
 
 #: baruwa/templates/messages/autorelease.html:31
-#, fuzzy
 msgid "Message not released"
-msgstr "Zprávy"
+msgstr "Zpráva není uvolněna"
 
 #: baruwa/templates/messages/autorelease.html:39
 #, python-format
 msgid "Message with Message-ID: %s released from quarantine to: %s"
-msgstr ""
+msgstr "Zpráva s Message-ID: %s propuštěn z karantény do: %s"
 
 #: baruwa/templates/messages/detail.html:4
 msgid "Add sender to list"
-msgstr ""
+msgstr "Přidat odesílatele do seznamu"
 
 #: baruwa/templates/messages/detail.html:6
 #: baruwa/templates/status/detail.html:6
 msgid "Preview message"
-msgstr ""
+msgstr "Náhled zprávy"
 
 #: baruwa/templates/messages/detail.html:7
 #: baruwa/templates/messages/preview.html:4
 msgid "Release message"
-msgstr ""
+msgstr "Zpráva Release"
 
 #: baruwa/templates/messages/detail.html:15
 #: baruwa/templates/status/detail.html:13
 msgid "Message Details"
-msgstr ""
+msgstr "Podrobnosti zprávy"
 
 #: baruwa/templates/messages/detail.html:35
 #: baruwa/templates/status/detail.html:21
 msgid "Received on"
-msgstr ""
+msgstr "Přijato na"
 
 #: baruwa/templates/messages/detail.html:39
 #: baruwa/templates/status/detail.html:45
 msgid "Received by"
-msgstr ""
+msgstr "Přijal"
 
 #: baruwa/templates/messages/detail.html:47
 msgid "Received via"
-msgstr ""
+msgstr "Získané prostřednictvím"
 
 #: baruwa/templates/messages/detail.html:53
 msgid "Hide hosts"
-msgstr ""
+msgstr "Skrýt hostitelé"
 
 #: baruwa/templates/messages/detail.html:53
 msgid "Show hosts"
-msgstr ""
+msgstr "Hostitelé show"
 
 #: baruwa/templates/messages/detail.html:58
 #: baruwa/templates/messages/functions.html:156
@@ -4032,72 +4115,71 @@ msgstr ""
 #: baruwa/templates/messages/searchresults.html:21
 #: baruwa/templates/status/detail.html:49
 msgid "Size"
-msgstr ""
+msgstr "Velikost"
 
 #: baruwa/templates/messages/detail.html:62
 msgid "Message Headers"
-msgstr ""
+msgstr "Záhlaví zpráv"
 
 #: baruwa/templates/messages/detail.html:68
 msgid "Hide headers"
-msgstr ""
+msgstr "Skrýt záhlaví"
 
 #: baruwa/templates/messages/detail.html:68
 msgid "Show headers"
-msgstr ""
+msgstr "Zobrazit záhlaví"
 
 #: baruwa/templates/messages/detail.html:73
 msgid "Quarantined"
-msgstr ""
+msgstr "Do karantény"
 
 #: baruwa/templates/messages/detail.html:81
 msgid "Prohibited File"
-msgstr ""
+msgstr "Zakázané soubor"
 
 #: baruwa/templates/messages/detail.html:85
 msgid "Other infection"
-msgstr ""
+msgstr "Jiné infekce"
 
 #: baruwa/templates/messages/detail.html:91
 msgid "Spam checks results"
-msgstr ""
+msgstr "Spam kontroluje výsledky"
 
 #: baruwa/templates/messages/detail.html:95
 msgid "Results"
-msgstr ""
+msgstr "Výsledky"
 
 #: baruwa/templates/messages/detail.html:98
-#, fuzzy
 msgid "Message Score"
-msgstr "Zprávy"
+msgstr "Zpráva skóre"
 
 #: baruwa/templates/messages/detail.html:102
 msgid "Identified as Spam"
-msgstr ""
+msgstr "Označen jako Spam"
 
 #: baruwa/templates/messages/detail.html:106
 msgid "Definite Spam"
-msgstr ""
+msgstr "Definitivní Spam"
 
 #: baruwa/templates/messages/detail.html:110
 msgid "Sender in RBL"
-msgstr ""
+msgstr "Odesílatel v RBL"
 
 #: baruwa/templates/messages/detail.html:118
 msgid "Approved Sender"
-msgstr ""
+msgstr "Schválený odesílatel"
 
 #: baruwa/templates/messages/detail.html:122
 msgid "Blocked Sender"
-msgstr ""
+msgstr "Blokovaný odesílatel"
 
 #: baruwa/templates/messages/detail.html:126
 msgid "Bayesian Auto Learned"
-msgstr ""
+msgstr "Bayesian Auto naučil"
 
 #: baruwa/templates/messages/detail.html:131
 msgid "Rules matched"
-msgstr ""
+msgstr "Pravidla odpovídající"
 
 #: baruwa/templates/messages/detail.html:133
 #: baruwa/templates/messages/functions.html:117
@@ -4108,50 +4190,49 @@ msgstr ""
 #: baruwa/templates/messages/searchresults.html:22
 #: baruwa/templates/reports/barreport.html:27
 msgid "Score"
-msgstr ""
+msgstr "Skóre"
 
 #: baruwa/templates/messages/detail.html:134
 msgid "Rule name"
-msgstr ""
+msgstr "Název pravidla"
 
 #: baruwa/templates/messages/detail.html:135
 msgid "Rule description"
-msgstr ""
+msgstr "Popis pravidla"
 
 #: baruwa/templates/messages/detail.html:171
 msgid "Delivery information"
-msgstr ""
+msgstr "Informace o dodávce"
 
 #: baruwa/templates/messages/detail.html:177
-#, fuzzy
 msgid "Message"
-msgstr "Zprávy"
+msgstr "Zpráva"
 
 #: baruwa/templates/messages/detail.html:184
 msgid "Message is quarantined"
-msgstr ""
+msgstr "Zpráva je v karanténě"
 
 #: baruwa/templates/messages/detail.html:186
 msgid "No delivery status information available"
-msgstr ""
+msgstr "Žádné dodávky stavové informace k dispozici"
 
 #: baruwa/templates/messages/detail.html:193
 msgid "Ok"
-msgstr ""
+msgstr "Ok"
 
 #: baruwa/templates/messages/detail.html:193
 msgid "Fail"
-msgstr ""
+msgstr "Selhání"
 
 #: baruwa/templates/messages/detail.html:204
 #, python-format
 msgid "Showing message :: %(i)s"
-msgstr ""
+msgstr "Zobrazeno zpráva:: %(i)s"
 
 #: baruwa/templates/messages/functions.html:76
 #: baruwa/templates/messages/index.html:32
 msgid "No messages found"
-msgstr ""
+msgstr "Žádné zprávy"
 
 #: baruwa/templates/messages/functions.html:96
 #: baruwa/templates/messages/functions.html:98
@@ -4160,7 +4241,7 @@ msgstr ""
 #: baruwa/templates/messages/index.html:21
 #: baruwa/templates/messages/searchresults.html:18
 msgid "From"
-msgstr ""
+msgstr "Od"
 
 #: baruwa/templates/messages/functions.html:103
 #: baruwa/templates/messages/functions.html:105
@@ -4169,17 +4250,17 @@ msgstr ""
 #: baruwa/templates/messages/index.html:22
 #: baruwa/templates/messages/searchresults.html:19
 msgid "To"
-msgstr ""
+msgstr "Do"
 
 #: baruwa/templates/messages/index.html:10
 msgid "items per page"
-msgstr ""
+msgstr "položek na stránku"
 
 #: baruwa/templates/messages/index.html:96
 #: baruwa/templates/messages/index.html:100
 #, python-format
 msgid "Messages :: Showing the %s most recent messages"
-msgstr ""
+msgstr "Zprávy:: Zobrazeno %s nejnovější zprávy"
 
 #: baruwa/templates/messages/listing.html:3
 #: baruwa/templates/messages/quarantine.html:5
@@ -4188,7 +4269,7 @@ msgstr ""
 #: baruwa/templates/reports/piereport.html:3
 #: baruwa/templates/reports/relays.html:3
 msgid "Apply Filters"
-msgstr ""
+msgstr "Použít filtry"
 
 #: baruwa/templates/messages/listing.html:34
 #: baruwa/templates/messages/listing.html:45
@@ -4197,130 +4278,135 @@ msgid ""
 "Messages :: Full message listing :: Showing page %(page)d of %(count)d "
 "pages."
 msgstr ""
+"Zprávy:: Kompletní výpis zpráv:: zobrazeno page %(page)d z %(count)d "
+"stránky."
 
 #: baruwa/templates/messages/listing.html:36
 #: baruwa/templates/messages/listing.html:47
 msgid "Messages :: Full message listing"
-msgstr ""
+msgstr "Zpráv:: Celá zpráva seznam"
 
 #: baruwa/templates/messages/preview.html:5
 #: baruwa/templates/status/preview.html:6
 msgid "Return to message"
-msgstr ""
+msgstr "Návrat do zprávy"
 
 #: baruwa/templates/messages/preview.html:13
 #: baruwa/templates/status/preview.html:14
 msgid "Message headers"
-msgstr ""
+msgstr "Záhlaví zpráv"
 
 #: baruwa/templates/messages/preview.html:24
 #: baruwa/templates/status/preview.html:25
 msgid "Attachments"
-msgstr ""
+msgstr "Přílohy"
 
 #: baruwa/templates/messages/preview.html:34
 #: baruwa/templates/status/preview.html:35
 msgid "Message content"
-msgstr ""
+msgstr "Obsah zprávy"
 
 #: baruwa/templates/messages/preview.html:47
 #, python-format
 msgid "Message: %(msgid)s could not be previewed"
-msgstr ""
+msgstr "Zpráva: %(msgid)s Náhled nelze zobrazit"
 
 #: baruwa/templates/messages/preview.html:53
 #: baruwa/templates/messages/preview.html:57
 #, python-format
 msgid "Messages :: Previewing message : %(msgid)s"
-msgstr ""
+msgstr "Zprávy:: Previewing zpráva: %(msgid)s"
 
 #: baruwa/templates/messages/quarantine.html:4
 #: baruwa/templates/messages/taskstatus.html:5
-msgid "Non Spam"
-msgstr ""
+#, fuzzy
+msgid "Not Spam"
+msgstr "Log Spam"
 
 #: baruwa/templates/messages/quarantine.html:27
 #: baruwa/templates/status/detail.html:69
-#: baruwa/templates/status/detail.html:75 baruwa/templates/status/mailq.html:23
+#: baruwa/templates/status/detail.html:75
+#: baruwa/templates/status/mailq.html:23
 msgid "Process"
-msgstr ""
+msgstr "Proces"
 
 #: baruwa/templates/messages/quarantine.html:57
 #: baruwa/templates/messages/quarantine.html:68
 #, python-format
 msgid "Messages :: Quarantine :: Showing page %(page)d of %(count)d pages."
-msgstr ""
+msgstr "Zprávy:: Karantény:: zobrazeno page %(page)d z %(count)d stránky."
 
 #: baruwa/templates/messages/quarantine.html:59
 #: baruwa/templates/messages/quarantine.html:70
 msgid "Messages :: Quarantine"
-msgstr ""
+msgstr "Zprávy:: karantény"
 
 #: baruwa/templates/messages/searchresults.html:88
 #, python-format
 msgid "No messages found matching search query: %(q)s !"
-msgstr ""
+msgstr "Žádné zprávy nalezena odpovídající vyhledávací dotaz: %(q)s!"
 
 #: baruwa/templates/messages/searchresults.html:154
 #: baruwa/templates/messages/searchresults.html:158
 #, python-format
 msgid "Messages :: Search results :: %(q)s"
-msgstr ""
+msgstr "Zprávy:: Výsledky hledání:: %(q)s"
 
 #: baruwa/templates/messages/taskstatus.html:15
-#, fuzzy
 msgid "Message-ID"
-msgstr "Zprávy"
+msgstr "ID zprávy"
 
 #: baruwa/templates/messages/taskstatus.html:46
 msgid "The request is being processed. Current status: "
-msgstr ""
+msgstr "Požadavek je zpracováván. Aktuální stav: "
 
 #: baruwa/templates/messages/taskstatus.html:67
 #: baruwa/templates/messages/taskstatus.html:70
 msgid "Messages :: Quarantine :: Bulk processing status"
-msgstr ""
+msgstr "Zprávy:: Karantény:: hromadné zpracování stavu"
 
 #: baruwa/templates/messages/includes/delete.html:2
 #, python-format
 msgid "The message id: %(id)s has been deleted from the quarantine"
-msgstr ""
+msgstr "Id zprávy: %(id)s byla odstraněna z karantény"
 
 #: baruwa/templates/messages/includes/delete.html:4
 #, python-format
 msgid "The message id: %(id)s could not be deleted: %(error_msg)s"
-msgstr ""
+msgstr "Id zprávy: %(id)s nelze odstranit: %(error_msg)s"
 
 #: baruwa/templates/messages/includes/released.html:2
 #, python-format
 msgid "The message id: %(id)s has been released"
-msgstr ""
+msgstr "Id zprávy: %(id)s byla uvolněna"
 
 #: baruwa/templates/messages/includes/released.html:4
 #, python-format
 msgid ""
-"The message id: %(id)s could not be released: %(error_msg)s, contact your"
-" email admin for assistance."
+"The message id: %(id)s could not be released: %(error_msg)s, contact your "
+"email admin for assistance."
 msgstr ""
+"Id zprávy: %(id)s nelze uvolnit: %(error_msg)s, požádejte o pomoc správce "
+"e-mailu."
 
 #: baruwa/templates/messages/includes/salearn.html:2
 #, python-format
 msgid "The message id: %(id)s processed by the bayesian engine"
-msgstr ""
+msgstr "Id zprávy: %(id)s zpracováno modulem bayesian"
 
 #: baruwa/templates/messages/includes/salearn.html:4
 #, python-format
 msgid "The message id: %(id)s not learned: %(msg)s"
-msgstr ""
+msgstr "Id zprávy: %(id)s nenaučili: %(msg)s"
 
 #: baruwa/templates/organizations/add.html:3
 msgid "Add an organization"
-msgstr ""
+msgstr "Přidání organizace"
 
 #: baruwa/templates/organizations/add.html:18
 #: baruwa/templates/organizations/add.html:22
 msgid "Organizations :: Add an organization"
-msgstr ""
+msgstr "Organizace:: Přidat organizace"
 
 #: baruwa/templates/organizations/addrelay.html:3
 #: baruwa/templates/organizations/delete.html:3
@@ -4329,290 +4415,288 @@ msgstr ""
 #: baruwa/templates/organizations/editrelay.html:3
 #: baruwa/templates/organizations/importdomains.html:3
 msgid "Organization details"
-msgstr ""
+msgstr "Podrobnosti o organizaci"
 
 #: baruwa/templates/organizations/addrelay.html:9
 msgid "Add outbound settings"
-msgstr ""
+msgstr "Výstupní nastavení"
 
 #: baruwa/templates/organizations/addrelay.html:17
 msgid "Add settings"
-msgstr ""
+msgstr "Nastavení"
 
 #: baruwa/templates/organizations/addrelay.html:25
 #: baruwa/templates/organizations/addrelay.html:29
 #, python-format
 msgid "Organizations :: %(name)s :: Add outbound settings"
-msgstr ""
+msgstr "Organizace:: %(name)s :: Přidat výstupní nastavení"
 
 #: baruwa/templates/organizations/delete.html:9
 #: baruwa/templates/organizations/delete.html:16
 msgid "Delete organization"
-msgstr ""
+msgstr "Odstranit organizace"
 
 #: baruwa/templates/organizations/delete.html:24
 #: baruwa/templates/organizations/delete.html:28
 msgid "Settings :: Delete organization"
-msgstr ""
+msgstr "Nastavení:: Odstranit organizace"
 
 #: baruwa/templates/organizations/deleterelay.html:9
 msgid "Delete outbound settings"
-msgstr ""
+msgstr "Odstranit nastavení odchozí"
 
 #: baruwa/templates/organizations/deleterelay.html:17
 msgid "Delete settings"
-msgstr ""
+msgstr "Odstranit nastavení"
 
 #: baruwa/templates/organizations/deleterelay.html:25
 #: baruwa/templates/organizations/deleterelay.html:29
 #, python-format
 msgid "Organizations :: Delete outbound settings :: %(name)s"
-msgstr ""
+msgstr "Organizace:: Odstranit nastavení odchozí:: %(name)s"
 
 #: baruwa/templates/organizations/detail.html:3
-#, fuzzy
 msgid "Export accounts"
-msgstr "Účty"
+msgstr "Exportovat účty"
 
 #: baruwa/templates/organizations/detail.html:4
 #: baruwa/templates/organizations/importdomains.html:9
 #: baruwa/templates/organizations/index.html:15
 msgid "Import domains"
-msgstr ""
+msgstr "Importovat domén"
 
 #: baruwa/templates/organizations/detail.html:5
 msgid "Add relay settings"
-msgstr ""
+msgstr "Přidat nastavení přenosu"
 
 #: baruwa/templates/organizations/detail.html:14
 msgid "Organization information"
-msgstr ""
+msgstr "Informace o organizaci"
 
 #: baruwa/templates/organizations/detail.html:27
 msgid "Number of Domains"
-msgstr ""
+msgstr "Počet domén"
 
 #: baruwa/templates/organizations/detail.html:35
 msgid "List Domains"
-msgstr ""
+msgstr "Seznam domén"
 
 #: baruwa/templates/organizations/detail.html:38
 msgid "Organization domains"
-msgstr ""
+msgstr "Organizace domény"
 
 #: baruwa/templates/organizations/detail.html:43
 msgid "Organization Admins"
-msgstr ""
+msgstr "Organizace Admins"
 
 #: baruwa/templates/organizations/detail.html:55
 msgid "Outbound relay settings"
-msgstr ""
+msgstr "Nastavení výstupního relé"
 
 #: baruwa/templates/organizations/detail.html:61
 #, python-format
 msgid "Relay Host: %(name)s"
-msgstr ""
+msgstr "Relay Host: %(name)s"
 
 #: baruwa/templates/organizations/detail.html:63
 #, python-format
 msgid "SMTP-AUTH: %(name)s"
-msgstr ""
+msgstr "SMTP AUTORIZACE: %(name)s"
 
 #: baruwa/templates/organizations/detail.html:79
 msgid "No outbound relay settings configured"
-msgstr ""
+msgstr "Žádné výstupní relé nastavení konfigurované"
 
 #: baruwa/templates/organizations/detail.html:85
 #: baruwa/templates/organizations/detail.html:89
 msgid "Organizations :: "
-msgstr ""
+msgstr "Organizace:: "
 
 #: baruwa/templates/organizations/edit.html:9
 msgid "Edit organization"
-msgstr ""
+msgstr "Editovat organizace"
 
 #: baruwa/templates/organizations/edit.html:16
 msgid "Update organization"
-msgstr ""
+msgstr "Aktualizovat organizace"
 
 #: baruwa/templates/organizations/edit.html:24
 #: baruwa/templates/organizations/edit.html:28
 msgid "Organizations :: Edit organization"
-msgstr ""
+msgstr "Organizace:: Edit organizace"
 
 #: baruwa/templates/organizations/editrelay.html:9
 msgid "Edit outbound settings"
-msgstr ""
+msgstr "Upravit nastavení odchozí"
 
 #: baruwa/templates/organizations/editrelay.html:17
 msgid "Update settings"
-msgstr ""
+msgstr "Aktualizovat nastavení"
 
 #: baruwa/templates/organizations/editrelay.html:25
 #: baruwa/templates/organizations/editrelay.html:29
 #, python-format
 msgid "Organizations :: Edit outbound settings :: %(name)s"
-msgstr ""
+msgstr "Organizace:: Editovat nastavení odchozí:: %(name)s"
 
 #: baruwa/templates/organizations/importdomains.html:23
 #: baruwa/templates/organizations/importdomains.html:27
 #, python-format
 msgid "Organizations :: %(org)s :: Import domains"
-msgstr ""
+msgstr "Organizace:: %(org)s :: Import domén"
 
 #: baruwa/templates/organizations/importstatus.html:59
 #: baruwa/templates/organizations/importstatus.html:62
 msgid "Organizations :: Domain import status"
-msgstr ""
+msgstr "Organizace:: Stav importu domény"
 
 #: baruwa/templates/organizations/index.html:12
 #: baruwa/templates/organizations/index.html:27
 msgid "List domains"
-msgstr ""
+msgstr "Seznam domén"
 
 #: baruwa/templates/organizations/index.html:14
 msgid "Add domain"
-msgstr ""
+msgstr "Přidat doménu"
 
 #: baruwa/templates/organizations/index.html:22
 msgid "No organizations found"
-msgstr ""
+msgstr "Žádná organizace nalezen"
 
 #: baruwa/templates/organizations/index.html:29
 msgid "Add domains"
-msgstr ""
+msgstr "Přidat domény"
 
 #: baruwa/templates/organizations/index.html:30
 msgid "import domains"
-msgstr ""
+msgstr "importovat domén"
 
 #: baruwa/templates/organizations/index.html:101
 #: baruwa/templates/organizations/index.html:106
 #, python-format
 msgid "Organizations :: Showing page %(page)d of %(count)d pages."
-msgstr ""
+msgstr "Organizace:: Zobrazení stránky %(page)d z %(count)d stránky."
 
 #: baruwa/templates/organizations/index.html:108
 msgid "Organizations ::"
-msgstr ""
+msgstr "Organizace::"
 
 #: baruwa/templates/reports/barreport.html:4
 #: baruwa/templates/reports/listing.html:4
 #: baruwa/templates/reports/piereport.html:4
 #: baruwa/templates/reports/relays.html:4
 msgid "Download PDF"
-msgstr ""
+msgstr "Stáhnout PDF"
 
 #: baruwa/templates/reports/barreport.html:5
 #: baruwa/templates/reports/listing.html:5
 #: baruwa/templates/reports/piereport.html:5
 #: baruwa/templates/reports/relays.html:5
 msgid "Download CSV"
-msgstr ""
+msgstr "Stáhnout CSV"
 
 #: baruwa/templates/reports/barreport.html:21
 msgid "Enable javascript to view graphs"
-msgstr ""
+msgstr "Povolit javascript pro zobrazení grafů"
 
 #: baruwa/templates/reports/barreport.html:46
 msgid "No items returned"
-msgstr ""
+msgstr "Žádné předměty vrácena"
 
 #: baruwa/templates/reports/barreport.html:59
 msgid "Download"
-msgstr ""
+msgstr "Stáhnout"
 
 #: baruwa/templates/reports/barreport.html:62
 #: baruwa/templates/reports/barreport.html:63
 #: baruwa/templates/reports/piereport.html:58
 #: baruwa/templates/reports/piereport.html:59
-#, fuzzy
 msgid "Reports :: "
-msgstr "Hlášení"
+msgstr "Sestavy:: "
 
 #: baruwa/templates/reports/form.html:3
 msgid "Add Filter"
-msgstr ""
+msgstr "Přidat filtr"
 
 #: baruwa/templates/reports/form.html:19
 msgid "Add filter"
-msgstr ""
+msgstr "Přidat filtr"
 
 #: baruwa/templates/reports/form.html:36
 msgid "Filters have been applied"
-msgstr ""
+msgstr "Byly použity filtry"
 
 #: baruwa/templates/reports/index.html:17
 msgid "Spam Score Distribution"
-msgstr ""
+msgstr "Spam skóre distribuce"
 
 #: baruwa/templates/reports/index.html:18
 msgid "Top Mail hosts"
-msgstr ""
+msgstr "Nejvyšší poštovní hostitelé"
 
 #: baruwa/templates/reports/index.html:35
 msgid "Statistics"
-msgstr ""
+msgstr "Statistiky"
 
 #: baruwa/templates/reports/index.html:39
 msgid "Message count"
-msgstr ""
+msgstr "Počet zpráv"
 
 #: baruwa/templates/reports/index.html:43
 msgid "Oldest message"
-msgstr ""
+msgstr "Nejstarší zpráva"
 
 #: baruwa/templates/reports/index.html:47
 msgid "Newest message"
-msgstr ""
+msgstr "Nejnovější zpráva"
 
 #: baruwa/templates/reports/index.html:53
 msgid "Active Filter(s)"
-msgstr ""
+msgstr "Aktivní filtry"
 
 #: baruwa/templates/reports/index.html:75
 msgid "No active filters at the moment"
-msgstr ""
+msgstr "V současné době žádné aktivní filtry"
 
 #: baruwa/templates/reports/index.html:82
 msgid "Saved Filter(s)"
-msgstr ""
+msgstr "Uložené filtry"
 
 #: baruwa/templates/reports/index.html:104
 msgid "No saved filters at the moment"
-msgstr ""
+msgstr "Žádné uložené filtry v současnosti"
 
 #: baruwa/templates/reports/listing.html:24
 msgid "Enable Javascript to view graphs"
-msgstr ""
+msgstr "Povolit Javascript pro zobrazení grafů"
 
 #: baruwa/templates/reports/listing.html:39
 msgid "Mail"
-msgstr ""
+msgstr "Pošta"
 
 #: baruwa/templates/reports/listing.html:42
 msgid "Virii"
-msgstr ""
+msgstr "Virii"
 
 #: baruwa/templates/reports/listing.html:45
 msgid "Virii %"
-msgstr ""
+msgstr "Virii %"
 
 #: baruwa/templates/reports/listing.html:51
 msgid "Spam %"
-msgstr ""
+msgstr "% Spamu"
 
 #: baruwa/templates/reports/listing.html:85
 msgid "No records found"
-msgstr ""
+msgstr "Nebyly nalezeny žádné záznamy"
 
 #: baruwa/templates/reports/relays.html:25
 msgid "IP address"
-msgstr ""
+msgstr "IP adresa"
 
 #: baruwa/templates/reports/relays.html:27
 msgid "Country"
-msgstr ""
+msgstr "Země"
 
 #: baruwa/templates/reports/relays.html:28
 msgid "Total"
@@ -4620,20 +4704,20 @@ msgstr "Celkem"
 
 #: baruwa/templates/reports/relays.html:62
 #: baruwa/templates/reports/relays.html:63
-#, fuzzy, python-format
+#, python-format
 msgid "Reports :: %(t)s"
-msgstr "Hlášení"
+msgstr "Zprávy:: %(t)s"
 
 #: baruwa/templates/settings/account_addsig.html:11
 #: baruwa/templates/settings/domain_addsig.html:12
 msgid "Add email signature"
-msgstr ""
+msgstr "Přidat e-mailový podpis"
 
 #: baruwa/templates/settings/account_addsig.html:34
 #: baruwa/templates/settings/domain_addsig.html:35
 #: baruwa/templates/settings/domain_sigs.html:7
 msgid "Add signature"
-msgstr ""
+msgstr "Přidat podpis"
 
 #: baruwa/templates/settings/account_addsig.html:42
 #: baruwa/templates/settings/account_addsig.html:46
@@ -4641,54 +4725,54 @@ msgstr ""
 #: baruwa/templates/settings/domain_addsig.html:47
 #, python-format
 msgid "Settings :: Add email signatures :: %s"
-msgstr ""
+msgstr "Nastavení:: Přidat email podpisy:: %s"
 
 #: baruwa/templates/settings/account_deletesig.html:11
 #: baruwa/templates/settings/domain_deletesig.html:12
 msgid "Delete email signature"
-msgstr ""
+msgstr "Odstranit podpis e-mailu"
 
 #: baruwa/templates/settings/account_deletesig.html:29
 #: baruwa/templates/settings/domain_deletesig.html:30
 msgid "Delete signature"
-msgstr ""
+msgstr "Odstranit podpis"
 
 #: baruwa/templates/settings/account_deletesig.html:37
 #: baruwa/templates/settings/account_deletesig.html:41
 #: baruwa/templates/settings/domain_deletesig.html:38
 #: baruwa/templates/settings/domain_deletesig.html:42
 msgid "Settings :: Delete email signatures"
-msgstr ""
+msgstr "Nastavení:: Smazat email podpisy"
 
 #: baruwa/templates/settings/account_editsig.html:11
 #: baruwa/templates/settings/domain_editsig.html:12
 msgid "Edit email signature"
-msgstr ""
+msgstr "Upravit podpis e-mailu"
 
 #: baruwa/templates/settings/account_editsig.html:29
 #: baruwa/templates/settings/domain_editsig.html:30
 msgid "Update signature"
-msgstr ""
+msgstr "Podpis aktualizovat"
 
 #: baruwa/templates/settings/account_editsig.html:37
 #: baruwa/templates/settings/account_editsig.html:41
 #: baruwa/templates/settings/domain_editsig.html:38
 #: baruwa/templates/settings/domain_editsig.html:42
 msgid "Settings :: Edit email signatures"
-msgstr ""
+msgstr "Nastavení:: Edit email podpisy"
 
 #: baruwa/templates/settings/addserver.html:3
 msgid "Add a scanning Node"
-msgstr ""
+msgstr "Přidat uzel, skenování"
 
 #: baruwa/templates/settings/addserver.html:11
 msgid "Add Node"
-msgstr ""
+msgstr "Přidat uzel"
 
 #: baruwa/templates/settings/addserver.html:18
 #: baruwa/templates/settings/addserver.html:22
 msgid "Settings :: Add a scanning Node"
-msgstr ""
+msgstr "Nastavení:: Přidat uzel, skenování"
 
 #: baruwa/templates/settings/deleteserver.html:3
 #: baruwa/templates/settings/deleteserver.html:33
@@ -4697,549 +4781,559 @@ msgstr ""
 #: baruwa/templates/status/bayes.html:3 baruwa/templates/status/mailq.html:6
 #: baruwa/templates/status/salint.html:3
 msgid "Node details"
-msgstr ""
+msgstr "Podrobnosti uzlu"
 
 #: baruwa/templates/settings/deleteserver.html:9
 msgid "Delete scanning Node"
-msgstr ""
+msgstr "Odstranit uzel skenování"
 
 #: baruwa/templates/settings/deleteserver.html:16
 msgid "Delete Node"
-msgstr ""
+msgstr "Odstranit uzel"
 
 #: baruwa/templates/settings/deleteserver.html:24
 #: baruwa/templates/settings/deleteserver.html:28
 msgid "Settings :: Delete scanning Node"
-msgstr ""
+msgstr "Nastavení:: Odstranit skenování uzel"
 
 #: baruwa/templates/settings/domain_dkim.html:7
 msgid "Regenerate DKIM keys"
-msgstr ""
+msgstr "Obnovit DKIM klíče"
 
 #: baruwa/templates/settings/domain_dkim.html:8
 msgid "Enable/Disable DKIM signing"
-msgstr ""
+msgstr "Povolit/zakázat DKIM podpis"
 
 #: baruwa/templates/settings/domain_dkim.html:16
-#, fuzzy
 msgid "Domain DKIM settings"
-msgstr "Nastavení"
+msgstr "DKIM nastavení domény"
 
 #: baruwa/templates/settings/domain_dkim.html:27
 #: baruwa/templates/settings/domain_dkim.html:38
 #, python-format
 msgid "Add the following DNS record to the %s DNS zone"
-msgstr ""
+msgstr "Přidat následující záznam DNS zóny DNS %s"
 
 #: baruwa/templates/settings/domain_dkim.html:30
 #: baruwa/templates/settings/domain_dkim.html:41
 msgid "DNS record"
-msgstr ""
+msgstr "Záznam DNS"
 
 #: baruwa/templates/settings/domain_dkim.html:49
 msgid "DKIM status"
-msgstr ""
+msgstr "DKIM status"
 
 #: baruwa/templates/settings/domain_dkim.html:54
 msgid "DKIM keys not yet configured:  "
-msgstr ""
+msgstr "DKIM klíče ještě není nakonfigurován:  "
 
 #: baruwa/templates/settings/domain_dkim.html:54
 msgid "Generate DKIM keys"
-msgstr ""
+msgstr "Generování klíčů DKIM"
 
 #: baruwa/templates/settings/domain_dkim.html:61
 #: baruwa/templates/settings/domain_dkim.html:65
 #, python-format
 msgid "Settings :: Domain DKIM settings :: %s"
-msgstr ""
+msgstr "Nastavení:: Doména DKIM nastavení:: %s"
 
 #: baruwa/templates/settings/domain_dkim_enable.html:4
 msgid "Domain DKIM"
-msgstr ""
+msgstr "Doména DKIM"
 
 #: baruwa/templates/settings/domain_dkim_enable.html:13
 msgid "Enable DKIM signing"
-msgstr ""
+msgstr "Povolit DKIM podpis"
 
 #: baruwa/templates/settings/domain_dkim_enable.html:28
 #: baruwa/templates/settings/domain_dkim_enable.html:32
 #, python-format
 msgid "Settings :: Enable DKIM signing :: %s"
-msgstr ""
+msgstr "Nastavení:: Umožňují DKIM podpis:: %s"
 
 #: baruwa/templates/settings/domain_settings.html:11
-#, fuzzy
 msgid "Domain settings"
-msgstr "Nastavení"
+msgstr "Nastavení domény"
 
 #: baruwa/templates/settings/domain_settings.html:16
 msgid "Signatures"
-msgstr ""
+msgstr "Podpisy"
 
 #: baruwa/templates/settings/domain_settings.html:17
 msgid "Rulesets"
-msgstr ""
+msgstr "Larpu"
 
 #: baruwa/templates/settings/domain_settings.html:24
 msgid "Add delivery server"
-msgstr ""
+msgstr "Přidat server dodávky"
 
 #: baruwa/templates/settings/domain_settings.html:25
 msgid "Add authentication settings"
-msgstr ""
+msgstr "Přidat nastavení ověřování"
 
 #: baruwa/templates/settings/domain_settings.html:26
-#, fuzzy
 msgid "Add Alias Domain"
-msgstr "E-mailová adresa"
+msgstr "Přidat aliasovou doménu"
 
 #: baruwa/templates/settings/domain_settings.html:27
 msgid "DKIM"
-msgstr ""
+msgstr "DKIM"
 
 #: baruwa/templates/settings/domain_settings.html:35
 #: baruwa/templates/settings/domain_settings.html:39
 #, python-format
 msgid "Settings :: Domain settings :: %s"
-msgstr ""
+msgstr "Nastavení:: Nastavení domény:: %s"
 
 #: baruwa/templates/settings/domain_sigs.html:15
 msgid "Domain email signatures"
-msgstr ""
+msgstr "Doména email podpisy"
 
 #: baruwa/templates/settings/domain_sigs.html:38
 msgid "No domain signatures configured"
-msgstr ""
+msgstr "Žádné podpisy doména nakonfigurována"
 
 #: baruwa/templates/settings/domain_sigs.html:45
 #: baruwa/templates/settings/domain_sigs.html:49
 #, python-format
 msgid "Settings :: Domain email signatures :: %s"
-msgstr ""
+msgstr "Nastavení:: Podpisy e-mailové domény:: %s"
 
 #: baruwa/templates/settings/editserver.html:9
 msgid "Edit scanning Node"
-msgstr ""
+msgstr "Editovat skenování uzel"
 
 #: baruwa/templates/settings/editserver.html:18
 msgid "Update Node"
-msgstr ""
+msgstr "Aktualizovat uzel"
 
 #: baruwa/templates/settings/editserver.html:25
 #: baruwa/templates/settings/editserver.html:29
 msgid "Settings :: Edit scanning Node"
-msgstr ""
+msgstr "Nastavení:: Editovat skenování uzel"
 
 #: baruwa/templates/settings/index.html:3
 msgid "List Search"
-msgstr ""
+msgstr "Seznam hledání"
 
 #: baruwa/templates/settings/index.html:23
 msgid "No scanning hosts found"
-msgstr ""
+msgstr "Žádné skenování hostitelé nalezena"
 
 #: baruwa/templates/settings/index.html:100
 #: baruwa/templates/settings/index.html:104
 #, python-format
 msgid "Settings :: Nodes :: Showing page %(page)d of %(count)d pages."
-msgstr ""
+msgstr "Nastavení:: Uzly:: zobrazeno page %(page)d z %(count)d stránky."
 
 #: baruwa/templates/settings/index.html:100
 #: baruwa/templates/settings/index.html:104
 msgid "Settings :: Nodes"
-msgstr ""
+msgstr "Nastavení:: uzlů"
 
 #: baruwa/templates/settings/scanner.html:3
 msgid "Configuration Settings"
-msgstr ""
+msgstr "Nastavení konfigurace"
 
 #: baruwa/templates/settings/scanner.html:28
 #: baruwa/templates/settings/scanner.html:32
 #, python-format
 msgid "Settings :: scanning server :: %(name)s"
-msgstr ""
+msgstr "Nastavení:: skenování server:: %(name)s"
 
 #: baruwa/templates/settings/section.html:4
 msgid "General"
-msgstr ""
+msgstr "Obecné"
 
 #: baruwa/templates/settings/section.html:5
-#, fuzzy
 msgid "Message Processing"
-msgstr "Zprávy"
+msgstr "Zpracování zpráv"
 
 #: baruwa/templates/settings/section.html:6
 msgid "Virus checks"
-msgstr ""
+msgstr "Virus kontroly"
 
 #: baruwa/templates/settings/section.html:7
 msgid "Content checks"
-msgstr ""
+msgstr "Obsah kontroly"
 
 #: baruwa/templates/settings/section.html:8
-#, fuzzy
 msgid "Reporting"
 msgstr "Hlášení"
 
 #: baruwa/templates/settings/section.html:9
 msgid "Notice"
-msgstr ""
+msgstr "Oznámení"
 
 #: baruwa/templates/settings/section.html:10
 msgid "Spam checks"
-msgstr ""
+msgstr "Spam kontrola"
 
 #: baruwa/templates/settings/section.html:11
-#, fuzzy
 msgid "Logging"
-msgstr "Přihlášení"
+msgstr "Protokolování"
 
 #: baruwa/templates/settings/section.html:37
 #: baruwa/templates/settings/section.html:41
 #, python-format
 msgid "Settings :: MailScanner :: %(section)s :: %(name)s"
-msgstr ""
+msgstr "Nastavení:: MailScanner:: %(section)s :: %(name)s"
 
 #: baruwa/templates/status/audit.html:4 baruwa/templates/status/audit.html:7
-#, fuzzy
 msgid "Export to CSV"
-msgstr "Hlášení"
+msgstr "Exportovat do formátu CSV"
 
 #: baruwa/templates/status/audit.html:5 baruwa/templates/status/audit.html:8
 msgid "Export to PDF"
-msgstr ""
+msgstr "Export do PDF"
 
 #: baruwa/templates/status/audit.html:31
 msgid "Category"
-msgstr ""
+msgstr "Kategorie"
 
 #: baruwa/templates/status/audit.html:37
 msgid "No audit logs found"
-msgstr ""
+msgstr "Nalezeno žádné záznamy auditu"
 
 #: baruwa/templates/status/audit.html:64 baruwa/templates/status/audit.html:71
 msgid "Status :: Audit log "
-msgstr ""
+msgstr "Status:: Protokol auditu "
 
 #: baruwa/templates/status/auditexportstatus.html:3
 msgid "Audit log Export Status"
-msgstr ""
+msgstr "Protokol auditu Export stav"
 
 #: baruwa/templates/status/auditexportstatus.html:11
 msgid "Download the file"
-msgstr ""
+msgstr "Stáhnout soubor"
 
 #: baruwa/templates/status/auditexportstatus.html:13
-#, python-format
-msgid "The Audit log export failed: %serrormsg"
-msgstr ""
+#, fuzzy, python-format
+msgid "The Audit log export failed: %s"
+msgstr "Export protokolu auditu se nezdařilo: % serrormsg"
 
 #: baruwa/templates/status/auditexportstatus.html:18
 msgid "The Audit log export is being processed."
-msgstr ""
+msgstr "Export protokolu auditu je zpracováván."
 
 #: baruwa/templates/status/auditexportstatus.html:31
 #: baruwa/templates/status/auditexportstatus.html:34
 msgid "Status :: Audit log :: export status"
-msgstr ""
+msgstr "Status:: Protokol auditu:: export stav"
 
 #: baruwa/templates/status/bayes.html:10
 msgid "Bayes Database Information"
-msgstr ""
+msgstr "Bayes databáze informací"
 
 #: baruwa/templates/status/bayes.html:14
 msgid "Bayes Version"
-msgstr ""
+msgstr "Bayes verze"
 
 #: baruwa/templates/status/bayes.html:18
 msgid "Number of Spam messages"
-msgstr ""
+msgstr "Počet zpráv nevyžádané pošty"
 
 #: baruwa/templates/status/bayes.html:22
 msgid "Number of Ham messages"
-msgstr ""
+msgstr "Počet zpráv, Ham"
 
 #: baruwa/templates/status/bayes.html:26
 msgid "Number of Tokens"
-msgstr ""
+msgstr "Počet tokenů"
 
 #: baruwa/templates/status/bayes.html:30
 msgid "Newest Token"
-msgstr ""
+msgstr "Nejnovější Token"
 
 #: baruwa/templates/status/bayes.html:34
 msgid "Oldest Token"
-msgstr ""
+msgstr "Nejstarší Token"
 
 #: baruwa/templates/status/bayes.html:38
 msgid "Last Journal Sync"
-msgstr ""
+msgstr "Poslední synchronizace Journal"
 
 #: baruwa/templates/status/bayes.html:42
 msgid "Last Expiry"
-msgstr ""
+msgstr "Poslední vypršení"
 
 #: baruwa/templates/status/bayes.html:46
 msgid "Last Expiry Reduction Count"
-msgstr ""
+msgstr "Počet posledních snížení vypršení"
 
 #: baruwa/templates/status/bayes.html:52
 msgid "Bayes information could not be collected."
-msgstr ""
+msgstr "Bayes informace nelze sbírat."
 
 #: baruwa/templates/status/bayes.html:59 baruwa/templates/status/bayes.html:63
 #, python-format
 msgid "Status :: Bayes info :: %(server)s"
-msgstr ""
+msgstr "Status:: Bayes informace:: %(server)s"
 
 #: baruwa/templates/status/detail.html:4 baruwa/templates/status/index.html:7
 #: baruwa/templates/status/mailq.html:3 baruwa/templates/status/preview.html:4
 #: baruwa/templates/status/serverstatus.html:8
 msgid "Inbound Queue"
-msgstr ""
+msgstr "Příchozí fronty"
 
 #: baruwa/templates/status/detail.html:5 baruwa/templates/status/index.html:8
 #: baruwa/templates/status/mailq.html:4 baruwa/templates/status/preview.html:5
 #: baruwa/templates/status/serverstatus.html:9
 msgid "Outbound Queue"
-msgstr ""
+msgstr "Odchozí fronta"
 
 #: baruwa/templates/status/detail.html:37
 msgid "From domain"
-msgstr ""
+msgstr "Z domény"
 
 #: baruwa/templates/status/detail.html:41
 msgid "To domain"
-msgstr ""
+msgstr "Do domény"
 
 #: baruwa/templates/status/detail.html:53
 msgid "Number of delivery attempts"
-msgstr ""
+msgstr "Počet pokusů o doručení"
 
 #: baruwa/templates/status/detail.html:57
 msgid "Last delivery attempt at"
-msgstr ""
+msgstr "Poslední pokus o doručení na"
 
 #: baruwa/templates/status/detail.html:61
 msgid "Reason for queuing"
-msgstr ""
+msgstr "Důvod pro řízení front zpráv"
 
 #: baruwa/templates/status/detail.html:65
 msgid "Process message"
-msgstr ""
+msgstr "Proces zprávy"
 
 #: baruwa/templates/status/detail.html:85
 #, python-format
 msgid "Showing Mail queue message :: %(i)s"
-msgstr ""
+msgstr "Zobrazeno fronty zprávy:: %(i)s"
 
 #: baruwa/templates/status/index.html:15
 #: baruwa/templates/status/serverstatus.html:17
 msgid "Todays stats"
-msgstr ""
+msgstr "Dnešní Statistika"
+
+#: baruwa/templates/status/index.html:20
+#: baruwa/templates/status/serverstatus.html:22
+#, fuzzy
+msgid "Processed"
+msgstr "Proces"
+
+#: baruwa/templates/status/index.html:50
+#: baruwa/templates/status/serverstatus.html:52
+#, fuzzy
+msgid "Inbound queues"
+msgstr "Příchozí fronty"
+
+#: baruwa/templates/status/index.html:55
+#: baruwa/templates/status/serverstatus.html:57
+#, fuzzy
+msgid "Outbound queues"
+msgstr "Odchozí fronta"
 
 #: baruwa/templates/status/index.html:63
 msgid "Graph"
-msgstr ""
+msgstr "Graf"
 
 #: baruwa/templates/status/index.html:68
 #: baruwa/templates/status/serverstatus.html:154
 msgid "Not enough data available to generate graph."
-msgstr ""
+msgstr "Není dostatek dat k dispozici vygenerovat graf."
 
 #: baruwa/templates/status/index.html:74
 msgid "Scanner node status"
-msgstr ""
+msgstr "Stav uzlu skeneru"
 
 #: baruwa/templates/status/index.html:78
 msgid "No active scanning nodes found"
-msgstr ""
+msgstr "Žádné aktivní vyhledávání uzlů nalezeny"
 
 #: baruwa/templates/status/index.html:90 baruwa/templates/status/index.html:94
 msgid "Status :: Global status"
-msgstr ""
+msgstr "Status:: Globální postavení"
 
 #: baruwa/templates/status/mailq.html:142
 #: baruwa/templates/status/mailq.html:146
 #, python-format
 msgid "Status :: Mail queue :: %(queue)s :: %(s)s"
-msgstr ""
+msgstr "Status:: Fronty pošty:: %(queue)s :: %(s)s"
 
 #: baruwa/templates/status/mailq.html:142
 #: baruwa/templates/status/mailq.html:146
 #, python-format
 msgid "Status :: Mail queue :: %(queue)s"
-msgstr ""
+msgstr "Status:: Fronty pošty:: %(queue)s"
 
 #: baruwa/templates/status/preview.html:48
 #, python-format
 msgid "Queued Message: %(msgid)s could not be previewed"
-msgstr ""
+msgstr "Zprávy ve frontě: %(msgid)s Náhled nelze zobrazit"
 
 #: baruwa/templates/status/preview.html:54
 #: baruwa/templates/status/preview.html:58
 #, python-format
 msgid "Status :: Mail Queue :: Previewing Queued message : %(msgid)s"
-msgstr ""
+msgstr "Status:: Fronty pošty:: náhled do fronty zpráv: %(msgid)s"
 
 #: baruwa/templates/status/salint.html:10
 msgid "Spamassassin Lint"
-msgstr ""
+msgstr "SpamAssassin hadříkem"
 
 #: baruwa/templates/status/salint.html:21
 msgid "Backend did not return response, try again later"
-msgstr ""
+msgstr "Backend nevrátil odpověď, opakujte akci později"
 
 #: baruwa/templates/status/salint.html:28
 #: baruwa/templates/status/salint.html:32
 #, python-format
 msgid "Status :: Spamassassin lint :: %(server)s"
-msgstr ""
+msgstr "Status:: Spamassassin hadříkem:: %(server)s"
 
 #: baruwa/templates/status/salint.html:36
 msgid "Server status"
-msgstr ""
+msgstr "Stav serveru"
 
 #: baruwa/templates/status/salint.html:37
 #: baruwa/templates/status/serverstatus.html:6
 msgid "Bayes info"
-msgstr ""
+msgstr "Bayes informace"
 
 #: baruwa/templates/status/salint.html:38
 #: baruwa/templates/status/serverstatus.html:10
 msgid "Graphs"
-msgstr ""
+msgstr "Grafy"
 
 #: baruwa/templates/status/serverstatus.html:7
 msgid "Spamassassin lint"
-msgstr ""
+msgstr "SpamAssassin hadříkem"
 
 #: baruwa/templates/status/serverstatus.html:63
 msgid "Hardware status"
-msgstr ""
+msgstr "Stav hardwaru"
 
 #: baruwa/templates/status/serverstatus.html:66
 msgid "CPU"
-msgstr ""
+msgstr "PROCESOR"
 
 #: baruwa/templates/status/serverstatus.html:73
 msgid "Error reading CPU status"
-msgstr ""
+msgstr "Při čtení stavu CPU"
 
 #: baruwa/templates/status/serverstatus.html:78
 msgid "Memory"
-msgstr ""
+msgstr "Paměť"
 
 #: baruwa/templates/status/serverstatus.html:86
 #: baruwa/templates/status/serverstatus.html:109
-#, fuzzy, python-format
+#, python-format
 msgid "Total: %s"
-msgstr "Message Totals"
+msgstr "Celkem: %s"
 
 #: baruwa/templates/status/serverstatus.html:87
 #: baruwa/templates/status/serverstatus.html:110
 #, python-format
 msgid "Used: %s"
-msgstr ""
+msgstr "Použití: %s"
 
 #: baruwa/templates/status/serverstatus.html:88
 #: baruwa/templates/status/serverstatus.html:111
 #, python-format
 msgid "Free: %s"
-msgstr ""
+msgstr "Zdarma: %s"
 
 #: baruwa/templates/status/serverstatus.html:92
 msgid "Error reading memory status."
-msgstr ""
+msgstr "Při čtení stav paměti."
 
 #: baruwa/templates/status/serverstatus.html:96
 msgid "Hard disks"
-msgstr ""
+msgstr "Pevné disky"
 
 #: baruwa/templates/status/serverstatus.html:116
 msgid "Error reading disk information"
-msgstr ""
+msgstr "Při čtení informací o disku"
 
 #: baruwa/templates/status/serverstatus.html:120
 msgid "Network"
-msgstr ""
+msgstr "Síť"
 
 #: baruwa/templates/status/serverstatus.html:124
 msgid "Nic"
-msgstr ""
+msgstr "Nic"
 
 #: baruwa/templates/status/serverstatus.html:125
 msgid "Sent"
-msgstr ""
+msgstr "Odesláno"
 
 #: baruwa/templates/status/serverstatus.html:126
 msgid "Received"
-msgstr ""
+msgstr "Přijato"
 
 #: baruwa/templates/status/serverstatus.html:140
 msgid "Error reading network interface information"
-msgstr ""
+msgstr "Při čtení informace o síťové rozhraní"
 
 #: baruwa/templates/status/serverstatus.html:147
 msgid "Mail Graph"
-msgstr ""
+msgstr "Poštovní graf"
 
 #: baruwa/templates/status/serverstatus.html:159
 msgid "System Status"
-msgstr ""
+msgstr "Stav systému"
 
 #: baruwa/templates/status/serverstatus.html:163
 msgid "Scanners"
-msgstr ""
+msgstr "Skenery"
 
 #: baruwa/templates/status/serverstatus.html:166
 #, python-format
 msgid "%(s)d process"
 msgid_plural "%(s)d processes"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "%(s)d proces"
+msgstr[1] "%(s)d procesy"
+msgstr[2] "%(s)d procesy"
 
 #: baruwa/templates/status/serverstatus.html:170
 msgid "MTA"
-msgstr ""
+msgstr "MTA"
 
 #: baruwa/templates/status/serverstatus.html:173
 #, python-format
 msgid "%(mta)d process"
 msgid_plural "%(mta)d processes"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "%(mta)d proces"
+msgstr[1] "%(mta)d procesy"
+msgstr[2] "%(mta)d procesy"
 
 #: baruwa/templates/status/serverstatus.html:177
 msgid "Anti-Virus"
-msgstr ""
+msgstr "Anti-Virus"
 
 #: baruwa/templates/status/serverstatus.html:180
 #, python-format
 msgid "%(a)d process"
 msgid_plural "%(a)d processes"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "%(a)d proces"
+msgstr[1] "%(a)d procesy"
+msgstr[2] "%(a)d procesy"
 
 #: baruwa/templates/status/serverstatus.html:184
 msgid "CPU Load (1 / 5 / 15 mins)"
-msgstr ""
+msgstr "Zatížení CPU (1 / 5 / 15 min)"
 
 #: baruwa/templates/status/serverstatus.html:191
 msgid "System Uptime"
-msgstr ""
+msgstr "Doba provozu systému"
 
 #: baruwa/templates/status/serverstatus.html:195
 msgid "System Time"
-msgstr ""
+msgstr "Systémový čas"
 
 #: baruwa/templates/status/serverstatus.html:205
 #: baruwa/templates/status/serverstatus.html:209
 #, python-format
 msgid "Status :: Node status :: %(server)s"
-msgstr ""
-
+msgstr "Status:: Stav uzlu:: %(server)s"

@@ -1,0 +1,358 @@
+# Translations template for PROJECT.
+# Copyright (C) 2012 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# 
+# Translators:
+msgid ""
+msgstr ""
+"Project-Id-Version: baruwa\n"
+"Report-Msgid-Bugs-To: baruwa@lists.baruwa.org\n"
+"POT-Creation-Date: 2012-11-14 14:04+0200\n"
+"PO-Revision-Date: 2012-11-14 18:56+0200\n"
+"Last-Translator: Andrew Colin Kissa <andrew@topdog.za.net>\n"
+"Language-Team: (http://www.transifex.com/projects/p/baruwa/language/ro/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: auto-translate.py\n"
+"Language: ro\n"
+"Plural-Forms: nplurals=3; plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?2:1));\n"
+
+#: baruwa/public/js/baruwa/accounts.js:1 baruwa/public/js/baruwa/domains.js:1
+#: baruwa/public/js/baruwa/lists.js:1
+#: baruwa/public/js/baruwa/messages.archive.js:1
+#: baruwa/public/js/baruwa/messages.js:1
+#: baruwa/public/js/baruwa/messages.quarantine.js:1
+#: baruwa/public/js/baruwa/organizations.js:1
+#: baruwa/public/js/baruwa/settings.js:1
+#: baruwa/public/js/baruwa/status.audit.js:1
+msgid "Showing items {{first_item}} to {{last_item}} of {{item_count}}."
+msgstr ""
+"Se afișează elemente {{first_item}} să {{last_item}} de {{item_count}}."
+
+#: baruwa/public/js/baruwa/accounts.js:1
+msgid "Accounts :: Showing page {{page}} of {{page_count}} pages."
+msgstr "Conturile:: Care prezintă filme {{page}} de {{page_count}} pagini."
+
+#: baruwa/public/js/baruwa/accounts.js:1 baruwa/public/js/baruwa/domains.js:1
+#: baruwa/public/js/baruwa/lists.js:1
+#: baruwa/public/js/baruwa/messages.archive.js:1
+#: baruwa/public/js/baruwa/messages.js:1
+#: baruwa/public/js/baruwa/messages.quarantine.js:1
+#: baruwa/public/js/baruwa/messages.search.js:1
+#: baruwa/public/js/baruwa/organizations.js:1
+#: baruwa/public/js/baruwa/reports.pie.js:1
+#: baruwa/public/js/baruwa/reports.relays.js:1
+#: baruwa/public/js/baruwa/reports.spam.js:1
+#: baruwa/public/js/baruwa/settings.js:1
+#: baruwa/public/js/baruwa/status.audit.js:1
+msgid "No items found"
+msgstr "Articole găsite"
+
+#: baruwa/public/js/baruwa/accounts.js:1
+msgid "Accounts"
+msgstr "Conturi"
+
+#: baruwa/public/js/baruwa/common.js:1
+msgid "AJAX Error:"
+msgstr "Eroare la AJAX:"
+
+#: baruwa/public/js/baruwa/common.js:1
+msgid "Error Occured:"
+msgstr "Eroare:"
+
+#: baruwa/public/js/baruwa/common.js:1
+#: baruwa/public/js/baruwa/messages.filters.js:1
+#: baruwa/public/js/baruwa/reports.common.js:1
+#: baruwa/public/js/baruwa/reports.js:1
+#: baruwa/public/js/baruwa/reports.listings.js:1
+#: baruwa/public/js/baruwa/reports.pie.js:1
+#: baruwa/public/js/baruwa/reports.relays.js:1
+#: baruwa/public/js/baruwa/reports.spam.js:1
+msgid "Loading"
+msgstr "Încărcare"
+
+#: baruwa/public/js/baruwa/common.js:1
+msgid "Unknown error occured !"
+msgstr "Eroare necunoscută!"
+
+#: baruwa/public/js/baruwa/domains.js:1
+msgid "No domains found"
+msgstr "Nu domenii găsit"
+
+#: baruwa/public/js/baruwa/domains.js:1
+msgid "Domains :: Showing page {{page}} of {{page_count}} pages."
+msgstr "Domenii:: Care prezintă filme {{page}} de {{page_count}} pagini."
+
+#: baruwa/public/js/baruwa/domains.js:1
+msgid "Domains"
+msgstr "Domenii"
+
+#: baruwa/public/js/baruwa/lists.js:1
+msgid "Lists :: {{listname}} Showing page {{page}} of {{page_count}} pages."
+msgstr ""
+"Liste:: {{listname}} Filme care prezintă {{page}} de {{page_count}} pagini."
+
+#: baruwa/public/js/baruwa/lists.js:1
+msgid "Lists"
+msgstr "Liste"
+
+#: baruwa/public/js/baruwa/login.js:1
+msgid "Login"
+msgstr "Login"
+
+#: baruwa/public/js/baruwa/login.js:1
+msgid "Reset my password"
+msgstr "Resetare parola"
+
+#: baruwa/public/js/baruwa/messages.archive.js:1
+msgid "Messages :: Archive :: Showing page {{page}} of {{page_count}} pages."
+msgstr ""
+"Mesaje:: Arhiva:: Pagina de afişare {{page}} de {{page_count}} pagini."
+
+#: baruwa/public/js/baruwa/messages.archive.js:1
+msgid "Messages :: Archive"
+msgstr "Mesaje:: Arhiva"
+
+#: baruwa/public/js/baruwa/messages.archive.js:1
+#: baruwa/public/js/baruwa/messages.js:1
+#: baruwa/public/js/baruwa/messages.quarantine.js:1
+msgid "Date/Time"
+msgstr "Data/ora"
+
+#: baruwa/public/js/baruwa/messages.archive.js:1
+#: baruwa/public/js/baruwa/messages.js:1
+#: baruwa/public/js/baruwa/messages.quarantine.js:1
+msgid "From"
+msgstr "De la"
+
+#: baruwa/public/js/baruwa/messages.archive.js:1
+#: baruwa/public/js/baruwa/messages.js:1
+#: baruwa/public/js/baruwa/messages.quarantine.js:1
+msgid "To"
+msgstr "Pentru a"
+
+#: baruwa/public/js/baruwa/messages.archive.js:1
+#: baruwa/public/js/baruwa/messages.js:1
+#: baruwa/public/js/baruwa/messages.quarantine.js:1
+msgid "Subject"
+msgstr "Subiect"
+
+#: baruwa/public/js/baruwa/messages.archive.js:1
+#: baruwa/public/js/baruwa/messages.js:1
+msgid "Size"
+msgstr "Dimensiune"
+
+#: baruwa/public/js/baruwa/messages.archive.js:1
+#: baruwa/public/js/baruwa/messages.js:1
+#: baruwa/public/js/baruwa/messages.quarantine.js:1
+msgid "Score"
+msgstr "Scor"
+
+#: baruwa/public/js/baruwa/messages.common.js:1
+#: baruwa/public/js/baruwa/messages.quarantine.js:1
+msgid "No messages found"
+msgstr "Nu există mesaje de găsit"
+
+#: baruwa/public/js/baruwa/messages.detail.js:1
+msgid "Show hosts"
+msgstr "Gazdele show"
+
+#: baruwa/public/js/baruwa/messages.detail.js:1
+msgid "Hide hosts"
+msgstr "Ascunde gazde"
+
+#: baruwa/public/js/baruwa/messages.detail.js:1
+msgid "Processing......"
+msgstr "Prelucrare..."
+
+#: baruwa/public/js/baruwa/messages.detail.js:1
+msgid "Show headers"
+msgstr "Afișare anteturi"
+
+#: baruwa/public/js/baruwa/messages.detail.js:1
+msgid "Hide headers"
+msgstr "Ascunde anteturi"
+
+#: baruwa/public/js/baruwa/messages.filters.js:1
+#: baruwa/public/js/baruwa/reports.js:1
+#: baruwa/public/js/baruwa/reports.listings.js:1
+#: baruwa/public/js/baruwa/reports.pie.js:1
+#: baruwa/public/js/baruwa/reports.relays.js:1
+#: baruwa/public/js/baruwa/reports.spam.js:1
+msgid "Processing request............."
+msgstr "Procesare solicitare..."
+
+#: baruwa/public/js/baruwa/messages.filters.js:1
+#: baruwa/public/js/baruwa/reports.js:1
+#: baruwa/public/js/baruwa/reports.listings.js:1
+#: baruwa/public/js/baruwa/reports.pie.js:1
+#: baruwa/public/js/baruwa/reports.relays.js:1
+#: baruwa/public/js/baruwa/reports.spam.js:1
+msgid "Add Filter"
+msgstr "Adauga filtru"
+
+#: baruwa/public/js/baruwa/messages.filters.js:1
+msgid "Non applied at the moment"
+msgstr "Non aplicate în acest moment"
+
+#: baruwa/public/js/baruwa/messages.js:1
+#: baruwa/public/js/baruwa/messages.quarantine.js:1
+msgid ""
+"Messages :: Full message listing :: Showing page {{page}} of {{page_count}} "
+"pages."
+msgstr ""
+"Mesaje:: Plin mesaj listarea:: Pagina de afişare {{page}} de {{page_count}} "
+"pagini."
+
+#: baruwa/public/js/baruwa/messages.js:1
+#: baruwa/public/js/baruwa/messages.quarantine.js:1
+msgid "Messages :: Full message listing"
+msgstr "Mesaje:: Cota de plin mesaj"
+
+#: baruwa/public/js/baruwa/messages.recent.js:1
+msgid "network connection failure, reconnecting in 60 seconds"
+msgstr "reţea unire eşec, reconectarea în 60 de secunde"
+
+#: baruwa/public/js/baruwa/messages.recent.js:1
+msgid "OK"
+msgstr "ok"
+
+#: baruwa/public/js/baruwa/messages.recent.js:1
+msgid "FAULTY"
+msgstr "DEFECT"
+
+#: baruwa/public/js/baruwa/messages.search.js:1
+msgid "No messages found matching search query:"
+msgstr "Nu există mesaje de găsit potrivesc interogării de căutare:"
+
+#: baruwa/public/js/baruwa/messages.search.js:1
+msgid "Showing items {{first}} to {{last}} of {{total}}."
+msgstr "Se afișează elemente {{first}} să {{last}} de {{total}}."
+
+#: baruwa/public/js/baruwa/messages.search.js:1
+msgid "About {{total_found}} results ({{search_time}} seconds)"
+msgstr "Despre {{total_found}} rezultatele ({{search_time}} secunde)"
+
+#: baruwa/public/js/baruwa/messages.search.js:1
+msgid "0 Results found ({{search_time}} seconds)"
+msgstr "0 Rezultate găsite ({{search_time}} secunde)"
+
+#: baruwa/public/js/baruwa/messages.search.js:1
+msgid "Messages :: Search results :: {{q}}"
+msgstr "Mesaje:: Rezultate:: {{q}}"
+
+#: baruwa/public/js/baruwa/messages.taskstatus.js:1
+msgid "An unknown error occured"
+msgstr "Eroare necunoscută"
+
+#: baruwa/public/js/baruwa/messages.taskstatus.js:1
+msgid "FAILED"
+msgstr "NU A REUȘIT"
+
+#: baruwa/public/js/baruwa/messages.taskstatus.js:1
+msgid "PASSED"
+msgstr "A TRECUT"
+
+#: baruwa/public/js/baruwa/organizations.js:1
+msgid "No organizations found"
+msgstr "Nici organizaţiile găsit"
+
+#: baruwa/public/js/baruwa/organizations.js:1
+msgid "Organizations :: Showing page {{page}} of {{page_count}} pages."
+msgstr "Organizaţii:: Care prezintă filme {{page}} de {{page_count}} pagini."
+
+#: baruwa/public/js/baruwa/organizations.js:1
+msgid "Organizations"
+msgstr "Organizaţii"
+
+#: baruwa/public/js/baruwa/reports.common.js:1
+msgid "is equal to"
+msgstr "este egal cu"
+
+#: baruwa/public/js/baruwa/reports.common.js:1
+msgid "is not equal to"
+msgstr "nu este egal cu"
+
+#: baruwa/public/js/baruwa/reports.common.js:1
+msgid "is greater than"
+msgstr "este mai mare decât"
+
+#: baruwa/public/js/baruwa/reports.common.js:1
+msgid "is less than"
+msgstr "este mai puţin"
+
+#: baruwa/public/js/baruwa/reports.common.js:1
+msgid "is null"
+msgstr "este nul"
+
+#: baruwa/public/js/baruwa/reports.common.js:1
+msgid "is not null"
+msgstr "nu este null"
+
+#: baruwa/public/js/baruwa/reports.common.js:1
+msgid "contains"
+msgstr "conţine"
+
+#: baruwa/public/js/baruwa/reports.common.js:1
+msgid "does not contain"
+msgstr "nu conține"
+
+#: baruwa/public/js/baruwa/reports.common.js:1
+msgid "matches regex"
+msgstr "meciuri regex"
+
+#: baruwa/public/js/baruwa/reports.common.js:1
+msgid "does not match regex"
+msgstr "potrivire regex"
+
+#: baruwa/public/js/baruwa/reports.common.js:1
+msgid "is true"
+msgstr "este adevărat"
+
+#: baruwa/public/js/baruwa/reports.common.js:1
+msgid "is false"
+msgstr "este fals"
+
+#: baruwa/public/js/baruwa/reports.common.js:1
+msgid "Please select"
+msgstr "Vă rugăm să selectaţi"
+
+#: baruwa/public/js/baruwa/reports.js:1
+msgid "No active filters at the moment"
+msgstr "Nr filtre active în acest moment"
+
+#: baruwa/public/js/baruwa/reports.js:1
+msgid "No saved filters at the moment"
+msgstr "Nici filtrele salvate în acest moment"
+
+#: baruwa/public/js/baruwa/reports.listings.js:1
+msgid "No records found"
+msgstr "Nicio înregistrare găsită"
+
+#: baruwa/public/js/baruwa/settings.js:1
+msgid "No scanning hosts found"
+msgstr "Nici un gazdele scanare găsit"
+
+#: baruwa/public/js/baruwa/settings.js:1
+msgid "Settings :: Nodes :: Showing page {{page}} of {{page_count}} pages."
+msgstr ""
+"Setări:: Noduri:: Pagina de afişare {{page}} de {{page_count}} pagini."
+
+#: baruwa/public/js/baruwa/settings.js:1
+msgid "Settings :: Nodes"
+msgstr "Setări:: noduri"
+
+#: baruwa/public/js/baruwa/status.audit.js:1
+msgid "No audit logs found"
+msgstr "Nici jurnalele de auditare găsit"
+
+#: baruwa/public/js/baruwa/status.audit.js:1
+msgid "Status :: Audit log :: Showing page {{page}} of {{page_count}} pages."
+msgstr ""
+"Status:: Jurnalul de Audit:: Pagina de afişare {{page}} de {{page_count}} "
+"pagini."
+
+#: baruwa/public/js/baruwa/status.audit.js:1
+msgid "Status :: Audit log"
+msgstr "Status:: Jurnalul de Audit"

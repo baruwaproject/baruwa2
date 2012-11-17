@@ -1,0 +1,5297 @@
+# English translations for baruwa.
+# Copyright (C) 2011 ORGANIZATION
+# This file is distributed under the same license as the baruwa project.
+#
+# Translators:
+# datopdog  <andrew@topdog.za.net>, 2012.
+msgid ""
+msgstr ""
+"Project-Id-Version:  baruwa\n"
+"Report-Msgid-Bugs-To: baruwa@lists.baruwa.org\n"
+"POT-Creation-Date: 2012-11-16 17:45+0200\n"
+"PO-Revision-Date: 2012-11-15 13:23+0200\n"
+"Last-Translator: Andrew Colin Kissa <andrew@topdog.za.net>\n"
+"Language-Team: Baruwa Project\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 0.9.6\n"
+
+#: baruwa/commands/pdfreport.py:116 baruwa/controllers/reports.py:62
+#: baruwa/templates/reports/index.html:13
+msgid "Top Senders by Quantity"
+msgstr "数量による上位送信者"
+
+#: baruwa/commands/pdfreport.py:118 baruwa/controllers/reports.py:64
+#: baruwa/templates/reports/index.html:14
+msgid "Top Senders by Volume"
+msgstr "ボリュームによる上位送信者"
+
+#: baruwa/commands/pdfreport.py:120 baruwa/controllers/reports.py:66
+#: baruwa/templates/reports/index.html:15
+msgid "Top Sender Domains by Quantity"
+msgstr "数量別上位送信者ドメイン"
+
+#: baruwa/commands/pdfreport.py:122 baruwa/controllers/reports.py:68
+#: baruwa/templates/reports/index.html:16
+msgid "Top Sender Domains by Volume"
+msgstr "ボリュームによってトップの送信者ドメイン"
+
+#: baruwa/commands/pdfreport.py:124 baruwa/controllers/reports.py:70
+#: baruwa/templates/reports/index.html:23
+msgid "Top Recipients by Quantity"
+msgstr "数量別上位受信者"
+
+#: baruwa/commands/pdfreport.py:126 baruwa/controllers/reports.py:72
+#: baruwa/templates/reports/index.html:24
+msgid "Top Recipients by Volume"
+msgstr "ボリュームのトップ受信者"
+
+#: baruwa/commands/pdfreport.py:128 baruwa/controllers/reports.py:74
+#: baruwa/templates/reports/index.html:26
+msgid "Top Recipient Domains By Quantity"
+msgstr "数量でトップの受信者のドメイン"
+
+#: baruwa/commands/pdfreport.py:130 baruwa/controllers/reports.py:76
+#: baruwa/templates/reports/index.html:27
+msgid "Top Recipient Domains By Volume"
+msgstr "ボリュームによってトップの受信者のドメイン"
+
+#: baruwa/commands/pdfreport.py:132 baruwa/controllers/reports.py:78
+msgid "Spam Score distribution"
+msgstr "スパム スコアの分布"
+
+#: baruwa/commands/pdfreport.py:134 baruwa/controllers/reports.py:80
+msgid "Top mail hosts by quantity"
+msgstr "トップ メール ホスト数量によって"
+
+#: baruwa/commands/pdfreport.py:136 baruwa/controllers/reports.py:82
+msgid "Total messages [ After SMTP ]"
+msgstr "[SMTP] 後メッセージの総数"
+
+#: baruwa/commands/pdfreport.py:138 baruwa/controllers/reports.py:226
+#: baruwa/templates/reports/piereport.html:25
+msgid "Address"
+msgstr "アドレス"
+
+#: baruwa/commands/pdfreport.py:138 baruwa/controllers/reports.py:226
+#: baruwa/templates/reports/barreport.html:30
+#: baruwa/templates/reports/piereport.html:26
+msgid "Count"
+msgstr "カウント"
+
+#: baruwa/commands/pdfreport.py:138 baruwa/controllers/reports.py:226
+#: baruwa/templates/reports/listing.html:54
+#: baruwa/templates/reports/piereport.html:27
+#: baruwa/templates/reports/relays.html:29
+msgid "Volume"
+msgstr "ボリューム"
+
+#: baruwa/commands/pdfreport.py:139 baruwa/controllers/reports.py:230
+#: baruwa/forms/reports.py:60 baruwa/templates/reports/listing.html:36
+msgid "Date"
+msgstr "日付"
+
+#: baruwa/commands/pdfreport.py:139 baruwa/controllers/reports.py:230
+msgid "Mail totals"
+msgstr "メールの合計"
+
+#: baruwa/commands/pdfreport.py:140 baruwa/controllers/reports.py:231
+msgid "Spam totals"
+msgstr "スパムの合計"
+
+#: baruwa/commands/pdfreport.py:140 baruwa/controllers/reports.py:232
+msgid "Virus totals"
+msgstr "ウイルスの合計"
+
+#: baruwa/commands/pdfreport.py:141 baruwa/controllers/reports.py:233
+msgid "Mail volume"
+msgstr "メールの量"
+
+#: baruwa/commands/pdfreport.py:141 baruwa/controllers/reports.py:234
+msgid "Totals"
+msgstr "合計"
+
+#: baruwa/commands/pdfreport.py:142 baruwa/controllers/reports.py:223
+msgid "Baruwa mail report"
+msgstr "Baruwa メール レポート"
+
+#: baruwa/commands/pdfreport.py:176 baruwa/controllers/reports.py:235
+#: baruwa/templates/reports/index.html:29
+msgid "Message Totals"
+msgstr "メッセージの合計"
+
+#: baruwa/commands/pdfreport.py:183 baruwa/commands/quarantinereport.py:156
+msgid "Baruwa Reports"
+msgstr "Baruwa レポート"
+
+#: baruwa/commands/pdfreport.py:186
+msgid "Baruwa usage report"
+msgstr "Baruwa 使用状況レポート"
+
+#: baruwa/commands/quarantinereport.py:159
+msgid "Baruwa quarantine report"
+msgstr "Baruwa 検疫レポート"
+
+#: baruwa/controllers/accounts.py:98
+msgid "You have been banned after several failed logins"
+msgstr "いくつかの失敗したログイン後、あなたが禁止されています。"
+
+#: baruwa/controllers/accounts.py:150
+msgid "First time Login from external auth, your local account was created"
+msgstr "外部認証から初めてログイン ローカル アカウントが作成されました"
+
+#: baruwa/controllers/accounts.py:266
+#, python-format
+msgid "Login successful, Welcome back %(username)s !"
+msgstr "ログイン成功、ウェルカム バック %(username)s ！"
+
+#: baruwa/controllers/accounts.py:318 baruwa/controllers/accounts.py:348
+#, python-format
+msgid "The account password for %(name)s has been reset"
+msgstr "The account password for %(name)s has been reset"
+
+#: baruwa/controllers/accounts.py:325 baruwa/controllers/accounts.py:355
+msgid "This is an external account, use external system to reset the password"
+msgstr "これは、外部アカウントは、外部システムを使用してパスワードをリセットするには"
+
+#: baruwa/controllers/accounts.py:361
+msgid "The old password supplied does not match our records"
+msgstr "古いパスワードが我々 のレコードと一致しません。"
+
+#: baruwa/controllers/accounts.py:537
+#, python-format
+msgid "The account: %(user)s was created successfully"
+msgstr "The account: %(user)s was created successfully"
+
+#: baruwa/controllers/accounts.py:543
+msgid "Either the username or email address already exist"
+msgstr "ユーザー名または電子メール アドレスが既に存在しています。"
+
+#: baruwa/controllers/accounts.py:574
+msgid "The account has been updated"
+msgstr "アカウントを更新します。"
+
+#: baruwa/controllers/accounts.py:583
+#, python-format
+msgid "The account: %(acc)s could not be updated"
+msgstr "The account: %(acc)s could not be updated"
+
+#: baruwa/controllers/accounts.py:589
+msgid "No changes made to the account"
+msgstr "アカウントには変更されませんでした。"
+
+#: baruwa/controllers/accounts.py:611
+msgid "The account has been deleted"
+msgstr "アカウントが削除されました。"
+
+#: baruwa/controllers/accounts.py:620
+#, python-format
+msgid ""
+"The account: %(a)s and all associated data will be deleted, This action "
+"is not reversible."
+msgstr ""
+"The account: %(a)s and all associated data will be deleted, This action "
+"is not reversible."
+
+#: baruwa/controllers/accounts.py:677
+msgid "The accounts have been deleted"
+msgstr "アカウントが削除されています。"
+
+#: baruwa/controllers/accounts.py:680
+msgid ""
+"The following accounts are about to be deleted, this action is not "
+"reversible, Do you wish to continue ?"
+msgstr "次のアカウントが削除されようとしている、このアクションは可逆ではない、続けますとしてか？"
+
+#: baruwa/controllers/accounts.py:689 baruwa/controllers/domains.py:384
+msgid "An error occured try again"
+msgstr "もう一度やり直してくださいエラーが発生しました"
+
+#: baruwa/controllers/accounts.py:726
+#, python-format
+msgid "The alias address %(address)s was successfully created."
+msgstr "The alias address %(address)s was successfully created."
+
+#: baruwa/controllers/accounts.py:728 baruwa/controllers/accounts.py:775
+#, python-format
+msgid "The address %(addr)s already exists"
+msgstr "The address %(addr)s already exists"
+
+#: baruwa/controllers/accounts.py:731 baruwa/controllers/accounts.py:778
+#, python-format
+msgid "Domain: %(d)s does not belong to you"
+msgstr "Domain: %(d)s does not belong to you"
+
+#: baruwa/controllers/accounts.py:771
+msgid "The alias address has been updated"
+msgstr "エイリアスのアドレスを更新します。"
+
+#: baruwa/controllers/accounts.py:773
+msgid "No changes were made to the address"
+msgstr "アドレスに変更されませんでした。"
+
+#: baruwa/controllers/accounts.py:806
+msgid "The address has been deleted"
+msgstr "アドレスを削除します。"
+
+#: baruwa/controllers/accounts.py:874 baruwa/controllers/organizations.py:358
+msgid ""
+"File uploaded, and is being processed, this page will automatically "
+"refresh to show the status"
+msgstr "ファイルは、アップロード、および処理されている、このページが自動的にステータスを表示する更新されます。"
+
+#: baruwa/controllers/accounts.py:881 baruwa/controllers/organizations.py:364
+#, python-format
+msgid "The file: %s is not a CSV file"
+msgstr "ファイル: %s は CSV ファイルではありません"
+
+#: baruwa/controllers/accounts.py:884 baruwa/controllers/organizations.py:367
+#, python-format
+msgid "The file: %s already exists and is being processed."
+msgstr "ファイル: %s は既に存在し、処理されています。"
+
+#: baruwa/controllers/accounts.py:888 baruwa/controllers/organizations.py:371
+msgid "No CSV was file uploaded, try again"
+msgstr "CSV ファイルのアップロード、もう一度試してなかった"
+
+#: baruwa/controllers/accounts.py:898 baruwa/controllers/accounts.py:954
+#: baruwa/controllers/domains.py:867 baruwa/controllers/messages.py:640
+#: baruwa/controllers/messages.py:642 baruwa/controllers/organizations.py:380
+#: baruwa/controllers/status.py:497
+msgid "The task status requested has expired or does not exist"
+msgstr "要求されたタスクの進捗状況が切れたか、存在しません"
+
+#: baruwa/controllers/accounts.py:906 baruwa/controllers/accounts.py:962
+#: baruwa/controllers/domains.py:875 baruwa/controllers/organizations.py:388
+#: baruwa/controllers/status.py:505
+#, python-format
+msgid "Error occured in processing %s"
+msgstr "処理 %s でエラーが発生しました"
+
+#: baruwa/controllers/accounts.py:909 baruwa/controllers/accounts.py:965
+#: baruwa/controllers/domains.py:878 baruwa/controllers/organizations.py:391
+#: baruwa/controllers/status.py:508
+msgid "Backend error occured during processing."
+msgstr "バックエンドの処理中にエラーが発生しました。"
+
+#: baruwa/controllers/accounts.py:926 baruwa/controllers/organizations.py:411
+msgid "The import could not be processed, try again later"
+msgstr "インポートができませんでしたが処理、後でもう一度試す"
+
+#: baruwa/controllers/accounts.py:946
+msgid "Accounts export is being processed"
+msgstr "アカウントのエクスポート処理中です。"
+
+#: baruwa/controllers/accounts.py:981 baruwa/controllers/domains.py:888
+msgid "The export could not be processed, try again later"
+msgstr "エクスポートができませんでしたが処理、後でもう一度試す"
+
+#: baruwa/controllers/domains.py:238
+#, python-format
+msgid "The domain: %(dom)s has been created"
+msgstr "ドメイン: %(dom)s作成されています。"
+
+#: baruwa/controllers/domains.py:243
+#, python-format
+msgid "The domain name %(dom)s already exists"
+msgstr "ドメイン名 %(dom)s既に存在します。"
+
+#: baruwa/controllers/domains.py:291
+#, python-format
+msgid "The domain: %(dom)s has been updated"
+msgstr "ドメイン: %(dom)s更新されました"
+
+#: baruwa/controllers/domains.py:296
+#, python-format
+msgid "The domain %(dom)s could not be updated"
+msgstr "ドメイン %(dom)s更新できませんでした。"
+
+#: baruwa/controllers/domains.py:299
+msgid "No changes were made to the domain"
+msgstr "ドメインに変更されませんでした。"
+
+#: baruwa/controllers/domains.py:321
+msgid "The domain has been deleted"
+msgstr "ドメインを削除します。"
+
+#: baruwa/controllers/domains.py:324
+#, python-format
+msgid ""
+"The domain: %(name)s and all associated data will be deleted, This action"
+" cannot be reversed."
+msgstr "ドメイン: %(name)sすべての関連データが削除されます、このアクションを取り消すことはできません。"
+
+#: baruwa/controllers/domains.py:372
+msgid "The domains have been deleted"
+msgstr "ドメインが削除されています。"
+
+#: baruwa/controllers/domains.py:375
+msgid ""
+"The following domains are about to be deleted, this action is not "
+"reversible, Do you wish to continue ?"
+msgstr "次のドメインが削除されようとしている、このアクションは可逆ではない、続けますとしてか？"
+
+#: baruwa/controllers/domains.py:410
+msgid "The destination server has been created"
+msgstr "移行先サーバーを作成します。"
+
+#: baruwa/controllers/domains.py:416
+#, python-format
+msgid "The destination server %(dest)s already exists "
+msgstr "移行先サーバー %(dest)s既に存在します。"
+
+#: baruwa/controllers/domains.py:441
+msgid "The destination server has been updated"
+msgstr "移行先サーバーを更新します。"
+
+#: baruwa/controllers/domains.py:452 baruwa/controllers/domains.py:816
+msgid "The update failed"
+msgstr "更新に失敗しました"
+
+#: baruwa/controllers/domains.py:454
+msgid "No changes were made to the destination server"
+msgstr "移行先サーバーに変更が行われていません"
+
+#: baruwa/controllers/domains.py:485
+msgid "The connection test failed try again later"
+msgstr "接続テストが失敗した後で再度試行します。"
+
+#: baruwa/controllers/domains.py:490
+#, python-format
+msgid "The server: %s is up and accepting mail from us"
+msgstr "サーバー: %s は私たちからのアップと受け入れのメール"
+
+#: baruwa/controllers/domains.py:497
+#, python-format
+msgid "The server: %s is not accepting mail from us: %s"
+msgstr "サーバー: %s 私たちからのメールを受け付けていません: %s"
+
+#: baruwa/controllers/domains.py:533
+msgid "The destination server has been deleted"
+msgstr "移行先サーバーを削除します。"
+
+#: baruwa/controllers/domains.py:540
+#, python-format
+msgid ""
+"The destination server: %(s)s will be deleted, This action is not "
+"reversible"
+msgstr "送信先サーバー: %(s)sなる削除、この操作は取り消し不可"
+
+#: baruwa/controllers/domains.py:567
+msgid "The authentication settings have been created"
+msgstr "認証設定が作成されています。"
+
+#: baruwa/controllers/domains.py:574
+#, python-format
+msgid ""
+"The host %(dest)s already configured for %(auth)s authentication for this"
+" domain"
+msgstr "ホスト %(dest)s既に構成 %(auth)sこのドメインの認証"
+
+#: baruwa/controllers/domains.py:607
+msgid "The authentication settings have been updated"
+msgstr "認証設定が更新されました"
+
+#: baruwa/controllers/domains.py:618
+msgid "The authentication settings update failed"
+msgstr "失敗した認証の設定の更新"
+
+#: baruwa/controllers/domains.py:620
+msgid "No changes were made to the authentication settings"
+msgstr "認証設定を変更されませんでした。"
+
+#: baruwa/controllers/domains.py:641
+msgid "The authentication settings have been deleted"
+msgstr "認証設定が削除されています。"
+
+#: baruwa/controllers/domains.py:648
+#, python-format
+msgid ""
+"The authentication server: %(s)s will be deleted, This action is not "
+"reversible"
+msgstr "認証サーバー: %(s)sなる削除、この操作は取り消し不可"
+
+#: baruwa/controllers/domains.py:671
+msgid "The protocol supplied does not use extra settings"
+msgstr "提供のプロトコルは、余分な設定を使用しません。"
+
+#: baruwa/controllers/domains.py:676
+#, python-format
+msgid ""
+"Please add an authentication server for the %(proto)s protocol Before "
+"attempting to configure the %(proto)s settings"
+msgstr "認証サーバーを追加してください、%(proto)sプロトコルを構成する前に %(proto)s設定"
+
+#: baruwa/controllers/domains.py:715
+#, python-format
+msgid "The %(proto)s settings have been updated"
+msgstr "%(proto)s設定が更新されました"
+
+#: baruwa/controllers/domains.py:718
+#, python-format
+msgid "The %(proto)s settings have been created"
+msgstr "%(proto)s設定を作成しました"
+
+#: baruwa/controllers/domains.py:729
+msgid "The auth settings already exist, use update to modify them"
+msgstr "Auth の設定が既に存在する、更新プログラムを使用してそれらを変更するには"
+
+#: baruwa/controllers/domains.py:733
+msgid ""
+"The Radius secret is not be displayed in the form, To update type the new"
+" secret in \"Radius secret\" below."
+msgstr "秘密は半径以下型「Radius シークレット」に新しいシークレットを更新するには、フォームが表示されません。"
+
+#: baruwa/controllers/domains.py:774
+#, python-format
+msgid "The domain alias: %s has been created"
+msgstr "ドメイン エイリアス: %s を作成"
+
+#: baruwa/controllers/domains.py:779
+#, python-format
+msgid "The domain alias: %s already exists"
+msgstr "ドメイン エイリアス: %s は既に存在"
+
+#: baruwa/controllers/domains.py:811
+#, python-format
+msgid "The domain alias: %s has been updated"
+msgstr "ドメイン エイリアス: %s は更新されました"
+
+#: baruwa/controllers/domains.py:818
+msgid "No changes were made to the domain alias"
+msgstr "ドメイン エイリアスに変更されませんでした。"
+
+#: baruwa/controllers/domains.py:845
+#, python-format
+msgid "The domain alias: %s has been deleted"
+msgstr "ドメイン エイリアス: %s が削除されました"
+
+#: baruwa/controllers/domains.py:860
+msgid "Domains export is being processed"
+msgstr "ドメインのエクスポート処理中です。"
+
+#: baruwa/controllers/error.py:48
+msgid "No status code found"
+msgstr "ステータス コードが見つかりましたなし"
+
+#: baruwa/controllers/filemanager.py:59 baruwa/controllers/filemanager.py:178
+msgid "Action not supported"
+msgstr "アクションはサポートされていません"
+
+#: baruwa/controllers/filemanager.py:131
+msgid "Only one image is permitted per signature"
+msgstr "1 つだけイメージごとの署名を許可されて"
+
+#: baruwa/controllers/filemanager.py:139
+msgid "The uploaded file is not acceptable"
+msgstr "アップロードされたファイルが受け入れられない"
+
+#: baruwa/controllers/filemanager.py:150
+msgid "File has been uploaded"
+msgstr "ファイルをアップロードします。"
+
+#: baruwa/controllers/filemanager.py:156
+msgid "Invalid upload request"
+msgstr "無効なアップロード要求"
+
+#: baruwa/controllers/filemanager.py:173
+msgid "The file has been deleted"
+msgstr "ファイルが削除されています。"
+
+#: baruwa/controllers/invite.py:118
+msgid "Baruwa Hosted"
+msgstr "主催 Baruwa"
+
+#: baruwa/controllers/invite.py:121
+msgid "Baruwa Hosted Registration"
+msgstr "Baruwa ホスト登録"
+
+#: baruwa/controllers/invite.py:136
+msgid "System was unable to process your request"
+msgstr "システムは要求を処理できませんでした。"
+
+#: baruwa/controllers/lists.py:248 baruwa/controllers/lists.py:291
+#: baruwa/forms/lists.py:39 baruwa/templates/base.html:86
+#: baruwa/templates/lists/add.html:49 baruwa/templates/lists/delete.html:38
+msgid "Approved senders"
+msgstr "承認された送信者"
+
+#: baruwa/controllers/lists.py:250 baruwa/controllers/lists.py:293
+#: baruwa/forms/lists.py:40 baruwa/templates/base.html:87
+#: baruwa/templates/lists/add.html:50 baruwa/templates/lists/delete.html:39
+msgid "Banned senders"
+msgstr "禁止された送信者"
+
+#: baruwa/controllers/lists.py:255
+msgid "The item has been added to the list"
+msgstr "アイテムをリストに追加されました"
+
+#: baruwa/controllers/lists.py:261
+msgid "The list item already exists"
+msgstr "リスト項目が既に存在します。"
+
+#: baruwa/controllers/lists.py:302
+msgid "The item has been deleted"
+msgstr "項目が削除されました"
+
+#: baruwa/controllers/messages.py:284 baruwa/controllers/messages.py:287
+msgid "Processing the request failed"
+msgstr "失敗した要求の処理"
+
+#: baruwa/controllers/messages.py:294 baruwa/controllers/messages.py:455
+msgid ", "
+msgstr ","
+
+#: baruwa/controllers/messages.py:452
+msgid "The messages could not processed, try again later"
+msgstr "メッセージができなかった処理、後でもう一度試す"
+
+#: baruwa/controllers/messages.py:559 baruwa/controllers/status.py:304
+msgid "This message contains external images, which have been blocked. "
+msgstr "このメッセージがブロックされている外部の画像が含まれています。"
+
+#: baruwa/controllers/messages.py:560 baruwa/controllers/status.py:305
+msgid "Display images"
+msgstr "イメージの表示"
+
+#: baruwa/controllers/messages.py:577
+msgid "The message could not be previewed, try again later"
+msgstr "メッセージ可能性がありますいないプレビューする、もう一度やり直して"
+
+#: baruwa/controllers/messages.py:593
+msgid "Unknown"
+msgstr "不明"
+
+#: baruwa/controllers/messages.py:594
+msgid ""
+"The message has already been released, you can only use the release link "
+"once"
+msgstr "メッセージは既に解放されている、一度だけリリース リンクを使用することができます。"
+
+#: baruwa/controllers/messages.py:622
+msgid "Processing of message failed"
+msgstr "失敗したメッセージの処理"
+
+#: baruwa/controllers/messages.py:660 baruwa/controllers/messages.py:661
+msgid "An error occured in processing, try again later"
+msgstr "処理、try 後でもう一度でエラーが発生しました"
+
+#: baruwa/controllers/organizations.py:166
+msgid "The organization has been created"
+msgstr "組織を作成します。"
+
+#: baruwa/controllers/organizations.py:169
+msgid "The organization already exists"
+msgstr "組織に既に存在します。"
+
+#: baruwa/controllers/organizations.py:198
+msgid "The organization has been updated"
+msgstr "組織を更新します。"
+
+#: baruwa/controllers/organizations.py:201
+msgid "The organization could not be updated"
+msgstr "組織を更新できませんでした。"
+
+#: baruwa/controllers/organizations.py:203
+msgid "No changes made, Organization not updated"
+msgstr "全く変更更新されない組織"
+
+#: baruwa/controllers/organizations.py:229
+msgid "The organization has been deleted"
+msgstr "組織を削除します。"
+
+#: baruwa/controllers/organizations.py:232
+#, python-format
+msgid "The organization: %(s)s will be deleted, This action is not reversible"
+msgstr "組織： %(s)s が削除されますが、このアクションは可逆ではないです。"
+
+#: baruwa/controllers/organizations.py:259
+msgid "The outbound settings have been created"
+msgstr "送信の設定を作成します。"
+
+#: baruwa/controllers/organizations.py:262
+msgid "The outbound settings could not created, Try again"
+msgstr "送信の設定を作成でした、もう一度やり直してください。"
+
+#: baruwa/controllers/organizations.py:298
+msgid "The outbound settings have been updated"
+msgstr "送信の設定が更新されました"
+
+#: baruwa/controllers/organizations.py:301
+msgid "The outbound settings could not be updated"
+msgstr "送信の設定を更新できませんでした。"
+
+#: baruwa/controllers/organizations.py:303
+msgid "No changes made, The outbound settings not updated"
+msgstr "全く変更は更新されません送信の設定"
+
+#: baruwa/controllers/organizations.py:326
+msgid "The outbound settings have been deleted"
+msgstr "送信の設定が削除されています。"
+
+#: baruwa/controllers/organizations.py:328
+msgid "The outbound settings could not be deleted"
+msgstr "送信の設定を削除できませんでした。"
+
+#: baruwa/controllers/reports.py:377
+msgid "Score "
+msgstr "スコア"
+
+#: baruwa/controllers/reports.py:422
+msgid "Mail totals on "
+msgstr "メールの合計"
+
+#: baruwa/controllers/reports.py:426
+msgid "Spam totals on "
+msgstr "スパムの合計"
+
+#: baruwa/controllers/reports.py:430
+msgid "Virus totals on "
+msgstr "ウイルスの合計"
+
+#: baruwa/controllers/reports.py:507 baruwa/controllers/reports.py:544
+msgid "The filter does not exist"
+msgstr "フィルターが存在しません。"
+
+#: baruwa/controllers/reports.py:517
+msgid "The filter has been removed"
+msgstr "フィルターを削除します。"
+
+#: baruwa/controllers/reports.py:547
+msgid "The filter already exists"
+msgstr "フィルターが既に存在します。"
+
+#: baruwa/controllers/reports.py:554
+msgid "The filter has been saved"
+msgstr "フィルターを保存します。"
+
+#: baruwa/controllers/reports.py:587
+msgid "The filter has been deleted"
+msgstr "フィルターを削除します。"
+
+#: baruwa/controllers/settings.py:154
+msgid "The scanning server has been added"
+msgstr "スキャン サーバーを追加します。"
+
+#: baruwa/controllers/settings.py:158
+msgid "The server already exists"
+msgstr "サーバーが既に存在します。"
+
+#: baruwa/controllers/settings.py:184
+msgid "The scanning server has been updated"
+msgstr "スキャン サーバーを更新します。"
+
+#: baruwa/controllers/settings.py:187
+msgid "Update of server failed"
+msgstr "失敗したサーバーの更新"
+
+#: baruwa/controllers/settings.py:189
+msgid "No changes were made to the server"
+msgstr "サーバーに変更が行われていません"
+
+#: baruwa/controllers/settings.py:211
+msgid "The scanning server has been deleted"
+msgstr "スキャン サーバーを削除します。"
+
+#: baruwa/controllers/settings.py:290
+#, python-format
+msgid "%(settings)s updated"
+msgstr "%(settings)s更新日"
+
+#: baruwa/controllers/settings.py:294
+msgid "No configuration changes made"
+msgstr "構成変更されませんでした。"
+
+#: baruwa/controllers/settings.py:341
+msgid "DKIM keys successfully generated"
+msgstr "DKIM キーの生成に成功しました"
+
+#: baruwa/controllers/settings.py:343
+msgid "Generation of DKIM keys failed"
+msgstr "失敗した DKIM キーの生成"
+
+#: baruwa/controllers/settings.py:361
+msgid "enabled"
+msgstr "有効になって"
+
+#: baruwa/controllers/settings.py:370
+msgid "disabled"
+msgstr "無効"
+
+#: baruwa/controllers/settings.py:375
+#, python-format
+msgid "DKIM signing for: %s has been %s"
+msgstr "DKIM 署名: %s は %s をされています。"
+
+#: baruwa/controllers/settings.py:378
+msgid "DKIM signing status: No changes made"
+msgstr "DKIM 署名ステータス: 変更されませんでした"
+
+#: baruwa/controllers/settings.py:424 baruwa/controllers/settings.py:536
+msgid "The signature has been created"
+msgstr "署名を作成します。"
+
+#: baruwa/controllers/settings.py:428 baruwa/controllers/settings.py:540
+msgid "This signature type already exists"
+msgstr "この署名の種類が既に存在します。"
+
+#: baruwa/controllers/settings.py:457 baruwa/controllers/settings.py:569
+msgid "The signature has been updated"
+msgstr "署名を更新します。"
+
+#: baruwa/controllers/settings.py:459 baruwa/controllers/settings.py:571
+msgid "No changes made, signature not updated"
+msgstr "全く変更署名更新されません。"
+
+#: baruwa/controllers/settings.py:463 baruwa/controllers/settings.py:575
+msgid "Error occured updating the signature"
+msgstr "署名の更新エラーが発生しました。"
+
+#: baruwa/controllers/settings.py:508 baruwa/controllers/settings.py:620
+msgid "The signature has been deleted"
+msgstr "署名を削除します。"
+
+#: baruwa/controllers/status.py:96 baruwa/lib/misc.py:176
+#: baruwa/model/messages.py:146 baruwa/templates/messages/functions.html:42
+#: baruwa/templates/messages/index.html:71
+#: baruwa/templates/messages/searchresults.html:66
+#: baruwa/templates/status/index.html:25
+#: baruwa/templates/status/serverstatus.html:27
+msgid "Clean"
+msgstr "クリーン"
+
+#: baruwa/controllers/status.py:97 baruwa/templates/status/index.html:30
+#: baruwa/templates/status/serverstatus.html:32
+msgid "High scoring spam"
+msgstr "高得点スパム"
+
+#: baruwa/controllers/status.py:98 baruwa/templates/status/index.html:35
+#: baruwa/templates/status/serverstatus.html:37
+msgid "Low scoring spam"
+msgstr "低得点スパム"
+
+#: baruwa/controllers/status.py:99 baruwa/templates/messages/detail.html:77
+#: baruwa/templates/status/index.html:40
+#: baruwa/templates/status/serverstatus.html:42
+msgid "Virus infected"
+msgstr "ウイルスに感染しました。"
+
+#: baruwa/controllers/status.py:100 baruwa/templates/status/index.html:45
+#: baruwa/templates/status/serverstatus.html:47
+msgid "Policy blocked"
+msgstr "ブロック ポリシー"
+
+#: baruwa/controllers/status.py:226
+msgid "The request has been queued for processing"
+msgstr "処理待ち"
+
+#: baruwa/controllers/status.py:245 baruwa/controllers/status.py:263
+msgid "The requested queued message was not found."
+msgstr "要求されたキューにあるメッセージが見つかりませんでした。"
+
+#: baruwa/controllers/status.py:321
+msgid "The message could not be processed"
+msgstr "メッセージを処理できませんでした。"
+
+#: baruwa/controllers/status.py:481
+msgid "No query specified for audit log export"
+msgstr "監査ログのエクスポートを指定しないクエリ"
+
+#: baruwa/controllers/status.py:518
+msgid "The audit log export failed, try again later"
+msgstr "監査ログのエクスポート失敗、後で再度試行します。"
+
+#: baruwa/forms/accounts.py:32 baruwa/forms/domains.py:34
+#: baruwa/forms/lists.py:33 baruwa/forms/messages.py:27 baruwa/forms/misc.py:28
+#: baruwa/forms/organizations.py:33 baruwa/forms/reports.py:33
+#: baruwa/forms/settings.py:30 baruwa/model/status.py:32
+#: baruwa/tasks/status.py:45
+msgid "hi"
+msgstr "こんにちは"
+
+#: baruwa/forms/accounts.py:41
+msgid "User"
+msgstr "ユーザー"
+
+#: baruwa/forms/accounts.py:42
+msgid "Domain admin"
+msgstr "ドメイン管理者"
+
+#: baruwa/forms/accounts.py:43
+msgid "Administrator"
+msgstr "管理者"
+
+#: baruwa/forms/accounts.py:59
+#, python-format
+msgid "The domain: %(dom)s is not local"
+msgstr "ドメイン: %(dom)sローカルではないです。"
+
+#: baruwa/forms/accounts.py:68 baruwa/forms/accounts.py:105
+msgid "Please select atleast one domain"
+msgstr "少なくとも 1 つのドメインを選択してください。"
+
+#: baruwa/forms/accounts.py:74 baruwa/forms/accounts.py:110
+#: baruwa/tasks/status.py:296 baruwa/templates/accounts/account.html:38
+#: baruwa/templates/accounts/confirmbulkdel.html:8
+#: baruwa/templates/accounts/importstatus.html:5
+#: baruwa/templates/accounts/index.html:34
+#: baruwa/templates/accounts/login.html:39
+#: baruwa/templates/accounts/searchresults.html:24
+#: baruwa/templates/status/audit.html:27
+msgid "Username"
+msgstr "ユーザー名"
+
+#: baruwa/forms/accounts.py:77 baruwa/forms/accounts.py:112
+#: baruwa/forms/invite.py:98
+msgid "First name"
+msgstr "最初の名前"
+
+#: baruwa/forms/accounts.py:79 baruwa/forms/accounts.py:113
+#: baruwa/forms/invite.py:99
+msgid "Last name"
+msgstr "最後の名前"
+
+#: baruwa/forms/accounts.py:81 baruwa/forms/accounts.py:138
+#: baruwa/forms/invite.py:101
+msgid "New Password"
+msgstr "新しいパスワード"
+
+#: baruwa/forms/accounts.py:84 baruwa/forms/accounts.py:141
+#: baruwa/forms/invite.py:105 baruwa/forms/organizations.py:65
+msgid "Passwords must match"
+msgstr "パスワードが一致する必要があります。"
+
+#: baruwa/forms/accounts.py:85 baruwa/forms/accounts.py:142
+#: baruwa/forms/invite.py:106 baruwa/forms/organizations.py:64
+msgid "Retype Password"
+msgstr "パスワードを再入力します。"
+
+#: baruwa/forms/accounts.py:87 baruwa/forms/accounts.py:114
+#: baruwa/forms/invite.py:100 baruwa/templates/accounts/confirmbulkdel.html:10
+#: baruwa/templates/accounts/index.html:36
+#: baruwa/templates/accounts/login.html:58
+#: baruwa/templates/accounts/searchresults.html:26
+msgid "Email address"
+msgstr "メール アドレス"
+
+#: baruwa/forms/accounts.py:91 baruwa/templates/accounts/account.html:86
+msgid "Account type"
+msgstr "アカウントの種類"
+
+#: baruwa/forms/accounts.py:93 baruwa/forms/accounts.py:115
+#: baruwa/forms/organizations.py:49 baruwa/templates/base.html:103
+#: baruwa/templates/accounts/account.html:112
+msgid "Domains"
+msgstr "ドメイン"
+
+#: baruwa/forms/accounts.py:96 baruwa/forms/accounts.py:117
+#: baruwa/forms/accounts.py:133 baruwa/forms/domains.py:95
+#: baruwa/forms/domains.py:133 baruwa/forms/domains.py:141
+#: baruwa/forms/domains.py:150 baruwa/forms/domains.py:165
+#: baruwa/forms/organizations.py:61 baruwa/forms/settings.py:165
+#: baruwa/forms/settings.py:696 baruwa/forms/settings.py:701
+#: baruwa/lib/templates/helpers.py:225 baruwa/templates/settings/index.html:17
+msgid "Enabled"
+msgstr "有効になって"
+
+#: baruwa/forms/accounts.py:97 baruwa/forms/accounts.py:118
+#: baruwa/templates/accounts/account.html:132
+msgid "Send reports"
+msgstr "レポートを送信します。"
+
+#: baruwa/forms/accounts.py:98 baruwa/forms/accounts.py:119
+msgid "Enable spam checks"
+msgstr "スパム チェックを有効にします。"
+
+#: baruwa/forms/accounts.py:99 baruwa/forms/domains.py:104
+msgid "Probable spam score"
+msgstr "スパムの疑いありのスコア"
+
+#: baruwa/forms/accounts.py:100 baruwa/forms/domains.py:105
+msgid "Definite spam score"
+msgstr "明確なスパム スコア"
+
+#: baruwa/forms/accounts.py:120 baruwa/templates/domains/detail.html:108
+msgid "Spam low score"
+msgstr "スパム スコアの低い"
+
+#: baruwa/forms/accounts.py:121 baruwa/templates/domains/detail.html:116
+msgid "Spam high score"
+msgstr "スパムのハイスコア"
+
+#: baruwa/forms/accounts.py:147
+msgid "Old Password"
+msgstr "古いパスワード"
+
+#: baruwa/forms/domains.py:48 baruwa/templates/base.html:79
+#: baruwa/templates/messages/detail.html:150
+#: baruwa/templates/messages/taskstatus.html:6
+msgid "Quarantine"
+msgstr "検疫"
+
+#: baruwa/forms/domains.py:49 baruwa/forms/messages.py:79
+#: baruwa/model/status.py:41 baruwa/templates/accounts/account.html:175
+#: baruwa/templates/accounts/account.html:177
+#: baruwa/templates/accounts/account.html:203
+#: baruwa/templates/accounts/deleteaddress.html:17
+#: baruwa/templates/domains/confirmbulkdel.html:36
+#: baruwa/templates/domains/deletealias.html:16
+#: baruwa/templates/domains/deleteauth.html:16
+#: baruwa/templates/domains/detail.html:174
+#: baruwa/templates/domains/detail.html:203
+#: baruwa/templates/domains/detail.html:238
+#: baruwa/templates/domains/index.html:59
+#: baruwa/templates/domains/searchresults.html:55
+#: baruwa/templates/organizations/detail.html:7
+#: baruwa/templates/organizations/detail.html:73
+#: baruwa/templates/organizations/index.html:17
+#: baruwa/templates/organizations/index.html:32
+#: baruwa/templates/settings/domain_sigs.html:32
+#: baruwa/templates/settings/index.html:34
+msgid "Delete"
+msgstr "削除"
+
+#: baruwa/forms/domains.py:50
+msgid "Deliver"
+msgstr "配信"
+
+#: baruwa/forms/domains.py:54
+#, fuzzy
+msgid "Monthly"
+msgstr "Monthy"
+
+#: baruwa/forms/domains.py:55
+msgid "Weekly"
+msgstr "週間"
+
+#: baruwa/forms/domains.py:56
+msgid "Daily"
+msgstr "毎日"
+
+#: baruwa/forms/domains.py:57 baruwa/lib/templates/helpers.py:228
+msgid "Disabled"
+msgstr "無効"
+
+#: baruwa/forms/domains.py:61 baruwa/forms/domains.py:68
+msgid "SMTP"
+msgstr "SMTP"
+
+#: baruwa/forms/domains.py:62
+msgid "LMTP"
+msgstr "LMTP"
+
+#: baruwa/forms/domains.py:66
+msgid "POP3"
+msgstr "POP3"
+
+#: baruwa/forms/domains.py:67
+msgid "IMAP"
+msgstr "IMAP"
+
+#: baruwa/forms/domains.py:69
+msgid "RADIUS/RSA SECUREID"
+msgstr "半径/RSA SECUREID"
+
+#: baruwa/forms/domains.py:70
+msgid "LDAP"
+msgstr "LDAP"
+
+#: baruwa/forms/domains.py:71
+msgid "YUBIKEY"
+msgstr "YUBIKEY"
+
+#: baruwa/forms/domains.py:72
+msgid "OAUTH"
+msgstr "OAUTH"
+
+#: baruwa/forms/domains.py:76
+msgid "SUBTREE"
+msgstr "サブツリー"
+
+#: baruwa/forms/domains.py:77
+msgid "ONE LEVEL"
+msgstr "1 つのレベル"
+
+#: baruwa/forms/domains.py:85
+msgid "Invalid Domain name or IP address"
+msgstr "無効なドメイン名または IP アドレス"
+
+#: baruwa/forms/domains.py:90 baruwa/forms/invite.py:108
+#: baruwa/forms/lists.py:85 baruwa/templates/domains/detail.html:21
+#: baruwa/templates/organizations/importstatus.html:5
+msgid "Domain name"
+msgstr "ドメイン名"
+
+#: baruwa/forms/domains.py:92 baruwa/forms/domains.py:132
+#: baruwa/forms/invite.py:110
+msgid "Invalid Domain name"
+msgstr "無効なドメイン名"
+
+#: baruwa/forms/domains.py:93 baruwa/templates/domains/detail.html:140
+msgid "Site url"
+msgstr "サイトの url"
+
+#: baruwa/forms/domains.py:96
+msgid "Enable SMTP callouts"
+msgstr "SMTP のコールアウトを有効にします。"
+
+#: baruwa/forms/domains.py:97
+msgid "Enable LDAP callouts"
+msgstr "LDAP のコールアウトを有効にします。"
+
+#: baruwa/forms/domains.py:98
+msgid "Enable Virus checks"
+msgstr "ウイルス チェックを有効にします。"
+
+#: baruwa/forms/domains.py:99
+msgid "Enable SPAM checks"
+msgstr "スパム チェックを有効にします。"
+
+#: baruwa/forms/domains.py:100
+msgid "What to do with probable spam"
+msgstr "何をスパムの疑いありとする"
+
+#: baruwa/forms/domains.py:102
+msgid "What to do with definite spam"
+msgstr "何を明確なスパムをする"
+
+#: baruwa/forms/domains.py:106 baruwa/templates/domains/detail.html:124
+msgid "Maximum Message Size"
+msgstr "メッセージの最大サイズ"
+
+#: baruwa/forms/domains.py:108
+msgid "Invalid message size, only B, K, M accepted"
+msgstr "無効なメッセージ サイズ、受け入れ B、K、M のみ"
+
+#: baruwa/forms/domains.py:111 baruwa/templates/domains/detail.html:52
+msgid "Multi destination delivery mode"
+msgstr "マルチ ターゲット配信モード"
+
+#: baruwa/forms/domains.py:113 baruwa/templates/domains/detail.html:132
+msgid "Language"
+msgstr "言語"
+
+#: baruwa/forms/domains.py:114
+msgid "Report frequency"
+msgstr "レポートの頻度"
+
+#: baruwa/forms/domains.py:116 baruwa/templates/base.html:125
+#: baruwa/templates/accounts/account.html:95
+msgid "Organizations"
+msgstr "組織"
+
+#: baruwa/forms/domains.py:130
+msgid "Domain alias name"
+msgstr "ドメイン エイリアス名"
+
+#: baruwa/forms/domains.py:134
+msgid "Parent domain"
+msgstr "親ドメイン"
+
+#: baruwa/forms/domains.py:146 baruwa/forms/domains.py:155
+#: baruwa/forms/domains.py:160
+msgid "Server address"
+msgstr "サーバー アドレス"
+
+#: baruwa/forms/domains.py:148 baruwa/forms/domains.py:162
+#: baruwa/forms/invite.py:113
+msgid "Protocol"
+msgstr "プロトコル"
+
+#: baruwa/forms/domains.py:149 baruwa/forms/domains.py:163
+#: baruwa/forms/invite.py:114
+msgid "Port"
+msgstr "ポート"
+
+#: baruwa/forms/domains.py:164
+msgid "must be numeric"
+msgstr "数値でなければなりません"
+
+#: baruwa/forms/domains.py:166
+msgid "Split address"
+msgstr "アドレスを分割します。"
+
+#: baruwa/forms/domains.py:167
+msgid "Username map template"
+msgstr "ユーザー名のマップ テンプレート"
+
+#: baruwa/forms/domains.py:172
+msgid "Base DN"
+msgstr "ベース DN"
+
+#: baruwa/forms/domains.py:173
+msgid "Username attribute"
+msgstr "ユーザー名属性"
+
+#: baruwa/forms/domains.py:176
+msgid "Email attribute"
+msgstr "メールの属性"
+
+#: baruwa/forms/domains.py:179
+msgid "Bind DN"
+msgstr "バインド DN"
+
+#: baruwa/forms/domains.py:180
+msgid "Bind password"
+msgstr "バインド パスワード"
+
+#: baruwa/forms/domains.py:181
+msgid "Use TLS"
+msgstr "TLS の使用"
+
+#: baruwa/forms/domains.py:182
+msgid "Search for UserDN"
+msgstr "UserDN の検索"
+
+#: baruwa/forms/domains.py:183
+msgid "Auth Search Filter"
+msgstr "Auth 検索フィルター"
+
+#: baruwa/forms/domains.py:184
+msgid "Auth Search Scope"
+msgstr "Auth 検索範囲"
+
+#: baruwa/forms/domains.py:186
+msgid "Email Search Filter"
+msgstr "メール検索フィルター"
+
+#: baruwa/forms/domains.py:187
+msgid "Email Search Scope"
+msgstr "メールの検索範囲"
+
+#: baruwa/forms/domains.py:202
+msgid "Unsupported search scope"
+msgstr "サポートされていない検索範囲"
+
+#: baruwa/forms/domains.py:208
+msgid "Radius secret"
+msgstr "Radius シークレット"
+
+#: baruwa/forms/domains.py:209
+msgid "Request timeout"
+msgstr "要求のタイムアウト"
+
+#: baruwa/forms/invite.py:60
+msgid "The domain is already registered"
+msgstr "ドメインは既に登録されています"
+
+#: baruwa/forms/invite.py:69
+msgid "The username cannot be an email address"
+msgstr "ユーザー名はメール アドレスをすることはできません。"
+
+#: baruwa/forms/invite.py:71 baruwa/forms/invite.py:73
+msgid "The username is not available"
+msgstr "ユーザー名は利用できません。"
+
+#: baruwa/forms/invite.py:83
+msgid "Email from a domain that is already registered"
+msgstr "既に登録されているドメインからのメールします。"
+
+#: baruwa/forms/invite.py:91
+msgid "You must accept the terms and conditions"
+msgstr "利用規約に同意する必要があります。"
+
+#: baruwa/forms/invite.py:96
+msgid "Admin Username"
+msgstr "管理者のユーザ名"
+
+#: baruwa/forms/invite.py:107 baruwa/forms/organizations.py:48
+#: baruwa/templates/organizations/detail.html:19
+#: baruwa/templates/organizations/index.html:11
+msgid "Organization name"
+msgstr "組織名"
+
+#: baruwa/forms/invite.py:111
+msgid "Delivery Server address"
+msgstr "配信サーバーのアドレス"
+
+#: baruwa/forms/lists.py:51
+msgid "Provide either a valid IP, email, Domain address, or IP network or range"
+msgstr "有効な IP、電子メール、ドメイン アドレス、または IP を提供するネットワークまたは範囲"
+
+#: baruwa/forms/lists.py:68
+#, python-format
+msgid "The domain %(dom)s is not local"
+msgstr "ドメイン %(dom)sローカルではないです。"
+
+#: baruwa/forms/lists.py:71
+msgid "Provide either a valid email or domain address"
+msgstr "有効なメール アドレスまたはドメインのアドレスを提供します。"
+
+#: baruwa/forms/lists.py:76 baruwa/forms/lists.py:83 baruwa/forms/lists.py:98
+#: baruwa/templates/lists/index.html:27
+#: baruwa/templates/messages/detail.html:23
+#: baruwa/templates/messages/taskstatus.html:16
+#: baruwa/templates/status/detail.html:29
+msgid "From address"
+msgstr "アドレスから"
+
+#: baruwa/forms/lists.py:77 baruwa/forms/lists.py:99
+#: baruwa/templates/lists/index.html:28
+#: baruwa/templates/messages/detail.html:27
+#: baruwa/templates/messages/taskstatus.html:17
+#: baruwa/templates/status/detail.html:33
+msgid "To address"
+msgstr "アドレスに"
+
+#: baruwa/forms/lists.py:78 baruwa/forms/lists.py:86 baruwa/forms/lists.py:100
+msgid "List type"
+msgstr "リストの種類"
+
+#: baruwa/forms/lists.py:84
+msgid "User account"
+msgstr "ユーザー アカウント"
+
+#: baruwa/forms/lists.py:87 baruwa/forms/lists.py:101
+msgid "Add to aliases as well"
+msgstr "同様にエイリアスを追加します。"
+
+#: baruwa/forms/lists.py:93
+msgid "Invalid user account supplied"
+msgstr "無効なユーザー アカウントの指定"
+
+#: baruwa/forms/messages.py:53
+msgid "Select atleast one action to perform"
+msgstr "少なくとも 1 つのアクションを選択します"
+
+#: baruwa/forms/messages.py:69
+msgid "Provide atleast one alternative recipient"
+msgstr "少なくとも 1 つの代替受信者を提供します。"
+
+#: baruwa/forms/messages.py:76
+msgid "Invalid email address"
+msgstr "無効な e メール アドレス"
+
+#: baruwa/forms/messages.py:78 baruwa/templates/email/quarantine.html:66
+#: baruwa/templates/email/quarantine.html:81
+#: baruwa/templates/email/quarantine.html:95
+msgid "Release"
+msgstr "リリース"
+
+#: baruwa/forms/messages.py:80
+msgid "Bayesian Learn"
+msgstr "ベイズ学習します。"
+
+#: baruwa/forms/messages.py:81
+msgid "Alt recipients"
+msgstr "Alt の受信者"
+
+#: baruwa/forms/misc.py:36
+msgid "Show items"
+msgstr "アイテムを表示します。"
+
+#: baruwa/forms/misc.py:41
+msgid "Image file"
+msgstr "イメージ ファイル"
+
+#: baruwa/forms/misc.py:42
+msgid "File name"
+msgstr "ファイル名"
+
+#: baruwa/forms/organizations.py:43 baruwa/forms/organizations.py:95
+#, python-format
+msgid "Password %(msg)s."
+msgstr "パスワード %(msg)s。"
+
+#: baruwa/forms/organizations.py:51
+msgid "Admins"
+msgstr "Admins"
+
+#: baruwa/forms/organizations.py:56
+msgid "Delete Organization domains"
+msgstr "組織のドメインを削除します。"
+
+#: baruwa/forms/organizations.py:60 baruwa/forms/settings.py:161
+#: baruwa/forms/settings.py:301 baruwa/tasks/status.py:298
+#: baruwa/templates/messages/detail.html:176
+#: baruwa/templates/reports/relays.html:26
+#: baruwa/templates/settings/index.html:16
+#: baruwa/templates/status/audit.html:29
+msgid "Hostname"
+msgstr "ホスト名"
+
+#: baruwa/forms/organizations.py:62
+msgid "SMTP-AUTH username"
+msgstr "SMTP AUTH ユーザー名"
+
+#: baruwa/forms/organizations.py:63
+msgid "SMTP-AUTH password"
+msgstr "SMTP AUTH パスワード"
+
+#: baruwa/forms/organizations.py:70
+msgid "Provide either a hostname or username & password"
+msgstr "ホスト名またはユーザー名、& パスワードを提供します。"
+
+#: baruwa/forms/organizations.py:74
+msgid "Provide a valid hostname or IP address"
+msgstr "有効なホスト名または IP アドレスを提供します。"
+
+#: baruwa/forms/organizations.py:78
+msgid "Required"
+msgstr "必須"
+
+#: baruwa/forms/organizations.py:81
+msgid "Email usernames not supported"
+msgstr "メール ユーザー名はサポートされていません"
+
+#: baruwa/forms/organizations.py:101
+msgid "CSV file"
+msgstr "CSV ファイル"
+
+#: baruwa/forms/organizations.py:102
+msgid "Skip first line"
+msgstr "最初の行をスキップします。"
+
+#: baruwa/forms/reports.py:39 baruwa/templates/messages/detail.html:19
+#: baruwa/templates/status/detail.html:17
+msgid "Message ID"
+msgstr "メッセージ ID"
+
+#: baruwa/forms/reports.py:40
+msgid "Message size"
+msgstr "メッセージ サイズ"
+
+#: baruwa/forms/reports.py:41 baruwa/templates/email/quarantine.html:64
+#: baruwa/templates/email/quarantine.html:93
+msgid "From Address"
+msgstr "アドレスから"
+
+#: baruwa/forms/reports.py:42
+msgid "From Domain"
+msgstr "ドメインから"
+
+#: baruwa/forms/reports.py:43
+msgid "To Address"
+msgstr "アドレスに"
+
+#: baruwa/forms/reports.py:44
+msgid "To Domain"
+msgstr "ドメインに"
+
+#: baruwa/forms/reports.py:45 baruwa/templates/email/quarantine.html:65
+#: baruwa/templates/email/quarantine.html:94
+#: baruwa/templates/messages/detail.html:31
+#: baruwa/templates/messages/functions.html:110
+#: baruwa/templates/messages/functions.html:112
+#: baruwa/templates/messages/functions.html:149
+#: baruwa/templates/messages/functions.html:151
+#: baruwa/templates/messages/index.html:23
+#: baruwa/templates/messages/searchresults.html:20
+#: baruwa/templates/status/detail.html:25
+msgid "Subject"
+msgstr "件名"
+
+#: baruwa/forms/reports.py:46 baruwa/templates/messages/detail.html:43
+msgid "Received from"
+msgstr "受信しました。"
+
+#: baruwa/forms/reports.py:48
+msgid "Was scanned"
+msgstr "スキャンされました。"
+
+#: baruwa/forms/reports.py:49
+msgid "Is Spam"
+msgstr "スパムです。"
+
+#: baruwa/forms/reports.py:50
+msgid "Is Definite spam"
+msgstr "間違いなくスパムです。"
+
+#: baruwa/forms/reports.py:52
+msgid "Is RBL listed"
+msgstr "RBL を掲げる"
+
+#: baruwa/forms/reports.py:53
+msgid "Is approved sender"
+msgstr "承認済みの送信者であります。"
+
+#: baruwa/forms/reports.py:54
+msgid "Is banned sender"
+msgstr "禁止された送信者であります。"
+
+#: baruwa/forms/reports.py:55
+msgid "Spam score"
+msgstr "迷惑メールスコア"
+
+#: baruwa/forms/reports.py:56
+msgid "Spam report"
+msgstr "スパムの報告"
+
+#: baruwa/forms/reports.py:57
+msgid "Is virus infected"
+msgstr "ウイルス感染しています。"
+
+#: baruwa/forms/reports.py:58
+msgid "Is name infected"
+msgstr "名が感染しています。"
+
+#: baruwa/forms/reports.py:59
+msgid "Is other infected"
+msgstr "他の感染しています。"
+
+#: baruwa/forms/reports.py:61
+msgid "Time"
+msgstr "時間"
+
+#: baruwa/forms/reports.py:62
+msgid "Headers"
+msgstr "ヘッダー"
+
+#: baruwa/forms/reports.py:63
+msgid "Is quarantined"
+msgstr "検疫されています。"
+
+#: baruwa/forms/reports.py:64
+msgid "Processed by host"
+msgstr "ホストにより処理"
+
+#: baruwa/forms/reports.py:68
+msgid "is equal to"
+msgstr "等しい"
+
+#: baruwa/forms/reports.py:69
+msgid "is not equal to"
+msgstr "等しくないです。"
+
+#: baruwa/forms/reports.py:70
+msgid "is greater than"
+msgstr "大きい"
+
+#: baruwa/forms/reports.py:71
+msgid "is less than"
+msgstr "あるより小さい"
+
+#: baruwa/forms/reports.py:72
+msgid "contains"
+msgstr "含まれています"
+
+#: baruwa/forms/reports.py:73
+msgid "does not contain"
+msgstr "含まない"
+
+#: baruwa/forms/reports.py:74
+msgid "matches regex"
+msgstr "正規表現と一致します。"
+
+#: baruwa/forms/reports.py:75
+msgid "does not match regex"
+msgstr "正規表現と一致しません。"
+
+#: baruwa/forms/reports.py:76
+msgid "is null"
+msgstr "null です。"
+
+#: baruwa/forms/reports.py:77
+msgid "is not null"
+msgstr "null ではないです。"
+
+#: baruwa/forms/reports.py:78
+msgid "is true"
+msgstr "true です。"
+
+#: baruwa/forms/reports.py:79
+msgid "is false"
+msgstr "false です。"
+
+#: baruwa/forms/reports.py:117
+#, python-format
+msgid "%(field)s does not support the \"%(filt)s\" filter"
+msgstr "%(field)s does not support the \"%(filt)s\" filter"
+
+#: baruwa/forms/reports.py:124
+msgid "Please supply a value to query"
+msgstr "クエリに値を入力してください。"
+
+#: baruwa/forms/reports.py:127
+msgid "The value has to be numeric"
+msgstr "値は数値である必要があります。"
+
+#: baruwa/forms/reports.py:133
+#, python-format
+msgid "%(email)s is not a valid e-mail address."
+msgstr "%(email)s is not a valid e-mail address."
+
+#: baruwa/forms/reports.py:140
+#, python-format
+msgid "%(dom)s is not a valid domain address."
+msgstr "%(dom)s は有効なドメインのアドレスではありません。"
+
+#: baruwa/forms/reports.py:147
+msgid "Invalid regex supplied"
+msgstr "無効な正規表現を指定"
+
+#: baruwa/forms/reports.py:153
+msgid "Please provide a valid ipv4 address"
+msgstr "有効な ipv4 アドレスを入力してください。"
+
+#: baruwa/forms/reports.py:159
+msgid "Please provide a valid hostname or ipv4 address"
+msgstr "有効なホスト名または ipv4 アドレスを入力してください。"
+
+#: baruwa/forms/reports.py:167
+msgid "Please provide a valid date in YYYY-MM-DD format"
+msgstr "YYYY-MM-DD 形式の有効な日付を入力してください。"
+
+#: baruwa/forms/reports.py:174
+msgid "Please provide valid time in HH:MM format"
+msgstr "HH:MM 形式で有効な時間を提供してください。"
+
+#: baruwa/forms/settings.py:164
+msgid "Invalid Domain name or IPv4 address"
+msgstr "無効なドメイン名または IPv4 アドレス"
+
+#: baruwa/forms/settings.py:170
+msgid "Sitename"
+msgstr "Sitename"
+
+#: baruwa/forms/settings.py:171
+msgid "Your Organisation Name"
+msgstr "組織名"
+
+#: baruwa/forms/settings.py:173
+msgid "Organisation website"
+msgstr "組織のウェブサイト"
+
+#: baruwa/forms/settings.py:175
+msgid "Max Children"
+msgstr "Max 子供"
+
+#: baruwa/forms/settings.py:177
+msgid "Queue Scan Interval"
+msgstr "キューのスキャンの間隔"
+
+#: baruwa/forms/settings.py:179
+msgid "Restart Every"
+msgstr "再起動ごと"
+
+#: baruwa/forms/settings.py:181
+msgid "Use Default Rules With Multiple Recipients"
+msgstr "複数の受信者に対する既定の規則を使用します。"
+
+#: baruwa/forms/settings.py:184
+msgid "Read IP Address From Received Header"
+msgstr "IP アドレスからの受信ヘッダーを読む"
+
+#: baruwa/forms/settings.py:187
+msgid "Debug"
+msgstr "デバッグ"
+
+#: baruwa/forms/settings.py:190
+msgid "Debug SpamAssassin"
+msgstr "SpamAssassin をデバッグします。"
+
+#: baruwa/forms/settings.py:193
+msgid "Deliver In Background"
+msgstr "バック グラウンドで提供します。"
+
+#: baruwa/forms/settings.py:196
+msgid "Delivery Method"
+msgstr "配信方法"
+
+#: baruwa/forms/settings.py:199
+msgid "Automatic Syntax Check"
+msgstr "自動構文チェック"
+
+#: baruwa/forms/settings.py:202
+msgid "Minimum Code Status"
+msgstr "最小コード ステータス"
+
+#: baruwa/forms/settings.py:209
+msgid "Max Unscanned Bytes Per Scan"
+msgstr "スキャン当たり最大スキャンせずバイト"
+
+#: baruwa/forms/settings.py:211
+msgid "Max Unsafe Bytes Per Scan"
+msgstr "安全でないバイトの最大スキャン当たり"
+
+#: baruwa/forms/settings.py:213
+msgid "Max Unscanned Messages Per Scan"
+msgstr "スキャン当たり最大スキャンされていないメッセージ"
+
+#: baruwa/forms/settings.py:215
+msgid "Max Unsafe Messages Per Scan"
+msgstr "最大スキャンあたりの安全でないメッセージ"
+
+#: baruwa/forms/settings.py:217
+msgid "Max Normal Queue Size"
+msgstr "最大通常のキューのサイズ"
+
+#: baruwa/forms/settings.py:219
+msgid "Maximum Processing Attempts"
+msgstr "処理の最大試行回数"
+
+#: baruwa/forms/settings.py:221
+msgid "Maximum Attachments Per Message"
+msgstr "メッセージあたりの最大添付ファイル"
+
+#: baruwa/forms/settings.py:223
+msgid "Expand TNEF"
+msgstr "TNEF を展開します。"
+
+#: baruwa/forms/settings.py:226
+msgid "Use TNEF Contents"
+msgstr "TNEF コンテンツの利用"
+
+#: baruwa/forms/settings.py:229
+msgid "Deliver Unparsable TNEF"
+msgstr "解析できない TNEF を提供します。"
+
+#: baruwa/forms/settings.py:232
+msgid "TNEF Timeout"
+msgstr "TNEF のタイムアウト"
+
+#: baruwa/forms/settings.py:234
+msgid "File Timeout"
+msgstr "ファイルのタイムアウト"
+
+#: baruwa/forms/settings.py:236
+msgid "Gunzip Timeout"
+msgstr "Gunzip タイムアウト"
+
+#: baruwa/forms/settings.py:238
+msgid "Unrar Timeout"
+msgstr "解凍するタイムアウト"
+
+#: baruwa/forms/settings.py:240
+msgid "Maximum Archive Depth"
+msgstr "アーカイブの最大深さ"
+
+#: baruwa/forms/settings.py:242
+msgid "Find Archives By Content"
+msgstr "コンテンツのアーカイブを見つける"
+
+#: baruwa/forms/settings.py:245
+msgid "Unpack Microsoft Documents"
+msgstr "Microsoft ドキュメントをアンパックします。"
+
+#: baruwa/forms/settings.py:248
+msgid "Zip Attachments"
+msgstr "Zip の添付ファイル"
+
+#: baruwa/forms/settings.py:251
+msgid "Attachments Zip Filename"
+msgstr "添付ファイルの Zip ファイル名"
+
+#: baruwa/forms/settings.py:253
+msgid "Attachments Min Total Size To Zip"
+msgstr "Zip に添付 Min 合計サイズ"
+
+#: baruwa/forms/settings.py:255
+msgid "Attachment Extensions Not To Zip"
+msgstr "Zip にではなく添付ファイルの拡張子"
+
+#: baruwa/forms/settings.py:257
+msgid "Add Text Of Doc"
+msgstr "ドキュメントのテキストを追加します。"
+
+#: baruwa/forms/settings.py:260
+msgid "Antiword Timeout"
+msgstr "Antiword タイムアウト"
+
+#: baruwa/forms/settings.py:262
+msgid "Unzip Maximum Files Per Archive"
+msgstr "アーカイブごとの最大ファイルを解凍します。"
+
+#: baruwa/forms/settings.py:264
+msgid "Unzip Maximum File Size"
+msgstr "ファイルの最大サイズを解凍します。"
+
+#: baruwa/forms/settings.py:266
+msgid "Unzip Filenames"
+msgstr "ファイル名を解凍します。"
+
+#: baruwa/forms/settings.py:268
+msgid "Unzip MimeType"
+msgstr "MimeType を解凍します。"
+
+#: baruwa/forms/settings.py:270
+msgid "Mail Header"
+msgstr "メール ヘッダー"
+
+#: baruwa/forms/settings.py:272
+msgid "Information Header"
+msgstr "情報ヘッダー"
+
+#: baruwa/forms/settings.py:274
+msgid "Add Envelope From Header"
+msgstr "エンベロープ ヘッダーから追加します。"
+
+#: baruwa/forms/settings.py:277
+msgid "Add Envelope To Header"
+msgstr "エンベロープ ヘッダーに追加します。"
+
+#: baruwa/forms/settings.py:280
+msgid "Envelope From Header"
+msgstr "エンベロープ ヘッダーから"
+
+#: baruwa/forms/settings.py:282
+msgid "Envelope To Header"
+msgstr "エンベロープ ヘッダーに"
+
+#: baruwa/forms/settings.py:284
+msgid "ID Header"
+msgstr "ID ヘッダー"
+
+#: baruwa/forms/settings.py:286
+msgid "IP Protocol Version Header"
+msgstr "IP プロトコル バージョン ヘッダー"
+
+#: baruwa/forms/settings.py:288
+msgid "Clean Header Value"
+msgstr "きれいなヘッダー値"
+
+#: baruwa/forms/settings.py:290
+msgid "Infected Header Value"
+msgstr "感染したヘッダー値"
+
+#: baruwa/forms/settings.py:292
+msgid "Disinfected Header Value"
+msgstr "消毒ヘッダー値"
+
+#: baruwa/forms/settings.py:294
+msgid "Information Header Value"
+msgstr "情報ヘッダー値"
+
+#: baruwa/forms/settings.py:295
+msgid "Multiple Headers"
+msgstr "複数のヘッダー"
+
+#: baruwa/forms/settings.py:298
+msgid "Place New Headers At Top Of Message"
+msgstr "メッセージの上部に新しいヘッダーを配置します。"
+
+#: baruwa/forms/settings.py:303
+msgid "Sign Messages Already Processed"
+msgstr "既に処理されたメッセージの署名"
+
+#: baruwa/forms/settings.py:306
+msgid "Allow Multiple HTML Signatures"
+msgstr "複数の HTML の署名を許可します。"
+
+#: baruwa/forms/settings.py:309
+msgid "Dont Sign HTML If Headers Exist"
+msgstr "いけない記号 HTML If ヘッダーが存在します。"
+
+#: baruwa/forms/settings.py:310
+msgid "Mark Infected Messages"
+msgstr "感染したメッセージをマーク"
+
+#: baruwa/forms/settings.py:313
+msgid "Mark Unscanned Messages"
+msgstr "スキャンされていないメッセージをマーク"
+
+#: baruwa/forms/settings.py:316
+msgid "Unscanned Header Value"
+msgstr "スキャンせずヘッダー値"
+
+#: baruwa/forms/settings.py:318
+msgid "Remove These Headers"
+msgstr "これらのヘッダーを削除します。"
+
+#: baruwa/forms/settings.py:320
+msgid "Deliver Cleaned Messages"
+msgstr "クリーニングされたメッセージを配信します。"
+
+#: baruwa/forms/settings.py:323
+msgid "Scanned Modify Subject"
+msgstr "スキャンされた件名の変更"
+
+#: baruwa/forms/settings.py:326
+msgid "Scanned Subject Text"
+msgstr "スキャンした件名のテキスト"
+
+#: baruwa/forms/settings.py:328
+msgid "Virus Modify Subject"
+msgstr "ウイルスは、件名を変更します。"
+
+#: baruwa/forms/settings.py:331
+msgid "Virus Subject Text"
+msgstr "ウイルスの件名のテキスト"
+
+#: baruwa/forms/settings.py:333
+msgid "Filename Modify Subject"
+msgstr "ファイル名は、件名を変更します。"
+
+#: baruwa/forms/settings.py:336
+msgid "Filename Subject Text"
+msgstr "ファイル名の件名のテキスト"
+
+#: baruwa/forms/settings.py:338
+msgid "Content Modify Subject"
+msgstr "コンテンツは、件名を変更します。"
+
+#: baruwa/forms/settings.py:341
+msgid "Content Subject Text"
+msgstr "コンテンツの件名のテキスト"
+
+#: baruwa/forms/settings.py:343
+msgid "Size Modify Subject"
+msgstr "サイズは、件名を変更します。"
+
+#: baruwa/forms/settings.py:346
+msgid "Size Subject Text"
+msgstr "サイズの件名のテキスト"
+
+#: baruwa/forms/settings.py:348
+msgid "Disarmed Modify Subject"
+msgstr "武装解除件名の変更"
+
+#: baruwa/forms/settings.py:351
+msgid "Disarmed Subject Text"
+msgstr "武装解除の件名のテキスト"
+
+#: baruwa/forms/settings.py:353
+msgid "Phishing Modify Subject"
+msgstr "フィッシング詐欺は、件名を変更します。"
+
+#: baruwa/forms/settings.py:356
+msgid "Phishing Subject Text"
+msgstr "フィッシング詐欺の件名のテキスト"
+
+#: baruwa/forms/settings.py:358
+msgid "Spam Modify Subject"
+msgstr "スパムは、件名を変更します。"
+
+#: baruwa/forms/settings.py:361
+msgid "Spam Subject Text"
+msgstr "スパムの件名のテキスト"
+
+#: baruwa/forms/settings.py:363
+msgid "High Scoring Spam Modify Subject"
+msgstr "高得点スパムは、件名を変更します。"
+
+#: baruwa/forms/settings.py:366
+msgid "High Scoring Spam Subject Text"
+msgstr "高得点スパムの件名のテキスト"
+
+#: baruwa/forms/settings.py:368
+msgid "Warning Is Attachment"
+msgstr "添付ファイルの警告であります。"
+
+#: baruwa/forms/settings.py:371
+msgid "Attachment Warning Filename"
+msgstr "添付ファイルの警告のファイル名"
+
+#: baruwa/forms/settings.py:373
+msgid "Attachment Encoding Charset"
+msgstr "添付ファイルのエンコーディング文字セット"
+
+#: baruwa/forms/settings.py:379
+msgid "Virus Scanners"
+msgstr "ウイルス スキャナー"
+
+#: baruwa/forms/settings.py:381
+msgid "Virus Scanner Timeout"
+msgstr "ウイルス スキャナーのタイムアウト"
+
+#: baruwa/forms/settings.py:383
+msgid "Deliver Disinfected Files"
+msgstr "消毒のファイルを配信します。"
+
+#: baruwa/forms/settings.py:386
+msgid "Silent Viruses"
+msgstr "サイレント ウイルス"
+
+#: baruwa/forms/settings.py:388
+msgid "Still Deliver Silent Viruses"
+msgstr "まだサイレントのウイルスを配信します。"
+
+#: baruwa/forms/settings.py:391
+msgid "Non-Forging Viruses"
+msgstr "非鍛造ウイルス"
+
+#: baruwa/forms/settings.py:392
+msgid "Spam-Virus Header"
+msgstr "スパム ウイルス ヘッダー"
+
+#: baruwa/forms/settings.py:394
+msgid "Virus Names Which Are Spam"
+msgstr "スパムはウイルスの名前"
+
+#: baruwa/forms/settings.py:396
+msgid "Block Encrypted Messages"
+msgstr "暗号化されたメッセージをブロックします。"
+
+#: baruwa/forms/settings.py:399
+msgid "Block Unencrypted Messages"
+msgstr "暗号化されていないメッセージをブロックします。"
+
+#: baruwa/forms/settings.py:402
+msgid "Allow Password-Protected Archives"
+msgstr "パスワード保護されたアーカイブを許可します。"
+
+#: baruwa/forms/settings.py:403
+msgid "Check Filenames In Password-Protected Archives"
+msgstr "パスワード保護されたアーカイブ内のファイル名をチェックします。"
+
+#: baruwa/forms/settings.py:404
+msgid "Clamd Use Threads"
+msgstr "Clamd 使用スレッド"
+
+#: baruwa/forms/settings.py:407
+msgid "ClamAV Full Message Scan"
+msgstr "ClamAV フル メッセージ スキャン"
+
+#: baruwa/forms/settings.py:410
+msgid "Fpscand Port"
+msgstr "Fpscand ポート"
+
+#: baruwa/forms/settings.py:417
+msgid "Allow Partial Messages"
+msgstr "部分的なメッセージを許可します。"
+
+#: baruwa/forms/settings.py:420
+msgid "Allow External Message Bodies"
+msgstr "外部のメッセージ ボディを許可します。"
+
+#: baruwa/forms/settings.py:423
+msgid "Also Find Numeric Phishing"
+msgstr "また、数値のフィッシング詐欺を見つける"
+
+#: baruwa/forms/settings.py:426
+msgid "Use Stricter Phishing Net"
+msgstr "厳密なフィッシング ネット使用します。"
+
+#: baruwa/forms/settings.py:429
+msgid "Highlight Phishing Fraud"
+msgstr "フィッシング詐欺を強調表示します。"
+
+#: baruwa/forms/settings.py:432
+msgid "Allow IFrame Tags"
+msgstr "IFrame タグを使用します。"
+
+#: baruwa/forms/settings.py:435
+msgid "Allow Form Tags"
+msgstr "フォーム タグを許可します。"
+
+#: baruwa/forms/settings.py:438
+msgid "Allow Script Tags"
+msgstr "スクリプト タグを許可します。"
+
+#: baruwa/forms/settings.py:441
+msgid "Allow WebBugs"
+msgstr "WebBugs を許可します。"
+
+#: baruwa/forms/settings.py:444
+msgid "Ignored Web Bug Filenames"
+msgstr "Web バグのファイル名を無視"
+
+#: baruwa/forms/settings.py:446
+msgid "Known Web Bug Servers"
+msgstr "既知の Web バグ サーバー"
+
+#: baruwa/forms/settings.py:448
+msgid "Web Bug Replacement"
+msgstr "Web バグ交換"
+
+#: baruwa/forms/settings.py:450
+msgid "Allow Object Codebase Tags"
+msgstr "オブジェクトのコードベース タグを許可します。"
+
+#: baruwa/forms/settings.py:453
+msgid "Convert Dangerous HTML To Text"
+msgstr "危険な HTML をテキストに変換します。"
+
+#: baruwa/forms/settings.py:456
+msgid "Convert HTML To Text"
+msgstr "HTML をテキストに変換します。"
+
+#: baruwa/forms/settings.py:459
+msgid "Archives Are"
+msgstr "アーカイブです。"
+
+#: baruwa/forms/settings.py:461
+msgid "Allow Filenames"
+msgstr "ファイル名を許可します。"
+
+#: baruwa/forms/settings.py:462
+msgid "Deny Filenames"
+msgstr "ファイル名を拒否します。"
+
+#: baruwa/forms/settings.py:463
+msgid "Allow Filetypes"
+msgstr "ファイルの種類を許可します。"
+
+#: baruwa/forms/settings.py:464
+msgid "Allow File MIME Types"
+msgstr "ファイルの MIME の種類を許可します。"
+
+#: baruwa/forms/settings.py:465
+msgid "Deny Filetypes"
+msgstr "ファイルタイプを拒否します。"
+
+#: baruwa/forms/settings.py:466
+msgid "Deny File MIME Types"
+msgstr "ファイルの MIME の種類を拒否します。"
+
+#: baruwa/forms/settings.py:467
+msgid "Archives: Allow Filenames"
+msgstr "アーカイブ: ファイル名を許可します。"
+
+#: baruwa/forms/settings.py:468
+msgid "Archives: Deny Filenames"
+msgstr "アーカイブ: ファイル名を拒否します。"
+
+#: baruwa/forms/settings.py:469
+msgid "Archives: Allow Filetypes"
+msgstr "アーカイブ: ファイルタイプを許可します。"
+
+#: baruwa/forms/settings.py:470
+msgid "Archives: Allow File MIME Types"
+msgstr "アーカイブ: ファイルの MIME タイプを許可します。"
+
+#: baruwa/forms/settings.py:471
+msgid "Archives: Deny Filetypes"
+msgstr "アーカイブ: ファイルタイプを拒否します。"
+
+#: baruwa/forms/settings.py:472
+msgid "Archives: Deny File MIME Types"
+msgstr "アーカイブ: ファイルの MIME タイプを拒否します。"
+
+#: baruwa/forms/settings.py:477
+msgid "Quarantine Infections"
+msgstr "検疫感染症"
+
+#: baruwa/forms/settings.py:480
+msgid "Quarantine Silent Viruses"
+msgstr "サイレント ウィルスを検疫します。"
+
+#: baruwa/forms/settings.py:483
+msgid "Quarantine Modified Body"
+msgstr "検疫体を変更"
+
+#: baruwa/forms/settings.py:486
+msgid "Keep Spam And MCP Archive Clean"
+msgstr "スパムと MCP アーカイブを清潔に保つ"
+
+#: baruwa/forms/settings.py:489
+msgid "Hide Incoming Work Dir"
+msgstr "着信作業 Dir を隠す"
+
+#: baruwa/forms/settings.py:492
+msgid "Include Scanner Name In Reports"
+msgstr "スキャナー名をレポートに含める"
+
+#: baruwa/forms/settings.py:499
+msgid "Notify Senders"
+msgstr "送信者に通知します。"
+
+#: baruwa/forms/settings.py:502
+msgid "Notify Senders Of Viruses"
+msgstr "ウイルスの送信者に通知します。"
+
+#: baruwa/forms/settings.py:505
+msgid "Notify Senders Of Blocked Filenames Or Filetypes"
+msgstr "ブロックされたファイル名またはファイル形式の送信者に通知します。"
+
+#: baruwa/forms/settings.py:508
+msgid "Notify Senders Of Blocked Size Attachments"
+msgstr "ブロック サイズの添付ファイルの送信者に通知します。"
+
+#: baruwa/forms/settings.py:511
+msgid "Notify Senders Of Other Blocked Content"
+msgstr "ブロックされたコンテンツを他の送信者に通知します。"
+
+#: baruwa/forms/settings.py:514
+msgid "Never Notify Senders Of Precedence"
+msgstr "優先順位の送信者を通知しません。"
+
+#: baruwa/forms/settings.py:516
+msgid "Send Notices"
+msgstr "通知を送る"
+
+#: baruwa/forms/settings.py:519
+msgid "Notices Include Full Headers"
+msgstr "通知ヘッダー全体を含める"
+
+#: baruwa/forms/settings.py:522
+msgid "Hide Incoming Work Dir in Notices"
+msgstr "着信作業ディレクトリの通知を非表示に"
+
+#: baruwa/forms/settings.py:525
+msgid "Notice Signature"
+msgstr "通知の署名"
+
+#: baruwa/forms/settings.py:527
+msgid "Notices From"
+msgstr "お知らせ"
+
+#: baruwa/forms/settings.py:529
+msgid "Notices To"
+msgstr "お知らせ"
+
+#: baruwa/forms/settings.py:531
+msgid "Local Postmaster"
+msgstr "ローカル ポスト マスター"
+
+#: baruwa/forms/settings.py:537
+msgid "Max SpamAssassin Size"
+msgstr "SpamAssassin の最大サイズ"
+
+#: baruwa/forms/settings.py:539
+msgid "SpamAssassin Auto Whitelist"
+msgstr "SpamAssassin 自動ホワイト リスト"
+
+#: baruwa/forms/settings.py:542
+msgid "SpamAssassin Timeout"
+msgstr "SpamAssassin タイムアウト"
+
+#: baruwa/forms/settings.py:544
+msgid "Max SpamAssassin Timeouts"
+msgstr "Max SpamAssassin タイムアウト"
+
+#: baruwa/forms/settings.py:546
+msgid "SpamAssassin Timeouts History"
+msgstr "SpamAssassin タイムアウトの歴史"
+
+#: baruwa/forms/settings.py:548
+msgid "Check SpamAssassin If On Spam List"
+msgstr "SpamAssassin の場合スパムのリストでチェックします。"
+
+#: baruwa/forms/settings.py:551
+msgid "Include Binary Attachments In SpamAssassin"
+msgstr "SpamAssassin でバイナリ添付ファイルを含める"
+
+#: baruwa/forms/settings.py:554
+msgid "Spam Score"
+msgstr "迷惑メールスコア"
+
+#: baruwa/forms/settings.py:557
+msgid "Cache SpamAssassin Results"
+msgstr "SpamAssassin の結果のキャッシュ"
+
+#: baruwa/forms/settings.py:560
+msgid "Rebuild Bayes Every"
+msgstr "ベイズ再構築すべて"
+
+#: baruwa/forms/settings.py:562
+msgid "Wait During Bayes Rebuild"
+msgstr "ベイズの再構築中に待つ"
+
+#: baruwa/forms/settings.py:567
+msgid "Spam List"
+msgstr "スパムのリスト"
+
+#: baruwa/forms/settings.py:569
+msgid "Spam Domain List"
+msgstr "迷惑メールのドメイン リスト"
+
+#: baruwa/forms/settings.py:571
+msgid "Spam Lists To Be Spam"
+msgstr "スパムであるスパムのリスト"
+
+#: baruwa/forms/settings.py:573
+msgid "Spam Lists To Reach High Score"
+msgstr "スパム一覧のハイ スコアに到達するには"
+
+#: baruwa/forms/settings.py:575
+msgid "Spam List Timeout"
+msgstr "迷惑メール リストのタイムアウト"
+
+#: baruwa/forms/settings.py:577
+msgid "Max Spam List Timeouts"
+msgstr "Max スパム一覧タイムアウト"
+
+#: baruwa/forms/settings.py:579
+msgid "Spam List Timeouts History"
+msgstr "スパム一覧のタイムアウトの歴史"
+
+#: baruwa/forms/settings.py:581
+msgid "Definite Spam Is High Scoring"
+msgstr "間違いなくスパムで高得点です。"
+
+#: baruwa/forms/settings.py:584
+msgid "Ignore Spam Whitelist If Recipients Exceed"
+msgstr "受信者を超える場合は、スパムのホワイト リストを無視します。"
+
+#: baruwa/forms/settings.py:586
+msgid "Max Spam Check Size"
+msgstr "Max スパム チェック サイズ"
+
+#: baruwa/forms/settings.py:588
+msgid "Enable Spam Bounce"
+msgstr "スパムのバウンスを有効にします。"
+
+#: baruwa/forms/settings.py:591
+msgid "Bounce Spam As Attachment"
+msgstr "添付ファイルとしてスパムをバウンスします。"
+
+#: baruwa/forms/settings.py:594
+msgid "Detailed Spam Report"
+msgstr "スパムの詳細なレポート"
+
+#: baruwa/forms/settings.py:597
+msgid "Include Scores In SpamAssassin Report"
+msgstr "スコア SpamAssassin レポートに含める"
+
+#: baruwa/forms/settings.py:600
+msgid "Always Include SpamAssassin Report"
+msgstr "常に SpamAssassin レポートを含める"
+
+#: baruwa/forms/settings.py:603
+msgid "Spam Header"
+msgstr "スパム ヘッダー"
+
+#: baruwa/forms/settings.py:605
+msgid "Spam Score Header"
+msgstr "スパム スコア ヘッダー"
+
+#: baruwa/forms/settings.py:607
+msgid "Spam Score Number Format"
+msgstr "スパム スコアの数値の形式"
+
+#: baruwa/forms/settings.py:609
+msgid "Spam Score Character"
+msgstr "スパム スコアの文字"
+
+#: baruwa/forms/settings.py:611
+msgid "SpamScore Number Instead Of Stars"
+msgstr "星の代わりに SpamScore 番号"
+
+#: baruwa/forms/settings.py:614
+msgid "Minimum Stars If On Spam List"
+msgstr "最小の星の場合、スパムのリスト"
+
+#: baruwa/forms/settings.py:616
+msgid "Use Watermarking"
+msgstr "透かしを使用します。"
+
+#: baruwa/forms/settings.py:619
+msgid "Add Watermark"
+msgstr "透かしを追加します。"
+
+#: baruwa/forms/settings.py:622
+msgid "Check Watermarks With No Sender"
+msgstr "ない送信者を透かしをチェックします。"
+
+#: baruwa/forms/settings.py:625
+msgid "Treat Invalid Watermarks With No Sender as Spam"
+msgstr "無効なウォーターマークなしの送信者とスパムとして扱う"
+
+#: baruwa/forms/settings.py:628
+msgid "Check Watermarks To Skip Spam Checks"
+msgstr "透かしをスキップ スパム チェックをチェックします。"
+
+#: baruwa/forms/settings.py:631
+msgid "Watermark Secret"
+msgstr "透かしの秘密"
+
+#: baruwa/forms/settings.py:633
+msgid "Watermark Lifetime"
+msgstr "ウォーターマークの有効期間"
+
+#: baruwa/forms/settings.py:635
+msgid "Watermark Header"
+msgstr "透かしヘッダー"
+
+#: baruwa/forms/settings.py:641
+msgid "Syslog Facility"
+msgstr "Syslog 機能"
+
+#: baruwa/forms/settings.py:644
+msgid "Log Speed"
+msgstr "ログ速度"
+
+#: baruwa/forms/settings.py:647
+msgid "Log Spam"
+msgstr "ログ スパム"
+
+#: baruwa/forms/settings.py:650
+msgid "Log Non Spam"
+msgstr "ログ非スパム"
+
+#: baruwa/forms/settings.py:653
+msgid "Log Delivery And Non-Delivery"
+msgstr "ログの配信と配信不能"
+
+#: baruwa/forms/settings.py:656
+msgid "Log Permitted Filenames"
+msgstr "ログ ファイル名を許可"
+
+#: baruwa/forms/settings.py:659
+msgid "Log Permitted Filetypes"
+msgstr "ログ ファイルの種類を許可"
+
+#: baruwa/forms/settings.py:662
+msgid "Log Permitted File MIME Types"
+msgstr "ログ ファイルの MIME タイプを許可"
+
+#: baruwa/forms/settings.py:665
+msgid "Log Silent Viruses"
+msgstr "サイレント ウイルス ログ"
+
+#: baruwa/forms/settings.py:668
+msgid "Log Dangerous HTML Tags"
+msgstr "ログ危険な HTML タグ"
+
+#: baruwa/forms/settings.py:671
+msgid "Log SpamAssassin Rule Actions"
+msgstr "ログ SpamAssassin ルールのアクション"
+
+#: baruwa/forms/settings.py:690
+msgid "Signature type"
+msgstr "署名の種類"
+
+#: baruwa/forms/settings.py:694
+msgid "Signature"
+msgstr "署名"
+
+#: baruwa/lib/misc.py:165 baruwa/model/messages.py:135
+#: baruwa/templates/messages/functions.html:31
+#: baruwa/templates/messages/index.html:60
+#: baruwa/templates/messages/quarantine.html:3
+#: baruwa/templates/messages/searchresults.html:55
+#: baruwa/templates/messages/taskstatus.html:4
+#: baruwa/templates/reports/listing.html:48
+msgid "Spam"
+msgstr "スパム"
+
+#: baruwa/lib/misc.py:167 baruwa/templates/messages/index.html:62
+#: baruwa/templates/messages/searchresults.html:57
+msgid "BL"
+msgstr "BL"
+
+#: baruwa/lib/misc.py:171 baruwa/model/messages.py:141
+#: baruwa/templates/messages/functions.html:37
+#: baruwa/templates/messages/index.html:66
+#: baruwa/templates/messages/searchresults.html:61
+msgid "Infected"
+msgstr "感染"
+
+#: baruwa/lib/misc.py:178 baruwa/templates/messages/index.html:73
+#: baruwa/templates/messages/searchresults.html:68
+msgid "WL"
+msgstr "WL"
+
+#: baruwa/lib/misc.py:180 baruwa/model/messages.py:150
+#: baruwa/templates/messages/functions.html:46
+#: baruwa/templates/messages/index.html:75
+#: baruwa/templates/messages/searchresults.html:70
+msgid "NS"
+msgstr "NS"
+
+#: baruwa/lib/audit/msgs/accounts.py:27
+#, python-format
+msgid "User account: %(u)s created"
+msgstr "User account: %(u)s created"
+
+#: baruwa/lib/audit/msgs/accounts.py:28
+#, python-format
+msgid "User account: %(u)s updated"
+msgstr "User account: %(u)s updated"
+
+#: baruwa/lib/audit/msgs/accounts.py:29
+#, python-format
+msgid "User account: %(u)s deleted"
+msgstr "ユーザー アカウント: %(u)s削除"
+
+#: baruwa/lib/audit/msgs/accounts.py:30
+#, python-format
+msgid "User account: %(u)s password changed"
+msgstr "ユーザー アカウント: %(u)sパスワードの変更"
+
+#: baruwa/lib/audit/msgs/accounts.py:31
+#, python-format
+msgid "Alias: %(a)s added to account: %(ac)s"
+msgstr "エイリアス: %(a)sアカウントに追加: %(ac)s"
+
+#: baruwa/lib/audit/msgs/accounts.py:32
+#, python-format
+msgid "Email Alias: %(a)s on account: %(ac)s updated"
+msgstr "メール エイリアス: %(a)sアカウント: %(ac)s更新日"
+
+#: baruwa/lib/audit/msgs/accounts.py:33
+#, python-format
+msgid "Email Alias: %(a)s on account: %(ac)s deleted"
+msgstr "メール エイリアス: %(a)sアカウント: %(ac)s削除"
+
+#: baruwa/lib/audit/msgs/accounts.py:34
+msgid "Accounts exported"
+msgstr "エクスポートされたアカウント"
+
+#: baruwa/lib/audit/msgs/accounts.py:35
+msgid "Accounts imported"
+msgstr "インポート アカウント"
+
+#: baruwa/lib/audit/msgs/accounts.py:36
+#, python-format
+msgid "User: %(u)s logged in"
+msgstr "ユーザー: %(u)sログイン"
+
+#: baruwa/lib/audit/msgs/domains.py:27
+#, python-format
+msgid "Domain: %(d)s created"
+msgstr "ドメイン: %(d)s作成"
+
+#: baruwa/lib/audit/msgs/domains.py:28
+#, python-format
+msgid "Domain: %(d)s updated"
+msgstr "ドメイン: %(d)s更新日"
+
+#: baruwa/lib/audit/msgs/domains.py:29
+#, python-format
+msgid "Domain: %(d)s deleted"
+msgstr "ドメイン: %(d)s削除"
+
+#: baruwa/lib/audit/msgs/domains.py:30
+#, python-format
+msgid "Domain Alias: %(d)s created"
+msgstr "ドメイン エイリアス: %(d)s作成"
+
+#: baruwa/lib/audit/msgs/domains.py:31
+#, python-format
+msgid "Domain Alias: %(d)s updated"
+msgstr "ドメイン エイリアス: %(d)s更新日"
+
+#: baruwa/lib/audit/msgs/domains.py:32
+#, python-format
+msgid "Domain Alias: %(d)s deleted"
+msgstr "ドメイン エイリアス: %(d)s削除"
+
+#: baruwa/lib/audit/msgs/domains.py:33
+#, python-format
+msgid "Domain: %(d)s accounts exported"
+msgstr "ドメイン: %(d)sエクスポートされたアカウント"
+
+#: baruwa/lib/audit/msgs/domains.py:35
+#, python-format
+msgid "Domain: %(d)s Delivery server: %(ds)s added"
+msgstr "ドメイン: %(d)s配信サーバー: %(ds)s追加"
+
+#: baruwa/lib/audit/msgs/domains.py:36
+#, python-format
+msgid "Domain: %(d)s Delivery server: %(ds)s updated"
+msgstr "ドメイン: %(d)s配信サーバー: %(ds)s更新日"
+
+#: baruwa/lib/audit/msgs/domains.py:37
+#, python-format
+msgid "Domain: %(d)s Delivery server: %(ds)s deleted"
+msgstr "ドメイン: %(d)s配信サーバー: %(ds)s削除"
+
+#: baruwa/lib/audit/msgs/domains.py:38
+#, python-format
+msgid "Domain: %(d)s AUTH server: %(ds)s added"
+msgstr "ドメイン: %(d)s認証サーバー: %(ds)s追加"
+
+#: baruwa/lib/audit/msgs/domains.py:39
+#, python-format
+msgid "Domain: %(d)s AUTH server: %(ds)s updated"
+msgstr "ドメイン: %(d)s認証サーバー: %(ds)s更新日"
+
+#: baruwa/lib/audit/msgs/domains.py:40
+#, python-format
+msgid "Domain: %(d)s AUTH server: %(ds)s deleted"
+msgstr "ドメイン: %(d)s認証サーバー: %(ds)s削除"
+
+#: baruwa/lib/audit/msgs/domains.py:41
+#, python-format
+msgid "Domain: %(d)s AUTH settings updated for: %(a)s"
+msgstr "ドメイン: %(d)sAUTH の設定の更新: %(a)s"
+
+#: baruwa/lib/audit/msgs/lists.py:27
+#, python-format
+msgid "Sender: %(s)s added to %(l)s"
+msgstr "送信者: %(s)s追加 %(l)s"
+
+#: baruwa/lib/audit/msgs/lists.py:28
+#, python-format
+msgid "Sender: %(s)s deleted from %(l)s"
+msgstr "送信者: %(s)s削除 %(l)s"
+
+#: baruwa/lib/audit/msgs/messages.py:27
+#, python-format
+msgid "Message with id: %(m)s released to %(a)s"
+msgstr "メッセージ id: %(m)sリリース %(a)s"
+
+#: baruwa/lib/audit/msgs/messages.py:28
+#, python-format
+msgid "Message with id: %(m)s learnt as %(l)s"
+msgstr "メッセージ id: %(m)sとして学んだ %(l)s"
+
+#: baruwa/lib/audit/msgs/messages.py:29
+#, python-format
+msgid "Message with id: %(m)s deleted from quarantine"
+msgstr "メッセージ id: %(m)s検疫からの削除"
+
+#: baruwa/lib/audit/msgs/messages.py:30
+#, python-format
+msgid "Message with id: %(m)s previewed"
+msgstr "メッセージ id: %(m)sプレビュー"
+
+#: baruwa/lib/audit/msgs/messages.py:31
+#, python-format
+msgid "Message with id: %(m)s attachment %(a)s downloaded"
+msgstr "メッセージ id: %(m)s添付ファイル %(a)sダウンロード"
+
+#: baruwa/lib/audit/msgs/organizations.py:27
+#, python-format
+msgid "Organization: %(o)s added"
+msgstr "組織: %(o)s追加"
+
+#: baruwa/lib/audit/msgs/organizations.py:28
+#, python-format
+msgid "Organization: %(o)s updated"
+msgstr "組織: %(o)s更新日"
+
+#: baruwa/lib/audit/msgs/organizations.py:29
+#, python-format
+msgid "Organization: %(o)s deleted"
+msgstr "組織: %(o)s削除"
+
+#: baruwa/lib/audit/msgs/organizations.py:30
+#, python-format
+msgid "Organization: %(o)s domains imported"
+msgstr "組織: %(o)sドメインのインポート"
+
+#: baruwa/lib/audit/msgs/organizations.py:32
+#, python-format
+msgid "Relay: %(r)s added"
+msgstr "リレー: %(r)s追加"
+
+#: baruwa/lib/audit/msgs/organizations.py:33
+#, python-format
+msgid "Relay: %(r)s updated"
+msgstr "リレー: %(r)s更新日"
+
+#: baruwa/lib/audit/msgs/organizations.py:34
+#, python-format
+msgid "Relay: %(r)s deleted"
+msgstr "リレー: %(r)s削除"
+
+#: baruwa/lib/audit/msgs/reports.py:27
+#, python-format
+msgid "Report: %(r)s viewed"
+msgstr "レポート: %(r)s閲覧"
+
+#: baruwa/lib/audit/msgs/reports.py:28
+#, python-format
+msgid "Report: %(r)s downloaded as %(f)s"
+msgstr "レポート: %(r)sとしてダウンロード %(f)s"
+
+#: baruwa/lib/audit/msgs/settings.py:27
+#, python-format
+msgid "Account: %(u)s signature created"
+msgstr "アカウント: %(u)s署名の作成"
+
+#: baruwa/lib/audit/msgs/settings.py:28
+#, python-format
+msgid "Account: %(u)s signature updated"
+msgstr "アカウント: %(u)s署名の更新"
+
+#: baruwa/lib/audit/msgs/settings.py:29
+#, python-format
+msgid "Account: %(u)s signature deleted"
+msgstr "アカウント: %(u)s署名の削除"
+
+#: baruwa/lib/audit/msgs/settings.py:30
+#, python-format
+msgid "Domain: %(d)s signature created"
+msgstr "ドメイン: %(d)s署名の作成"
+
+#: baruwa/lib/audit/msgs/settings.py:31
+#, python-format
+msgid "Domain: %(d)s signature updated"
+msgstr "ドメイン: %(d)s署名の更新"
+
+#: baruwa/lib/audit/msgs/settings.py:32
+#, python-format
+msgid "Domain: %(d)s signature deleted"
+msgstr "ドメイン: %(d)s署名の削除"
+
+#: baruwa/lib/audit/msgs/settings.py:33
+#, python-format
+msgid "Node: %(n)s created"
+msgstr "ノード: %(n)s作成"
+
+#: baruwa/lib/audit/msgs/settings.py:34
+#, python-format
+msgid "Node: %(n)s updated"
+msgstr "ノード: %(n)s更新日"
+
+#: baruwa/lib/audit/msgs/settings.py:35
+#, python-format
+msgid "Node: %(n)s deleted"
+msgstr "ノード: %(n)s削除"
+
+#: baruwa/lib/audit/msgs/settings.py:36
+#, python-format
+msgid "Scanner %(svr)s setting: %(s)s set to %(a)s"
+msgstr "スキャナー %(svr)s設定: %(s)s設定 %(a)s"
+
+#: baruwa/lib/audit/msgs/settings.py:38
+#, python-format
+msgid "DKIM keys generated for: %(d)s"
+msgstr "DKIM キーの生成: %(d)s"
+
+#: baruwa/lib/audit/msgs/settings.py:39
+#, python-format
+msgid "DKIM signing enabled for: %(d)s"
+msgstr "DKIM 署名を有効に: %(d)s"
+
+#: baruwa/lib/audit/msgs/settings.py:40
+#, python-format
+msgid "DKIM signing disabled for: %(d)s"
+msgstr "無効 DKIM 署名: %(d)s"
+
+#: baruwa/lib/audit/msgs/status.py:27
+#, python-format
+msgid "Queued Message-ID: %(m)s released to %(a)s"
+msgstr "キューに入っているメッセージ-ID: %(m)sリリース %(a)s"
+
+#: baruwa/lib/audit/msgs/status.py:28
+#, python-format
+msgid "Queued Message-ID: %(m)s deleted from %(q)s queue"
+msgstr "キューに入っているメッセージ-ID: %(m)s削除 %(q)sキュー"
+
+#: baruwa/lib/audit/msgs/status.py:29
+#, python-format
+msgid "Queued Message-ID: %(m)s preview"
+msgstr "キューに入っているメッセージ-ID: %(m)sプレビュー"
+
+#: baruwa/lib/audit/msgs/status.py:30
+#, python-format
+msgid "Queued Message-ID: %(m)s downloaded attachment %(a)s"
+msgstr "キューに入っているメッセージ-ID: %(m)s添付ファイルをダウンロード %(a)s"
+
+#: baruwa/lib/audit/msgs/status.py:31
+#, python-format
+msgid "Node status for: %(n)s viewed"
+msgstr "ノードの状態を： %(n)s閲覧"
+
+#: baruwa/lib/audit/msgs/status.py:32
+#, python-format
+msgid "Node lint status for: %(n)s viewed"
+msgstr "ノードの糸くずの状態を： %(n)s閲覧"
+
+#: baruwa/lib/audit/msgs/status.py:33
+#, python-format
+msgid "Node bayes stats for: %(n)s viewed"
+msgstr "ノードのベイズ統計情報: %(n)s閲覧"
+
+#: baruwa/lib/audit/msgs/status.py:34
+msgid "Audit log exported"
+msgstr "監査ログのエクスポート"
+
+#: baruwa/lib/auth/predicates.py:35
+msgid "Only System Administrators can access this page"
+msgstr "このページはシステム管理者のみがアクセスできます。"
+
+#: baruwa/lib/auth/predicates.py:47
+msgid "Only Administrators can access this page"
+msgstr "このページにアクセスすることができます管理者だけ"
+
+#: baruwa/lib/auth/predicates.py:70
+msgid "Only Administrators or owners can view domain details"
+msgstr "管理者または所有者のみドメインの詳細を表示することができます。"
+
+#: baruwa/lib/auth/predicates.py:105
+msgid "Only Administrators or owners can view account details"
+msgstr "管理者または所有者のみアカウントの詳細を表示することができます。"
+
+#: baruwa/lib/templates/helpers.py:68
+msgid "unknown"
+msgstr "不明な"
+
+#: baruwa/lib/templates/helpers.py:142
+msgid "IPv6 Link local address"
+msgstr "IPv6 リンク ローカル アドレス"
+
+#: baruwa/lib/templates/helpers.py:145
+msgid "RFC1918 Private address"
+msgstr "RFC1918 プライベート アドレス"
+
+#: baruwa/lib/templates/helpers.py:147
+msgid "Reverse lookup failed"
+msgstr "逆引きが失敗しました"
+
+#: baruwa/lib/templates/helpers.py:168 baruwa/lib/templates/helpers.py:175
+#: baruwa/lib/templates/helpers.py:218
+msgid "N"
+msgstr "N"
+
+#: baruwa/lib/templates/helpers.py:172 baruwa/lib/templates/helpers.py:217
+msgid "Y"
+msgstr "Y"
+
+#: baruwa/model/messages.py:137 baruwa/templates/messages/functions.html:33
+msgid "BS"
+msgstr "BS"
+
+#: baruwa/model/messages.py:148 baruwa/templates/messages/functions.html:44
+msgid "AS"
+msgstr "として"
+
+#: baruwa/model/status.py:38
+msgid "Read"
+msgstr "読み取り"
+
+#: baruwa/model/status.py:39 baruwa/templates/accounts/editaddress.html:18
+#: baruwa/templates/domains/editalias.html:16
+#: baruwa/templates/domains/editauth.html:16
+msgid "Update"
+msgstr "更新プログラム"
+
+#: baruwa/model/status.py:40 baruwa/templates/accounts/addaddress.html:18
+msgid "Create"
+msgstr "作成します。"
+
+#: baruwa/model/status.py:42
+msgid "Export"
+msgstr "エクスポート"
+
+#: baruwa/model/status.py:43
+msgid "Auth"
+msgstr "Auth"
+
+#: baruwa/tasks/status.py:63
+msgid "Checking system status"
+msgstr "システム ステータスのチェック"
+
+#: baruwa/tasks/status.py:116
+msgid "Running Spamassassin lint checks"
+msgstr "Spamassassin 糸くずのチェックの実行"
+
+#: baruwa/tasks/status.py:142
+msgid "Generating Bayesian stats"
+msgstr "ベイズ統計を生成します。"
+
+#: baruwa/tasks/status.py:199
+#, python-format
+msgid "Download attachment: %(attachid)s of message: %(id)s"
+msgstr "添付ファイルをダウンロード: %(attachid)sメッセージの: %(id)s"
+
+#: baruwa/tasks/status.py:204
+#, python-format
+msgid "Image access: %(img)s"
+msgstr "イメージのアクセス: %(img)s"
+
+#: baruwa/tasks/status.py:206
+#, python-format
+msgid "Preview of message: %(id)s"
+msgstr "メッセージのプレビュー: %(id)s"
+
+#: baruwa/tasks/status.py:211
+#, python-format
+msgid "Accessing message: %(id)s, Failed: %(error)s"
+msgstr "アクセス メッセージ: %(id)s、失敗: %(error)s"
+
+#: baruwa/tasks/status.py:226
+#, python-format
+msgid "Invalid exim command: %s"
+msgstr "無効な exim コマンド: %s"
+
+#: baruwa/tasks/status.py:229 baruwa/tasks/status.py:244
+#, python-format
+msgid "Invalid action: %s"
+msgstr "無効なアクション: %s"
+
+#: baruwa/tasks/status.py:236
+#, python-format
+msgid "STDOUT: %s"
+msgstr "STDOUT: %s"
+
+#: baruwa/tasks/status.py:239
+#, python-format
+msgid "STDERR: %s"
+msgstr "STDERR: %s"
+
+#: baruwa/tasks/status.py:242
+#, python-format
+msgid "Invalid input: %s"
+msgstr "入力が無効です: %s"
+
+#: baruwa/tasks/status.py:266
+#, python-format
+msgid "Audit Log update for: %s from: %s"
+msgstr "更新プログラム ログを監査: %s から: %s"
+
+#: baruwa/tasks/status.py:269
+#, python-format
+msgid "Audit Log FAILURE: %s %s %s %s %s %s Error: %s"
+msgstr "監査ログ障害: %s%s%s %s%s%s エラー: %s"
+
+#: baruwa/tasks/status.py:289
+msgid "Audit Log exported report"
+msgstr "監査ログ レポートのエクスポート"
+
+#: baruwa/tasks/status.py:294 baruwa/templates/base.html:98
+msgid "Audit Logs"
+msgstr "監査ログ"
+
+#: baruwa/tasks/status.py:295 baruwa/templates/email/quarantine.html:63
+#: baruwa/templates/email/quarantine.html:92
+#: baruwa/templates/messages/detail.html:178
+#: baruwa/templates/messages/functions.html:89
+#: baruwa/templates/messages/functions.html:91
+#: baruwa/templates/messages/functions.html:128
+#: baruwa/templates/messages/functions.html:130
+#: baruwa/templates/messages/index.html:20
+#: baruwa/templates/messages/searchresults.html:17
+#: baruwa/templates/status/audit.html:26
+msgid "Date/Time"
+msgstr "日付/時刻"
+
+#: baruwa/tasks/status.py:297 baruwa/templates/status/audit.html:28
+msgid "Info"
+msgstr "情報"
+
+#: baruwa/tasks/status.py:299 baruwa/templates/status/audit.html:30
+msgid "Remote IP"
+msgstr "リモート IP"
+
+#: baruwa/tasks/status.py:300 baruwa/templates/lists/index.html:29
+#: baruwa/templates/status/detail.html:68
+msgid "Action"
+msgstr "アクション"
+
+#: baruwa/tasks/status.py:313
+msgid "Baruwa Audit log export"
+msgstr "Baruwa 監査ログのエクスポート"
+
+#: baruwa/tasks/status.py:365
+#, python-format
+msgid "Audit Log export complete: %s"
+msgstr "監査ログのエクスポートが完了しました: %s"
+
+#: baruwa/tasks/status.py:369
+#, python-format
+msgid "Audit Log export FAILURE: %s"
+msgstr "監査ログのエクスポート失敗: %s"
+
+#: baruwa/templates/base.html:33
+msgid "Language: "
+msgstr "言語:"
+
+#: baruwa/templates/base.html:44 baruwa/templates/status/index.html:83
+msgid "OK"
+msgstr "わかりました"
+
+#: baruwa/templates/base.html:44 baruwa/templates/status/index.html:83
+msgid "FAULTY"
+msgstr "障害のあります。"
+
+#: baruwa/templates/base.html:51
+msgid "Total "
+msgstr "合計"
+
+#: baruwa/templates/base.html:51
+msgid "Spam "
+msgstr "スパム"
+
+#: baruwa/templates/base.html:51
+msgid "Virus "
+msgstr "ウイルス"
+
+#: baruwa/templates/base.html:54
+msgid "Msgs: "
+msgstr "Msg:"
+
+#: baruwa/templates/base.html:56
+msgid "In: "
+msgstr "で。"
+
+#: baruwa/templates/base.html:58
+msgid "Out: "
+msgstr "チェック アウト："
+
+#: baruwa/templates/base.html:63
+msgid "Signed in as "
+msgstr "としてサインイン"
+
+#: baruwa/templates/base.html:64
+msgid "Logout"
+msgstr "ログアウト"
+
+#: baruwa/templates/base.html:66
+msgid "Not logged in :: "
+msgstr "ログインしていない:。"
+
+#: baruwa/templates/base.html:66 baruwa/templates/accounts/login.html:11
+#: baruwa/templates/accounts/login.html:34
+#: baruwa/templates/accounts/login.html:50
+msgid "Login"
+msgstr "ログイン"
+
+#: baruwa/templates/base.html:76
+msgid "Messages"
+msgstr "メッセージ"
+
+#: baruwa/templates/base.html:78 baruwa/templates/reports/index.html:30
+msgid "Full message list"
+msgstr "完全なメッセージのリスト"
+
+#: baruwa/templates/base.html:80
+msgid "Archive"
+msgstr "アーカイブ"
+
+#: baruwa/templates/base.html:84
+msgid "Lists"
+msgstr "リスト"
+
+#: baruwa/templates/base.html:88
+msgid "Add to List"
+msgstr "リストに追加します。"
+
+#: baruwa/templates/base.html:91 baruwa/templates/reports/index.html:8
+#: baruwa/templates/reports/index.html:116
+#: baruwa/templates/reports/index.html:117
+msgid "Reports"
+msgstr "レポート"
+
+#: baruwa/templates/base.html:94
+#: baruwa/templates/accounts/confirmbulkdel.html:11
+#: baruwa/templates/accounts/importstatus.html:6
+#: baruwa/templates/accounts/index.html:37
+#: baruwa/templates/accounts/searchresults.html:27
+#: baruwa/templates/domains/confirmbulkdel.html:10
+#: baruwa/templates/domains/detail.html:29
+#: baruwa/templates/domains/index.html:31
+#: baruwa/templates/domains/searchresults.html:28
+#: baruwa/templates/messages/detail.html:175
+#: baruwa/templates/messages/functions.html:123
+#: baruwa/templates/messages/functions.html:169
+#: baruwa/templates/messages/index.html:26
+#: baruwa/templates/messages/searchresults.html:23
+#: baruwa/templates/messages/taskstatus.html:18
+#: baruwa/templates/organizations/importstatus.html:6
+msgid "Status"
+msgstr "ステータス"
+
+#: baruwa/templates/base.html:96
+msgid "Mail Queues"
+msgstr "メール キュー"
+
+#: baruwa/templates/base.html:106
+msgid "Add a domain"
+msgstr "ドメインを追加します。"
+
+#: baruwa/templates/base.html:111
+#: baruwa/templates/domains/confirmbulkdel.html:9
+#: baruwa/templates/domains/index.html:30
+#: baruwa/templates/domains/searchresults.html:27
+msgid "Accounts"
+msgstr "アカウント"
+
+#: baruwa/templates/base.html:113
+msgid "Add account"
+msgstr "アカウントを追加します。"
+
+#: baruwa/templates/base.html:118 baruwa/templates/domains/detail.html:229
+#: baruwa/templates/domains/detail.html:231
+#: baruwa/templates/settings/index.html:32
+msgid "Settings"
+msgstr "設定"
+
+#: baruwa/templates/base.html:120
+msgid "Add scanning node"
+msgstr "スキャン ノードを追加します。"
+
+#: baruwa/templates/base.html:121
+msgid "MailScanner settings"
+msgstr "MailScanner 設定"
+
+#: baruwa/templates/base.html:127 baruwa/templates/organizations/add.html:11
+msgid "Add organization"
+msgstr "組織を追加します。"
+
+#: baruwa/templates/base.html:132
+msgid "Account"
+msgstr "アカウント"
+
+#: baruwa/templates/accounts/account.html:12
+msgid "Add signatures"
+msgstr "署名を追加します。"
+
+#: baruwa/templates/accounts/account.html:15
+msgid "Add alias address"
+msgstr "エイリアスのアドレスを追加します。"
+
+#: baruwa/templates/accounts/account.html:16
+#: baruwa/templates/accounts/account.html:27
+#: baruwa/templates/accounts/edit.html:17
+msgid "Update account"
+msgstr "アカウントを更新します。"
+
+#: baruwa/templates/accounts/account.html:17
+#: baruwa/templates/accounts/delete.html:17
+msgid "Delete account"
+msgstr "アカウントを削除します。"
+
+#: baruwa/templates/accounts/account.html:19
+#: baruwa/templates/accounts/account.html:23
+#: baruwa/templates/accounts/account.html:25
+#: baruwa/templates/accounts/pwchange.html:10
+#: baruwa/templates/accounts/pwchange.html:18
+msgid "Change password"
+msgstr "パスワードの変更"
+
+#: baruwa/templates/accounts/account.html:34
+#, python-format
+msgid "Showing: %(a)s account details"
+msgstr "表示: %(a)sアカウントの詳細"
+
+#: baruwa/templates/accounts/account.html:46
+#: baruwa/templates/accounts/confirmbulkdel.html:9
+#: baruwa/templates/accounts/index.html:35
+#: baruwa/templates/accounts/searchresults.html:25
+msgid "Full names"
+msgstr "完全な名前"
+
+#: baruwa/templates/accounts/account.html:54
+msgid "Email Address"
+msgstr "メール アドレス"
+
+#: baruwa/templates/accounts/account.html:62
+msgid "Account status"
+msgstr "アカウントの状態"
+
+#: baruwa/templates/accounts/account.html:70
+msgid "Last login"
+msgstr "最終ログイン"
+
+#: baruwa/templates/accounts/account.html:78
+msgid "Account created on"
+msgstr "アカウントの作成"
+
+#: baruwa/templates/accounts/account.html:89
+msgid "Local account"
+msgstr "ローカル アカウント"
+
+#: baruwa/templates/accounts/account.html:89
+msgid "External account"
+msgstr "外部アカウント"
+
+#: baruwa/templates/accounts/account.html:124
+msgid "Perform Spam checks"
+msgstr "スパム チェックを実行します。"
+
+#: baruwa/templates/accounts/account.html:140
+msgid "Spam Low Score"
+msgstr "スパム スコアの低い"
+
+#: baruwa/templates/accounts/account.html:148
+msgid "Spam High Score"
+msgstr "スパムのハイスコア"
+
+#: baruwa/templates/accounts/account.html:155
+msgid "Alias Addresses"
+msgstr "エイリアス アドレス"
+
+#: baruwa/templates/accounts/account.html:168
+#: baruwa/templates/accounts/account.html:170
+#: baruwa/templates/accounts/account.html:200
+#: baruwa/templates/domains/confirmbulkdel.html:35
+#: baruwa/templates/domains/detail.html:171
+#: baruwa/templates/domains/detail.html:200
+#: baruwa/templates/domains/detail.html:235
+#: baruwa/templates/domains/index.html:58
+#: baruwa/templates/domains/searchresults.html:54
+#: baruwa/templates/organizations/detail.html:6
+#: baruwa/templates/organizations/detail.html:70
+#: baruwa/templates/organizations/index.html:16
+#: baruwa/templates/organizations/index.html:31
+#: baruwa/templates/settings/domain_sigs.html:29
+#: baruwa/templates/settings/index.html:33
+msgid "Edit"
+msgstr "編集"
+
+#: baruwa/templates/accounts/account.html:184
+msgid "No alias addresses configured"
+msgstr "エイリアス アドレスが構成されてないです。"
+
+#: baruwa/templates/accounts/account.html:188
+msgid "Email Signatures"
+msgstr "電子メールの署名"
+
+#: baruwa/templates/accounts/account.html:194
+#: baruwa/templates/settings/domain_sigs.html:20
+msgid "Text signature"
+msgstr "テキスト署名"
+
+#: baruwa/templates/accounts/account.html:194
+#: baruwa/templates/settings/domain_sigs.html:20
+msgid "HTML Signature"
+msgstr "HTML の署名"
+
+#: baruwa/templates/accounts/account.html:209
+msgid "No Email Signatures configured"
+msgstr "ない電子メール署名の構成"
+
+#: baruwa/templates/accounts/account.html:217
+#, python-format
+msgid "Accounts :: Account details :: %(a)s"
+msgstr "アカウント: アカウント詳細::  %(a)s "
+
+#: baruwa/templates/accounts/addaddress.html:4
+#: baruwa/templates/accounts/delete.html:4
+#: baruwa/templates/accounts/deleteaddress.html:4
+#: baruwa/templates/accounts/edit.html:4
+#: baruwa/templates/accounts/editaddress.html:4
+#: baruwa/templates/accounts/pwchange.html:4
+msgid "Return to account"
+msgstr "アカウントに戻ります"
+
+#: baruwa/templates/accounts/addaddress.html:10
+msgid "Create alias address"
+msgstr "エイリアスのアドレスを作成します。"
+
+#: baruwa/templates/accounts/addaddress.html:17
+#: baruwa/templates/accounts/editaddress.html:17
+#: baruwa/templates/accounts/new.html:10
+#: baruwa/templates/accounts/pwchange.html:17
+#: baruwa/templates/domains/adddestination.html:17
+#: baruwa/templates/domains/new.html:10 baruwa/templates/invite/index.html:45
+#: baruwa/templates/lists/add.html:31
+#: baruwa/templates/organizations/add.html:10
+#: baruwa/templates/organizations/addrelay.html:16
+#: baruwa/templates/organizations/deleterelay.html:16
+#: baruwa/templates/organizations/editrelay.html:16
+#: baruwa/templates/settings/addserver.html:10
+msgid "Reset"
+msgstr "リセット"
+
+#: baruwa/templates/accounts/addaddress.html:25
+#: baruwa/templates/accounts/addaddress.html:29
+msgid "Accounts :: Create alias address"
+msgstr "アカウント:: エイリアス アドレスを作成します。"
+
+#: baruwa/templates/accounts/confirmbulkdel.html:12
+#: baruwa/templates/accounts/index.html:38
+#: baruwa/templates/accounts/searchresults.html:28
+#: baruwa/templates/domains/confirmbulkdel.html:11
+#: baruwa/templates/domains/index.html:32
+#: baruwa/templates/domains/searchresults.html:29
+#: baruwa/templates/settings/index.html:18
+msgid "Actions"
+msgstr "アクション"
+
+#: baruwa/templates/accounts/confirmbulkdel.html:37
+#: baruwa/templates/accounts/index.html:64
+msgid "No accounts found"
+msgstr "Id が見つかりません"
+
+#: baruwa/templates/accounts/confirmbulkdel.html:46
+#: baruwa/templates/domains/confirmbulkdel.html:46
+msgid "Yes Delete"
+msgstr "削除をはい"
+
+#: baruwa/templates/accounts/confirmbulkdel.html:53
+#: baruwa/templates/accounts/confirmbulkdel.html:57
+msgid "Accounts :: Confirm bulk account deletion"
+msgstr "アカウント:: 確認一括アカウントの削除"
+
+#: baruwa/templates/accounts/delete.html:10
+msgid "Delete User account"
+msgstr "ユーザー アカウントを削除します。"
+
+#: baruwa/templates/accounts/delete.html:27
+#: baruwa/templates/accounts/delete.html:31
+msgid "Accounts :: Delete account"
+msgstr "アカウント: アカウントを削除します。"
+
+#: baruwa/templates/accounts/delete.html:36
+#: baruwa/templates/accounts/deleteaddress.html:34
+#: baruwa/templates/accounts/editaddress.html:34
+#: baruwa/templates/accounts/pwchange.html:35
+#: baruwa/templates/settings/account_addsig.html:4
+#: baruwa/templates/settings/account_deletesig.html:4
+#: baruwa/templates/settings/account_editsig.html:4
+msgid "Account details"
+msgstr "アカウントの詳細"
+
+#: baruwa/templates/accounts/deleteaddress.html:10
+msgid "Delete alias address"
+msgstr "エイリアスのアドレスを削除します。"
+
+#: baruwa/templates/accounts/deleteaddress.html:24
+#: baruwa/templates/accounts/deleteaddress.html:28
+msgid "Accounts :: Delete alias address"
+msgstr "アカウント:: エイリアス アドレスを削除します。"
+
+#: baruwa/templates/accounts/edit.html:10
+msgid "Update User account"
+msgstr "ユーザー アカウントを更新します。"
+
+#: baruwa/templates/accounts/edit.html:26
+#: baruwa/templates/accounts/edit.html:30
+msgid "Accounts :: Edit account"
+msgstr "アカウント:: 編集アカウント"
+
+#: baruwa/templates/accounts/editaddress.html:10
+msgid "Edit alias address"
+msgstr "エイリアス アドレスを編集します。"
+
+#: baruwa/templates/accounts/editaddress.html:25
+#: baruwa/templates/accounts/editaddress.html:29
+msgid "Accounts :: Update alias address"
+msgstr "アカウント:: エイリアス アドレスの更新"
+
+#: baruwa/templates/accounts/exportstatus.html:3
+msgid "Accounts Export Status"
+msgstr "アカウント エクスポート ステータス"
+
+#: baruwa/templates/accounts/exportstatus.html:11
+#: baruwa/templates/domains/exportstatus.html:11
+#: baruwa/templates/status/auditexportstatus.html:11
+msgid "The export has been processed, "
+msgstr "エクスポートの処理が完了"
+
+#: baruwa/templates/accounts/exportstatus.html:11
+#: baruwa/templates/domains/exportstatus.html:11
+msgid "Download the csv file"
+msgstr "Csv ファイルをダウンロードします。"
+
+#: baruwa/templates/accounts/exportstatus.html:13
+#: baruwa/templates/domains/exportstatus.html:13
+#, fuzzy, python-format
+msgid "The CSV export failed: %s"
+msgstr "監査ログのエクスポートが完了しました: %s"
+
+#: baruwa/templates/accounts/exportstatus.html:24
+#: baruwa/templates/accounts/importstatus.html:44
+#: baruwa/templates/organizations/importstatus.html:44
+#, python-format
+msgid "The request is being processed. %d%%"
+msgstr "要求を処理中です。%d %%"
+
+#: baruwa/templates/accounts/exportstatus.html:37
+#: baruwa/templates/accounts/exportstatus.html:40
+msgid "Accounts :: User export status"
+msgstr "アカウント:: ユーザー エクスポート ステータス"
+
+#: baruwa/templates/accounts/importaccounts.html:3
+#: baruwa/templates/domains/addalias.html:3
+#: baruwa/templates/domains/addauth.html:3
+#: baruwa/templates/domains/adddestination.html:3
+#: baruwa/templates/domains/authsettings.html:4
+#: baruwa/templates/domains/detail.html:7
+#: baruwa/templates/settings/domain_addsig.html:4
+#: baruwa/templates/settings/domain_deletesig.html:4
+#: baruwa/templates/settings/domain_dkim.html:4
+#: baruwa/templates/settings/domain_dkim_enable.html:5
+#: baruwa/templates/settings/domain_editsig.html:4
+#: baruwa/templates/settings/domain_sigs.html:4
+msgid "Domain Settings"
+msgstr "ドメインの設定"
+
+#: baruwa/templates/accounts/importaccounts.html:4
+#: baruwa/templates/domains/addalias.html:4
+#: baruwa/templates/domains/addauth.html:4
+#: baruwa/templates/domains/adddestination.html:4
+#: baruwa/templates/domains/authsettings.html:5
+#: baruwa/templates/domains/delete.html:3
+#: baruwa/templates/domains/deletealias.html:3
+#: baruwa/templates/domains/deleteauth.html:3
+#: baruwa/templates/domains/deletedestination.html:3
+#: baruwa/templates/domains/edit.html:3
+#: baruwa/templates/domains/editalias.html:3
+#: baruwa/templates/domains/editauth.html:3
+#: baruwa/templates/domains/editdestination.html:3
+#: baruwa/templates/domains/rulesets.html:11
+#: baruwa/templates/settings/domain_addsig.html:5
+#: baruwa/templates/settings/domain_deletesig.html:5
+#: baruwa/templates/settings/domain_dkim.html:5
+#: baruwa/templates/settings/domain_dkim_enable.html:6
+#: baruwa/templates/settings/domain_editsig.html:5
+#: baruwa/templates/settings/domain_settings.html:4
+#: baruwa/templates/settings/domain_sigs.html:5
+msgid "Domain details"
+msgstr "ドメイン詳細"
+
+#: baruwa/templates/accounts/importaccounts.html:9
+msgid "Import accounts"
+msgstr "アカウントをインポート"
+
+#: baruwa/templates/accounts/importaccounts.html:16
+#: baruwa/templates/organizations/importdomains.html:16
+msgid "Import"
+msgstr "インポート"
+
+#: baruwa/templates/accounts/importaccounts.html:23
+#: baruwa/templates/accounts/importaccounts.html:27
+#, python-format
+msgid "Accounts :: %(dom)s :: Import accounts"
+msgstr "Accounts :: %(dom)s :: Import accounts"
+
+#: baruwa/templates/accounts/importstatus.html:7
+#: baruwa/templates/messages/taskstatus.html:19
+#: baruwa/templates/organizations/importstatus.html:7
+msgid "Errors"
+msgstr "エラー"
+
+#: baruwa/templates/accounts/importstatus.html:31
+#: baruwa/templates/organizations/importstatus.html:31
+#, fuzzy, python-format
+msgid "The CSV import failed: %s"
+msgstr "監査ログのエクスポートが完了しました: %s"
+
+#: baruwa/templates/accounts/importstatus.html:59
+#: baruwa/templates/accounts/importstatus.html:62
+msgid "Accounts :: User import status"
+msgstr "アカウント:: ユーザー インポートの状態"
+
+#: baruwa/templates/accounts/index.html:4
+#: baruwa/templates/settings/domain_settings.html:18
+msgid "Import Accounts"
+msgstr "アカウントをインポート"
+
+#: baruwa/templates/accounts/index.html:5
+#: baruwa/templates/accounts/index.html:7
+#: baruwa/templates/settings/domain_settings.html:19
+msgid "Export Accounts"
+msgstr "アカウントをエクスポートします。"
+
+#: baruwa/templates/accounts/index.html:24
+#: baruwa/templates/accounts/searchresults.html:14
+#: baruwa/templates/domains/index.html:19
+#: baruwa/templates/domains/searchresults.html:15
+#: baruwa/templates/messages/includes/enabledform.html:8
+#: baruwa/templates/settings/domain_dkim_enable.html:20
+msgid "Submit"
+msgstr "送信"
+
+#: baruwa/templates/accounts/index.html:76
+#: baruwa/templates/accounts/index.html:83
+msgid "Accounts "
+msgstr "アカウント"
+
+#: baruwa/templates/accounts/index.html:78
+#: baruwa/templates/accounts/index.html:85
+#: baruwa/templates/status/audit.html:66 baruwa/templates/status/audit.html:73
+#, python-format
+msgid ":: Showing page %(n)d of %(c)d page."
+msgid_plural ":: Showing page %(n)d of %(c)d pages."
+msgstr[0] ":: Showing page %(n)d of %(c)d pages."
+
+#: baruwa/templates/accounts/index.html:94
+#: baruwa/templates/domains/index.html:93 baruwa/templates/lists/index.html:105
+#: baruwa/templates/messages/functions.html:208
+#: baruwa/templates/messages/searchresults.html:102
+#: baruwa/templates/organizations/index.html:50
+#: baruwa/templates/settings/index.html:48
+#: baruwa/templates/status/audit.html:84 baruwa/templates/status/mailq.html:70
+#, python-format
+msgid "Showing items %(i)d to %(l)d of %(count)d"
+msgstr "Showing items %(i)d to %(l)d of %(count)d"
+
+#: baruwa/templates/accounts/index.html:96
+#: baruwa/templates/domains/index.html:95 baruwa/templates/lists/index.html:107
+#: baruwa/templates/messages/functions.html:210
+#: baruwa/templates/messages/searchresults.html:104
+#: baruwa/templates/organizations/index.html:52
+#: baruwa/templates/settings/index.html:50
+#: baruwa/templates/status/audit.html:86 baruwa/templates/status/mailq.html:72
+msgid "Show items:"
+msgstr "アイテムを表示します。"
+
+#: baruwa/templates/accounts/index.html:98
+#: baruwa/templates/domains/index.html:97 baruwa/templates/lists/index.html:109
+#: baruwa/templates/messages/functions.html:212
+#: baruwa/templates/messages/searchresults.html:106
+#: baruwa/templates/organizations/index.html:54
+#: baruwa/templates/settings/index.html:52
+#: baruwa/templates/status/audit.html:88 baruwa/templates/status/mailq.html:74
+msgid "per page"
+msgstr "1 ページあたり"
+
+#: baruwa/templates/accounts/index.html:105
+#: baruwa/templates/domains/index.html:104
+#: baruwa/templates/domains/searchresults.html:99
+#: baruwa/templates/lists/index.html:42 baruwa/templates/lists/index.html:116
+#: baruwa/templates/messages/functions.html:219
+#: baruwa/templates/messages/searchresults.html:113
+#: baruwa/templates/organizations/index.html:61
+#: baruwa/templates/reports/piereport.html:41
+#: baruwa/templates/reports/relays.html:45
+#: baruwa/templates/status/audit.html:95 baruwa/templates/status/mailq.html:55
+msgid "No items found"
+msgstr "アイテムが見つかりません"
+
+#: baruwa/templates/accounts/login.html:11
+#: baruwa/templates/accounts/login.html:61
+msgid "Reset my password"
+msgstr "私のパスワードをリセットします。"
+
+#: baruwa/templates/accounts/login.html:36
+msgid "The username or password you entered is incorrect."
+msgstr "ユーザー名またはパスワードが正しくありません。"
+
+#: baruwa/templates/accounts/login.html:40
+msgid "Password"
+msgstr "パスワード"
+
+#: baruwa/templates/accounts/login.html:52
+msgid "Forgotten password ?"
+msgstr "パスワードを忘れた？"
+
+#: baruwa/templates/accounts/login.html:55
+msgid ""
+"Forgotten your password? Enter your e-mail address below, and we'll "
+"e-mail instructions on setting a new one."
+msgstr "パスワードをお忘れですか？あなたの電子メール アドレスを下を入力し、我々 は新しいものを設定する方法についてメールするよ。"
+
+#: baruwa/templates/accounts/login.html:60
+msgid "Cancel"
+msgstr "キャンセル"
+
+#: baruwa/templates/accounts/new.html:3
+msgid "Create User account"
+msgstr "ユーザー アカウントを作成します。"
+
+#: baruwa/templates/accounts/new.html:11
+msgid "Create account"
+msgstr "アカウントを作成します。"
+
+#: baruwa/templates/accounts/new.html:20 baruwa/templates/accounts/new.html:24
+msgid "Accounts :: Create account"
+msgstr "アカウント: アカウントを作成します。"
+
+#: baruwa/templates/accounts/pwchange.html:26
+#: baruwa/templates/accounts/pwchange.html:30
+#, python-format
+msgid "Accounts :: %(name)s :: Change password"
+msgstr "アカウント:: %(name)s：： パスワード変更"
+
+#: baruwa/templates/accounts/searchresults.html:53
+#, python-format
+msgid "No accounts found matching: %s"
+msgstr "一致するアカウントが見つかりません: %s"
+
+#: baruwa/templates/accounts/searchresults.html:65
+#: baruwa/templates/accounts/searchresults.html:69
+#, python-format
+msgid "Accounts :: Search results :: Showing page %(n)d of %(c)d pages."
+msgstr "アカウント:: 検索結果：： 表示中のページ %(n)d%(c)dページ。"
+
+#: baruwa/templates/accounts/searchresults.html:65
+#: baruwa/templates/accounts/searchresults.html:69
+msgid "Accounts :: Search results"
+msgstr "アカウント：： 検索結果"
+
+#: baruwa/templates/accounts/searchresults.html:82
+#: baruwa/templates/domains/searchresults.html:88
+#, python-format
+msgid "Showing results %(i)d to %(l)d of %(count)d"
+msgstr "結果表示 %(i)d%(l)d%(count)d"
+
+#: baruwa/templates/accounts/searchresults.html:84
+#: baruwa/templates/domains/searchresults.html:90
+#: baruwa/templates/messages/index.html:8
+msgid "Show:"
+msgstr "表示します。"
+
+#: baruwa/templates/accounts/searchresults.html:86
+#: baruwa/templates/domains/searchresults.html:92
+msgid "results per page"
+msgstr "ページあたりの検索結果"
+
+#: baruwa/templates/accounts/searchresults.html:93
+#, python-format
+msgid "No items found matching: %s"
+msgstr "一致する項目が見つかりません: %s"
+
+#: baruwa/templates/domains/addalias.html:11
+msgid "Add Domain Alias"
+msgstr "ドメイン エイリアスを追加します。"
+
+#: baruwa/templates/domains/addalias.html:17
+#: baruwa/templates/domains/addauth.html:17
+msgid "Clear"
+msgstr "明確な"
+
+#: baruwa/templates/domains/addalias.html:18
+#: baruwa/templates/domains/addauth.html:18
+msgid "Add"
+msgstr "追加"
+
+#: baruwa/templates/domains/addalias.html:26
+#: baruwa/templates/domains/addalias.html:30
+#, python-format
+msgid "Domains :: %(name)s :: Add Domain Alias"
+msgstr "ドメイン：： %(name)s: ドメイン エイリアスを追加します。"
+
+#: baruwa/templates/domains/addauth.html:11
+msgid "Add Authentication server"
+msgstr "認証サーバーを追加します。"
+
+#: baruwa/templates/domains/addauth.html:26
+#: baruwa/templates/domains/addauth.html:30
+#, python-format
+msgid "Domains :: %(name)s :: Add authentication settings"
+msgstr "ドメイン：： %(name)s: 認証の設定を追加します。"
+
+#: baruwa/templates/domains/adddestination.html:10
+msgid "Add a Destination server"
+msgstr "移行先サーバーを追加します。"
+
+#: baruwa/templates/domains/adddestination.html:18
+msgid "Add server"
+msgstr "サーバーを追加します。"
+
+#: baruwa/templates/domains/adddestination.html:26
+#: baruwa/templates/domains/adddestination.html:30
+msgid "Domains :: Add a Destination server"
+msgstr "移行先サーバーのドメイン：： を追加します。"
+
+#: baruwa/templates/domains/authsettings.html:13
+msgid "Add Auth Settings"
+msgstr "Auth の設定を追加します。"
+
+#: baruwa/templates/domains/authsettings.html:19
+#: baruwa/templates/settings/section.html:27
+msgid "Save settings"
+msgstr "設定を保存します。"
+
+#: baruwa/templates/domains/authsettings.html:27
+#: baruwa/templates/domains/authsettings.html:31
+#, python-format
+msgid "Domains :: %(name)s :: Authentication settings"
+msgstr "ドメイン：： %(name)s: 認証の設定"
+
+#: baruwa/templates/domains/confirmbulkdel.html:7
+#: baruwa/templates/domains/index.html:28
+#: baruwa/templates/domains/searchresults.html:25
+msgid "Domain Name"
+msgstr "ドメイン名"
+
+#: baruwa/templates/domains/confirmbulkdel.html:8
+#: baruwa/templates/domains/index.html:29
+#: baruwa/templates/domains/searchresults.html:26
+msgid "Organization"
+msgstr "組織"
+
+#: baruwa/templates/domains/confirmbulkdel.html:16
+#: baruwa/templates/domains/index.html:37
+msgid "No domains found"
+msgstr "見つかったないドメイン"
+
+#: baruwa/templates/domains/confirmbulkdel.html:33
+#: baruwa/templates/domains/index.html:55
+#: baruwa/templates/domains/searchresults.html:52
+#: baruwa/templates/organizations/index.html:13
+#: baruwa/templates/organizations/index.html:28
+msgid "List accounts"
+msgstr "アカウント一覧"
+
+#: baruwa/templates/domains/confirmbulkdel.html:54
+#: baruwa/templates/domains/confirmbulkdel.html:58
+msgid "Domains :: Confirm bulk domain deletion"
+msgstr "ドメイン：： 確認一括ドメイン削除"
+
+#: baruwa/templates/domains/delete.html:9
+msgid "Delete Domain"
+msgstr "ドメインを削除します。"
+
+#: baruwa/templates/domains/delete.html:16
+#: baruwa/templates/domains/detail.html:9
+msgid "Delete domain"
+msgstr "ドメインを削除します。"
+
+#: baruwa/templates/domains/delete.html:26
+#: baruwa/templates/domains/delete.html:30
+msgid "Domains :: Delete Domain"
+msgstr "ドメイン：： ドメインを削除します。"
+
+#: baruwa/templates/domains/deletealias.html:10
+msgid "Delete Domain Alias"
+msgstr "ドメイン エイリアスを削除します。"
+
+#: baruwa/templates/domains/deletealias.html:24
+#: baruwa/templates/domains/deletealias.html:28
+#, python-format
+msgid "Domains :: %(name)s :: Delete Domain Alias"
+msgstr "ドメイン：： %(name)s: ドメイン エイリアスを削除します。"
+
+#: baruwa/templates/domains/deleteauth.html:10
+msgid "Delete Authentication server"
+msgstr "認証サーバを削除します。"
+
+#: baruwa/templates/domains/deleteauth.html:24
+#: baruwa/templates/domains/deleteauth.html:28
+#, python-format
+msgid "Domains :: %(name)s :: Delete authentication settings"
+msgstr "ドメイン：： %(name)s: 認証の設定を削除します。"
+
+#: baruwa/templates/domains/deletedestination.html:9
+msgid "Delete Destination server"
+msgstr "移行先サーバーを削除します。"
+
+#: baruwa/templates/domains/deletedestination.html:16
+msgid "Delete server"
+msgstr "サーバーを削除します。"
+
+#: baruwa/templates/domains/deletedestination.html:24
+#: baruwa/templates/domains/deletedestination.html:28
+msgid "Domains :: Delete Destination server"
+msgstr "ドメイン：： 移行先サーバーを削除します。"
+
+#: baruwa/templates/domains/detail.html:8
+msgid "Edit domain"
+msgstr "ドメインを編集します。"
+
+#: baruwa/templates/domains/detail.html:16
+msgid "Domain information"
+msgstr "ドメイン情報"
+
+#: baruwa/templates/domains/detail.html:37
+msgid "Owners"
+msgstr "所有者"
+
+#: baruwa/templates/domains/detail.html:60
+msgid "What to do with Spam"
+msgstr "何をスパムにする"
+
+#: baruwa/templates/domains/detail.html:68
+msgid "What to do with High Spam"
+msgstr "何を高いスパムをする"
+
+#: baruwa/templates/domains/detail.html:76
+msgid "SMTP recipient checks"
+msgstr "SMTP 受信者の確認"
+
+#: baruwa/templates/domains/detail.html:84
+msgid "LDAP recipient checks"
+msgstr "LDAP 受信者チェック"
+
+#: baruwa/templates/domains/detail.html:92
+msgid "Spam Checks"
+msgstr "スパムのチェック"
+
+#: baruwa/templates/domains/detail.html:100
+msgid "Virus Checks"
+msgstr "ウイルス チェック"
+
+#: baruwa/templates/domains/detail.html:148
+msgid "Send summary reports"
+msgstr "概要レポートを送信します。"
+
+#: baruwa/templates/domains/detail.html:156
+msgid "Domain Aliases"
+msgstr "ドメイン エイリアス"
+
+#: baruwa/templates/domains/detail.html:180
+msgid "No domain aliases configured"
+msgstr "構成されていないドメイン エイリアス"
+
+#: baruwa/templates/domains/detail.html:185
+msgid "Delivery Servers"
+msgstr "配信サーバー"
+
+#: baruwa/templates/domains/detail.html:197
+msgid "Test"
+msgstr "テスト"
+
+#: baruwa/templates/domains/detail.html:209
+msgid "No delivery servers configured"
+msgstr "構成されている配信サーバーがありません。"
+
+#: baruwa/templates/domains/detail.html:214
+msgid "Authentication Servers"
+msgstr "認証サーバー"
+
+#: baruwa/templates/domains/detail.html:244
+msgid "No authentication servers configured"
+msgstr "構成されている認証サーバーがありません。"
+
+#: baruwa/templates/domains/detail.html:252
+#: baruwa/templates/domains/detail.html:256
+#, python-format
+msgid "Domains :: %s"
+msgstr "ドメイン:: %s"
+
+#: baruwa/templates/domains/edit.html:9
+msgid "Edit Domain"
+msgstr "ドメインを編集します。"
+
+#: baruwa/templates/domains/edit.html:16
+msgid "Update domain"
+msgstr "更新ドメイン"
+
+#: baruwa/templates/domains/edit.html:26 baruwa/templates/domains/edit.html:30
+msgid "Domains :: Edit Domain"
+msgstr "ドメイン：： ドメインの編集"
+
+#: baruwa/templates/domains/editalias.html:10
+msgid "Edit Domain Alias"
+msgstr "ドメイン エイリアスを編集します。"
+
+#: baruwa/templates/domains/editalias.html:24
+#: baruwa/templates/domains/editalias.html:28
+#, python-format
+msgid "Domains :: %(name)s :: Edit Domain Alias"
+msgstr "ドメイン：： %(name)s: ドメイン エイリアスを編集します。"
+
+#: baruwa/templates/domains/editauth.html:10
+msgid "Update Authentication server"
+msgstr "更新認証サーバー"
+
+#: baruwa/templates/domains/editauth.html:24
+#: baruwa/templates/domains/editauth.html:28
+#, python-format
+msgid "Domains :: %(name)s :: Update authentication settings"
+msgstr "ドメイン：： %(name)s: 認証の設定を更新します。"
+
+#: baruwa/templates/domains/editdestination.html:9
+msgid "Edit Destination server"
+msgstr "移行先サーバーを編集します。"
+
+#: baruwa/templates/domains/editdestination.html:16
+#: baruwa/templates/settings/scanner.html:37
+msgid "Update server"
+msgstr "更新サーバー"
+
+#: baruwa/templates/domains/editdestination.html:24
+#: baruwa/templates/domains/editdestination.html:28
+msgid "Domains :: Edit Destination server"
+msgstr "ドメイン：： サーバー先で編集します。"
+
+#: baruwa/templates/domains/exportstatus.html:3
+msgid "Domains Export Status"
+msgstr "ドメイン エクスポート ステータス"
+
+#: baruwa/templates/domains/exportstatus.html:18
+msgid "The request is being processed."
+msgstr "要求を処理中です。"
+
+#: baruwa/templates/domains/exportstatus.html:31
+#: baruwa/templates/domains/exportstatus.html:34
+msgid "Domains :: export status"
+msgstr "ドメイン :: エクスポート ステータス"
+
+#: baruwa/templates/domains/index.html:3
+msgid "Export Domains"
+msgstr "ドメインをエクスポートします。"
+
+#: baruwa/templates/domains/index.html:57
+msgid "settings"
+msgstr "設定"
+
+#: baruwa/templates/domains/index.html:74
+#: baruwa/templates/domains/index.html:82
+#, python-format
+msgid "Domains :: Showing page %(page)d of %(count)d page."
+msgid_plural "Domains :: Showing page %(page)d of %(count)d pages."
+msgstr[0] "Domains :: Showing page %(page)d of %(count)d pages."
+
+#: baruwa/templates/domains/index.html:76
+#: baruwa/templates/domains/index.html:84
+msgid "Domains ::"
+msgstr "Domains ::"
+
+#: baruwa/templates/domains/new.html:3
+msgid "Add a Domain"
+msgstr "ドメインを追加します。"
+
+#: baruwa/templates/domains/new.html:11
+msgid "Add Domain"
+msgstr "ドメインを追加します。"
+
+#: baruwa/templates/domains/new.html:19 baruwa/templates/domains/new.html:23
+msgid "Domains :: Add a Domain"
+msgstr "ドメイン ドメイン：： を追加します。"
+
+#: baruwa/templates/domains/rulesets.html:2
+#: baruwa/templates/domains/rulesets.html:6
+#, python-format
+msgid "Domains :: %(name)s :: Rulesets"
+msgstr "ドメイン：： %(name)s: ルールセット"
+
+#: baruwa/templates/domains/searchresults.html:34
+#, python-format
+msgid "No domains found matching: %s"
+msgstr "一致するドメインが見つかりません: %s"
+
+#: baruwa/templates/domains/searchresults.html:71
+#: baruwa/templates/domains/searchresults.html:75
+#, python-format
+msgid ""
+"Domains :: Search results :: %(q)s :: Showing page %(page)d of %(count)d "
+"pages."
+msgstr "ドメイン：： 検索結果：： %(q)s: 表示中のページ %(page)d%(count)dページ。"
+
+#: baruwa/templates/domains/searchresults.html:71
+#: baruwa/templates/domains/searchresults.html:75
+#, python-format
+msgid "Domains :: Search results :: %s"
+msgstr "ドメイン：： 検索結果:: %s"
+
+#: baruwa/templates/domains/testdestination.html:4
+msgid "Testing Destination server connectivity"
+msgstr "移行先サーバーとの接続をテスト"
+
+#: baruwa/templates/domains/testdestination.html:16
+#: baruwa/templates/domains/testdestination.html:20
+#, python-format
+msgid "Settings :: Test Destination server :: %s"
+msgstr "設定:: テスト先サーバー:: %s"
+
+#: baruwa/templates/email/quarantine.html:59
+msgid "Spam Report"
+msgstr "スパムの報告"
+
+#: baruwa/templates/email/quarantine.html:88
+msgid "Policy Blocked Report"
+msgstr "ポリシー レポートをブロック"
+
+#: baruwa/templates/email/quarantine.html:110
+msgid "Request release"
+msgstr "解放を要求します。"
+
+#: baruwa/templates/forms/ajaxformbase.html:3
+#: baruwa/templates/forms/base.html:3
+#: baruwa/templates/forms/disabled.base.html:3
+#, python-format
+msgid "Form validation failed due to: %s"
+msgstr "フォームの検証に失敗しました: %s"
+
+#: baruwa/templates/general/error.html:10
+#, python-format
+msgid "Error Occured: %s"
+msgstr "エラーが発生しました: %s"
+
+#: baruwa/templates/general/error.html:25
+#, python-format
+msgid "ERROR: %s"
+msgstr "エラー: %s"
+
+#: baruwa/templates/general/error.html:28
+msgid ""
+"You do not have sufficient permissions to access this page. Please sign "
+"in using an account with sufficient permissions"
+msgstr "このページへのアクセス権はありません。十分なアクセス許可を持つアカウントを使用してサインインしてください。"
+
+#: baruwa/templates/general/error.html:30
+msgid ""
+"The system was unable to complete your request, the support team has been"
+" notified"
+msgstr "システムは要求を完了できませんでした、サポート チームが通知"
+
+#: baruwa/templates/includes/search.html:9 baruwa/templates/lists/index.html:6
+#: baruwa/templates/messages/functions.html:300
+#, python-format
+msgid "About %(n)s results (%(t)s seconds)"
+msgstr "About %(n)s results (%(t)s seconds)"
+
+#: baruwa/templates/includes/search.html:15
+#: baruwa/templates/messages/functions.html:306
+#: baruwa/templates/messages/search.html:7
+#, fuzzy
+msgid "Search"
+msgstr "リストの検索"
+
+#: baruwa/templates/invite/index.html:31
+msgid "Baruwa hosted Beta registration"
+msgstr "Baruwa ベータ登録をホスト"
+
+#: baruwa/templates/invite/index.html:38
+msgid "Registration"
+msgstr "登録"
+
+#: baruwa/templates/invite/index.html:46
+msgid "Register"
+msgstr "登録"
+
+#: baruwa/templates/invite/thankyou.html:25
+msgid "Thank you."
+msgstr "ありがとう。"
+
+#: baruwa/templates/invite/thankyou.html:27
+msgid ""
+"Your registration request is being reviewed, you will be notified when it"
+" is approved."
+msgstr "登録要求が見直されて、それが承認されたときに通知されます。"
+
+#: baruwa/templates/lists/add.html:4
+msgid "Add Sender to a list"
+msgstr "送信者リストに追加します。"
+
+#: baruwa/templates/lists/add.html:12
+msgid "Use IP address"
+msgstr "IP アドレスを使用します。"
+
+#: baruwa/templates/lists/add.html:13
+msgid "Use Domain"
+msgstr "ドメインを使用します。"
+
+#: baruwa/templates/lists/add.html:15 baruwa/templates/lists/add.html:32
+msgid "Add to list"
+msgstr "リストに追加します。"
+
+#: baruwa/templates/lists/add.html:24
+msgid "Add sender to a list"
+msgstr "送信者リストに追加します。"
+
+#: baruwa/templates/lists/add.html:40
+msgid "Adding to list"
+msgstr "リストに追加します。"
+
+#: baruwa/templates/lists/add.html:44
+msgid "Adding to Lists"
+msgstr "リストに追加します。"
+
+#: baruwa/templates/lists/delete.html:6
+msgid "Delete sender to a list"
+msgstr "送信者リストの削除します。"
+
+#: baruwa/templates/lists/delete.html:15
+msgid "Close"
+msgstr "閉じる"
+
+#: baruwa/templates/lists/delete.html:22 baruwa/templates/lists/delete.html:29
+msgid "Delete from list"
+msgstr "リストから削除します。"
+
+#: baruwa/templates/lists/delete.html:33
+msgid "Delete from List"
+msgstr "リストから削除します。"
+
+#: baruwa/templates/lists/index.html:26
+#: baruwa/templates/reports/piereport.html:24
+#: baruwa/templates/reports/relays.html:24
+msgid "#"
+msgstr "#"
+
+#: baruwa/templates/lists/index.html:80
+msgid "List management"
+msgstr "リストの管理"
+
+#: baruwa/templates/lists/index.html:85
+#, python-format
+msgid "Lists :: Approved senders :: Showing page %(page)d of %(count)d pages."
+msgstr "リスト:: 承認送信者:: 表示中のページ %(page)d%(count)dページ。"
+
+#: baruwa/templates/lists/index.html:87
+msgid "Lists :: Approved senders"
+msgstr "リスト:: 承認送信者"
+
+#: baruwa/templates/lists/index.html:91
+#, python-format
+msgid "Lists :: Banned senders :: Showing page %(page)d of %(count)d pages."
+msgstr "リスト:: 送信者禁止:: 表示中のページ %(page)d%(count)dページ。"
+
+#: baruwa/templates/lists/index.html:93
+msgid "Lists :: Banned senders"
+msgstr "リスト:: 送信者を禁止"
+
+#: baruwa/templates/messages/archive.html:3
+msgid "Apply filters"
+msgstr "フィルターを適用します。"
+
+#: baruwa/templates/messages/archive.html:4
+#: baruwa/templates/messages/listing.html:4
+#: baruwa/templates/messages/quarantine.html:6
+#: baruwa/templates/messages/searchresults.html:3
+msgid "Show applied filters"
+msgstr "適用されているフィルターを表示します。"
+
+#: baruwa/templates/messages/archive.html:28
+#: baruwa/templates/messages/archive.html:39
+#, python-format
+msgid "Messages :: Archive :: Showing page %(page)d of %(count)d pages."
+msgstr "メッセージ:: アーカイブの:: 表示中のページ %(page)d%(count)dページ。"
+
+#: baruwa/templates/messages/archive.html:30
+#: baruwa/templates/messages/listing.html:39
+#: baruwa/templates/messages/quarantine.html:62
+msgid "Filters"
+msgstr "フィルター"
+
+#: baruwa/templates/messages/archive.html:30
+#: baruwa/templates/messages/listing.html:39
+#: baruwa/templates/messages/quarantine.html:62
+msgid "have been applied"
+msgstr "適用されています。"
+
+#: baruwa/templates/messages/archive.html:33
+#: baruwa/templates/messages/archive.html:41
+msgid "Messages :: Archive"
+msgstr "メッセージ:: アーカイブ"
+
+#: baruwa/templates/messages/autorelease.html:11
+#: baruwa/templates/messages/autorelease.html:26
+msgid "Auto Quarantine release result:"
+msgstr "自動検疫リリースの結果:"
+
+#: baruwa/templates/messages/autorelease.html:29
+msgid "Passed"
+msgstr "渡されました。"
+
+#: baruwa/templates/messages/autorelease.html:29
+msgid "Message released"
+msgstr "メッセージのリリース"
+
+#: baruwa/templates/messages/autorelease.html:31
+msgid "Failed"
+msgstr "失敗しました"
+
+#: baruwa/templates/messages/autorelease.html:31
+msgid "Message not released"
+msgstr "解放されないメッセージ"
+
+#: baruwa/templates/messages/autorelease.html:39
+#, python-format
+msgid "Message with Message-ID: %s released from quarantine to: %s"
+msgstr "メッセージ ID を持つメッセージ: %s のリリースに検疫から: %s"
+
+#: baruwa/templates/messages/detail.html:4
+msgid "Add sender to list"
+msgstr "送信者リストに追加します。"
+
+#: baruwa/templates/messages/detail.html:6
+#: baruwa/templates/status/detail.html:6
+msgid "Preview message"
+msgstr "メッセージをプレビュー表示"
+
+#: baruwa/templates/messages/detail.html:7
+#: baruwa/templates/messages/preview.html:4
+msgid "Release message"
+msgstr "Release メッセージ"
+
+#: baruwa/templates/messages/detail.html:15
+#: baruwa/templates/status/detail.html:13
+msgid "Message Details"
+msgstr "メッセージの詳細"
+
+#: baruwa/templates/messages/detail.html:35
+#: baruwa/templates/status/detail.html:21
+msgid "Received on"
+msgstr "受信"
+
+#: baruwa/templates/messages/detail.html:39
+#: baruwa/templates/status/detail.html:45
+msgid "Received by"
+msgstr "受信しました。"
+
+#: baruwa/templates/messages/detail.html:47
+msgid "Received via"
+msgstr "経由で受信"
+
+#: baruwa/templates/messages/detail.html:53
+msgid "Hide hosts"
+msgstr "ホストを隠す"
+
+#: baruwa/templates/messages/detail.html:53
+msgid "Show hosts"
+msgstr "ホストを表示します。"
+
+#: baruwa/templates/messages/detail.html:58
+#: baruwa/templates/messages/functions.html:156
+#: baruwa/templates/messages/functions.html:158
+#: baruwa/templates/messages/index.html:24
+#: baruwa/templates/messages/searchresults.html:21
+#: baruwa/templates/status/detail.html:49
+msgid "Size"
+msgstr "サイズ"
+
+#: baruwa/templates/messages/detail.html:62
+msgid "Message Headers"
+msgstr "メッセージ ヘッダー"
+
+#: baruwa/templates/messages/detail.html:68
+msgid "Hide headers"
+msgstr "ヘッダーを非表示します。"
+
+#: baruwa/templates/messages/detail.html:68
+msgid "Show headers"
+msgstr "ヘッダーを表示します。"
+
+#: baruwa/templates/messages/detail.html:73
+msgid "Quarantined"
+msgstr "検疫"
+
+#: baruwa/templates/messages/detail.html:81
+msgid "Prohibited File"
+msgstr "禁止するファイル"
+
+#: baruwa/templates/messages/detail.html:85
+msgid "Other infection"
+msgstr "他の感染症"
+
+#: baruwa/templates/messages/detail.html:91
+msgid "Spam checks results"
+msgstr "スパム チェック結果"
+
+#: baruwa/templates/messages/detail.html:95
+msgid "Results"
+msgstr "結果"
+
+#: baruwa/templates/messages/detail.html:98
+msgid "Message Score"
+msgstr "メッセージのスコア"
+
+#: baruwa/templates/messages/detail.html:102
+msgid "Identified as Spam"
+msgstr "スパムとして識別されます。"
+
+#: baruwa/templates/messages/detail.html:106
+msgid "Definite Spam"
+msgstr "明確なスパム"
+
+#: baruwa/templates/messages/detail.html:110
+msgid "Sender in RBL"
+msgstr "RBL の送信者"
+
+#: baruwa/templates/messages/detail.html:118
+msgid "Approved Sender"
+msgstr "承認済みの送信者"
+
+#: baruwa/templates/messages/detail.html:122
+msgid "Blocked Sender"
+msgstr "ブロックする送信者"
+
+#: baruwa/templates/messages/detail.html:126
+msgid "Bayesian Auto Learned"
+msgstr "ベイズ自動を学んだ"
+
+#: baruwa/templates/messages/detail.html:131
+msgid "Rules matched"
+msgstr "一致ルール"
+
+#: baruwa/templates/messages/detail.html:133
+#: baruwa/templates/messages/functions.html:117
+#: baruwa/templates/messages/functions.html:119
+#: baruwa/templates/messages/functions.html:163
+#: baruwa/templates/messages/functions.html:165
+#: baruwa/templates/messages/index.html:25
+#: baruwa/templates/messages/searchresults.html:22
+#: baruwa/templates/reports/barreport.html:27
+msgid "Score"
+msgstr "スコア"
+
+#: baruwa/templates/messages/detail.html:134
+msgid "Rule name"
+msgstr "ルール名"
+
+#: baruwa/templates/messages/detail.html:135
+msgid "Rule description"
+msgstr "ルールの説明"
+
+#: baruwa/templates/messages/detail.html:171
+msgid "Delivery information"
+msgstr "配信情報"
+
+#: baruwa/templates/messages/detail.html:177
+msgid "Message"
+msgstr "Message"
+
+#: baruwa/templates/messages/detail.html:184
+msgid "Message is quarantined"
+msgstr "メッセージが隔離されます。"
+
+#: baruwa/templates/messages/detail.html:186
+msgid "No delivery status information available"
+msgstr "利用可能な配信状態情報はありません。"
+
+#: baruwa/templates/messages/detail.html:193
+msgid "Ok"
+msgstr "わかりました"
+
+#: baruwa/templates/messages/detail.html:193
+msgid "Fail"
+msgstr "失敗します。"
+
+#: baruwa/templates/messages/detail.html:204
+#, python-format
+msgid "Showing message :: %(i)s"
+msgstr "Showing message :: %(i)s"
+
+#: baruwa/templates/messages/functions.html:76
+#: baruwa/templates/messages/index.html:32
+msgid "No messages found"
+msgstr "メッセージが見つかりません"
+
+#: baruwa/templates/messages/functions.html:96
+#: baruwa/templates/messages/functions.html:98
+#: baruwa/templates/messages/functions.html:135
+#: baruwa/templates/messages/functions.html:137
+#: baruwa/templates/messages/index.html:21
+#: baruwa/templates/messages/searchresults.html:18
+msgid "From"
+msgstr "差出人"
+
+#: baruwa/templates/messages/functions.html:103
+#: baruwa/templates/messages/functions.html:105
+#: baruwa/templates/messages/functions.html:142
+#: baruwa/templates/messages/functions.html:144
+#: baruwa/templates/messages/index.html:22
+#: baruwa/templates/messages/searchresults.html:19
+msgid "To"
+msgstr "宛先"
+
+#: baruwa/templates/messages/index.html:10
+msgid "items per page"
+msgstr "1 ページあたりの項目"
+
+#: baruwa/templates/messages/index.html:96
+#: baruwa/templates/messages/index.html:100
+#, python-format
+msgid "Messages :: Showing the %s most recent messages"
+msgstr "メッセージ:: %s は最も最近のメッセージ表示中1"
+
+#: baruwa/templates/messages/listing.html:3
+#: baruwa/templates/messages/quarantine.html:5
+#: baruwa/templates/reports/barreport.html:3
+#: baruwa/templates/reports/listing.html:3
+#: baruwa/templates/reports/piereport.html:3
+#: baruwa/templates/reports/relays.html:3
+msgid "Apply Filters"
+msgstr "フィルターを適用します。"
+
+#: baruwa/templates/messages/listing.html:34
+#: baruwa/templates/messages/listing.html:45
+#, python-format
+msgid ""
+"Messages :: Full message listing :: Showing page %(page)d of %(count)d "
+"pages."
+msgstr "メッセージ:: 完全なメッセージのリスト:: 表示中のページ %(page)d%(count)dページ。"
+
+#: baruwa/templates/messages/listing.html:36
+#: baruwa/templates/messages/listing.html:47
+msgid "Messages :: Full message listing"
+msgstr "メッセージ:: 完全なメッセージのリスト"
+
+#: baruwa/templates/messages/preview.html:5
+#: baruwa/templates/status/preview.html:6
+msgid "Return to message"
+msgstr "メッセージに戻る"
+
+#: baruwa/templates/messages/preview.html:13
+#: baruwa/templates/status/preview.html:14
+msgid "Message headers"
+msgstr "メッセージ ヘッダー"
+
+#: baruwa/templates/messages/preview.html:24
+#: baruwa/templates/status/preview.html:25
+msgid "Attachments"
+msgstr "添付ファイル"
+
+#: baruwa/templates/messages/preview.html:34
+#: baruwa/templates/status/preview.html:35
+msgid "Message content"
+msgstr "メッセージの内容"
+
+#: baruwa/templates/messages/preview.html:47
+#, python-format
+msgid "Message: %(msgid)s could not be previewed"
+msgstr "メッセージ: %(msgid)sプレビューできませんでした。"
+
+#: baruwa/templates/messages/preview.html:53
+#: baruwa/templates/messages/preview.html:57
+#, python-format
+msgid "Messages :: Previewing message : %(msgid)s"
+msgstr "メッセージ:: プレビュー メッセージ: %(msgid)s"
+
+#: baruwa/templates/messages/quarantine.html:4
+#: baruwa/templates/messages/taskstatus.html:5
+#, fuzzy
+msgid "Not Spam"
+msgstr "非スパム"
+
+#: baruwa/templates/messages/quarantine.html:27
+#: baruwa/templates/status/detail.html:69
+#: baruwa/templates/status/detail.html:75 baruwa/templates/status/mailq.html:23
+msgid "Process"
+msgstr "プロセス"
+
+#: baruwa/templates/messages/quarantine.html:57
+#: baruwa/templates/messages/quarantine.html:68
+#, python-format
+msgid "Messages :: Quarantine :: Showing page %(page)d of %(count)d pages."
+msgstr "メッセージ:: 検疫:: 表示中のページ %(page)d%(count)dページ。"
+
+#: baruwa/templates/messages/quarantine.html:59
+#: baruwa/templates/messages/quarantine.html:70
+msgid "Messages :: Quarantine"
+msgstr "メッセージ:: 検疫"
+
+#: baruwa/templates/messages/searchresults.html:88
+#, python-format
+msgid "No messages found matching search query: %(q)s !"
+msgstr "No messages found matching search query: %(q)s !"
+
+#: baruwa/templates/messages/searchresults.html:154
+#: baruwa/templates/messages/searchresults.html:158
+#, python-format
+msgid "Messages :: Search results :: %(q)s"
+msgstr "Messages :: Search results :: %(q)s"
+
+#: baruwa/templates/messages/taskstatus.html:15
+msgid "Message-ID"
+msgstr "メッセージ ID"
+
+#: baruwa/templates/messages/taskstatus.html:46
+msgid "The request is being processed. Current status: "
+msgstr "要求を処理中です。現在のステータス："
+
+#: baruwa/templates/messages/taskstatus.html:67
+#: baruwa/templates/messages/taskstatus.html:70
+msgid "Messages :: Quarantine :: Bulk processing status"
+msgstr "メッセージ:: 検疫:: 一括処理ステータス"
+
+#: baruwa/templates/messages/includes/delete.html:2
+#, python-format
+msgid "The message id: %(id)s has been deleted from the quarantine"
+msgstr "メッセージ id: %(id)s検疫から削除されています"
+
+#: baruwa/templates/messages/includes/delete.html:4
+#, python-format
+msgid "The message id: %(id)s could not be deleted: %(error_msg)s"
+msgstr "メッセージ id: %(id)s削除できませんでした: %(error_msg)s"
+
+#: baruwa/templates/messages/includes/released.html:2
+#, python-format
+msgid "The message id: %(id)s has been released"
+msgstr "メッセージ id: %(id)sリリースされています。"
+
+#: baruwa/templates/messages/includes/released.html:4
+#, python-format
+msgid ""
+"The message id: %(id)s could not be released: %(error_msg)s, contact your"
+" email admin for assistance."
+msgstr "メッセージ id: %(id)s解除できませんでした: %(error_msg)s、メール管理者に問い合わせてください。"
+
+#: baruwa/templates/messages/includes/salearn.html:2
+#, python-format
+msgid "The message id: %(id)s processed by the bayesian engine"
+msgstr "メッセージ id: %(id)sベイズ エンジンによって処理されました。"
+
+#: baruwa/templates/messages/includes/salearn.html:4
+#, python-format
+msgid "The message id: %(id)s not learned: %(msg)s"
+msgstr "メッセージ id: %(id)sない学んだ: %(msg)s"
+
+#: baruwa/templates/organizations/add.html:3
+msgid "Add an organization"
+msgstr "組織を追加します。"
+
+#: baruwa/templates/organizations/add.html:18
+#: baruwa/templates/organizations/add.html:22
+msgid "Organizations :: Add an organization"
+msgstr "組織： 組織を追加します。"
+
+#: baruwa/templates/organizations/addrelay.html:3
+#: baruwa/templates/organizations/delete.html:3
+#: baruwa/templates/organizations/deleterelay.html:3
+#: baruwa/templates/organizations/edit.html:3
+#: baruwa/templates/organizations/editrelay.html:3
+#: baruwa/templates/organizations/importdomains.html:3
+msgid "Organization details"
+msgstr "組織の詳細"
+
+#: baruwa/templates/organizations/addrelay.html:9
+msgid "Add outbound settings"
+msgstr "送信設定を追加します。"
+
+#: baruwa/templates/organizations/addrelay.html:17
+msgid "Add settings"
+msgstr "設定を追加します。"
+
+#: baruwa/templates/organizations/addrelay.html:25
+#: baruwa/templates/organizations/addrelay.html:29
+#, python-format
+msgid "Organizations :: %(name)s :: Add outbound settings"
+msgstr "組織:: %(name)s: 送信設定を追加します。"
+
+#: baruwa/templates/organizations/delete.html:9
+#: baruwa/templates/organizations/delete.html:16
+msgid "Delete organization"
+msgstr "組織を削除します。"
+
+#: baruwa/templates/organizations/delete.html:24
+#: baruwa/templates/organizations/delete.html:28
+msgid "Settings :: Delete organization"
+msgstr "設定:: 削除する組織"
+
+#: baruwa/templates/organizations/deleterelay.html:9
+msgid "Delete outbound settings"
+msgstr "送信設定を削除します。"
+
+#: baruwa/templates/organizations/deleterelay.html:17
+msgid "Delete settings"
+msgstr "設定を削除します。"
+
+#: baruwa/templates/organizations/deleterelay.html:25
+#: baruwa/templates/organizations/deleterelay.html:29
+#, python-format
+msgid "Organizations :: Delete outbound settings :: %(name)s"
+msgstr "組織：： 送信設定を削除します:: %(name)s"
+
+#: baruwa/templates/organizations/detail.html:3
+msgid "Export accounts"
+msgstr "アカウントをエクスポートします。"
+
+#: baruwa/templates/organizations/detail.html:4
+#: baruwa/templates/organizations/importdomains.html:9
+#: baruwa/templates/organizations/index.html:15
+msgid "Import domains"
+msgstr "ドメインをインポートします。"
+
+#: baruwa/templates/organizations/detail.html:5
+msgid "Add relay settings"
+msgstr "中継の設定を追加します。"
+
+#: baruwa/templates/organizations/detail.html:14
+msgid "Organization information"
+msgstr "組織情報"
+
+#: baruwa/templates/organizations/detail.html:27
+msgid "Number of Domains"
+msgstr "ドメインの数"
+
+#: baruwa/templates/organizations/detail.html:35
+msgid "List Domains"
+msgstr "ドメインの一覧表示"
+
+#: baruwa/templates/organizations/detail.html:38
+msgid "Organization domains"
+msgstr "組織ドメイン"
+
+#: baruwa/templates/organizations/detail.html:43
+msgid "Organization Admins"
+msgstr "組織管理者"
+
+#: baruwa/templates/organizations/detail.html:55
+msgid "Outbound relay settings"
+msgstr "送信リレーの設定"
+
+#: baruwa/templates/organizations/detail.html:61
+#, python-format
+msgid "Relay Host: %(name)s"
+msgstr "中継ホスト: %(name)s"
+
+#: baruwa/templates/organizations/detail.html:63
+#, python-format
+msgid "SMTP-AUTH: %(name)s"
+msgstr "SMTP AUTH: %(name)s"
+
+#: baruwa/templates/organizations/detail.html:79
+msgid "No outbound relay settings configured"
+msgstr "送信リレー設定されていません"
+
+#: baruwa/templates/organizations/detail.html:85
+#: baruwa/templates/organizations/detail.html:89
+msgid "Organizations :: "
+msgstr "組織::"
+
+#: baruwa/templates/organizations/edit.html:9
+msgid "Edit organization"
+msgstr "組織を編集します。"
+
+#: baruwa/templates/organizations/edit.html:16
+msgid "Update organization"
+msgstr "組織を更新します。"
+
+#: baruwa/templates/organizations/edit.html:24
+#: baruwa/templates/organizations/edit.html:28
+msgid "Organizations :: Edit organization"
+msgstr "組織：： 編集組織"
+
+#: baruwa/templates/organizations/editrelay.html:9
+msgid "Edit outbound settings"
+msgstr "送信設定を編集します。"
+
+#: baruwa/templates/organizations/editrelay.html:17
+msgid "Update settings"
+msgstr "設定の更新"
+
+#: baruwa/templates/organizations/editrelay.html:25
+#: baruwa/templates/organizations/editrelay.html:29
+#, python-format
+msgid "Organizations :: Edit outbound settings :: %(name)s"
+msgstr "組織：： 送信設定編集:: %(name)s"
+
+#: baruwa/templates/organizations/importdomains.html:23
+#: baruwa/templates/organizations/importdomains.html:27
+#, python-format
+msgid "Organizations :: %(org)s :: Import domains"
+msgstr "組織:: %(org)s: ドメインをインポートします。"
+
+#: baruwa/templates/organizations/importstatus.html:59
+#: baruwa/templates/organizations/importstatus.html:62
+msgid "Organizations :: Domain import status"
+msgstr "組織:: ドメインのインポートの状態"
+
+#: baruwa/templates/organizations/index.html:12
+#: baruwa/templates/organizations/index.html:27
+msgid "List domains"
+msgstr "ドメインの一覧表示"
+
+#: baruwa/templates/organizations/index.html:14
+msgid "Add domain"
+msgstr "ドメインを追加します。"
+
+#: baruwa/templates/organizations/index.html:22
+msgid "No organizations found"
+msgstr "見つかったない組織"
+
+#: baruwa/templates/organizations/index.html:29
+msgid "Add domains"
+msgstr "ドメインを追加します。"
+
+#: baruwa/templates/organizations/index.html:30
+msgid "import domains"
+msgstr "ドメインをインポートします。"
+
+#: baruwa/templates/organizations/index.html:101
+#: baruwa/templates/organizations/index.html:106
+#, python-format
+msgid "Organizations :: Showing page %(page)d of %(count)d pages."
+msgstr "組織:: ページ表示 %(page)d%(count)dページ。"
+
+#: baruwa/templates/organizations/index.html:108
+msgid "Organizations ::"
+msgstr "組織::"
+
+#: baruwa/templates/reports/barreport.html:4
+#: baruwa/templates/reports/listing.html:4
+#: baruwa/templates/reports/piereport.html:4
+#: baruwa/templates/reports/relays.html:4
+msgid "Download PDF"
+msgstr "PDF をダウンロードします。"
+
+#: baruwa/templates/reports/barreport.html:5
+#: baruwa/templates/reports/listing.html:5
+#: baruwa/templates/reports/piereport.html:5
+#: baruwa/templates/reports/relays.html:5
+msgid "Download CSV"
+msgstr "CSV をダウンロードします。"
+
+#: baruwa/templates/reports/barreport.html:21
+msgid "Enable javascript to view graphs"
+msgstr "グラフを表示するには javascript を有効にします。"
+
+#: baruwa/templates/reports/barreport.html:46
+msgid "No items returned"
+msgstr "返される項目はありません。"
+
+#: baruwa/templates/reports/barreport.html:59
+msgid "Download"
+msgstr "ダウンロード"
+
+#: baruwa/templates/reports/barreport.html:62
+#: baruwa/templates/reports/barreport.html:63
+#: baruwa/templates/reports/piereport.html:58
+#: baruwa/templates/reports/piereport.html:59
+msgid "Reports :: "
+msgstr "レポート::"
+
+#: baruwa/templates/reports/form.html:3
+msgid "Add Filter"
+msgstr "フィルターを追加します。"
+
+#: baruwa/templates/reports/form.html:19
+msgid "Add filter"
+msgstr "フィルターを追加します。"
+
+#: baruwa/templates/reports/form.html:36
+msgid "Filters have been applied"
+msgstr "フィルターが適用されています。"
+
+#: baruwa/templates/reports/index.html:17
+msgid "Spam Score Distribution"
+msgstr "スパムの得点分布"
+
+#: baruwa/templates/reports/index.html:18
+msgid "Top Mail hosts"
+msgstr "トップ メール ホスト"
+
+#: baruwa/templates/reports/index.html:35
+msgid "Statistics"
+msgstr "統計情報"
+
+#: baruwa/templates/reports/index.html:39
+msgid "Message count"
+msgstr "メッセージ カウント"
+
+#: baruwa/templates/reports/index.html:43
+msgid "Oldest message"
+msgstr "最も古いメッセージ"
+
+#: baruwa/templates/reports/index.html:47
+msgid "Newest message"
+msgstr "最新のメッセージ"
+
+#: baruwa/templates/reports/index.html:53
+msgid "Active Filter(s)"
+msgstr "Active Filter(s)"
+
+#: baruwa/templates/reports/index.html:75
+msgid "No active filters at the moment"
+msgstr "現時点ではアクティブなフィルターはありません。"
+
+#: baruwa/templates/reports/index.html:82
+msgid "Saved Filter(s)"
+msgstr "保存したフィルター"
+
+#: baruwa/templates/reports/index.html:104
+msgid "No saved filters at the moment"
+msgstr "現時点では保存済みのフィルターはありません。"
+
+#: baruwa/templates/reports/listing.html:24
+msgid "Enable Javascript to view graphs"
+msgstr "グラフを表示するには Javascript を有効にします。"
+
+#: baruwa/templates/reports/listing.html:39
+msgid "Mail"
+msgstr "メール"
+
+#: baruwa/templates/reports/listing.html:42
+msgid "Virii"
+msgstr "Virii"
+
+#: baruwa/templates/reports/listing.html:45
+msgid "Virii %"
+msgstr "Virii ％"
+
+#: baruwa/templates/reports/listing.html:51
+msgid "Spam %"
+msgstr "スパム ％"
+
+#: baruwa/templates/reports/listing.html:85
+msgid "No records found"
+msgstr "レコードが見つからない"
+
+#: baruwa/templates/reports/relays.html:25
+msgid "IP address"
+msgstr "IP アドレス"
+
+#: baruwa/templates/reports/relays.html:27
+msgid "Country"
+msgstr "国"
+
+#: baruwa/templates/reports/relays.html:28
+msgid "Total"
+msgstr "合計"
+
+#: baruwa/templates/reports/relays.html:62
+#: baruwa/templates/reports/relays.html:63
+#, python-format
+msgid "Reports :: %(t)s"
+msgstr "レポート:: %(t)s"
+
+#: baruwa/templates/settings/account_addsig.html:11
+#: baruwa/templates/settings/domain_addsig.html:12
+msgid "Add email signature"
+msgstr "電子メールの署名を追加します。"
+
+#: baruwa/templates/settings/account_addsig.html:34
+#: baruwa/templates/settings/domain_addsig.html:35
+#: baruwa/templates/settings/domain_sigs.html:7
+msgid "Add signature"
+msgstr "署名を追加します。"
+
+#: baruwa/templates/settings/account_addsig.html:42
+#: baruwa/templates/settings/account_addsig.html:46
+#: baruwa/templates/settings/domain_addsig.html:43
+#: baruwa/templates/settings/domain_addsig.html:47
+#, python-format
+msgid "Settings :: Add email signatures :: %s"
+msgstr "設定:: 電子メール署名を追加する:: %s"
+
+#: baruwa/templates/settings/account_deletesig.html:11
+#: baruwa/templates/settings/domain_deletesig.html:12
+msgid "Delete email signature"
+msgstr "電子メール署名を削除します。"
+
+#: baruwa/templates/settings/account_deletesig.html:29
+#: baruwa/templates/settings/domain_deletesig.html:30
+msgid "Delete signature"
+msgstr "署名を削除します。"
+
+#: baruwa/templates/settings/account_deletesig.html:37
+#: baruwa/templates/settings/account_deletesig.html:41
+#: baruwa/templates/settings/domain_deletesig.html:38
+#: baruwa/templates/settings/domain_deletesig.html:42
+msgid "Settings :: Delete email signatures"
+msgstr "設定：： 削除メールの署名"
+
+#: baruwa/templates/settings/account_editsig.html:11
+#: baruwa/templates/settings/domain_editsig.html:12
+msgid "Edit email signature"
+msgstr "電子メールの署名を編集します。"
+
+#: baruwa/templates/settings/account_editsig.html:29
+#: baruwa/templates/settings/domain_editsig.html:30
+msgid "Update signature"
+msgstr "署名を更新"
+
+#: baruwa/templates/settings/account_editsig.html:37
+#: baruwa/templates/settings/account_editsig.html:41
+#: baruwa/templates/settings/domain_editsig.html:38
+#: baruwa/templates/settings/domain_editsig.html:42
+msgid "Settings :: Edit email signatures"
+msgstr "設定：： 編集電子メールの署名"
+
+#: baruwa/templates/settings/addserver.html:3
+msgid "Add a scanning Node"
+msgstr "スキャン ノードを追加します。"
+
+#: baruwa/templates/settings/addserver.html:11
+msgid "Add Node"
+msgstr "ノードを追加します。"
+
+#: baruwa/templates/settings/addserver.html:18
+#: baruwa/templates/settings/addserver.html:22
+msgid "Settings :: Add a scanning Node"
+msgstr "Settings :: Add a scanning Node"
+
+#: baruwa/templates/settings/deleteserver.html:3
+#: baruwa/templates/settings/deleteserver.html:33
+#: baruwa/templates/settings/editserver.html:3
+#: baruwa/templates/settings/editserver.html:34
+#: baruwa/templates/status/bayes.html:3 baruwa/templates/status/mailq.html:6
+#: baruwa/templates/status/salint.html:3
+msgid "Node details"
+msgstr "ノードの詳細"
+
+#: baruwa/templates/settings/deleteserver.html:9
+msgid "Delete scanning Node"
+msgstr "ノードのスキャンを削除します。"
+
+#: baruwa/templates/settings/deleteserver.html:16
+msgid "Delete Node"
+msgstr "ノードを削除します。"
+
+#: baruwa/templates/settings/deleteserver.html:24
+#: baruwa/templates/settings/deleteserver.html:28
+msgid "Settings :: Delete scanning Node"
+msgstr "設定:: ノードのスキャンを削除します。"
+
+#: baruwa/templates/settings/domain_dkim.html:7
+msgid "Regenerate DKIM keys"
+msgstr "DKIM キーを再生成します。"
+
+#: baruwa/templates/settings/domain_dkim.html:8
+msgid "Enable/Disable DKIM signing"
+msgstr "有効/無効に DKIM 署名"
+
+#: baruwa/templates/settings/domain_dkim.html:16
+msgid "Domain DKIM settings"
+msgstr "ドメインの DKIM の設定"
+
+#: baruwa/templates/settings/domain_dkim.html:27
+#: baruwa/templates/settings/domain_dkim.html:38
+#, python-format
+msgid "Add the following DNS record to the %s DNS zone"
+msgstr "次の DNS レコードを %s の DNS ゾーンに追加します。"
+
+#: baruwa/templates/settings/domain_dkim.html:30
+#: baruwa/templates/settings/domain_dkim.html:41
+msgid "DNS record"
+msgstr "DNS レコード"
+
+#: baruwa/templates/settings/domain_dkim.html:49
+msgid "DKIM status"
+msgstr "DKIM ステータス"
+
+#: baruwa/templates/settings/domain_dkim.html:54
+msgid "DKIM keys not yet configured:  "
+msgstr "DKIM キーがまだ構成されて："
+
+#: baruwa/templates/settings/domain_dkim.html:54
+msgid "Generate DKIM keys"
+msgstr "DKIM キーを生成します。"
+
+#: baruwa/templates/settings/domain_dkim.html:61
+#: baruwa/templates/settings/domain_dkim.html:65
+#, python-format
+msgid "Settings :: Domain DKIM settings :: %s"
+msgstr "設定：： ドメイン DKIM の設定:: %s"
+
+#: baruwa/templates/settings/domain_dkim_enable.html:4
+msgid "Domain DKIM"
+msgstr "DKIM ドメイン"
+
+#: baruwa/templates/settings/domain_dkim_enable.html:13
+msgid "Enable DKIM signing"
+msgstr "DKIM 署名を有効にします。"
+
+#: baruwa/templates/settings/domain_dkim_enable.html:28
+#: baruwa/templates/settings/domain_dkim_enable.html:32
+#, python-format
+msgid "Settings :: Enable DKIM signing :: %s"
+msgstr "設定:: DKIM 署名を有効にする:: %s"
+
+#: baruwa/templates/settings/domain_settings.html:11
+msgid "Domain settings"
+msgstr "ドメインの設定"
+
+#: baruwa/templates/settings/domain_settings.html:16
+msgid "Signatures"
+msgstr "署名"
+
+#: baruwa/templates/settings/domain_settings.html:17
+msgid "Rulesets"
+msgstr "ルールセット"
+
+#: baruwa/templates/settings/domain_settings.html:24
+msgid "Add delivery server"
+msgstr "配信サーバーを追加します。"
+
+#: baruwa/templates/settings/domain_settings.html:25
+msgid "Add authentication settings"
+msgstr "認証の設定を追加します。"
+
+#: baruwa/templates/settings/domain_settings.html:26
+msgid "Add Alias Domain"
+msgstr "エイリアス ドメインを追加します。"
+
+#: baruwa/templates/settings/domain_settings.html:27
+msgid "DKIM"
+msgstr "DKIM"
+
+#: baruwa/templates/settings/domain_settings.html:35
+#: baruwa/templates/settings/domain_settings.html:39
+#, python-format
+msgid "Settings :: Domain settings :: %s"
+msgstr ":: ドメインの設定:: %s"
+
+#: baruwa/templates/settings/domain_sigs.html:15
+msgid "Domain email signatures"
+msgstr "ドメインの電子メールの署名"
+
+#: baruwa/templates/settings/domain_sigs.html:38
+msgid "No domain signatures configured"
+msgstr "構成されていないドメイン署名"
+
+#: baruwa/templates/settings/domain_sigs.html:45
+#: baruwa/templates/settings/domain_sigs.html:49
+#, python-format
+msgid "Settings :: Domain email signatures :: %s"
+msgstr "設定:: ドメインのメールの署名:: %s"
+
+#: baruwa/templates/settings/editserver.html:9
+msgid "Edit scanning Node"
+msgstr "ノードのスキャンを編集します。"
+
+#: baruwa/templates/settings/editserver.html:18
+msgid "Update Node"
+msgstr "ノードを更新します。"
+
+#: baruwa/templates/settings/editserver.html:25
+#: baruwa/templates/settings/editserver.html:29
+msgid "Settings :: Edit scanning Node"
+msgstr "ノードのスキャンの設定：： を編集します。"
+
+#: baruwa/templates/settings/index.html:3
+msgid "List Search"
+msgstr "リストの検索"
+
+#: baruwa/templates/settings/index.html:23
+msgid "No scanning hosts found"
+msgstr "見つかったないスキャン ホスト"
+
+#: baruwa/templates/settings/index.html:100
+#: baruwa/templates/settings/index.html:104
+#, python-format
+msgid "Settings :: Nodes :: Showing page %(page)d of %(count)d pages."
+msgstr "の設定：： ノード：： 表示中のページ %(page)d%(count)dページ。"
+
+#: baruwa/templates/settings/index.html:100
+#: baruwa/templates/settings/index.html:104
+msgid "Settings :: Nodes"
+msgstr "設定:: ノード"
+
+#: baruwa/templates/settings/scanner.html:3
+msgid "Configuration Settings"
+msgstr "構成設定"
+
+#: baruwa/templates/settings/scanner.html:28
+#: baruwa/templates/settings/scanner.html:32
+#, python-format
+msgid "Settings :: scanning server :: %(name)s"
+msgstr "設定:: サーバー スキャン:: %(name)s"
+
+#: baruwa/templates/settings/section.html:4
+msgid "General"
+msgstr "全般"
+
+#: baruwa/templates/settings/section.html:5
+msgid "Message Processing"
+msgstr "メッセージの処理"
+
+#: baruwa/templates/settings/section.html:6
+msgid "Virus checks"
+msgstr "ウイルス チェック"
+
+#: baruwa/templates/settings/section.html:7
+msgid "Content checks"
+msgstr "コンテンツのチェック"
+
+#: baruwa/templates/settings/section.html:8
+msgid "Reporting"
+msgstr "レポート作成"
+
+#: baruwa/templates/settings/section.html:9
+msgid "Notice"
+msgstr "お知らせ"
+
+#: baruwa/templates/settings/section.html:10
+msgid "Spam checks"
+msgstr "スパムのチェック"
+
+#: baruwa/templates/settings/section.html:11
+msgid "Logging"
+msgstr "ログ"
+
+#: baruwa/templates/settings/section.html:37
+#: baruwa/templates/settings/section.html:41
+#, python-format
+msgid "Settings :: MailScanner :: %(section)s :: %(name)s"
+msgstr "設定:: MailScanner:: %(section)s:: %(name)s"
+
+#: baruwa/templates/status/audit.html:4 baruwa/templates/status/audit.html:7
+msgid "Export to CSV"
+msgstr "CSV にエクスポートします。"
+
+#: baruwa/templates/status/audit.html:5 baruwa/templates/status/audit.html:8
+msgid "Export to PDF"
+msgstr "PDF にエクスポートします。"
+
+#: baruwa/templates/status/audit.html:31
+msgid "Category"
+msgstr "カテゴリ"
+
+#: baruwa/templates/status/audit.html:37
+msgid "No audit logs found"
+msgstr "監査ログが見つかりません。"
+
+#: baruwa/templates/status/audit.html:64 baruwa/templates/status/audit.html:71
+msgid "Status :: Audit log "
+msgstr "ステータス:: 監査ログ"
+
+#: baruwa/templates/status/auditexportstatus.html:3
+msgid "Audit log Export Status"
+msgstr "監査ログをエクスポート ステータス"
+
+#: baruwa/templates/status/auditexportstatus.html:11
+msgid "Download the file"
+msgstr "ファイルをダウンロードします。"
+
+#: baruwa/templates/status/auditexportstatus.html:13
+#, fuzzy, python-format
+msgid "The Audit log export failed: %s"
+msgstr "監査ログのエクスポートが完了しました: %s"
+
+#: baruwa/templates/status/auditexportstatus.html:18
+msgid "The Audit log export is being processed."
+msgstr "監査ログのエクスポートを処理中です。"
+
+#: baruwa/templates/status/auditexportstatus.html:31
+#: baruwa/templates/status/auditexportstatus.html:34
+msgid "Status :: Audit log :: export status"
+msgstr "ステータス:: 監査ログ:: エクスポートの状態"
+
+#: baruwa/templates/status/bayes.html:10
+msgid "Bayes Database Information"
+msgstr "ベイズ データベース情報"
+
+#: baruwa/templates/status/bayes.html:14
+msgid "Bayes Version"
+msgstr "ベイズ バージョン"
+
+#: baruwa/templates/status/bayes.html:18
+msgid "Number of Spam messages"
+msgstr "スパム メッセージの数"
+
+#: baruwa/templates/status/bayes.html:22
+msgid "Number of Ham messages"
+msgstr "ハム メッセージ数"
+
+#: baruwa/templates/status/bayes.html:26
+msgid "Number of Tokens"
+msgstr "トークン数"
+
+#: baruwa/templates/status/bayes.html:30
+msgid "Newest Token"
+msgstr "最新のトークン"
+
+#: baruwa/templates/status/bayes.html:34
+msgid "Oldest Token"
+msgstr "古いトークン"
+
+#: baruwa/templates/status/bayes.html:38
+msgid "Last Journal Sync"
+msgstr "ジャーナルの最後の同期"
+
+#: baruwa/templates/status/bayes.html:42
+msgid "Last Expiry"
+msgstr "最後の有効期限"
+
+#: baruwa/templates/status/bayes.html:46
+msgid "Last Expiry Reduction Count"
+msgstr "最後のカウントの有効期限の削減"
+
+#: baruwa/templates/status/bayes.html:52
+msgid "Bayes information could not be collected."
+msgstr "ベイズ情報を収集できませんでした。"
+
+#: baruwa/templates/status/bayes.html:59 baruwa/templates/status/bayes.html:63
+#, python-format
+msgid "Status :: Bayes info :: %(server)s"
+msgstr "ステータス:: ベイズ情報:: %(server)s"
+
+#: baruwa/templates/status/detail.html:4 baruwa/templates/status/index.html:7
+#: baruwa/templates/status/mailq.html:3 baruwa/templates/status/preview.html:4
+#: baruwa/templates/status/serverstatus.html:8
+msgid "Inbound Queue"
+msgstr "受信キュー"
+
+#: baruwa/templates/status/detail.html:5 baruwa/templates/status/index.html:8
+#: baruwa/templates/status/mailq.html:4 baruwa/templates/status/preview.html:5
+#: baruwa/templates/status/serverstatus.html:9
+msgid "Outbound Queue"
+msgstr "送信キュー"
+
+#: baruwa/templates/status/detail.html:37
+msgid "From domain"
+msgstr "ドメインから"
+
+#: baruwa/templates/status/detail.html:41
+msgid "To domain"
+msgstr "ドメインに"
+
+#: baruwa/templates/status/detail.html:53
+msgid "Number of delivery attempts"
+msgstr "配信試行回数"
+
+#: baruwa/templates/status/detail.html:57
+msgid "Last delivery attempt at"
+msgstr "最後の配信試行で"
+
+#: baruwa/templates/status/detail.html:61
+msgid "Reason for queuing"
+msgstr "キューの理由"
+
+#: baruwa/templates/status/detail.html:65
+msgid "Process message"
+msgstr "プロセス メッセージ"
+
+#: baruwa/templates/status/detail.html:85
+#, python-format
+msgid "Showing Mail queue message :: %(i)s"
+msgstr "Showing Mail queue message :: %(i)s"
+
+#: baruwa/templates/status/index.html:15
+#: baruwa/templates/status/serverstatus.html:17
+msgid "Todays stats"
+msgstr "今日の統計情報"
+
+#: baruwa/templates/status/index.html:20
+#: baruwa/templates/status/serverstatus.html:22
+#, fuzzy
+msgid "Processed"
+msgstr "プロセス"
+
+#: baruwa/templates/status/index.html:50
+#: baruwa/templates/status/serverstatus.html:52
+#, fuzzy
+msgid "Inbound queues"
+msgstr "受信キュー"
+
+#: baruwa/templates/status/index.html:55
+#: baruwa/templates/status/serverstatus.html:57
+#, fuzzy
+msgid "Outbound queues"
+msgstr "送信キュー"
+
+#: baruwa/templates/status/index.html:63
+msgid "Graph"
+msgstr "グラフ"
+
+#: baruwa/templates/status/index.html:68
+#: baruwa/templates/status/serverstatus.html:154
+msgid "Not enough data available to generate graph."
+msgstr "グラフを生成するデータが足りません。"
+
+#: baruwa/templates/status/index.html:74
+msgid "Scanner node status"
+msgstr "スキャナーのノードの状態"
+
+#: baruwa/templates/status/index.html:78
+msgid "No active scanning nodes found"
+msgstr "いいえアクティブ見つかったノードをスキャン"
+
+#: baruwa/templates/status/index.html:90 baruwa/templates/status/index.html:94
+msgid "Status :: Global status"
+msgstr "ステータス:: グローバル ステータス"
+
+#: baruwa/templates/status/mailq.html:142
+#: baruwa/templates/status/mailq.html:146
+#, python-format
+msgid "Status :: Mail queue :: %(queue)s :: %(s)s"
+msgstr "状態:: メール キュー:: %(queue)s:: %(s)s"
+
+#: baruwa/templates/status/mailq.html:142
+#: baruwa/templates/status/mailq.html:146
+#, python-format
+msgid "Status :: Mail queue :: %(queue)s"
+msgstr "状態:: メール キュー:: %(queue)s"
+
+#: baruwa/templates/status/preview.html:48
+#, python-format
+msgid "Queued Message: %(msgid)s could not be previewed"
+msgstr "キュー内のメッセージ: %(msgid)sプレビューできませんでした。"
+
+#: baruwa/templates/status/preview.html:54
+#: baruwa/templates/status/preview.html:58
+#, python-format
+msgid "Status :: Mail Queue :: Previewing Queued message : %(msgid)s"
+msgstr "状態:: メール キュー:: プレビューするキューにメッセージ: %(msgid)s"
+
+#: baruwa/templates/status/salint.html:10
+msgid "Spamassassin Lint"
+msgstr "Spamassassin 糸くず"
+
+#: baruwa/templates/status/salint.html:21
+msgid "Backend did not return response, try again later"
+msgstr "バックエンド応答がありませんでしたが、後でもう一度試す"
+
+#: baruwa/templates/status/salint.html:28
+#: baruwa/templates/status/salint.html:32
+#, python-format
+msgid "Status :: Spamassassin lint :: %(server)s"
+msgstr "ステータス:: Spamassassin 糸くず:: %(server)s"
+
+#: baruwa/templates/status/salint.html:36
+msgid "Server status"
+msgstr "サーバーの状態"
+
+#: baruwa/templates/status/salint.html:37
+#: baruwa/templates/status/serverstatus.html:6
+msgid "Bayes info"
+msgstr "ベイズ情報"
+
+#: baruwa/templates/status/salint.html:38
+#: baruwa/templates/status/serverstatus.html:10
+msgid "Graphs"
+msgstr "グラフ"
+
+#: baruwa/templates/status/serverstatus.html:7
+msgid "Spamassassin lint"
+msgstr "Spamassassin 糸くず"
+
+#: baruwa/templates/status/serverstatus.html:63
+msgid "Hardware status"
+msgstr "ハードウェアのステータス"
+
+#: baruwa/templates/status/serverstatus.html:66
+msgid "CPU"
+msgstr "CPU"
+
+#: baruwa/templates/status/serverstatus.html:73
+msgid "Error reading CPU status"
+msgstr "CPU のステータスを読み取り中のエラー"
+
+#: baruwa/templates/status/serverstatus.html:78
+msgid "Memory"
+msgstr "メモリ"
+
+#: baruwa/templates/status/serverstatus.html:86
+#: baruwa/templates/status/serverstatus.html:109
+#, python-format
+msgid "Total: %s"
+msgstr "合計: %s"
+
+#: baruwa/templates/status/serverstatus.html:87
+#: baruwa/templates/status/serverstatus.html:110
+#, python-format
+msgid "Used: %s"
+msgstr "使用: %s"
+
+#: baruwa/templates/status/serverstatus.html:88
+#: baruwa/templates/status/serverstatus.html:111
+#, python-format
+msgid "Free: %s"
+msgstr "無料: %s"
+
+#: baruwa/templates/status/serverstatus.html:92
+msgid "Error reading memory status."
+msgstr "メモリのステータスを読み取り中のエラー。"
+
+#: baruwa/templates/status/serverstatus.html:96
+msgid "Hard disks"
+msgstr "ハード ディスク"
+
+#: baruwa/templates/status/serverstatus.html:116
+msgid "Error reading disk information"
+msgstr "ディスク情報の読み取りエラー"
+
+#: baruwa/templates/status/serverstatus.html:120
+msgid "Network"
+msgstr "ネットワーク"
+
+#: baruwa/templates/status/serverstatus.html:124
+msgid "Nic"
+msgstr "Nic"
+
+#: baruwa/templates/status/serverstatus.html:125
+msgid "Sent"
+msgstr "送信"
+
+#: baruwa/templates/status/serverstatus.html:126
+msgid "Received"
+msgstr "受信"
+
+#: baruwa/templates/status/serverstatus.html:140
+msgid "Error reading network interface information"
+msgstr "ネットワーク インターフェイス情報の読み取りエラー"
+
+#: baruwa/templates/status/serverstatus.html:147
+msgid "Mail Graph"
+msgstr "メール グラフ"
+
+#: baruwa/templates/status/serverstatus.html:159
+msgid "System Status"
+msgstr "システム ステータス"
+
+#: baruwa/templates/status/serverstatus.html:163
+msgid "Scanners"
+msgstr "スキャナー"
+
+#: baruwa/templates/status/serverstatus.html:166
+#, python-format
+msgid "%(s)d process"
+msgid_plural "%(s)d processes"
+msgstr[0] "%(s)dプロセス"
+
+#: baruwa/templates/status/serverstatus.html:170
+msgid "MTA"
+msgstr "MTA"
+
+#: baruwa/templates/status/serverstatus.html:173
+#, python-format
+msgid "%(mta)d process"
+msgid_plural "%(mta)d processes"
+msgstr[0] "%(mta)dプロセス"
+
+#: baruwa/templates/status/serverstatus.html:177
+msgid "Anti-Virus"
+msgstr "アンチ ウイルス"
+
+#: baruwa/templates/status/serverstatus.html:180
+#, python-format
+msgid "%(a)d process"
+msgid_plural "%(a)d processes"
+msgstr[0] "%(a)dプロセス"
+
+#: baruwa/templates/status/serverstatus.html:184
+msgid "CPU Load (1 / 5 / 15 mins)"
+msgstr "CPU 負荷 (1/5/15 分)"
+
+#: baruwa/templates/status/serverstatus.html:191
+msgid "System Uptime"
+msgstr "システム稼働時間"
+
+#: baruwa/templates/status/serverstatus.html:195
+msgid "System Time"
+msgstr "システム時刻"
+
+#: baruwa/templates/status/serverstatus.html:205
+#: baruwa/templates/status/serverstatus.html:209
+#, python-format
+msgid "Status :: Node status :: %(server)s"
+msgstr "ステータス:: ノードの状態:: %(server)s"
+

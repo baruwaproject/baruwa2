@@ -1,16 +1,17 @@
-# Afrikaans translations for baruwa.
+# English translations for baruwa.
 # Copyright (C) 2011 ORGANIZATION
 # This file is distributed under the same license as the baruwa project.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2011.
 #
+# Translators:
 msgid ""
 msgstr ""
-"Project-Id-Version: baruwa 2.0.0\n"
+"Project-Id-Version:  baruwa\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2012-11-04 09:53+0200\n"
-"PO-Revision-Date: 2011-06-29 11:22+0200\n"
+"POT-Creation-Date: 2012-11-16 17:45+0200\n"
+"PO-Revision-Date: 2012-11-11 07:31+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: af <LL@li.org>\n"
+"Language-Team: Afrikaans "
+"(http://www.transifex.com/projects/p/baruwa/language/af/)\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -256,20 +257,20 @@ msgstr ""
 #: baruwa/controllers/accounts.py:898 baruwa/controllers/accounts.py:954
 #: baruwa/controllers/domains.py:867 baruwa/controllers/messages.py:640
 #: baruwa/controllers/messages.py:642 baruwa/controllers/organizations.py:380
-#: baruwa/controllers/status.py:496
+#: baruwa/controllers/status.py:497
 msgid "The task status requested has expired or does not exist"
 msgstr ""
 
 #: baruwa/controllers/accounts.py:906 baruwa/controllers/accounts.py:962
 #: baruwa/controllers/domains.py:875 baruwa/controllers/organizations.py:388
-#: baruwa/controllers/status.py:504
+#: baruwa/controllers/status.py:505
 #, python-format
 msgid "Error occured in processing %s"
 msgstr ""
 
 #: baruwa/controllers/accounts.py:909 baruwa/controllers/accounts.py:965
 #: baruwa/controllers/domains.py:878 baruwa/controllers/organizations.py:391
-#: baruwa/controllers/status.py:507
+#: baruwa/controllers/status.py:508
 msgid "Backend error occured during processing."
 msgstr ""
 
@@ -497,6 +498,18 @@ msgstr ""
 msgid "The file has been deleted"
 msgstr ""
 
+#: baruwa/controllers/invite.py:118
+msgid "Baruwa Hosted"
+msgstr ""
+
+#: baruwa/controllers/invite.py:121
+msgid "Baruwa Hosted Registration"
+msgstr ""
+
+#: baruwa/controllers/invite.py:136
+msgid "System was unable to process your request"
+msgstr ""
+
 #: baruwa/controllers/lists.py:248 baruwa/controllers/lists.py:291
 #: baruwa/forms/lists.py:39 baruwa/templates/base.html:86
 #: baruwa/templates/lists/add.html:49 baruwa/templates/lists/delete.html:38
@@ -620,39 +633,39 @@ msgstr ""
 msgid "The outbound settings could not be deleted"
 msgstr ""
 
-#: baruwa/controllers/reports.py:376
+#: baruwa/controllers/reports.py:377
 msgid "Score "
 msgstr ""
 
-#: baruwa/controllers/reports.py:421
+#: baruwa/controllers/reports.py:422
 msgid "Mail totals on "
 msgstr ""
 
-#: baruwa/controllers/reports.py:425
+#: baruwa/controllers/reports.py:426
 msgid "Spam totals on "
 msgstr ""
 
-#: baruwa/controllers/reports.py:429
+#: baruwa/controllers/reports.py:430
 msgid "Virus totals on "
 msgstr ""
 
-#: baruwa/controllers/reports.py:506 baruwa/controllers/reports.py:542
+#: baruwa/controllers/reports.py:507 baruwa/controllers/reports.py:544
 msgid "The filter does not exist"
 msgstr ""
 
-#: baruwa/controllers/reports.py:516
+#: baruwa/controllers/reports.py:517
 msgid "The filter has been removed"
 msgstr ""
 
-#: baruwa/controllers/reports.py:545
+#: baruwa/controllers/reports.py:547
 msgid "The filter already exists"
 msgstr ""
 
-#: baruwa/controllers/reports.py:552
+#: baruwa/controllers/reports.py:554
 msgid "The filter has been saved"
 msgstr ""
 
-#: baruwa/controllers/reports.py:585
+#: baruwa/controllers/reports.py:587
 msgid "The filter has been deleted"
 msgstr ""
 
@@ -742,22 +755,29 @@ msgstr ""
 #: baruwa/model/messages.py:146 baruwa/templates/messages/functions.html:42
 #: baruwa/templates/messages/index.html:71
 #: baruwa/templates/messages/searchresults.html:66
+#: baruwa/templates/status/index.html:25
+#: baruwa/templates/status/serverstatus.html:27
 msgid "Clean"
 msgstr ""
 
-#: baruwa/controllers/status.py:97
+#: baruwa/controllers/status.py:97 baruwa/templates/status/index.html:30
+#: baruwa/templates/status/serverstatus.html:32
 msgid "High scoring spam"
 msgstr ""
 
-#: baruwa/controllers/status.py:98
+#: baruwa/controllers/status.py:98 baruwa/templates/status/index.html:35
+#: baruwa/templates/status/serverstatus.html:37
 msgid "Low scoring spam"
 msgstr ""
 
 #: baruwa/controllers/status.py:99 baruwa/templates/messages/detail.html:77
+#: baruwa/templates/status/index.html:40
+#: baruwa/templates/status/serverstatus.html:42
 msgid "Virus infected"
 msgstr ""
 
-#: baruwa/controllers/status.py:100
+#: baruwa/controllers/status.py:100 baruwa/templates/status/index.html:45
+#: baruwa/templates/status/serverstatus.html:47
 msgid "Policy blocked"
 msgstr ""
 
@@ -773,11 +793,11 @@ msgstr ""
 msgid "The message could not be processed"
 msgstr ""
 
-#: baruwa/controllers/status.py:480
+#: baruwa/controllers/status.py:481
 msgid "No query specified for audit log export"
 msgstr ""
 
-#: baruwa/controllers/status.py:517
+#: baruwa/controllers/status.py:518
 msgid "The audit log export failed, try again later"
 msgstr ""
 
@@ -822,34 +842,37 @@ msgid "Username"
 msgstr ""
 
 #: baruwa/forms/accounts.py:77 baruwa/forms/accounts.py:112
+#: baruwa/forms/invite.py:98
 msgid "First name"
 msgstr ""
 
 #: baruwa/forms/accounts.py:79 baruwa/forms/accounts.py:113
+#: baruwa/forms/invite.py:99
 msgid "Last name"
 msgstr ""
 
 #: baruwa/forms/accounts.py:81 baruwa/forms/accounts.py:138
+#: baruwa/forms/invite.py:101
 msgid "New Password"
 msgstr ""
 
 #: baruwa/forms/accounts.py:84 baruwa/forms/accounts.py:141
-#: baruwa/forms/organizations.py:65
+#: baruwa/forms/invite.py:105 baruwa/forms/organizations.py:65
 msgid "Passwords must match"
 msgstr ""
 
 #: baruwa/forms/accounts.py:85 baruwa/forms/accounts.py:142
-#: baruwa/forms/organizations.py:64
+#: baruwa/forms/invite.py:106 baruwa/forms/organizations.py:64
 msgid "Retype Password"
 msgstr ""
 
 #: baruwa/forms/accounts.py:87 baruwa/forms/accounts.py:114
-#: baruwa/templates/accounts/confirmbulkdel.html:10
+#: baruwa/forms/invite.py:100 baruwa/templates/accounts/confirmbulkdel.html:10
 #: baruwa/templates/accounts/index.html:36
 #: baruwa/templates/accounts/login.html:58
 #: baruwa/templates/accounts/searchresults.html:26
 msgid "Email address"
-msgstr "E-pos adres"
+msgstr ""
 
 #: baruwa/forms/accounts.py:91 baruwa/templates/accounts/account.html:86
 msgid "Account type"
@@ -897,9 +920,8 @@ msgid "Spam high score"
 msgstr ""
 
 #: baruwa/forms/accounts.py:147
-#, fuzzy
 msgid "Old Password"
-msgstr "Wagwoord"
+msgstr ""
 
 #: baruwa/forms/domains.py:48 baruwa/templates/base.html:79
 #: baruwa/templates/messages/detail.html:150
@@ -934,7 +956,7 @@ msgid "Deliver"
 msgstr ""
 
 #: baruwa/forms/domains.py:54
-msgid "Monthy"
+msgid "Monthly"
 msgstr ""
 
 #: baruwa/forms/domains.py:55
@@ -993,13 +1015,14 @@ msgstr ""
 msgid "Invalid Domain name or IP address"
 msgstr ""
 
-#: baruwa/forms/domains.py:90 baruwa/forms/lists.py:85
-#: baruwa/templates/domains/detail.html:21
+#: baruwa/forms/domains.py:90 baruwa/forms/invite.py:108
+#: baruwa/forms/lists.py:85 baruwa/templates/domains/detail.html:21
 #: baruwa/templates/organizations/importstatus.html:5
 msgid "Domain name"
 msgstr ""
 
 #: baruwa/forms/domains.py:92 baruwa/forms/domains.py:132
+#: baruwa/forms/invite.py:110
 msgid "Invalid Domain name"
 msgstr ""
 
@@ -1070,10 +1093,12 @@ msgid "Server address"
 msgstr ""
 
 #: baruwa/forms/domains.py:148 baruwa/forms/domains.py:162
+#: baruwa/forms/invite.py:113
 msgid "Protocol"
 msgstr ""
 
 #: baruwa/forms/domains.py:149 baruwa/forms/domains.py:163
+#: baruwa/forms/invite.py:114
 msgid "Port"
 msgstr ""
 
@@ -1082,9 +1107,8 @@ msgid "must be numeric"
 msgstr ""
 
 #: baruwa/forms/domains.py:166
-#, fuzzy
 msgid "Split address"
-msgstr "E-pos adres"
+msgstr ""
 
 #: baruwa/forms/domains.py:167
 msgid "Username map template"
@@ -1107,9 +1131,8 @@ msgid "Bind DN"
 msgstr ""
 
 #: baruwa/forms/domains.py:180
-#, fuzzy
 msgid "Bind password"
-msgstr "Wagwoord"
+msgstr ""
 
 #: baruwa/forms/domains.py:181
 msgid "Use TLS"
@@ -1145,6 +1168,40 @@ msgstr ""
 
 #: baruwa/forms/domains.py:209
 msgid "Request timeout"
+msgstr ""
+
+#: baruwa/forms/invite.py:60
+msgid "The domain is already registered"
+msgstr ""
+
+#: baruwa/forms/invite.py:69
+msgid "The username cannot be an email address"
+msgstr ""
+
+#: baruwa/forms/invite.py:71 baruwa/forms/invite.py:73
+msgid "The username is not available"
+msgstr ""
+
+#: baruwa/forms/invite.py:83
+msgid "Email from a domain that is already registered"
+msgstr ""
+
+#: baruwa/forms/invite.py:91
+msgid "You must accept the terms and conditions"
+msgstr ""
+
+#: baruwa/forms/invite.py:96
+msgid "Admin Username"
+msgstr ""
+
+#: baruwa/forms/invite.py:107 baruwa/forms/organizations.py:48
+#: baruwa/templates/organizations/detail.html:19
+#: baruwa/templates/organizations/index.html:11
+msgid "Organization name"
+msgstr ""
+
+#: baruwa/forms/invite.py:111
+msgid "Delivery Server address"
 msgstr ""
 
 #: baruwa/forms/lists.py:51
@@ -1233,12 +1290,6 @@ msgstr ""
 #: baruwa/forms/organizations.py:43 baruwa/forms/organizations.py:95
 #, python-format
 msgid "Password %(msg)s."
-msgstr ""
-
-#: baruwa/forms/organizations.py:48
-#: baruwa/templates/organizations/detail.html:19
-#: baruwa/templates/organizations/index.html:11
-msgid "Organization name"
 msgstr ""
 
 #: baruwa/forms/organizations.py:51
@@ -2641,9 +2692,8 @@ msgid "unknown"
 msgstr ""
 
 #: baruwa/lib/templates/helpers.py:142
-#, fuzzy
 msgid "IPv6 Link local address"
-msgstr "E-pos adres"
+msgstr ""
 
 #: baruwa/lib/templates/helpers.py:145
 msgid "RFC1918 Private address"
@@ -2859,7 +2909,7 @@ msgstr ""
 #: baruwa/templates/accounts/login.html:34
 #: baruwa/templates/accounts/login.html:50
 msgid "Login"
-msgstr "Teken in"
+msgstr ""
 
 #: baruwa/templates/base.html:76
 msgid "Messages"
@@ -2952,9 +3002,8 @@ msgid "Add signatures"
 msgstr ""
 
 #: baruwa/templates/accounts/account.html:15
-#, fuzzy
 msgid "Add alias address"
-msgstr "E-pos adres"
+msgstr ""
 
 #: baruwa/templates/accounts/account.html:16
 #: baruwa/templates/accounts/account.html:27
@@ -3050,9 +3099,8 @@ msgid "No alias addresses configured"
 msgstr ""
 
 #: baruwa/templates/accounts/account.html:188
-#, fuzzy
 msgid "Email Signatures"
-msgstr "E-pos adres"
+msgstr ""
 
 #: baruwa/templates/accounts/account.html:194
 #: baruwa/templates/settings/domain_sigs.html:20
@@ -3091,7 +3139,8 @@ msgstr ""
 #: baruwa/templates/accounts/new.html:10
 #: baruwa/templates/accounts/pwchange.html:17
 #: baruwa/templates/domains/adddestination.html:17
-#: baruwa/templates/domains/new.html:10 baruwa/templates/lists/add.html:31
+#: baruwa/templates/domains/new.html:10 baruwa/templates/invite/index.html:45
+#: baruwa/templates/lists/add.html:31
 #: baruwa/templates/organizations/add.html:10
 #: baruwa/templates/organizations/addrelay.html:16
 #: baruwa/templates/organizations/deleterelay.html:16
@@ -3194,7 +3243,7 @@ msgstr ""
 #: baruwa/templates/accounts/exportstatus.html:13
 #: baruwa/templates/domains/exportstatus.html:13
 #, python-format
-msgid "The CSV export failed: %sglobal_error"
+msgid "The CSV export failed: %s"
 msgstr ""
 
 #: baruwa/templates/accounts/exportstatus.html:24
@@ -3272,7 +3321,7 @@ msgstr ""
 #: baruwa/templates/accounts/importstatus.html:31
 #: baruwa/templates/organizations/importstatus.html:31
 #, python-format
-msgid "The CSV import failed: %sglobal_error"
+msgid "The CSV import failed: %s"
 msgstr ""
 
 #: baruwa/templates/accounts/importstatus.html:59
@@ -3360,9 +3409,8 @@ msgstr ""
 
 #: baruwa/templates/accounts/login.html:11
 #: baruwa/templates/accounts/login.html:61
-#, fuzzy
 msgid "Reset my password"
-msgstr "Wagwoord"
+msgstr ""
 
 #: baruwa/templates/accounts/login.html:36
 msgid "The username or password you entered is incorrect."
@@ -3370,12 +3418,11 @@ msgstr ""
 
 #: baruwa/templates/accounts/login.html:40
 msgid "Password"
-msgstr "Wagwoord"
+msgstr ""
 
 #: baruwa/templates/accounts/login.html:52
-#, fuzzy
 msgid "Forgotten password ?"
-msgstr "Wagwoord"
+msgstr ""
 
 #: baruwa/templates/accounts/login.html:55
 msgid ""
@@ -3826,14 +3873,41 @@ msgstr ""
 msgid "About %(n)s results (%(t)s seconds)"
 msgstr ""
 
+#: baruwa/templates/includes/search.html:15
+#: baruwa/templates/messages/functions.html:306
+#: baruwa/templates/messages/search.html:7
+msgid "Search"
+msgstr ""
+
+#: baruwa/templates/invite/index.html:31
+msgid "Baruwa hosted Beta registration"
+msgstr ""
+
+#: baruwa/templates/invite/index.html:38
+msgid "Registration"
+msgstr ""
+
+#: baruwa/templates/invite/index.html:46
+msgid "Register"
+msgstr ""
+
+#: baruwa/templates/invite/thankyou.html:25
+msgid "Thank you."
+msgstr ""
+
+#: baruwa/templates/invite/thankyou.html:27
+msgid ""
+"Your registration request is being reviewed, you will be notified when it"
+" is approved."
+msgstr ""
+
 #: baruwa/templates/lists/add.html:4
 msgid "Add Sender to a list"
 msgstr ""
 
 #: baruwa/templates/lists/add.html:12
-#, fuzzy
 msgid "Use IP address"
-msgstr "E-pos adres"
+msgstr ""
 
 #: baruwa/templates/lists/add.html:13
 msgid "Use Domain"
@@ -4209,7 +4283,7 @@ msgstr ""
 
 #: baruwa/templates/messages/quarantine.html:4
 #: baruwa/templates/messages/taskstatus.html:5
-msgid "Non Spam"
+msgid "Not Spam"
 msgstr ""
 
 #: baruwa/templates/messages/quarantine.html:27
@@ -4758,9 +4832,8 @@ msgid "Add authentication settings"
 msgstr ""
 
 #: baruwa/templates/settings/domain_settings.html:26
-#, fuzzy
 msgid "Add Alias Domain"
-msgstr "E-pos adres"
+msgstr ""
 
 #: baruwa/templates/settings/domain_settings.html:27
 msgid "DKIM"
@@ -4857,9 +4930,8 @@ msgid "Spam checks"
 msgstr ""
 
 #: baruwa/templates/settings/section.html:11
-#, fuzzy
 msgid "Logging"
-msgstr "Teken in"
+msgstr ""
 
 #: baruwa/templates/settings/section.html:37
 #: baruwa/templates/settings/section.html:41
@@ -4897,7 +4969,7 @@ msgstr ""
 
 #: baruwa/templates/status/auditexportstatus.html:13
 #, python-format
-msgid "The Audit log export failed: %serrormsg"
+msgid "The Audit log export failed: %s"
 msgstr ""
 
 #: baruwa/templates/status/auditexportstatus.html:18
@@ -5002,6 +5074,22 @@ msgstr ""
 #: baruwa/templates/status/index.html:15
 #: baruwa/templates/status/serverstatus.html:17
 msgid "Todays stats"
+msgstr ""
+
+#: baruwa/templates/status/index.html:20
+#: baruwa/templates/status/serverstatus.html:22
+#, fuzzy
+msgid "Processed"
+msgstr ""
+
+#: baruwa/templates/status/index.html:50
+#: baruwa/templates/status/serverstatus.html:52
+msgid "Inbound queues"
+msgstr ""
+
+#: baruwa/templates/status/index.html:55
+#: baruwa/templates/status/serverstatus.html:57
+msgid "Outbound queues"
 msgstr ""
 
 #: baruwa/templates/status/index.html:63

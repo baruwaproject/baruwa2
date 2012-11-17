@@ -1,0 +1,350 @@
+# Translations template for PROJECT.
+# Copyright (C) 2012 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# 
+# Translators:
+msgid ""
+msgstr ""
+"Project-Id-Version: baruwa\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2012-11-14 14:04+0200\n"
+"PO-Revision-Date: 2012-11-14 15:41+0000\n"
+"Last-Translator: datopdog <andrew@topdog.za.net>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 0.9.6\n"
+"Language: hi\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: baruwa/public/js/baruwa/accounts.js:1 baruwa/public/js/baruwa/domains.js:1
+#: baruwa/public/js/baruwa/lists.js:1
+#: baruwa/public/js/baruwa/messages.archive.js:1
+#: baruwa/public/js/baruwa/messages.js:1
+#: baruwa/public/js/baruwa/messages.quarantine.js:1
+#: baruwa/public/js/baruwa/organizations.js:1
+#: baruwa/public/js/baruwa/settings.js:1
+#: baruwa/public/js/baruwa/status.audit.js:1
+msgid "Showing items {{first_item}} to {{last_item}} of {{item_count}}."
+msgstr "आइटम दिखा रहा {{first_item}} करने के लिए {{last_item}} की {{item_count}}।"
+
+#: baruwa/public/js/baruwa/accounts.js:1
+msgid "Accounts :: Showing page {{page}} of {{page_count}} pages."
+msgstr "खातों:: पृष्ठ दिखा रहा {{page}} की {{page_count}} पृष्ठों।"
+
+#: baruwa/public/js/baruwa/accounts.js:1 baruwa/public/js/baruwa/domains.js:1
+#: baruwa/public/js/baruwa/lists.js:1
+#: baruwa/public/js/baruwa/messages.archive.js:1
+#: baruwa/public/js/baruwa/messages.js:1
+#: baruwa/public/js/baruwa/messages.quarantine.js:1
+#: baruwa/public/js/baruwa/messages.search.js:1
+#: baruwa/public/js/baruwa/organizations.js:1
+#: baruwa/public/js/baruwa/reports.pie.js:1
+#: baruwa/public/js/baruwa/reports.relays.js:1
+#: baruwa/public/js/baruwa/reports.spam.js:1
+#: baruwa/public/js/baruwa/settings.js:1
+#: baruwa/public/js/baruwa/status.audit.js:1
+msgid "No items found"
+msgstr "कोई आइटम नहीं मिला"
+
+#: baruwa/public/js/baruwa/accounts.js:1
+msgid "Accounts"
+msgstr "गूगल खात"
+
+#: baruwa/public/js/baruwa/common.js:1
+msgid "AJAX Error:"
+msgstr "AJAX त्रुटि:"
+
+#: baruwa/public/js/baruwa/common.js:1
+msgid "Error Occured:"
+msgstr "त्रुटि उत्पन्न हुई:"
+
+#: baruwa/public/js/baruwa/common.js:1
+#: baruwa/public/js/baruwa/messages.filters.js:1
+#: baruwa/public/js/baruwa/reports.common.js:1
+#: baruwa/public/js/baruwa/reports.js:1
+#: baruwa/public/js/baruwa/reports.listings.js:1
+#: baruwa/public/js/baruwa/reports.pie.js:1
+#: baruwa/public/js/baruwa/reports.relays.js:1
+#: baruwa/public/js/baruwa/reports.spam.js:1
+msgid "Loading"
+msgstr "लोड हो रहा है"
+
+#: baruwa/public/js/baruwa/common.js:1
+msgid "Unknown error occured !"
+msgstr "अज्ञात त्रुटि उत्पन्न हुई!"
+
+#: baruwa/public/js/baruwa/domains.js:1
+msgid "No domains found"
+msgstr "कोई डोमेन मिला"
+
+#: baruwa/public/js/baruwa/domains.js:1
+msgid "Domains :: Showing page {{page}} of {{page_count}} pages."
+msgstr "डोमेन:: पृष्ठ दिखाई जा रही हैं {{page}} की {{page_count}} पृष्ठों।"
+
+#: baruwa/public/js/baruwa/domains.js:1
+msgid "Domains"
+msgstr "डोमेन"
+
+#: baruwa/public/js/baruwa/lists.js:1
+msgid "Lists :: {{listname}} Showing page {{page}} of {{page_count}} pages."
+msgstr "सूचियाँ:: {{listname}} दिखा पृष्ठ {{page}} की {{page_count}} पृष्ठों।"
+
+#: baruwa/public/js/baruwa/lists.js:1
+msgid "Lists"
+msgstr "सूचियाँ"
+
+#: baruwa/public/js/baruwa/login.js:1
+msgid "Login"
+msgstr "लॉगिन"
+
+#: baruwa/public/js/baruwa/login.js:1
+msgid "Reset my password"
+msgstr "मेरा पासवर्ड रीसेट करें"
+
+#: baruwa/public/js/baruwa/messages.archive.js:1
+msgid "Messages :: Archive :: Showing page {{page}} of {{page_count}} pages."
+msgstr "संदेश:: पुरालेख:: दिखा पृष्ठ {{page}} की {{page_count}} पृष्ठों।"
+
+#: baruwa/public/js/baruwa/messages.archive.js:1
+msgid "Messages :: Archive"
+msgstr "संदेश:: पुरालेख"
+
+#: baruwa/public/js/baruwa/messages.archive.js:1
+#: baruwa/public/js/baruwa/messages.js:1
+#: baruwa/public/js/baruwa/messages.quarantine.js:1
+msgid "Date/Time"
+msgstr "दिनांक/समय"
+
+#: baruwa/public/js/baruwa/messages.archive.js:1
+#: baruwa/public/js/baruwa/messages.js:1
+#: baruwa/public/js/baruwa/messages.quarantine.js:1
+msgid "From"
+msgstr "से"
+
+#: baruwa/public/js/baruwa/messages.archive.js:1
+#: baruwa/public/js/baruwa/messages.js:1
+#: baruwa/public/js/baruwa/messages.quarantine.js:1
+msgid "To"
+msgstr "करने के लिए"
+
+#: baruwa/public/js/baruwa/messages.archive.js:1
+#: baruwa/public/js/baruwa/messages.js:1
+#: baruwa/public/js/baruwa/messages.quarantine.js:1
+msgid "Subject"
+msgstr "विषय"
+
+#: baruwa/public/js/baruwa/messages.archive.js:1
+#: baruwa/public/js/baruwa/messages.js:1
+msgid "Size"
+msgstr "आकार"
+
+#: baruwa/public/js/baruwa/messages.archive.js:1
+#: baruwa/public/js/baruwa/messages.js:1
+#: baruwa/public/js/baruwa/messages.quarantine.js:1
+msgid "Score"
+msgstr "स्कोर"
+
+#: baruwa/public/js/baruwa/messages.common.js:1
+#: baruwa/public/js/baruwa/messages.quarantine.js:1
+msgid "No messages found"
+msgstr "कोई संदेश नहीं मिला"
+
+#: baruwa/public/js/baruwa/messages.detail.js:1
+msgid "Show hosts"
+msgstr "शो होस्ट"
+
+#: baruwa/public/js/baruwa/messages.detail.js:1
+msgid "Hide hosts"
+msgstr "मेजबानों को छिपाने"
+
+#: baruwa/public/js/baruwa/messages.detail.js:1
+msgid "Processing......"
+msgstr "प्रोसेसिंग..."
+
+#: baruwa/public/js/baruwa/messages.detail.js:1
+msgid "Show headers"
+msgstr "शीर्ष लेख दिखाएँ"
+
+#: baruwa/public/js/baruwa/messages.detail.js:1
+msgid "Hide headers"
+msgstr "शीर्ष लेख छुपाना"
+
+#: baruwa/public/js/baruwa/messages.filters.js:1
+#: baruwa/public/js/baruwa/reports.js:1
+#: baruwa/public/js/baruwa/reports.listings.js:1
+#: baruwa/public/js/baruwa/reports.pie.js:1
+#: baruwa/public/js/baruwa/reports.relays.js:1
+#: baruwa/public/js/baruwa/reports.spam.js:1
+msgid "Processing request............."
+msgstr "प्रसंस्करण अनुरोध..."
+
+#: baruwa/public/js/baruwa/messages.filters.js:1
+#: baruwa/public/js/baruwa/reports.js:1
+#: baruwa/public/js/baruwa/reports.listings.js:1
+#: baruwa/public/js/baruwa/reports.pie.js:1
+#: baruwa/public/js/baruwa/reports.relays.js:1
+#: baruwa/public/js/baruwa/reports.spam.js:1
+msgid "Add Filter"
+msgstr "फ़िल्टर जोड़ें"
+
+#: baruwa/public/js/baruwa/messages.filters.js:1
+msgid "Non applied at the moment"
+msgstr "पल में लागू की गई गैर"
+
+#: baruwa/public/js/baruwa/messages.js:1
+#: baruwa/public/js/baruwa/messages.quarantine.js:1
+msgid ""
+"Messages :: Full message listing :: Showing page {{page}} of {{page_count}} "
+"pages."
+msgstr "संदेश:: पूर्ण संदेश लिस्टिंग:: दिखा पृष्ठ {{page}} की {{page_count}} पृष्ठों।"
+
+#: baruwa/public/js/baruwa/messages.js:1
+#: baruwa/public/js/baruwa/messages.quarantine.js:1
+msgid "Messages :: Full message listing"
+msgstr "संदेश:: पूर्ण संदेश लिस्टिंग"
+
+#: baruwa/public/js/baruwa/messages.recent.js:1
+msgid "network connection failure, reconnecting in 60 seconds"
+msgstr "नेटवर्क कनेक्शन विफलता, 60 सेकंड में पुन: कनेक्ट"
+
+#: baruwa/public/js/baruwa/messages.recent.js:1
+msgid "OK"
+msgstr "ठीक है"
+
+#: baruwa/public/js/baruwa/messages.recent.js:1
+msgid "FAULTY"
+msgstr "दोषपूर्ण"
+
+#: baruwa/public/js/baruwa/messages.search.js:1
+msgid "No messages found matching search query:"
+msgstr "कोई संदेश नहीं मिलान खोज क्वेरी पाया:"
+
+#: baruwa/public/js/baruwa/messages.search.js:1
+msgid "Showing items {{first}} to {{last}} of {{total}}."
+msgstr "आइटम दिखा रहा {{first}} करने के लिए {{last}} की {{total}}।"
+
+#: baruwa/public/js/baruwa/messages.search.js:1
+msgid "About {{total_found}} results ({{search_time}} seconds)"
+msgstr "के बारे में {{total_found}} परिणाम ({{search_time}} सेकंड)"
+
+#: baruwa/public/js/baruwa/messages.search.js:1
+msgid "0 Results found ({{search_time}} seconds)"
+msgstr "0 परिणाम पाया ({{search_time}} सेकंड)"
+
+#: baruwa/public/js/baruwa/messages.search.js:1
+msgid "Messages :: Search results :: {{q}}"
+msgstr "संदेश:: खोज परिणाम:: {{q}}"
+
+#: baruwa/public/js/baruwa/messages.taskstatus.js:1
+msgid "An unknown error occured"
+msgstr "कोई अज्ञात त्रुटि उत्पन्न हुई"
+
+#: baruwa/public/js/baruwa/messages.taskstatus.js:1
+msgid "FAILED"
+msgstr "में विफल रहा"
+
+#: baruwa/public/js/baruwa/messages.taskstatus.js:1
+msgid "PASSED"
+msgstr "पारित"
+
+#: baruwa/public/js/baruwa/organizations.js:1
+msgid "No organizations found"
+msgstr "कोई संगठनों के पाया"
+
+#: baruwa/public/js/baruwa/organizations.js:1
+msgid "Organizations :: Showing page {{page}} of {{page_count}} pages."
+msgstr "संगठन:: पृष्ठ दिखाई जा रही हैं {{page}} की {{page_count}} पृष्ठों।"
+
+#: baruwa/public/js/baruwa/organizations.js:1
+msgid "Organizations"
+msgstr "संगठनों"
+
+#: baruwa/public/js/baruwa/reports.common.js:1
+msgid "is equal to"
+msgstr "के बराबर है"
+
+#: baruwa/public/js/baruwa/reports.common.js:1
+msgid "is not equal to"
+msgstr "इसके बराबर नहीं है"
+
+#: baruwa/public/js/baruwa/reports.common.js:1
+msgid "is greater than"
+msgstr "अधिक से अधिक है"
+
+#: baruwa/public/js/baruwa/reports.common.js:1
+msgid "is less than"
+msgstr "है कम से कम"
+
+#: baruwa/public/js/baruwa/reports.common.js:1
+msgid "is null"
+msgstr "नल है"
+
+#: baruwa/public/js/baruwa/reports.common.js:1
+msgid "is not null"
+msgstr "नल नहीं है"
+
+#: baruwa/public/js/baruwa/reports.common.js:1
+msgid "contains"
+msgstr "होता है"
+
+#: baruwa/public/js/baruwa/reports.common.js:1
+msgid "does not contain"
+msgstr "न हों"
+
+#: baruwa/public/js/baruwa/reports.common.js:1
+msgid "matches regex"
+msgstr "regex से मेल खाता"
+
+#: baruwa/public/js/baruwa/reports.common.js:1
+msgid "does not match regex"
+msgstr "regex से मेल नहीं खाती"
+
+#: baruwa/public/js/baruwa/reports.common.js:1
+msgid "is true"
+msgstr "सच है"
+
+#: baruwa/public/js/baruwa/reports.common.js:1
+msgid "is false"
+msgstr "झूठी है"
+
+#: baruwa/public/js/baruwa/reports.common.js:1
+msgid "Please select"
+msgstr "कृपया चयन करें"
+
+#: baruwa/public/js/baruwa/reports.js:1
+msgid "No active filters at the moment"
+msgstr "पल में कोई सक्रिय फिल्टर"
+
+#: baruwa/public/js/baruwa/reports.js:1
+msgid "No saved filters at the moment"
+msgstr "पल में कोई सहेजा गया फ़िल्टर"
+
+#: baruwa/public/js/baruwa/reports.listings.js:1
+msgid "No records found"
+msgstr "रिकॉर्ड नहीं मिला"
+
+#: baruwa/public/js/baruwa/settings.js:1
+msgid "No scanning hosts found"
+msgstr "कोई स्कैनिंग मेजबान पाया"
+
+#: baruwa/public/js/baruwa/settings.js:1
+msgid "Settings :: Nodes :: Showing page {{page}} of {{page_count}} pages."
+msgstr "सेटिंग्स:: नोड्स:: दिखा पृष्ठ {{page}} की {{page_count}} पृष्ठों।"
+
+#: baruwa/public/js/baruwa/settings.js:1
+msgid "Settings :: Nodes"
+msgstr "सेटिंग्स:: नोड्स"
+
+#: baruwa/public/js/baruwa/status.audit.js:1
+msgid "No audit logs found"
+msgstr "कोई ऑडिट लॉग् स पाया"
+
+#: baruwa/public/js/baruwa/status.audit.js:1
+msgid "Status :: Audit log :: Showing page {{page}} of {{page_count}} pages."
+msgstr "स्थिति:: ऑडिट लॉग:: दिखा पृष्ठ {{page}} की {{page_count}} पृष्ठों।"
+
+#: baruwa/public/js/baruwa/status.audit.js:1
+msgid "Status :: Audit log"
+msgstr "स्थिति:: ऑडिट लॉग"

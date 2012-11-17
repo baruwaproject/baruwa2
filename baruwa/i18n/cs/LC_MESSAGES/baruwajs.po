@@ -1,19 +1,17 @@
-# Czech translations for PROJECT.
+# English translations for .
 # Copyright (C) 2011 Andrew Colin Kissa
-# This file is distributed under the same license as the PROJECT project.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2011.
+# This file is distributed under the same license as the  project.
 #
-#, fuzzy
+# Translators:
 msgid ""
 msgstr ""
-"Project-Id-Version: PROJECT VERSION\n"
-"Report-Msgid-Bugs-To: andrew@topdog.za.net\n"
-"POT-Creation-Date: 2012-11-04 09:53+0200\n"
-"PO-Revision-Date: 2011-06-30 10:47+0200\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: cs <LL@li.org>\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+"Project-Id-Version:  baruwa\n"
+"Report-Msgid-Bugs-To: baruwa@lists.baruwa.org\n"
+"POT-Creation-Date: 2012-11-14 14:04+0200\n"
+"PO-Revision-Date: 2012-11-14 12:27+0200\n"
+"Last-Translator: Andrew Colin Kissa <andrew@topdog.za.net>\n"
+"Language-Team: (http://www.transifex.com/projects/p/baruwa/language/cs/)\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -28,11 +26,11 @@ msgstr ""
 #: baruwa/public/js/baruwa/settings.js:1
 #: baruwa/public/js/baruwa/status.audit.js:1
 msgid "Showing items {{first_item}} to {{last_item}} of {{item_count}}."
-msgstr ""
+msgstr "Zobrazení položek {{first_item}} pro {{last_item}} z {{item_count}}."
 
 #: baruwa/public/js/baruwa/accounts.js:1
 msgid "Accounts :: Showing page {{page}} of {{page_count}} pages."
-msgstr ""
+msgstr "Účty:: Zobrazení stránky {{page}} z {{page_count}} stránky."
 
 #: baruwa/public/js/baruwa/accounts.js:1 baruwa/public/js/baruwa/domains.js:1
 #: baruwa/public/js/baruwa/lists.js:1
@@ -47,19 +45,19 @@ msgstr ""
 #: baruwa/public/js/baruwa/settings.js:1
 #: baruwa/public/js/baruwa/status.audit.js:1
 msgid "No items found"
-msgstr ""
+msgstr "Nebyly nalezeny žádné položky."
 
 #: baruwa/public/js/baruwa/accounts.js:1
 msgid "Accounts"
-msgstr ""
+msgstr "Účty"
 
 #: baruwa/public/js/baruwa/common.js:1
 msgid "AJAX Error:"
-msgstr ""
+msgstr "AJAX chyba:"
 
 #: baruwa/public/js/baruwa/common.js:1
 msgid "Error Occured:"
-msgstr ""
+msgstr "Došlo k chybě:"
 
 #: baruwa/public/js/baruwa/common.js:1
 #: baruwa/public/js/baruwa/messages.filters.js:1
@@ -70,107 +68,109 @@ msgstr ""
 #: baruwa/public/js/baruwa/reports.relays.js:1
 #: baruwa/public/js/baruwa/reports.spam.js:1
 msgid "Loading"
-msgstr ""
+msgstr "Načítání"
 
 #: baruwa/public/js/baruwa/common.js:1
 msgid "Unknown error occured !"
-msgstr ""
+msgstr "Došlo k neznámé chybě!"
 
 #: baruwa/public/js/baruwa/domains.js:1
 msgid "No domains found"
-msgstr ""
+msgstr "Žádné domény nalezen"
 
 #: baruwa/public/js/baruwa/domains.js:1
 msgid "Domains :: Showing page {{page}} of {{page_count}} pages."
-msgstr ""
+msgstr "Domény:: Zobrazení stránky {{page}} z {{page_count}} stránky."
 
 #: baruwa/public/js/baruwa/domains.js:1
 msgid "Domains"
-msgstr ""
+msgstr "Domény"
 
 #: baruwa/public/js/baruwa/lists.js:1
 msgid "Lists :: {{listname}} Showing page {{page}} of {{page_count}} pages."
 msgstr ""
+"Seznamy:: {{listname}} Zobrazeno stránka {{page}} z {{page_count}} "
+"stránky."
 
 #: baruwa/public/js/baruwa/lists.js:1
 msgid "Lists"
-msgstr ""
+msgstr "Seznamy"
 
 #: baruwa/public/js/baruwa/login.js:1
 msgid "Login"
-msgstr ""
+msgstr "Přihlášení"
 
 #: baruwa/public/js/baruwa/login.js:1
 msgid "Reset my password"
-msgstr ""
+msgstr "Obnovení hesla"
 
 #: baruwa/public/js/baruwa/messages.archive.js:1
 msgid "Messages :: Archive :: Showing page {{page}} of {{page_count}} pages."
-msgstr ""
+msgstr "Zprávy:: Archiv:: zobrazeno page {{page}} z {{page_count}} stránky."
 
 #: baruwa/public/js/baruwa/messages.archive.js:1
 msgid "Messages :: Archive"
-msgstr ""
+msgstr "Zprávy:: archiv"
 
 #: baruwa/public/js/baruwa/messages.archive.js:1
 #: baruwa/public/js/baruwa/messages.js:1
 #: baruwa/public/js/baruwa/messages.quarantine.js:1
 msgid "Date/Time"
-msgstr ""
+msgstr "Datum a čas"
 
 #: baruwa/public/js/baruwa/messages.archive.js:1
 #: baruwa/public/js/baruwa/messages.js:1
 #: baruwa/public/js/baruwa/messages.quarantine.js:1
 msgid "From"
-msgstr ""
+msgstr "Od"
 
 #: baruwa/public/js/baruwa/messages.archive.js:1
 #: baruwa/public/js/baruwa/messages.js:1
 #: baruwa/public/js/baruwa/messages.quarantine.js:1
 msgid "To"
-msgstr ""
+msgstr "Do"
 
 #: baruwa/public/js/baruwa/messages.archive.js:1
 #: baruwa/public/js/baruwa/messages.js:1
 #: baruwa/public/js/baruwa/messages.quarantine.js:1
 msgid "Subject"
-msgstr ""
+msgstr "Předmět"
 
 #: baruwa/public/js/baruwa/messages.archive.js:1
 #: baruwa/public/js/baruwa/messages.js:1
 msgid "Size"
-msgstr ""
+msgstr "Velikost"
 
 #: baruwa/public/js/baruwa/messages.archive.js:1
 #: baruwa/public/js/baruwa/messages.js:1
 #: baruwa/public/js/baruwa/messages.quarantine.js:1
 msgid "Score"
-msgstr ""
+msgstr "Skóre"
 
 #: baruwa/public/js/baruwa/messages.common.js:1
 #: baruwa/public/js/baruwa/messages.quarantine.js:1
 msgid "No messages found"
-msgstr ""
+msgstr "Žádné zprávy"
 
 #: baruwa/public/js/baruwa/messages.detail.js:1
 msgid "Show hosts"
-msgstr ""
+msgstr "Hostitelé show"
 
 #: baruwa/public/js/baruwa/messages.detail.js:1
 msgid "Hide hosts"
-msgstr ""
+msgstr "Skrýt hostitelé"
 
 #: baruwa/public/js/baruwa/messages.detail.js:1
 msgid "Processing......"
-msgstr ""
+msgstr "Zpracování..."
 
 #: baruwa/public/js/baruwa/messages.detail.js:1
 msgid "Show headers"
-msgstr ""
+msgstr "Zobrazit záhlaví"
 
 #: baruwa/public/js/baruwa/messages.detail.js:1
 msgid "Hide headers"
-msgstr ""
+msgstr "Skrýt záhlaví"
 
 #: baruwa/public/js/baruwa/messages.filters.js:1
 #: baruwa/public/js/baruwa/reports.js:1
@@ -179,7 +179,7 @@ msgstr ""
 #: baruwa/public/js/baruwa/reports.relays.js:1
 #: baruwa/public/js/baruwa/reports.spam.js:1
 msgid "Processing request............."
-msgstr ""
+msgstr "Zpracování požadavku..."
 
 #: baruwa/public/js/baruwa/messages.filters.js:1
 #: baruwa/public/js/baruwa/reports.js:1
@@ -188,11 +188,11 @@ msgstr ""
 #: baruwa/public/js/baruwa/reports.relays.js:1
 #: baruwa/public/js/baruwa/reports.spam.js:1
 msgid "Add Filter"
-msgstr ""
+msgstr "Přidat filtr"
 
 #: baruwa/public/js/baruwa/messages.filters.js:1
 msgid "Non applied at the moment"
-msgstr ""
+msgstr "Jiné použité v současnosti"
 
 #: baruwa/public/js/baruwa/messages.js:1
 #: baruwa/public/js/baruwa/messages.quarantine.js:1
@@ -200,153 +200,157 @@ msgid ""
 "Messages :: Full message listing :: Showing page {{page}} of "
 "{{page_count}} pages."
 msgstr ""
+"Zprávy:: Kompletní výpis zpráv:: zobrazeno page {{page}} z {{page_count}}"
+" stránky."
 
 #: baruwa/public/js/baruwa/messages.js:1
 #: baruwa/public/js/baruwa/messages.quarantine.js:1
 msgid "Messages :: Full message listing"
-msgstr ""
+msgstr "Zpráv:: Celá zpráva seznam"
 
 #: baruwa/public/js/baruwa/messages.recent.js:1
 msgid "network connection failure, reconnecting in 60 seconds"
-msgstr ""
+msgstr "selhání síťového připojení, připojení za 60 sekund"
 
 #: baruwa/public/js/baruwa/messages.recent.js:1
 msgid "OK"
-msgstr ""
+msgstr "Ok"
 
 #: baruwa/public/js/baruwa/messages.recent.js:1
 msgid "FAULTY"
-msgstr ""
+msgstr "VADNÝ"
 
 #: baruwa/public/js/baruwa/messages.search.js:1
 msgid "No messages found matching search query:"
-msgstr ""
+msgstr "Žádné zprávy nalezena odpovídající vyhledávací dotaz:"
 
 #: baruwa/public/js/baruwa/messages.search.js:1
 msgid "Showing items {{first}} to {{last}} of {{total}}."
-msgstr ""
+msgstr "Zobrazení položek {{first}} pro {{last}} z {{total}}."
 
 #: baruwa/public/js/baruwa/messages.search.js:1
 msgid "About {{total_found}} results ({{search_time}} seconds)"
-msgstr ""
+msgstr "O {{total_found}} výsledky ({{search_time}} sekund)"
 
 #: baruwa/public/js/baruwa/messages.search.js:1
 msgid "0 Results found ({{search_time}} seconds)"
-msgstr ""
+msgstr "0 Nalezeny výsledky ({{search_time}} sekund)"
 
 #: baruwa/public/js/baruwa/messages.search.js:1
 msgid "Messages :: Search results :: {{q}}"
-msgstr ""
+msgstr "Zprávy:: Výsledky hledání:: {{q}}"
 
 #: baruwa/public/js/baruwa/messages.taskstatus.js:1
 msgid "An unknown error occured"
-msgstr ""
+msgstr "Došlo k neznámé chybě"
 
 #: baruwa/public/js/baruwa/messages.taskstatus.js:1
 msgid "FAILED"
-msgstr ""
+msgstr "SELHAL"
 
 #: baruwa/public/js/baruwa/messages.taskstatus.js:1
 msgid "PASSED"
-msgstr ""
+msgstr "PROŠEL"
 
 #: baruwa/public/js/baruwa/organizations.js:1
 msgid "No organizations found"
-msgstr ""
+msgstr "Žádná organizace nalezen"
 
 #: baruwa/public/js/baruwa/organizations.js:1
 msgid "Organizations :: Showing page {{page}} of {{page_count}} pages."
-msgstr ""
+msgstr "Organizace:: Zobrazení stránky {{page}} z {{page_count}} stránky."
 
 #: baruwa/public/js/baruwa/organizations.js:1
 msgid "Organizations"
-msgstr ""
+msgstr "Organizace"
 
 #: baruwa/public/js/baruwa/reports.common.js:1
 msgid "is equal to"
-msgstr ""
+msgstr "je rovno"
 
 #: baruwa/public/js/baruwa/reports.common.js:1
 msgid "is not equal to"
-msgstr ""
+msgstr "není rovno"
 
 #: baruwa/public/js/baruwa/reports.common.js:1
 msgid "is greater than"
-msgstr ""
+msgstr "je větší než"
 
 #: baruwa/public/js/baruwa/reports.common.js:1
 msgid "is less than"
-msgstr ""
+msgstr "je menší než"
 
 #: baruwa/public/js/baruwa/reports.common.js:1
 msgid "is null"
-msgstr ""
+msgstr "NULL"
 
 #: baruwa/public/js/baruwa/reports.common.js:1
 msgid "is not null"
-msgstr ""
+msgstr "není null"
 
 #: baruwa/public/js/baruwa/reports.common.js:1
 msgid "contains"
-msgstr ""
+msgstr "obsahuje"
 
 #: baruwa/public/js/baruwa/reports.common.js:1
 msgid "does not contain"
-msgstr ""
+msgstr "neobsahuje žádné"
 
 #: baruwa/public/js/baruwa/reports.common.js:1
 msgid "matches regex"
-msgstr ""
+msgstr "odpovídá regex"
 
 #: baruwa/public/js/baruwa/reports.common.js:1
 msgid "does not match regex"
-msgstr ""
+msgstr "se neshoduje s regex"
 
 #: baruwa/public/js/baruwa/reports.common.js:1
 msgid "is true"
-msgstr ""
+msgstr "je pravda"
 
 #: baruwa/public/js/baruwa/reports.common.js:1
 msgid "is false"
-msgstr ""
+msgstr "pravdivá"
 
 #: baruwa/public/js/baruwa/reports.common.js:1
 msgid "Please select"
-msgstr ""
+msgstr "Zvolte prosím"
 
 #: baruwa/public/js/baruwa/reports.js:1
 msgid "No active filters at the moment"
-msgstr ""
+msgstr "V současné době žádné aktivní filtry"
 
 #: baruwa/public/js/baruwa/reports.js:1
 msgid "No saved filters at the moment"
-msgstr ""
+msgstr "Žádné uložené filtry v současnosti"
 
 #: baruwa/public/js/baruwa/reports.listings.js:1
 msgid "No records found"
-msgstr ""
+msgstr "Nebyly nalezeny žádné záznamy"
 
 #: baruwa/public/js/baruwa/settings.js:1
 msgid "No scanning hosts found"
-msgstr ""
+msgstr "Žádné skenování hostitelé nalezena"
 
 #: baruwa/public/js/baruwa/settings.js:1
 msgid "Settings :: Nodes :: Showing page {{page}} of {{page_count}} pages."
-msgstr ""
+msgstr "Nastavení:: Uzly:: zobrazeno page {{page}} z {{page_count}} stránky."
 
 #: baruwa/public/js/baruwa/settings.js:1
 msgid "Settings :: Nodes"
-msgstr ""
+msgstr "Nastavení:: uzlů"
 
 #: baruwa/public/js/baruwa/status.audit.js:1
 msgid "No audit logs found"
-msgstr ""
+msgstr "Nalezeno žádné záznamy auditu"
 
 #: baruwa/public/js/baruwa/status.audit.js:1
 msgid "Status :: Audit log :: Showing page {{page}} of {{page_count}} pages."
 msgstr ""
+"Status:: Protokol auditu:: zobrazeno page {{page}} z {{page_count}} "
+"stránky."
 
 #: baruwa/public/js/baruwa/status.audit.js:1
 msgid "Status :: Audit log"
-msgstr ""
+msgstr "Status:: Protokol auditu"
 

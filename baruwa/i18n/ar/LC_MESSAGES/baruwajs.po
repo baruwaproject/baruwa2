@@ -1,0 +1,354 @@
+# English translations for .
+# Copyright (C) 2011 Andrew Colin Kissa
+# This file is distributed under the same license as the  project.
+# 
+# Translators:
+# <andrew@topdog.za.net>, 2012.
+msgid ""
+msgstr ""
+"Project-Id-Version: baruwa\n"
+"Report-Msgid-Bugs-To: baruwa@lists.baruwa.org\n"
+"POT-Creation-Date: 2012-11-14 14:04+0200\n"
+"PO-Revision-Date: 2012-11-16 17:53+0200\n"
+"Last-Translator: Andrew Colin Kissa <andrew@topdog.za.net>\n"
+"Language-Team: Baruwa Project\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: auto-translate.py 0.0.1\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5\n"
+
+#: baruwa/public/js/baruwa/accounts.js:1 baruwa/public/js/baruwa/domains.js:1
+#: baruwa/public/js/baruwa/lists.js:1
+#: baruwa/public/js/baruwa/messages.archive.js:1
+#: baruwa/public/js/baruwa/messages.js:1
+#: baruwa/public/js/baruwa/messages.quarantine.js:1
+#: baruwa/public/js/baruwa/organizations.js:1
+#: baruwa/public/js/baruwa/settings.js:1
+#: baruwa/public/js/baruwa/status.audit.js:1
+msgid "Showing items {{first_item}} to {{last_item}} of {{item_count}}."
+msgstr "إظهار عناصر {{first_item}} إلى {{last_item}} من {{item_count}}."
+
+#: baruwa/public/js/baruwa/accounts.js:1
+msgid "Accounts :: Showing page {{page}} of {{page_count}} pages."
+msgstr "حسابات:: عرض الصفحة {{page}} {{page_count}} في الصفحات."
+
+#: baruwa/public/js/baruwa/accounts.js:1 baruwa/public/js/baruwa/domains.js:1
+#: baruwa/public/js/baruwa/lists.js:1
+#: baruwa/public/js/baruwa/messages.archive.js:1
+#: baruwa/public/js/baruwa/messages.js:1
+#: baruwa/public/js/baruwa/messages.quarantine.js:1
+#: baruwa/public/js/baruwa/messages.search.js:1
+#: baruwa/public/js/baruwa/organizations.js:1
+#: baruwa/public/js/baruwa/reports.pie.js:1
+#: baruwa/public/js/baruwa/reports.relays.js:1
+#: baruwa/public/js/baruwa/reports.spam.js:1
+#: baruwa/public/js/baruwa/settings.js:1
+#: baruwa/public/js/baruwa/status.audit.js:1
+msgid "No items found"
+msgstr "لم يتم العثور على عناصر"
+
+#: baruwa/public/js/baruwa/accounts.js:1
+msgid "Accounts"
+msgstr "حسابات"
+
+#: baruwa/public/js/baruwa/common.js:1
+msgid "AJAX Error:"
+msgstr "أجاكس الخطأ:"
+
+#: baruwa/public/js/baruwa/common.js:1
+msgid "Error Occured:"
+msgstr "حدث خطأ:"
+
+#: baruwa/public/js/baruwa/common.js:1
+#: baruwa/public/js/baruwa/messages.filters.js:1
+#: baruwa/public/js/baruwa/reports.common.js:1
+#: baruwa/public/js/baruwa/reports.js:1
+#: baruwa/public/js/baruwa/reports.listings.js:1
+#: baruwa/public/js/baruwa/reports.pie.js:1
+#: baruwa/public/js/baruwa/reports.relays.js:1
+#: baruwa/public/js/baruwa/reports.spam.js:1
+msgid "Loading"
+msgstr "تحميل"
+
+#: baruwa/public/js/baruwa/common.js:1
+msgid "Unknown error occured !"
+msgstr "حدث خطأ غير معروف!"
+
+#: baruwa/public/js/baruwa/domains.js:1
+msgid "No domains found"
+msgstr "لا المجالات التي وجدت"
+
+#: baruwa/public/js/baruwa/domains.js:1
+msgid "Domains :: Showing page {{page}} of {{page_count}} pages."
+msgstr "المجالات:: عرض الصفحة {{page}} {{page_count}} في الصفحات."
+
+#: baruwa/public/js/baruwa/domains.js:1
+msgid "Domains"
+msgstr "المجالات"
+
+#: baruwa/public/js/baruwa/lists.js:1
+msgid "Lists :: {{listname}} Showing page {{page}} of {{page_count}} pages."
+msgstr ""
+"القوائم:: {{listname}} إظهار الصفحة {{page}} {{page_count}} في الصفحات."
+
+#: baruwa/public/js/baruwa/lists.js:1
+msgid "Lists"
+msgstr "قوائم"
+
+#: baruwa/public/js/baruwa/login.js:1
+msgid "Login"
+msgstr "تسجيل الدخول"
+
+#: baruwa/public/js/baruwa/login.js:1
+msgid "Reset my password"
+msgstr "إعادة تعيين كلمة المرور الخاصة بي"
+
+#: baruwa/public/js/baruwa/messages.archive.js:1
+msgid "Messages :: Archive :: Showing page {{page}} of {{page_count}} pages."
+msgstr "الرسائل:: أرشيف:: إظهار الصفحة {{page}} {{page_count}} في الصفحات."
+
+#: baruwa/public/js/baruwa/messages.archive.js:1
+msgid "Messages :: Archive"
+msgstr "رسائل:: الأرشيف"
+
+#: baruwa/public/js/baruwa/messages.archive.js:1
+#: baruwa/public/js/baruwa/messages.js:1
+#: baruwa/public/js/baruwa/messages.quarantine.js:1
+msgid "Date/Time"
+msgstr "التاريخ/الوقت"
+
+#: baruwa/public/js/baruwa/messages.archive.js:1
+#: baruwa/public/js/baruwa/messages.js:1
+#: baruwa/public/js/baruwa/messages.quarantine.js:1
+msgid "From"
+msgstr "من"
+
+#: baruwa/public/js/baruwa/messages.archive.js:1
+#: baruwa/public/js/baruwa/messages.js:1
+#: baruwa/public/js/baruwa/messages.quarantine.js:1
+msgid "To"
+msgstr "إلى"
+
+#: baruwa/public/js/baruwa/messages.archive.js:1
+#: baruwa/public/js/baruwa/messages.js:1
+#: baruwa/public/js/baruwa/messages.quarantine.js:1
+msgid "Subject"
+msgstr "هذا الموضوع"
+
+#: baruwa/public/js/baruwa/messages.archive.js:1
+#: baruwa/public/js/baruwa/messages.js:1
+msgid "Size"
+msgstr "الحجم"
+
+#: baruwa/public/js/baruwa/messages.archive.js:1
+#: baruwa/public/js/baruwa/messages.js:1
+#: baruwa/public/js/baruwa/messages.quarantine.js:1
+msgid "Score"
+msgstr "نقاط"
+
+#: baruwa/public/js/baruwa/messages.common.js:1
+#: baruwa/public/js/baruwa/messages.quarantine.js:1
+msgid "No messages found"
+msgstr "رسائل لم يتم العثور على"
+
+#: baruwa/public/js/baruwa/messages.detail.js:1
+msgid "Show hosts"
+msgstr "إظهار المضيفين"
+
+#: baruwa/public/js/baruwa/messages.detail.js:1
+msgid "Hide hosts"
+msgstr "إخفاء المضيفين"
+
+#: baruwa/public/js/baruwa/messages.detail.js:1
+msgid "Processing......"
+msgstr "تجهيز..."
+
+#: baruwa/public/js/baruwa/messages.detail.js:1
+msgid "Show headers"
+msgstr "إظهار رؤوس"
+
+#: baruwa/public/js/baruwa/messages.detail.js:1
+msgid "Hide headers"
+msgstr "إخفاء رؤوس"
+
+#: baruwa/public/js/baruwa/messages.filters.js:1
+#: baruwa/public/js/baruwa/reports.js:1
+#: baruwa/public/js/baruwa/reports.listings.js:1
+#: baruwa/public/js/baruwa/reports.pie.js:1
+#: baruwa/public/js/baruwa/reports.relays.js:1
+#: baruwa/public/js/baruwa/reports.spam.js:1
+msgid "Processing request............."
+msgstr "معالجة الطلب..."
+
+#: baruwa/public/js/baruwa/messages.filters.js:1
+#: baruwa/public/js/baruwa/reports.js:1
+#: baruwa/public/js/baruwa/reports.listings.js:1
+#: baruwa/public/js/baruwa/reports.pie.js:1
+#: baruwa/public/js/baruwa/reports.relays.js:1
+#: baruwa/public/js/baruwa/reports.spam.js:1
+msgid "Add Filter"
+msgstr "إضافة عامل تصفية"
+
+#: baruwa/public/js/baruwa/messages.filters.js:1
+msgid "Non applied at the moment"
+msgstr "عدم تطبيقها في الوقت الراهن"
+
+#: baruwa/public/js/baruwa/messages.js:1
+#: baruwa/public/js/baruwa/messages.quarantine.js:1
+msgid ""
+"Messages :: Full message listing :: Showing page {{page}} of {{page_count}} "
+"pages."
+msgstr ""
+"رسائل:: كامل الإدراج رسالة:: إظهار الصفحة {{page}} {{page_count}} في "
+"الصفحات."
+
+#: baruwa/public/js/baruwa/messages.js:1
+#: baruwa/public/js/baruwa/messages.quarantine.js:1
+msgid "Messages :: Full message listing"
+msgstr "الرسائل:: قائمة الرسائل كاملة"
+
+#: baruwa/public/js/baruwa/messages.recent.js:1
+msgid "network connection failure, reconnecting in 60 seconds"
+msgstr "فشل اتصال شبكة الاتصال، إعادة الاتصال في 60 ثانية"
+
+#: baruwa/public/js/baruwa/messages.recent.js:1
+msgid "OK"
+msgstr "موافق"
+
+#: baruwa/public/js/baruwa/messages.recent.js:1
+msgid "FAULTY"
+msgstr "خلل"
+
+#: baruwa/public/js/baruwa/messages.search.js:1
+msgid "No messages found matching search query:"
+msgstr "العثور على لا رسائل استعلام البحث مطابقة:"
+
+#: baruwa/public/js/baruwa/messages.search.js:1
+msgid "Showing items {{first}} to {{last}} of {{total}}."
+msgstr ""
+
+#: baruwa/public/js/baruwa/messages.search.js:1
+msgid "About {{total_found}} results ({{search_time}} seconds)"
+msgstr "حول نتائج {{total_found}} {{search_time}} (بالثواني)"
+
+#: baruwa/public/js/baruwa/messages.search.js:1
+msgid "0 Results found ({{search_time}} seconds)"
+msgstr "الاطلاع على النتائج 0 ({{search_time}} ثانية)"
+
+#: baruwa/public/js/baruwa/messages.search.js:1
+msgid "Messages :: Search results :: {{q}}"
+msgstr "رسائل:: نتائج البحث:: {{q}}"
+
+#: baruwa/public/js/baruwa/messages.taskstatus.js:1
+msgid "An unknown error occured"
+msgstr "حدث خطأ غير معروف"
+
+#: baruwa/public/js/baruwa/messages.taskstatus.js:1
+msgid "FAILED"
+msgstr "فشل"
+
+#: baruwa/public/js/baruwa/messages.taskstatus.js:1
+msgid "PASSED"
+msgstr "تمرير"
+
+#: baruwa/public/js/baruwa/organizations.js:1
+msgid "No organizations found"
+msgstr "لا المنظمات التي وجدت"
+
+#: baruwa/public/js/baruwa/organizations.js:1
+msgid "Organizations :: Showing page {{page}} of {{page_count}} pages."
+msgstr "المنظمات:: عرض الصفحة {{page}} {{page_count}} في الصفحات."
+
+#: baruwa/public/js/baruwa/organizations.js:1
+msgid "Organizations"
+msgstr "المنظمات"
+
+#: baruwa/public/js/baruwa/reports.common.js:1
+msgid "is equal to"
+msgstr "يساوي"
+
+#: baruwa/public/js/baruwa/reports.common.js:1
+msgid "is not equal to"
+msgstr "لا يساوي"
+
+#: baruwa/public/js/baruwa/reports.common.js:1
+msgid "is greater than"
+msgstr "أكبر من"
+
+#: baruwa/public/js/baruwa/reports.common.js:1
+msgid "is less than"
+msgstr "هو أقل من"
+
+#: baruwa/public/js/baruwa/reports.common.js:1
+msgid "is null"
+msgstr "فارغة"
+
+#: baruwa/public/js/baruwa/reports.common.js:1
+msgid "is not null"
+msgstr "ليست فارغة"
+
+#: baruwa/public/js/baruwa/reports.common.js:1
+msgid "contains"
+msgstr "يحتوي على"
+
+#: baruwa/public/js/baruwa/reports.common.js:1
+msgid "does not contain"
+msgstr "لا يحتوي على"
+
+#: baruwa/public/js/baruwa/reports.common.js:1
+msgid "matches regex"
+msgstr "يطابق regex"
+
+#: baruwa/public/js/baruwa/reports.common.js:1
+msgid "does not match regex"
+msgstr "لا يطابق regex"
+
+#: baruwa/public/js/baruwa/reports.common.js:1
+msgid "is true"
+msgstr "صحيح"
+
+#: baruwa/public/js/baruwa/reports.common.js:1
+msgid "is false"
+msgstr "هو كاذبة"
+
+#: baruwa/public/js/baruwa/reports.common.js:1
+msgid "Please select"
+msgstr "الرجاء تحديد"
+
+#: baruwa/public/js/baruwa/reports.js:1
+msgid "No active filters at the moment"
+msgstr "لا عوامل التصفية النشطة في هذه اللحظة"
+
+#: baruwa/public/js/baruwa/reports.js:1
+msgid "No saved filters at the moment"
+msgstr "أية عوامل تصفية محفوظ في الوقت الراهن"
+
+#: baruwa/public/js/baruwa/reports.listings.js:1
+msgid "No records found"
+msgstr "لم يتم العثور على سجلات"
+
+#: baruwa/public/js/baruwa/settings.js:1
+msgid "No scanning hosts found"
+msgstr "لا تستضيف المسح الضوئي وجدت"
+
+#: baruwa/public/js/baruwa/settings.js:1
+msgid "Settings :: Nodes :: Showing page {{page}} of {{page_count}} pages."
+msgstr "الإعدادات:: العقد:: إظهار الصفحة {{page}} {{page_count}} في الصفحات."
+
+#: baruwa/public/js/baruwa/settings.js:1
+msgid "Settings :: Nodes"
+msgstr "الإعدادات:: العقد"
+
+#: baruwa/public/js/baruwa/status.audit.js:1
+msgid "No audit logs found"
+msgstr "لا توجد سجلات التدقيق وجدت"
+
+#: baruwa/public/js/baruwa/status.audit.js:1
+msgid "Status :: Audit log :: Showing page {{page}} of {{page_count}} pages."
+msgstr ""
+"لمركز:: سجل التدقيق:: إظهار الصفحة {{page}} {{page_count}} في الصفحات."
+
+#: baruwa/public/js/baruwa/status.audit.js:1
+msgid "Status :: Audit log"
+msgstr "المركز:: سجل التدقيق"

@@ -1,17 +1,17 @@
-# Afrikaans translations for PROJECT.
+# English translations for .
 # Copyright (C) 2011 Andrew Colin Kissa
-# This file is distributed under the same license as the PROJECT project.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2011.
+# This file is distributed under the same license as the  project.
 #
-#, fuzzy
+# Translators:
 msgid ""
 msgstr ""
-"Project-Id-Version: PROJECT VERSION\n"
+"Project-Id-Version:  baruwa\n"
 "Report-Msgid-Bugs-To: andrew@topdog.za.net\n"
-"POT-Creation-Date: 2012-11-04 09:53+0200\n"
-"PO-Revision-Date: 2011-06-30 10:47+0200\n"
+"POT-Creation-Date: 2012-11-14 14:04+0200\n"
+"PO-Revision-Date: 2012-11-11 07:32+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: af <LL@li.org>\n"
+"Language-Team: Afrikaans "
+"(http://www.transifex.com/projects/p/baruwa/language/af/)\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"

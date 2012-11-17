@@ -1,0 +1,14 @@
+[main]
+host = https://www.transifex.com
+
+[baruwa.baruwa-js]
+file_filter = baruwa/i18n/<lang>/LC_MESSAGES/baruwajs.po
+source_file = baruwa/i18n/baruwajs.pot
+source_lang = en
+type = PO
+
+[baruwa.baruwa-python]
+file_filter = baruwa/i18n/<lang>/LC_MESSAGES/baruwa.po
+source_file = baruwa/i18n/baruwa.pot
+source_lang = en
+type = PO
