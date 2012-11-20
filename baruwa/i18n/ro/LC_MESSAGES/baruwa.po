@@ -1,21 +1,22 @@
 # Romanian translations for baruwa.
 # Copyright (C) 2012 Andrew Colin Kissa
 # This file is distributed under the same license as the baruwa project.
-# 
+#
 # Translators:
 msgid ""
 msgstr ""
-"Project-Id-Version: baruwa\n"
+"Project-Id-Version:  baruwa\n"
 "Report-Msgid-Bugs-To: baruwa@lists.baruwa.org\n"
-"POT-Creation-Date: 2012-11-16 17:45+0200\n"
+"POT-Creation-Date: 2012-11-20 09:57+0200\n"
 "PO-Revision-Date: 2012-11-16 18:23+0200\n"
 "Last-Translator: Andrew Colin Kissa <andrew@topdog.za.net>\n"
 "Language-Team: Baruwa Project\n"
+"Plural-Forms: nplurals=3; "
+"plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?2:1))\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: auto-translate.py 0.0.1\n"
-"Plural-Forms: nplurals=3; plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?2:1))\n"
+"Generated-By: Babel 0.9.6\n"
 
 #: baruwa/commands/pdfreport.py:116 baruwa/controllers/reports.py:62
 #: baruwa/templates/reports/index.html:13
@@ -154,8 +155,8 @@ msgstr "Parola contului pentru %(name)s a fost resetată"
 #: baruwa/controllers/accounts.py:325 baruwa/controllers/accounts.py:355
 msgid "This is an external account, use external system to reset the password"
 msgstr ""
-"Acesta este un cont de externe, utilizaţi sistemul extern pentru a reseta "
-"parola"
+"Acesta este un cont de externe, utilizaţi sistemul extern pentru a reseta"
+" parola"
 
 #: baruwa/controllers/accounts.py:361
 msgid "The old password supplied does not match our records"
@@ -190,11 +191,11 @@ msgstr "Contul a fost şters"
 #: baruwa/controllers/accounts.py:620
 #, python-format
 msgid ""
-"The account: %(a)s and all associated data will be deleted, This action is "
-"not reversible."
+"The account: %(a)s and all associated data will be deleted, This action "
+"is not reversible."
 msgstr ""
-"Cont: %(a)s şi vor fi şterse toate datele asociate, această acţiune nu este "
-"reversibilă."
+"Cont: %(a)s şi vor fi şterse toate datele asociate, această acţiune nu "
+"este reversibilă."
 
 #: baruwa/controllers/accounts.py:677
 msgid "The accounts have been deleted"
@@ -241,8 +242,8 @@ msgstr "Adresa a fost şters"
 
 #: baruwa/controllers/accounts.py:874 baruwa/controllers/organizations.py:358
 msgid ""
-"File uploaded, and is being processed, this page will automatically refresh "
-"to show the status"
+"File uploaded, and is being processed, this page will automatically "
+"refresh to show the status"
 msgstr ""
 "Dosar încărcat, şi este în curs de procesare, această pagină se va "
 "reîmprospăta automat pentru a afișa starea"
@@ -324,11 +325,11 @@ msgstr "Domeniu a fost şters"
 #: baruwa/controllers/domains.py:324
 #, python-format
 msgid ""
-"The domain: %(name)s and all associated data will be deleted, This action "
-"cannot be reversed."
+"The domain: %(name)s and all associated data will be deleted, This action"
+" cannot be reversed."
 msgstr ""
-"Domeniu: %(name)s şi vor fi şterse toate datele asociate, această acțiune nu"
-" poate fi inversat."
+"Domeniu: %(name)s şi vor fi şterse toate datele asociate, această acțiune"
+" nu poate fi inversat."
 
 #: baruwa/controllers/domains.py:372
 msgid "The domains have been deleted"
@@ -384,9 +385,11 @@ msgstr "Serverul de destinație a fost şters"
 #: baruwa/controllers/domains.py:540
 #, python-format
 msgid ""
-"The destination server: %(s)s will be deleted, This action is not reversible"
+"The destination server: %(s)s will be deleted, This action is not "
+"reversible"
 msgstr ""
-"Serverul destinație: %(s)s va fi şters, această acţiune nu este reversibilă"
+"Serverul destinație: %(s)s va fi şters, această acţiune nu este "
+"reversibilă"
 
 #: baruwa/controllers/domains.py:567
 msgid "The authentication settings have been created"
@@ -395,11 +398,11 @@ msgstr "S-au creat setările de autentificare"
 #: baruwa/controllers/domains.py:574
 #, python-format
 msgid ""
-"The host %(dest)s already configured for %(auth)s authentication for this "
-"domain"
+"The host %(dest)s already configured for %(auth)s authentication for this"
+" domain"
 msgstr ""
-"Gazdă %(dest)s deja configurat pentru %(auth)s autentificare pentru acest "
-"domeniu"
+"Gazdă %(dest)s deja configurat pentru %(auth)s autentificare pentru acest"
+" domeniu"
 
 #: baruwa/controllers/domains.py:607
 msgid "The authentication settings have been updated"
@@ -436,8 +439,8 @@ msgid ""
 "Please add an authentication server for the %(proto)s protocol Before "
 "attempting to configure the %(proto)s settings"
 msgstr ""
-"Vă rugăm să adăugaţi un server de autentificare pentru %(proto)s Protocolul "
-"înainte de a încerca să configuraţi %(proto)s Setări"
+"Vă rugăm să adăugaţi un server de autentificare pentru %(proto)s "
+"Protocolul înainte de a încerca să configuraţi %(proto)s Setări"
 
 #: baruwa/controllers/domains.py:715
 #, python-format
@@ -452,16 +455,16 @@ msgstr "%(proto)s setările au fost create"
 #: baruwa/controllers/domains.py:729
 msgid "The auth settings already exist, use update to modify them"
 msgstr ""
-"Setările de autentificare deja exista, utilizaţi actualizarea pentru a le "
-"modifica"
+"Setările de autentificare deja exista, utilizaţi actualizarea pentru a le"
+" modifica"
 
 #: baruwa/controllers/domains.py:733
 msgid ""
-"The Radius secret is not be displayed in the form, To update type the new "
-"secret in \"Radius secret\" below."
+"The Radius secret is not be displayed in the form, To update type the new"
+" secret in \"Radius secret\" below."
 msgstr ""
-"Raza secret este afişat în formă, să actualizeze tip nou secrete în \"Raza "
-"secret\" de mai jos."
+"Raza secret este afişat în formă, să actualizeze tip nou secrete în "
+"\"Raza secret\" de mai jos."
 
 #: baruwa/controllers/domains.py:774
 #, python-format
@@ -587,8 +590,7 @@ msgstr "Necunoscut"
 msgid ""
 "The message has already been released, you can only use the release link "
 "once"
-msgstr ""
-"Mesajul a fost deja lansat, puteţi utiliza doar link-ul de presă o dată"
+msgstr "Mesajul a fost deja lansat, puteţi utiliza doar link-ul de presă o dată"
 
 #: baruwa/controllers/messages.py:622
 msgid "Processing of message failed"
@@ -824,10 +826,10 @@ msgid "The audit log export failed, try again later"
 msgstr "Export jurnal de audit nu a reuşit, încercaţi din nou mai târziu"
 
 #: baruwa/forms/accounts.py:32 baruwa/forms/domains.py:34
-#: baruwa/forms/lists.py:33 baruwa/forms/messages.py:27
-#: baruwa/forms/misc.py:28 baruwa/forms/organizations.py:33
-#: baruwa/forms/reports.py:33 baruwa/forms/settings.py:30
-#: baruwa/model/status.py:32 baruwa/tasks/status.py:45
+#: baruwa/forms/lists.py:33 baruwa/forms/messages.py:27 baruwa/forms/misc.py:28
+#: baruwa/forms/organizations.py:33 baruwa/forms/reports.py:33
+#: baruwa/forms/settings.py:30 baruwa/model/status.py:32
+#: baruwa/tasks/status.py:45
 msgid "hi"
 msgstr "salut"
 
@@ -910,8 +912,8 @@ msgstr "Domenii"
 #: baruwa/forms/accounts.py:133 baruwa/forms/domains.py:95
 #: baruwa/forms/domains.py:133 baruwa/forms/domains.py:141
 #: baruwa/forms/domains.py:150 baruwa/forms/domains.py:165
-#: baruwa/forms/organizations.py:61 baruwa/forms/settings.py:165
-#: baruwa/forms/settings.py:696 baruwa/forms/settings.py:701
+#: baruwa/forms/organizations.py:61 baruwa/forms/settings.py:174
+#: baruwa/forms/settings.py:705 baruwa/forms/settings.py:710
 #: baruwa/lib/templates/helpers.py:225 baruwa/templates/settings/index.html:17
 msgid "Enabled"
 msgstr "Activat"
@@ -952,7 +954,8 @@ msgid "Quarantine"
 msgstr "Carantină"
 
 #: baruwa/forms/domains.py:49 baruwa/forms/messages.py:79
-#: baruwa/model/status.py:41 baruwa/templates/accounts/account.html:175
+#: baruwa/forms/settings.py:133 baruwa/model/status.py:41
+#: baruwa/templates/accounts/account.html:175
 #: baruwa/templates/accounts/account.html:177
 #: baruwa/templates/accounts/account.html:203
 #: baruwa/templates/accounts/deleteaddress.html:17
@@ -1227,10 +1230,10 @@ msgid "Delivery Server address"
 msgstr "Adresa de Server de livrare"
 
 #: baruwa/forms/lists.py:51
-msgid ""
-"Provide either a valid IP, email, Domain address, or IP network or range"
+msgid "Provide either a valid IP, email, Domain address, or IP network or range"
 msgstr ""
-"Oferă fie un valid IP, e-mail, domeniu adresa sau IP de reţea sau intervalul"
+"Oferă fie un valid IP, e-mail, domeniu adresa sau IP de reţea sau "
+"intervalul"
 
 #: baruwa/forms/lists.py:68
 #, python-format
@@ -1324,8 +1327,8 @@ msgstr "Administratori"
 msgid "Delete Organization domains"
 msgstr "Ştergeţi organizaţia domenii"
 
-#: baruwa/forms/organizations.py:60 baruwa/forms/settings.py:161
-#: baruwa/forms/settings.py:301 baruwa/tasks/status.py:298
+#: baruwa/forms/organizations.py:60 baruwa/forms/settings.py:170
+#: baruwa/forms/settings.py:310 baruwa/tasks/status.py:298
 #: baruwa/templates/messages/detail.html:176
 #: baruwa/templates/reports/relays.html:26
 #: baruwa/templates/settings/index.html:16
@@ -1559,804 +1562,899 @@ msgstr "Vă rugăm să furnizaţi o dată validă în formatul AAAA-LL-ZZ"
 msgid "Please provide valid time in HH:MM format"
 msgstr "Vă rugăm să furnizaţi o oră validă în formatul hh: mm"
 
-#: baruwa/forms/settings.py:164
+#: baruwa/forms/settings.py:35 baruwa/forms/settings.py:49
+#: baruwa/forms/settings.py:52
+msgid "Yes"
+msgstr ""
+
+#: baruwa/forms/settings.py:35 baruwa/forms/settings.py:38
+#: baruwa/forms/settings.py:50 baruwa/forms/settings.py:53
+#, fuzzy
+#| msgid "Info"
+msgid "No"
+msgstr "Info"
+
+#: baruwa/forms/settings.py:36 baruwa/forms/settings.py:41
+#, fuzzy
+#| msgid "Create"
+msgid "Replace"
+msgstr "Creaţi"
+
+#: baruwa/forms/settings.py:37 baruwa/forms/settings.py:39
+#: baruwa/templates/domains/addalias.html:18
+#: baruwa/templates/domains/addauth.html:18
+msgid "Add"
+msgstr "Adauga"
+
+#: baruwa/forms/settings.py:40
+msgid "Append"
+msgstr ""
+
+#: baruwa/forms/settings.py:42
+#, fuzzy
+#| msgid "Action not supported"
+msgid "Supported"
+msgstr "Acţiune nu acceptate"
+
+#: baruwa/forms/settings.py:43
+msgid "None"
+msgstr ""
+
+#: baruwa/forms/settings.py:44
+#, fuzzy
+#| msgid "Action not supported"
+msgid "Unsupported"
+msgstr "Acţiune nu acceptate"
+
+#: baruwa/forms/settings.py:45
+#, fuzzy
+#| msgid "Graph"
+msgid "Alpha"
+msgstr "Grafic"
+
+#: baruwa/forms/settings.py:46
+msgid "Beta"
+msgstr ""
+
+#: baruwa/forms/settings.py:47
+msgid "Start"
+msgstr ""
+
+#: baruwa/forms/settings.py:48
+#, fuzzy
+#| msgid "enabled"
+msgid "End"
+msgstr "activat"
+
+#: baruwa/forms/settings.py:51
+msgid "Disarm"
+msgstr ""
+
+#: baruwa/forms/settings.py:59
+msgid "Auto detect"
+msgstr ""
+
+#: baruwa/forms/settings.py:132
+#, fuzzy
+#| msgid "does not contain"
+msgid "Do nothing"
+msgstr "nu conține"
+
+#: baruwa/forms/settings.py:134
+msgid "Flag as spam"
+msgstr ""
+
+#: baruwa/forms/settings.py:135
+msgid "Flag as high spam"
+msgstr ""
+
+#: baruwa/forms/settings.py:173
 msgid "Invalid Domain name or IPv4 address"
 msgstr "Nume incorect de domeniu sau adresa IPv4"
 
-#: baruwa/forms/settings.py:170
+#: baruwa/forms/settings.py:179
 msgid "Sitename"
 msgstr "SITENAME"
 
-#: baruwa/forms/settings.py:171
+#: baruwa/forms/settings.py:180
 msgid "Your Organisation Name"
 msgstr "Numele organizaţiei"
 
-#: baruwa/forms/settings.py:173
+#: baruwa/forms/settings.py:182
 msgid "Organisation website"
 msgstr "Organizarea site-ul"
 
-#: baruwa/forms/settings.py:175
+#: baruwa/forms/settings.py:184
 msgid "Max Children"
 msgstr "Max copii"
 
-#: baruwa/forms/settings.py:177
+#: baruwa/forms/settings.py:186
 msgid "Queue Scan Interval"
 msgstr "Intervalul de scanare coadă"
 
-#: baruwa/forms/settings.py:179
+#: baruwa/forms/settings.py:188
 msgid "Restart Every"
 msgstr "Repornire fiecare"
 
-#: baruwa/forms/settings.py:181
+#: baruwa/forms/settings.py:190
 msgid "Use Default Rules With Multiple Recipients"
 msgstr "Folosesc implicit reguli cu mai mulţi destinatari"
 
-#: baruwa/forms/settings.py:184
+#: baruwa/forms/settings.py:193
 msgid "Read IP Address From Received Header"
 msgstr "Citeste adresa IP din antet primite"
 
-#: baruwa/forms/settings.py:187
+#: baruwa/forms/settings.py:196
 msgid "Debug"
 msgstr "Depanare"
 
-#: baruwa/forms/settings.py:190
+#: baruwa/forms/settings.py:199
 msgid "Debug SpamAssassin"
 msgstr "Depanare SpamAssassin"
 
-#: baruwa/forms/settings.py:193
+#: baruwa/forms/settings.py:202
 msgid "Deliver In Background"
 msgstr "Livra în fundal"
 
-#: baruwa/forms/settings.py:196
+#: baruwa/forms/settings.py:205
 msgid "Delivery Method"
 msgstr "Metodă de livrare"
 
-#: baruwa/forms/settings.py:199
+#: baruwa/forms/settings.py:208
 msgid "Automatic Syntax Check"
 msgstr "Verificarea sintaxei automată"
 
-#: baruwa/forms/settings.py:202
+#: baruwa/forms/settings.py:211
 msgid "Minimum Code Status"
 msgstr "Minim Cod stare"
 
-#: baruwa/forms/settings.py:209
+#: baruwa/forms/settings.py:218
 msgid "Max Unscanned Bytes Per Scan"
 msgstr "Max Unscanned octeţi pentru scanare"
 
-#: baruwa/forms/settings.py:211
+#: baruwa/forms/settings.py:220
 msgid "Max Unsafe Bytes Per Scan"
 msgstr "Max octeţi nesigure pentru scanare"
 
-#: baruwa/forms/settings.py:213
+#: baruwa/forms/settings.py:222
 msgid "Max Unscanned Messages Per Scan"
 msgstr "Max Unscanned mesaje pe scanare"
 
-#: baruwa/forms/settings.py:215
+#: baruwa/forms/settings.py:224
 msgid "Max Unsafe Messages Per Scan"
 msgstr "Max nesigure mesaje pe scanare"
 
-#: baruwa/forms/settings.py:217
+#: baruwa/forms/settings.py:226
 msgid "Max Normal Queue Size"
 msgstr "Dimensiunea de coadă Max Normal"
 
-#: baruwa/forms/settings.py:219
+#: baruwa/forms/settings.py:228
 msgid "Maximum Processing Attempts"
 msgstr "Maxim încercări de prelucrare"
 
-#: baruwa/forms/settings.py:221
+#: baruwa/forms/settings.py:230
 msgid "Maximum Attachments Per Message"
 msgstr "Ataşări maxim Per mesaj"
 
-#: baruwa/forms/settings.py:223
+#: baruwa/forms/settings.py:232
 msgid "Expand TNEF"
 msgstr "Extinde TNEF"
 
-#: baruwa/forms/settings.py:226
+#: baruwa/forms/settings.py:235
 msgid "Use TNEF Contents"
 msgstr "Utilizarea TNEF conţinutul"
 
-#: baruwa/forms/settings.py:229
+#: baruwa/forms/settings.py:238
 msgid "Deliver Unparsable TNEF"
 msgstr "Dă Unparsable TNEF"
 
-#: baruwa/forms/settings.py:232
+#: baruwa/forms/settings.py:241
 msgid "TNEF Timeout"
 msgstr "TNEF Timeout"
 
-#: baruwa/forms/settings.py:234
+#: baruwa/forms/settings.py:243
 msgid "File Timeout"
 msgstr "Fişier expirat"
 
-#: baruwa/forms/settings.py:236
+#: baruwa/forms/settings.py:245
 msgid "Gunzip Timeout"
 msgstr "Gunzip Timeout"
 
-#: baruwa/forms/settings.py:238
+#: baruwa/forms/settings.py:247
 msgid "Unrar Timeout"
 msgstr "Unrar Timeout"
 
-#: baruwa/forms/settings.py:240
+#: baruwa/forms/settings.py:249
 msgid "Maximum Archive Depth"
 msgstr "Adâncimea maximă de Arhiva"
 
-#: baruwa/forms/settings.py:242
+#: baruwa/forms/settings.py:251
 msgid "Find Archives By Content"
 msgstr "Găsi arhivele de conţinut"
 
-#: baruwa/forms/settings.py:245
+#: baruwa/forms/settings.py:254
 msgid "Unpack Microsoft Documents"
 msgstr "Despachetaţi documente Microsoft"
 
-#: baruwa/forms/settings.py:248
+#: baruwa/forms/settings.py:257
 msgid "Zip Attachments"
 msgstr "Zip ataşamente"
 
-#: baruwa/forms/settings.py:251
+#: baruwa/forms/settings.py:260
 msgid "Attachments Zip Filename"
 msgstr "Nume de fişier Zip ataşamente"
 
-#: baruwa/forms/settings.py:253
+#: baruwa/forms/settings.py:262
 msgid "Attachments Min Total Size To Zip"
 msgstr "Ataşări Min Total dimensiunea la Zip"
 
-#: baruwa/forms/settings.py:255
+#: baruwa/forms/settings.py:264
 msgid "Attachment Extensions Not To Zip"
 msgstr "Ataşament extensii nu la Zip"
 
-#: baruwa/forms/settings.py:257
+#: baruwa/forms/settings.py:266
 msgid "Add Text Of Doc"
 msgstr "Adăugaţi Text de Doc"
 
-#: baruwa/forms/settings.py:260
+#: baruwa/forms/settings.py:269
 msgid "Antiword Timeout"
 msgstr "Antiword Timeout"
 
-#: baruwa/forms/settings.py:262
+#: baruwa/forms/settings.py:271
 msgid "Unzip Maximum Files Per Archive"
 msgstr "Unzip fişiere maxim fiecare Archive"
 
-#: baruwa/forms/settings.py:264
+#: baruwa/forms/settings.py:273
 msgid "Unzip Maximum File Size"
 msgstr "Unzip dimensiunea de fișier maximă"
 
-#: baruwa/forms/settings.py:266
+#: baruwa/forms/settings.py:275
 msgid "Unzip Filenames"
 msgstr "Unzip fişiere"
 
-#: baruwa/forms/settings.py:268
+#: baruwa/forms/settings.py:277
 msgid "Unzip MimeType"
 msgstr "Unzip MimeType"
 
-#: baruwa/forms/settings.py:270
+#: baruwa/forms/settings.py:279
 msgid "Mail Header"
 msgstr "Antet de poştă electronică"
 
-#: baruwa/forms/settings.py:272
+#: baruwa/forms/settings.py:281
 msgid "Information Header"
 msgstr "Informații antet"
 
-#: baruwa/forms/settings.py:274
+#: baruwa/forms/settings.py:283
 msgid "Add Envelope From Header"
 msgstr "Adauga plicul de antet"
 
-#: baruwa/forms/settings.py:277
+#: baruwa/forms/settings.py:286
 msgid "Add Envelope To Header"
 msgstr "Adauga plicul la antet"
 
-#: baruwa/forms/settings.py:280
+#: baruwa/forms/settings.py:289
 msgid "Envelope From Header"
 msgstr "Plic de antet"
 
-#: baruwa/forms/settings.py:282
+#: baruwa/forms/settings.py:291
 msgid "Envelope To Header"
 msgstr "Plic antet"
 
-#: baruwa/forms/settings.py:284
+#: baruwa/forms/settings.py:293
 msgid "ID Header"
 msgstr "ID-ul antet"
 
-#: baruwa/forms/settings.py:286
+#: baruwa/forms/settings.py:295
 msgid "IP Protocol Version Header"
 msgstr "IP Protocol versiunea antet"
 
-#: baruwa/forms/settings.py:288
+#: baruwa/forms/settings.py:297
 msgid "Clean Header Value"
 msgstr "Valoarea antetului curat"
 
-#: baruwa/forms/settings.py:290
+#: baruwa/forms/settings.py:299
 msgid "Infected Header Value"
 msgstr "Valoarea antetului infectate"
 
-#: baruwa/forms/settings.py:292
+#: baruwa/forms/settings.py:301
 msgid "Disinfected Header Value"
 msgstr "Valoarea antetului dezinfectate"
 
-#: baruwa/forms/settings.py:294
+#: baruwa/forms/settings.py:303
 msgid "Information Header Value"
 msgstr "Valoarea antetului informaţii"
 
-#: baruwa/forms/settings.py:295
+#: baruwa/forms/settings.py:304
 msgid "Multiple Headers"
 msgstr "Mai multe anteturi"
 
-#: baruwa/forms/settings.py:298
+#: baruwa/forms/settings.py:307
 msgid "Place New Headers At Top Of Message"
 msgstr "Locul anteturi noi la partea de sus a mesajului"
 
-#: baruwa/forms/settings.py:303
+#: baruwa/forms/settings.py:312
 msgid "Sign Messages Already Processed"
 msgstr "Semn mesajele deja procesate"
 
-#: baruwa/forms/settings.py:306
+#: baruwa/forms/settings.py:315
 msgid "Allow Multiple HTML Signatures"
 msgstr "Acceptă mai multe semnături HTML"
 
-#: baruwa/forms/settings.py:309
+#: baruwa/forms/settings.py:318
 msgid "Dont Sign HTML If Headers Exist"
 msgstr "Dont semn anteturile HTML dacă există"
 
-#: baruwa/forms/settings.py:310
+#: baruwa/forms/settings.py:319
 msgid "Mark Infected Messages"
 msgstr "Marcaţi mesajele infectate"
 
-#: baruwa/forms/settings.py:313
+#: baruwa/forms/settings.py:322
 msgid "Mark Unscanned Messages"
 msgstr "Marcaţi mesajele Unscanned"
 
-#: baruwa/forms/settings.py:316
+#: baruwa/forms/settings.py:325
 msgid "Unscanned Header Value"
 msgstr "Unscanned valoare antet"
 
-#: baruwa/forms/settings.py:318
+#: baruwa/forms/settings.py:327
 msgid "Remove These Headers"
 msgstr "Eliminaţi aceste anteturi"
 
-#: baruwa/forms/settings.py:320
+#: baruwa/forms/settings.py:329
 msgid "Deliver Cleaned Messages"
 msgstr "Livrare mesaje curăţate"
 
-#: baruwa/forms/settings.py:323
+#: baruwa/forms/settings.py:332
 msgid "Scanned Modify Subject"
 msgstr "Scanate modifica obiectul"
 
-#: baruwa/forms/settings.py:326
+#: baruwa/forms/settings.py:335
 msgid "Scanned Subject Text"
 msgstr "Textului scanat subiect"
 
-#: baruwa/forms/settings.py:328
+#: baruwa/forms/settings.py:337
 msgid "Virus Modify Subject"
 msgstr "Virusul modifica obiectul"
 
-#: baruwa/forms/settings.py:331
+#: baruwa/forms/settings.py:340
 msgid "Virus Subject Text"
 msgstr "Text de obiectul virus"
 
-#: baruwa/forms/settings.py:333
+#: baruwa/forms/settings.py:342
 msgid "Filename Modify Subject"
 msgstr "Filename modifica obiectul"
 
-#: baruwa/forms/settings.py:336
+#: baruwa/forms/settings.py:345
 msgid "Filename Subject Text"
 msgstr "Nume de fişier subiect Text"
 
-#: baruwa/forms/settings.py:338
+#: baruwa/forms/settings.py:347
 msgid "Content Modify Subject"
 msgstr "Conţinutul modifica obiectul"
 
-#: baruwa/forms/settings.py:341
+#: baruwa/forms/settings.py:350
 msgid "Content Subject Text"
 msgstr "Conţinut subiect Text"
 
-#: baruwa/forms/settings.py:343
+#: baruwa/forms/settings.py:352
 msgid "Size Modify Subject"
 msgstr "Dimensiunea modifica obiectul"
 
-#: baruwa/forms/settings.py:346
+#: baruwa/forms/settings.py:355
 msgid "Size Subject Text"
 msgstr "Dimensiunea subiect Text"
 
-#: baruwa/forms/settings.py:348
+#: baruwa/forms/settings.py:357
 msgid "Disarmed Modify Subject"
 msgstr "Dezarmat modifica obiectul"
 
-#: baruwa/forms/settings.py:351
+#: baruwa/forms/settings.py:360
 msgid "Disarmed Subject Text"
 msgstr "Dezarmat subiect Text"
 
-#: baruwa/forms/settings.py:353
+#: baruwa/forms/settings.py:362
 msgid "Phishing Modify Subject"
 msgstr "Phishing modifica obiectul"
 
-#: baruwa/forms/settings.py:356
+#: baruwa/forms/settings.py:365
 msgid "Phishing Subject Text"
 msgstr "Phishing subiect Text"
 
-#: baruwa/forms/settings.py:358
+#: baruwa/forms/settings.py:367
 msgid "Spam Modify Subject"
 msgstr "Spam-ul modifica obiectul"
 
-#: baruwa/forms/settings.py:361
+#: baruwa/forms/settings.py:370
 msgid "Spam Subject Text"
 msgstr "Text de subiect spam"
 
-#: baruwa/forms/settings.py:363
+#: baruwa/forms/settings.py:372
 msgid "High Scoring Spam Modify Subject"
 msgstr "Mare scor Spam modifica obiectul"
 
-#: baruwa/forms/settings.py:366
+#: baruwa/forms/settings.py:375
 msgid "High Scoring Spam Subject Text"
 msgstr "Mare scor Spam subiect Text"
 
-#: baruwa/forms/settings.py:368
+#: baruwa/forms/settings.py:377
 msgid "Warning Is Attachment"
 msgstr "Avertisment este Atasament"
 
-#: baruwa/forms/settings.py:371
+#: baruwa/forms/settings.py:380
 msgid "Attachment Warning Filename"
 msgstr "Ataşament avertisment Filename"
 
-#: baruwa/forms/settings.py:373
+#: baruwa/forms/settings.py:382
 msgid "Attachment Encoding Charset"
 msgstr "Ataşament codare de caractere"
 
-#: baruwa/forms/settings.py:379
+#: baruwa/forms/settings.py:388
 msgid "Virus Scanners"
 msgstr "Virus scanere"
 
-#: baruwa/forms/settings.py:381
+#: baruwa/forms/settings.py:390
 msgid "Virus Scanner Timeout"
 msgstr "Virus Scanner Timeout"
 
-#: baruwa/forms/settings.py:383
+#: baruwa/forms/settings.py:392
 msgid "Deliver Disinfected Files"
 msgstr "Livra dezinfectate fişiere"
 
-#: baruwa/forms/settings.py:386
+#: baruwa/forms/settings.py:395
 msgid "Silent Viruses"
 msgstr "Virusurile tăcut"
 
-#: baruwa/forms/settings.py:388
+#: baruwa/forms/settings.py:397
 msgid "Still Deliver Silent Viruses"
 msgstr "Furniza încă tăcut viruşi"
 
-#: baruwa/forms/settings.py:391
+#: baruwa/forms/settings.py:400
 msgid "Non-Forging Viruses"
 msgstr "Viruşi non-forjare"
 
-#: baruwa/forms/settings.py:392
+#: baruwa/forms/settings.py:401
 msgid "Spam-Virus Header"
 msgstr "Spam-Virus antet"
 
-#: baruwa/forms/settings.py:394
+#: baruwa/forms/settings.py:403
 msgid "Virus Names Which Are Spam"
 msgstr "Nume virus care sunt Spam"
 
-#: baruwa/forms/settings.py:396
+#: baruwa/forms/settings.py:405
 msgid "Block Encrypted Messages"
 msgstr "Bloca mesajele criptate"
 
-#: baruwa/forms/settings.py:399
+#: baruwa/forms/settings.py:408
 msgid "Block Unencrypted Messages"
 msgstr "Bloca mesajele necriptate"
 
-#: baruwa/forms/settings.py:402
+#: baruwa/forms/settings.py:411
 msgid "Allow Password-Protected Archives"
 msgstr "Permite arhivele protejate prin parolă"
 
-#: baruwa/forms/settings.py:403
+#: baruwa/forms/settings.py:412
 msgid "Check Filenames In Password-Protected Archives"
 msgstr "Verificaţi numele de fişiere în arhivele protejate prin parolă"
 
-#: baruwa/forms/settings.py:404
+#: baruwa/forms/settings.py:413
 msgid "Clamd Use Threads"
 msgstr "Utilizarea clamd fire"
 
-#: baruwa/forms/settings.py:407
+#: baruwa/forms/settings.py:416
 msgid "ClamAV Full Message Scan"
 msgstr "ClamAV completa mesaj de scanare"
 
-#: baruwa/forms/settings.py:410
+#: baruwa/forms/settings.py:419
 msgid "Fpscand Port"
 msgstr "Fpscand Port"
 
-#: baruwa/forms/settings.py:417
+#: baruwa/forms/settings.py:426
 msgid "Allow Partial Messages"
 msgstr "Permite mesaje parţială"
 
-#: baruwa/forms/settings.py:420
+#: baruwa/forms/settings.py:429
 msgid "Allow External Message Bodies"
 msgstr "Permite externe corpurile mesajelor"
 
-#: baruwa/forms/settings.py:423
+#: baruwa/forms/settings.py:432
 msgid "Also Find Numeric Phishing"
 msgstr "De asemenea, găsi numerice Phishing"
 
-#: baruwa/forms/settings.py:426
+#: baruwa/forms/settings.py:435
 msgid "Use Stricter Phishing Net"
 msgstr "Utilizarea mai stricte Phishing Net"
 
-#: baruwa/forms/settings.py:429
+#: baruwa/forms/settings.py:438
 msgid "Highlight Phishing Fraud"
 msgstr "Evidenţia pentru înşelătorie fraudă"
 
-#: baruwa/forms/settings.py:432
+#: baruwa/forms/settings.py:441
 msgid "Allow IFrame Tags"
 msgstr "Permite etichetelor IFrame"
 
-#: baruwa/forms/settings.py:435
+#: baruwa/forms/settings.py:444
 msgid "Allow Form Tags"
 msgstr "Permite forma Tag-uri"
 
-#: baruwa/forms/settings.py:438
+#: baruwa/forms/settings.py:447
 msgid "Allow Script Tags"
 msgstr "Permite script-ul Tag-uri"
 
-#: baruwa/forms/settings.py:441
+#: baruwa/forms/settings.py:450
 msgid "Allow WebBugs"
 msgstr "Permite WebBugs"
 
-#: baruwa/forms/settings.py:444
+#: baruwa/forms/settings.py:453
 msgid "Ignored Web Bug Filenames"
 msgstr "Ignorat Web bug-ul de fişiere"
 
-#: baruwa/forms/settings.py:446
+#: baruwa/forms/settings.py:455
 msgid "Known Web Bug Servers"
 msgstr "Servere Bug cunoscut"
 
-#: baruwa/forms/settings.py:448
+#: baruwa/forms/settings.py:457
 msgid "Web Bug Replacement"
 msgstr "Înlocuirea de bug-ul Web"
 
-#: baruwa/forms/settings.py:450
+#: baruwa/forms/settings.py:459
 msgid "Allow Object Codebase Tags"
 msgstr "Permite obiect Codebase Tag-uri"
 
-#: baruwa/forms/settings.py:453
+#: baruwa/forms/settings.py:462
 msgid "Convert Dangerous HTML To Text"
 msgstr "Conversia HTML periculos în Text"
 
-#: baruwa/forms/settings.py:456
+#: baruwa/forms/settings.py:465
 msgid "Convert HTML To Text"
 msgstr "Conversia HTML în Text"
 
-#: baruwa/forms/settings.py:459
+#: baruwa/forms/settings.py:468
 msgid "Archives Are"
 msgstr "Arhivele sunt"
 
-#: baruwa/forms/settings.py:461
+#: baruwa/forms/settings.py:470
 msgid "Allow Filenames"
 msgstr "Permite nume de fişiere"
 
-#: baruwa/forms/settings.py:462
+#: baruwa/forms/settings.py:471
 msgid "Deny Filenames"
 msgstr "Nega nume de fişiere"
 
-#: baruwa/forms/settings.py:463
+#: baruwa/forms/settings.py:472
 msgid "Allow Filetypes"
 msgstr "Permite fişiere"
 
-#: baruwa/forms/settings.py:464
+#: baruwa/forms/settings.py:473
 msgid "Allow File MIME Types"
 msgstr "Permite fişier MIME tipuri"
 
-#: baruwa/forms/settings.py:465
+#: baruwa/forms/settings.py:474
 msgid "Deny Filetypes"
 msgstr "Nega tipuri de fişiere"
 
-#: baruwa/forms/settings.py:466
+#: baruwa/forms/settings.py:475
 msgid "Deny File MIME Types"
 msgstr "Nega fişier MIME tipuri"
 
-#: baruwa/forms/settings.py:467
+#: baruwa/forms/settings.py:476
 msgid "Archives: Allow Filenames"
 msgstr "Archives: Permite nume de fişiere"
 
-#: baruwa/forms/settings.py:468
+#: baruwa/forms/settings.py:477
 msgid "Archives: Deny Filenames"
 msgstr "Archives: Nega nume de fişiere"
 
-#: baruwa/forms/settings.py:469
+#: baruwa/forms/settings.py:478
 msgid "Archives: Allow Filetypes"
 msgstr "Archives: Permite fişiere"
 
-#: baruwa/forms/settings.py:470
+#: baruwa/forms/settings.py:479
 msgid "Archives: Allow File MIME Types"
 msgstr "Archives: Permite fişier MIME tipuri"
 
-#: baruwa/forms/settings.py:471
+#: baruwa/forms/settings.py:480
 msgid "Archives: Deny Filetypes"
 msgstr "Archives: Nega tipuri de fişiere"
 
-#: baruwa/forms/settings.py:472
+#: baruwa/forms/settings.py:481
 msgid "Archives: Deny File MIME Types"
 msgstr "Archives: Nega fişier MIME tipuri"
 
-#: baruwa/forms/settings.py:477
+#: baruwa/forms/settings.py:486
 msgid "Quarantine Infections"
 msgstr "Infecţii de carantină"
 
-#: baruwa/forms/settings.py:480
+#: baruwa/forms/settings.py:489
 msgid "Quarantine Silent Viruses"
 msgstr "Virusurile tăcut în carantină"
 
-#: baruwa/forms/settings.py:483
+#: baruwa/forms/settings.py:492
 msgid "Quarantine Modified Body"
 msgstr "Carantină modificată corpului"
 
-#: baruwa/forms/settings.py:486
+#: baruwa/forms/settings.py:495
 msgid "Keep Spam And MCP Archive Clean"
 msgstr "Intretinut Spam şi MCP Arhiva"
 
-#: baruwa/forms/settings.py:489
+#: baruwa/forms/settings.py:498
 msgid "Hide Incoming Work Dir"
 msgstr "Ascunde Dir de lucru primite"
 
-#: baruwa/forms/settings.py:492
+#: baruwa/forms/settings.py:501
 msgid "Include Scanner Name In Reports"
 msgstr "Cuprinde numele Scanner în rapoarte"
 
-#: baruwa/forms/settings.py:499
+#: baruwa/forms/settings.py:508
 msgid "Notify Senders"
 msgstr "Se notifică expeditorii"
 
-#: baruwa/forms/settings.py:502
+#: baruwa/forms/settings.py:511
 msgid "Notify Senders Of Viruses"
 msgstr "Se notifică expeditorii de viruşi"
 
-#: baruwa/forms/settings.py:505
+#: baruwa/forms/settings.py:514
 msgid "Notify Senders Of Blocked Filenames Or Filetypes"
-msgstr ""
-"Se notifică expeditorii de nume de fișiere blocate sau tipuri de fişiere"
+msgstr "Se notifică expeditorii de nume de fișiere blocate sau tipuri de fişiere"
 
-#: baruwa/forms/settings.py:508
+#: baruwa/forms/settings.py:517
 msgid "Notify Senders Of Blocked Size Attachments"
 msgstr "Se notifică expeditorii blocat dimensiunea ataşări"
 
-#: baruwa/forms/settings.py:511
+#: baruwa/forms/settings.py:520
 msgid "Notify Senders Of Other Blocked Content"
 msgstr "Notifică expeditorii de alte conținut blocat"
 
-#: baruwa/forms/settings.py:514
+#: baruwa/forms/settings.py:523
 msgid "Never Notify Senders Of Precedence"
 msgstr "Niciodată nu se notifică expeditorii de prioritate"
 
-#: baruwa/forms/settings.py:516
+#: baruwa/forms/settings.py:525
 msgid "Send Notices"
 msgstr "Trimite notificări"
 
-#: baruwa/forms/settings.py:519
+#: baruwa/forms/settings.py:528
 msgid "Notices Include Full Headers"
 msgstr "Anunțurile includ anteturi plin"
 
-#: baruwa/forms/settings.py:522
+#: baruwa/forms/settings.py:531
 msgid "Hide Incoming Work Dir in Notices"
 msgstr "Ascunde Dir de lucru primite în anunțurile"
 
-#: baruwa/forms/settings.py:525
+#: baruwa/forms/settings.py:534
 msgid "Notice Signature"
 msgstr "Notificare semnătura"
 
-#: baruwa/forms/settings.py:527
+#: baruwa/forms/settings.py:536
 msgid "Notices From"
 msgstr "Anunţuri de la"
 
-#: baruwa/forms/settings.py:529
+#: baruwa/forms/settings.py:538
 msgid "Notices To"
 msgstr "Notificarile la"
 
-#: baruwa/forms/settings.py:531
+#: baruwa/forms/settings.py:540
 msgid "Local Postmaster"
 msgstr "Postmaster locale"
 
-#: baruwa/forms/settings.py:537
+#: baruwa/forms/settings.py:546
 msgid "Max SpamAssassin Size"
 msgstr "Max SpamAssassin dimensiune"
 
-#: baruwa/forms/settings.py:539
+#: baruwa/forms/settings.py:548
 msgid "SpamAssassin Auto Whitelist"
 msgstr "SpamAssassin Auto lista albă"
 
-#: baruwa/forms/settings.py:542
+#: baruwa/forms/settings.py:551
 msgid "SpamAssassin Timeout"
 msgstr "SpamAssassin Timeout"
 
-#: baruwa/forms/settings.py:544
+#: baruwa/forms/settings.py:553
 msgid "Max SpamAssassin Timeouts"
 msgstr "Max SpamAssassin timeout"
 
-#: baruwa/forms/settings.py:546
+#: baruwa/forms/settings.py:555
 msgid "SpamAssassin Timeouts History"
 msgstr "Istoria de timeout SpamAssassin"
 
-#: baruwa/forms/settings.py:548
+#: baruwa/forms/settings.py:557
 msgid "Check SpamAssassin If On Spam List"
 msgstr "Verificaţi dacă SpamAssassin pe lista de Spam"
 
-#: baruwa/forms/settings.py:551
+#: baruwa/forms/settings.py:560
 msgid "Include Binary Attachments In SpamAssassin"
 msgstr "Includeţi ataşări binare în SpamAssassin"
 
-#: baruwa/forms/settings.py:554
+#: baruwa/forms/settings.py:563
 msgid "Spam Score"
 msgstr "Scor de spam"
 
-#: baruwa/forms/settings.py:557
+#: baruwa/forms/settings.py:566
 msgid "Cache SpamAssassin Results"
 msgstr "Cache-ul SpamAssassin rezultate"
 
-#: baruwa/forms/settings.py:560
+#: baruwa/forms/settings.py:569
 msgid "Rebuild Bayes Every"
 msgstr "Reconstrui Bayes fiecare"
 
-#: baruwa/forms/settings.py:562
+#: baruwa/forms/settings.py:571
 msgid "Wait During Bayes Rebuild"
 msgstr "Aşteptaţi în timpul Bayes reconstrui"
 
-#: baruwa/forms/settings.py:567
+#: baruwa/forms/settings.py:576
 msgid "Spam List"
 msgstr "Lista de spam"
 
-#: baruwa/forms/settings.py:569
+#: baruwa/forms/settings.py:578
 msgid "Spam Domain List"
 msgstr "Lista de domeniu spam"
 
-#: baruwa/forms/settings.py:571
+#: baruwa/forms/settings.py:580
 msgid "Spam Lists To Be Spam"
 msgstr "Liste de spam pentru a fi Spam"
 
-#: baruwa/forms/settings.py:573
+#: baruwa/forms/settings.py:582
 msgid "Spam Lists To Reach High Score"
 msgstr "Spam liste pentru a ajunge la scor mare"
 
-#: baruwa/forms/settings.py:575
+#: baruwa/forms/settings.py:584
 msgid "Spam List Timeout"
 msgstr "Spam lista Timeout"
 
-#: baruwa/forms/settings.py:577
+#: baruwa/forms/settings.py:586
 msgid "Max Spam List Timeouts"
 msgstr "Max Spam lista timeout"
 
-#: baruwa/forms/settings.py:579
+#: baruwa/forms/settings.py:588
 msgid "Spam List Timeouts History"
 msgstr "Istoria de timeout-uri lista de spam"
 
-#: baruwa/forms/settings.py:581
+#: baruwa/forms/settings.py:590
 msgid "Definite Spam Is High Scoring"
 msgstr "Certă spam-ul este mare de notare"
 
-#: baruwa/forms/settings.py:584
+#: baruwa/forms/settings.py:593
 msgid "Ignore Spam Whitelist If Recipients Exceed"
 msgstr "Ignora Spam lista albă dacă destinatarii să depăşească"
 
-#: baruwa/forms/settings.py:586
+#: baruwa/forms/settings.py:595
 msgid "Max Spam Check Size"
 msgstr "Max Spam Selectare dimensiune"
 
-#: baruwa/forms/settings.py:588
+#: baruwa/forms/settings.py:597
 msgid "Enable Spam Bounce"
 msgstr "Permite Spam Bounce"
 
-#: baruwa/forms/settings.py:591
+#: baruwa/forms/settings.py:600
 msgid "Bounce Spam As Attachment"
 msgstr "Bounce Spam ca atașare"
 
-#: baruwa/forms/settings.py:594
+#: baruwa/forms/settings.py:603
 msgid "Detailed Spam Report"
 msgstr "Raport detaliat de Spam"
 
-#: baruwa/forms/settings.py:597
+#: baruwa/forms/settings.py:606
 msgid "Include Scores In SpamAssassin Report"
 msgstr "Include scoruri în SpamAssassin raport"
 
-#: baruwa/forms/settings.py:600
+#: baruwa/forms/settings.py:609
 msgid "Always Include SpamAssassin Report"
 msgstr "Includ întotdeauna SpamAssassin raport"
 
-#: baruwa/forms/settings.py:603
+#: baruwa/forms/settings.py:612
 msgid "Spam Header"
 msgstr "Spam-ul antet"
 
-#: baruwa/forms/settings.py:605
+#: baruwa/forms/settings.py:614
 msgid "Spam Score Header"
 msgstr "Antet de scor spam"
 
-#: baruwa/forms/settings.py:607
+#: baruwa/forms/settings.py:616
 msgid "Spam Score Number Format"
 msgstr "Format de număr scor spam"
 
-#: baruwa/forms/settings.py:609
+#: baruwa/forms/settings.py:618
 msgid "Spam Score Character"
 msgstr "Caracterul de scor spam"
 
-#: baruwa/forms/settings.py:611
+#: baruwa/forms/settings.py:620
 msgid "SpamScore Number Instead Of Stars"
 msgstr "SpamScore număr în loc de stele"
 
-#: baruwa/forms/settings.py:614
+#: baruwa/forms/settings.py:623
 msgid "Minimum Stars If On Spam List"
 msgstr "Stele minimă dacă pe lista de Spam"
 
-#: baruwa/forms/settings.py:616
+#: baruwa/forms/settings.py:625
 msgid "Use Watermarking"
 msgstr "Utilizarea Watermarking"
 
-#: baruwa/forms/settings.py:619
+#: baruwa/forms/settings.py:628
 msgid "Add Watermark"
 msgstr "Adăuga filigran"
 
-#: baruwa/forms/settings.py:622
+#: baruwa/forms/settings.py:631
 msgid "Check Watermarks With No Sender"
 msgstr "Verifica filigrane cu nici un expeditor"
 
-#: baruwa/forms/settings.py:625
+#: baruwa/forms/settings.py:634
 msgid "Treat Invalid Watermarks With No Sender as Spam"
 msgstr "Trata nevalidă filigrane cu nici un expeditor ca Spam"
 
-#: baruwa/forms/settings.py:628
+#: baruwa/forms/settings.py:637
 msgid "Check Watermarks To Skip Spam Checks"
 msgstr "Verifica filigrane Skip Spam control la"
 
-#: baruwa/forms/settings.py:631
+#: baruwa/forms/settings.py:640
 msgid "Watermark Secret"
 msgstr "Filigran Secret"
 
-#: baruwa/forms/settings.py:633
+#: baruwa/forms/settings.py:642
 msgid "Watermark Lifetime"
 msgstr "Pepene verde de viaţă"
 
-#: baruwa/forms/settings.py:635
+#: baruwa/forms/settings.py:644
 msgid "Watermark Header"
 msgstr "Filigran antet"
 
-#: baruwa/forms/settings.py:641
+#: baruwa/forms/settings.py:650
 msgid "Syslog Facility"
 msgstr "Syslog facilitatea"
 
-#: baruwa/forms/settings.py:644
+#: baruwa/forms/settings.py:653
 msgid "Log Speed"
 msgstr "Jurnal de viteză"
 
-#: baruwa/forms/settings.py:647
+#: baruwa/forms/settings.py:656
 msgid "Log Spam"
 msgstr "Jurnalul de Spam"
 
-#: baruwa/forms/settings.py:650
+#: baruwa/forms/settings.py:659
 msgid "Log Non Spam"
 msgstr "Jurnal Non Spam"
 
-#: baruwa/forms/settings.py:653
+#: baruwa/forms/settings.py:662
 msgid "Log Delivery And Non-Delivery"
 msgstr "Jurnal de livrare şi Non-livrare"
 
-#: baruwa/forms/settings.py:656
+#: baruwa/forms/settings.py:665
 msgid "Log Permitted Filenames"
 msgstr "Jurnal nume de fişiere permise"
 
-#: baruwa/forms/settings.py:659
+#: baruwa/forms/settings.py:668
 msgid "Log Permitted Filetypes"
 msgstr "Jurnal de tipuri de fişiere permise"
 
-#: baruwa/forms/settings.py:662
+#: baruwa/forms/settings.py:671
 msgid "Log Permitted File MIME Types"
 msgstr "Jurnal permise fişier MIME tipuri"
 
-#: baruwa/forms/settings.py:665
+#: baruwa/forms/settings.py:674
 msgid "Log Silent Viruses"
 msgstr "Virusurile tăcut jurnal"
 
-#: baruwa/forms/settings.py:668
+#: baruwa/forms/settings.py:677
 msgid "Log Dangerous HTML Tags"
 msgstr "Jurnal periculoase HTML Tag-uri"
 
-#: baruwa/forms/settings.py:671
+#: baruwa/forms/settings.py:680
 msgid "Log SpamAssassin Rule Actions"
 msgstr "Acțiuni de regulă SpamAssassin jurnal"
 
-#: baruwa/forms/settings.py:690
+#: baruwa/forms/settings.py:699
 msgid "Signature type"
 msgstr "Tip de semnătură"
 
-#: baruwa/forms/settings.py:694
+#: baruwa/forms/settings.py:700 baruwa/templates/accounts/account.html:194
+#: baruwa/templates/settings/domain_sigs.html:20
+msgid "Text signature"
+msgstr "Text semnătură"
+
+#: baruwa/forms/settings.py:701 baruwa/templates/accounts/account.html:194
+#: baruwa/templates/settings/domain_sigs.html:20
+msgid "HTML Signature"
+msgstr "Semnatura HTML"
+
+#: baruwa/forms/settings.py:703
 msgid "Signature"
 msgstr "Semnătura"
 
@@ -2666,8 +2764,8 @@ msgstr "Din coada de aşteptare mesaj-identitate: %(m)s lansat %(a)s"
 #, python-format
 msgid "Queued Message-ID: %(m)s deleted from %(q)s queue"
 msgstr ""
-"Din coada de aşteptare mesaj-identitate: %(m)s elimină din %(q)s coada de "
-"aşteptare"
+"Din coada de aşteptare mesaj-identitate: %(m)s elimină din %(q)s coada de"
+" aşteptare"
 
 #: baruwa/lib/audit/msgs/status.py:29
 #, python-format
@@ -2678,7 +2776,8 @@ msgstr "Din coada de aşteptare mesaj-identitate: %(m)s previzualizare"
 #, python-format
 msgid "Queued Message-ID: %(m)s downloaded attachment %(a)s"
 msgstr ""
-"Din coada de aşteptare mesaj-identitate: %(m)s descarcat de ataşament %(a)s"
+"Din coada de aşteptare mesaj-identitate: %(m)s descarcat de ataşament "
+"%(a)s"
 
 #: baruwa/lib/audit/msgs/status.py:31
 #, python-format
@@ -3130,16 +3229,6 @@ msgstr "Nicio adresă de aliasul configurat"
 msgid "Email Signatures"
 msgstr "Semnături de e-mail"
 
-#: baruwa/templates/accounts/account.html:194
-#: baruwa/templates/settings/domain_sigs.html:20
-msgid "Text signature"
-msgstr "Text semnătură"
-
-#: baruwa/templates/accounts/account.html:194
-#: baruwa/templates/settings/domain_sigs.html:20
-msgid "HTML Signature"
-msgstr "Semnatura HTML"
-
 #: baruwa/templates/accounts/account.html:209
 msgid "No Email Signatures configured"
 msgstr "Nici semnături de E-mail configurat"
@@ -3393,8 +3482,7 @@ msgstr[1] ":: Rezultate filme %(n)d de %(c)d pagini."
 msgstr[2] ""
 
 #: baruwa/templates/accounts/index.html:94
-#: baruwa/templates/domains/index.html:93
-#: baruwa/templates/lists/index.html:105
+#: baruwa/templates/domains/index.html:93 baruwa/templates/lists/index.html:105
 #: baruwa/templates/messages/functions.html:208
 #: baruwa/templates/messages/searchresults.html:102
 #: baruwa/templates/organizations/index.html:50
@@ -3405,8 +3493,7 @@ msgid "Showing items %(i)d to %(l)d of %(count)d"
 msgstr "Se afișează elemente %(i)d să %(l)d de %(count)d"
 
 #: baruwa/templates/accounts/index.html:96
-#: baruwa/templates/domains/index.html:95
-#: baruwa/templates/lists/index.html:107
+#: baruwa/templates/domains/index.html:95 baruwa/templates/lists/index.html:107
 #: baruwa/templates/messages/functions.html:210
 #: baruwa/templates/messages/searchresults.html:104
 #: baruwa/templates/organizations/index.html:52
@@ -3416,8 +3503,7 @@ msgid "Show items:"
 msgstr "Afișare elemente:"
 
 #: baruwa/templates/accounts/index.html:98
-#: baruwa/templates/domains/index.html:97
-#: baruwa/templates/lists/index.html:109
+#: baruwa/templates/domains/index.html:97 baruwa/templates/lists/index.html:109
 #: baruwa/templates/messages/functions.html:212
 #: baruwa/templates/messages/searchresults.html:106
 #: baruwa/templates/organizations/index.html:54
@@ -3458,11 +3544,11 @@ msgstr "Parola uitata?"
 
 #: baruwa/templates/accounts/login.html:55
 msgid ""
-"Forgotten your password? Enter your e-mail address below, and we'll e-mail "
-"instructions on setting a new one."
+"Forgotten your password? Enter your e-mail address below, and we'll "
+"e-mail instructions on setting a new one."
 msgstr ""
-"Aţi uitat parola? Introduceţi adresa de e-mail de mai jos, şi ne vom e-mail "
-"instrucţiuni privind configurarea unul nou."
+"Aţi uitat parola? Introduceţi adresa de e-mail de mai jos, şi ne vom "
+"e-mail instrucţiuni privind configurarea unul nou."
 
 #: baruwa/templates/accounts/login.html:60
 msgid "Cancel"
@@ -3532,11 +3618,6 @@ msgstr "Adauga domeniu Alias"
 #: baruwa/templates/domains/addauth.html:17
 msgid "Clear"
 msgstr "Clar"
-
-#: baruwa/templates/domains/addalias.html:18
-#: baruwa/templates/domains/addauth.html:18
-msgid "Add"
-msgstr "Adauga"
 
 #: baruwa/templates/domains/addalias.html:26
 #: baruwa/templates/domains/addalias.html:30
@@ -3844,7 +3925,8 @@ msgid ""
 "Domains :: Search results :: %(q)s :: Showing page %(page)d of %(count)d "
 "pages."
 msgstr ""
-"Domenii:: Rezultate:: %(q)s :: Rezultate filme %(page)d de %(count)d pagini."
+"Domenii:: Rezultate:: %(q)s :: Rezultate filme %(page)d de %(count)d "
+"pagini."
 
 #: baruwa/templates/domains/searchresults.html:71
 #: baruwa/templates/domains/searchresults.html:75
@@ -3893,19 +3975,19 @@ msgstr "Eroare: %s"
 
 #: baruwa/templates/general/error.html:28
 msgid ""
-"You do not have sufficient permissions to access this page. Please sign in "
-"using an account with sufficient permissions"
+"You do not have sufficient permissions to access this page. Please sign "
+"in using an account with sufficient permissions"
 msgstr ""
-"Nu aveţi suficiente permisiuni pentru a accesa această pagină. Conectați-vă "
-"folosind un cont cu permisiuni suficiente"
+"Nu aveţi suficiente permisiuni pentru a accesa această pagină. "
+"Conectați-vă folosind un cont cu permisiuni suficiente"
 
 #: baruwa/templates/general/error.html:30
 msgid ""
-"The system was unable to complete your request, the support team has been "
-"notified"
+"The system was unable to complete your request, the support team has been"
+" notified"
 msgstr ""
-"Sistemul nu a reușit să finalizeze solicitarea, echipa de asistenţă a fost "
-"notificat"
+"Sistemul nu a reușit să finalizeze solicitarea, echipa de asistenţă a "
+"fost notificat"
 
 #: baruwa/templates/includes/search.html:9 baruwa/templates/lists/index.html:6
 #: baruwa/templates/messages/functions.html:300
@@ -3938,8 +4020,8 @@ msgstr "vă mulţumesc."
 
 #: baruwa/templates/invite/thankyou.html:27
 msgid ""
-"Your registration request is being reviewed, you will be notified when it is"
-" approved."
+"Your registration request is being reviewed, you will be notified when it"
+" is approved."
 msgstr ""
 "Solicitarea de înregistrare este în curs de revizuire, veţi fi notificat "
 "când este aprobat."
@@ -4002,7 +4084,8 @@ msgstr "Lista de management"
 #, python-format
 msgid "Lists :: Approved senders :: Showing page %(page)d of %(count)d pages."
 msgstr ""
-"Liste:: Aprobat expeditori:: Pagina de afişare %(page)d de %(count)d pagini."
+"Liste:: Aprobat expeditori:: Pagina de afişare %(page)d de %(count)d "
+"pagini."
 
 #: baruwa/templates/lists/index.html:87
 msgid "Lists :: Approved senders"
@@ -4337,8 +4420,7 @@ msgstr "Jurnalul de Spam"
 
 #: baruwa/templates/messages/quarantine.html:27
 #: baruwa/templates/status/detail.html:69
-#: baruwa/templates/status/detail.html:75
-#: baruwa/templates/status/mailq.html:23
+#: baruwa/templates/status/detail.html:75 baruwa/templates/status/mailq.html:23
 msgid "Process"
 msgstr "Procesul de"
 
@@ -4395,8 +4477,8 @@ msgstr "ID-ul mesajului: %(id)s a fost lansat"
 #: baruwa/templates/messages/includes/released.html:4
 #, python-format
 msgid ""
-"The message id: %(id)s could not be released: %(error_msg)s, contact your "
-"email admin for assistance."
+"The message id: %(id)s could not be released: %(error_msg)s, contact your"
+" email admin for assistance."
 msgstr ""
 "ID-ul mesajului: %(id)s nu ar putea fi lansat: %(error_msg)s, vă admin "
 "e-mail de contact pentru asistență."
@@ -5351,3 +5433,4 @@ msgstr "Timp de sistem"
 #, python-format
 msgid "Status :: Node status :: %(server)s"
 msgstr "Status:: Statutul de nod:: %(server)s"
+

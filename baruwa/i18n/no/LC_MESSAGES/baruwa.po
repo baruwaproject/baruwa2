@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  baruwa\n"
 "Report-Msgid-Bugs-To: baruwa@lists.baruwa.org\n"
-"POT-Creation-Date: 2012-11-16 17:45+0200\n"
+"POT-Creation-Date: 2012-11-20 09:57+0200\n"
 "PO-Revision-Date: 2012-11-15 13:23+0200\n"
 "Last-Translator: Andrew Colin Kissa <andrew@topdog.za.net>\n"
 "Language-Team: Baruwa Project\n"
@@ -912,8 +912,8 @@ msgstr "Domener"
 #: baruwa/forms/accounts.py:133 baruwa/forms/domains.py:95
 #: baruwa/forms/domains.py:133 baruwa/forms/domains.py:141
 #: baruwa/forms/domains.py:150 baruwa/forms/domains.py:165
-#: baruwa/forms/organizations.py:61 baruwa/forms/settings.py:165
-#: baruwa/forms/settings.py:696 baruwa/forms/settings.py:701
+#: baruwa/forms/organizations.py:61 baruwa/forms/settings.py:174
+#: baruwa/forms/settings.py:705 baruwa/forms/settings.py:710
 #: baruwa/lib/templates/helpers.py:225 baruwa/templates/settings/index.html:17
 msgid "Enabled"
 msgstr "Aktivert"
@@ -954,7 +954,8 @@ msgid "Quarantine"
 msgstr "Karantene"
 
 #: baruwa/forms/domains.py:49 baruwa/forms/messages.py:79
-#: baruwa/model/status.py:41 baruwa/templates/accounts/account.html:175
+#: baruwa/forms/settings.py:133 baruwa/model/status.py:41
+#: baruwa/templates/accounts/account.html:175
 #: baruwa/templates/accounts/account.html:177
 #: baruwa/templates/accounts/account.html:203
 #: baruwa/templates/accounts/deleteaddress.html:17
@@ -1326,8 +1327,8 @@ msgstr "Admins"
 msgid "Delete Organization domains"
 msgstr "Slett organisasjon domener"
 
-#: baruwa/forms/organizations.py:60 baruwa/forms/settings.py:161
-#: baruwa/forms/settings.py:301 baruwa/tasks/status.py:298
+#: baruwa/forms/organizations.py:60 baruwa/forms/settings.py:170
+#: baruwa/forms/settings.py:310 baruwa/tasks/status.py:298
 #: baruwa/templates/messages/detail.html:176
 #: baruwa/templates/reports/relays.html:26
 #: baruwa/templates/settings/index.html:16
@@ -1561,803 +1562,899 @@ msgstr "Angi en gyldig dato i formatet YYYY-MM-DD"
 msgid "Please provide valid time in HH:MM format"
 msgstr "Vennligst oppgi gyldig tid i formatet TT: mm"
 
-#: baruwa/forms/settings.py:164
+#: baruwa/forms/settings.py:35 baruwa/forms/settings.py:49
+#: baruwa/forms/settings.py:52
+msgid "Yes"
+msgstr ""
+
+#: baruwa/forms/settings.py:35 baruwa/forms/settings.py:38
+#: baruwa/forms/settings.py:50 baruwa/forms/settings.py:53
+#, fuzzy
+#| msgid "Info"
+msgid "No"
+msgstr "Info"
+
+#: baruwa/forms/settings.py:36 baruwa/forms/settings.py:41
+#, fuzzy
+#| msgid "Create"
+msgid "Replace"
+msgstr "Opprette"
+
+#: baruwa/forms/settings.py:37 baruwa/forms/settings.py:39
+#: baruwa/templates/domains/addalias.html:18
+#: baruwa/templates/domains/addauth.html:18
+msgid "Add"
+msgstr "Legge til"
+
+#: baruwa/forms/settings.py:40
+msgid "Append"
+msgstr ""
+
+#: baruwa/forms/settings.py:42
+#, fuzzy
+#| msgid "Action not supported"
+msgid "Supported"
+msgstr "Handling ikke støttet"
+
+#: baruwa/forms/settings.py:43
+msgid "None"
+msgstr ""
+
+#: baruwa/forms/settings.py:44
+#, fuzzy
+#| msgid "Action not supported"
+msgid "Unsupported"
+msgstr "Handling ikke støttet"
+
+#: baruwa/forms/settings.py:45
+#, fuzzy
+#| msgid "Graph"
+msgid "Alpha"
+msgstr "Graf"
+
+#: baruwa/forms/settings.py:46
+msgid "Beta"
+msgstr ""
+
+#: baruwa/forms/settings.py:47
+msgid "Start"
+msgstr ""
+
+#: baruwa/forms/settings.py:48
+#, fuzzy
+#| msgid "enabled"
+msgid "End"
+msgstr "aktivert"
+
+#: baruwa/forms/settings.py:51
+msgid "Disarm"
+msgstr ""
+
+#: baruwa/forms/settings.py:59
+msgid "Auto detect"
+msgstr ""
+
+#: baruwa/forms/settings.py:132
+#, fuzzy
+#| msgid "does not contain"
+msgid "Do nothing"
+msgstr "inneholder ikke"
+
+#: baruwa/forms/settings.py:134
+msgid "Flag as spam"
+msgstr ""
+
+#: baruwa/forms/settings.py:135
+msgid "Flag as high spam"
+msgstr ""
+
+#: baruwa/forms/settings.py:173
 msgid "Invalid Domain name or IPv4 address"
 msgstr "Ugyldig domenenavn eller IPv4-adresse"
 
-#: baruwa/forms/settings.py:170
+#: baruwa/forms/settings.py:179
 msgid "Sitename"
 msgstr "Sitename"
 
-#: baruwa/forms/settings.py:171
+#: baruwa/forms/settings.py:180
 msgid "Your Organisation Name"
 msgstr "Din organisasjon navn"
 
-#: baruwa/forms/settings.py:173
+#: baruwa/forms/settings.py:182
 msgid "Organisation website"
 msgstr "Organisasjon nettside"
 
-#: baruwa/forms/settings.py:175
+#: baruwa/forms/settings.py:184
 msgid "Max Children"
 msgstr "Max barn"
 
-#: baruwa/forms/settings.py:177
+#: baruwa/forms/settings.py:186
 msgid "Queue Scan Interval"
 msgstr "Køen skanning intervall"
 
-#: baruwa/forms/settings.py:179
+#: baruwa/forms/settings.py:188
 msgid "Restart Every"
 msgstr "Start på nytt hver"
 
-#: baruwa/forms/settings.py:181
+#: baruwa/forms/settings.py:190
 msgid "Use Default Rules With Multiple Recipients"
 msgstr "Bruk standardregler med flere mottakere"
 
-#: baruwa/forms/settings.py:184
+#: baruwa/forms/settings.py:193
 msgid "Read IP Address From Received Header"
 msgstr "Lese IP-adressen fra mottatt hode"
 
-#: baruwa/forms/settings.py:187
+#: baruwa/forms/settings.py:196
 msgid "Debug"
 msgstr "Feilsøke"
 
-#: baruwa/forms/settings.py:190
+#: baruwa/forms/settings.py:199
 msgid "Debug SpamAssassin"
 msgstr "Feilsøke SpamAssassin"
 
-#: baruwa/forms/settings.py:193
+#: baruwa/forms/settings.py:202
 msgid "Deliver In Background"
 msgstr "Levere i bakgrunnen"
 
-#: baruwa/forms/settings.py:196
+#: baruwa/forms/settings.py:205
 msgid "Delivery Method"
 msgstr "Leveringsmetode for"
 
-#: baruwa/forms/settings.py:199
+#: baruwa/forms/settings.py:208
 msgid "Automatic Syntax Check"
 msgstr "Automatisk syntakskontroll"
 
-#: baruwa/forms/settings.py:202
+#: baruwa/forms/settings.py:211
 msgid "Minimum Code Status"
 msgstr "Laveste kode-statusen"
 
-#: baruwa/forms/settings.py:209
+#: baruwa/forms/settings.py:218
 msgid "Max Unscanned Bytes Per Scan"
 msgstr "Max ikke kontrollert byte Per skanning"
 
-#: baruwa/forms/settings.py:211
+#: baruwa/forms/settings.py:220
 msgid "Max Unsafe Bytes Per Scan"
 msgstr "Max usikre byte Per skanning"
 
-#: baruwa/forms/settings.py:213
+#: baruwa/forms/settings.py:222
 msgid "Max Unscanned Messages Per Scan"
 msgstr "Max ikke kontrollert meldinger Per skanning"
 
-#: baruwa/forms/settings.py:215
+#: baruwa/forms/settings.py:224
 msgid "Max Unsafe Messages Per Scan"
 msgstr "Max usikre meldinger Per skanning"
 
-#: baruwa/forms/settings.py:217
+#: baruwa/forms/settings.py:226
 msgid "Max Normal Queue Size"
 msgstr "Max Normal køen størrelse"
 
-#: baruwa/forms/settings.py:219
+#: baruwa/forms/settings.py:228
 msgid "Maximum Processing Attempts"
 msgstr "Maksimal behandling-forsøk"
 
-#: baruwa/forms/settings.py:221
+#: baruwa/forms/settings.py:230
 msgid "Maximum Attachments Per Message"
 msgstr "Maksimal vedlegg Per melding"
 
-#: baruwa/forms/settings.py:223
+#: baruwa/forms/settings.py:232
 msgid "Expand TNEF"
 msgstr "Utvide TNEF"
 
-#: baruwa/forms/settings.py:226
+#: baruwa/forms/settings.py:235
 msgid "Use TNEF Contents"
 msgstr "Bruke TNEF-innholdet"
 
-#: baruwa/forms/settings.py:229
+#: baruwa/forms/settings.py:238
 msgid "Deliver Unparsable TNEF"
 msgstr "Levere udelelig TNEF"
 
-#: baruwa/forms/settings.py:232
+#: baruwa/forms/settings.py:241
 msgid "TNEF Timeout"
 msgstr "TNEF-tidsavbrudd"
 
-#: baruwa/forms/settings.py:234
+#: baruwa/forms/settings.py:243
 msgid "File Timeout"
 msgstr "Filen tidsavbrudd"
 
-#: baruwa/forms/settings.py:236
+#: baruwa/forms/settings.py:245
 msgid "Gunzip Timeout"
 msgstr "Gunzip tidsavbrudd"
 
-#: baruwa/forms/settings.py:238
+#: baruwa/forms/settings.py:247
 msgid "Unrar Timeout"
 msgstr "Bringe orden tidsavbrudd"
 
-#: baruwa/forms/settings.py:240
+#: baruwa/forms/settings.py:249
 msgid "Maximum Archive Depth"
 msgstr "Maksimumsdybden arkiv"
 
-#: baruwa/forms/settings.py:242
+#: baruwa/forms/settings.py:251
 msgid "Find Archives By Content"
 msgstr "Finne arkivene av innhold"
 
-#: baruwa/forms/settings.py:245
+#: baruwa/forms/settings.py:254
 msgid "Unpack Microsoft Documents"
 msgstr "Pakk Microsoft-dokumenter"
 
-#: baruwa/forms/settings.py:248
+#: baruwa/forms/settings.py:257
 msgid "Zip Attachments"
 msgstr "Zip-vedlegg"
 
-#: baruwa/forms/settings.py:251
+#: baruwa/forms/settings.py:260
 msgid "Attachments Zip Filename"
 msgstr "Vedlegg Zip filnavn"
 
-#: baruwa/forms/settings.py:253
+#: baruwa/forms/settings.py:262
 msgid "Attachments Min Total Size To Zip"
 msgstr "Min Total størrelse på filvedlegg å Zip"
 
-#: baruwa/forms/settings.py:255
+#: baruwa/forms/settings.py:264
 msgid "Attachment Extensions Not To Zip"
 msgstr "Vedlegg utvidelser ikke å Zip"
 
-#: baruwa/forms/settings.py:257
+#: baruwa/forms/settings.py:266
 msgid "Add Text Of Doc"
 msgstr "Legge til tekst av Doc"
 
-#: baruwa/forms/settings.py:260
+#: baruwa/forms/settings.py:269
 msgid "Antiword Timeout"
 msgstr "Antiword tidsavbrudd"
 
-#: baruwa/forms/settings.py:262
+#: baruwa/forms/settings.py:271
 msgid "Unzip Maximum Files Per Archive"
 msgstr "Pakk ut maksimalt filer Per arkiv"
 
-#: baruwa/forms/settings.py:264
+#: baruwa/forms/settings.py:273
 msgid "Unzip Maximum File Size"
 msgstr "Pakk ut maksimal filstørrelse"
 
-#: baruwa/forms/settings.py:266
+#: baruwa/forms/settings.py:275
 msgid "Unzip Filenames"
 msgstr "Unzip filnavn"
 
-#: baruwa/forms/settings.py:268
+#: baruwa/forms/settings.py:277
 msgid "Unzip MimeType"
 msgstr "Unzip MimeType"
 
-#: baruwa/forms/settings.py:270
+#: baruwa/forms/settings.py:279
 msgid "Mail Header"
 msgstr "E-postmeldingshode"
 
-#: baruwa/forms/settings.py:272
+#: baruwa/forms/settings.py:281
 msgid "Information Header"
 msgstr "Informasjonshodet"
 
-#: baruwa/forms/settings.py:274
+#: baruwa/forms/settings.py:283
 msgid "Add Envelope From Header"
 msgstr "Legge til konvolutt fra topptekst"
 
-#: baruwa/forms/settings.py:277
+#: baruwa/forms/settings.py:286
 msgid "Add Envelope To Header"
 msgstr "Legge til konvolutt toppteksten"
 
-#: baruwa/forms/settings.py:280
+#: baruwa/forms/settings.py:289
 msgid "Envelope From Header"
 msgstr "Konvolutt fra topptekst"
 
-#: baruwa/forms/settings.py:282
+#: baruwa/forms/settings.py:291
 msgid "Envelope To Header"
 msgstr "Konvolutt-toppteksten"
 
-#: baruwa/forms/settings.py:284
+#: baruwa/forms/settings.py:293
 msgid "ID Header"
 msgstr "ID-topptekst"
 
-#: baruwa/forms/settings.py:286
+#: baruwa/forms/settings.py:295
 msgid "IP Protocol Version Header"
 msgstr "IP-protokollen versjon topptekst"
 
-#: baruwa/forms/settings.py:288
+#: baruwa/forms/settings.py:297
 msgid "Clean Header Value"
 msgstr "Ren hodeverdi"
 
-#: baruwa/forms/settings.py:290
+#: baruwa/forms/settings.py:299
 msgid "Infected Header Value"
 msgstr "Infiserte hodeverdi"
 
-#: baruwa/forms/settings.py:292
+#: baruwa/forms/settings.py:301
 msgid "Disinfected Header Value"
 msgstr "Desinfiseres hodeverdi"
 
-#: baruwa/forms/settings.py:294
+#: baruwa/forms/settings.py:303
 msgid "Information Header Value"
 msgstr "Informasjon hodeverdi"
 
-#: baruwa/forms/settings.py:295
+#: baruwa/forms/settings.py:304
 msgid "Multiple Headers"
 msgstr "Flere hoder"
 
-#: baruwa/forms/settings.py:298
+#: baruwa/forms/settings.py:307
 msgid "Place New Headers At Top Of Message"
 msgstr "Plassere nye hodene på toppen av melding"
 
-#: baruwa/forms/settings.py:303
+#: baruwa/forms/settings.py:312
 msgid "Sign Messages Already Processed"
 msgstr "Tegn meldinger allerede behandlet"
 
-#: baruwa/forms/settings.py:306
+#: baruwa/forms/settings.py:315
 msgid "Allow Multiple HTML Signatures"
 msgstr "Tillate flere HTML-signaturer"
 
-#: baruwa/forms/settings.py:309
+#: baruwa/forms/settings.py:318
 msgid "Dont Sign HTML If Headers Exist"
 msgstr "Dont Registrer deg HTML hvis overskrifter finnes"
 
-#: baruwa/forms/settings.py:310
+#: baruwa/forms/settings.py:319
 msgid "Mark Infected Messages"
 msgstr "Markere infiserte meldinger"
 
-#: baruwa/forms/settings.py:313
+#: baruwa/forms/settings.py:322
 msgid "Mark Unscanned Messages"
 msgstr "Markere ikke kontrollert meldinger"
 
-#: baruwa/forms/settings.py:316
+#: baruwa/forms/settings.py:325
 msgid "Unscanned Header Value"
 msgstr "Ikke kontrollert hodeverdi"
 
-#: baruwa/forms/settings.py:318
+#: baruwa/forms/settings.py:327
 msgid "Remove These Headers"
 msgstr "Fjerne disse hodene"
 
-#: baruwa/forms/settings.py:320
+#: baruwa/forms/settings.py:329
 msgid "Deliver Cleaned Messages"
 msgstr "Levere renset meldinger"
 
-#: baruwa/forms/settings.py:323
+#: baruwa/forms/settings.py:332
 msgid "Scanned Modify Subject"
 msgstr "Skannet redigere emne"
 
-#: baruwa/forms/settings.py:326
+#: baruwa/forms/settings.py:335
 msgid "Scanned Subject Text"
 msgstr "Skannede emneteksten"
 
-#: baruwa/forms/settings.py:328
+#: baruwa/forms/settings.py:337
 msgid "Virus Modify Subject"
 msgstr "Virus endre emnet"
 
-#: baruwa/forms/settings.py:331
+#: baruwa/forms/settings.py:340
 msgid "Virus Subject Text"
 msgstr "Emneteksten for virus"
 
-#: baruwa/forms/settings.py:333
+#: baruwa/forms/settings.py:342
 msgid "Filename Modify Subject"
 msgstr "Filnavn redigere emne"
 
-#: baruwa/forms/settings.py:336
+#: baruwa/forms/settings.py:345
 msgid "Filename Subject Text"
 msgstr "Filnavn emneteksten"
 
-#: baruwa/forms/settings.py:338
+#: baruwa/forms/settings.py:347
 msgid "Content Modify Subject"
 msgstr "Innhold endre emnet"
 
-#: baruwa/forms/settings.py:341
+#: baruwa/forms/settings.py:350
 msgid "Content Subject Text"
 msgstr "Innhold emneteksten"
 
-#: baruwa/forms/settings.py:343
+#: baruwa/forms/settings.py:352
 msgid "Size Modify Subject"
 msgstr "Størrelse endre emnet"
 
-#: baruwa/forms/settings.py:346
+#: baruwa/forms/settings.py:355
 msgid "Size Subject Text"
 msgstr "Emneteksten for størrelse"
 
-#: baruwa/forms/settings.py:348
+#: baruwa/forms/settings.py:357
 msgid "Disarmed Modify Subject"
 msgstr "Avvæpnet redigere emne"
 
-#: baruwa/forms/settings.py:351
+#: baruwa/forms/settings.py:360
 msgid "Disarmed Subject Text"
 msgstr "Avvæpnet emneteksten"
 
-#: baruwa/forms/settings.py:353
+#: baruwa/forms/settings.py:362
 msgid "Phishing Modify Subject"
 msgstr "Phishing redigere emne"
 
-#: baruwa/forms/settings.py:356
+#: baruwa/forms/settings.py:365
 msgid "Phishing Subject Text"
 msgstr "Phishing emneteksten"
 
-#: baruwa/forms/settings.py:358
+#: baruwa/forms/settings.py:367
 msgid "Spam Modify Subject"
 msgstr "Spam redigere emne"
 
-#: baruwa/forms/settings.py:361
+#: baruwa/forms/settings.py:370
 msgid "Spam Subject Text"
 msgstr "Emneteksten for spam"
 
-#: baruwa/forms/settings.py:363
+#: baruwa/forms/settings.py:372
 msgid "High Scoring Spam Modify Subject"
 msgstr "Høy Scoring Spam redigere emne"
 
-#: baruwa/forms/settings.py:366
+#: baruwa/forms/settings.py:375
 msgid "High Scoring Spam Subject Text"
 msgstr "Høy Scoring Spam emneteksten"
 
-#: baruwa/forms/settings.py:368
+#: baruwa/forms/settings.py:377
 msgid "Warning Is Attachment"
 msgstr "Advarsel er vedlegg"
 
-#: baruwa/forms/settings.py:371
+#: baruwa/forms/settings.py:380
 msgid "Attachment Warning Filename"
 msgstr "Navn på vedleggsfil advarsel"
 
-#: baruwa/forms/settings.py:373
+#: baruwa/forms/settings.py:382
 msgid "Attachment Encoding Charset"
 msgstr "Vedlegg koding Charset"
 
-#: baruwa/forms/settings.py:379
+#: baruwa/forms/settings.py:388
 msgid "Virus Scanners"
 msgstr "Virus scannere"
 
-#: baruwa/forms/settings.py:381
+#: baruwa/forms/settings.py:390
 msgid "Virus Scanner Timeout"
 msgstr "Virus skanner-tidsavbrudd"
 
-#: baruwa/forms/settings.py:383
+#: baruwa/forms/settings.py:392
 msgid "Deliver Disinfected Files"
 msgstr "Levere desinfiseres filer"
 
-#: baruwa/forms/settings.py:386
+#: baruwa/forms/settings.py:395
 msgid "Silent Viruses"
 msgstr "Stille virus"
 
-#: baruwa/forms/settings.py:388
+#: baruwa/forms/settings.py:397
 msgid "Still Deliver Silent Viruses"
 msgstr "Fortsatt levere stille virus"
 
-#: baruwa/forms/settings.py:391
+#: baruwa/forms/settings.py:400
 msgid "Non-Forging Viruses"
 msgstr "Ikke-smiing virus"
 
-#: baruwa/forms/settings.py:392
+#: baruwa/forms/settings.py:401
 msgid "Spam-Virus Header"
 msgstr "Spam-Virus topptekst"
 
-#: baruwa/forms/settings.py:394
+#: baruwa/forms/settings.py:403
 msgid "Virus Names Which Are Spam"
 msgstr "Virus navn som spam"
 
-#: baruwa/forms/settings.py:396
+#: baruwa/forms/settings.py:405
 msgid "Block Encrypted Messages"
 msgstr "Blokkere krypterte meldinger"
 
-#: baruwa/forms/settings.py:399
+#: baruwa/forms/settings.py:408
 msgid "Block Unencrypted Messages"
 msgstr "Blokkere ukrypterte meldinger"
 
-#: baruwa/forms/settings.py:402
+#: baruwa/forms/settings.py:411
 msgid "Allow Password-Protected Archives"
 msgstr "Tillate passord-beskyttet arkiver"
 
-#: baruwa/forms/settings.py:403
+#: baruwa/forms/settings.py:412
 msgid "Check Filenames In Password-Protected Archives"
 msgstr "Sjekk filnavn i passord-beskyttet arkiver"
 
-#: baruwa/forms/settings.py:404
+#: baruwa/forms/settings.py:413
 msgid "Clamd Use Threads"
 msgstr "Clamd bruk tråder"
 
-#: baruwa/forms/settings.py:407
+#: baruwa/forms/settings.py:416
 msgid "ClamAV Full Message Scan"
 msgstr "ClamAV Full melding skanning"
 
-#: baruwa/forms/settings.py:410
+#: baruwa/forms/settings.py:419
 msgid "Fpscand Port"
 msgstr "Fpscand Port"
 
-#: baruwa/forms/settings.py:417
+#: baruwa/forms/settings.py:426
 msgid "Allow Partial Messages"
 msgstr "Tillate oppdelte meldinger"
 
-#: baruwa/forms/settings.py:420
+#: baruwa/forms/settings.py:429
 msgid "Allow External Message Bodies"
 msgstr "Tillate ekstern meldingstekster"
 
-#: baruwa/forms/settings.py:423
+#: baruwa/forms/settings.py:432
 msgid "Also Find Numeric Phishing"
 msgstr "Også finne numeriske Phishing"
 
-#: baruwa/forms/settings.py:426
+#: baruwa/forms/settings.py:435
 msgid "Use Stricter Phishing Net"
 msgstr "Bruk strengere Phishing-Net"
 
-#: baruwa/forms/settings.py:429
+#: baruwa/forms/settings.py:438
 msgid "Highlight Phishing Fraud"
 msgstr "Markere Phishing-svindel"
 
-#: baruwa/forms/settings.py:432
+#: baruwa/forms/settings.py:441
 msgid "Allow IFrame Tags"
 msgstr "Tillate IFrame-koder"
 
-#: baruwa/forms/settings.py:435
+#: baruwa/forms/settings.py:444
 msgid "Allow Form Tags"
 msgstr "Tillate skjemakoder"
 
-#: baruwa/forms/settings.py:438
+#: baruwa/forms/settings.py:447
 msgid "Allow Script Tags"
 msgstr "Tillate skriptkodene"
 
-#: baruwa/forms/settings.py:441
+#: baruwa/forms/settings.py:450
 msgid "Allow WebBugs"
 msgstr "Tillat WebBugs"
 
-#: baruwa/forms/settings.py:444
+#: baruwa/forms/settings.py:453
 msgid "Ignored Web Bug Filenames"
 msgstr "Ignorert Web feil filnavn"
 
-#: baruwa/forms/settings.py:446
+#: baruwa/forms/settings.py:455
 msgid "Known Web Bug Servers"
 msgstr "Kjent Bug webservere"
 
-#: baruwa/forms/settings.py:448
+#: baruwa/forms/settings.py:457
 msgid "Web Bug Replacement"
 msgstr "Web Bug erstatning"
 
-#: baruwa/forms/settings.py:450
+#: baruwa/forms/settings.py:459
 msgid "Allow Object Codebase Tags"
 msgstr "Tillate Object Codebase-koder"
 
-#: baruwa/forms/settings.py:453
+#: baruwa/forms/settings.py:462
 msgid "Convert Dangerous HTML To Text"
 msgstr "Konvertere farlig HTML til tekst"
 
-#: baruwa/forms/settings.py:456
+#: baruwa/forms/settings.py:465
 msgid "Convert HTML To Text"
 msgstr "Konvertere HTML til tekst"
 
-#: baruwa/forms/settings.py:459
+#: baruwa/forms/settings.py:468
 msgid "Archives Are"
 msgstr "Arkivene er"
 
-#: baruwa/forms/settings.py:461
+#: baruwa/forms/settings.py:470
 msgid "Allow Filenames"
 msgstr "Tillate filnavn"
 
-#: baruwa/forms/settings.py:462
+#: baruwa/forms/settings.py:471
 msgid "Deny Filenames"
 msgstr "Nekte filnavn"
 
-#: baruwa/forms/settings.py:463
+#: baruwa/forms/settings.py:472
 msgid "Allow Filetypes"
 msgstr "Tillate filtyper"
 
-#: baruwa/forms/settings.py:464
+#: baruwa/forms/settings.py:473
 msgid "Allow File MIME Types"
 msgstr "Tillat fil MIME-typer"
 
-#: baruwa/forms/settings.py:465
+#: baruwa/forms/settings.py:474
 msgid "Deny Filetypes"
 msgstr "Nekte filtyper"
 
-#: baruwa/forms/settings.py:466
+#: baruwa/forms/settings.py:475
 msgid "Deny File MIME Types"
 msgstr "Nekte fil MIME-typer"
 
-#: baruwa/forms/settings.py:467
+#: baruwa/forms/settings.py:476
 msgid "Archives: Allow Filenames"
 msgstr "Arkiver: Tillate filnavn"
 
-#: baruwa/forms/settings.py:468
+#: baruwa/forms/settings.py:477
 msgid "Archives: Deny Filenames"
 msgstr "Arkiver: Nekte filnavn"
 
-#: baruwa/forms/settings.py:469
+#: baruwa/forms/settings.py:478
 msgid "Archives: Allow Filetypes"
 msgstr "Arkiver: Tillate filtyper"
 
-#: baruwa/forms/settings.py:470
+#: baruwa/forms/settings.py:479
 msgid "Archives: Allow File MIME Types"
 msgstr "Arkiver: Tillat fil MIME-typer"
 
-#: baruwa/forms/settings.py:471
+#: baruwa/forms/settings.py:480
 msgid "Archives: Deny Filetypes"
 msgstr "Arkiver: Nekte filtyper"
 
-#: baruwa/forms/settings.py:472
+#: baruwa/forms/settings.py:481
 msgid "Archives: Deny File MIME Types"
 msgstr "Arkiver: Nekte fil MIME-typer"
 
-#: baruwa/forms/settings.py:477
+#: baruwa/forms/settings.py:486
 msgid "Quarantine Infections"
 msgstr "Karantene infeksjoner"
 
-#: baruwa/forms/settings.py:480
+#: baruwa/forms/settings.py:489
 msgid "Quarantine Silent Viruses"
 msgstr "Karantene stille virus"
 
-#: baruwa/forms/settings.py:483
+#: baruwa/forms/settings.py:492
 msgid "Quarantine Modified Body"
 msgstr "Karantene modifisert Body"
 
-#: baruwa/forms/settings.py:486
+#: baruwa/forms/settings.py:495
 msgid "Keep Spam And MCP Archive Clean"
 msgstr "Holde Spam og MCP arkiv ren"
 
-#: baruwa/forms/settings.py:489
+#: baruwa/forms/settings.py:498
 msgid "Hide Incoming Work Dir"
 msgstr "Skjule innkommende arbeid Dir"
 
-#: baruwa/forms/settings.py:492
+#: baruwa/forms/settings.py:501
 msgid "Include Scanner Name In Reports"
 msgstr "Ta skannernavnet i rapporter"
 
-#: baruwa/forms/settings.py:499
+#: baruwa/forms/settings.py:508
 msgid "Notify Senders"
 msgstr "Varsle avsendere"
 
-#: baruwa/forms/settings.py:502
+#: baruwa/forms/settings.py:511
 msgid "Notify Senders Of Viruses"
 msgstr "Varsle avsendere av virus"
 
-#: baruwa/forms/settings.py:505
+#: baruwa/forms/settings.py:514
 msgid "Notify Senders Of Blocked Filenames Or Filetypes"
 msgstr "Varsle avsendere av blokkerte filnavn eller filtyper"
 
-#: baruwa/forms/settings.py:508
+#: baruwa/forms/settings.py:517
 msgid "Notify Senders Of Blocked Size Attachments"
 msgstr "Varsle avsendere av blokkerte størrelse vedlegg"
 
-#: baruwa/forms/settings.py:511
+#: baruwa/forms/settings.py:520
 msgid "Notify Senders Of Other Blocked Content"
 msgstr "Varsle avsendere av andre blokkert innhold"
 
-#: baruwa/forms/settings.py:514
+#: baruwa/forms/settings.py:523
 msgid "Never Notify Senders Of Precedence"
 msgstr "Aldri varsle avsendere av prioritet"
 
-#: baruwa/forms/settings.py:516
+#: baruwa/forms/settings.py:525
 msgid "Send Notices"
 msgstr "Send varsler"
 
-#: baruwa/forms/settings.py:519
+#: baruwa/forms/settings.py:528
 msgid "Notices Include Full Headers"
 msgstr "Merknader inkluderer fullstendige meldingstopptekster."
 
-#: baruwa/forms/settings.py:522
+#: baruwa/forms/settings.py:531
 msgid "Hide Incoming Work Dir in Notices"
 msgstr "Skjule innkommende arbeid Dir i merknader"
 
-#: baruwa/forms/settings.py:525
+#: baruwa/forms/settings.py:534
 msgid "Notice Signature"
 msgstr "Varsel signatur"
 
-#: baruwa/forms/settings.py:527
+#: baruwa/forms/settings.py:536
 msgid "Notices From"
 msgstr "Merknader fra"
 
-#: baruwa/forms/settings.py:529
+#: baruwa/forms/settings.py:538
 msgid "Notices To"
 msgstr "Merknader til"
 
-#: baruwa/forms/settings.py:531
+#: baruwa/forms/settings.py:540
 msgid "Local Postmaster"
 msgstr "Lokale Postmaster"
 
-#: baruwa/forms/settings.py:537
+#: baruwa/forms/settings.py:546
 msgid "Max SpamAssassin Size"
 msgstr "Max SpamAssassin størrelse"
 
-#: baruwa/forms/settings.py:539
+#: baruwa/forms/settings.py:548
 msgid "SpamAssassin Auto Whitelist"
 msgstr "SpamAssassin Auto hviteliste"
 
-#: baruwa/forms/settings.py:542
+#: baruwa/forms/settings.py:551
 msgid "SpamAssassin Timeout"
 msgstr "Tidsavbrudd for SpamAssassin"
 
-#: baruwa/forms/settings.py:544
+#: baruwa/forms/settings.py:553
 msgid "Max SpamAssassin Timeouts"
 msgstr "Max SpamAssassin tidsavbrudd"
 
-#: baruwa/forms/settings.py:546
+#: baruwa/forms/settings.py:555
 msgid "SpamAssassin Timeouts History"
 msgstr "SpamAssassin tidsavbrudd historie"
 
-#: baruwa/forms/settings.py:548
+#: baruwa/forms/settings.py:557
 msgid "Check SpamAssassin If On Spam List"
 msgstr "Sjekk SpamAssassin hvis på Spam-listen"
 
-#: baruwa/forms/settings.py:551
+#: baruwa/forms/settings.py:560
 msgid "Include Binary Attachments In SpamAssassin"
 msgstr "Inkludere binære vedlegg i SpamAssassin"
 
-#: baruwa/forms/settings.py:554
+#: baruwa/forms/settings.py:563
 msgid "Spam Score"
 msgstr "Spam poeng"
 
-#: baruwa/forms/settings.py:557
+#: baruwa/forms/settings.py:566
 msgid "Cache SpamAssassin Results"
 msgstr "Resultatene for cache-SpamAssassin"
 
-#: baruwa/forms/settings.py:560
+#: baruwa/forms/settings.py:569
 msgid "Rebuild Bayes Every"
 msgstr "Gjenoppbygge Bayes hver"
 
-#: baruwa/forms/settings.py:562
+#: baruwa/forms/settings.py:571
 msgid "Wait During Bayes Rebuild"
 msgstr "Vente under Bayes gjenoppbygge"
 
-#: baruwa/forms/settings.py:567
+#: baruwa/forms/settings.py:576
 msgid "Spam List"
 msgstr "Spam-listen"
 
-#: baruwa/forms/settings.py:569
+#: baruwa/forms/settings.py:578
 msgid "Spam Domain List"
 msgstr "Spam domenelisten"
 
-#: baruwa/forms/settings.py:571
+#: baruwa/forms/settings.py:580
 msgid "Spam Lists To Be Spam"
 msgstr "Spam lister som Spam"
 
-#: baruwa/forms/settings.py:573
+#: baruwa/forms/settings.py:582
 msgid "Spam Lists To Reach High Score"
 msgstr "Spam lister for å oppnå høy Score"
 
-#: baruwa/forms/settings.py:575
+#: baruwa/forms/settings.py:584
 msgid "Spam List Timeout"
 msgstr "Tidsavbrudd for spam-listen"
 
-#: baruwa/forms/settings.py:577
+#: baruwa/forms/settings.py:586
 msgid "Max Spam List Timeouts"
 msgstr "Tidsavbrudd for Max Spam-listen"
 
-#: baruwa/forms/settings.py:579
+#: baruwa/forms/settings.py:588
 msgid "Spam List Timeouts History"
 msgstr "Spam listen tidsavbrudd historie"
 
-#: baruwa/forms/settings.py:581
+#: baruwa/forms/settings.py:590
 msgid "Definite Spam Is High Scoring"
 msgstr "Bestemt Spam er høy Scoring"
 
-#: baruwa/forms/settings.py:584
+#: baruwa/forms/settings.py:593
 msgid "Ignore Spam Whitelist If Recipients Exceed"
 msgstr "Ignorere Spam hviteliste Hvis mottakerne overskrider"
 
-#: baruwa/forms/settings.py:586
+#: baruwa/forms/settings.py:595
 msgid "Max Spam Check Size"
 msgstr "Max Spam sjekk størrelse"
 
-#: baruwa/forms/settings.py:588
+#: baruwa/forms/settings.py:597
 msgid "Enable Spam Bounce"
 msgstr "Aktiver Spam Bounce"
 
-#: baruwa/forms/settings.py:591
+#: baruwa/forms/settings.py:600
 msgid "Bounce Spam As Attachment"
 msgstr "Sprette Spam som vedlegg"
 
-#: baruwa/forms/settings.py:594
+#: baruwa/forms/settings.py:603
 msgid "Detailed Spam Report"
 msgstr "Detaljert Spam-rapport"
 
-#: baruwa/forms/settings.py:597
+#: baruwa/forms/settings.py:606
 msgid "Include Scores In SpamAssassin Report"
 msgstr "Inkluder score i SpamAssassin rapport"
 
-#: baruwa/forms/settings.py:600
+#: baruwa/forms/settings.py:609
 msgid "Always Include SpamAssassin Report"
 msgstr "Alltid inkludere SpamAssassin rapport"
 
-#: baruwa/forms/settings.py:603
+#: baruwa/forms/settings.py:612
 msgid "Spam Header"
 msgstr "Spam topptekst"
 
-#: baruwa/forms/settings.py:605
+#: baruwa/forms/settings.py:614
 msgid "Spam Score Header"
 msgstr "Spam Score topptekst"
 
-#: baruwa/forms/settings.py:607
+#: baruwa/forms/settings.py:616
 msgid "Spam Score Number Format"
 msgstr "Spam Score tallformat"
 
-#: baruwa/forms/settings.py:609
+#: baruwa/forms/settings.py:618
 msgid "Spam Score Character"
 msgstr "Spam Score tegn"
 
-#: baruwa/forms/settings.py:611
+#: baruwa/forms/settings.py:620
 msgid "SpamScore Number Instead Of Stars"
 msgstr "SpamScore nummer i stedet for stjerner"
 
-#: baruwa/forms/settings.py:614
+#: baruwa/forms/settings.py:623
 msgid "Minimum Stars If On Spam List"
 msgstr "Minimum stjerner hvis på Spam-listen"
 
-#: baruwa/forms/settings.py:616
+#: baruwa/forms/settings.py:625
 msgid "Use Watermarking"
 msgstr "Bruk vannstandsmerke"
 
-#: baruwa/forms/settings.py:619
+#: baruwa/forms/settings.py:628
 msgid "Add Watermark"
 msgstr "Legge til vannmerke"
 
-#: baruwa/forms/settings.py:622
+#: baruwa/forms/settings.py:631
 msgid "Check Watermarks With No Sender"
 msgstr "Når vannmerker med ingen avsender"
 
-#: baruwa/forms/settings.py:625
+#: baruwa/forms/settings.py:634
 msgid "Treat Invalid Watermarks With No Sender as Spam"
 msgstr "Behandle ugyldig vannmerker med ingen Sender som Spam"
 
-#: baruwa/forms/settings.py:628
+#: baruwa/forms/settings.py:637
 msgid "Check Watermarks To Skip Spam Checks"
 msgstr "Når vannmerker til hopp over Spam sjekker"
 
-#: baruwa/forms/settings.py:631
+#: baruwa/forms/settings.py:640
 msgid "Watermark Secret"
 msgstr "Vannmerke Secret"
 
-#: baruwa/forms/settings.py:633
+#: baruwa/forms/settings.py:642
 msgid "Watermark Lifetime"
 msgstr "Vannmerke levetid"
 
-#: baruwa/forms/settings.py:635
+#: baruwa/forms/settings.py:644
 msgid "Watermark Header"
 msgstr "Vannmerke-topptekst"
 
-#: baruwa/forms/settings.py:641
+#: baruwa/forms/settings.py:650
 msgid "Syslog Facility"
 msgstr "Syslog anlegget"
 
-#: baruwa/forms/settings.py:644
+#: baruwa/forms/settings.py:653
 msgid "Log Speed"
 msgstr "Logg-hastighet"
 
-#: baruwa/forms/settings.py:647
+#: baruwa/forms/settings.py:656
 msgid "Log Spam"
 msgstr "Logg-Spam"
 
-#: baruwa/forms/settings.py:650
+#: baruwa/forms/settings.py:659
 msgid "Log Non Spam"
 msgstr "Logg ikke Spam"
 
-#: baruwa/forms/settings.py:653
+#: baruwa/forms/settings.py:662
 msgid "Log Delivery And Non-Delivery"
 msgstr "Logg levering og manglende levering"
 
-#: baruwa/forms/settings.py:656
+#: baruwa/forms/settings.py:665
 msgid "Log Permitted Filenames"
 msgstr "Logg tillatt filnavn"
 
-#: baruwa/forms/settings.py:659
+#: baruwa/forms/settings.py:668
 msgid "Log Permitted Filetypes"
 msgstr "Logg tillatt filtyper"
 
-#: baruwa/forms/settings.py:662
+#: baruwa/forms/settings.py:671
 msgid "Log Permitted File MIME Types"
 msgstr "Logg tillatt fil MIME-typer"
 
-#: baruwa/forms/settings.py:665
+#: baruwa/forms/settings.py:674
 msgid "Log Silent Viruses"
 msgstr "Logg stille virus"
 
-#: baruwa/forms/settings.py:668
+#: baruwa/forms/settings.py:677
 msgid "Log Dangerous HTML Tags"
 msgstr "Logg farlig HTML-koder"
 
-#: baruwa/forms/settings.py:671
+#: baruwa/forms/settings.py:680
 msgid "Log SpamAssassin Rule Actions"
 msgstr "Logg SpamAssassin-regel handlinger"
 
-#: baruwa/forms/settings.py:690
+#: baruwa/forms/settings.py:699
 msgid "Signature type"
 msgstr "Signatur-type"
 
-#: baruwa/forms/settings.py:694
+#: baruwa/forms/settings.py:700 baruwa/templates/accounts/account.html:194
+#: baruwa/templates/settings/domain_sigs.html:20
+msgid "Text signature"
+msgstr "Tekstsignatur"
+
+#: baruwa/forms/settings.py:701 baruwa/templates/accounts/account.html:194
+#: baruwa/templates/settings/domain_sigs.html:20
+msgid "HTML Signature"
+msgstr "HTML-signatur"
+
+#: baruwa/forms/settings.py:703
 msgid "Signature"
 msgstr "Signatur"
 
@@ -3128,16 +3225,6 @@ msgstr "Ingen alias-adresser konfigurert"
 msgid "Email Signatures"
 msgstr "E-signaturer"
 
-#: baruwa/templates/accounts/account.html:194
-#: baruwa/templates/settings/domain_sigs.html:20
-msgid "Text signature"
-msgstr "Tekstsignatur"
-
-#: baruwa/templates/accounts/account.html:194
-#: baruwa/templates/settings/domain_sigs.html:20
-msgid "HTML Signature"
-msgstr "HTML-signatur"
-
 #: baruwa/templates/accounts/account.html:209
 msgid "No Email Signatures configured"
 msgstr "Ingen e-signaturer konfigurert"
@@ -3526,11 +3613,6 @@ msgstr "Legge til domenealias"
 #: baruwa/templates/domains/addauth.html:17
 msgid "Clear"
 msgstr "Klart"
-
-#: baruwa/templates/domains/addalias.html:18
-#: baruwa/templates/domains/addauth.html:18
-msgid "Add"
-msgstr "Legge til"
 
 #: baruwa/templates/domains/addalias.html:26
 #: baruwa/templates/domains/addalias.html:30

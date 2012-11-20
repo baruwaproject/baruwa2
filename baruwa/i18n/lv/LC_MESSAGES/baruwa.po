@@ -1,22 +1,22 @@
-# Translations template for baruwa.
+# Latvian translations for baruwa.
 # Copyright (C) 2012 Andrew Colin Kissa
 # This file is distributed under the same license as the baruwa project.
-# 
+#
 # Translators:
 msgid ""
 msgstr ""
-"Project-Id-Version: baruwa\n"
+"Project-Id-Version:  baruwa\n"
 "Report-Msgid-Bugs-To: baruwa@lists.baruwa.org\n"
-"POT-Creation-Date: 2012-11-16 17:45+0200\n"
+"POT-Creation-Date: 2012-11-20 09:57+0200\n"
 "PO-Revision-Date: 2012-11-16 18:21+0200\n"
 "Last-Translator: Andrew Colin Kissa <andrew@topdog.za.net>\n"
 "Language-Team: Baruwa Project\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 :"
+" 2)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: auto-translate.py 0.0.1\n"
-"Language: lv\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : 2);\n"
+"Generated-By: Babel 0.9.6\n"
 
 #: baruwa/commands/pdfreport.py:116 baruwa/controllers/reports.py:62
 #: baruwa/templates/reports/index.html:13
@@ -189,10 +189,11 @@ msgstr "Konts ir izdzēsts"
 #: baruwa/controllers/accounts.py:620
 #, python-format
 msgid ""
-"The account: %(a)s and all associated data will be deleted, This action is "
-"not reversible."
+"The account: %(a)s and all associated data will be deleted, This action "
+"is not reversible."
 msgstr ""
-"Konts: %(a)s tiks dzēsti visi saistītie dati, šī darbība ir neatgriezeniska."
+"Konts: %(a)s tiks dzēsti visi saistītie dati, šī darbība ir "
+"neatgriezeniska."
 
 #: baruwa/controllers/accounts.py:677
 msgid "The accounts have been deleted"
@@ -203,7 +204,8 @@ msgid ""
 "The following accounts are about to be deleted, this action is not "
 "reversible, Do you wish to continue ?"
 msgstr ""
-"Šie konti ir jāsvītro, šī darbība ir neatgriezeniska, vai vēlaties turpināt?"
+"Šie konti ir jāsvītro, šī darbība ir neatgriezeniska, vai vēlaties "
+"turpināt?"
 
 #: baruwa/controllers/accounts.py:689 baruwa/controllers/domains.py:384
 msgid "An error occured try again"
@@ -238,8 +240,8 @@ msgstr "Adrese ir izdzēsts"
 
 #: baruwa/controllers/accounts.py:874 baruwa/controllers/organizations.py:358
 msgid ""
-"File uploaded, and is being processed, this page will automatically refresh "
-"to show the status"
+"File uploaded, and is being processed, this page will automatically "
+"refresh to show the status"
 msgstr ""
 "Fails augšupielādēts un tiek apstrādāts, šī lapa tiks atsvaidzināta "
 "automātiski parādīt statusa"
@@ -263,8 +265,7 @@ msgstr "Nav CSV failu augšupielādi, mēģiniet atkal bija"
 #: baruwa/controllers/messages.py:642 baruwa/controllers/organizations.py:380
 #: baruwa/controllers/status.py:497
 msgid "The task status requested has expired or does not exist"
-msgstr ""
-"Pieprasīto uzdevumu statusa termiņš ir beidzies vai_ar ī vairs nepastāv"
+msgstr "Pieprasīto uzdevumu statusa termiņš ir beidzies vai_ar ī vairs nepastāv"
 
 #: baruwa/controllers/accounts.py:906 baruwa/controllers/accounts.py:962
 #: baruwa/controllers/domains.py:875 baruwa/controllers/organizations.py:388
@@ -322,8 +323,8 @@ msgstr "Domēns ir izdzēsts"
 #: baruwa/controllers/domains.py:324
 #, python-format
 msgid ""
-"The domain: %(name)s and all associated data will be deleted, This action "
-"cannot be reversed."
+"The domain: %(name)s and all associated data will be deleted, This action"
+" cannot be reversed."
 msgstr ""
 "Domēns: %(name)s tiks dzēsti visi saistītie dati un šo darbību nevar "
 "atsaukt."
@@ -382,7 +383,8 @@ msgstr "Mērķa serverī ir dzēsts"
 #: baruwa/controllers/domains.py:540
 #, python-format
 msgid ""
-"The destination server: %(s)s will be deleted, This action is not reversible"
+"The destination server: %(s)s will be deleted, This action is not "
+"reversible"
 msgstr "Mērķa serverī: %(s)s tiks dzēsti, šī darbība nav atgriezeniska"
 
 #: baruwa/controllers/domains.py:567
@@ -392,10 +394,9 @@ msgstr "Ir izveidots autentifikācijas iestatījumi"
 #: baruwa/controllers/domains.py:574
 #, python-format
 msgid ""
-"The host %(dest)s already configured for %(auth)s authentication for this "
-"domain"
-msgstr ""
-"Uzņēmēja %(dest)s jau konfigurēta %(auth)s autentifikācijas šim domēnam"
+"The host %(dest)s already configured for %(auth)s authentication for this"
+" domain"
+msgstr "Uzņēmēja %(dest)s jau konfigurēta %(auth)s autentifikācijas šim domēnam"
 
 #: baruwa/controllers/domains.py:607
 msgid "The authentication settings have been updated"
@@ -418,8 +419,7 @@ msgstr "Autentifikācijas iestatījumi ir dzēsti"
 msgid ""
 "The authentication server: %(s)s will be deleted, This action is not "
 "reversible"
-msgstr ""
-"Autentifikācijas serveris: %(s)s tiks dzēsti, šī darbība nav atgriezeniska"
+msgstr "Autentifikācijas serveris: %(s)s tiks dzēsti, šī darbība nav atgriezeniska"
 
 #: baruwa/controllers/domains.py:671
 msgid "The protocol supplied does not use extra settings"
@@ -447,16 +447,16 @@ msgstr "%(proto)s iestatījumi ir izveidoti"
 #: baruwa/controllers/domains.py:729
 msgid "The auth settings already exist, use update to modify them"
 msgstr ""
-"Autentifikācijas iestatījumi jau pastāv, izmantojiet atjaunināšanu, lai tos "
-"modificētu"
+"Autentifikācijas iestatījumi jau pastāv, izmantojiet atjaunināšanu, lai "
+"tos modificētu"
 
 #: baruwa/controllers/domains.py:733
 msgid ""
-"The Radius secret is not be displayed in the form, To update type the new "
-"secret in \"Radius secret\" below."
+"The Radius secret is not be displayed in the form, To update type the new"
+" secret in \"Radius secret\" below."
 msgstr ""
-"Noslēpums ir rādiuss nevar parādīt formā, atjauniniet tipu jaunu noslēpumu "
-"\"Rādiuss Secret\" zemāk."
+"Noslēpums ir rādiuss nevar parādīt formā, atjauniniet tipu jaunu "
+"noslēpumu \"Rādiuss Secret\" zemāk."
 
 #: baruwa/controllers/domains.py:774
 #, python-format
@@ -582,8 +582,7 @@ msgstr "Nezināms"
 msgid ""
 "The message has already been released, you can only use the release link "
 "once"
-msgstr ""
-"Ziņojums jau ir atbrīvota, atbrīvot saiti var izmantot tikai vienu reizi"
+msgstr "Ziņojums jau ir atbrīvota, atbrīvot saiti var izmantot tikai vienu reizi"
 
 #: baruwa/controllers/messages.py:622
 msgid "Processing of message failed"
@@ -821,10 +820,10 @@ msgid "The audit log export failed, try again later"
 msgstr "Audita žurnāla eksportēšana neizdevās, mēģiniet vēlreiz vēlāk"
 
 #: baruwa/forms/accounts.py:32 baruwa/forms/domains.py:34
-#: baruwa/forms/lists.py:33 baruwa/forms/messages.py:27
-#: baruwa/forms/misc.py:28 baruwa/forms/organizations.py:33
-#: baruwa/forms/reports.py:33 baruwa/forms/settings.py:30
-#: baruwa/model/status.py:32 baruwa/tasks/status.py:45
+#: baruwa/forms/lists.py:33 baruwa/forms/messages.py:27 baruwa/forms/misc.py:28
+#: baruwa/forms/organizations.py:33 baruwa/forms/reports.py:33
+#: baruwa/forms/settings.py:30 baruwa/model/status.py:32
+#: baruwa/tasks/status.py:45
 msgid "hi"
 msgstr "čau"
 
@@ -907,8 +906,8 @@ msgstr "Domēni"
 #: baruwa/forms/accounts.py:133 baruwa/forms/domains.py:95
 #: baruwa/forms/domains.py:133 baruwa/forms/domains.py:141
 #: baruwa/forms/domains.py:150 baruwa/forms/domains.py:165
-#: baruwa/forms/organizations.py:61 baruwa/forms/settings.py:165
-#: baruwa/forms/settings.py:696 baruwa/forms/settings.py:701
+#: baruwa/forms/organizations.py:61 baruwa/forms/settings.py:174
+#: baruwa/forms/settings.py:705 baruwa/forms/settings.py:710
 #: baruwa/lib/templates/helpers.py:225 baruwa/templates/settings/index.html:17
 msgid "Enabled"
 msgstr "Iespējota"
@@ -949,7 +948,8 @@ msgid "Quarantine"
 msgstr "Karantīnas"
 
 #: baruwa/forms/domains.py:49 baruwa/forms/messages.py:79
-#: baruwa/model/status.py:41 baruwa/templates/accounts/account.html:175
+#: baruwa/forms/settings.py:133 baruwa/model/status.py:41
+#: baruwa/templates/accounts/account.html:175
 #: baruwa/templates/accounts/account.html:177
 #: baruwa/templates/accounts/account.html:203
 #: baruwa/templates/accounts/deleteaddress.html:17
@@ -1224,8 +1224,7 @@ msgid "Delivery Server address"
 msgstr "Serveru piegādes adrese"
 
 #: baruwa/forms/lists.py:51
-msgid ""
-"Provide either a valid IP, email, Domain address, or IP network or range"
+msgid "Provide either a valid IP, email, Domain address, or IP network or range"
 msgstr ""
 "Nodrošināt vai nu derīga IP, e-pasts, domēna adresi vai IP tīklu vai "
 "diapazonu"
@@ -1322,8 +1321,8 @@ msgstr "Admins"
 msgid "Delete Organization domains"
 msgstr "Dzēst uzņēmuma domēnu"
 
-#: baruwa/forms/organizations.py:60 baruwa/forms/settings.py:161
-#: baruwa/forms/settings.py:301 baruwa/tasks/status.py:298
+#: baruwa/forms/organizations.py:60 baruwa/forms/settings.py:170
+#: baruwa/forms/settings.py:310 baruwa/tasks/status.py:298
 #: baruwa/templates/messages/detail.html:176
 #: baruwa/templates/reports/relays.html:26
 #: baruwa/templates/settings/index.html:16
@@ -1557,803 +1556,899 @@ msgstr "Lūdzu, norādiet derīgu datumu formātā GGGG-MM-DD"
 msgid "Please provide valid time in HH:MM format"
 msgstr "Lūdzu, norādiet derīgu laiku HH: mm formātā"
 
-#: baruwa/forms/settings.py:164
+#: baruwa/forms/settings.py:35 baruwa/forms/settings.py:49
+#: baruwa/forms/settings.py:52
+msgid "Yes"
+msgstr ""
+
+#: baruwa/forms/settings.py:35 baruwa/forms/settings.py:38
+#: baruwa/forms/settings.py:50 baruwa/forms/settings.py:53
+#, fuzzy
+#| msgid "Info"
+msgid "No"
+msgstr "Informācija"
+
+#: baruwa/forms/settings.py:36 baruwa/forms/settings.py:41
+#, fuzzy
+#| msgid "Create"
+msgid "Replace"
+msgstr "Izveidot"
+
+#: baruwa/forms/settings.py:37 baruwa/forms/settings.py:39
+#: baruwa/templates/domains/addalias.html:18
+#: baruwa/templates/domains/addauth.html:18
+msgid "Add"
+msgstr "Pievienot"
+
+#: baruwa/forms/settings.py:40
+msgid "Append"
+msgstr ""
+
+#: baruwa/forms/settings.py:42
+#, fuzzy
+#| msgid "Action not supported"
+msgid "Supported"
+msgstr "Darbība netiek atbalstīta"
+
+#: baruwa/forms/settings.py:43
+msgid "None"
+msgstr ""
+
+#: baruwa/forms/settings.py:44
+#, fuzzy
+#| msgid "Action not supported"
+msgid "Unsupported"
+msgstr "Darbība netiek atbalstīta"
+
+#: baruwa/forms/settings.py:45
+#, fuzzy
+#| msgid "Graph"
+msgid "Alpha"
+msgstr "Graph"
+
+#: baruwa/forms/settings.py:46
+msgid "Beta"
+msgstr ""
+
+#: baruwa/forms/settings.py:47
+msgid "Start"
+msgstr ""
+
+#: baruwa/forms/settings.py:48
+#, fuzzy
+#| msgid "enabled"
+msgid "End"
+msgstr "iespējota"
+
+#: baruwa/forms/settings.py:51
+msgid "Disarm"
+msgstr ""
+
+#: baruwa/forms/settings.py:59
+msgid "Auto detect"
+msgstr ""
+
+#: baruwa/forms/settings.py:132
+#, fuzzy
+#| msgid "does not contain"
+msgid "Do nothing"
+msgstr "nav"
+
+#: baruwa/forms/settings.py:134
+msgid "Flag as spam"
+msgstr ""
+
+#: baruwa/forms/settings.py:135
+msgid "Flag as high spam"
+msgstr ""
+
+#: baruwa/forms/settings.py:173
 msgid "Invalid Domain name or IPv4 address"
 msgstr "Derīgs domēna vārdu vai IPv4 adrese"
 
-#: baruwa/forms/settings.py:170
+#: baruwa/forms/settings.py:179
 msgid "Sitename"
 msgstr "Sitename"
 
-#: baruwa/forms/settings.py:171
+#: baruwa/forms/settings.py:180
 msgid "Your Organisation Name"
 msgstr "Organizācijas nosaukums"
 
-#: baruwa/forms/settings.py:173
+#: baruwa/forms/settings.py:182
 msgid "Organisation website"
 msgstr "Organizācijas mājas lapa"
 
-#: baruwa/forms/settings.py:175
+#: baruwa/forms/settings.py:184
 msgid "Max Children"
 msgstr "Max bērniem"
 
-#: baruwa/forms/settings.py:177
+#: baruwa/forms/settings.py:186
 msgid "Queue Scan Interval"
 msgstr "Rindu skenēšanas intervāls"
 
-#: baruwa/forms/settings.py:179
+#: baruwa/forms/settings.py:188
 msgid "Restart Every"
 msgstr "Restartējiet visas"
 
-#: baruwa/forms/settings.py:181
+#: baruwa/forms/settings.py:190
 msgid "Use Default Rules With Multiple Recipients"
 msgstr "Lietot noklusējuma kārtulas ar vairākiem adresātiem"
 
-#: baruwa/forms/settings.py:184
+#: baruwa/forms/settings.py:193
 msgid "Read IP Address From Received Header"
 msgstr "Nolasīt galveni saņemto IP adresi"
 
-#: baruwa/forms/settings.py:187
+#: baruwa/forms/settings.py:196
 msgid "Debug"
 msgstr "Atkļūdošanas"
 
-#: baruwa/forms/settings.py:190
+#: baruwa/forms/settings.py:199
 msgid "Debug SpamAssassin"
 msgstr "Atkļūdošanas SpamAssassin"
 
-#: baruwa/forms/settings.py:193
+#: baruwa/forms/settings.py:202
 msgid "Deliver In Background"
 msgstr "Nodrošina fona"
 
-#: baruwa/forms/settings.py:196
+#: baruwa/forms/settings.py:205
 msgid "Delivery Method"
 msgstr "Piegādes metode"
 
-#: baruwa/forms/settings.py:199
+#: baruwa/forms/settings.py:208
 msgid "Automatic Syntax Check"
 msgstr "Automātiska sintakses pārbaude"
 
-#: baruwa/forms/settings.py:202
+#: baruwa/forms/settings.py:211
 msgid "Minimum Code Status"
 msgstr "Minimālais koda statusu"
 
-#: baruwa/forms/settings.py:209
+#: baruwa/forms/settings.py:218
 msgid "Max Unscanned Bytes Per Scan"
 msgstr "Max Scan Neskenētie baiti"
 
-#: baruwa/forms/settings.py:211
+#: baruwa/forms/settings.py:220
 msgid "Max Unsafe Bytes Per Scan"
 msgstr "Max Scan nedrošu baiti"
 
-#: baruwa/forms/settings.py:213
+#: baruwa/forms/settings.py:222
 msgid "Max Unscanned Messages Per Scan"
 msgstr "Max Neskenētie ziņojumiem skenēt vienā"
 
-#: baruwa/forms/settings.py:215
+#: baruwa/forms/settings.py:224
 msgid "Max Unsafe Messages Per Scan"
 msgstr "Max nedrošas ziņas par skenēšanu"
 
-#: baruwa/forms/settings.py:217
+#: baruwa/forms/settings.py:226
 msgid "Max Normal Queue Size"
 msgstr "Max Normal rindas lielums"
 
-#: baruwa/forms/settings.py:219
+#: baruwa/forms/settings.py:228
 msgid "Maximum Processing Attempts"
 msgstr "Maksimālais apstrādes mēģinājumiem"
 
-#: baruwa/forms/settings.py:221
+#: baruwa/forms/settings.py:230
 msgid "Maximum Attachments Per Message"
 msgstr "Maksimālais pielikumu katram ziņojumam"
 
-#: baruwa/forms/settings.py:223
+#: baruwa/forms/settings.py:232
 msgid "Expand TNEF"
 msgstr "Izvērsiet TNEF"
 
-#: baruwa/forms/settings.py:226
+#: baruwa/forms/settings.py:235
 msgid "Use TNEF Contents"
 msgstr "Izmantojiet TNEF saturu"
 
-#: baruwa/forms/settings.py:229
+#: baruwa/forms/settings.py:238
 msgid "Deliver Unparsable TNEF"
 msgstr "Neparsējams TNEF piegādāt"
 
-#: baruwa/forms/settings.py:232
+#: baruwa/forms/settings.py:241
 msgid "TNEF Timeout"
 msgstr "TNEF Timeout"
 
-#: baruwa/forms/settings.py:234
+#: baruwa/forms/settings.py:243
 msgid "File Timeout"
 msgstr "Failu Timeout"
 
-#: baruwa/forms/settings.py:236
+#: baruwa/forms/settings.py:245
 msgid "Gunzip Timeout"
 msgstr "Gunzip Timeout"
 
-#: baruwa/forms/settings.py:238
+#: baruwa/forms/settings.py:247
 msgid "Unrar Timeout"
 msgstr "Unrar Timeout"
 
-#: baruwa/forms/settings.py:240
+#: baruwa/forms/settings.py:249
 msgid "Maximum Archive Depth"
 msgstr "Maksimālais dziļums Arhīvs"
 
-#: baruwa/forms/settings.py:242
+#: baruwa/forms/settings.py:251
 msgid "Find Archives By Content"
 msgstr "Atrast arhīvā pēc satura"
 
-#: baruwa/forms/settings.py:245
+#: baruwa/forms/settings.py:254
 msgid "Unpack Microsoft Documents"
 msgstr "Izkravāt Microsoft dokumenti"
 
-#: baruwa/forms/settings.py:248
+#: baruwa/forms/settings.py:257
 msgid "Zip Attachments"
 msgstr "Pielikumi zip"
 
-#: baruwa/forms/settings.py:251
+#: baruwa/forms/settings.py:260
 msgid "Attachments Zip Filename"
 msgstr "Pielikumi Zip faila nosaukums"
 
-#: baruwa/forms/settings.py:253
+#: baruwa/forms/settings.py:262
 msgid "Attachments Min Total Size To Zip"
 msgstr "Pielikumi Zip Min kopā izmērs"
 
-#: baruwa/forms/settings.py:255
+#: baruwa/forms/settings.py:264
 msgid "Attachment Extensions Not To Zip"
 msgstr "Pielikumu papildinājumi nav Zip"
 
-#: baruwa/forms/settings.py:257
+#: baruwa/forms/settings.py:266
 msgid "Add Text Of Doc"
 msgstr "Pievienot tekstu Doc"
 
-#: baruwa/forms/settings.py:260
+#: baruwa/forms/settings.py:269
 msgid "Antiword Timeout"
 msgstr "Antiword Timeout"
 
-#: baruwa/forms/settings.py:262
+#: baruwa/forms/settings.py:271
 msgid "Unzip Maximum Files Per Archive"
 msgstr "Atarhivējiet maksimālo failu uz arhīva"
 
-#: baruwa/forms/settings.py:264
+#: baruwa/forms/settings.py:273
 msgid "Unzip Maximum File Size"
 msgstr "Atarhivējiet maksimālais faila lielums"
 
-#: baruwa/forms/settings.py:266
+#: baruwa/forms/settings.py:275
 msgid "Unzip Filenames"
 msgstr "Atarhivējiet failu nosaukumus"
 
-#: baruwa/forms/settings.py:268
+#: baruwa/forms/settings.py:277
 msgid "Unzip MimeType"
 msgstr "Atarhivējiet, MIMEType = %"
 
-#: baruwa/forms/settings.py:270
+#: baruwa/forms/settings.py:279
 msgid "Mail Header"
 msgstr "Pasta galvenes"
 
-#: baruwa/forms/settings.py:272
+#: baruwa/forms/settings.py:281
 msgid "Information Header"
 msgstr "Galvenes informācija"
 
-#: baruwa/forms/settings.py:274
+#: baruwa/forms/settings.py:283
 msgid "Add Envelope From Header"
 msgstr "Pievieno aploksni no virsraksta"
 
-#: baruwa/forms/settings.py:277
+#: baruwa/forms/settings.py:286
 msgid "Add Envelope To Header"
 msgstr "Galvenei pievienot aploksnes"
 
-#: baruwa/forms/settings.py:280
+#: baruwa/forms/settings.py:289
 msgid "Envelope From Header"
 msgstr "Aploksni no galvenes"
 
-#: baruwa/forms/settings.py:282
+#: baruwa/forms/settings.py:291
 msgid "Envelope To Header"
 msgstr "Aploksni, lai Header"
 
-#: baruwa/forms/settings.py:284
+#: baruwa/forms/settings.py:293
 msgid "ID Header"
 msgstr "ID Header"
 
-#: baruwa/forms/settings.py:286
+#: baruwa/forms/settings.py:295
 msgid "IP Protocol Version Header"
 msgstr "IP protokola versijas virsraksta"
 
-#: baruwa/forms/settings.py:288
+#: baruwa/forms/settings.py:297
 msgid "Clean Header Value"
 msgstr "Iesākuma vērtību tīru"
 
-#: baruwa/forms/settings.py:290
+#: baruwa/forms/settings.py:299
 msgid "Infected Header Value"
 msgstr "Iesākuma vērtību inficētie"
 
-#: baruwa/forms/settings.py:292
+#: baruwa/forms/settings.py:301
 msgid "Disinfected Header Value"
 msgstr "Dezinficēts iesākuma vērtība"
 
-#: baruwa/forms/settings.py:294
+#: baruwa/forms/settings.py:303
 msgid "Information Header Value"
 msgstr "Iesākuma vērtību informāciju"
 
-#: baruwa/forms/settings.py:295
+#: baruwa/forms/settings.py:304
 msgid "Multiple Headers"
 msgstr "Vairākas galvenes"
 
-#: baruwa/forms/settings.py:298
+#: baruwa/forms/settings.py:307
 msgid "Place New Headers At Top Of Message"
 msgstr "Vieta jaunās galvenes ziņojuma augšdaļā"
 
-#: baruwa/forms/settings.py:303
+#: baruwa/forms/settings.py:312
 msgid "Sign Messages Already Processed"
 msgstr "Parakstīt jau apstrādāti ziņojumi"
 
-#: baruwa/forms/settings.py:306
+#: baruwa/forms/settings.py:315
 msgid "Allow Multiple HTML Signatures"
 msgstr "Atļaut HTML vairākus parakstus"
 
-#: baruwa/forms/settings.py:309
+#: baruwa/forms/settings.py:318
 msgid "Dont Sign HTML If Headers Exist"
 msgstr "Dont zīme HTML vai galvenēm ir"
 
-#: baruwa/forms/settings.py:310
+#: baruwa/forms/settings.py:319
 msgid "Mark Infected Messages"
 msgstr "Atzīmētu inficēto ziņojumi"
 
-#: baruwa/forms/settings.py:313
+#: baruwa/forms/settings.py:322
 msgid "Mark Unscanned Messages"
 msgstr "Neskenētie ziņojumu atzīmēšana"
 
-#: baruwa/forms/settings.py:316
+#: baruwa/forms/settings.py:325
 msgid "Unscanned Header Value"
 msgstr "Neskenētie iesākuma vērtība"
 
-#: baruwa/forms/settings.py:318
+#: baruwa/forms/settings.py:327
 msgid "Remove These Headers"
 msgstr "Noņemt šīs galvenes"
 
-#: baruwa/forms/settings.py:320
+#: baruwa/forms/settings.py:329
 msgid "Deliver Cleaned Messages"
 msgstr "Nogādāt attīrīti ziņojumus"
 
-#: baruwa/forms/settings.py:323
+#: baruwa/forms/settings.py:332
 msgid "Scanned Modify Subject"
 msgstr "Pārlaida skatienu mainīt tematu"
 
-#: baruwa/forms/settings.py:326
+#: baruwa/forms/settings.py:335
 msgid "Scanned Subject Text"
 msgstr "Skenētu tekstu tēmas"
 
-#: baruwa/forms/settings.py:328
+#: baruwa/forms/settings.py:337
 msgid "Virus Modify Subject"
 msgstr "Vīrusu mainīt tematu"
 
-#: baruwa/forms/settings.py:331
+#: baruwa/forms/settings.py:340
 msgid "Virus Subject Text"
 msgstr "Vīrusu tēmas teksts"
 
-#: baruwa/forms/settings.py:333
+#: baruwa/forms/settings.py:342
 msgid "Filename Modify Subject"
 msgstr "Faila nosaukumu mainīt tematu"
 
-#: baruwa/forms/settings.py:336
+#: baruwa/forms/settings.py:345
 msgid "Filename Subject Text"
 msgstr "Teksta faila nosaukums tēma"
 
-#: baruwa/forms/settings.py:338
+#: baruwa/forms/settings.py:347
 msgid "Content Modify Subject"
 msgstr "Saturu mainīt tematu"
 
-#: baruwa/forms/settings.py:341
+#: baruwa/forms/settings.py:350
 msgid "Content Subject Text"
 msgstr "Satura tēmas teksts"
 
-#: baruwa/forms/settings.py:343
+#: baruwa/forms/settings.py:352
 msgid "Size Modify Subject"
 msgstr "Izmēru mainīt tematu"
 
-#: baruwa/forms/settings.py:346
+#: baruwa/forms/settings.py:355
 msgid "Size Subject Text"
 msgstr "Izmēra tēmas teksts"
 
-#: baruwa/forms/settings.py:348
+#: baruwa/forms/settings.py:357
 msgid "Disarmed Modify Subject"
 msgstr "Atslēdza mainīt tematu"
 
-#: baruwa/forms/settings.py:351
+#: baruwa/forms/settings.py:360
 msgid "Disarmed Subject Text"
 msgstr "Atbruņoti tēmas teksts"
 
-#: baruwa/forms/settings.py:353
+#: baruwa/forms/settings.py:362
 msgid "Phishing Modify Subject"
 msgstr "Pikšķerēšanas mainīt tematu"
 
-#: baruwa/forms/settings.py:356
+#: baruwa/forms/settings.py:365
 msgid "Phishing Subject Text"
 msgstr "Phishing tēmas teksts"
 
-#: baruwa/forms/settings.py:358
+#: baruwa/forms/settings.py:367
 msgid "Spam Modify Subject"
 msgstr "Spam mainīt tematu"
 
-#: baruwa/forms/settings.py:361
+#: baruwa/forms/settings.py:370
 msgid "Spam Subject Text"
 msgstr "Surogātpasta tēmas teksts"
 
-#: baruwa/forms/settings.py:363
+#: baruwa/forms/settings.py:372
 msgid "High Scoring Spam Modify Subject"
 msgstr "Augstu punktu skaitu surogātpasta mainīt tematu"
 
-#: baruwa/forms/settings.py:366
+#: baruwa/forms/settings.py:375
 msgid "High Scoring Spam Subject Text"
 msgstr "Augstu punktu skaitu surogātpasta tēmas teksts"
 
-#: baruwa/forms/settings.py:368
+#: baruwa/forms/settings.py:377
 msgid "Warning Is Attachment"
 msgstr "Brīdinājums ir pielikums"
 
-#: baruwa/forms/settings.py:371
+#: baruwa/forms/settings.py:380
 msgid "Attachment Warning Filename"
 msgstr "Brīdinājums faila pielikumu"
 
-#: baruwa/forms/settings.py:373
+#: baruwa/forms/settings.py:382
 msgid "Attachment Encoding Charset"
 msgstr "Pielikumu kodējumu Charset"
 
-#: baruwa/forms/settings.py:379
+#: baruwa/forms/settings.py:388
 msgid "Virus Scanners"
 msgstr "Vīrusu skeneri"
 
-#: baruwa/forms/settings.py:381
+#: baruwa/forms/settings.py:390
 msgid "Virus Scanner Timeout"
 msgstr "Vīrusu skenera taimauts"
 
-#: baruwa/forms/settings.py:383
+#: baruwa/forms/settings.py:392
 msgid "Deliver Disinfected Files"
 msgstr "Piegādāt dezinficēt failu"
 
-#: baruwa/forms/settings.py:386
+#: baruwa/forms/settings.py:395
 msgid "Silent Viruses"
 msgstr "Klusais vīrusi"
 
-#: baruwa/forms/settings.py:388
+#: baruwa/forms/settings.py:397
 msgid "Still Deliver Silent Viruses"
 msgstr "Joprojām nogādātu vīrusus klusums"
 
-#: baruwa/forms/settings.py:391
+#: baruwa/forms/settings.py:400
 msgid "Non-Forging Viruses"
 msgstr "Kalšanas vīrusi"
 
-#: baruwa/forms/settings.py:392
+#: baruwa/forms/settings.py:401
 msgid "Spam-Virus Header"
 msgstr "Spam Virus galvenes"
 
-#: baruwa/forms/settings.py:394
+#: baruwa/forms/settings.py:403
 msgid "Virus Names Which Are Spam"
 msgstr "Vīrusu nosaukumi, kuri ir surogātpasts"
 
-#: baruwa/forms/settings.py:396
+#: baruwa/forms/settings.py:405
 msgid "Block Encrypted Messages"
 msgstr "Bloķēt šifrētus ziņojumus"
 
-#: baruwa/forms/settings.py:399
+#: baruwa/forms/settings.py:408
 msgid "Block Unencrypted Messages"
 msgstr "Bloķēt ziņojumus, kas šifrēti"
 
-#: baruwa/forms/settings.py:402
+#: baruwa/forms/settings.py:411
 msgid "Allow Password-Protected Archives"
 msgstr "Atļaut paroli aizsargātus arhīvus"
 
-#: baruwa/forms/settings.py:403
+#: baruwa/forms/settings.py:412
 msgid "Check Filenames In Password-Protected Archives"
 msgstr "Pārbaudiet failu nosaukumus ar paroli aizsargātus arhīvus"
 
-#: baruwa/forms/settings.py:404
+#: baruwa/forms/settings.py:413
 msgid "Clamd Use Threads"
 msgstr "Izmantojiet clamd Threads"
 
-#: baruwa/forms/settings.py:407
+#: baruwa/forms/settings.py:416
 msgid "ClamAV Full Message Scan"
 msgstr "ClamAV pilnu ziņojumu skenēšana"
 
-#: baruwa/forms/settings.py:410
+#: baruwa/forms/settings.py:419
 msgid "Fpscand Port"
 msgstr "Fpscand Port"
 
-#: baruwa/forms/settings.py:417
+#: baruwa/forms/settings.py:426
 msgid "Allow Partial Messages"
 msgstr "Atļaut daļēju ziņojumus"
 
-#: baruwa/forms/settings.py:420
+#: baruwa/forms/settings.py:429
 msgid "Allow External Message Bodies"
 msgstr "Atļautu ārējo ziņojumu pamatteksti"
 
-#: baruwa/forms/settings.py:423
+#: baruwa/forms/settings.py:432
 msgid "Also Find Numeric Phishing"
 msgstr "Arī atrodiet skaitliskās pikšķerēšanas"
 
-#: baruwa/forms/settings.py:426
+#: baruwa/forms/settings.py:435
 msgid "Use Stricter Phishing Net"
 msgstr "Izmantot stingrākus Phishing neto"
 
-#: baruwa/forms/settings.py:429
+#: baruwa/forms/settings.py:438
 msgid "Highlight Phishing Fraud"
 msgstr "Izcelt Phishing krāpšanas"
 
-#: baruwa/forms/settings.py:432
+#: baruwa/forms/settings.py:441
 msgid "Allow IFrame Tags"
 msgstr "Atļaut IFrame tagus"
 
-#: baruwa/forms/settings.py:435
+#: baruwa/forms/settings.py:444
 msgid "Allow Form Tags"
 msgstr "Atļaut formas tagus"
 
-#: baruwa/forms/settings.py:438
+#: baruwa/forms/settings.py:447
 msgid "Allow Script Tags"
 msgstr "Atļaut skriptu tagus"
 
-#: baruwa/forms/settings.py:441
+#: baruwa/forms/settings.py:450
 msgid "Allow WebBugs"
 msgstr "Atļaut WebBugs"
 
-#: baruwa/forms/settings.py:444
+#: baruwa/forms/settings.py:453
 msgid "Ignored Web Bug Filenames"
 msgstr "Ignorēt kļūdu tīmekļa failu nosaukumus"
 
-#: baruwa/forms/settings.py:446
+#: baruwa/forms/settings.py:455
 msgid "Known Web Bug Servers"
 msgstr "Zināms Bug Web serveriem"
 
-#: baruwa/forms/settings.py:448
+#: baruwa/forms/settings.py:457
 msgid "Web Bug Replacement"
 msgstr "Web kļūda Nomaiņa"
 
-#: baruwa/forms/settings.py:450
+#: baruwa/forms/settings.py:459
 msgid "Allow Object Codebase Tags"
 msgstr "Atļaut objektu Codebase tagus"
 
-#: baruwa/forms/settings.py:453
+#: baruwa/forms/settings.py:462
 msgid "Convert Dangerous HTML To Text"
 msgstr "Pārvērst bīstamu HTML tekstu"
 
-#: baruwa/forms/settings.py:456
+#: baruwa/forms/settings.py:465
 msgid "Convert HTML To Text"
 msgstr "Pārvērst HTML tekstu"
 
-#: baruwa/forms/settings.py:459
+#: baruwa/forms/settings.py:468
 msgid "Archives Are"
 msgstr "Arhīvi ir"
 
-#: baruwa/forms/settings.py:461
+#: baruwa/forms/settings.py:470
 msgid "Allow Filenames"
 msgstr "Atļaut failu nosaukumus"
 
-#: baruwa/forms/settings.py:462
+#: baruwa/forms/settings.py:471
 msgid "Deny Filenames"
 msgstr "Aizliegt faila nosaukumus"
 
-#: baruwa/forms/settings.py:463
+#: baruwa/forms/settings.py:472
 msgid "Allow Filetypes"
 msgstr "Atļaut Filetypes"
 
-#: baruwa/forms/settings.py:464
+#: baruwa/forms/settings.py:473
 msgid "Allow File MIME Types"
 msgstr "Atļaut failu MIME tipi"
 
-#: baruwa/forms/settings.py:465
+#: baruwa/forms/settings.py:474
 msgid "Deny Filetypes"
 msgstr "Noliegt Filetypes"
 
-#: baruwa/forms/settings.py:466
+#: baruwa/forms/settings.py:475
 msgid "Deny File MIME Types"
 msgstr "Aizliegt faila MIME tipi"
 
-#: baruwa/forms/settings.py:467
+#: baruwa/forms/settings.py:476
 msgid "Archives: Allow Filenames"
 msgstr "Arhīvs: Atļaut failu nosaukumus"
 
-#: baruwa/forms/settings.py:468
+#: baruwa/forms/settings.py:477
 msgid "Archives: Deny Filenames"
 msgstr "Arhīvs: Noliegt failu nosaukumus"
 
-#: baruwa/forms/settings.py:469
+#: baruwa/forms/settings.py:478
 msgid "Archives: Allow Filetypes"
 msgstr "Arhīvs: Atļaut Filetypes"
 
-#: baruwa/forms/settings.py:470
+#: baruwa/forms/settings.py:479
 msgid "Archives: Allow File MIME Types"
 msgstr "Arhīvs: Atļaut failu MIME tipi"
 
-#: baruwa/forms/settings.py:471
+#: baruwa/forms/settings.py:480
 msgid "Archives: Deny Filetypes"
 msgstr "Arhīvs: Noliegt Filetypes"
 
-#: baruwa/forms/settings.py:472
+#: baruwa/forms/settings.py:481
 msgid "Archives: Deny File MIME Types"
 msgstr "Arhīvs: Noliegt MIME tipu failus"
 
-#: baruwa/forms/settings.py:477
+#: baruwa/forms/settings.py:486
 msgid "Quarantine Infections"
 msgstr "Karantīnas infekciju"
 
-#: baruwa/forms/settings.py:480
+#: baruwa/forms/settings.py:489
 msgid "Quarantine Silent Viruses"
 msgstr "Klusais karantīnas vīrusi"
 
-#: baruwa/forms/settings.py:483
+#: baruwa/forms/settings.py:492
 msgid "Quarantine Modified Body"
 msgstr "Karantīnas modificētā organismā"
 
-#: baruwa/forms/settings.py:486
+#: baruwa/forms/settings.py:495
 msgid "Keep Spam And MCP Archive Clean"
 msgstr "Uzturēt tīru surogātpastu un MCP Arhīvs"
 
-#: baruwa/forms/settings.py:489
+#: baruwa/forms/settings.py:498
 msgid "Hide Incoming Work Dir"
 msgstr "Nerādīt ienākošo darbu Dir"
 
-#: baruwa/forms/settings.py:492
+#: baruwa/forms/settings.py:501
 msgid "Include Scanner Name In Reports"
 msgstr "Skenera nosaukuma iekļaut atskaitēs"
 
-#: baruwa/forms/settings.py:499
+#: baruwa/forms/settings.py:508
 msgid "Notify Senders"
 msgstr "Informēt sūtītājus"
 
-#: baruwa/forms/settings.py:502
+#: baruwa/forms/settings.py:511
 msgid "Notify Senders Of Viruses"
 msgstr "Informēt sūtītājus no vīrusiem"
 
-#: baruwa/forms/settings.py:505
+#: baruwa/forms/settings.py:514
 msgid "Notify Senders Of Blocked Filenames Or Filetypes"
 msgstr "Informē sūtītāju bloķēto failu nosaukumus vai Filetypes"
 
-#: baruwa/forms/settings.py:508
+#: baruwa/forms/settings.py:517
 msgid "Notify Senders Of Blocked Size Attachments"
 msgstr "Informē sūtītāju bloķēto izmēra pielikumus"
 
-#: baruwa/forms/settings.py:511
+#: baruwa/forms/settings.py:520
 msgid "Notify Senders Of Other Blocked Content"
 msgstr "Informē citu sūtītāju bloķēto saturu"
 
-#: baruwa/forms/settings.py:514
+#: baruwa/forms/settings.py:523
 msgid "Never Notify Senders Of Precedence"
 msgstr "Prioritāte sūtītājiem nekad neziņot"
 
-#: baruwa/forms/settings.py:516
+#: baruwa/forms/settings.py:525
 msgid "Send Notices"
 msgstr "Nosūtīt paziņojumus"
 
-#: baruwa/forms/settings.py:519
+#: baruwa/forms/settings.py:528
 msgid "Notices Include Full Headers"
 msgstr "Paziņojumi ietver pilnu galvenes"
 
-#: baruwa/forms/settings.py:522
+#: baruwa/forms/settings.py:531
 msgid "Hide Incoming Work Dir in Notices"
 msgstr "Nerādīt ienākošo darbu Dir paziņojumi"
 
-#: baruwa/forms/settings.py:525
+#: baruwa/forms/settings.py:534
 msgid "Notice Signature"
 msgstr "Paziņojumu paraksta"
 
-#: baruwa/forms/settings.py:527
+#: baruwa/forms/settings.py:536
 msgid "Notices From"
 msgstr "Paziņojumus no"
 
-#: baruwa/forms/settings.py:529
+#: baruwa/forms/settings.py:538
 msgid "Notices To"
 msgstr "Paziņojumi"
 
-#: baruwa/forms/settings.py:531
+#: baruwa/forms/settings.py:540
 msgid "Local Postmaster"
 msgstr "Lokālā pasta pārzinis"
 
-#: baruwa/forms/settings.py:537
+#: baruwa/forms/settings.py:546
 msgid "Max SpamAssassin Size"
 msgstr "SpamAssassin maksimālais lielums"
 
-#: baruwa/forms/settings.py:539
+#: baruwa/forms/settings.py:548
 msgid "SpamAssassin Auto Whitelist"
 msgstr "SpamAssassin automātiski Whitelist"
 
-#: baruwa/forms/settings.py:542
+#: baruwa/forms/settings.py:551
 msgid "SpamAssassin Timeout"
 msgstr "SpamAssassin Timeout"
 
-#: baruwa/forms/settings.py:544
+#: baruwa/forms/settings.py:553
 msgid "Max SpamAssassin Timeouts"
 msgstr "Max SpamAssassin taimauti"
 
-#: baruwa/forms/settings.py:546
+#: baruwa/forms/settings.py:555
 msgid "SpamAssassin Timeouts History"
 msgstr "SpamAssassin taimauti vēsture"
 
-#: baruwa/forms/settings.py:548
+#: baruwa/forms/settings.py:557
 msgid "Check SpamAssassin If On Spam List"
 msgstr "Pārbaudiet SpamAssassin ja surogātpasta sarakstam"
 
-#: baruwa/forms/settings.py:551
+#: baruwa/forms/settings.py:560
 msgid "Include Binary Attachments In SpamAssassin"
 msgstr "Bināri pielikumi jāiekļauj SpamAssassin"
 
-#: baruwa/forms/settings.py:554
+#: baruwa/forms/settings.py:563
 msgid "Spam Score"
 msgstr "Surogātpasta rādītājs"
 
-#: baruwa/forms/settings.py:557
+#: baruwa/forms/settings.py:566
 msgid "Cache SpamAssassin Results"
 msgstr "Kešatmiņas SpamAssassin rezultāti"
 
-#: baruwa/forms/settings.py:560
+#: baruwa/forms/settings.py:569
 msgid "Rebuild Bayes Every"
 msgstr "Atjaunot Bayes ik"
 
-#: baruwa/forms/settings.py:562
+#: baruwa/forms/settings.py:571
 msgid "Wait During Bayes Rebuild"
 msgstr "Gaidīšanas laikā Bayes atjaunot"
 
-#: baruwa/forms/settings.py:567
+#: baruwa/forms/settings.py:576
 msgid "Spam List"
 msgstr "Surogātpasta sarakstam"
 
-#: baruwa/forms/settings.py:569
+#: baruwa/forms/settings.py:578
 msgid "Spam Domain List"
 msgstr "Domēnu saraksts surogātpasta"
 
-#: baruwa/forms/settings.py:571
+#: baruwa/forms/settings.py:580
 msgid "Spam Lists To Be Spam"
 msgstr "Spam sarakstus par surogātpastu"
 
-#: baruwa/forms/settings.py:573
+#: baruwa/forms/settings.py:582
 msgid "Spam Lists To Reach High Score"
 msgstr "Spam sarakstus, lai sasniegtu rekordu"
 
-#: baruwa/forms/settings.py:575
+#: baruwa/forms/settings.py:584
 msgid "Spam List Timeout"
 msgstr "Spam sarakstu Timeout"
 
-#: baruwa/forms/settings.py:577
+#: baruwa/forms/settings.py:586
 msgid "Max Spam List Timeouts"
 msgstr "Max Spam sarakstu taimauti"
 
-#: baruwa/forms/settings.py:579
+#: baruwa/forms/settings.py:588
 msgid "Spam List Timeouts History"
 msgstr "Spam sarakstu taimauti vēsture"
 
-#: baruwa/forms/settings.py:581
+#: baruwa/forms/settings.py:590
 msgid "Definite Spam Is High Scoring"
 msgstr "Noteikts surogātpasts ir augsta skoringa"
 
-#: baruwa/forms/settings.py:584
+#: baruwa/forms/settings.py:593
 msgid "Ignore Spam Whitelist If Recipients Exceed"
 msgstr "Spam Whitelist ignorēt, ja saņēmēji, kas pārsniedz"
 
-#: baruwa/forms/settings.py:586
+#: baruwa/forms/settings.py:595
 msgid "Max Spam Check Size"
 msgstr "Max Spam izvēles izmēru"
 
-#: baruwa/forms/settings.py:588
+#: baruwa/forms/settings.py:597
 msgid "Enable Spam Bounce"
 msgstr "Iespējot mēstuļu Atlekšanas"
 
-#: baruwa/forms/settings.py:591
+#: baruwa/forms/settings.py:600
 msgid "Bounce Spam As Attachment"
 msgstr "Atlekšanas surogātpasta kā pielikumu"
 
-#: baruwa/forms/settings.py:594
+#: baruwa/forms/settings.py:603
 msgid "Detailed Spam Report"
 msgstr "Spam Detalizēta atskaite"
 
-#: baruwa/forms/settings.py:597
+#: baruwa/forms/settings.py:606
 msgid "Include Scores In SpamAssassin Report"
 msgstr "SpamAssassin atskaitē iekļaut rādītājus"
 
-#: baruwa/forms/settings.py:600
+#: baruwa/forms/settings.py:609
 msgid "Always Include SpamAssassin Report"
 msgstr "Vienmēr ietver SpamAssassin pārskats"
 
-#: baruwa/forms/settings.py:603
+#: baruwa/forms/settings.py:612
 msgid "Spam Header"
 msgstr "Spam galvenes"
 
-#: baruwa/forms/settings.py:605
+#: baruwa/forms/settings.py:614
 msgid "Spam Score Header"
 msgstr "Surogātpasta rādītājs galvenes"
 
-#: baruwa/forms/settings.py:607
+#: baruwa/forms/settings.py:616
 msgid "Spam Score Number Format"
 msgstr "Spam rezultāts skaitļu formātu"
 
-#: baruwa/forms/settings.py:609
+#: baruwa/forms/settings.py:618
 msgid "Spam Score Character"
 msgstr "Surogātpasta rādītājs rakstzīmi"
 
-#: baruwa/forms/settings.py:611
+#: baruwa/forms/settings.py:620
 msgid "SpamScore Number Instead Of Stars"
 msgstr "SpamScore skaitlis, nevis zvaigznes"
 
-#: baruwa/forms/settings.py:614
+#: baruwa/forms/settings.py:623
 msgid "Minimum Stars If On Spam List"
 msgstr "Minimālais zvaigznes, ja par surogātpasta sarakstam"
 
-#: baruwa/forms/settings.py:616
+#: baruwa/forms/settings.py:625
 msgid "Use Watermarking"
 msgstr "Izmantojiet ūdenszīmēm"
 
-#: baruwa/forms/settings.py:619
+#: baruwa/forms/settings.py:628
 msgid "Add Watermark"
 msgstr "Ūdenszīmes pievienošana"
 
-#: baruwa/forms/settings.py:622
+#: baruwa/forms/settings.py:631
 msgid "Check Watermarks With No Sender"
 msgstr "Pārbaudiet ūdenszīmes No sūtītāja"
 
-#: baruwa/forms/settings.py:625
+#: baruwa/forms/settings.py:634
 msgid "Treat Invalid Watermarks With No Sender as Spam"
 msgstr "Nederīgs ūdenszīmes No sūtītāja uzskatīt Spam"
 
-#: baruwa/forms/settings.py:628
+#: baruwa/forms/settings.py:637
 msgid "Check Watermarks To Skip Spam Checks"
 msgstr "Pārbaudiet izlaist mēstuļu pārbaudes ūdenszīmes"
 
-#: baruwa/forms/settings.py:631
+#: baruwa/forms/settings.py:640
 msgid "Watermark Secret"
 msgstr "Ūdenszīme noslēpums"
 
-#: baruwa/forms/settings.py:633
+#: baruwa/forms/settings.py:642
 msgid "Watermark Lifetime"
 msgstr "Ūdenszīme kalpošanas laiku"
 
-#: baruwa/forms/settings.py:635
+#: baruwa/forms/settings.py:644
 msgid "Watermark Header"
 msgstr "Ūdenszīmes galvenē"
 
-#: baruwa/forms/settings.py:641
+#: baruwa/forms/settings.py:650
 msgid "Syslog Facility"
 msgstr "Syslog iekārtas"
 
-#: baruwa/forms/settings.py:644
+#: baruwa/forms/settings.py:653
 msgid "Log Speed"
 msgstr "Reģistrācijas ātrums"
 
-#: baruwa/forms/settings.py:647
+#: baruwa/forms/settings.py:656
 msgid "Log Spam"
 msgstr "Log Spam"
 
-#: baruwa/forms/settings.py:650
+#: baruwa/forms/settings.py:659
 msgid "Log Non Spam"
 msgstr "Žurnālā nav Spam"
 
-#: baruwa/forms/settings.py:653
+#: baruwa/forms/settings.py:662
 msgid "Log Delivery And Non-Delivery"
 msgstr "Žurnālu, kas nav piegādi"
 
-#: baruwa/forms/settings.py:656
+#: baruwa/forms/settings.py:665
 msgid "Log Permitted Filenames"
 msgstr "Pieteikšanās atļauta failu nosaukumus"
 
-#: baruwa/forms/settings.py:659
+#: baruwa/forms/settings.py:668
 msgid "Log Permitted Filetypes"
 msgstr "Žurnāla datņu pieļaujamo"
 
-#: baruwa/forms/settings.py:662
+#: baruwa/forms/settings.py:671
 msgid "Log Permitted File MIME Types"
 msgstr "Pieteikšanās atļauta failu MIME tipi"
 
-#: baruwa/forms/settings.py:665
+#: baruwa/forms/settings.py:674
 msgid "Log Silent Viruses"
 msgstr "Pieteikties kluss vīrusi"
 
-#: baruwa/forms/settings.py:668
+#: baruwa/forms/settings.py:677
 msgid "Log Dangerous HTML Tags"
 msgstr "Žurnāla bīstamu HTML tagus"
 
-#: baruwa/forms/settings.py:671
+#: baruwa/forms/settings.py:680
 msgid "Log SpamAssassin Rule Actions"
 msgstr "Žurnāla SpamAssassin kārtulas darbības"
 
-#: baruwa/forms/settings.py:690
+#: baruwa/forms/settings.py:699
 msgid "Signature type"
 msgstr "Paraksta tips"
 
-#: baruwa/forms/settings.py:694
+#: baruwa/forms/settings.py:700 baruwa/templates/accounts/account.html:194
+#: baruwa/templates/settings/domain_sigs.html:20
+msgid "Text signature"
+msgstr "Teksta paraksts"
+
+#: baruwa/forms/settings.py:701 baruwa/templates/accounts/account.html:194
+#: baruwa/templates/settings/domain_sigs.html:20
+msgid "HTML Signature"
+msgstr "HTML paraksts"
+
+#: baruwa/forms/settings.py:703
 msgid "Signature"
 msgstr "Paraksts"
 
@@ -3124,16 +3219,6 @@ msgstr "Nav konfigurēts alias adreses"
 msgid "Email Signatures"
 msgstr "E-pasta parakstu"
 
-#: baruwa/templates/accounts/account.html:194
-#: baruwa/templates/settings/domain_sigs.html:20
-msgid "Text signature"
-msgstr "Teksta paraksts"
-
-#: baruwa/templates/accounts/account.html:194
-#: baruwa/templates/settings/domain_sigs.html:20
-msgid "HTML Signature"
-msgstr "HTML paraksts"
-
 #: baruwa/templates/accounts/account.html:209
 msgid "No Email Signatures configured"
 msgstr "Nav konfigurēts e-pasta parakstu"
@@ -3387,8 +3472,7 @@ msgstr[1] ":: Rādīt lapas %(n)d no %(c)d lapas."
 msgstr[2] ""
 
 #: baruwa/templates/accounts/index.html:94
-#: baruwa/templates/domains/index.html:93
-#: baruwa/templates/lists/index.html:105
+#: baruwa/templates/domains/index.html:93 baruwa/templates/lists/index.html:105
 #: baruwa/templates/messages/functions.html:208
 #: baruwa/templates/messages/searchresults.html:102
 #: baruwa/templates/organizations/index.html:50
@@ -3399,8 +3483,7 @@ msgid "Showing items %(i)d to %(l)d of %(count)d"
 msgstr "Parādot elementus %(i)d lai %(l)d no %(count)d"
 
 #: baruwa/templates/accounts/index.html:96
-#: baruwa/templates/domains/index.html:95
-#: baruwa/templates/lists/index.html:107
+#: baruwa/templates/domains/index.html:95 baruwa/templates/lists/index.html:107
 #: baruwa/templates/messages/functions.html:210
 #: baruwa/templates/messages/searchresults.html:104
 #: baruwa/templates/organizations/index.html:52
@@ -3410,8 +3493,7 @@ msgid "Show items:"
 msgstr "Rādīt vienumus:"
 
 #: baruwa/templates/accounts/index.html:98
-#: baruwa/templates/domains/index.html:97
-#: baruwa/templates/lists/index.html:109
+#: baruwa/templates/domains/index.html:97 baruwa/templates/lists/index.html:109
 #: baruwa/templates/messages/functions.html:212
 #: baruwa/templates/messages/searchresults.html:106
 #: baruwa/templates/organizations/index.html:54
@@ -3452,11 +3534,11 @@ msgstr "Aizmirsāt paroli?"
 
 #: baruwa/templates/accounts/login.html:55
 msgid ""
-"Forgotten your password? Enter your e-mail address below, and we'll e-mail "
-"instructions on setting a new one."
+"Forgotten your password? Enter your e-mail address below, and we'll "
+"e-mail instructions on setting a new one."
 msgstr ""
-"Aizmirsi savu paroli? Ievadiet savu e-pasta adresi zemāk un mēs jums e-pastu"
-" norādījumus par to, ko jaunu."
+"Aizmirsi savu paroli? Ievadiet savu e-pasta adresi zemāk un mēs jums "
+"e-pastu norādījumus par to, ko jaunu."
 
 #: baruwa/templates/accounts/login.html:60
 msgid "Cancel"
@@ -3526,11 +3608,6 @@ msgstr "Pievienot domēnu Alias"
 #: baruwa/templates/domains/addauth.html:17
 msgid "Clear"
 msgstr "Skaidrs"
-
-#: baruwa/templates/domains/addalias.html:18
-#: baruwa/templates/domains/addauth.html:18
-msgid "Add"
-msgstr "Pievienot"
 
 #: baruwa/templates/domains/addalias.html:26
 #: baruwa/templates/domains/addalias.html:30
@@ -3888,18 +3965,17 @@ msgstr "KĻŪDA: %s"
 
 #: baruwa/templates/general/error.html:28
 msgid ""
-"You do not have sufficient permissions to access this page. Please sign in "
-"using an account with sufficient permissions"
+"You do not have sufficient permissions to access this page. Please sign "
+"in using an account with sufficient permissions"
 msgstr ""
 "Jums nav pietiekamas atļaujas, lai piekļūtu šai lapai. Lūdzu, "
 "pierakstieties, izmantojot kontu ar atbilstošu atļauju"
 
 #: baruwa/templates/general/error.html:30
 msgid ""
-"The system was unable to complete your request, the support team has been "
-"notified"
-msgstr ""
-"Sistēma nevarēja pabeigt jūsu pieprasījumu, ir paziņots atbalsta komandu"
+"The system was unable to complete your request, the support team has been"
+" notified"
+msgstr "Sistēma nevarēja pabeigt jūsu pieprasījumu, ir paziņots atbalsta komandu"
 
 #: baruwa/templates/includes/search.html:9 baruwa/templates/lists/index.html:6
 #: baruwa/templates/messages/functions.html:300
@@ -3931,10 +4007,11 @@ msgstr "paldies."
 
 #: baruwa/templates/invite/thankyou.html:27
 msgid ""
-"Your registration request is being reviewed, you will be notified when it is"
-" approved."
+"Your registration request is being reviewed, you will be notified when it"
+" is approved."
 msgstr ""
-"Pārskata reģistrācijas pieprasījumu, jums paziņos, kad tas ir apstiprināts."
+"Pārskata reģistrācijas pieprasījumu, jums paziņos, kad tas ir "
+"apstiprināts."
 
 #: baruwa/templates/lists/add.html:4
 msgid "Add Sender to a list"
@@ -3993,8 +4070,7 @@ msgstr "List management"
 #: baruwa/templates/lists/index.html:85
 #, python-format
 msgid "Lists :: Approved senders :: Showing page %(page)d of %(count)d pages."
-msgstr ""
-"Saraksti: Apstiprināto sūtītāju: rāda lapas %(page)d no %(count)d lapas."
+msgstr "Saraksti: Apstiprināto sūtītāju: rāda lapas %(page)d no %(count)d lapas."
 
 #: baruwa/templates/lists/index.html:87
 msgid "Lists :: Approved senders"
@@ -4279,8 +4355,7 @@ msgstr "Lietot filtrus"
 msgid ""
 "Messages :: Full message listing :: Showing page %(page)d of %(count)d "
 "pages."
-msgstr ""
-"Ziņas: Pilnu ziņojumu saraksts: rāda lapas %(page)d no %(count)d lapas."
+msgstr "Ziņas: Pilnu ziņojumu saraksts: rāda lapas %(page)d no %(count)d lapas."
 
 #: baruwa/templates/messages/listing.html:36
 #: baruwa/templates/messages/listing.html:47
@@ -4325,8 +4400,7 @@ msgstr "Nav Spam"
 
 #: baruwa/templates/messages/quarantine.html:27
 #: baruwa/templates/status/detail.html:69
-#: baruwa/templates/status/detail.html:75
-#: baruwa/templates/status/mailq.html:23
+#: baruwa/templates/status/detail.html:75 baruwa/templates/status/mailq.html:23
 msgid "Process"
 msgstr "Procesu"
 
@@ -4383,11 +4457,11 @@ msgstr "Ziņojuma id: %(id)s nodots"
 #: baruwa/templates/messages/includes/released.html:4
 #, python-format
 msgid ""
-"The message id: %(id)s could not be released: %(error_msg)s, contact your "
-"email admin for assistance."
+"The message id: %(id)s could not be released: %(error_msg)s, contact your"
+" email admin for assistance."
 msgstr ""
-"Ziņojuma id: %(id)s netiek atbrīvota: %(error_msg)s, lai saņemtu palīdzību, "
-"sazinieties ar savu e-pastu admin."
+"Ziņojuma id: %(id)s netiek atbrīvota: %(error_msg)s, lai saņemtu "
+"palīdzību, sazinieties ar savu e-pastu admin."
 
 #: baruwa/templates/messages/includes/salearn.html:2
 #, python-format
@@ -5334,3 +5408,4 @@ msgstr "Sistēmas laiku"
 #, python-format
 msgid "Status :: Node status :: %(server)s"
 msgstr "Statuss: Node status: %(server)s"
+
