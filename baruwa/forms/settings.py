@@ -32,22 +32,31 @@ try:
 except TypeError:
     from baruwa.lib.misc import _
 
-YES_NO = (('yes', 'Yes'), ('no', 'No'))
-TNEF_ACTIONS = (('replace', 'Replace'), ('add', 'Add'), ('no', 'No'))
-HEADER_ACTIONS = (('add', 'Add'), ('append', 'Append'), ('replace', 'Replace'))
-CODE_SUPPORT = (('supported', 'Supported'),
-                ('none', 'None'), 
-                ('unsupported', 'Unsupported'),
-                ('alpha', 'Alpha'),
-                ('beta', 'Beta'))
-START_END = (('start', 'Start'), ('end', 'End'), ('yes', 'Yes'), ('no', 'No'))
-CONVERT = (('convert', 'Disarm'), ('yes', 'Yes'), ('no', 'No'))
+YES_NO = (('yes', _('Yes')), ('no', _('No')))
+TNEF_ACTIONS = (('replace', _('Replace')),
+                ('add', _('Add')),
+                ('no', _('No')))
+HEADER_ACTIONS = (('add', _('Add')),
+                ('append', _('Append')),
+                ('replace', _('Replace')))
+CODE_SUPPORT = (('supported', _('Supported')),
+                ('none', _('None')), 
+                ('unsupported', _('Unsupported')),
+                ('alpha', _('Alpha')),
+                ('beta', _('Beta')))
+START_END = (('start', _('Start')),
+            ('end', _('End')),
+            ('yes', _('Yes')),
+            ('no', _('No')))
+CONVERT = (('convert',_ ('Disarm')),
+            ('yes', _('Yes')),
+            ('no', _('No')))
 MTAS = (('exim', 'Exim'),
     ('sendmail', 'Sendmail'),
     ('postfix', 'Postfix'),
     ('zmailer', 'Zmailer'))
 VIRUS_SCANNERS = (
-    ('auto', 'Auto detect'),
+    ('auto', _('Auto detect')),
     #('sophos', 'Sophos'),
     #('sophossavi', 'Sophossavi'),
     #('mcafee', 'Mcafee'),
@@ -120,10 +129,10 @@ SPAM_LISTS = (
     #('SORBS-NOMAIL', 'nomail.rhsbl.sorbs.net.'),
     ('CBL', 'cbl.abuseat.org.'))
 WATERMARK_OPTIONS = (
-    ("nothing", 'Do nothing'),
-    ('delete', "Delete"),
-    ('spam', "Flag as spam"),
-    ("high-scoring spam", 'Flag as high spam'),
+    ("nothing", _('Do nothing')),
+    ('delete', _("Delete")),
+    ('spam', _("Flag as spam")),
+    ("high-scoring spam", _('Flag as high spam')),
 )
 SYSLOG_FACILITIES = (
     ('mail', 'mail'),
@@ -688,8 +697,8 @@ settings_forms = {
 class SigForm(Form):
     "Domain signature"
     signature_type = SelectField(_('Signature type'),
-                        choices=(('1', 'Text signature'),
-                        ('2', 'HTML Signature'),),
+                        choices=(('1', _('Text signature')),
+                        ('2', _('HTML Signature')),),
                         default=1)
     signature_content = TextAreaField(_('Signature'),
                             [validators.Required()])
