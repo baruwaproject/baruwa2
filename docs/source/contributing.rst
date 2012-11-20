@@ -45,10 +45,12 @@ system which accepts paypal payments
 
 Translation
 -----------
-Clone the source code from `Github`_, `create`_ a new language
-if it does not exist, translate and test then send me
-a pull request on `Github`_
+Translations for Baruwa are managed using `Transifex`_. To
+help with the translation effort join one of the language
+teams on our `Transifex project`_.
 
+.. _`Transifex`: https://www.transifex.com
+.. _`Transifex project`: https://www.transifex.com/projects/p/baruwa/
 .. _`Github`: http://github.com/akissa/baruwa2
 .. _`issue tracking system`: https://github.com/akissa/baruwa2/issues
 .. _`baruwa wiki`: https://github.com/akissa/baruwa2/wiki

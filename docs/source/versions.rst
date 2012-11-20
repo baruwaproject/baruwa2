@@ -22,7 +22,7 @@ companies.
 Baruwa.net: Mail Security SAAS
 ------------------------------
 
-Baruwa.net is a Hosted Messaging security Platform.
+`Baruwa.net`_ is a Hosted Messaging security Platform.
 It keeps your messaging systems safe by blocking Viruses,
 Malware, Spam, Phishing, Directory Harvesting and other
 attacks before they reach your network, preventing
@@ -30,10 +30,11 @@ service disruptions. It is a fully managed service and
 requires no investment in infrastructure, training and
 maintenance.
 
-Baruwa.net is powered by customized versions of
-Baruwa Enterprise Editions
+`Baruwa.net`_ is powered by customized versions of
+Baruwa Enterprise Editions. You can `try it`_ for free for
+30 days.
 
-Baruwa.net is managed by author of Baruwa.
+`Baruwa.net`_ is managed by author of Baruwa.
 
 
 .. _enterprise_edition:
@@ -41,7 +42,7 @@ Baruwa.net is managed by author of Baruwa.
 Baruwa Enterprise Edition
 -------------------------
 
-While for some Baruwa.net is a perfect way to manage their
+While for some `Baruwa.net`_ is a perfect way to manage their
 Mail Security while not having the burden of maintenance of
 their own Baruwa infrastructure, Others require a self-hosted
 implementation using robust, tested and supported packages.
@@ -56,3 +57,6 @@ packages for Centos/RHEL/SL as well as Ubuntu and Debian.
 Automated installation and configuration management tools are
 provided to ensure the efficient and easy management of the
 Baruwa installation.
+
+.. _`try it`: https://hosted.baruwa.net/invite
+.. _`Baruwa.net`: http://www.baruwa.net/

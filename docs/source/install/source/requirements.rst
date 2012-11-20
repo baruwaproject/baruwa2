@@ -70,7 +70,7 @@ You have to install the required tools and python libraries.
 
    # install the necessary libraries for compiling
    sudo apt-get install libjpeg-dev libxml2-dev libxslt1-dev cython \
-	postgresql-server-dev-all libfreetype6-dev libldap2-dev libssl-dev \
+	libpq-dev libfreetype6-dev libldap2-dev libssl-dev \
 	swig2.0 libcrack2-dev libmemcached-dev libgeoip-dev -y
 
 Now you can proceed with :ref:`installing_setuptools`.
@@ -155,3 +155,5 @@ Others, you can get setuptools to automatically install virtualenv for you:
 
    # Install virtualenv via setuptools:
    sudo easy_install virtualenv
+
+**Proceed to** :ref:`source_install`

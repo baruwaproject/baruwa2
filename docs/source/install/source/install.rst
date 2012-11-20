@@ -60,7 +60,7 @@ Now, activate that virtual environment::
 Now that you've activated the newly created virtual environment, any packages
 you install will only be accessible when you've activated the environment.
 
-**NOTE: Any time you want to work with Baruwa, you should thus activate the
+**NOTE: Any time you want to work with Baruwa, you should activate the
 virtual environment as we just did in the line above.**
 
 Step 2: Install Python dependencies
@@ -206,6 +206,13 @@ Enable the languages in the db::
 	su - postgres -c "psql baruwa -c \"CREATE LANGUAGE plpgsql;\""
 	su - postgres -c "psql baruwa -c \"CREATE LANGUAGE plpythonu;\""
 
+Functions written in ``plpythonu`` require PostgreSQL admin user access. So we will
+install them in this step::
+
+	tar xjvf baruwa-2.0.0.tar.bz2 --strip-components=4 \
+		baruwa-2.0.0/baruwa/config/sql/admin-functions.sql
+	su - postgres -c psql baruwa -f /home/baruwa/admin-functions.sql
+
 
 Step 3b: RabbitMQ
 -----------------
@@ -255,9 +262,9 @@ via Baruwa.
 
 Run the following commands to install and start sphinx on your system.
 
-CentOS/RHEL/SL::
+CentOS/RHEL/SL:
 
-	rpm -Uvh http://sphinxsearch.com/files/sphinx-2.0.6-1.rhel6.$(uname -m).rpm
+**You need to compile sphinx on your own with postgresql support**
 
 Debian/Ubuntu::
 
@@ -289,6 +296,15 @@ FreeBSD::
 	
 	TODO:
 
+Add a cronjob ``/etc/cron.hourly/baruwa-updateindex`` to update the sphinx indexes
+every hour::
+
+	cat > /etc/cron.hourly/baruwa-updateindex << 'EOF'
+	#!/bin/bash
+	#
+	indexer auditlog lists domains accounts organizations archive --rotate &>/dev/null
+	EOF
+
 Step 3d: Memcached
 ------------------
 
@@ -319,33 +335,8 @@ Baruwa manages the MailScanner configuration by storing the configurations in
 the PostgreSQL Database. MailScanner signatures can also be managed using
 Baruwa for both domains and individual users.
 
-The configuration of MailScanner is beyond the scope of this documentation. If
-you are not familiar with MailScanner please refer to the
-`documentation <http://mailscanner.info/documentation.html>`_ on the
-MailScanner website or read the
-`MailScanner book <http://mailscanner.info/files/MailScanner-Guide.pdf>`_ which
-is freely available online.
-
-In order to use Baruwa with mailscanner you need to make a few changes to the
-MailScanner code. Patches are provided to assist you in doing that.
-
-The changes made enable the following
-
-	+ Passing the lint flag to custom modules
- 	+ Fixes to the SQL configuration module
-
-It is assumed that your MailScanner file is located at ``/usr/sbin/MailScanner``
-and your modules at ``/usr/share/MailScanner/MailScanner``. If on your system
-they are in different locations please modify the commands below to reflect that::
-
-	cd /usr/sbin
-	patch -i /usr/local/src/mailscanner-baruwa-iwantlint.patch
-	cd /usr/share/MailScanner/MailScanner
-	patch -p3 -i /usr/local/src/mailscanner-baruwa-sql-config.patch
-
-Sample configuration files for MailScanner and exim are provided in the source
-tar ball under ``extras/config/exim`` and ``extras/config/mailscanner``.
-Please review and reuse.
+  .. toctree::
+    mailscanner
 
 
 Step 4: Install Baruwa
