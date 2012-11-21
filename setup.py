@@ -34,7 +34,7 @@ required_packages = [
         "python-dateutil<2.0",
         "pyparsing",
         "IPy",
-        "PIL",
+        "Pillow",
         "Mako",
         "Babel",
         "lxml",

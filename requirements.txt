@@ -6,7 +6,7 @@ IPy
 M2Crypto
 Mako
 MarkupSafe
-PIL
+Pillow
 Paste
 PasteDeploy
 PasteScript
