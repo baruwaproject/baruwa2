@@ -66,10 +66,24 @@ Create the template directory ``/var/lib/baruwa/data/templates`` and set the
 correct ownership on the template, sessions and cache directories::
 
 	mkdir /var/lib/baruwa/data/templates
+
+CentOS/RHEL/SL::
+
 	chown apache.apache /var/lib/baruwa/data/cache
-	chown apache.apache /var/lib/baruwa/data/upload
+	chown apache.apache /var/lib/baruwa/data/uploads
 	chown apache.apache /var/lib/baruwa/data/templates
 	chown apache.apache /var/lib/baruwa/data/sessions
+
+Debian/Ubuntu::
+
+	chown www-data.www-data /var/lib/baruwa/data/cache
+	chown www-data.www-data /var/lib/baruwa/data/uploads
+	chown www-data.www-data /var/lib/baruwa/data/templates
+	chown www-data.www-data /var/lib/baruwa/data/sessions
+
+FreeBSD::
+
+	TODO
 
 A sample configuration file is provided in the source tar ball with the
 contents below, you will modify and use this sample configuration file.
@@ -132,18 +146,18 @@ CentOS/RHEL/SL::
 
 Debian/Ubuntu::
 
-	sed -e -i "s:/var/run/httpd:/var/run/apache2:" \
-		-e "s:ms.home.topdog-software.com:$(hostname):" \
-		baruwa.conf
+	sed -i -e "s:/var/run/httpd:/var/run/apache2:" \
+		-e "s:ms.home.topdog-software.com:$(hostname -f):" \
+		-e "s:logs/:/var/log/apache2/:g" apache.conf
 
 	# install the configuration file
-	sudo mv baruwa.conf /etc/apache2/sites-available/baruwa
+	sudo mv apache.conf /etc/apache2/sites-available/baruwa
 
 	# enable the baruwa virtual host
 	sudo a2ensite baruwa
 
 	# reload the service
-	sudo service apache2 restart
+	sudo service apache2 reload
 
 FreeBSD::
 

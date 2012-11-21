@@ -30,9 +30,10 @@ and your modules at ``/usr/share/MailScanner/MailScanner``. If on your system
 they are in different locations please modify the commands below to reflect that::
 
 	cd /usr/sbin
-	patch -i /usr/local/src/mailscanner-baruwa-iwantlint.patch
+	patch -i /home/baruwa/patches/mailscanner-baruwa-iwantlint.patch
 	cd /usr/share/MailScanner/MailScanner
-	patch -p3 -i /usr/local/src/mailscanner-baruwa-sql-config.patch
+	patch -p3 -i /home/baruwa/patches/mailscanner-baruwa-sql-config.patch
+	cd /home/baruwa
 
 Dependencies
 ~~~~~~~~~~~~

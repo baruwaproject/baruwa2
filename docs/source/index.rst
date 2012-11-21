@@ -11,6 +11,7 @@ Contents:
    requirements
    install/source/requirements
    install/source/install
+   install/source/issues
    install/enterprise/install
    install/enterprise/puppet
    commands

@@ -20,6 +20,7 @@ Baruwa Requirements
 	+ Lxml
 	+ SQLAlchemy
 	+ Memcached
+	+ Sphinx
 	+ M2Crypto
 	+ repoze.what
 	+ repoze.who

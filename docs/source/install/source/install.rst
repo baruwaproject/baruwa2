@@ -69,7 +69,7 @@ Step 2: Install Python dependencies
 A pip requirements file is provided with in the Baruwa source tar ball, you
 will use that file to install all the required Python packages.
 
-Set this environment variable to allow ``m2crypto`` to build on CentOS/RHEL/SL::
+Set this environment variable to allow ``m2crypto`` to build on Linux::
 
 	export SWIG_FEATURES="-cpperraswarn -includeall -D__`uname -m`__ -I/usr/include/openssl"
 	
@@ -99,11 +99,14 @@ Extract patches and apply them to the virtualenv::
 	patch -p4 -i /home/baruwa/patches/repoze-who-fix-auth_tkt-tokens.patch
 	cd -
 
-If you are running Centos/RHEL apply the subprocess patch::
+If you are running **Centos/RHEL/SL** apply the eventlet subprocess patch which fixes
+the :ref:`eventlet_subprocess` issue.
 
-	cd px/lib/python2.6/site-packages/
-	patch -p1 -i /home/baruwa/patches/subprocess_timeout.patch 
-	cd -
+M2Crypto on Debian/Ubuntu issue
+-------------------------------
+
+Debian/Ubuntu users need to install ``M2Crypto`` from source because of :ref:`m2crypto_symbol`
+issue that comes up when installed using ``pip``.
 	
 
 Step 3: Install and configure supporting packages
@@ -138,10 +141,6 @@ Centos/RHEL/SL::
 
 	service postgresql initdb
 	service postgresql start
-
-For Debian/Ubuntu::
-
-	sudo service postgresql start
 
 For FreeBSD::
 
@@ -201,17 +200,17 @@ Create the database::
 	su - postgres -c 'createdb -E UTF8 -O baruwa -T template1 baruwa'
 
 Baruwa uses functions written in the ``plpgsql`` and ``plpythonu`` procedural languages.
-Enable the languages in the db::
+Enable these languages in the db::
 
 	su - postgres -c "psql baruwa -c \"CREATE LANGUAGE plpgsql;\""
 	su - postgres -c "psql baruwa -c \"CREATE LANGUAGE plpythonu;\""
 
-Functions written in ``plpythonu`` require PostgreSQL admin user access. So we will
-install them in this step::
+Creation of functions written in ``plpythonu`` requires PostgreSQL admin user access.
+So we create them in this step using the ``postgres`` admin account::
 
 	tar xjvf baruwa-2.0.0.tar.bz2 --strip-components=4 \
 		baruwa-2.0.0/baruwa/config/sql/admin-functions.sql
-	su - postgres -c psql baruwa -f /home/baruwa/admin-functions.sql
+	su - postgres -c 'psql baruwa -f /home/baruwa/admin-functions.sql'
 
 
 Step 3b: RabbitMQ
@@ -231,13 +230,12 @@ CentOS/RHEL/SL::
 Debian/Ubuntu::
 
 	sudo apt-get install rabbitmq-server -y
-	sudo service rabbitmq-server start
 
 FreeBSD::
 
 	TODO:
 
-Here will will create a virtual host and a rabbitmq user to be used by baruwa.
+Here will will create a virtual host and a rabbitmq user to be used by Baruwa.
 
 We're going to assume that the virtual host is called ``baruwa``, the rabbitmq
 user is called ``baruwa``, and the password is ``mysecretpwd``.
@@ -282,6 +280,13 @@ Extract the supplied file::
 	tar xjvf baruwa-2.0.0.tar.bz2 --strip-components=4 \
 		baruwa-2.0.0/extras/config/sphinx/sphinx.conf
 
+Set the required database settings::
+
+	sed -i -e 's:sql_host =:sql_host = 127.0.0.1:' \
+		-e 's:sql_user =:sql_user = baruwa:' \
+		-e 's:sql_pass =:sql_pass = verysecretpw:' \
+		-e 's:sql_db =:sql_db = baruwa:' sphinx.conf
+
 CentOS/RHEL/SL::
 
 	cp sphinx.conf /etc/sphinx/
@@ -289,6 +294,9 @@ CentOS/RHEL/SL::
 
 Debian/Ubuntu::
 
+	sudo sed -i -e 's:START=no:START=yes:' /etc/default/sphinxsearch
+	sudo sed -i -e 's:/var/log/sphinx:/var/log/sphinxsearch:' \
+		-e 's:/var/lib/sphinx:/var/lib/sphinxsearch:' sphinx.conf
 	sudo cp sphinx.conf /etc/sphinxsearch/
 	sudo service sphinxsearch start
 
@@ -305,6 +313,10 @@ every hour::
 	indexer auditlog lists domains accounts organizations archive --rotate &>/dev/null
 	EOF
 
+Make the cronjob executable::
+
+	chmod +x /etc/cron.hourly/baruwa-updateindex
+
 Step 3d: Memcached
 ------------------
 
@@ -319,7 +331,6 @@ CentOS/RHEL/SL::
 Debian/Ubuntu::
 
 	sudo apt-get install memcached -y
-	sudo service memcached start
 
 FreeBSD::
 
@@ -415,7 +426,7 @@ Step 5c: Create the required directories
 
 Create log, pid and data directories::
 
-	mkdir -p /var/log/baruwa /var/run/baruwa /var/lib/baruwa/data/{cache,sessions,upload}
+	mkdir -p /var/log/baruwa /var/run/baruwa /var/lib/baruwa/data/{cache,sessions,uploads}
 
 .. _start_celeryd:
 

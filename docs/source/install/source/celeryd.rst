@@ -75,8 +75,9 @@ to the init directory ``/etc/init.d`` ::
 	tar xjvf baruwa-2.0.0.tar.bz2 --strip-components=5 \
 		baruwa-2.0.0/extras/scripts/init/debian/baruwa.init
 	sudo mv baruwa.init /etc/init.d/baruwa
+	sudo chmod +x /etc/init.d/baruwa
 
-Create a configuration file for celeryd in ``/etc/default/celeryd`` with the following
+Create a configuration file for celeryd in ``/etc/default/baruwa`` with the following
 contents:
 
 .. sourcecode:: bash
@@ -91,7 +92,7 @@ contents:
 
 ::
 
-	cat > /etc/default/celeryd << 'EOF'
+	cat > /etc/default/baruwa << 'EOF'
 	CELERYD_CHDIR="/home/baruwa"
 	CELERYD="$CELERYD_CHDIR/px/bin/paster celeryd /etc/baruwa/production.ini"
 	CELERYD_LOG_LEVEL="INFO"
