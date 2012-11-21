@@ -16,3 +16,4 @@ recursive-include extras/patches *
 recursive-include baruwa/public *
 recursive-include baruwa/templates *
 recursive-include baruwa/i18n *
+recursive-include extras/scripts/init *
