@@ -111,3 +111,6 @@ FreeBSD
 -------
 
 TODO
+
+
+Proceed to :ref:`baruwa_deploy`

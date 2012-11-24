@@ -45,7 +45,7 @@ Running the following command will install any libraries that are missing.
     # install the necessary libraries for compiling
     yum install install libxml2-devel libxslt-devel Cython postgresql-devel \
 	freetype-devel libjpeg-devel zlib-devel openldap-devel openssl-devel swig \
-	cracklib-devel GeoIP-devel mysql-devel -y
+	cracklib-devel GeoIP-devel mysql-devel perl-CPAN make -y
 
 **NOTE: You need to install libmemcached from source as the version shipped in
 the repositories is too old, You need atleast version 0.32 or newer**

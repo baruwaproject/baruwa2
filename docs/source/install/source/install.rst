@@ -349,9 +349,10 @@ Baruwa for both domains and individual users.
   .. toctree::
     mailscanner
 
+.. _baruwa_install:
 
 Step 4: Install Baruwa
-==========================
+======================
 
 With all the requirements in place you can now install Baruwa by running the following
 command.
@@ -363,7 +364,7 @@ Install baruwa using pip::
 .. _baruwa_setup:
 
 Step 5: Setup Baruwa
-========================
+====================
 
 You need to create a configuration file, then edit it to set the correct credentials.
 The important settings that you need to set are the ``database and broker credentials``.
@@ -474,6 +475,8 @@ To enable this you need to install a startup script for your OS.
 
   .. toctree::
    celeryd
+
+.. _baruwa_deploy:
 
 Step 6b: Baruwa production deployment
 -------------------------------------

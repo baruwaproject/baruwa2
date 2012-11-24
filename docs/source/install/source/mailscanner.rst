@@ -39,13 +39,13 @@ Dependencies
 ~~~~~~~~~~~~
 
 The Baruwa Custom module uses the following perl packages ``String::CRC32``,
-``Encoding::FixLatin``, ``AnyEvent::Handle``, ``DBD::mysql`` and ``EV``.
+``Encoding::FixLatin``, ``AnyEvent::Handle``, ``DBD::mysql``, ``DBD::Pg`` and ``EV``.
 These packages need to be installed on your system for the module to function
 correctly.
 
 Install the Perl modules using CPAN::
 
-	cpan install String::CRC32 Encoding::FixLatin AnyEvent::Handle EV DBD::mysql
+	cpan install String::CRC32 Encoding::FixLatin AnyEvent::Handle EV DBD::mysql DBD::Pg
 
 .. _install_custom_module:
 
@@ -72,3 +72,5 @@ Sample configurations
 Sample configuration files for MailScanner and exim are provided in the source
 tar ball under ``extras/config/exim`` and ``extras/config/mailscanner``.
 Please review and reuse.
+
+Proceed to :ref:`baruwa_install`
