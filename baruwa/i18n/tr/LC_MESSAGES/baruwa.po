@@ -1,22 +1,22 @@
 # Turkish translations for baruwa.
 # Copyright (C) 2012 Andrew Colin Kissa
 # This file is distributed under the same license as the baruwa project.
-#
+# 
 # Translators:
 # datopdog  <andrew@topdog.za.net>, 2012.
 msgid ""
 msgstr ""
-"Project-Id-Version:  baruwa\n"
+"Project-Id-Version: baruwa\n"
 "Report-Msgid-Bugs-To: baruwa@lists.baruwa.org\n"
-"POT-Creation-Date: 2012-11-20 09:57+0200\n"
-"PO-Revision-Date: 2012-11-15 13:25+0200\n"
+"POT-Creation-Date: 2012-11-24 10:27+0200\n"
+"PO-Revision-Date: 2012-11-24 10:34+0200\n"
 "Last-Translator: Andrew Colin Kissa <andrew@topdog.za.net>\n"
 "Language-Team: Baruwa Project\n"
-"Plural-Forms: nplurals=1; plural=0\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 0.9.6\n"
+"Generated-By: auto-translate.py 0.0.1\n"
+"Plural-Forms: nplurals=1; plural=0\n"
 
 #: baruwa/commands/pdfreport.py:116 baruwa/controllers/reports.py:62
 #: baruwa/templates/reports/index.html:13
@@ -189,9 +189,10 @@ msgstr "Hesap silindi"
 #: baruwa/controllers/accounts.py:620
 #, python-format
 msgid ""
-"The account: %(a)s and all associated data will be deleted, This action "
-"is not reversible."
-msgstr "Hesap: %(a)s ve tüm ilişkili veriler silinir, bu eylem tersinir değildir."
+"The account: %(a)s and all associated data will be deleted, This action is "
+"not reversible."
+msgstr ""
+"Hesap: %(a)s ve tüm ilişkili veriler silinir, bu eylem tersinir değildir."
 
 #: baruwa/controllers/accounts.py:677
 msgid "The accounts have been deleted"
@@ -202,8 +203,8 @@ msgid ""
 "The following accounts are about to be deleted, this action is not "
 "reversible, Do you wish to continue ?"
 msgstr ""
-"Şu hesaplar silinmek üzere, bu eylem tersinir değildir, devam etmek "
-"istiyor musunuz?"
+"Şu hesaplar silinmek üzere, bu eylem tersinir değildir, devam etmek istiyor "
+"musunuz?"
 
 #: baruwa/controllers/accounts.py:689 baruwa/controllers/domains.py:384
 msgid "An error occured try again"
@@ -238,11 +239,11 @@ msgstr "Adresi silindi"
 
 #: baruwa/controllers/accounts.py:874 baruwa/controllers/organizations.py:358
 msgid ""
-"File uploaded, and is being processed, this page will automatically "
-"refresh to show the status"
+"File uploaded, and is being processed, this page will automatically refresh "
+"to show the status"
 msgstr ""
-"Dosya yükledi ve sürüp, Bu sayfa otomatik olarak durumlarını göstermek "
-"üzere yenilenir"
+"Dosya yükledi ve sürüp, Bu sayfa otomatik olarak durumlarını göstermek üzere"
+" yenilenir"
 
 #: baruwa/controllers/accounts.py:881 baruwa/controllers/organizations.py:364
 #, python-format
@@ -321,8 +322,8 @@ msgstr "Etki alanı silindi"
 #: baruwa/controllers/domains.py:324
 #, python-format
 msgid ""
-"The domain: %(name)s and all associated data will be deleted, This action"
-" cannot be reversed."
+"The domain: %(name)s and all associated data will be deleted, This action "
+"cannot be reversed."
 msgstr ""
 "Etki alanı: %(name)s ve tüm ilişkili veriler silinir, bu eylem geri "
 "alınamaz."
@@ -381,9 +382,9 @@ msgstr "Hedef sunucuda silindi"
 #: baruwa/controllers/domains.py:540
 #, python-format
 msgid ""
-"The destination server: %(s)s will be deleted, This action is not "
-"reversible"
-msgstr "Hedef sunucu: %(s)s -ecek var olmak silmek, bu eylem tersinir değildir"
+"The destination server: %(s)s will be deleted, This action is not reversible"
+msgstr ""
+"Hedef sunucu: %(s)s -ecek var olmak silmek, bu eylem tersinir değildir"
 
 #: baruwa/controllers/domains.py:567
 msgid "The authentication settings have been created"
@@ -392,11 +393,11 @@ msgstr "Kimlik doğrulama ayarlarını oluşturulmuş"
 #: baruwa/controllers/domains.py:574
 #, python-format
 msgid ""
-"The host %(dest)s already configured for %(auth)s authentication for this"
-" domain"
+"The host %(dest)s already configured for %(auth)s authentication for this "
+"domain"
 msgstr ""
-"Ana bilgisayar %(dest)s önceden yapılandırılmış %(auth)s Bu etki alanı "
-"için kimlik doğrulaması"
+"Ana bilgisayar %(dest)s önceden yapılandırılmış %(auth)s Bu etki alanı için "
+"kimlik doğrulaması"
 
 #: baruwa/controllers/domains.py:607
 msgid "The authentication settings have been updated"
@@ -420,8 +421,8 @@ msgid ""
 "The authentication server: %(s)s will be deleted, This action is not "
 "reversible"
 msgstr ""
-"Kimlik doğrulama sunucusu: %(s)s -ecek var olmak silmek, bu eylem "
-"tersinir değildir"
+"Kimlik doğrulama sunucusu: %(s)s -ecek var olmak silmek, bu eylem tersinir "
+"değildir"
 
 #: baruwa/controllers/domains.py:671
 msgid "The protocol supplied does not use extra settings"
@@ -452,11 +453,11 @@ msgstr "Kimlik doğrulama ayarları zaten mevcut, güncelleştirme kullanın"
 
 #: baruwa/controllers/domains.py:733
 msgid ""
-"The Radius secret is not be displayed in the form, To update type the new"
-" secret in \"Radius secret\" below."
+"The Radius secret is not be displayed in the form, To update type the new "
+"secret in \"Radius secret\" below."
 msgstr ""
-"Formunda, aşağıdaki türü \"Radius gizli\" yeni parolayı güncelleştirmek "
-"için yarıçapı gizli görüntülenmemesi."
+"Formunda, aşağıdaki türü \"Radius gizli\" yeni parolayı güncelleştirmek için"
+" yarıçapı gizli görüntülenmemesi."
 
 #: baruwa/controllers/domains.py:774
 #, python-format
@@ -619,7 +620,8 @@ msgstr "Organizasyon silindi"
 #: baruwa/controllers/organizations.py:232
 #, python-format
 msgid "The organization: %(s)s will be deleted, This action is not reversible"
-msgstr "Organizasyon: %(s)s -ecek var olmak silmek, bu eylem tersinir değildir"
+msgstr ""
+"Organizasyon: %(s)s -ecek var olmak silmek, bu eylem tersinir değildir"
 
 #: baruwa/controllers/organizations.py:259
 msgid "The outbound settings have been created"
@@ -818,10 +820,10 @@ msgid "The audit log export failed, try again later"
 msgstr "Denetim günlüğü verme başarısız oldu, daha sonra tekrar deneyin"
 
 #: baruwa/forms/accounts.py:32 baruwa/forms/domains.py:34
-#: baruwa/forms/lists.py:33 baruwa/forms/messages.py:27 baruwa/forms/misc.py:28
-#: baruwa/forms/organizations.py:33 baruwa/forms/reports.py:33
-#: baruwa/forms/settings.py:30 baruwa/model/status.py:32
-#: baruwa/tasks/status.py:45
+#: baruwa/forms/lists.py:33 baruwa/forms/messages.py:27
+#: baruwa/forms/misc.py:28 baruwa/forms/organizations.py:33
+#: baruwa/forms/reports.py:33 baruwa/forms/settings.py:30
+#: baruwa/model/status.py:32 baruwa/tasks/status.py:45
 msgid "hi"
 msgstr "Merhaba"
 
@@ -1222,10 +1224,10 @@ msgid "Delivery Server address"
 msgstr "Dağıtım sunucusu adresi"
 
 #: baruwa/forms/lists.py:51
-msgid "Provide either a valid IP, email, Domain address, or IP network or range"
+msgid ""
+"Provide either a valid IP, email, Domain address, or IP network or range"
 msgstr ""
-"Sağlayan bir geçerli IP, e-posta, etki alanı adresi veya IP ağı veya "
-"aralığı"
+"Sağlayan bir geçerli IP, e-posta, etki alanı adresi veya IP ağı veya aralığı"
 
 #: baruwa/forms/lists.py:68
 #, python-format
@@ -1557,7 +1559,7 @@ msgstr "Geçerli saati SS: DD biçiminde veriniz."
 #: baruwa/forms/settings.py:35 baruwa/forms/settings.py:49
 #: baruwa/forms/settings.py:52
 msgid "Yes"
-msgstr ""
+msgstr "Evet"
 
 #: baruwa/forms/settings.py:35 baruwa/forms/settings.py:38
 #: baruwa/forms/settings.py:50 baruwa/forms/settings.py:53
@@ -1580,7 +1582,7 @@ msgstr "Ekle"
 
 #: baruwa/forms/settings.py:40
 msgid "Append"
-msgstr ""
+msgstr "Ekle"
 
 #: baruwa/forms/settings.py:42
 #, fuzzy
@@ -1590,7 +1592,7 @@ msgstr "Eylemi desteklenmiyor"
 
 #: baruwa/forms/settings.py:43
 msgid "None"
-msgstr ""
+msgstr "Hiçbiri"
 
 #: baruwa/forms/settings.py:44
 #, fuzzy
@@ -1606,11 +1608,11 @@ msgstr "Grafik"
 
 #: baruwa/forms/settings.py:46
 msgid "Beta"
-msgstr ""
+msgstr "Beta"
 
 #: baruwa/forms/settings.py:47
 msgid "Start"
-msgstr ""
+msgstr "Başlat"
 
 #: baruwa/forms/settings.py:48
 #, fuzzy
@@ -1620,11 +1622,11 @@ msgstr "etkin"
 
 #: baruwa/forms/settings.py:51
 msgid "Disarm"
-msgstr ""
+msgstr "Silahsızlandırılması"
 
 #: baruwa/forms/settings.py:59
 msgid "Auto detect"
-msgstr ""
+msgstr "Otomatik algıla"
 
 #: baruwa/forms/settings.py:132
 #, fuzzy
@@ -1634,11 +1636,11 @@ msgstr "içermez"
 
 #: baruwa/forms/settings.py:134
 msgid "Flag as spam"
-msgstr ""
+msgstr "Spam olarak bayrak"
 
 #: baruwa/forms/settings.py:135
 msgid "Flag as high spam"
-msgstr ""
+msgstr "Yüksek spam olarak bayrak"
 
 #: baruwa/forms/settings.py:173
 msgid "Invalid Domain name or IPv4 address"
@@ -3472,7 +3474,8 @@ msgid_plural ":: Showing page %(n)d of %(c)d pages."
 msgstr[0] ":: Gösteren sayfa %(n)d %(c)d sayfa."
 
 #: baruwa/templates/accounts/index.html:94
-#: baruwa/templates/domains/index.html:93 baruwa/templates/lists/index.html:105
+#: baruwa/templates/domains/index.html:93
+#: baruwa/templates/lists/index.html:105
 #: baruwa/templates/messages/functions.html:208
 #: baruwa/templates/messages/searchresults.html:102
 #: baruwa/templates/organizations/index.html:50
@@ -3483,7 +3486,8 @@ msgid "Showing items %(i)d to %(l)d of %(count)d"
 msgstr "Öğeleri %(i)d için %(l)d %(count)d"
 
 #: baruwa/templates/accounts/index.html:96
-#: baruwa/templates/domains/index.html:95 baruwa/templates/lists/index.html:107
+#: baruwa/templates/domains/index.html:95
+#: baruwa/templates/lists/index.html:107
 #: baruwa/templates/messages/functions.html:210
 #: baruwa/templates/messages/searchresults.html:104
 #: baruwa/templates/organizations/index.html:52
@@ -3493,7 +3497,8 @@ msgid "Show items:"
 msgstr "Öğeleri göster:"
 
 #: baruwa/templates/accounts/index.html:98
-#: baruwa/templates/domains/index.html:97 baruwa/templates/lists/index.html:109
+#: baruwa/templates/domains/index.html:97
+#: baruwa/templates/lists/index.html:109
 #: baruwa/templates/messages/functions.html:212
 #: baruwa/templates/messages/searchresults.html:106
 #: baruwa/templates/organizations/index.html:54
@@ -3534,8 +3539,8 @@ msgstr "Şifrenizi mi unuttunuz?"
 
 #: baruwa/templates/accounts/login.html:55
 msgid ""
-"Forgotten your password? Enter your e-mail address below, and we'll "
-"e-mail instructions on setting a new one."
+"Forgotten your password? Enter your e-mail address below, and we'll e-mail "
+"instructions on setting a new one."
 msgstr ""
 "Şifrenizi mi unuttunuz? E-posta adresinizi girin ve yeni bir ayarlama "
 "yönergeleri e-posta."
@@ -3963,16 +3968,16 @@ msgstr "Hata: %s"
 
 #: baruwa/templates/general/error.html:28
 msgid ""
-"You do not have sufficient permissions to access this page. Please sign "
-"in using an account with sufficient permissions"
+"You do not have sufficient permissions to access this page. Please sign in "
+"using an account with sufficient permissions"
 msgstr ""
-"Bu sayfaya erişmek için yeterli izniniz yok. Lütfen yeterli izinlere "
-"sahip bir hesabı kullanarak oturum açın"
+"Bu sayfaya erişmek için yeterli izniniz yok. Lütfen yeterli izinlere sahip "
+"bir hesabı kullanarak oturum açın"
 
 #: baruwa/templates/general/error.html:30
 msgid ""
-"The system was unable to complete your request, the support team has been"
-" notified"
+"The system was unable to complete your request, the support team has been "
+"notified"
 msgstr "Sistemin isteğinizi tamamlayamadı, destek ekibine bildirildi."
 
 #: baruwa/templates/includes/search.html:9 baruwa/templates/lists/index.html:6
@@ -4006,8 +4011,8 @@ msgstr "Teşekkür ederiz."
 
 #: baruwa/templates/invite/thankyou.html:27
 msgid ""
-"Your registration request is being reviewed, you will be notified when it"
-" is approved."
+"Your registration request is being reviewed, you will be notified when it is"
+" approved."
 msgstr "Kayıt isteğinizi gözden geçirilir, bu onaylandığında size bildirilir."
 
 #: baruwa/templates/lists/add.html:4
@@ -4079,8 +4084,7 @@ msgstr "Listesi:: Onaylı Gönderenler"
 #, python-format
 msgid "Lists :: Banned senders :: Showing page %(page)d of %(count)d pages."
 msgstr ""
-"Listeleri:: Gönderenler bayrak: gösteren sayfa %(page)d %(count)d "
-"sayfaları."
+"Listeleri:: Gönderenler bayrak: gösteren sayfa %(page)d %(count)d sayfaları."
 
 #: baruwa/templates/lists/index.html:93
 msgid "Lists :: Banned senders"
@@ -4356,7 +4360,8 @@ msgstr "Filtre uygulama"
 msgid ""
 "Messages :: Full message listing :: Showing page %(page)d of %(count)d "
 "pages."
-msgstr "Mesaj:: Tam ileti listesi:: gösteren sayfa %(page)d %(count)d sayfaları."
+msgstr ""
+"Mesaj:: Tam ileti listesi:: gösteren sayfa %(page)d %(count)d sayfaları."
 
 #: baruwa/templates/messages/listing.html:36
 #: baruwa/templates/messages/listing.html:47
@@ -4402,7 +4407,8 @@ msgstr "Günlük Spam"
 
 #: baruwa/templates/messages/quarantine.html:27
 #: baruwa/templates/status/detail.html:69
-#: baruwa/templates/status/detail.html:75 baruwa/templates/status/mailq.html:23
+#: baruwa/templates/status/detail.html:75
+#: baruwa/templates/status/mailq.html:23
 msgid "Process"
 msgstr "İşlem"
 
@@ -4459,11 +4465,10 @@ msgstr "İleti kimliği: %(id)s have be serbest bırakmak"
 #: baruwa/templates/messages/includes/released.html:4
 #, python-format
 msgid ""
-"The message id: %(id)s could not be released: %(error_msg)s, contact your"
-" email admin for assistance."
+"The message id: %(id)s could not be released: %(error_msg)s, contact your "
+"email admin for assistance."
 msgstr ""
-"İleti kimliği: %(id)s serbest: %(error_msg)s, e-posta yönetim için "
-"başvurun."
+"İleti kimliği: %(id)s serbest: %(error_msg)s, e-posta yönetim için başvurun."
 
 #: baruwa/templates/messages/includes/salearn.html:2
 #, python-format
@@ -5407,4 +5412,3 @@ msgstr "Sistem saati"
 #, python-format
 msgid "Status :: Node status :: %(server)s"
 msgstr "Durum: Düğüm durumu:: %(server)s"
-

@@ -1,21 +1,21 @@
 # Hindi translations for baruwa.
 # Copyright (C) 2012 Andrew Colin Kissa
 # This file is distributed under the same license as the baruwa project.
-#
+# 
 # Translators:
 msgid ""
 msgstr ""
-"Project-Id-Version:  baruwa\n"
+"Project-Id-Version: baruwa\n"
 "Report-Msgid-Bugs-To: baruwa@lists.baruwa.org\n"
-"POT-Creation-Date: 2012-11-20 09:57+0200\n"
-"PO-Revision-Date: 2012-11-15 13:13+0200\n"
+"POT-Creation-Date: 2012-11-24 10:27+0200\n"
+"PO-Revision-Date: 2012-11-24 10:31+0200\n"
 "Last-Translator: Andrew Colin Kissa <andrew@topdog.za.net>\n"
 "Language-Team: Baruwa Project\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 0.9.6\n"
+"Generated-By: auto-translate.py 0.0.1\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
 
 #: baruwa/commands/pdfreport.py:116 baruwa/controllers/reports.py:62
 #: baruwa/templates/reports/index.html:13
@@ -153,7 +153,8 @@ msgstr "के लिए खाता पासवर्ड %(name)s रीस�
 
 #: baruwa/controllers/accounts.py:325 baruwa/controllers/accounts.py:355
 msgid "This is an external account, use external system to reset the password"
-msgstr "यह एक बाह्य खाते, पासवर्ड रीसेट करने के लिए बाहरी प्रणाली का उपयोग करें"
+msgstr ""
+"यह एक बाह्य खाते, पासवर्ड रीसेट करने के लिए बाहरी प्रणाली का उपयोग करें"
 
 #: baruwa/controllers/accounts.py:361
 msgid "The old password supplied does not match our records"
@@ -188,11 +189,10 @@ msgstr "खाता हटाया गया है"
 #: baruwa/controllers/accounts.py:620
 #, python-format
 msgid ""
-"The account: %(a)s and all associated data will be deleted, This action "
-"is not reversible."
+"The account: %(a)s and all associated data will be deleted, This action is "
+"not reversible."
 msgstr ""
-"खाता: %(a)s और सभी संबद्ध डेटा हटा दिया जाएगा, यह क्रिया उत्क्रमणीय नहीं "
-"है।"
+"खाता: %(a)s और सभी संबद्ध डेटा हटा दिया जाएगा, यह क्रिया उत्क्रमणीय नहीं है।"
 
 #: baruwa/controllers/accounts.py:677
 msgid "The accounts have been deleted"
@@ -203,8 +203,8 @@ msgid ""
 "The following accounts are about to be deleted, this action is not "
 "reversible, Do you wish to continue ?"
 msgstr ""
-"निम्न खातों के बारे में हटाए जाने के लिए कर रहे हैं, यह क्रिया उत्क्रमणीय"
-" नहीं है, आप जारी रखना चाहते हैं?"
+"निम्न खातों के बारे में हटाए जाने के लिए कर रहे हैं, यह क्रिया उत्क्रमणीय "
+"नहीं है, आप जारी रखना चाहते हैं?"
 
 #: baruwa/controllers/accounts.py:689 baruwa/controllers/domains.py:384
 msgid "An error occured try again"
@@ -239,8 +239,8 @@ msgstr "पते को हटा दिया गया है"
 
 #: baruwa/controllers/accounts.py:874 baruwa/controllers/organizations.py:358
 msgid ""
-"File uploaded, and is being processed, this page will automatically "
-"refresh to show the status"
+"File uploaded, and is being processed, this page will automatically refresh "
+"to show the status"
 msgstr ""
 "फ़ाइल अपलोड की गई, और संसाधित किया जा रहा है, इस पृष्ठ स्वचालित रूप से "
 "स्थिति को दिखाने के लिए ताजा हो जाएगा"
@@ -322,11 +322,11 @@ msgstr "डोमेन हटाया जा चुका है"
 #: baruwa/controllers/domains.py:324
 #, python-format
 msgid ""
-"The domain: %(name)s and all associated data will be deleted, This action"
-" cannot be reversed."
+"The domain: %(name)s and all associated data will be deleted, This action "
+"cannot be reversed."
 msgstr ""
-"डोमेन: %(name)s और सभी संबद्ध डेटा हटा दिया जाएगा, इस क्रिया के उलट हो "
-"सकता है।"
+"डोमेन: %(name)s और सभी संबद्ध डेटा हटा दिया जाएगा, इस क्रिया के उलट हो सकता "
+"है।"
 
 #: baruwa/controllers/domains.py:372
 msgid "The domains have been deleted"
@@ -382,9 +382,9 @@ msgstr "गंतव्य सर्वर हटाया जा चुका �
 #: baruwa/controllers/domains.py:540
 #, python-format
 msgid ""
-"The destination server: %(s)s will be deleted, This action is not "
-"reversible"
-msgstr "गंतव्य सर्वर: %(s)s हो जाएगा नष्ट कर दिया, यह क्रिया उत्क्रमणीय नहीं है"
+"The destination server: %(s)s will be deleted, This action is not reversible"
+msgstr ""
+"गंतव्य सर्वर: %(s)s हो जाएगा नष्ट कर दिया, यह क्रिया उत्क्रमणीय नहीं है"
 
 #: baruwa/controllers/domains.py:567
 msgid "The authentication settings have been created"
@@ -393,11 +393,11 @@ msgstr "प्रमाणीकरण सेटिंग्स बनाई ग
 #: baruwa/controllers/domains.py:574
 #, python-format
 msgid ""
-"The host %(dest)s already configured for %(auth)s authentication for this"
-" domain"
+"The host %(dest)s already configured for %(auth)s authentication for this "
+"domain"
 msgstr ""
-"मेजबान %(dest)s पहले से ही के लिए कॉन्फ़िगर किया गया %(auth)s इस डोमेन के"
-" लिए प्रमाणीकरण"
+"मेजबान %(dest)s पहले से ही के लिए कॉन्फ़िगर किया गया %(auth)s इस डोमेन के "
+"लिए प्रमाणीकरण"
 
 #: baruwa/controllers/domains.py:607
 msgid "The authentication settings have been updated"
@@ -421,8 +421,7 @@ msgid ""
 "The authentication server: %(s)s will be deleted, This action is not "
 "reversible"
 msgstr ""
-"प्रमाणीकरण सर्वर: %(s)s हो जाएगा नष्ट कर दिया, यह क्रिया उत्क्रमणीय नहीं "
-"है"
+"प्रमाणीकरण सर्वर: %(s)s हो जाएगा नष्ट कर दिया, यह क्रिया उत्क्रमणीय नहीं है"
 
 #: baruwa/controllers/domains.py:671
 msgid "The protocol supplied does not use extra settings"
@@ -434,8 +433,8 @@ msgid ""
 "Please add an authentication server for the %(proto)s protocol Before "
 "attempting to configure the %(proto)s settings"
 msgstr ""
-"कृपया जोड़ने के लिए एक प्रमाणीकरण सर्वर %(proto)s प्रोटोकॉल कॉन्फ़िगर "
-"करने का प्रयास करने से पहले %(proto)s सेटिंग्स"
+"कृपया जोड़ने के लिए एक प्रमाणीकरण सर्वर %(proto)s प्रोटोकॉल कॉन्फ़िगर करने "
+"का प्रयास करने से पहले %(proto)s सेटिंग्स"
 
 #: baruwa/controllers/domains.py:715
 #, python-format
@@ -450,16 +449,16 @@ msgstr "%(proto)s सेटिंग्स बनाई गई हैं"
 #: baruwa/controllers/domains.py:729
 msgid "The auth settings already exist, use update to modify them"
 msgstr ""
-"Auth सेटिंग पहले से ही मौजूद हैं, उन्हें संशोधित करने के लिए अद्यतन का "
-"उपयोग करें"
+"Auth सेटिंग पहले से ही मौजूद हैं, उन्हें संशोधित करने के लिए अद्यतन का उपयोग"
+" करें"
 
 #: baruwa/controllers/domains.py:733
 msgid ""
-"The Radius secret is not be displayed in the form, To update type the new"
-" secret in \"Radius secret\" below."
+"The Radius secret is not be displayed in the form, To update type the new "
+"secret in \"Radius secret\" below."
 msgstr ""
-"त्रिज्या रहस्य है नीचे प्रकार नई सीक्रेट \"त्रिज्या\"रहस्य में अद्यतन "
-"करने के लिए प्रपत्र में दिखाई नहीं है।"
+"त्रिज्या रहस्य है नीचे प्रकार नई सीक्रेट \"त्रिज्या\"रहस्य में अद्यतन करने "
+"के लिए प्रपत्र में दिखाई नहीं है।"
 
 #: baruwa/controllers/domains.py:774
 #, python-format
@@ -586,8 +585,8 @@ msgid ""
 "The message has already been released, you can only use the release link "
 "once"
 msgstr ""
-"संदेश पहले से ही जारी किया गया है, आप केवल रिहाई के लिंक का उपयोग कर सकते"
-" हैं एक बार"
+"संदेश पहले से ही जारी किया गया है, आप केवल रिहाई के लिंक का उपयोग कर सकते "
+"हैं एक बार"
 
 #: baruwa/controllers/messages.py:622
 msgid "Processing of message failed"
@@ -823,10 +822,10 @@ msgid "The audit log export failed, try again later"
 msgstr "ऑडिट लॉग निर्यात असफल रहा, बाद में पुन: प्रयास करें"
 
 #: baruwa/forms/accounts.py:32 baruwa/forms/domains.py:34
-#: baruwa/forms/lists.py:33 baruwa/forms/messages.py:27 baruwa/forms/misc.py:28
-#: baruwa/forms/organizations.py:33 baruwa/forms/reports.py:33
-#: baruwa/forms/settings.py:30 baruwa/model/status.py:32
-#: baruwa/tasks/status.py:45
+#: baruwa/forms/lists.py:33 baruwa/forms/messages.py:27
+#: baruwa/forms/misc.py:28 baruwa/forms/organizations.py:33
+#: baruwa/forms/reports.py:33 baruwa/forms/settings.py:30
+#: baruwa/model/status.py:32 baruwa/tasks/status.py:45
 msgid "hi"
 msgstr "नमस्ते"
 
@@ -1227,7 +1226,8 @@ msgid "Delivery Server address"
 msgstr "वितरण सर्वर पते"
 
 #: baruwa/forms/lists.py:51
-msgid "Provide either a valid IP, email, Domain address, or IP network or range"
+msgid ""
+"Provide either a valid IP, email, Domain address, or IP network or range"
 msgstr "उपलब्ध कराने के एक वैध आईपी, ईमेल, डोमेन पते या IP नेटवर्क या श्रेणी"
 
 #: baruwa/forms/lists.py:68
@@ -1560,7 +1560,7 @@ msgstr "कृपया मान्य समय को hh: mm स्वरू�
 #: baruwa/forms/settings.py:35 baruwa/forms/settings.py:49
 #: baruwa/forms/settings.py:52
 msgid "Yes"
-msgstr ""
+msgstr "हाँ"
 
 #: baruwa/forms/settings.py:35 baruwa/forms/settings.py:38
 #: baruwa/forms/settings.py:50 baruwa/forms/settings.py:53
@@ -1583,7 +1583,7 @@ msgstr "जोड़ें"
 
 #: baruwa/forms/settings.py:40
 msgid "Append"
-msgstr ""
+msgstr "पीछे जोड़ें"
 
 #: baruwa/forms/settings.py:42
 #, fuzzy
@@ -1593,7 +1593,7 @@ msgstr "कार्रवाई समर्थित नहीं"
 
 #: baruwa/forms/settings.py:43
 msgid "None"
-msgstr ""
+msgstr "कोई नहीं"
 
 #: baruwa/forms/settings.py:44
 #, fuzzy
@@ -1609,11 +1609,11 @@ msgstr "ग्राफ"
 
 #: baruwa/forms/settings.py:46
 msgid "Beta"
-msgstr ""
+msgstr "बीटा"
 
 #: baruwa/forms/settings.py:47
 msgid "Start"
-msgstr ""
+msgstr "प्रारंभ करें"
 
 #: baruwa/forms/settings.py:48
 #, fuzzy
@@ -1623,11 +1623,11 @@ msgstr "सक्षम किया गया"
 
 #: baruwa/forms/settings.py:51
 msgid "Disarm"
-msgstr ""
+msgstr "वश में कर लेना"
 
 #: baruwa/forms/settings.py:59
 msgid "Auto detect"
-msgstr ""
+msgstr "स्वतः पता लगाएँ"
 
 #: baruwa/forms/settings.py:132
 #, fuzzy
@@ -1637,11 +1637,11 @@ msgstr "न हों"
 
 #: baruwa/forms/settings.py:134
 msgid "Flag as spam"
-msgstr ""
+msgstr "स्पैम के रूप में झंडा"
 
 #: baruwa/forms/settings.py:135
 msgid "Flag as high spam"
-msgstr ""
+msgstr "उच्च स्पैम के रूप में ध्वजांकित"
 
 #: baruwa/forms/settings.py:173
 msgid "Invalid Domain name or IPv4 address"
@@ -3472,7 +3472,8 @@ msgstr[0] ":: दिखा पृष्ठ %(n)d की %(c)d पृष्ठ।
 msgstr[1] ":: दिखा पृष्ठ %(n)d की %(c)d पृष्ठों।"
 
 #: baruwa/templates/accounts/index.html:94
-#: baruwa/templates/domains/index.html:93 baruwa/templates/lists/index.html:105
+#: baruwa/templates/domains/index.html:93
+#: baruwa/templates/lists/index.html:105
 #: baruwa/templates/messages/functions.html:208
 #: baruwa/templates/messages/searchresults.html:102
 #: baruwa/templates/organizations/index.html:50
@@ -3483,7 +3484,8 @@ msgid "Showing items %(i)d to %(l)d of %(count)d"
 msgstr "आइटम दिखा रहा %(i)d करने के लिए %(l)d की %(count)d"
 
 #: baruwa/templates/accounts/index.html:96
-#: baruwa/templates/domains/index.html:95 baruwa/templates/lists/index.html:107
+#: baruwa/templates/domains/index.html:95
+#: baruwa/templates/lists/index.html:107
 #: baruwa/templates/messages/functions.html:210
 #: baruwa/templates/messages/searchresults.html:104
 #: baruwa/templates/organizations/index.html:52
@@ -3493,7 +3495,8 @@ msgid "Show items:"
 msgstr "आइटम्स को दिखाएँ:"
 
 #: baruwa/templates/accounts/index.html:98
-#: baruwa/templates/domains/index.html:97 baruwa/templates/lists/index.html:109
+#: baruwa/templates/domains/index.html:97
+#: baruwa/templates/lists/index.html:109
 #: baruwa/templates/messages/functions.html:212
 #: baruwa/templates/messages/searchresults.html:106
 #: baruwa/templates/organizations/index.html:54
@@ -3534,11 +3537,11 @@ msgstr "पासवर्ड भूल गए?"
 
 #: baruwa/templates/accounts/login.html:55
 msgid ""
-"Forgotten your password? Enter your e-mail address below, and we'll "
-"e-mail instructions on setting a new one."
+"Forgotten your password? Enter your e-mail address below, and we'll e-mail "
+"instructions on setting a new one."
 msgstr ""
-"अपना पासवर्ड भूल गए? नीचे अपना ई-मेल पता दर्ज करें, और हम एक नया एक "
-"स्थापित करने पर निर्देश ई मेल करेंगे।"
+"अपना पासवर्ड भूल गए? नीचे अपना ई-मेल पता दर्ज करें, और हम एक नया एक स्थापित "
+"करने पर निर्देश ई मेल करेंगे।"
 
 #: baruwa/templates/accounts/login.html:60
 msgid "Cancel"
@@ -3913,7 +3916,8 @@ msgstr "कोई डोमेन पाया मिलान: %s"
 msgid ""
 "Domains :: Search results :: %(q)s :: Showing page %(page)d of %(count)d "
 "pages."
-msgstr "डोमेन:: खोज परिणाम:: %(q)s :: दिखा पृष्ठ %(page)d की %(count)d पृष्ठों।"
+msgstr ""
+"डोमेन:: खोज परिणाम:: %(q)s :: दिखा पृष्ठ %(page)d की %(count)d पृष्ठों।"
 
 #: baruwa/templates/domains/searchresults.html:71
 #: baruwa/templates/domains/searchresults.html:75
@@ -3962,19 +3966,19 @@ msgstr "त्रुटि: %s"
 
 #: baruwa/templates/general/error.html:28
 msgid ""
-"You do not have sufficient permissions to access this page. Please sign "
-"in using an account with sufficient permissions"
+"You do not have sufficient permissions to access this page. Please sign in "
+"using an account with sufficient permissions"
 msgstr ""
-"आपके पास इस पृष्ठ तक पहुँचने के लिए पर्याप्त अनुमतियाँ नहीं हैं। कृपया "
-"आपके पास पर्याप्त अनुमतियाँ के साथ किसी खाते का उपयोग में साइन इन करें"
+"आपके पास इस पृष्ठ तक पहुँचने के लिए पर्याप्त अनुमतियाँ नहीं हैं। कृपया आपके "
+"पास पर्याप्त अनुमतियाँ के साथ किसी खाते का उपयोग में साइन इन करें"
 
 #: baruwa/templates/general/error.html:30
 msgid ""
-"The system was unable to complete your request, the support team has been"
-" notified"
+"The system was unable to complete your request, the support team has been "
+"notified"
 msgstr ""
-"सिस्टम आपके अनुरोध को पूरा करने में असमर्थ था, समर्थन टीम अधिसूचित किया "
-"गया है"
+"सिस्टम आपके अनुरोध को पूरा करने में असमर्थ था, समर्थन टीम अधिसूचित किया गया "
+"है"
 
 #: baruwa/templates/includes/search.html:9 baruwa/templates/lists/index.html:6
 #: baruwa/templates/messages/functions.html:300
@@ -4007,11 +4011,11 @@ msgstr "धन्यवाद."
 
 #: baruwa/templates/invite/thankyou.html:27
 msgid ""
-"Your registration request is being reviewed, you will be notified when it"
-" is approved."
+"Your registration request is being reviewed, you will be notified when it is"
+" approved."
 msgstr ""
-"आपके पंजीकरण अनुरोध की समीक्षा की जा रही है, जब इसे मंजूरी दे दी है पर "
-"आपको सूचित कर किया जाएगा।"
+"आपके पंजीकरण अनुरोध की समीक्षा की जा रही है, जब इसे मंजूरी दे दी है पर आपको "
+"सूचित कर किया जाएगा।"
 
 #: baruwa/templates/lists/add.html:4
 msgid "Add Sender to a list"
@@ -4070,7 +4074,8 @@ msgstr "सूची प्रबंधन"
 #: baruwa/templates/lists/index.html:85
 #, python-format
 msgid "Lists :: Approved senders :: Showing page %(page)d of %(count)d pages."
-msgstr "सूचियाँ:: प्रेषक मंजूरी दे दी:: दिखा पृष्ठ %(page)d की %(count)d पृष्ठों।"
+msgstr ""
+"सूचियाँ:: प्रेषक मंजूरी दे दी:: दिखा पृष्ठ %(page)d की %(count)d पृष्ठों।"
 
 #: baruwa/templates/lists/index.html:87
 msgid "Lists :: Approved senders"
@@ -4357,7 +4362,8 @@ msgstr "फ़िल्टर लागू करें"
 msgid ""
 "Messages :: Full message listing :: Showing page %(page)d of %(count)d "
 "pages."
-msgstr "संदेश:: पूर्ण संदेश लिस्टिंग:: दिखा पृष्ठ %(page)d की %(count)d पृष्ठों।"
+msgstr ""
+"संदेश:: पूर्ण संदेश लिस्टिंग:: दिखा पृष्ठ %(page)d की %(count)d पृष्ठों।"
 
 #: baruwa/templates/messages/listing.html:36
 #: baruwa/templates/messages/listing.html:47
@@ -4403,7 +4409,8 @@ msgstr "लॉग इन करें स्पैम"
 
 #: baruwa/templates/messages/quarantine.html:27
 #: baruwa/templates/status/detail.html:69
-#: baruwa/templates/status/detail.html:75 baruwa/templates/status/mailq.html:23
+#: baruwa/templates/status/detail.html:75
+#: baruwa/templates/status/mailq.html:23
 msgid "Process"
 msgstr "प्रक्रिया"
 
@@ -4460,11 +4467,11 @@ msgstr "संदेश id: %(id)s जारी की गई है"
 #: baruwa/templates/messages/includes/released.html:4
 #, python-format
 msgid ""
-"The message id: %(id)s could not be released: %(error_msg)s, contact your"
-" email admin for assistance."
+"The message id: %(id)s could not be released: %(error_msg)s, contact your "
+"email admin for assistance."
 msgstr ""
-"संदेश id: %(id)s जारी नहीं किया जा सकता: %(error_msg)s, सहायता के लिए "
-"अपने ईमेल व्यवस्थापक से संपर्क करें।"
+"संदेश id: %(id)s जारी नहीं किया जा सकता: %(error_msg)s, सहायता के लिए अपने "
+"ईमेल व्यवस्थापक से संपर्क करें।"
 
 #: baruwa/templates/messages/includes/salearn.html:2
 #, python-format
@@ -5253,7 +5260,8 @@ msgstr "पंक्तिबद्ध संदेश: %(msgid)s पूर्�
 #: baruwa/templates/status/preview.html:58
 #, python-format
 msgid "Status :: Mail Queue :: Previewing Queued message : %(msgid)s"
-msgstr "स्थिति:: मेल कतार:: संदेश का पूर्वावलोकन करने के लिए पंक्तिबद्ध: %(msgid)s"
+msgstr ""
+"स्थिति:: मेल कतार:: संदेश का पूर्वावलोकन करने के लिए पंक्तिबद्ध: %(msgid)s"
 
 #: baruwa/templates/status/salint.html:10
 msgid "Spamassassin Lint"
@@ -5411,4 +5419,3 @@ msgstr "सिस्टम का समय"
 #, python-format
 msgid "Status :: Node status :: %(server)s"
 msgstr "स्थिति:: नोड स्थिति:: %(server)s"
-

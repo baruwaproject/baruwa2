@@ -1,21 +1,21 @@
 # English translations for baruwa.
 # Copyright (C) 2011 ORGANIZATION
 # This file is distributed under the same license as the baruwa project.
-#
+# 
 # Translators:
 msgid ""
 msgstr ""
-"Project-Id-Version:  baruwa\n"
+"Project-Id-Version: baruwa\n"
 "Report-Msgid-Bugs-To: baruwa@lists.baruwa.org\n"
-"POT-Creation-Date: 2012-11-20 09:57+0200\n"
-"PO-Revision-Date: 2012-11-16 17:53+0200\n"
+"POT-Creation-Date: 2012-11-24 10:27+0200\n"
+"PO-Revision-Date: 2012-11-24 10:30+0200\n"
 "Last-Translator: Andrew Colin Kissa <andrew@topdog.za.net>\n"
 "Language-Team: Baruwa Project\n"
-"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 0.9.6\n"
+"Generated-By: auto-translate.py 0.0.1\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2\n"
 
 #: baruwa/commands/pdfreport.py:116 baruwa/controllers/reports.py:62
 #: baruwa/templates/reports/index.html:13
@@ -188,8 +188,8 @@ msgstr "Účet byl odstraněn"
 #: baruwa/controllers/accounts.py:620
 #, python-format
 msgid ""
-"The account: %(a)s and all associated data will be deleted, This action "
-"is not reversible."
+"The account: %(a)s and all associated data will be deleted, This action is "
+"not reversible."
 msgstr ""
 "Účet: %(a)s a všechna související data budou odstraněna, tato akce není "
 "reverzibilní."
@@ -239,8 +239,8 @@ msgstr "Adresa byla odstraněna"
 
 #: baruwa/controllers/accounts.py:874 baruwa/controllers/organizations.py:358
 msgid ""
-"File uploaded, and is being processed, this page will automatically "
-"refresh to show the status"
+"File uploaded, and is being processed, this page will automatically refresh "
+"to show the status"
 msgstr ""
 "Soubor nahrál a zpracování, tato stránka bude automaticky aktualizovat "
 "zobrazíte stav"
@@ -322,8 +322,8 @@ msgstr "Doména byla odstraněna"
 #: baruwa/controllers/domains.py:324
 #, python-format
 msgid ""
-"The domain: %(name)s and all associated data will be deleted, This action"
-" cannot be reversed."
+"The domain: %(name)s and all associated data will be deleted, This action "
+"cannot be reversed."
 msgstr ""
 "Doména: %(name)s a všechna související data budou odstraněna, tuto akci "
 "nelze vrátit zpět."
@@ -382,8 +382,7 @@ msgstr "Cílový server byla odstraněna"
 #: baruwa/controllers/domains.py:540
 #, python-format
 msgid ""
-"The destination server: %(s)s will be deleted, This action is not "
-"reversible"
+"The destination server: %(s)s will be deleted, This action is not reversible"
 msgstr "Cílový server: %(s)s bude odstraněna, tato akce není reverzibilní"
 
 #: baruwa/controllers/domains.py:567
@@ -393,11 +392,10 @@ msgstr "Nastavení ověřování byly vytvořeny"
 #: baruwa/controllers/domains.py:574
 #, python-format
 msgid ""
-"The host %(dest)s already configured for %(auth)s authentication for this"
-" domain"
+"The host %(dest)s already configured for %(auth)s authentication for this "
+"domain"
 msgstr ""
-"Hostitel %(dest)s již nakonfigurován pro %(auth)s ověřování pro tuto "
-"doménu"
+"Hostitel %(dest)s již nakonfigurován pro %(auth)s ověřování pro tuto doménu"
 
 #: baruwa/controllers/domains.py:607
 msgid "The authentication settings have been updated"
@@ -451,8 +449,8 @@ msgstr "Ověření nastavení již existují, použijte aktualizaci upravit"
 
 #: baruwa/controllers/domains.py:733
 msgid ""
-"The Radius secret is not be displayed in the form, To update type the new"
-" secret in \"Radius secret\" below."
+"The Radius secret is not be displayed in the form, To update type the new "
+"secret in \"Radius secret\" below."
 msgstr ""
 "Tajemství je poloměr nebyla zobrazí ve formuláři, k aktualizaci typ nové "
 "tajemství v \"Radius secret\" níže."
@@ -817,10 +815,10 @@ msgid "The audit log export failed, try again later"
 msgstr "Export protokolu auditu selhal, opakujte akci později"
 
 #: baruwa/forms/accounts.py:32 baruwa/forms/domains.py:34
-#: baruwa/forms/lists.py:33 baruwa/forms/messages.py:27 baruwa/forms/misc.py:28
-#: baruwa/forms/organizations.py:33 baruwa/forms/reports.py:33
-#: baruwa/forms/settings.py:30 baruwa/model/status.py:32
-#: baruwa/tasks/status.py:45
+#: baruwa/forms/lists.py:33 baruwa/forms/messages.py:27
+#: baruwa/forms/misc.py:28 baruwa/forms/organizations.py:33
+#: baruwa/forms/reports.py:33 baruwa/forms/settings.py:30
+#: baruwa/model/status.py:32 baruwa/tasks/status.py:45
 msgid "hi"
 msgstr "Ahoj"
 
@@ -1222,8 +1220,10 @@ msgid "Delivery Server address"
 msgstr "Dodací adresa serveru"
 
 #: baruwa/forms/lists.py:51
-msgid "Provide either a valid IP, email, Domain address, or IP network or range"
-msgstr "Poskytnout buď platná IP, e-mail, adresu domény nebo IP sítí nebo rozsah"
+msgid ""
+"Provide either a valid IP, email, Domain address, or IP network or range"
+msgstr ""
+"Poskytnout buď platná IP, e-mail, adresu domény nebo IP sítí nebo rozsah"
 
 #: baruwa/forms/lists.py:68
 #, python-format
@@ -1555,7 +1555,7 @@ msgstr "Zadejte platný čas ve formátu hh: mm"
 #: baruwa/forms/settings.py:35 baruwa/forms/settings.py:49
 #: baruwa/forms/settings.py:52
 msgid "Yes"
-msgstr ""
+msgstr "Ano"
 
 #: baruwa/forms/settings.py:35 baruwa/forms/settings.py:38
 #: baruwa/forms/settings.py:50 baruwa/forms/settings.py:53
@@ -1578,7 +1578,7 @@ msgstr "Přidat"
 
 #: baruwa/forms/settings.py:40
 msgid "Append"
-msgstr ""
+msgstr "Připojit"
 
 #: baruwa/forms/settings.py:42
 #, fuzzy
@@ -1588,7 +1588,7 @@ msgstr "Akce není podporována"
 
 #: baruwa/forms/settings.py:43
 msgid "None"
-msgstr ""
+msgstr "Žádný"
 
 #: baruwa/forms/settings.py:44
 #, fuzzy
@@ -1604,11 +1604,11 @@ msgstr "Graf"
 
 #: baruwa/forms/settings.py:46
 msgid "Beta"
-msgstr ""
+msgstr "Beta"
 
 #: baruwa/forms/settings.py:47
 msgid "Start"
-msgstr ""
+msgstr "Začátek"
 
 #: baruwa/forms/settings.py:48
 #, fuzzy
@@ -1618,11 +1618,11 @@ msgstr "povoleno"
 
 #: baruwa/forms/settings.py:51
 msgid "Disarm"
-msgstr ""
+msgstr "Odzbrojit"
 
 #: baruwa/forms/settings.py:59
 msgid "Auto detect"
-msgstr ""
+msgstr "Automatické rozpoznávání"
 
 #: baruwa/forms/settings.py:132
 #, fuzzy
@@ -1632,11 +1632,11 @@ msgstr "neobsahuje žádné"
 
 #: baruwa/forms/settings.py:134
 msgid "Flag as spam"
-msgstr ""
+msgstr "Označit jako spam"
 
 #: baruwa/forms/settings.py:135
 msgid "Flag as high spam"
-msgstr ""
+msgstr "Označit jako spam vysoká"
 
 #: baruwa/forms/settings.py:173
 msgid "Invalid Domain name or IPv4 address"
@@ -3468,7 +3468,8 @@ msgstr[1] ":: Page zobrazeno %(n)d z %(c)d stránky."
 msgstr[2] ":: Page zobrazeno %(n)d z %(c)d stránky."
 
 #: baruwa/templates/accounts/index.html:94
-#: baruwa/templates/domains/index.html:93 baruwa/templates/lists/index.html:105
+#: baruwa/templates/domains/index.html:93
+#: baruwa/templates/lists/index.html:105
 #: baruwa/templates/messages/functions.html:208
 #: baruwa/templates/messages/searchresults.html:102
 #: baruwa/templates/organizations/index.html:50
@@ -3479,7 +3480,8 @@ msgid "Showing items %(i)d to %(l)d of %(count)d"
 msgstr "Zobrazení položek %(i)d pro %(l)d z %(count)d"
 
 #: baruwa/templates/accounts/index.html:96
-#: baruwa/templates/domains/index.html:95 baruwa/templates/lists/index.html:107
+#: baruwa/templates/domains/index.html:95
+#: baruwa/templates/lists/index.html:107
 #: baruwa/templates/messages/functions.html:210
 #: baruwa/templates/messages/searchresults.html:104
 #: baruwa/templates/organizations/index.html:52
@@ -3489,7 +3491,8 @@ msgid "Show items:"
 msgstr "Zobrazit položky:"
 
 #: baruwa/templates/accounts/index.html:98
-#: baruwa/templates/domains/index.html:97 baruwa/templates/lists/index.html:109
+#: baruwa/templates/domains/index.html:97
+#: baruwa/templates/lists/index.html:109
 #: baruwa/templates/messages/functions.html:212
 #: baruwa/templates/messages/searchresults.html:106
 #: baruwa/templates/organizations/index.html:54
@@ -3530,8 +3533,8 @@ msgstr "Zapomněli jste heslo?"
 
 #: baruwa/templates/accounts/login.html:55
 msgid ""
-"Forgotten your password? Enter your e-mail address below, and we'll "
-"e-mail instructions on setting a new one."
+"Forgotten your password? Enter your e-mail address below, and we'll e-mail "
+"instructions on setting a new one."
 msgstr ""
 "Zapomněli jste své heslo? Zadejte svou e-mailovou adresu níže, a my si "
 "e-pokyny k nastavování nového."
@@ -3961,17 +3964,18 @@ msgstr "Chyba: %s"
 
 #: baruwa/templates/general/error.html:28
 msgid ""
-"You do not have sufficient permissions to access this page. Please sign "
-"in using an account with sufficient permissions"
+"You do not have sufficient permissions to access this page. Please sign in "
+"using an account with sufficient permissions"
 msgstr ""
-"Nemáte dostatečná oprávnění pro přístup k této stránce. Přihlaste se "
-"pomocí účtu s dostatečnými oprávněními"
+"Nemáte dostatečná oprávnění pro přístup k této stránce. Přihlaste se pomocí "
+"účtu s dostatečnými oprávněními"
 
 #: baruwa/templates/general/error.html:30
 msgid ""
-"The system was unable to complete your request, the support team has been"
-" notified"
-msgstr "Systém nebyl schopen dokončit váš požadavek, tým podpory bylo oznámeno"
+"The system was unable to complete your request, the support team has been "
+"notified"
+msgstr ""
+"Systém nebyl schopen dokončit váš požadavek, tým podpory bylo oznámeno"
 
 #: baruwa/templates/includes/search.html:9 baruwa/templates/lists/index.html:6
 #: baruwa/templates/messages/functions.html:300
@@ -4004,11 +4008,10 @@ msgstr "Děkuju."
 
 #: baruwa/templates/invite/thankyou.html:27
 msgid ""
-"Your registration request is being reviewed, you will be notified when it"
-" is approved."
+"Your registration request is being reviewed, you will be notified when it is"
+" approved."
 msgstr ""
-"Váš požadavek na registraci se přezkoumává, budete upozorněni při "
-"schválení."
+"Váš požadavek na registraci se přezkoumává, budete upozorněni při schválení."
 
 #: baruwa/templates/lists/add.html:4
 msgid "Add Sender to a list"
@@ -4404,7 +4407,8 @@ msgstr "Log Spam"
 
 #: baruwa/templates/messages/quarantine.html:27
 #: baruwa/templates/status/detail.html:69
-#: baruwa/templates/status/detail.html:75 baruwa/templates/status/mailq.html:23
+#: baruwa/templates/status/detail.html:75
+#: baruwa/templates/status/mailq.html:23
 msgid "Process"
 msgstr "Proces"
 
@@ -4461,11 +4465,11 @@ msgstr "Id zprávy: %(id)s byla uvolněna"
 #: baruwa/templates/messages/includes/released.html:4
 #, python-format
 msgid ""
-"The message id: %(id)s could not be released: %(error_msg)s, contact your"
-" email admin for assistance."
+"The message id: %(id)s could not be released: %(error_msg)s, contact your "
+"email admin for assistance."
 msgstr ""
-"Id zprávy: %(id)s nelze uvolnit: %(error_msg)s, požádejte o pomoc správce"
-" e-mailu."
+"Id zprávy: %(id)s nelze uvolnit: %(error_msg)s, požádejte o pomoc správce "
+"e-mailu."
 
 #: baruwa/templates/messages/includes/salearn.html:2
 #, python-format
@@ -5415,4 +5419,3 @@ msgstr "Systémový čas"
 #, python-format
 msgid "Status :: Node status :: %(server)s"
 msgstr "Status:: Stav uzlu:: %(server)s"
-

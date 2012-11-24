@@ -1,22 +1,21 @@
 # Latvian translations for baruwa.
 # Copyright (C) 2012 Andrew Colin Kissa
 # This file is distributed under the same license as the baruwa project.
-#
+# 
 # Translators:
 msgid ""
 msgstr ""
-"Project-Id-Version:  baruwa\n"
+"Project-Id-Version: baruwa\n"
 "Report-Msgid-Bugs-To: baruwa@lists.baruwa.org\n"
-"POT-Creation-Date: 2012-11-20 09:57+0200\n"
-"PO-Revision-Date: 2012-11-16 18:21+0200\n"
+"POT-Creation-Date: 2012-11-24 10:27+0200\n"
+"PO-Revision-Date: 2012-11-24 10:32+0200\n"
 "Last-Translator: Andrew Colin Kissa <andrew@topdog.za.net>\n"
 "Language-Team: Baruwa Project\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 :"
-" 2)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 0.9.6\n"
+"Generated-By: auto-translate.py 0.0.1\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : 2)\n"
 
 #: baruwa/commands/pdfreport.py:116 baruwa/controllers/reports.py:62
 #: baruwa/templates/reports/index.html:13
@@ -189,11 +188,10 @@ msgstr "Konts ir izdzēsts"
 #: baruwa/controllers/accounts.py:620
 #, python-format
 msgid ""
-"The account: %(a)s and all associated data will be deleted, This action "
-"is not reversible."
+"The account: %(a)s and all associated data will be deleted, This action is "
+"not reversible."
 msgstr ""
-"Konts: %(a)s tiks dzēsti visi saistītie dati, šī darbība ir "
-"neatgriezeniska."
+"Konts: %(a)s tiks dzēsti visi saistītie dati, šī darbība ir neatgriezeniska."
 
 #: baruwa/controllers/accounts.py:677
 msgid "The accounts have been deleted"
@@ -204,8 +202,7 @@ msgid ""
 "The following accounts are about to be deleted, this action is not "
 "reversible, Do you wish to continue ?"
 msgstr ""
-"Šie konti ir jāsvītro, šī darbība ir neatgriezeniska, vai vēlaties "
-"turpināt?"
+"Šie konti ir jāsvītro, šī darbība ir neatgriezeniska, vai vēlaties turpināt?"
 
 #: baruwa/controllers/accounts.py:689 baruwa/controllers/domains.py:384
 msgid "An error occured try again"
@@ -240,8 +237,8 @@ msgstr "Adrese ir izdzēsts"
 
 #: baruwa/controllers/accounts.py:874 baruwa/controllers/organizations.py:358
 msgid ""
-"File uploaded, and is being processed, this page will automatically "
-"refresh to show the status"
+"File uploaded, and is being processed, this page will automatically refresh "
+"to show the status"
 msgstr ""
 "Fails augšupielādēts un tiek apstrādāts, šī lapa tiks atsvaidzināta "
 "automātiski parādīt statusa"
@@ -265,7 +262,8 @@ msgstr "Nav CSV failu augšupielādi, mēģiniet atkal bija"
 #: baruwa/controllers/messages.py:642 baruwa/controllers/organizations.py:380
 #: baruwa/controllers/status.py:497
 msgid "The task status requested has expired or does not exist"
-msgstr "Pieprasīto uzdevumu statusa termiņš ir beidzies vai_ar ī vairs nepastāv"
+msgstr ""
+"Pieprasīto uzdevumu statusa termiņš ir beidzies vai_ar ī vairs nepastāv"
 
 #: baruwa/controllers/accounts.py:906 baruwa/controllers/accounts.py:962
 #: baruwa/controllers/domains.py:875 baruwa/controllers/organizations.py:388
@@ -323,8 +321,8 @@ msgstr "Domēns ir izdzēsts"
 #: baruwa/controllers/domains.py:324
 #, python-format
 msgid ""
-"The domain: %(name)s and all associated data will be deleted, This action"
-" cannot be reversed."
+"The domain: %(name)s and all associated data will be deleted, This action "
+"cannot be reversed."
 msgstr ""
 "Domēns: %(name)s tiks dzēsti visi saistītie dati un šo darbību nevar "
 "atsaukt."
@@ -383,8 +381,7 @@ msgstr "Mērķa serverī ir dzēsts"
 #: baruwa/controllers/domains.py:540
 #, python-format
 msgid ""
-"The destination server: %(s)s will be deleted, This action is not "
-"reversible"
+"The destination server: %(s)s will be deleted, This action is not reversible"
 msgstr "Mērķa serverī: %(s)s tiks dzēsti, šī darbība nav atgriezeniska"
 
 #: baruwa/controllers/domains.py:567
@@ -394,9 +391,10 @@ msgstr "Ir izveidots autentifikācijas iestatījumi"
 #: baruwa/controllers/domains.py:574
 #, python-format
 msgid ""
-"The host %(dest)s already configured for %(auth)s authentication for this"
-" domain"
-msgstr "Uzņēmēja %(dest)s jau konfigurēta %(auth)s autentifikācijas šim domēnam"
+"The host %(dest)s already configured for %(auth)s authentication for this "
+"domain"
+msgstr ""
+"Uzņēmēja %(dest)s jau konfigurēta %(auth)s autentifikācijas šim domēnam"
 
 #: baruwa/controllers/domains.py:607
 msgid "The authentication settings have been updated"
@@ -419,7 +417,8 @@ msgstr "Autentifikācijas iestatījumi ir dzēsti"
 msgid ""
 "The authentication server: %(s)s will be deleted, This action is not "
 "reversible"
-msgstr "Autentifikācijas serveris: %(s)s tiks dzēsti, šī darbība nav atgriezeniska"
+msgstr ""
+"Autentifikācijas serveris: %(s)s tiks dzēsti, šī darbība nav atgriezeniska"
 
 #: baruwa/controllers/domains.py:671
 msgid "The protocol supplied does not use extra settings"
@@ -447,16 +446,16 @@ msgstr "%(proto)s iestatījumi ir izveidoti"
 #: baruwa/controllers/domains.py:729
 msgid "The auth settings already exist, use update to modify them"
 msgstr ""
-"Autentifikācijas iestatījumi jau pastāv, izmantojiet atjaunināšanu, lai "
-"tos modificētu"
+"Autentifikācijas iestatījumi jau pastāv, izmantojiet atjaunināšanu, lai tos "
+"modificētu"
 
 #: baruwa/controllers/domains.py:733
 msgid ""
-"The Radius secret is not be displayed in the form, To update type the new"
-" secret in \"Radius secret\" below."
+"The Radius secret is not be displayed in the form, To update type the new "
+"secret in \"Radius secret\" below."
 msgstr ""
-"Noslēpums ir rādiuss nevar parādīt formā, atjauniniet tipu jaunu "
-"noslēpumu \"Rādiuss Secret\" zemāk."
+"Noslēpums ir rādiuss nevar parādīt formā, atjauniniet tipu jaunu noslēpumu "
+"\"Rādiuss Secret\" zemāk."
 
 #: baruwa/controllers/domains.py:774
 #, python-format
@@ -582,7 +581,8 @@ msgstr "Nezināms"
 msgid ""
 "The message has already been released, you can only use the release link "
 "once"
-msgstr "Ziņojums jau ir atbrīvota, atbrīvot saiti var izmantot tikai vienu reizi"
+msgstr ""
+"Ziņojums jau ir atbrīvota, atbrīvot saiti var izmantot tikai vienu reizi"
 
 #: baruwa/controllers/messages.py:622
 msgid "Processing of message failed"
@@ -820,10 +820,10 @@ msgid "The audit log export failed, try again later"
 msgstr "Audita žurnāla eksportēšana neizdevās, mēģiniet vēlreiz vēlāk"
 
 #: baruwa/forms/accounts.py:32 baruwa/forms/domains.py:34
-#: baruwa/forms/lists.py:33 baruwa/forms/messages.py:27 baruwa/forms/misc.py:28
-#: baruwa/forms/organizations.py:33 baruwa/forms/reports.py:33
-#: baruwa/forms/settings.py:30 baruwa/model/status.py:32
-#: baruwa/tasks/status.py:45
+#: baruwa/forms/lists.py:33 baruwa/forms/messages.py:27
+#: baruwa/forms/misc.py:28 baruwa/forms/organizations.py:33
+#: baruwa/forms/reports.py:33 baruwa/forms/settings.py:30
+#: baruwa/model/status.py:32 baruwa/tasks/status.py:45
 msgid "hi"
 msgstr "čau"
 
@@ -1224,7 +1224,8 @@ msgid "Delivery Server address"
 msgstr "Serveru piegādes adrese"
 
 #: baruwa/forms/lists.py:51
-msgid "Provide either a valid IP, email, Domain address, or IP network or range"
+msgid ""
+"Provide either a valid IP, email, Domain address, or IP network or range"
 msgstr ""
 "Nodrošināt vai nu derīga IP, e-pasts, domēna adresi vai IP tīklu vai "
 "diapazonu"
@@ -1516,7 +1517,7 @@ msgstr "nav patiess"
 #: baruwa/forms/reports.py:117
 #, python-format
 msgid "%(field)s does not support the \"%(filt)s\" filter"
-msgstr "%(field)s neatbalsta \"%(field)s\" filtrs"
+msgstr "%(field)s neatbalsta \"%(filt)s\" filtrs"
 
 #: baruwa/forms/reports.py:124
 msgid "Please supply a value to query"
@@ -1559,7 +1560,7 @@ msgstr "Lūdzu, norādiet derīgu laiku HH: mm formātā"
 #: baruwa/forms/settings.py:35 baruwa/forms/settings.py:49
 #: baruwa/forms/settings.py:52
 msgid "Yes"
-msgstr ""
+msgstr "jā"
 
 #: baruwa/forms/settings.py:35 baruwa/forms/settings.py:38
 #: baruwa/forms/settings.py:50 baruwa/forms/settings.py:53
@@ -1582,7 +1583,7 @@ msgstr "Pievienot"
 
 #: baruwa/forms/settings.py:40
 msgid "Append"
-msgstr ""
+msgstr "Pievienošanas"
 
 #: baruwa/forms/settings.py:42
 #, fuzzy
@@ -1592,7 +1593,7 @@ msgstr "Darbība netiek atbalstīta"
 
 #: baruwa/forms/settings.py:43
 msgid "None"
-msgstr ""
+msgstr "Nav"
 
 #: baruwa/forms/settings.py:44
 #, fuzzy
@@ -1608,11 +1609,11 @@ msgstr "Graph"
 
 #: baruwa/forms/settings.py:46
 msgid "Beta"
-msgstr ""
+msgstr "Beta"
 
 #: baruwa/forms/settings.py:47
 msgid "Start"
-msgstr ""
+msgstr "Sākums"
 
 #: baruwa/forms/settings.py:48
 #, fuzzy
@@ -1622,11 +1623,11 @@ msgstr "iespējota"
 
 #: baruwa/forms/settings.py:51
 msgid "Disarm"
-msgstr ""
+msgstr "Atbruņot"
 
 #: baruwa/forms/settings.py:59
 msgid "Auto detect"
-msgstr ""
+msgstr "Automātiskā noteikšana"
 
 #: baruwa/forms/settings.py:132
 #, fuzzy
@@ -1636,11 +1637,11 @@ msgstr "nav"
 
 #: baruwa/forms/settings.py:134
 msgid "Flag as spam"
-msgstr ""
+msgstr "Atzīmēt ar karodziņu kā nevēlamais e-pasts"
 
 #: baruwa/forms/settings.py:135
 msgid "Flag as high spam"
-msgstr ""
+msgstr "Atzīmēt ar karodziņu kā liels spam"
 
 #: baruwa/forms/settings.py:173
 msgid "Invalid Domain name or IPv4 address"
@@ -2924,7 +2925,7 @@ msgstr "Audita žurnāla atjauninājumu: %s no: %s"
 #: baruwa/tasks/status.py:269
 #, python-format
 msgid "Audit Log FAILURE: %s %s %s %s %s %s Error: %s"
-msgstr "Audita žurnāla kļūme: %s %s s s kļūda: %s"
+msgstr "Audita žurnāla kļūme: %s %s %s %s %s %s kļūda: %s"
 
 #: baruwa/tasks/status.py:289
 msgid "Audit Log exported report"
@@ -3472,7 +3473,8 @@ msgstr[1] ":: Rādīt lapas %(n)d no %(c)d lapas."
 msgstr[2] ""
 
 #: baruwa/templates/accounts/index.html:94
-#: baruwa/templates/domains/index.html:93 baruwa/templates/lists/index.html:105
+#: baruwa/templates/domains/index.html:93
+#: baruwa/templates/lists/index.html:105
 #: baruwa/templates/messages/functions.html:208
 #: baruwa/templates/messages/searchresults.html:102
 #: baruwa/templates/organizations/index.html:50
@@ -3483,7 +3485,8 @@ msgid "Showing items %(i)d to %(l)d of %(count)d"
 msgstr "Parādot elementus %(i)d lai %(l)d no %(count)d"
 
 #: baruwa/templates/accounts/index.html:96
-#: baruwa/templates/domains/index.html:95 baruwa/templates/lists/index.html:107
+#: baruwa/templates/domains/index.html:95
+#: baruwa/templates/lists/index.html:107
 #: baruwa/templates/messages/functions.html:210
 #: baruwa/templates/messages/searchresults.html:104
 #: baruwa/templates/organizations/index.html:52
@@ -3493,7 +3496,8 @@ msgid "Show items:"
 msgstr "Rādīt vienumus:"
 
 #: baruwa/templates/accounts/index.html:98
-#: baruwa/templates/domains/index.html:97 baruwa/templates/lists/index.html:109
+#: baruwa/templates/domains/index.html:97
+#: baruwa/templates/lists/index.html:109
 #: baruwa/templates/messages/functions.html:212
 #: baruwa/templates/messages/searchresults.html:106
 #: baruwa/templates/organizations/index.html:54
@@ -3534,11 +3538,11 @@ msgstr "Aizmirsāt paroli?"
 
 #: baruwa/templates/accounts/login.html:55
 msgid ""
-"Forgotten your password? Enter your e-mail address below, and we'll "
-"e-mail instructions on setting a new one."
+"Forgotten your password? Enter your e-mail address below, and we'll e-mail "
+"instructions on setting a new one."
 msgstr ""
-"Aizmirsi savu paroli? Ievadiet savu e-pasta adresi zemāk un mēs jums "
-"e-pastu norādījumus par to, ko jaunu."
+"Aizmirsi savu paroli? Ievadiet savu e-pasta adresi zemāk un mēs jums e-pastu"
+" norādījumus par to, ko jaunu."
 
 #: baruwa/templates/accounts/login.html:60
 msgid "Cancel"
@@ -3965,17 +3969,18 @@ msgstr "KĻŪDA: %s"
 
 #: baruwa/templates/general/error.html:28
 msgid ""
-"You do not have sufficient permissions to access this page. Please sign "
-"in using an account with sufficient permissions"
+"You do not have sufficient permissions to access this page. Please sign in "
+"using an account with sufficient permissions"
 msgstr ""
 "Jums nav pietiekamas atļaujas, lai piekļūtu šai lapai. Lūdzu, "
 "pierakstieties, izmantojot kontu ar atbilstošu atļauju"
 
 #: baruwa/templates/general/error.html:30
 msgid ""
-"The system was unable to complete your request, the support team has been"
-" notified"
-msgstr "Sistēma nevarēja pabeigt jūsu pieprasījumu, ir paziņots atbalsta komandu"
+"The system was unable to complete your request, the support team has been "
+"notified"
+msgstr ""
+"Sistēma nevarēja pabeigt jūsu pieprasījumu, ir paziņots atbalsta komandu"
 
 #: baruwa/templates/includes/search.html:9 baruwa/templates/lists/index.html:6
 #: baruwa/templates/messages/functions.html:300
@@ -4007,11 +4012,10 @@ msgstr "paldies."
 
 #: baruwa/templates/invite/thankyou.html:27
 msgid ""
-"Your registration request is being reviewed, you will be notified when it"
-" is approved."
+"Your registration request is being reviewed, you will be notified when it is"
+" approved."
 msgstr ""
-"Pārskata reģistrācijas pieprasījumu, jums paziņos, kad tas ir "
-"apstiprināts."
+"Pārskata reģistrācijas pieprasījumu, jums paziņos, kad tas ir apstiprināts."
 
 #: baruwa/templates/lists/add.html:4
 msgid "Add Sender to a list"
@@ -4070,7 +4074,8 @@ msgstr "List management"
 #: baruwa/templates/lists/index.html:85
 #, python-format
 msgid "Lists :: Approved senders :: Showing page %(page)d of %(count)d pages."
-msgstr "Saraksti: Apstiprināto sūtītāju: rāda lapas %(page)d no %(count)d lapas."
+msgstr ""
+"Saraksti: Apstiprināto sūtītāju: rāda lapas %(page)d no %(count)d lapas."
 
 #: baruwa/templates/lists/index.html:87
 msgid "Lists :: Approved senders"
@@ -4338,7 +4343,7 @@ msgstr "elementiem vienā lapā"
 #: baruwa/templates/messages/index.html:100
 #, python-format
 msgid "Messages :: Showing the %s most recent messages"
-msgstr "Ziņas:: %S rāda jaunākos ziņojumus"
+msgstr "Ziņas:: %s rāda jaunākos ziņojumus"
 
 #: baruwa/templates/messages/listing.html:3
 #: baruwa/templates/messages/quarantine.html:5
@@ -4355,7 +4360,8 @@ msgstr "Lietot filtrus"
 msgid ""
 "Messages :: Full message listing :: Showing page %(page)d of %(count)d "
 "pages."
-msgstr "Ziņas: Pilnu ziņojumu saraksts: rāda lapas %(page)d no %(count)d lapas."
+msgstr ""
+"Ziņas: Pilnu ziņojumu saraksts: rāda lapas %(page)d no %(count)d lapas."
 
 #: baruwa/templates/messages/listing.html:36
 #: baruwa/templates/messages/listing.html:47
@@ -4400,7 +4406,8 @@ msgstr "Nav Spam"
 
 #: baruwa/templates/messages/quarantine.html:27
 #: baruwa/templates/status/detail.html:69
-#: baruwa/templates/status/detail.html:75 baruwa/templates/status/mailq.html:23
+#: baruwa/templates/status/detail.html:75
+#: baruwa/templates/status/mailq.html:23
 msgid "Process"
 msgstr "Procesu"
 
@@ -4457,11 +4464,11 @@ msgstr "Ziņojuma id: %(id)s nodots"
 #: baruwa/templates/messages/includes/released.html:4
 #, python-format
 msgid ""
-"The message id: %(id)s could not be released: %(error_msg)s, contact your"
-" email admin for assistance."
+"The message id: %(id)s could not be released: %(error_msg)s, contact your "
+"email admin for assistance."
 msgstr ""
-"Ziņojuma id: %(id)s netiek atbrīvota: %(error_msg)s, lai saņemtu "
-"palīdzību, sazinieties ar savu e-pastu admin."
+"Ziņojuma id: %(id)s netiek atbrīvota: %(error_msg)s, lai saņemtu palīdzību, "
+"sazinieties ar savu e-pastu admin."
 
 #: baruwa/templates/messages/includes/salearn.html:2
 #, python-format
@@ -5051,7 +5058,7 @@ msgstr "Reģistrācijas"
 #: baruwa/templates/settings/section.html:41
 #, python-format
 msgid "Settings :: MailScanner :: %(section)s :: %(name)s"
-msgstr "Iestatījumi:: MailScanner:: %(section)s :: %(section)s"
+msgstr "Iestatījumi:: MailScanner:: %(section)s :: %(name)s"
 
 #: baruwa/templates/status/audit.html:4 baruwa/templates/status/audit.html:7
 msgid "Export to CSV"
@@ -5230,7 +5237,7 @@ msgstr "Statuss: Global status"
 #: baruwa/templates/status/mailq.html:146
 #, python-format
 msgid "Status :: Mail queue :: %(queue)s :: %(s)s"
-msgstr "Statuss:: Pasta gaidīšanas:: %(queue)s :: %(queue)s"
+msgstr "Statuss:: Pasta gaidīšanas:: %(queue)s :: %(s)s"
 
 #: baruwa/templates/status/mailq.html:142
 #: baruwa/templates/status/mailq.html:146
@@ -5408,4 +5415,3 @@ msgstr "Sistēmas laiku"
 #, python-format
 msgid "Status :: Node status :: %(server)s"
 msgstr "Statuss: Node status: %(server)s"
-

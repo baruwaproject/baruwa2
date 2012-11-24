@@ -1,21 +1,21 @@
 # Swedish translations for baruwa.
 # Copyright (C) 2012 Andrew Colin Kissa
 # This file is distributed under the same license as the baruwa project.
-#
+# 
 # Translators:
 msgid ""
 msgstr ""
-"Project-Id-Version:  baruwa\n"
+"Project-Id-Version: baruwa\n"
 "Report-Msgid-Bugs-To: baruwa@lists.baruwa.org\n"
-"POT-Creation-Date: 2012-11-20 09:57+0200\n"
-"PO-Revision-Date: 2012-11-15 13:24+0200\n"
+"POT-Creation-Date: 2012-11-24 10:27+0200\n"
+"PO-Revision-Date: 2012-11-24 10:33+0200\n"
 "Last-Translator: Andrew Colin Kissa <andrew@topdog.za.net>\n"
 "Language-Team: Baruwa Project\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 0.9.6\n"
+"Generated-By: auto-translate.py 0.0.1\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
 
 #: baruwa/commands/pdfreport.py:116 baruwa/controllers/reports.py:62
 #: baruwa/templates/reports/index.html:13
@@ -139,7 +139,8 @@ msgstr "Du har förbjudits efter flera misslyckade inloggningar"
 
 #: baruwa/controllers/accounts.py:150
 msgid "First time Login from external auth, your local account was created"
-msgstr "Första gången inloggning från yttre auth, har ditt lokala konto skapats"
+msgstr ""
+"Första gången inloggning från yttre auth, har ditt lokala konto skapats"
 
 #: baruwa/controllers/accounts.py:266
 #, python-format
@@ -190,11 +191,11 @@ msgstr "Kontot har tagits bort"
 #: baruwa/controllers/accounts.py:620
 #, python-format
 msgid ""
-"The account: %(a)s and all associated data will be deleted, This action "
-"is not reversible."
+"The account: %(a)s and all associated data will be deleted, This action is "
+"not reversible."
 msgstr ""
-"Kontot: %(a)s och alla tillhörande data tas bort, den här åtgärden kan "
-"inte ångras."
+"Kontot: %(a)s och alla tillhörande data tas bort, den här åtgärden kan inte "
+"ångras."
 
 #: baruwa/controllers/accounts.py:677
 msgid "The accounts have been deleted"
@@ -205,8 +206,8 @@ msgid ""
 "The following accounts are about to be deleted, this action is not "
 "reversible, Do you wish to continue ?"
 msgstr ""
-"Följande konton skall tas bort, den här åtgärden kan inte ångras, vill du"
-" fortsätta?"
+"Följande konton skall tas bort, den här åtgärden kan inte ångras, vill du "
+"fortsätta?"
 
 #: baruwa/controllers/accounts.py:689 baruwa/controllers/domains.py:384
 msgid "An error occured try again"
@@ -241,11 +242,11 @@ msgstr "Adressen har tagits bort"
 
 #: baruwa/controllers/accounts.py:874 baruwa/controllers/organizations.py:358
 msgid ""
-"File uploaded, and is being processed, this page will automatically "
-"refresh to show the status"
+"File uploaded, and is being processed, this page will automatically refresh "
+"to show the status"
 msgstr ""
-"Filen laddas upp och bearbetas, kommer att denna sida uppdateras "
-"automatiskt för att visa status"
+"Filen laddas upp och bearbetas, kommer att denna sida uppdateras automatiskt"
+" för att visa status"
 
 #: baruwa/controllers/accounts.py:881 baruwa/controllers/organizations.py:364
 #, python-format
@@ -324,8 +325,8 @@ msgstr "Domänen har tagits bort"
 #: baruwa/controllers/domains.py:324
 #, python-format
 msgid ""
-"The domain: %(name)s and all associated data will be deleted, This action"
-" cannot be reversed."
+"The domain: %(name)s and all associated data will be deleted, This action "
+"cannot be reversed."
 msgstr ""
 "Domän: %(name)s och alla tillhörande data tas bort, den här åtgärden kan "
 "inte ångras."
@@ -339,8 +340,8 @@ msgid ""
 "The following domains are about to be deleted, this action is not "
 "reversible, Do you wish to continue ?"
 msgstr ""
-"Följande områden skall tas bort, den här åtgärden kan inte ångras, vill "
-"du fortsätta?"
+"Följande områden skall tas bort, den här åtgärden kan inte ångras, vill du "
+"fortsätta?"
 
 #: baruwa/controllers/domains.py:410
 msgid "The destination server has been created"
@@ -384,8 +385,7 @@ msgstr "Målservern har tagits bort"
 #: baruwa/controllers/domains.py:540
 #, python-format
 msgid ""
-"The destination server: %(s)s will be deleted, This action is not "
-"reversible"
+"The destination server: %(s)s will be deleted, This action is not reversible"
 msgstr "Målservern: %(s)s kommer att tas bort, åtgärden kan inte ångras"
 
 #: baruwa/controllers/domains.py:567
@@ -395,8 +395,8 @@ msgstr "Inställningarna för autentiseringen har skapats"
 #: baruwa/controllers/domains.py:574
 #, python-format
 msgid ""
-"The host %(dest)s already configured for %(auth)s authentication for this"
-" domain"
+"The host %(dest)s already configured for %(auth)s authentication for this "
+"domain"
 msgstr ""
 "Värd %(dest)s redan konfigurerats för %(auth)s autentisering för den här "
 "domänen"
@@ -422,7 +422,8 @@ msgstr "Inställningarna för autentiseringen har tagits bort"
 msgid ""
 "The authentication server: %(s)s will be deleted, This action is not "
 "reversible"
-msgstr "Autentiseringsservern: %(s)s kommer att tas bort, åtgärden kan inte ångras"
+msgstr ""
+"Autentiseringsservern: %(s)s kommer att tas bort, åtgärden kan inte ångras"
 
 #: baruwa/controllers/domains.py:671
 msgid "The protocol supplied does not use extra settings"
@@ -449,12 +450,13 @@ msgstr "Att %(proto)s inställningar har skapats"
 
 #: baruwa/controllers/domains.py:729
 msgid "The auth settings already exist, use update to modify them"
-msgstr "Auth inställningarna redan finns, använda uppdatering för att ändra dem."
+msgstr ""
+"Auth inställningarna redan finns, använda uppdatering för att ändra dem."
 
 #: baruwa/controllers/domains.py:733
 msgid ""
-"The Radius secret is not be displayed in the form, To update type the new"
-" secret in \"Radius secret\" below."
+"The Radius secret is not be displayed in the form, To update type the new "
+"secret in \"Radius secret\" below."
 msgstr ""
 "Radien hemligheten är visas inte i formuläret, för att uppdatera den nya "
 "hemligheten i \"RADIUS-secret\" nedan."
@@ -583,7 +585,8 @@ msgstr "Okänd"
 msgid ""
 "The message has already been released, you can only use the release link "
 "once"
-msgstr "Meddelandet har redan släppts, du kan bara använda länken version en gång"
+msgstr ""
+"Meddelandet har redan släppts, du kan bara använda länken version en gång"
 
 #: baruwa/controllers/messages.py:622
 msgid "Processing of message failed"
@@ -819,10 +822,10 @@ msgid "The audit log export failed, try again later"
 msgstr "Revision log export misslyckades, försök igen senare"
 
 #: baruwa/forms/accounts.py:32 baruwa/forms/domains.py:34
-#: baruwa/forms/lists.py:33 baruwa/forms/messages.py:27 baruwa/forms/misc.py:28
-#: baruwa/forms/organizations.py:33 baruwa/forms/reports.py:33
-#: baruwa/forms/settings.py:30 baruwa/model/status.py:32
-#: baruwa/tasks/status.py:45
+#: baruwa/forms/lists.py:33 baruwa/forms/messages.py:27
+#: baruwa/forms/misc.py:28 baruwa/forms/organizations.py:33
+#: baruwa/forms/reports.py:33 baruwa/forms/settings.py:30
+#: baruwa/model/status.py:32 baruwa/tasks/status.py:45
 msgid "hi"
 msgstr "Hej"
 
@@ -1223,10 +1226,11 @@ msgid "Delivery Server address"
 msgstr "Leveransadress"
 
 #: baruwa/forms/lists.py:51
-msgid "Provide either a valid IP, email, Domain address, or IP network or range"
+msgid ""
+"Provide either a valid IP, email, Domain address, or IP network or range"
 msgstr ""
-"Tillhandahålla antingen en giltig IP-, e-post domänadress eller "
-"IP-nätverk eller ett område"
+"Tillhandahålla antingen en giltig IP-, e-post domänadress eller IP-nätverk "
+"eller ett område"
 
 #: baruwa/forms/lists.py:68
 #, python-format
@@ -1558,7 +1562,7 @@ msgstr "Ange giltig tid i formatet tt: mm"
 #: baruwa/forms/settings.py:35 baruwa/forms/settings.py:49
 #: baruwa/forms/settings.py:52
 msgid "Yes"
-msgstr ""
+msgstr "Ja"
 
 #: baruwa/forms/settings.py:35 baruwa/forms/settings.py:38
 #: baruwa/forms/settings.py:50 baruwa/forms/settings.py:53
@@ -1581,7 +1585,7 @@ msgstr "Lägga till"
 
 #: baruwa/forms/settings.py:40
 msgid "Append"
-msgstr ""
+msgstr "Lägg till"
 
 #: baruwa/forms/settings.py:42
 #, fuzzy
@@ -1591,7 +1595,7 @@ msgstr "Åtgärden stöds inte"
 
 #: baruwa/forms/settings.py:43
 msgid "None"
-msgstr ""
+msgstr "Ingen"
 
 #: baruwa/forms/settings.py:44
 #, fuzzy
@@ -1607,11 +1611,11 @@ msgstr "Graph"
 
 #: baruwa/forms/settings.py:46
 msgid "Beta"
-msgstr ""
+msgstr "Beta"
 
 #: baruwa/forms/settings.py:47
 msgid "Start"
-msgstr ""
+msgstr "Start"
 
 #: baruwa/forms/settings.py:48
 #, fuzzy
@@ -1621,11 +1625,11 @@ msgstr "aktiverad"
 
 #: baruwa/forms/settings.py:51
 msgid "Disarm"
-msgstr ""
+msgstr "Avväpna"
 
 #: baruwa/forms/settings.py:59
 msgid "Auto detect"
-msgstr ""
+msgstr "Automatisk identifiering"
 
 #: baruwa/forms/settings.py:132
 #, fuzzy
@@ -1635,11 +1639,11 @@ msgstr "innehåller inte"
 
 #: baruwa/forms/settings.py:134
 msgid "Flag as spam"
-msgstr ""
+msgstr "Flagga som skräppost"
 
 #: baruwa/forms/settings.py:135
 msgid "Flag as high spam"
-msgstr ""
+msgstr "Flagga som hög spam"
 
 #: baruwa/forms/settings.py:173
 msgid "Invalid Domain name or IPv4 address"
@@ -3470,7 +3474,8 @@ msgstr[0] ":: Visa sidan %(n)d av %(c)d sida."
 msgstr[1] ":: Visa sidan %(n)d av %(c)d sidor."
 
 #: baruwa/templates/accounts/index.html:94
-#: baruwa/templates/domains/index.html:93 baruwa/templates/lists/index.html:105
+#: baruwa/templates/domains/index.html:93
+#: baruwa/templates/lists/index.html:105
 #: baruwa/templates/messages/functions.html:208
 #: baruwa/templates/messages/searchresults.html:102
 #: baruwa/templates/organizations/index.html:50
@@ -3481,7 +3486,8 @@ msgid "Showing items %(i)d to %(l)d of %(count)d"
 msgstr "Visar objekt %(i)d att %(l)d av %(count)d"
 
 #: baruwa/templates/accounts/index.html:96
-#: baruwa/templates/domains/index.html:95 baruwa/templates/lists/index.html:107
+#: baruwa/templates/domains/index.html:95
+#: baruwa/templates/lists/index.html:107
 #: baruwa/templates/messages/functions.html:210
 #: baruwa/templates/messages/searchresults.html:104
 #: baruwa/templates/organizations/index.html:52
@@ -3491,7 +3497,8 @@ msgid "Show items:"
 msgstr "Visa objekt:"
 
 #: baruwa/templates/accounts/index.html:98
-#: baruwa/templates/domains/index.html:97 baruwa/templates/lists/index.html:109
+#: baruwa/templates/domains/index.html:97
+#: baruwa/templates/lists/index.html:109
 #: baruwa/templates/messages/functions.html:212
 #: baruwa/templates/messages/searchresults.html:106
 #: baruwa/templates/organizations/index.html:54
@@ -3532,11 +3539,11 @@ msgstr "Glömt lösenordet?"
 
 #: baruwa/templates/accounts/login.html:55
 msgid ""
-"Forgotten your password? Enter your e-mail address below, and we'll "
-"e-mail instructions on setting a new one."
+"Forgotten your password? Enter your e-mail address below, and we'll e-mail "
+"instructions on setting a new one."
 msgstr ""
-"Glömt ditt lösenord? Ange din e-postadress nedan, och vi ska "
-"e-anvisningar för hur en ny."
+"Glömt ditt lösenord? Ange din e-postadress nedan, och vi ska e-anvisningar "
+"för hur en ny."
 
 #: baruwa/templates/accounts/login.html:60
 msgid "Cancel"
@@ -3911,7 +3918,8 @@ msgstr "Inga domäner hittades matchande: %s"
 msgid ""
 "Domains :: Search results :: %(q)s :: Showing page %(page)d of %(count)d "
 "pages."
-msgstr "Domäner:: Sökresultat:: %(q)s :: Visa sidan %(page)d av %(count)d sidor."
+msgstr ""
+"Domäner:: Sökresultat:: %(q)s :: Visa sidan %(page)d av %(count)d sidor."
 
 #: baruwa/templates/domains/searchresults.html:71
 #: baruwa/templates/domains/searchresults.html:75
@@ -3960,16 +3968,16 @@ msgstr "FEL: %s"
 
 #: baruwa/templates/general/error.html:28
 msgid ""
-"You do not have sufficient permissions to access this page. Please sign "
-"in using an account with sufficient permissions"
+"You do not have sufficient permissions to access this page. Please sign in "
+"using an account with sufficient permissions"
 msgstr ""
-"Du har inte behörighet att komma åt sidan. Vänligen logga in med ett "
-"konto med behörighet"
+"Du har inte behörighet att komma åt sidan. Vänligen logga in med ett konto "
+"med behörighet"
 
 #: baruwa/templates/general/error.html:30
 msgid ""
-"The system was unable to complete your request, the support team has been"
-" notified"
+"The system was unable to complete your request, the support team has been "
+"notified"
 msgstr "Systemet kunde inte slutföra din begäran, supportteam har anmälts"
 
 #: baruwa/templates/includes/search.html:9 baruwa/templates/lists/index.html:6
@@ -4003,8 +4011,8 @@ msgstr "Tack."
 
 #: baruwa/templates/invite/thankyou.html:27
 msgid ""
-"Your registration request is being reviewed, you will be notified when it"
-" is approved."
+"Your registration request is being reviewed, you will be notified when it is"
+" approved."
 msgstr "Din begäran om registrering är ses, meddelas du när det är godkänt."
 
 #: baruwa/templates/lists/add.html:4
@@ -4073,7 +4081,8 @@ msgstr "Listor:: Godkänd avsändare"
 #: baruwa/templates/lists/index.html:91
 #, python-format
 msgid "Lists :: Banned senders :: Showing page %(page)d of %(count)d pages."
-msgstr "Listor:: Förbjudna avsändare:: visa sidan %(page)d av %(count)d sidor."
+msgstr ""
+"Listor:: Förbjudna avsändare:: visa sidan %(page)d av %(count)d sidor."
 
 #: baruwa/templates/lists/index.html:93
 msgid "Lists :: Banned senders"
@@ -4350,8 +4359,8 @@ msgid ""
 "Messages :: Full message listing :: Showing page %(page)d of %(count)d "
 "pages."
 msgstr ""
-"Meddelanden:: Full meddelande notering:: visa sidan %(page)d av %(count)d"
-" sidor."
+"Meddelanden:: Full meddelande notering:: visa sidan %(page)d av %(count)d "
+"sidor."
 
 #: baruwa/templates/messages/listing.html:36
 #: baruwa/templates/messages/listing.html:47
@@ -4397,7 +4406,8 @@ msgstr "Log Spam"
 
 #: baruwa/templates/messages/quarantine.html:27
 #: baruwa/templates/status/detail.html:69
-#: baruwa/templates/status/detail.html:75 baruwa/templates/status/mailq.html:23
+#: baruwa/templates/status/detail.html:75
+#: baruwa/templates/status/mailq.html:23
 msgid "Process"
 msgstr "Processen"
 
@@ -4454,8 +4464,8 @@ msgstr "Meddelande-id: %(id)s har släppts"
 #: baruwa/templates/messages/includes/released.html:4
 #, python-format
 msgid ""
-"The message id: %(id)s could not be released: %(error_msg)s, contact your"
-" email admin for assistance."
+"The message id: %(id)s could not be released: %(error_msg)s, contact your "
+"email admin for assistance."
 msgstr ""
 "Meddelande-id: %(id)s kunde inte frigöras: %(error_msg)s, kontakta din "
 "e-post admin för hjälp."
@@ -5405,4 +5415,3 @@ msgstr "Systemtid"
 #, python-format
 msgid "Status :: Node status :: %(server)s"
 msgstr "Status:: Nod status:: %(server)s"
-

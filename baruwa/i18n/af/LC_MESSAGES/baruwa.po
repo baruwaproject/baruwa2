@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  baruwa\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2012-11-20 09:57+0200\n"
+"POT-Creation-Date: 2012-11-24 10:27+0200\n"
 "PO-Revision-Date: 2012-11-11 07:31+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Afrikaans "
@@ -21,7 +21,7 @@ msgstr ""
 #: baruwa/commands/pdfreport.py:116 baruwa/controllers/reports.py:62
 #: baruwa/templates/reports/index.html:13
 msgid "Top Senders by Quantity"
-msgstr ""
+msgstr "Top Senders by Quantity"
 
 #: baruwa/commands/pdfreport.py:118 baruwa/controllers/reports.py:64
 #: baruwa/templates/reports/index.html:14

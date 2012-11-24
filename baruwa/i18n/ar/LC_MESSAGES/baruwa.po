@@ -1,23 +1,22 @@
 # English translations for baruwa.
 # Copyright (C) 2011 ORGANIZATION
 # This file is distributed under the same license as the baruwa project.
-#
+# 
 # Translators:
 # <andrew@topdog.za.net>, 2012.
 msgid ""
 msgstr ""
-"Project-Id-Version:  baruwa\n"
+"Project-Id-Version: baruwa\n"
 "Report-Msgid-Bugs-To: baruwa@lists.baruwa.org\n"
-"POT-Creation-Date: 2012-11-20 09:57+0200\n"
-"PO-Revision-Date: 2012-11-16 17:53+0200\n"
+"POT-Creation-Date: 2012-11-24 10:27+0200\n"
+"PO-Revision-Date: 2012-11-24 10:30+0200\n"
 "Last-Translator: Andrew Colin Kissa <andrew@topdog.za.net>\n"
 "Language-Team: Baruwa Project\n"
-"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : "
-"n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 0.9.6\n"
+"Generated-By: auto-translate.py 0.0.1\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5\n"
 
 #: baruwa/commands/pdfreport.py:116 baruwa/controllers/reports.py:62
 #: baruwa/templates/reports/index.html:13
@@ -190,8 +189,8 @@ msgstr "تم حذف الحساب"
 #: baruwa/controllers/accounts.py:620
 #, python-format
 msgid ""
-"The account: %(a)s and all associated data will be deleted, This action "
-"is not reversible."
+"The account: %(a)s and all associated data will be deleted, This action is "
+"not reversible."
 msgstr ""
 
 #: baruwa/controllers/accounts.py:677
@@ -239,11 +238,10 @@ msgstr "تم حذف العنوان"
 
 #: baruwa/controllers/accounts.py:874 baruwa/controllers/organizations.py:358
 msgid ""
-"File uploaded, and is being processed, this page will automatically "
-"refresh to show the status"
+"File uploaded, and is being processed, this page will automatically refresh "
+"to show the status"
 msgstr ""
-"ملف تم الرفع، وتتم معالجته، سوف يقوم تلقائياً بتحديث هذه الصفحة لإظهار "
-"حالة"
+"ملف تم الرفع، وتتم معالجته، سوف يقوم تلقائياً بتحديث هذه الصفحة لإظهار حالة"
 
 #: baruwa/controllers/accounts.py:881 baruwa/controllers/organizations.py:364
 #, python-format
@@ -322,8 +320,8 @@ msgstr "تم حذف المجال"
 #: baruwa/controllers/domains.py:324
 #, python-format
 msgid ""
-"The domain: %(name)s and all associated data will be deleted, This action"
-" cannot be reversed."
+"The domain: %(name)s and all associated data will be deleted, This action "
+"cannot be reversed."
 msgstr ""
 
 #: baruwa/controllers/domains.py:372
@@ -380,8 +378,7 @@ msgstr "تم حذف الملقم الوجهة"
 #: baruwa/controllers/domains.py:540
 #, python-format
 msgid ""
-"The destination server: %(s)s will be deleted, This action is not "
-"reversible"
+"The destination server: %(s)s will be deleted, This action is not reversible"
 msgstr ""
 
 #: baruwa/controllers/domains.py:567
@@ -391,8 +388,8 @@ msgstr "وقد تم إنشاء إعدادات المصادقة"
 #: baruwa/controllers/domains.py:574
 #, python-format
 msgid ""
-"The host %(dest)s already configured for %(auth)s authentication for this"
-" domain"
+"The host %(dest)s already configured for %(auth)s authentication for this "
+"domain"
 msgstr ""
 
 #: baruwa/controllers/domains.py:607
@@ -445,11 +442,11 @@ msgstr "إعدادات مصادقة موجودة بالفعل، استخدم ا�
 
 #: baruwa/controllers/domains.py:733
 msgid ""
-"The Radius secret is not be displayed in the form, To update type the new"
-" secret in \"Radius secret\" below."
+"The Radius secret is not be displayed in the form, To update type the new "
+"secret in \"Radius secret\" below."
 msgstr ""
-"لا يتم عرض في دائرة نصف قطرها سر في النموذج، لتحديث نوع سر جديد في "
-"\"دائرة نصف قطرها السري\" أدناه."
+"لا يتم عرض في دائرة نصف قطرها سر في النموذج، لتحديث نوع سر جديد في \"دائرة "
+"نصف قطرها السري\" أدناه."
 
 #: baruwa/controllers/domains.py:774
 #, python-format
@@ -575,7 +572,8 @@ msgstr "المجهول"
 msgid ""
 "The message has already been released, you can only use the release link "
 "once"
-msgstr "لقد تم الإفراج عن الرسالة الفعل، يمكنك فقط استخدام وصلة الإصدار مرة واحدة"
+msgstr ""
+"لقد تم الإفراج عن الرسالة الفعل، يمكنك فقط استخدام وصلة الإصدار مرة واحدة"
 
 #: baruwa/controllers/messages.py:622
 msgid "Processing of message failed"
@@ -811,10 +809,10 @@ msgid "The audit log export failed, try again later"
 msgstr "تصدير سجل التدقيق فشلت، حاول مرة أخرى لاحقاً"
 
 #: baruwa/forms/accounts.py:32 baruwa/forms/domains.py:34
-#: baruwa/forms/lists.py:33 baruwa/forms/messages.py:27 baruwa/forms/misc.py:28
-#: baruwa/forms/organizations.py:33 baruwa/forms/reports.py:33
-#: baruwa/forms/settings.py:30 baruwa/model/status.py:32
-#: baruwa/tasks/status.py:45
+#: baruwa/forms/lists.py:33 baruwa/forms/messages.py:27
+#: baruwa/forms/misc.py:28 baruwa/forms/organizations.py:33
+#: baruwa/forms/reports.py:33 baruwa/forms/settings.py:30
+#: baruwa/model/status.py:32 baruwa/tasks/status.py:45
 msgid "hi"
 msgstr "مرحبا"
 
@@ -1216,10 +1214,11 @@ msgid "Delivery Server address"
 msgstr "عنوان الملقم التسليم"
 
 #: baruwa/forms/lists.py:51
-msgid "Provide either a valid IP, email, Domain address, or IP network or range"
+msgid ""
+"Provide either a valid IP, email, Domain address, or IP network or range"
 msgstr ""
-"تقديم صالح الملكية الفكرية، والبريد الإلكتروني، وعنوان المجال، أو الملكية"
-" الفكرية شبكة أو مجموعة"
+"تقديم صالح الملكية الفكرية، والبريد الإلكتروني، وعنوان المجال، أو الملكية "
+"الفكرية شبكة أو مجموعة"
 
 #: baruwa/forms/lists.py:68
 #, python-format
@@ -1551,7 +1550,7 @@ msgstr "يرجى تقديم صالحاً للوقت في تنسيق hh: mm"
 #: baruwa/forms/settings.py:35 baruwa/forms/settings.py:49
 #: baruwa/forms/settings.py:52
 msgid "Yes"
-msgstr ""
+msgstr "نعم"
 
 #: baruwa/forms/settings.py:35 baruwa/forms/settings.py:38
 #: baruwa/forms/settings.py:50 baruwa/forms/settings.py:53
@@ -1574,7 +1573,7 @@ msgstr "إضافة"
 
 #: baruwa/forms/settings.py:40
 msgid "Append"
-msgstr ""
+msgstr "إلحاق"
 
 #: baruwa/forms/settings.py:42
 #, fuzzy
@@ -1584,7 +1583,7 @@ msgstr "الإجراء غير معتمد"
 
 #: baruwa/forms/settings.py:43
 msgid "None"
-msgstr ""
+msgstr "لا شيء"
 
 #: baruwa/forms/settings.py:44
 #, fuzzy
@@ -1600,11 +1599,11 @@ msgstr "الرسم البياني"
 
 #: baruwa/forms/settings.py:46
 msgid "Beta"
-msgstr ""
+msgstr "الإصدار بيتا"
 
 #: baruwa/forms/settings.py:47
 msgid "Start"
-msgstr ""
+msgstr "بدء تشغيل"
 
 #: baruwa/forms/settings.py:48
 #, fuzzy
@@ -1614,11 +1613,11 @@ msgstr "تمكين"
 
 #: baruwa/forms/settings.py:51
 msgid "Disarm"
-msgstr ""
+msgstr "نزع سلاح"
 
 #: baruwa/forms/settings.py:59
 msgid "Auto detect"
-msgstr ""
+msgstr "الكشف التلقائي"
 
 #: baruwa/forms/settings.py:132
 #, fuzzy
@@ -1628,11 +1627,11 @@ msgstr "لا يحتوي على"
 
 #: baruwa/forms/settings.py:134
 msgid "Flag as spam"
-msgstr ""
+msgstr "وضع علامة على البريد المزعج"
 
 #: baruwa/forms/settings.py:135
 msgid "Flag as high spam"
-msgstr ""
+msgstr "وضع علامة على البريد المزعج عالية"
 
 #: baruwa/forms/settings.py:173
 msgid "Invalid Domain name or IPv4 address"
@@ -2160,7 +2159,8 @@ msgstr "تعديل الحجر الصحي للجسم"
 
 #: baruwa/forms/settings.py:495
 msgid "Keep Spam And MCP Archive Clean"
-msgstr "الحفاظ على نظافة البريد المزعج وأرشيف العملية التشاورية المتعددة الأطراف"
+msgstr ""
+"الحفاظ على نظافة البريد المزعج وأرشيف العملية التشاورية المتعددة الأطراف"
 
 #: baruwa/forms/settings.py:498
 msgid "Hide Incoming Work Dir"
@@ -3467,7 +3467,8 @@ msgstr[4] ""
 msgstr[5] ""
 
 #: baruwa/templates/accounts/index.html:94
-#: baruwa/templates/domains/index.html:93 baruwa/templates/lists/index.html:105
+#: baruwa/templates/domains/index.html:93
+#: baruwa/templates/lists/index.html:105
 #: baruwa/templates/messages/functions.html:208
 #: baruwa/templates/messages/searchresults.html:102
 #: baruwa/templates/organizations/index.html:50
@@ -3478,7 +3479,8 @@ msgid "Showing items %(i)d to %(l)d of %(count)d"
 msgstr ""
 
 #: baruwa/templates/accounts/index.html:96
-#: baruwa/templates/domains/index.html:95 baruwa/templates/lists/index.html:107
+#: baruwa/templates/domains/index.html:95
+#: baruwa/templates/lists/index.html:107
 #: baruwa/templates/messages/functions.html:210
 #: baruwa/templates/messages/searchresults.html:104
 #: baruwa/templates/organizations/index.html:52
@@ -3488,7 +3490,8 @@ msgid "Show items:"
 msgstr "إظهار العناصر:"
 
 #: baruwa/templates/accounts/index.html:98
-#: baruwa/templates/domains/index.html:97 baruwa/templates/lists/index.html:109
+#: baruwa/templates/domains/index.html:97
+#: baruwa/templates/lists/index.html:109
 #: baruwa/templates/messages/functions.html:212
 #: baruwa/templates/messages/searchresults.html:106
 #: baruwa/templates/organizations/index.html:54
@@ -3529,11 +3532,11 @@ msgstr "هل نسيت كلمة المرور؟"
 
 #: baruwa/templates/accounts/login.html:55
 msgid ""
-"Forgotten your password? Enter your e-mail address below, and we'll "
-"e-mail instructions on setting a new one."
+"Forgotten your password? Enter your e-mail address below, and we'll e-mail "
+"instructions on setting a new one."
 msgstr ""
-"هل نسيت كلمة المرور الخاصة بك؟ أدخل عنوان البريد الإلكتروني الخاص بك "
-"أدناه، ونحن سوف البريد الإلكتروني إرشادات حول إعداد كلمة مرور جديدة."
+"هل نسيت كلمة المرور الخاصة بك؟ أدخل عنوان البريد الإلكتروني الخاص بك أدناه، "
+"ونحن سوف البريد الإلكتروني إرشادات حول إعداد كلمة مرور جديدة."
 
 #: baruwa/templates/accounts/login.html:60
 msgid "Cancel"
@@ -3961,16 +3964,16 @@ msgstr "الخطأ: % s"
 
 #: baruwa/templates/general/error.html:28
 msgid ""
-"You do not have sufficient permissions to access this page. Please sign "
-"in using an account with sufficient permissions"
+"You do not have sufficient permissions to access this page. Please sign in "
+"using an account with sufficient permissions"
 msgstr ""
-"ليس لديك أذونات كافية للوصول إلى هذه الصفحة. الرجاء تسجيل الدخول باستخدام"
-" حساب مع أذونات كافية"
+"ليس لديك أذونات كافية للوصول إلى هذه الصفحة. الرجاء تسجيل الدخول باستخدام "
+"حساب مع أذونات كافية"
 
 #: baruwa/templates/general/error.html:30
 msgid ""
-"The system was unable to complete your request, the support team has been"
-" notified"
+"The system was unable to complete your request, the support team has been "
+"notified"
 msgstr "النظام غير قادر على إكمال الطلب الخاص بك، وقد تم إخطار فريق الدعم"
 
 #: baruwa/templates/includes/search.html:9 baruwa/templates/lists/index.html:6
@@ -4004,9 +4007,10 @@ msgstr "شكرا."
 
 #: baruwa/templates/invite/thankyou.html:27
 msgid ""
-"Your registration request is being reviewed, you will be notified when it"
-" is approved."
-msgstr "ويجري حاليا استعراض طلب التسجيل الخاص بك، سيتم إعلامك عند الموافقة عليه."
+"Your registration request is being reviewed, you will be notified when it is"
+" approved."
+msgstr ""
+"ويجري حاليا استعراض طلب التسجيل الخاص بك، سيتم إعلامك عند الموافقة عليه."
 
 #: baruwa/templates/lists/add.html:4
 msgid "Add Sender to a list"
@@ -4396,7 +4400,8 @@ msgstr "سجل البريد المزعج"
 
 #: baruwa/templates/messages/quarantine.html:27
 #: baruwa/templates/status/detail.html:69
-#: baruwa/templates/status/detail.html:75 baruwa/templates/status/mailq.html:23
+#: baruwa/templates/status/detail.html:75
+#: baruwa/templates/status/mailq.html:23
 msgid "Process"
 msgstr "عملية"
 
@@ -4453,8 +4458,8 @@ msgstr ""
 #: baruwa/templates/messages/includes/released.html:4
 #, python-format
 msgid ""
-"The message id: %(id)s could not be released: %(error_msg)s, contact your"
-" email admin for assistance."
+"The message id: %(id)s could not be released: %(error_msg)s, contact your "
+"email admin for assistance."
 msgstr ""
 
 #: baruwa/templates/messages/includes/salearn.html:2
@@ -5414,4 +5419,3 @@ msgstr "وقت النظام"
 #, python-format
 msgid "Status :: Node status :: %(server)s"
 msgstr ""
-

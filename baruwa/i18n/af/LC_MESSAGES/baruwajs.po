@@ -27,7 +27,7 @@ msgstr ""
 #: baruwa/public/js/baruwa/settings.js:1
 #: baruwa/public/js/baruwa/status.audit.js:1
 msgid "Showing items {{first_item}} to {{last_item}} of {{item_count}}."
-msgstr ""
+msgstr "Showing items {{first_item}} to {{last_item}} of {{item_count}}."
 
 #: baruwa/public/js/baruwa/accounts.js:1
 msgid "Accounts :: Showing page {{page}} of {{page_count}} pages."

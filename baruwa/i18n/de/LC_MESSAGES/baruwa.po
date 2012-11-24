@@ -1,21 +1,21 @@
 # English translations for baruwa.
 # Copyright (C) 2011 ORGANIZATION
 # This file is distributed under the same license as the baruwa project.
-#
+# 
 # Translators:
 msgid ""
 msgstr ""
-"Project-Id-Version:  baruwa\n"
+"Project-Id-Version: baruwa\n"
 "Report-Msgid-Bugs-To: baruwa@lists.baruwa.org\n"
-"POT-Creation-Date: 2012-11-20 09:57+0200\n"
-"PO-Revision-Date: 2012-11-15 13:22+0200\n"
+"POT-Creation-Date: 2012-11-24 10:27+0200\n"
+"PO-Revision-Date: 2012-11-24 10:30+0200\n"
 "Last-Translator: Andrew Colin Kissa <andrew@topdog.za.net>\n"
 "Language-Team: Baruwa Project\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 0.9.6\n"
+"Generated-By: auto-translate.py 0.0.1\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
 
 #: baruwa/commands/pdfreport.py:116 baruwa/controllers/reports.py:62
 #: baruwa/templates/reports/index.html:13
@@ -190,8 +190,8 @@ msgstr "Das Konto wurde gelöscht"
 #: baruwa/controllers/accounts.py:620
 #, python-format
 msgid ""
-"The account: %(a)s and all associated data will be deleted, This action "
-"is not reversible."
+"The account: %(a)s and all associated data will be deleted, This action is "
+"not reversible."
 msgstr ""
 "Das Konto: %(a)s und alle damit verbundenen Daten gelöscht werden, diese "
 "Aktion kann nicht rückgängig gemacht werden."
@@ -205,8 +205,8 @@ msgid ""
 "The following accounts are about to be deleted, this action is not "
 "reversible, Do you wish to continue ?"
 msgstr ""
-"Sind die folgenden Konten gelöscht werden sollen, kann diese Aktion nicht"
-" rückgängig gemacht werden, möchten Sie fortfahren?"
+"Sind die folgenden Konten gelöscht werden sollen, kann diese Aktion nicht "
+"rückgängig gemacht werden, möchten Sie fortfahren?"
 
 #: baruwa/controllers/accounts.py:689 baruwa/controllers/domains.py:384
 msgid "An error occured try again"
@@ -241,8 +241,8 @@ msgstr "Die Adresse wurde gelöscht"
 
 #: baruwa/controllers/accounts.py:874 baruwa/controllers/organizations.py:358
 msgid ""
-"File uploaded, and is being processed, this page will automatically "
-"refresh to show the status"
+"File uploaded, and is being processed, this page will automatically refresh "
+"to show the status"
 msgstr ""
 "Datei hochgeladen und verarbeitet wird, wird diese Seite automatisch "
 "aktualisiert den Status anzeigen"
@@ -283,7 +283,8 @@ msgstr "Backend-Fehler während der Verarbeitung."
 
 #: baruwa/controllers/accounts.py:926 baruwa/controllers/organizations.py:411
 msgid "The import could not be processed, try again later"
-msgstr "Der Import konnte nicht werden verarbeitet, später noch einmal versuchen"
+msgstr ""
+"Der Import konnte nicht werden verarbeitet, später noch einmal versuchen"
 
 #: baruwa/controllers/accounts.py:946
 msgid "Accounts export is being processed"
@@ -291,7 +292,8 @@ msgstr "Konten exportieren wird verarbeitet"
 
 #: baruwa/controllers/accounts.py:981 baruwa/controllers/domains.py:888
 msgid "The export could not be processed, try again later"
-msgstr "Der Export konnte nicht werden verarbeitet, später noch einmal versuchen"
+msgstr ""
+"Der Export konnte nicht werden verarbeitet, später noch einmal versuchen"
 
 #: baruwa/controllers/domains.py:238
 #, python-format
@@ -324,11 +326,11 @@ msgstr "Die Domain wurde gelöscht"
 #: baruwa/controllers/domains.py:324
 #, python-format
 msgid ""
-"The domain: %(name)s and all associated data will be deleted, This action"
-" cannot be reversed."
+"The domain: %(name)s and all associated data will be deleted, This action "
+"cannot be reversed."
 msgstr ""
-"Die Domain: %(name)s und alle damit verbundenen Daten gelöscht werden, "
-"diese Aktion kann nicht rückgängig gemacht werden."
+"Die Domain: %(name)s und alle damit verbundenen Daten gelöscht werden, diese"
+" Aktion kann nicht rückgängig gemacht werden."
 
 #: baruwa/controllers/domains.py:372
 msgid "The domains have been deleted"
@@ -384,11 +386,10 @@ msgstr "Der Ziel-Server wurde gelöscht"
 #: baruwa/controllers/domains.py:540
 #, python-format
 msgid ""
-"The destination server: %(s)s will be deleted, This action is not "
-"reversible"
+"The destination server: %(s)s will be deleted, This action is not reversible"
 msgstr ""
-"Der Zielserver: %(s)s werden gelöscht, diese Aktion kann nicht rückgängig"
-" gemacht"
+"Der Zielserver: %(s)s werden gelöscht, diese Aktion kann nicht rückgängig "
+"gemacht"
 
 #: baruwa/controllers/domains.py:567
 msgid "The authentication settings have been created"
@@ -397,11 +398,11 @@ msgstr "Die Authentifizierungseinstellungen wurden erstellt"
 #: baruwa/controllers/domains.py:574
 #, python-format
 msgid ""
-"The host %(dest)s already configured for %(auth)s authentication for this"
-" domain"
+"The host %(dest)s already configured for %(auth)s authentication for this "
+"domain"
 msgstr ""
-"Der Host %(dest)s bereits konfiguriert für %(auth)s Authentifizierung für"
-" diese domain"
+"Der Host %(dest)s bereits konfiguriert für %(auth)s Authentifizierung für "
+"diese domain"
 
 #: baruwa/controllers/domains.py:607
 msgid "The authentication settings have been updated"
@@ -413,7 +414,8 @@ msgstr "Die Authentifizierung Einstellungen Update fehlgeschlagen"
 
 #: baruwa/controllers/domains.py:620
 msgid "No changes were made to the authentication settings"
-msgstr "Die Authentifizierungseinstellungen wurden keine Änderungen vorgenommen."
+msgstr ""
+"Die Authentifizierungseinstellungen wurden keine Änderungen vorgenommen."
 
 #: baruwa/controllers/domains.py:641
 msgid "The authentication settings have been deleted"
@@ -425,8 +427,8 @@ msgid ""
 "The authentication server: %(s)s will be deleted, This action is not "
 "reversible"
 msgstr ""
-"Der Authentifizierungsserver: %(s)s werden gelöscht, diese Aktion kann "
-"nicht rückgängig gemacht"
+"Der Authentifizierungsserver: %(s)s werden gelöscht, diese Aktion kann nicht"
+" rückgängig gemacht"
 
 #: baruwa/controllers/domains.py:671
 msgid "The protocol supplied does not use extra settings"
@@ -440,8 +442,8 @@ msgid ""
 "Please add an authentication server for the %(proto)s protocol Before "
 "attempting to configure the %(proto)s settings"
 msgstr ""
-"Bitte fügen Sie einen Authentifizierungsserver für die %(proto)s "
-"Protokoll vor dem Konfigurieren der %(proto)s Einstellungen"
+"Bitte fügen Sie einen Authentifizierungsserver für die %(proto)s Protokoll "
+"vor dem Konfigurieren der %(proto)s Einstellungen"
 
 #: baruwa/controllers/domains.py:715
 #, python-format
@@ -456,16 +458,15 @@ msgstr "Der %(proto)s Einstellungen wurden erstellt"
 #: baruwa/controllers/domains.py:729
 msgid "The auth settings already exist, use update to modify them"
 msgstr ""
-"Die Auth-Einstellungen bereits vorhanden sind, verwenden Sie Update "
-"geändert"
+"Die Auth-Einstellungen bereits vorhanden sind, verwenden Sie Update geändert"
 
 #: baruwa/controllers/domains.py:733
 msgid ""
-"The Radius secret is not be displayed in the form, To update type the new"
-" secret in \"Radius secret\" below."
+"The Radius secret is not be displayed in the form, To update type the new "
+"secret in \"Radius secret\" below."
 msgstr ""
-"Der Radius, das Geheimnis ist werden nicht in der Form, geben Sie den "
-"neuen geheimen Schlüssel in \"Radius Secret\" unter update angezeigt."
+"Der Radius, das Geheimnis ist werden nicht in der Form, geben Sie den neuen "
+"geheimen Schlüssel in \"Radius Secret\" unter update angezeigt."
 
 #: baruwa/controllers/domains.py:774
 #, python-format
@@ -569,7 +570,8 @@ msgstr ", "
 
 #: baruwa/controllers/messages.py:452
 msgid "The messages could not processed, try again later"
-msgstr "Nachrichten konnten nicht verarbeitet werden, versuchen Sie später erneut"
+msgstr ""
+"Nachrichten konnten nicht verarbeitet werden, versuchen Sie später erneut"
 
 #: baruwa/controllers/messages.py:559 baruwa/controllers/status.py:304
 msgid "This message contains external images, which have been blocked. "
@@ -631,8 +633,8 @@ msgstr "Die Organisation wurde gelöscht"
 #, python-format
 msgid "The organization: %(s)s will be deleted, This action is not reversible"
 msgstr ""
-"Die Organisation: %(s)s werden gelöscht, diese Aktion kann nicht "
-"rückgängig gemacht"
+"Die Organisation: %(s)s werden gelöscht, diese Aktion kann nicht rückgängig "
+"gemacht"
 
 #: baruwa/controllers/organizations.py:259
 msgid "The outbound settings have been created"
@@ -641,8 +643,8 @@ msgstr "Einstellungen für ausgehende Nachrichten wurden erstellt"
 #: baruwa/controllers/organizations.py:262
 msgid "The outbound settings could not created, Try again"
 msgstr ""
-"Einstellungen für ausgehende Nachrichten konnte nicht erstellt, versuchen"
-" Sie es erneut"
+"Einstellungen für ausgehende Nachrichten konnte nicht erstellt, versuchen "
+"Sie es erneut"
 
 #: baruwa/controllers/organizations.py:298
 msgid "The outbound settings have been updated"
@@ -650,13 +652,14 @@ msgstr "Einstellungen für ausgehende Nachrichten wurden aktualisiert"
 
 #: baruwa/controllers/organizations.py:301
 msgid "The outbound settings could not be updated"
-msgstr "Einstellungen für ausgehende Nachrichten konnte nicht aktualisiert werden"
+msgstr ""
+"Einstellungen für ausgehende Nachrichten konnte nicht aktualisiert werden"
 
 #: baruwa/controllers/organizations.py:303
 msgid "No changes made, The outbound settings not updated"
 msgstr ""
-"Keine Änderungen vorgenommen, die Einstellungen für ausgehende "
-"Nachrichten nicht aktualisiert"
+"Keine Änderungen vorgenommen, die Einstellungen für ausgehende Nachrichten "
+"nicht aktualisiert"
 
 #: baruwa/controllers/organizations.py:326
 msgid "The outbound settings have been deleted"
@@ -835,10 +838,10 @@ msgid "The audit log export failed, try again later"
 msgstr "Der Audit-Protokoll Export fehlgeschlagen, versuchen Sie es erneut"
 
 #: baruwa/forms/accounts.py:32 baruwa/forms/domains.py:34
-#: baruwa/forms/lists.py:33 baruwa/forms/messages.py:27 baruwa/forms/misc.py:28
-#: baruwa/forms/organizations.py:33 baruwa/forms/reports.py:33
-#: baruwa/forms/settings.py:30 baruwa/model/status.py:32
-#: baruwa/tasks/status.py:45
+#: baruwa/forms/lists.py:33 baruwa/forms/messages.py:27
+#: baruwa/forms/misc.py:28 baruwa/forms/organizations.py:33
+#: baruwa/forms/reports.py:33 baruwa/forms/settings.py:30
+#: baruwa/model/status.py:32 baruwa/tasks/status.py:45
 msgid "hi"
 msgstr "Hallo"
 
@@ -1240,10 +1243,11 @@ msgid "Delivery Server address"
 msgstr "Server-Lieferadresse"
 
 #: baruwa/forms/lists.py:51
-msgid "Provide either a valid IP, email, Domain address, or IP network or range"
+msgid ""
+"Provide either a valid IP, email, Domain address, or IP network or range"
 msgstr ""
-"Geben Sie entweder eine gültige IP, e-Mail, Domain-Adresse oder IP-"
-"Netzwerk oder Bereich"
+"Geben Sie entweder eine gültige IP, e-Mail, Domain-Adresse oder IP-Netzwerk "
+"oder Bereich"
 
 #: baruwa/forms/lists.py:68
 #, python-format
@@ -1575,7 +1579,7 @@ msgstr "Bitte geben Sie gültige Uhrzeit im Format hh: mm"
 #: baruwa/forms/settings.py:35 baruwa/forms/settings.py:49
 #: baruwa/forms/settings.py:52
 msgid "Yes"
-msgstr ""
+msgstr "Ja"
 
 #: baruwa/forms/settings.py:35 baruwa/forms/settings.py:38
 #: baruwa/forms/settings.py:50 baruwa/forms/settings.py:53
@@ -1598,7 +1602,7 @@ msgstr "Hinzufügen"
 
 #: baruwa/forms/settings.py:40
 msgid "Append"
-msgstr ""
+msgstr "Anfügen"
 
 #: baruwa/forms/settings.py:42
 #, fuzzy
@@ -1608,7 +1612,7 @@ msgstr "Aktion nicht unterstützt"
 
 #: baruwa/forms/settings.py:43
 msgid "None"
-msgstr ""
+msgstr "Keine"
 
 #: baruwa/forms/settings.py:44
 #, fuzzy
@@ -1624,11 +1628,11 @@ msgstr "Graph"
 
 #: baruwa/forms/settings.py:46
 msgid "Beta"
-msgstr ""
+msgstr "Beta"
 
 #: baruwa/forms/settings.py:47
 msgid "Start"
-msgstr ""
+msgstr "Start"
 
 #: baruwa/forms/settings.py:48
 #, fuzzy
@@ -1638,11 +1642,11 @@ msgstr "aktiviert"
 
 #: baruwa/forms/settings.py:51
 msgid "Disarm"
-msgstr ""
+msgstr "Entwaffnen"
 
 #: baruwa/forms/settings.py:59
 msgid "Auto detect"
-msgstr ""
+msgstr "Automatische Erkennung"
 
 #: baruwa/forms/settings.py:132
 #, fuzzy
@@ -1652,11 +1656,11 @@ msgstr "enthält keine"
 
 #: baruwa/forms/settings.py:134
 msgid "Flag as spam"
-msgstr ""
+msgstr "Als Spam kennzeichnen"
 
 #: baruwa/forms/settings.py:135
 msgid "Flag as high spam"
-msgstr ""
+msgstr "Als hohen Spam kennzeichnen"
 
 #: baruwa/forms/settings.py:173
 msgid "Invalid Domain name or IPv4 address"
@@ -2774,8 +2778,7 @@ msgstr "In der Warteschlange Nachrichten-ID: %(m)s veröffentlicht in %(a)s"
 #, python-format
 msgid "Queued Message-ID: %(m)s deleted from %(q)s queue"
 msgstr ""
-"In der Warteschlange Nachrichten-ID: %(m)s gelöscht von %(q)s "
-"Warteschlange"
+"In der Warteschlange Nachrichten-ID: %(m)s gelöscht von %(q)s Warteschlange"
 
 #: baruwa/lib/audit/msgs/status.py:29
 #, python-format
@@ -2785,7 +2788,8 @@ msgstr "In der Warteschlange Nachrichten-ID: %(m)s Vorschau"
 #: baruwa/lib/audit/msgs/status.py:30
 #, python-format
 msgid "Queued Message-ID: %(m)s downloaded attachment %(a)s"
-msgstr "In der Warteschlange Nachrichten-ID: %(m)s Anlage heruntergeladen %(a)s"
+msgstr ""
+"In der Warteschlange Nachrichten-ID: %(m)s Anlage heruntergeladen %(a)s"
 
 #: baruwa/lib/audit/msgs/status.py:31
 #, python-format
@@ -3489,7 +3493,8 @@ msgstr[0] ":: Zeigt Seite %(n)d der %(c)d Seite."
 msgstr[1] ":: Zeigt Seite %(n)d der %(c)d Seiten."
 
 #: baruwa/templates/accounts/index.html:94
-#: baruwa/templates/domains/index.html:93 baruwa/templates/lists/index.html:105
+#: baruwa/templates/domains/index.html:93
+#: baruwa/templates/lists/index.html:105
 #: baruwa/templates/messages/functions.html:208
 #: baruwa/templates/messages/searchresults.html:102
 #: baruwa/templates/organizations/index.html:50
@@ -3500,7 +3505,8 @@ msgid "Showing items %(i)d to %(l)d of %(count)d"
 msgstr "Artikel anzeigen %(i)d auf %(l)d der %(count)d"
 
 #: baruwa/templates/accounts/index.html:96
-#: baruwa/templates/domains/index.html:95 baruwa/templates/lists/index.html:107
+#: baruwa/templates/domains/index.html:95
+#: baruwa/templates/lists/index.html:107
 #: baruwa/templates/messages/functions.html:210
 #: baruwa/templates/messages/searchresults.html:104
 #: baruwa/templates/organizations/index.html:52
@@ -3510,7 +3516,8 @@ msgid "Show items:"
 msgstr "Artikel anzeigen:"
 
 #: baruwa/templates/accounts/index.html:98
-#: baruwa/templates/domains/index.html:97 baruwa/templates/lists/index.html:109
+#: baruwa/templates/domains/index.html:97
+#: baruwa/templates/lists/index.html:109
 #: baruwa/templates/messages/functions.html:212
 #: baruwa/templates/messages/searchresults.html:106
 #: baruwa/templates/organizations/index.html:54
@@ -3551,8 +3558,8 @@ msgstr "Vergessen Passwort?"
 
 #: baruwa/templates/accounts/login.html:55
 msgid ""
-"Forgotten your password? Enter your e-mail address below, and we'll "
-"e-mail instructions on setting a new one."
+"Forgotten your password? Enter your e-mail address below, and we'll e-mail "
+"instructions on setting a new one."
 msgstr ""
 "Vergessen Passwort? Geben Sie unten Ihre E-mail-Adresse und wir werden "
 "Anweisungen zum Einrichten einer neuen e-mail."
@@ -3981,16 +3988,16 @@ msgstr "Fehler: %s"
 
 #: baruwa/templates/general/error.html:28
 msgid ""
-"You do not have sufficient permissions to access this page. Please sign "
-"in using an account with sufficient permissions"
+"You do not have sufficient permissions to access this page. Please sign in "
+"using an account with sufficient permissions"
 msgstr ""
-"Sie haben nicht ausreichende Berechtigungen Zugriff auf diese Seite. "
-"Bitte melden Sie sich mit einem Konto mit ausreichenden Berechtigungen"
+"Sie haben nicht ausreichende Berechtigungen Zugriff auf diese Seite. Bitte "
+"melden Sie sich mit einem Konto mit ausreichenden Berechtigungen"
 
 #: baruwa/templates/general/error.html:30
 msgid ""
-"The system was unable to complete your request, the support team has been"
-" notified"
+"The system was unable to complete your request, the support team has been "
+"notified"
 msgstr ""
 "Das System konnte sich um Ihre Anfrage abzuschließen, das Support-Team "
 "mitgeteilt wurde"
@@ -4026,8 +4033,8 @@ msgstr "Vielen Dank."
 
 #: baruwa/templates/invite/thankyou.html:27
 msgid ""
-"Your registration request is being reviewed, you will be notified when it"
-" is approved."
+"Your registration request is being reviewed, you will be notified when it is"
+" approved."
 msgstr ""
 "Ihre Anforderung wird wiederholt, werden Sie benachrichtigt, wenn es "
 "genehmigt wird."
@@ -4090,8 +4097,7 @@ msgstr "Listenverwaltung"
 #, python-format
 msgid "Lists :: Approved senders :: Showing page %(page)d of %(count)d pages."
 msgstr ""
-"Listen:: Zugelassenen Absendern:: zeigt Seite %(page)d der %(count)d "
-"Seiten."
+"Listen:: Zugelassenen Absendern:: zeigt Seite %(page)d der %(count)d Seiten."
 
 #: baruwa/templates/lists/index.html:87
 msgid "Lists :: Approved senders"
@@ -4100,7 +4106,8 @@ msgstr "Listen:: Zugelassenen Absendern"
 #: baruwa/templates/lists/index.html:91
 #, python-format
 msgid "Lists :: Banned senders :: Showing page %(page)d of %(count)d pages."
-msgstr "Listen:: Verboten Absender:: zeigt Seite %(page)d der %(count)d Seiten."
+msgstr ""
+"Listen:: Verboten Absender:: zeigt Seite %(page)d der %(count)d Seiten."
 
 #: baruwa/templates/lists/index.html:93
 msgid "Lists :: Banned senders"
@@ -4377,8 +4384,8 @@ msgid ""
 "Messages :: Full message listing :: Showing page %(page)d of %(count)d "
 "pages."
 msgstr ""
-"Nachrichten:: Voll Nachrichten Liste:: zeigt Seite %(page)d der %(count)d"
-" Seiten."
+"Nachrichten:: Voll Nachrichten Liste:: zeigt Seite %(page)d der %(count)d "
+"Seiten."
 
 #: baruwa/templates/messages/listing.html:36
 #: baruwa/templates/messages/listing.html:47
@@ -4424,7 +4431,8 @@ msgstr "Protokoll-Spam"
 
 #: baruwa/templates/messages/quarantine.html:27
 #: baruwa/templates/status/detail.html:69
-#: baruwa/templates/status/detail.html:75 baruwa/templates/status/mailq.html:23
+#: baruwa/templates/status/detail.html:75
+#: baruwa/templates/status/mailq.html:23
 msgid "Process"
 msgstr "Prozess"
 
@@ -4432,7 +4440,8 @@ msgstr "Prozess"
 #: baruwa/templates/messages/quarantine.html:68
 #, python-format
 msgid "Messages :: Quarantine :: Showing page %(page)d of %(count)d pages."
-msgstr "Nachrichten:: Quarantäne-:: zeigt Seite %(page)d der %(count)d Seiten."
+msgstr ""
+"Nachrichten:: Quarantäne-:: zeigt Seite %(page)d der %(count)d Seiten."
 
 #: baruwa/templates/messages/quarantine.html:59
 #: baruwa/templates/messages/quarantine.html:70
@@ -4471,7 +4480,8 @@ msgstr "Die Nachrichten-Id: %(id)s wurde aus der Quarantäne gelöscht"
 #: baruwa/templates/messages/includes/delete.html:4
 #, python-format
 msgid "The message id: %(id)s could not be deleted: %(error_msg)s"
-msgstr "Die Nachrichten-Id: %(id)s konnte nicht gelöscht werden: %(error_msg)s"
+msgstr ""
+"Die Nachrichten-Id: %(id)s konnte nicht gelöscht werden: %(error_msg)s"
 
 #: baruwa/templates/messages/includes/released.html:2
 #, python-format
@@ -4481,11 +4491,11 @@ msgstr "Die Nachrichten-Id: %(id)s wurde freigegeben"
 #: baruwa/templates/messages/includes/released.html:4
 #, python-format
 msgid ""
-"The message id: %(id)s could not be released: %(error_msg)s, contact your"
-" email admin for assistance."
+"The message id: %(id)s could not be released: %(error_msg)s, contact your "
+"email admin for assistance."
 msgstr ""
-"Die Nachrichten-Id: %(id)s konnte nicht freigegeben werden: "
-"%(error_msg)s, kontaktieren Sie Ihren e-Mail-Admin für Unterstützung."
+"Die Nachrichten-Id: %(id)s konnte nicht freigegeben werden: %(error_msg)s, "
+"kontaktieren Sie Ihren e-Mail-Admin für Unterstützung."
 
 #: baruwa/templates/messages/includes/salearn.html:2
 #, python-format
@@ -4553,7 +4563,8 @@ msgstr "Einstellungen löschen"
 #: baruwa/templates/organizations/deleterelay.html:29
 #, python-format
 msgid "Organizations :: Delete outbound settings :: %(name)s"
-msgstr "Unternehmen:: Löschen Einstellungen für ausgehende Nachrichten:: %(name)s"
+msgstr ""
+"Unternehmen:: Löschen Einstellungen für ausgehende Nachrichten:: %(name)s"
 
 #: baruwa/templates/organizations/detail.html:3
 msgid "Export accounts"
@@ -4638,8 +4649,7 @@ msgstr "Update-Einstellungen"
 #, python-format
 msgid "Organizations :: Edit outbound settings :: %(name)s"
 msgstr ""
-"Unternehmen:: Bearbeiten Einstellungen für ausgehende Nachrichten:: "
-"%(name)s"
+"Unternehmen:: Bearbeiten Einstellungen für ausgehende Nachrichten:: %(name)s"
 
 #: baruwa/templates/organizations/importdomains.html:23
 #: baruwa/templates/organizations/importdomains.html:27
@@ -5440,4 +5450,3 @@ msgstr "Systemzeit"
 #, python-format
 msgid "Status :: Node status :: %(server)s"
 msgstr "Status:: Knotenstatus:: %(server)s"
-

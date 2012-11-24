@@ -1,21 +1,21 @@
 # Vietnamese translations for baruwa.
 # Copyright (C) 2012 Andrew Colin Kissa
 # This file is distributed under the same license as the baruwa project.
-#
+# 
 # Translators:
 msgid ""
 msgstr ""
-"Project-Id-Version:  baruwa\n"
+"Project-Id-Version: baruwa\n"
 "Report-Msgid-Bugs-To: baruwa@lists.baruwa.org\n"
-"POT-Creation-Date: 2012-11-20 09:57+0200\n"
-"PO-Revision-Date: 2012-11-16 19:37+0200\n"
+"POT-Creation-Date: 2012-11-24 10:27+0200\n"
+"PO-Revision-Date: 2012-11-24 10:34+0200\n"
 "Last-Translator: Andrew Colin Kissa <andrew@topdog.za.net>\n"
 "Language-Team: Baruwa Project\n"
-"Plural-Forms: nplurals=1; plural=0\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 0.9.6\n"
+"Generated-By: auto-translate.py 0.0.1\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
 
 #: baruwa/commands/pdfreport.py:116 baruwa/controllers/reports.py:62
 #: baruwa/templates/reports/index.html:13
@@ -140,8 +140,8 @@ msgstr "Bạn đã bị cấm sau khi một số thất bại trong việc thôn
 #: baruwa/controllers/accounts.py:150
 msgid "First time Login from external auth, your local account was created"
 msgstr ""
-"Lần đầu tiên đăng nhập từ bên ngoài auth, tài khoản địa phương của bạn "
-"được tạo ra"
+"Lần đầu tiên đăng nhập từ bên ngoài auth, tài khoản địa phương của bạn được "
+"tạo ra"
 
 #: baruwa/controllers/accounts.py:266
 #, python-format
@@ -156,8 +156,8 @@ msgstr "Mật khẩu tài khoản cho %(name)s đã được đặt lại"
 #: baruwa/controllers/accounts.py:325 baruwa/controllers/accounts.py:355
 msgid "This is an external account, use external system to reset the password"
 msgstr ""
-"Đây là một tài khoản bên ngoài, sử dụng hệ thống bên ngoài để đặt lại mật"
-" khẩu"
+"Đây là một tài khoản bên ngoài, sử dụng hệ thống bên ngoài để đặt lại mật "
+"khẩu"
 
 #: baruwa/controllers/accounts.py:361
 msgid "The old password supplied does not match our records"
@@ -192,8 +192,8 @@ msgstr "Các tài khoản đã bị xóa"
 #: baruwa/controllers/accounts.py:620
 #, python-format
 msgid ""
-"The account: %(a)s and all associated data will be deleted, This action "
-"is not reversible."
+"The account: %(a)s and all associated data will be deleted, This action is "
+"not reversible."
 msgstr ""
 "Tài khoản: %(a)s và tất cả dữ liệu liên quan sẽ bị xóa, hành động này là "
 "không thể đảo ngược."
@@ -207,8 +207,8 @@ msgid ""
 "The following accounts are about to be deleted, this action is not "
 "reversible, Do you wish to continue ?"
 msgstr ""
-"Các tài khoản về để được xóa, hành động này là không thể đảo ngược, bạn "
-"có muốn tiếp tục?"
+"Các tài khoản về để được xóa, hành động này là không thể đảo ngược, bạn có "
+"muốn tiếp tục?"
 
 #: baruwa/controllers/accounts.py:689 baruwa/controllers/domains.py:384
 msgid "An error occured try again"
@@ -243,11 +243,11 @@ msgstr "Địa chỉ đã bị xóa"
 
 #: baruwa/controllers/accounts.py:874 baruwa/controllers/organizations.py:358
 msgid ""
-"File uploaded, and is being processed, this page will automatically "
-"refresh to show the status"
+"File uploaded, and is being processed, this page will automatically refresh "
+"to show the status"
 msgstr ""
-"Tập tin tải lên, và đang được xử lý, Trang này sẽ tự động làm mới để hiển"
-" thị tình trạng"
+"Tập tin tải lên, và đang được xử lý, Trang này sẽ tự động làm mới để hiển "
+"thị tình trạng"
 
 #: baruwa/controllers/accounts.py:881 baruwa/controllers/organizations.py:364
 #, python-format
@@ -326,8 +326,8 @@ msgstr "Các tên miền đã bị xóa"
 #: baruwa/controllers/domains.py:324
 #, python-format
 msgid ""
-"The domain: %(name)s and all associated data will be deleted, This action"
-" cannot be reversed."
+"The domain: %(name)s and all associated data will be deleted, This action "
+"cannot be reversed."
 msgstr ""
 "Tên miền: %(name)s và tất cả dữ liệu liên quan sẽ bị xóa, hành động này "
 "không thể đảo ngược."
@@ -386,8 +386,7 @@ msgstr "Máy chủ đích đã bị xóa"
 #: baruwa/controllers/domains.py:540
 #, python-format
 msgid ""
-"The destination server: %(s)s will be deleted, This action is not "
-"reversible"
+"The destination server: %(s)s will be deleted, This action is not reversible"
 msgstr "Máy chủ đích: %(s)s sẽ bị xóa, hành động này là không thể đảo ngược"
 
 #: baruwa/controllers/domains.py:567
@@ -397,9 +396,10 @@ msgstr "Cài đặt xác thực đã được tạo ra"
 #: baruwa/controllers/domains.py:574
 #, python-format
 msgid ""
-"The host %(dest)s already configured for %(auth)s authentication for this"
-" domain"
-msgstr "Các máy chủ %(dest)s đã được cấu hình cho %(auth)s xác thực tên miền này"
+"The host %(dest)s already configured for %(auth)s authentication for this "
+"domain"
+msgstr ""
+"Các máy chủ %(dest)s đã được cấu hình cho %(auth)s xác thực tên miền này"
 
 #: baruwa/controllers/domains.py:607
 msgid "The authentication settings have been updated"
@@ -422,7 +422,8 @@ msgstr "Cài đặt xác thực đã bị xóa"
 msgid ""
 "The authentication server: %(s)s will be deleted, This action is not "
 "reversible"
-msgstr "Máy chủ xác thực: %(s)s sẽ bị xóa, hành động này là không thể đảo ngược"
+msgstr ""
+"Máy chủ xác thực: %(s)s sẽ bị xóa, hành động này là không thể đảo ngược"
 
 #: baruwa/controllers/domains.py:671
 msgid "The protocol supplied does not use extra settings"
@@ -434,8 +435,8 @@ msgid ""
 "Please add an authentication server for the %(proto)s protocol Before "
 "attempting to configure the %(proto)s settings"
 msgstr ""
-"Xin vui lòng thêm một máy chủ xác thực cho các %(proto)s Các giao thức "
-"trước khi cố gắng để đặt cấu hình các %(proto)s cài đặt"
+"Xin vui lòng thêm một máy chủ xác thực cho các %(proto)s Các giao thức trước"
+" khi cố gắng để đặt cấu hình các %(proto)s cài đặt"
 
 #: baruwa/controllers/domains.py:715
 #, python-format
@@ -453,11 +454,11 @@ msgstr "Cài đặt auth đã tồn tại, sử dụng Cập Nhật để thay �
 
 #: baruwa/controllers/domains.py:733
 msgid ""
-"The Radius secret is not be displayed in the form, To update type the new"
-" secret in \"Radius secret\" below."
+"The Radius secret is not be displayed in the form, To update type the new "
+"secret in \"Radius secret\" below."
 msgstr ""
-"Bán kính bí mật là không được hiển thị trong các hình thức, để Cập Nhật "
-"loại bí mật mới trong \"Bán kính bí mật\" dưới đây."
+"Bán kính bí mật là không được hiển thị trong các hình thức, để Cập Nhật loại"
+" bí mật mới trong \"Bán kính bí mật\" dưới đây."
 
 #: baruwa/controllers/domains.py:774
 #, python-format
@@ -583,7 +584,8 @@ msgstr "Chưa biết"
 msgid ""
 "The message has already been released, you can only use the release link "
 "once"
-msgstr "Thư đã được phát hành, bạn chỉ có thể sử dụng liên kết phát hành một lần"
+msgstr ""
+"Thư đã được phát hành, bạn chỉ có thể sử dụng liên kết phát hành một lần"
 
 #: baruwa/controllers/messages.py:622
 msgid "Processing of message failed"
@@ -819,10 +821,10 @@ msgid "The audit log export failed, try again later"
 msgstr "Xuất khẩu đăng nhập kiểm tra không thành công, thử lại sau"
 
 #: baruwa/forms/accounts.py:32 baruwa/forms/domains.py:34
-#: baruwa/forms/lists.py:33 baruwa/forms/messages.py:27 baruwa/forms/misc.py:28
-#: baruwa/forms/organizations.py:33 baruwa/forms/reports.py:33
-#: baruwa/forms/settings.py:30 baruwa/model/status.py:32
-#: baruwa/tasks/status.py:45
+#: baruwa/forms/lists.py:33 baruwa/forms/messages.py:27
+#: baruwa/forms/misc.py:28 baruwa/forms/organizations.py:33
+#: baruwa/forms/reports.py:33 baruwa/forms/settings.py:30
+#: baruwa/model/status.py:32 baruwa/tasks/status.py:45
 msgid "hi"
 msgstr "Chào bạn"
 
@@ -1223,10 +1225,11 @@ msgid "Delivery Server address"
 msgstr "Địa chỉ hệ phục vụ giao hàng"
 
 #: baruwa/forms/lists.py:51
-msgid "Provide either a valid IP, email, Domain address, or IP network or range"
+msgid ""
+"Provide either a valid IP, email, Domain address, or IP network or range"
 msgstr ""
-"Cung cấp một giá trị IP, thư điện tử, địa chỉ tên miền, hoặc IP mạng hoặc"
-" phạm vi"
+"Cung cấp một giá trị IP, thư điện tử, địa chỉ tên miền, hoặc IP mạng hoặc "
+"phạm vi"
 
 #: baruwa/forms/lists.py:68
 #, python-format
@@ -1558,7 +1561,7 @@ msgstr "Xin vui lòng cung cấp giá trị thời gian trong giờ định dạ
 #: baruwa/forms/settings.py:35 baruwa/forms/settings.py:49
 #: baruwa/forms/settings.py:52
 msgid "Yes"
-msgstr ""
+msgstr "Có"
 
 #: baruwa/forms/settings.py:35 baruwa/forms/settings.py:38
 #: baruwa/forms/settings.py:50 baruwa/forms/settings.py:53
@@ -1581,7 +1584,7 @@ msgstr "Thêm"
 
 #: baruwa/forms/settings.py:40
 msgid "Append"
-msgstr ""
+msgstr "Thêm"
 
 #: baruwa/forms/settings.py:42
 #, fuzzy
@@ -1591,7 +1594,7 @@ msgstr "Hành động không được hỗ trợ"
 
 #: baruwa/forms/settings.py:43
 msgid "None"
-msgstr ""
+msgstr "Không có"
 
 #: baruwa/forms/settings.py:44
 #, fuzzy
@@ -1600,16 +1603,18 @@ msgid "Unsupported"
 msgstr "Hành động không được hỗ trợ"
 
 #: baruwa/forms/settings.py:45
+#, fuzzy
+#| msgid "Graph"
 msgid "Alpha"
-msgstr ""
+msgstr "Biểu đồ"
 
 #: baruwa/forms/settings.py:46
 msgid "Beta"
-msgstr ""
+msgstr "Phiên bản beta"
 
 #: baruwa/forms/settings.py:47
 msgid "Start"
-msgstr ""
+msgstr "Bắt đầu"
 
 #: baruwa/forms/settings.py:48
 #, fuzzy
@@ -1619,11 +1624,11 @@ msgstr "kích hoạt"
 
 #: baruwa/forms/settings.py:51
 msgid "Disarm"
-msgstr ""
+msgstr "Giải giới"
 
 #: baruwa/forms/settings.py:59
 msgid "Auto detect"
-msgstr ""
+msgstr "Tự động phát hiện"
 
 #: baruwa/forms/settings.py:132
 #, fuzzy
@@ -1633,11 +1638,11 @@ msgstr "không chứa"
 
 #: baruwa/forms/settings.py:134
 msgid "Flag as spam"
-msgstr ""
+msgstr "Gắn cờ là thư rác"
 
 #: baruwa/forms/settings.py:135
 msgid "Flag as high spam"
-msgstr ""
+msgstr "Gắn cờ là thư rác cao"
 
 #: baruwa/forms/settings.py:173
 msgid "Invalid Domain name or IPv4 address"
@@ -2796,14 +2801,13 @@ msgstr "Chỉ người quản trị có thể truy cập trang này"
 #: baruwa/lib/auth/predicates.py:70
 msgid "Only Administrators or owners can view domain details"
 msgstr ""
-"Chỉ có quản trị viên hoặc chủ sở hữu có thể xem thông tin chi tiết của "
-"tên miền"
+"Chỉ có quản trị viên hoặc chủ sở hữu có thể xem thông tin chi tiết của tên "
+"miền"
 
 #: baruwa/lib/auth/predicates.py:105
 msgid "Only Administrators or owners can view account details"
 msgstr ""
-"Chỉ có quản trị viên hoặc chủ sở hữu có thể xem thông tin chi tiết tài "
-"khoản"
+"Chỉ có quản trị viên hoặc chủ sở hữu có thể xem thông tin chi tiết tài khoản"
 
 #: baruwa/lib/templates/helpers.py:68
 msgid "unknown"
@@ -3469,9 +3473,11 @@ msgstr "Tài khoản "
 msgid ":: Showing page %(n)d of %(c)d page."
 msgid_plural ":: Showing page %(n)d of %(c)d pages."
 msgstr[0] ":: Đang hiện trang %(n)d của %(c)d Trang."
+msgstr[1] ":: Đang hiện trang %(n)d của %(c)d Trang."
 
 #: baruwa/templates/accounts/index.html:94
-#: baruwa/templates/domains/index.html:93 baruwa/templates/lists/index.html:105
+#: baruwa/templates/domains/index.html:93
+#: baruwa/templates/lists/index.html:105
 #: baruwa/templates/messages/functions.html:208
 #: baruwa/templates/messages/searchresults.html:102
 #: baruwa/templates/organizations/index.html:50
@@ -3482,7 +3488,8 @@ msgid "Showing items %(i)d to %(l)d of %(count)d"
 msgstr "Đang hiển thị mục %(i)d để %(l)d của %(count)d"
 
 #: baruwa/templates/accounts/index.html:96
-#: baruwa/templates/domains/index.html:95 baruwa/templates/lists/index.html:107
+#: baruwa/templates/domains/index.html:95
+#: baruwa/templates/lists/index.html:107
 #: baruwa/templates/messages/functions.html:210
 #: baruwa/templates/messages/searchresults.html:104
 #: baruwa/templates/organizations/index.html:52
@@ -3492,7 +3499,8 @@ msgid "Show items:"
 msgstr "Hiện khoản mục:"
 
 #: baruwa/templates/accounts/index.html:98
-#: baruwa/templates/domains/index.html:97 baruwa/templates/lists/index.html:109
+#: baruwa/templates/domains/index.html:97
+#: baruwa/templates/lists/index.html:109
 #: baruwa/templates/messages/functions.html:212
 #: baruwa/templates/messages/searchresults.html:106
 #: baruwa/templates/organizations/index.html:54
@@ -3533,11 +3541,11 @@ msgstr "Quên mật khẩu?"
 
 #: baruwa/templates/accounts/login.html:55
 msgid ""
-"Forgotten your password? Enter your e-mail address below, and we'll "
-"e-mail instructions on setting a new one."
+"Forgotten your password? Enter your e-mail address below, and we'll e-mail "
+"instructions on setting a new one."
 msgstr ""
-"Quên mật khẩu của bạn? Nhập địa chỉ e-mail của bạn dưới đây, và chúng tôi"
-" sẽ email hướng dẫn về cách thiết lập một hình mới."
+"Quên mật khẩu của bạn? Nhập địa chỉ e-mail của bạn dưới đây, và chúng tôi sẽ"
+" email hướng dẫn về cách thiết lập một hình mới."
 
 #: baruwa/templates/accounts/login.html:60
 msgid "Cancel"
@@ -3876,6 +3884,7 @@ msgstr "cài đặt"
 msgid "Domains :: Showing page %(page)d of %(count)d page."
 msgid_plural "Domains :: Showing page %(page)d of %(count)d pages."
 msgstr[0] "Tên miền:: Hiển thị trang %(page)d của %(count)d Trang."
+msgstr[1] "Tên miền:: Hiển thị trang %(page)d của %(count)d Trang."
 
 #: baruwa/templates/domains/index.html:76
 #: baruwa/templates/domains/index.html:84
@@ -3962,19 +3971,19 @@ msgstr "LỖI: %s"
 
 #: baruwa/templates/general/error.html:28
 msgid ""
-"You do not have sufficient permissions to access this page. Please sign "
-"in using an account with sufficient permissions"
+"You do not have sufficient permissions to access this page. Please sign in "
+"using an account with sufficient permissions"
 msgstr ""
 "Bạn không có đủ quyền để truy cập trang này. Xin vui lòng đăng nhập bằng "
 "trương mục với quyền truy cập đầy đủ"
 
 #: baruwa/templates/general/error.html:30
 msgid ""
-"The system was unable to complete your request, the support team has been"
-" notified"
+"The system was unable to complete your request, the support team has been "
+"notified"
 msgstr ""
-"Hệ thống đã không thể hoàn tất yêu cầu của bạn, nhóm hỗ trợ đã được thông"
-" báo"
+"Hệ thống đã không thể hoàn tất yêu cầu của bạn, nhóm hỗ trợ đã được thông "
+"báo"
 
 #: baruwa/templates/includes/search.html:9 baruwa/templates/lists/index.html:6
 #: baruwa/templates/messages/functions.html:300
@@ -4006,11 +4015,11 @@ msgstr "Cảm ơn bạn."
 
 #: baruwa/templates/invite/thankyou.html:27
 msgid ""
-"Your registration request is being reviewed, you will be notified when it"
-" is approved."
+"Your registration request is being reviewed, you will be notified when it is"
+" approved."
 msgstr ""
-"Yêu cầu đăng ký của bạn đang được xem xét, bạn sẽ được thông báo khi nó "
-"được chấp thuận."
+"Yêu cầu đăng ký của bạn đang được xem xét, bạn sẽ được thông báo khi nó được"
+" chấp thuận."
 
 #: baruwa/templates/lists/add.html:4
 msgid "Add Sender to a list"
@@ -4046,66 +4055,69 @@ msgstr "Xóa người gửi vào danh sách"
 
 #: baruwa/templates/lists/delete.html:15
 msgid "Close"
-msgstr ""
+msgstr "Đóng"
 
 #: baruwa/templates/lists/delete.html:22 baruwa/templates/lists/delete.html:29
 msgid "Delete from list"
-msgstr ""
+msgstr "Xóa khỏi danh sách"
 
 #: baruwa/templates/lists/delete.html:33
 msgid "Delete from List"
-msgstr ""
+msgstr "Xóa khỏi danh sách"
 
 #: baruwa/templates/lists/index.html:26
 #: baruwa/templates/reports/piereport.html:24
 #: baruwa/templates/reports/relays.html:24
 msgid "#"
-msgstr ""
+msgstr "#"
 
 #: baruwa/templates/lists/index.html:80
 msgid "List management"
-msgstr ""
+msgstr "Danh sách quản lý"
 
 #: baruwa/templates/lists/index.html:85
 #, python-format
 msgid "Lists :: Approved senders :: Showing page %(page)d of %(count)d pages."
 msgstr ""
+"Danh sách:: Chấp nhận người gửi:: Đang hiện trang %(page)d của %(count)d "
+"Trang."
 
 #: baruwa/templates/lists/index.html:87
 msgid "Lists :: Approved senders"
-msgstr ""
+msgstr "Danh sách:: Chấp nhận người gửi"
 
 #: baruwa/templates/lists/index.html:91
 #, python-format
 msgid "Lists :: Banned senders :: Showing page %(page)d of %(count)d pages."
 msgstr ""
+"Danh sách:: Cấm người gửi:: Đang hiện trang %(page)d của %(count)d Trang."
 
 #: baruwa/templates/lists/index.html:93
 msgid "Lists :: Banned senders"
-msgstr ""
+msgstr "Danh sách:: Cấm người gửi"
 
 #: baruwa/templates/messages/archive.html:3
 msgid "Apply filters"
-msgstr ""
+msgstr "Áp dụng bộ lọc"
 
 #: baruwa/templates/messages/archive.html:4
 #: baruwa/templates/messages/listing.html:4
 #: baruwa/templates/messages/quarantine.html:6
 #: baruwa/templates/messages/searchresults.html:3
 msgid "Show applied filters"
-msgstr ""
+msgstr "Hiển thị bộ lọc ứng dụng"
 
 #: baruwa/templates/messages/archive.html:28
 #: baruwa/templates/messages/archive.html:39
 #, python-format
 msgid "Messages :: Archive :: Showing page %(page)d of %(count)d pages."
-msgstr ""
+msgstr "Tin nhắn:: Lưu trữ:: Đang hiện trang %(page)d của %(count)d Trang."
 
 #: baruwa/templates/messages/archive.html:30
 #: baruwa/templates/messages/listing.html:39
 #: baruwa/templates/messages/quarantine.html:62
 msgid "Filters"
-msgstr ""
+msgstr "Bộ lọc"
 
 #: baruwa/templates/messages/archive.html:30
 #: baruwa/templates/messages/listing.html:39
@@ -4121,69 +4133,69 @@ msgstr "Tin nhắn:: lưu trữ"
 #: baruwa/templates/messages/autorelease.html:11
 #: baruwa/templates/messages/autorelease.html:26
 msgid "Auto Quarantine release result:"
-msgstr ""
+msgstr "Tự động kiểm dịch phát hành kết quả:"
 
 #: baruwa/templates/messages/autorelease.html:29
 msgid "Passed"
-msgstr ""
+msgstr "Thông qua"
 
 #: baruwa/templates/messages/autorelease.html:29
 msgid "Message released"
-msgstr ""
+msgstr "Thông báo phát hành"
 
 #: baruwa/templates/messages/autorelease.html:31
 msgid "Failed"
-msgstr ""
+msgstr "Thất bại"
 
 #: baruwa/templates/messages/autorelease.html:31
 msgid "Message not released"
-msgstr ""
+msgstr "Thư không được phát hành"
 
 #: baruwa/templates/messages/autorelease.html:39
 #, python-format
 msgid "Message with Message-ID: %s released from quarantine to: %s"
-msgstr ""
+msgstr "Các tin nhắn với ID thư: %s phát hành từ cách ly để: %s"
 
 #: baruwa/templates/messages/detail.html:4
 msgid "Add sender to list"
-msgstr ""
+msgstr "Thêm người gửi vào danh sách"
 
 #: baruwa/templates/messages/detail.html:6
 #: baruwa/templates/status/detail.html:6
 msgid "Preview message"
-msgstr ""
+msgstr "Xem trước thư"
 
 #: baruwa/templates/messages/detail.html:7
 #: baruwa/templates/messages/preview.html:4
 msgid "Release message"
-msgstr ""
+msgstr "Phát hành thông báo"
 
 #: baruwa/templates/messages/detail.html:15
 #: baruwa/templates/status/detail.html:13
 msgid "Message Details"
-msgstr ""
+msgstr "Chi tiết thư"
 
 #: baruwa/templates/messages/detail.html:35
 #: baruwa/templates/status/detail.html:21
 msgid "Received on"
-msgstr ""
+msgstr "Nhận được trên"
 
 #: baruwa/templates/messages/detail.html:39
 #: baruwa/templates/status/detail.html:45
 msgid "Received by"
-msgstr ""
+msgstr "Nhận được"
 
 #: baruwa/templates/messages/detail.html:47
 msgid "Received via"
-msgstr ""
+msgstr "Nhận được thông qua"
 
 #: baruwa/templates/messages/detail.html:53
 msgid "Hide hosts"
-msgstr ""
+msgstr "Ẩn máy chủ"
 
 #: baruwa/templates/messages/detail.html:53
 msgid "Show hosts"
-msgstr ""
+msgstr "Hiển thị chủ"
 
 #: baruwa/templates/messages/detail.html:58
 #: baruwa/templates/messages/functions.html:156
@@ -4192,71 +4204,71 @@ msgstr ""
 #: baruwa/templates/messages/searchresults.html:21
 #: baruwa/templates/status/detail.html:49
 msgid "Size"
-msgstr ""
+msgstr "Kích thước"
 
 #: baruwa/templates/messages/detail.html:62
 msgid "Message Headers"
-msgstr ""
+msgstr "Tiêu đề thư"
 
 #: baruwa/templates/messages/detail.html:68
 msgid "Hide headers"
-msgstr ""
+msgstr "Ẩn tiêu đề"
 
 #: baruwa/templates/messages/detail.html:68
 msgid "Show headers"
-msgstr ""
+msgstr "Hiển thị tiêu đề"
 
 #: baruwa/templates/messages/detail.html:73
 msgid "Quarantined"
-msgstr ""
+msgstr "Cách ly"
 
 #: baruwa/templates/messages/detail.html:81
 msgid "Prohibited File"
-msgstr ""
+msgstr "Tập tin bị Cấm"
 
 #: baruwa/templates/messages/detail.html:85
 msgid "Other infection"
-msgstr ""
+msgstr "Lây nhiễm khác"
 
 #: baruwa/templates/messages/detail.html:91
 msgid "Spam checks results"
-msgstr ""
+msgstr "Kết quả kiểm tra thư rác"
 
 #: baruwa/templates/messages/detail.html:95
 msgid "Results"
-msgstr ""
+msgstr "Kết quả"
 
 #: baruwa/templates/messages/detail.html:98
 msgid "Message Score"
-msgstr ""
+msgstr "Tin nhắn được điểm"
 
 #: baruwa/templates/messages/detail.html:102
 msgid "Identified as Spam"
-msgstr ""
+msgstr "Xác định là thư rác"
 
 #: baruwa/templates/messages/detail.html:106
 msgid "Definite Spam"
-msgstr ""
+msgstr "Xác định thư rác"
 
 #: baruwa/templates/messages/detail.html:110
 msgid "Sender in RBL"
-msgstr ""
+msgstr "Gửi trong RBL"
 
 #: baruwa/templates/messages/detail.html:118
 msgid "Approved Sender"
-msgstr ""
+msgstr "Người gửi đã được phê duyệt"
 
 #: baruwa/templates/messages/detail.html:122
 msgid "Blocked Sender"
-msgstr ""
+msgstr "Người gửi bị chặn"
 
 #: baruwa/templates/messages/detail.html:126
 msgid "Bayesian Auto Learned"
-msgstr ""
+msgstr "Bayes tự động học"
 
 #: baruwa/templates/messages/detail.html:131
 msgid "Rules matched"
-msgstr ""
+msgstr "Quy tắc phù hợp"
 
 #: baruwa/templates/messages/detail.html:133
 #: baruwa/templates/messages/functions.html:117
@@ -4279,37 +4291,37 @@ msgstr "Mô tả quy tắc"
 
 #: baruwa/templates/messages/detail.html:171
 msgid "Delivery information"
-msgstr ""
+msgstr "Cung cấp thông tin"
 
 #: baruwa/templates/messages/detail.html:177
 msgid "Message"
-msgstr ""
+msgstr "Tin nhắn"
 
 #: baruwa/templates/messages/detail.html:184
 msgid "Message is quarantined"
-msgstr ""
+msgstr "Thông báo cách ly"
 
 #: baruwa/templates/messages/detail.html:186
 msgid "No delivery status information available"
-msgstr ""
+msgstr "Không có thông tin trạng thái gửi có sẵn"
 
 #: baruwa/templates/messages/detail.html:193
 msgid "Ok"
-msgstr ""
+msgstr "Ok"
 
 #: baruwa/templates/messages/detail.html:193
 msgid "Fail"
-msgstr ""
+msgstr "Thất bại"
 
 #: baruwa/templates/messages/detail.html:204
 #, python-format
 msgid "Showing message :: %(i)s"
-msgstr ""
+msgstr "Đang hiện thông điệp:: %(i)s"
 
 #: baruwa/templates/messages/functions.html:76
 #: baruwa/templates/messages/index.html:32
 msgid "No messages found"
-msgstr ""
+msgstr "Không có thư được tìm thấy"
 
 #: baruwa/templates/messages/functions.html:96
 #: baruwa/templates/messages/functions.html:98
@@ -4318,7 +4330,7 @@ msgstr ""
 #: baruwa/templates/messages/index.html:21
 #: baruwa/templates/messages/searchresults.html:18
 msgid "From"
-msgstr ""
+msgstr "Từ"
 
 #: baruwa/templates/messages/functions.html:103
 #: baruwa/templates/messages/functions.html:105
@@ -4327,17 +4339,17 @@ msgstr ""
 #: baruwa/templates/messages/index.html:22
 #: baruwa/templates/messages/searchresults.html:19
 msgid "To"
-msgstr ""
+msgstr "Để"
 
 #: baruwa/templates/messages/index.html:10
 msgid "items per page"
-msgstr ""
+msgstr "bài mỗi trang"
 
 #: baruwa/templates/messages/index.html:96
 #: baruwa/templates/messages/index.html:100
 #, python-format
 msgid "Messages :: Showing the %s most recent messages"
-msgstr ""
+msgstr "Tin nhắn:: Hiển thị %s đặt thông điệp"
 
 #: baruwa/templates/messages/listing.html:3
 #: baruwa/templates/messages/quarantine.html:5
@@ -4346,7 +4358,7 @@ msgstr ""
 #: baruwa/templates/reports/piereport.html:3
 #: baruwa/templates/reports/relays.html:3
 msgid "Apply Filters"
-msgstr ""
+msgstr "Áp dụng bộ lọc"
 
 #: baruwa/templates/messages/listing.html:34
 #: baruwa/templates/messages/listing.html:45
@@ -4355,129 +4367,134 @@ msgid ""
 "Messages :: Full message listing :: Showing page %(page)d of %(count)d "
 "pages."
 msgstr ""
+"Tin nhắn:: Đầy đủ danh sách thông báo:: Đang hiện trang %(page)d của "
+"%(count)d Trang."
 
 #: baruwa/templates/messages/listing.html:36
 #: baruwa/templates/messages/listing.html:47
 msgid "Messages :: Full message listing"
-msgstr ""
+msgstr "Tin nhắn:: Thông báo đầy đủ danh sách"
 
 #: baruwa/templates/messages/preview.html:5
 #: baruwa/templates/status/preview.html:6
 msgid "Return to message"
-msgstr ""
+msgstr "Quay lại tin nhắn"
 
 #: baruwa/templates/messages/preview.html:13
 #: baruwa/templates/status/preview.html:14
 msgid "Message headers"
-msgstr ""
+msgstr "Tiêu đề thư"
 
 #: baruwa/templates/messages/preview.html:24
 #: baruwa/templates/status/preview.html:25
 msgid "Attachments"
-msgstr ""
+msgstr "Tập tin đính kèm"
 
 #: baruwa/templates/messages/preview.html:34
 #: baruwa/templates/status/preview.html:35
 msgid "Message content"
-msgstr ""
+msgstr "Nội dung tin nhắn"
 
 #: baruwa/templates/messages/preview.html:47
 #, python-format
 msgid "Message: %(msgid)s could not be previewed"
-msgstr ""
+msgstr "Thông báo: %(msgid)s không có thể được xem trước"
 
 #: baruwa/templates/messages/preview.html:53
 #: baruwa/templates/messages/preview.html:57
 #, python-format
 msgid "Messages :: Previewing message : %(msgid)s"
-msgstr ""
+msgstr "Tin nhắn:: Previewing tin nhắn: %(msgid)s"
 
 #: baruwa/templates/messages/quarantine.html:4
 #: baruwa/templates/messages/taskstatus.html:5
 msgid "Not Spam"
-msgstr ""
+msgstr "Không phải thư rác"
 
 #: baruwa/templates/messages/quarantine.html:27
 #: baruwa/templates/status/detail.html:69
-#: baruwa/templates/status/detail.html:75 baruwa/templates/status/mailq.html:23
+#: baruwa/templates/status/detail.html:75
+#: baruwa/templates/status/mailq.html:23
 msgid "Process"
-msgstr ""
+msgstr "Quá trình"
 
 #: baruwa/templates/messages/quarantine.html:57
 #: baruwa/templates/messages/quarantine.html:68
 #, python-format
 msgid "Messages :: Quarantine :: Showing page %(page)d of %(count)d pages."
-msgstr ""
+msgstr "Tin nhắn:: Cách ly:: Đang hiện trang %(page)d của %(count)d Trang."
 
 #: baruwa/templates/messages/quarantine.html:59
 #: baruwa/templates/messages/quarantine.html:70
 msgid "Messages :: Quarantine"
-msgstr ""
+msgstr "Tin nhắn:: cách ly"
 
 #: baruwa/templates/messages/searchresults.html:88
 #, python-format
 msgid "No messages found matching search query: %(q)s !"
-msgstr ""
+msgstr "Không có thư tìm thấy phù hợp với truy vấn tìm kiếm: %(q)s!"
 
 #: baruwa/templates/messages/searchresults.html:154
 #: baruwa/templates/messages/searchresults.html:158
 #, python-format
 msgid "Messages :: Search results :: %(q)s"
-msgstr ""
+msgstr "Thư:: Kết quả tìm kiếm:: %(q)s"
 
 #: baruwa/templates/messages/taskstatus.html:15
 msgid "Message-ID"
-msgstr ""
+msgstr "ID thông báo"
 
 #: baruwa/templates/messages/taskstatus.html:46
 msgid "The request is being processed. Current status: "
-msgstr ""
+msgstr "Yêu cầu đang được xử lý. Tình trạng hiện tại: "
 
 #: baruwa/templates/messages/taskstatus.html:67
 #: baruwa/templates/messages/taskstatus.html:70
 msgid "Messages :: Quarantine :: Bulk processing status"
-msgstr ""
+msgstr "Tin nhắn:: Cách ly:: hàng loạt tình trạng chế biến"
 
 #: baruwa/templates/messages/includes/delete.html:2
 #, python-format
 msgid "The message id: %(id)s has been deleted from the quarantine"
-msgstr ""
+msgstr "Id của tin nhắn: %(id)s đã bị xóa khỏi cách ly"
 
 #: baruwa/templates/messages/includes/delete.html:4
 #, python-format
 msgid "The message id: %(id)s could not be deleted: %(error_msg)s"
-msgstr ""
+msgstr "Id của tin nhắn: %(id)s không thể xóa: %(error_msg)s"
 
 #: baruwa/templates/messages/includes/released.html:2
 #, python-format
 msgid "The message id: %(id)s has been released"
-msgstr ""
+msgstr "Id của tin nhắn: %(id)s đã được phát hành"
 
 #: baruwa/templates/messages/includes/released.html:4
 #, python-format
 msgid ""
-"The message id: %(id)s could not be released: %(error_msg)s, contact your"
-" email admin for assistance."
+"The message id: %(id)s could not be released: %(error_msg)s, contact your "
+"email admin for assistance."
 msgstr ""
+"Id của tin nhắn: %(id)s có thể không được phát hành: %(error_msg)s, liên hệ "
+"với quản trị email của bạn để được trợ giúp."
 
 #: baruwa/templates/messages/includes/salearn.html:2
 #, python-format
 msgid "The message id: %(id)s processed by the bayesian engine"
-msgstr ""
+msgstr "Id của tin nhắn: %(id)s xử lý bằng công cụ kiếm Bayes"
 
 #: baruwa/templates/messages/includes/salearn.html:4
 #, python-format
 msgid "The message id: %(id)s not learned: %(msg)s"
-msgstr ""
+msgstr "Id của tin nhắn: %(id)s không học được: %(msg)s"
 
 #: baruwa/templates/organizations/add.html:3
 msgid "Add an organization"
-msgstr ""
+msgstr "Thêm một tổ chức"
 
 #: baruwa/templates/organizations/add.html:18
 #: baruwa/templates/organizations/add.html:22
 msgid "Organizations :: Add an organization"
-msgstr ""
+msgstr "Tổ chức:: Thêm một tổ chức"
 
 #: baruwa/templates/organizations/addrelay.html:3
 #: baruwa/templates/organizations/delete.html:3
@@ -4486,309 +4503,309 @@ msgstr ""
 #: baruwa/templates/organizations/editrelay.html:3
 #: baruwa/templates/organizations/importdomains.html:3
 msgid "Organization details"
-msgstr ""
+msgstr "Tổ chức thông tin chi tiết"
 
 #: baruwa/templates/organizations/addrelay.html:9
 msgid "Add outbound settings"
-msgstr ""
+msgstr "Thêm thiết đặt ra ngoài"
 
 #: baruwa/templates/organizations/addrelay.html:17
 msgid "Add settings"
-msgstr ""
+msgstr "Thêm thiết đặt"
 
 #: baruwa/templates/organizations/addrelay.html:25
 #: baruwa/templates/organizations/addrelay.html:29
 #, python-format
 msgid "Organizations :: %(name)s :: Add outbound settings"
-msgstr ""
+msgstr "Tổ chức:: %(name)s :: Thêm đi cài đặt"
 
 #: baruwa/templates/organizations/delete.html:9
 #: baruwa/templates/organizations/delete.html:16
 msgid "Delete organization"
-msgstr ""
+msgstr "Xóa tổ chức"
 
 #: baruwa/templates/organizations/delete.html:24
 #: baruwa/templates/organizations/delete.html:28
 msgid "Settings :: Delete organization"
-msgstr ""
+msgstr "Cài đặt:: Xóa tổ chức"
 
 #: baruwa/templates/organizations/deleterelay.html:9
 msgid "Delete outbound settings"
-msgstr ""
+msgstr "Xóa thiết đặt ra ngoài"
 
 #: baruwa/templates/organizations/deleterelay.html:17
 msgid "Delete settings"
-msgstr ""
+msgstr "Xóa thiết đặt"
 
 #: baruwa/templates/organizations/deleterelay.html:25
 #: baruwa/templates/organizations/deleterelay.html:29
 #, python-format
 msgid "Organizations :: Delete outbound settings :: %(name)s"
-msgstr ""
+msgstr "Tổ chức:: Xóa đi cài đặt:: %(name)s"
 
 #: baruwa/templates/organizations/detail.html:3
 msgid "Export accounts"
-msgstr ""
+msgstr "Xuất khẩu tài khoản"
 
 #: baruwa/templates/organizations/detail.html:4
 #: baruwa/templates/organizations/importdomains.html:9
 #: baruwa/templates/organizations/index.html:15
 msgid "Import domains"
-msgstr ""
+msgstr "Nhập tên miền"
 
 #: baruwa/templates/organizations/detail.html:5
 msgid "Add relay settings"
-msgstr ""
+msgstr "Thêm chuyển tiếp cài đặt"
 
 #: baruwa/templates/organizations/detail.html:14
 msgid "Organization information"
-msgstr ""
+msgstr "Tổ chức thông tin"
 
 #: baruwa/templates/organizations/detail.html:27
 msgid "Number of Domains"
-msgstr ""
+msgstr "Số lượng tên miền"
 
 #: baruwa/templates/organizations/detail.html:35
 msgid "List Domains"
-msgstr ""
+msgstr "Danh sách tên miền"
 
 #: baruwa/templates/organizations/detail.html:38
 msgid "Organization domains"
-msgstr ""
+msgstr "Tổ chức tên miền"
 
 #: baruwa/templates/organizations/detail.html:43
 msgid "Organization Admins"
-msgstr ""
+msgstr "Quản trị viên tổ chức"
 
 #: baruwa/templates/organizations/detail.html:55
 msgid "Outbound relay settings"
-msgstr ""
+msgstr "Cài đặt chuyển tiếp đi"
 
 #: baruwa/templates/organizations/detail.html:61
 #, python-format
 msgid "Relay Host: %(name)s"
-msgstr ""
+msgstr "Chuyển tiếp Host: %(name)s"
 
 #: baruwa/templates/organizations/detail.html:63
 #, python-format
 msgid "SMTP-AUTH: %(name)s"
-msgstr ""
+msgstr "SMTP-AUTH: %(name)s"
 
 #: baruwa/templates/organizations/detail.html:79
 msgid "No outbound relay settings configured"
-msgstr ""
+msgstr "Không có đi chuyển tiếp cài đặt cấu hình"
 
 #: baruwa/templates/organizations/detail.html:85
 #: baruwa/templates/organizations/detail.html:89
 msgid "Organizations :: "
-msgstr ""
+msgstr "Tổ chức:: "
 
 #: baruwa/templates/organizations/edit.html:9
 msgid "Edit organization"
-msgstr ""
+msgstr "Chỉnh sửa các tổ chức"
 
 #: baruwa/templates/organizations/edit.html:16
 msgid "Update organization"
-msgstr ""
+msgstr "Cập nhật các tổ chức"
 
 #: baruwa/templates/organizations/edit.html:24
 #: baruwa/templates/organizations/edit.html:28
 msgid "Organizations :: Edit organization"
-msgstr ""
+msgstr "Tổ chức:: Chỉnh sửa tổ chức"
 
 #: baruwa/templates/organizations/editrelay.html:9
 msgid "Edit outbound settings"
-msgstr ""
+msgstr "Chỉnh sửa cài đặt ra ngoài"
 
 #: baruwa/templates/organizations/editrelay.html:17
 msgid "Update settings"
-msgstr ""
+msgstr "Cập Nhật cài đặt"
 
 #: baruwa/templates/organizations/editrelay.html:25
 #: baruwa/templates/organizations/editrelay.html:29
 #, python-format
 msgid "Organizations :: Edit outbound settings :: %(name)s"
-msgstr ""
+msgstr "Tổ chức:: Chỉnh sửa cài đặt đi:: %(name)s"
 
 #: baruwa/templates/organizations/importdomains.html:23
 #: baruwa/templates/organizations/importdomains.html:27
 #, python-format
 msgid "Organizations :: %(org)s :: Import domains"
-msgstr ""
+msgstr "Tổ chức:: %(org)s :: Nhập tên miền"
 
 #: baruwa/templates/organizations/importstatus.html:59
 #: baruwa/templates/organizations/importstatus.html:62
 msgid "Organizations :: Domain import status"
-msgstr ""
+msgstr "Tổ chức:: Trạng thái nhập miền"
 
 #: baruwa/templates/organizations/index.html:12
 #: baruwa/templates/organizations/index.html:27
 msgid "List domains"
-msgstr ""
+msgstr "Danh sách tên miền"
 
 #: baruwa/templates/organizations/index.html:14
 msgid "Add domain"
-msgstr ""
+msgstr "Thêm tên miền"
 
 #: baruwa/templates/organizations/index.html:22
 msgid "No organizations found"
-msgstr ""
+msgstr "Tổ chức không tìm thấy"
 
 #: baruwa/templates/organizations/index.html:29
 msgid "Add domains"
-msgstr ""
+msgstr "Thêm tên miền"
 
 #: baruwa/templates/organizations/index.html:30
 msgid "import domains"
-msgstr ""
+msgstr "nhập tên miền"
 
 #: baruwa/templates/organizations/index.html:101
 #: baruwa/templates/organizations/index.html:106
 #, python-format
 msgid "Organizations :: Showing page %(page)d of %(count)d pages."
-msgstr ""
+msgstr "Tổ chức:: Hiển thị trang %(page)d của %(count)d Trang."
 
 #: baruwa/templates/organizations/index.html:108
 msgid "Organizations ::"
-msgstr ""
+msgstr "Tổ chức::"
 
 #: baruwa/templates/reports/barreport.html:4
 #: baruwa/templates/reports/listing.html:4
 #: baruwa/templates/reports/piereport.html:4
 #: baruwa/templates/reports/relays.html:4
 msgid "Download PDF"
-msgstr ""
+msgstr "Tải về PDF"
 
 #: baruwa/templates/reports/barreport.html:5
 #: baruwa/templates/reports/listing.html:5
 #: baruwa/templates/reports/piereport.html:5
 #: baruwa/templates/reports/relays.html:5
 msgid "Download CSV"
-msgstr ""
+msgstr "Tải xuống CSV"
 
 #: baruwa/templates/reports/barreport.html:21
 msgid "Enable javascript to view graphs"
-msgstr ""
+msgstr "Kích hoạt javascript để xem đồ thị"
 
 #: baruwa/templates/reports/barreport.html:46
 msgid "No items returned"
-msgstr ""
+msgstr "Không có mục nào trở lại"
 
 #: baruwa/templates/reports/barreport.html:59
 msgid "Download"
-msgstr ""
+msgstr "Tải về"
 
 #: baruwa/templates/reports/barreport.html:62
 #: baruwa/templates/reports/barreport.html:63
 #: baruwa/templates/reports/piereport.html:58
 #: baruwa/templates/reports/piereport.html:59
 msgid "Reports :: "
-msgstr ""
+msgstr "Báo cáo:: "
 
 #: baruwa/templates/reports/form.html:3
 msgid "Add Filter"
-msgstr ""
+msgstr "Thêm bộ lọc"
 
 #: baruwa/templates/reports/form.html:19
 msgid "Add filter"
-msgstr ""
+msgstr "Thêm bộ lọc"
 
 #: baruwa/templates/reports/form.html:36
 msgid "Filters have been applied"
-msgstr ""
+msgstr "Bộ lọc đã được áp dụng"
 
 #: baruwa/templates/reports/index.html:17
 msgid "Spam Score Distribution"
-msgstr ""
+msgstr "Thư rác được điểm phân phối"
 
 #: baruwa/templates/reports/index.html:18
 msgid "Top Mail hosts"
-msgstr ""
+msgstr "Đầu thư lưu trữ"
 
 #: baruwa/templates/reports/index.html:35
 msgid "Statistics"
-msgstr ""
+msgstr "Số liệu thống kê"
 
 #: baruwa/templates/reports/index.html:39
 msgid "Message count"
-msgstr ""
+msgstr "Số lượng tin nhắn"
 
 #: baruwa/templates/reports/index.html:43
 msgid "Oldest message"
-msgstr ""
+msgstr "Thông báo cổ xưa nhất"
 
 #: baruwa/templates/reports/index.html:47
 msgid "Newest message"
-msgstr ""
+msgstr "Mới nhất tin nhắn"
 
 #: baruwa/templates/reports/index.html:53
 msgid "Active Filter(s)"
-msgstr ""
+msgstr "Hoạt động Filter(s)"
 
 #: baruwa/templates/reports/index.html:75
 msgid "No active filters at the moment"
-msgstr ""
+msgstr "Không có bộ lọc hoạt động ở thời điểm này"
 
 #: baruwa/templates/reports/index.html:82
 msgid "Saved Filter(s)"
-msgstr ""
+msgstr "Lưu Filter(s)"
 
 #: baruwa/templates/reports/index.html:104
 msgid "No saved filters at the moment"
-msgstr ""
+msgstr "Không có bộ lọc đã lưu ở thời điểm này"
 
 #: baruwa/templates/reports/listing.html:24
 msgid "Enable Javascript to view graphs"
-msgstr ""
+msgstr "Kích hoạt Javascript để xem đồ thị"
 
 #: baruwa/templates/reports/listing.html:39
 msgid "Mail"
-msgstr ""
+msgstr "Thư"
 
 #: baruwa/templates/reports/listing.html:42
 msgid "Virii"
-msgstr ""
+msgstr "Virii"
 
 #: baruwa/templates/reports/listing.html:45
 msgid "Virii %"
-msgstr ""
+msgstr "Virii %"
 
 #: baruwa/templates/reports/listing.html:51
 msgid "Spam %"
-msgstr ""
+msgstr "Thư rác %"
 
 #: baruwa/templates/reports/listing.html:85
 msgid "No records found"
-msgstr ""
+msgstr "Không có hồ sơ tìm thấy"
 
 #: baruwa/templates/reports/relays.html:25
 msgid "IP address"
-msgstr ""
+msgstr "Địa chỉ IP"
 
 #: baruwa/templates/reports/relays.html:27
 msgid "Country"
-msgstr ""
+msgstr "Quốc gia"
 
 #: baruwa/templates/reports/relays.html:28
 msgid "Total"
-msgstr ""
+msgstr "Tổng cộng"
 
 #: baruwa/templates/reports/relays.html:62
 #: baruwa/templates/reports/relays.html:63
 #, python-format
 msgid "Reports :: %(t)s"
-msgstr ""
+msgstr "Báo cáo:: %(t)s"
 
 #: baruwa/templates/settings/account_addsig.html:11
 #: baruwa/templates/settings/domain_addsig.html:12
 msgid "Add email signature"
-msgstr ""
+msgstr "Thêm chữ ký email"
 
 #: baruwa/templates/settings/account_addsig.html:34
 #: baruwa/templates/settings/domain_addsig.html:35
 #: baruwa/templates/settings/domain_sigs.html:7
 msgid "Add signature"
-msgstr ""
+msgstr "Thêm chữ ký"
 
 #: baruwa/templates/settings/account_addsig.html:42
 #: baruwa/templates/settings/account_addsig.html:46
@@ -4796,12 +4813,12 @@ msgstr ""
 #: baruwa/templates/settings/domain_addsig.html:47
 #, python-format
 msgid "Settings :: Add email signatures :: %s"
-msgstr ""
+msgstr "Cài đặt:: Thêm chữ ký email:: %s"
 
 #: baruwa/templates/settings/account_deletesig.html:11
 #: baruwa/templates/settings/domain_deletesig.html:12
 msgid "Delete email signature"
-msgstr ""
+msgstr "Xóa email signature"
 
 #: baruwa/templates/settings/account_deletesig.html:29
 #: baruwa/templates/settings/domain_deletesig.html:30
@@ -4813,37 +4830,37 @@ msgstr "Xóa chữ ký"
 #: baruwa/templates/settings/domain_deletesig.html:38
 #: baruwa/templates/settings/domain_deletesig.html:42
 msgid "Settings :: Delete email signatures"
-msgstr ""
+msgstr "Cài đặt:: Xóa thư điện tử chữ ký"
 
 #: baruwa/templates/settings/account_editsig.html:11
 #: baruwa/templates/settings/domain_editsig.html:12
 msgid "Edit email signature"
-msgstr ""
+msgstr "Chỉnh sửa email signature"
 
 #: baruwa/templates/settings/account_editsig.html:29
 #: baruwa/templates/settings/domain_editsig.html:30
 msgid "Update signature"
-msgstr ""
+msgstr "Chữ ký Cập Nhật"
 
 #: baruwa/templates/settings/account_editsig.html:37
 #: baruwa/templates/settings/account_editsig.html:41
 #: baruwa/templates/settings/domain_editsig.html:38
 #: baruwa/templates/settings/domain_editsig.html:42
 msgid "Settings :: Edit email signatures"
-msgstr ""
+msgstr "Cài đặt:: Chữ ký email chỉnh sửa"
 
 #: baruwa/templates/settings/addserver.html:3
 msgid "Add a scanning Node"
-msgstr ""
+msgstr "Thêm một nút quét"
 
 #: baruwa/templates/settings/addserver.html:11
 msgid "Add Node"
-msgstr ""
+msgstr "Thêm nút"
 
 #: baruwa/templates/settings/addserver.html:18
 #: baruwa/templates/settings/addserver.html:22
 msgid "Settings :: Add a scanning Node"
-msgstr ""
+msgstr "Cài đặt:: Thêm một nút quét"
 
 #: baruwa/templates/settings/deleteserver.html:3
 #: baruwa/templates/settings/deleteserver.html:33
@@ -4852,551 +4869,554 @@ msgstr ""
 #: baruwa/templates/status/bayes.html:3 baruwa/templates/status/mailq.html:6
 #: baruwa/templates/status/salint.html:3
 msgid "Node details"
-msgstr ""
+msgstr "Nút thông tin chi tiết"
 
 #: baruwa/templates/settings/deleteserver.html:9
 msgid "Delete scanning Node"
-msgstr ""
+msgstr "Xóa quét nút"
 
 #: baruwa/templates/settings/deleteserver.html:16
 msgid "Delete Node"
-msgstr ""
+msgstr "Xóa nút"
 
 #: baruwa/templates/settings/deleteserver.html:24
 #: baruwa/templates/settings/deleteserver.html:28
 msgid "Settings :: Delete scanning Node"
-msgstr ""
+msgstr "Cài đặt:: Xóa quét nút"
 
 #: baruwa/templates/settings/domain_dkim.html:7
 msgid "Regenerate DKIM keys"
-msgstr ""
+msgstr "Tái tạo DKIM phím"
 
 #: baruwa/templates/settings/domain_dkim.html:8
 msgid "Enable/Disable DKIM signing"
-msgstr ""
+msgstr "DKIM kích hoạt/vô hiệu hóa đăng nhập"
 
 #: baruwa/templates/settings/domain_dkim.html:16
 msgid "Domain DKIM settings"
-msgstr ""
+msgstr "Thiết lập tên miền DKIM"
 
 #: baruwa/templates/settings/domain_dkim.html:27
 #: baruwa/templates/settings/domain_dkim.html:38
 #, python-format
 msgid "Add the following DNS record to the %s DNS zone"
-msgstr ""
+msgstr "Thêm bản ghi DNS sau vào vùng DNS %s"
 
 #: baruwa/templates/settings/domain_dkim.html:30
 #: baruwa/templates/settings/domain_dkim.html:41
 msgid "DNS record"
-msgstr ""
+msgstr "Bản ghi DNS"
 
 #: baruwa/templates/settings/domain_dkim.html:49
 msgid "DKIM status"
-msgstr ""
+msgstr "DKIM tình trạng"
 
 #: baruwa/templates/settings/domain_dkim.html:54
 msgid "DKIM keys not yet configured:  "
-msgstr ""
+msgstr "DKIM phím chưa cấu hình:  "
 
 #: baruwa/templates/settings/domain_dkim.html:54
 msgid "Generate DKIM keys"
-msgstr ""
+msgstr "Tạo ra phím DKIM"
 
 #: baruwa/templates/settings/domain_dkim.html:61
 #: baruwa/templates/settings/domain_dkim.html:65
 #, python-format
 msgid "Settings :: Domain DKIM settings :: %s"
-msgstr ""
+msgstr "Cài đặt:: Miền DKIM cài đặt:: %s"
 
 #: baruwa/templates/settings/domain_dkim_enable.html:4
 msgid "Domain DKIM"
-msgstr ""
+msgstr "Tên miền DKIM"
 
 #: baruwa/templates/settings/domain_dkim_enable.html:13
 msgid "Enable DKIM signing"
-msgstr ""
+msgstr "Sử ký DKIM"
 
 #: baruwa/templates/settings/domain_dkim_enable.html:28
 #: baruwa/templates/settings/domain_dkim_enable.html:32
 #, python-format
 msgid "Settings :: Enable DKIM signing :: %s"
-msgstr ""
+msgstr "Cài đặt:: Sử DKIM ký:: %s"
 
 #: baruwa/templates/settings/domain_settings.html:11
 msgid "Domain settings"
-msgstr ""
+msgstr "Thiết lập tên miền"
 
 #: baruwa/templates/settings/domain_settings.html:16
 msgid "Signatures"
-msgstr ""
+msgstr "Chữ ký"
 
 #: baruwa/templates/settings/domain_settings.html:17
 msgid "Rulesets"
-msgstr ""
+msgstr "Luật"
 
 #: baruwa/templates/settings/domain_settings.html:24
 msgid "Add delivery server"
-msgstr ""
+msgstr "Thêm hệ phục vụ giao hàng tận nơi"
 
 #: baruwa/templates/settings/domain_settings.html:25
 msgid "Add authentication settings"
-msgstr ""
+msgstr "Thêm xác thực cài đặt"
 
 #: baruwa/templates/settings/domain_settings.html:26
 msgid "Add Alias Domain"
-msgstr ""
+msgstr "Thêm bí danh tên miền"
 
 #: baruwa/templates/settings/domain_settings.html:27
 msgid "DKIM"
-msgstr ""
+msgstr "DKIM"
 
 #: baruwa/templates/settings/domain_settings.html:35
 #: baruwa/templates/settings/domain_settings.html:39
 #, python-format
 msgid "Settings :: Domain settings :: %s"
-msgstr ""
+msgstr "Thiết lập:: Thiết lập tên miền:: %s"
 
 #: baruwa/templates/settings/domain_sigs.html:15
 msgid "Domain email signatures"
-msgstr ""
+msgstr "Tên miền thư điện tử chữ ký"
 
 #: baruwa/templates/settings/domain_sigs.html:38
 msgid "No domain signatures configured"
-msgstr ""
+msgstr "Không có chữ ký miền được đặt cấu hình"
 
 #: baruwa/templates/settings/domain_sigs.html:45
 #: baruwa/templates/settings/domain_sigs.html:49
 #, python-format
 msgid "Settings :: Domain email signatures :: %s"
-msgstr ""
+msgstr "Cài đặt:: Miền thư điện tử chữ ký:: %s"
 
 #: baruwa/templates/settings/editserver.html:9
 msgid "Edit scanning Node"
-msgstr ""
+msgstr "Chỉnh sửa chức năng quét nút"
 
 #: baruwa/templates/settings/editserver.html:18
 msgid "Update Node"
-msgstr ""
+msgstr "Cập Nhật nút"
 
 #: baruwa/templates/settings/editserver.html:25
 #: baruwa/templates/settings/editserver.html:29
 msgid "Settings :: Edit scanning Node"
-msgstr ""
+msgstr "Cài đặt:: Chỉnh sửa quét nút"
 
 #: baruwa/templates/settings/index.html:3
 msgid "List Search"
-msgstr ""
+msgstr "Tìm kiếm danh sách"
 
 #: baruwa/templates/settings/index.html:23
 msgid "No scanning hosts found"
-msgstr ""
+msgstr "Không có máy quét được tìm thấy"
 
 #: baruwa/templates/settings/index.html:100
 #: baruwa/templates/settings/index.html:104
 #, python-format
 msgid "Settings :: Nodes :: Showing page %(page)d of %(count)d pages."
-msgstr ""
+msgstr "Cài đặt:: Các nút:: Đang hiện trang %(page)d của %(count)d Trang."
 
 #: baruwa/templates/settings/index.html:100
 #: baruwa/templates/settings/index.html:104
 msgid "Settings :: Nodes"
-msgstr ""
+msgstr "Cài đặt:: nút"
 
 #: baruwa/templates/settings/scanner.html:3
 msgid "Configuration Settings"
-msgstr ""
+msgstr "Cài đặt cấu hình"
 
 #: baruwa/templates/settings/scanner.html:28
 #: baruwa/templates/settings/scanner.html:32
 #, python-format
 msgid "Settings :: scanning server :: %(name)s"
-msgstr ""
+msgstr "Cài đặt:: quét máy chủ:: %(name)s"
 
 #: baruwa/templates/settings/section.html:4
 msgid "General"
-msgstr ""
+msgstr "Tổng quát"
 
 #: baruwa/templates/settings/section.html:5
 msgid "Message Processing"
-msgstr ""
+msgstr "Xử lý tin nhắn"
 
 #: baruwa/templates/settings/section.html:6
 msgid "Virus checks"
-msgstr ""
+msgstr "Kiểm tra virus"
 
 #: baruwa/templates/settings/section.html:7
 msgid "Content checks"
-msgstr ""
+msgstr "Nội dung kiểm tra"
 
 #: baruwa/templates/settings/section.html:8
 msgid "Reporting"
-msgstr ""
+msgstr "Báo cáo"
 
 #: baruwa/templates/settings/section.html:9
 msgid "Notice"
-msgstr ""
+msgstr "Thông báo"
 
 #: baruwa/templates/settings/section.html:10
 msgid "Spam checks"
-msgstr ""
+msgstr "Kiểm tra thư rác"
 
 #: baruwa/templates/settings/section.html:11
 msgid "Logging"
-msgstr ""
+msgstr "Đăng nhập"
 
 #: baruwa/templates/settings/section.html:37
 #: baruwa/templates/settings/section.html:41
 #, python-format
 msgid "Settings :: MailScanner :: %(section)s :: %(name)s"
-msgstr ""
+msgstr "Cài đặt:: MailScanner:: %(section)s :: %(name)s"
 
 #: baruwa/templates/status/audit.html:4 baruwa/templates/status/audit.html:7
 msgid "Export to CSV"
-msgstr ""
+msgstr "Xuất khẩu sang CSV"
 
 #: baruwa/templates/status/audit.html:5 baruwa/templates/status/audit.html:8
 msgid "Export to PDF"
-msgstr ""
+msgstr "Xuất khẩu sang PDF"
 
 #: baruwa/templates/status/audit.html:31
 msgid "Category"
-msgstr ""
+msgstr "Thể loại"
 
 #: baruwa/templates/status/audit.html:37
 msgid "No audit logs found"
-msgstr ""
+msgstr "Không có Nhật ký kiểm tra được tìm thấy"
 
 #: baruwa/templates/status/audit.html:64 baruwa/templates/status/audit.html:71
 msgid "Status :: Audit log "
-msgstr ""
+msgstr "Tình trạng:: Nhật ký kiểm tra "
 
 #: baruwa/templates/status/auditexportstatus.html:3
 msgid "Audit log Export Status"
-msgstr ""
+msgstr "Nhật ký kiểm tra tình trạng xuất khẩu"
 
 #: baruwa/templates/status/auditexportstatus.html:11
 msgid "Download the file"
-msgstr ""
+msgstr "Tải về các tập tin"
 
 #: baruwa/templates/status/auditexportstatus.html:13
 #, python-format
 msgid "The Audit log export failed: %s"
-msgstr ""
+msgstr "Xuất khẩu đăng nhập kiểm tra thất bại: %s"
 
 #: baruwa/templates/status/auditexportstatus.html:18
 msgid "The Audit log export is being processed."
-msgstr ""
+msgstr "Kiểm tra đăng nhập khẩu đang được xử lý."
 
 #: baruwa/templates/status/auditexportstatus.html:31
 #: baruwa/templates/status/auditexportstatus.html:34
 msgid "Status :: Audit log :: export status"
-msgstr ""
+msgstr "Tình trạng:: Nhật ký kiểm tra:: xuất khẩu tình trạng"
 
 #: baruwa/templates/status/bayes.html:10
 msgid "Bayes Database Information"
-msgstr ""
+msgstr "Thông tin cơ sở dữ liệu Bayes"
 
 #: baruwa/templates/status/bayes.html:14
 msgid "Bayes Version"
-msgstr ""
+msgstr "Phiên bản Bayes"
 
 #: baruwa/templates/status/bayes.html:18
 msgid "Number of Spam messages"
-msgstr ""
+msgstr "Số lượng thư rác"
 
 #: baruwa/templates/status/bayes.html:22
 msgid "Number of Ham messages"
-msgstr ""
+msgstr "Số lượng tin nhắn Ham"
 
 #: baruwa/templates/status/bayes.html:26
 msgid "Number of Tokens"
-msgstr ""
+msgstr "Số thẻ"
 
 #: baruwa/templates/status/bayes.html:30
 msgid "Newest Token"
-msgstr ""
+msgstr "Mã thông báo mới nhất"
 
 #: baruwa/templates/status/bayes.html:34
 msgid "Oldest Token"
-msgstr ""
+msgstr "Mã thông báo cổ xưa nhất"
 
 #: baruwa/templates/status/bayes.html:38
 msgid "Last Journal Sync"
-msgstr ""
+msgstr "Lần tạp chí đồng bộ"
 
 #: baruwa/templates/status/bayes.html:42
 msgid "Last Expiry"
-msgstr ""
+msgstr "Thời hạn cuối"
 
 #: baruwa/templates/status/bayes.html:46
 msgid "Last Expiry Reduction Count"
-msgstr ""
+msgstr "Cuối thời hạn giảm đếm"
 
 #: baruwa/templates/status/bayes.html:52
 msgid "Bayes information could not be collected."
-msgstr ""
+msgstr "Không thu thập thông tin Bayes."
 
 #: baruwa/templates/status/bayes.html:59 baruwa/templates/status/bayes.html:63
 #, python-format
 msgid "Status :: Bayes info :: %(server)s"
-msgstr ""
+msgstr "Tình trạng:: Bayes thông tin:: %(server)s"
 
 #: baruwa/templates/status/detail.html:4 baruwa/templates/status/index.html:7
 #: baruwa/templates/status/mailq.html:3 baruwa/templates/status/preview.html:4
 #: baruwa/templates/status/serverstatus.html:8
 msgid "Inbound Queue"
-msgstr ""
+msgstr "Hàng đợi trong nước"
 
 #: baruwa/templates/status/detail.html:5 baruwa/templates/status/index.html:8
 #: baruwa/templates/status/mailq.html:4 baruwa/templates/status/preview.html:5
 #: baruwa/templates/status/serverstatus.html:9
 msgid "Outbound Queue"
-msgstr ""
+msgstr "Ngoài các hàng đợi"
 
 #: baruwa/templates/status/detail.html:37
 msgid "From domain"
-msgstr ""
+msgstr "Từ tên miền"
 
 #: baruwa/templates/status/detail.html:41
 msgid "To domain"
-msgstr ""
+msgstr "Tên miền"
 
 #: baruwa/templates/status/detail.html:53
 msgid "Number of delivery attempts"
-msgstr ""
+msgstr "Số phân phối lại"
 
 #: baruwa/templates/status/detail.html:57
 msgid "Last delivery attempt at"
-msgstr ""
+msgstr "Cuối cùng phân phối nỗ lực"
 
 #: baruwa/templates/status/detail.html:61
 msgid "Reason for queuing"
-msgstr ""
+msgstr "Lý do để xếp hàng"
 
 #: baruwa/templates/status/detail.html:65
 msgid "Process message"
-msgstr ""
+msgstr "Quá trình thư"
 
 #: baruwa/templates/status/detail.html:85
 #, python-format
 msgid "Showing Mail queue message :: %(i)s"
-msgstr ""
+msgstr "Đang hiện thư hàng đợi:: %(i)s"
 
 #: baruwa/templates/status/index.html:15
 #: baruwa/templates/status/serverstatus.html:17
 msgid "Todays stats"
-msgstr ""
+msgstr "Số liệu thống kê todays"
 
 #: baruwa/templates/status/index.html:20
 #: baruwa/templates/status/serverstatus.html:22
 msgid "Processed"
-msgstr ""
+msgstr "Xử lý"
 
 #: baruwa/templates/status/index.html:50
 #: baruwa/templates/status/serverstatus.html:52
 msgid "Inbound queues"
-msgstr ""
+msgstr "Hàng đợi trong nước"
 
 #: baruwa/templates/status/index.html:55
 #: baruwa/templates/status/serverstatus.html:57
 msgid "Outbound queues"
-msgstr ""
+msgstr "Ngoài các hàng đợi"
 
 #: baruwa/templates/status/index.html:63
 msgid "Graph"
-msgstr ""
+msgstr "Biểu đồ"
 
 #: baruwa/templates/status/index.html:68
 #: baruwa/templates/status/serverstatus.html:154
 msgid "Not enough data available to generate graph."
-msgstr ""
+msgstr "Không đủ dữ liệu có sẵn để tạo ra các đồ thị."
 
 #: baruwa/templates/status/index.html:74
 msgid "Scanner node status"
-msgstr ""
+msgstr "Máy quét nút trạng thái"
 
 #: baruwa/templates/status/index.html:78
 msgid "No active scanning nodes found"
-msgstr ""
+msgstr "Không hoạt động quét nút tìm thấy"
 
 #: baruwa/templates/status/index.html:90 baruwa/templates/status/index.html:94
 msgid "Status :: Global status"
-msgstr ""
+msgstr "Tình trạng:: Tình trạng toàn cầu"
 
 #: baruwa/templates/status/mailq.html:142
 #: baruwa/templates/status/mailq.html:146
 #, python-format
 msgid "Status :: Mail queue :: %(queue)s :: %(s)s"
-msgstr ""
+msgstr "Tình trạng:: Thư hàng đợi:: %(queue)s :: %(s)s"
 
 #: baruwa/templates/status/mailq.html:142
 #: baruwa/templates/status/mailq.html:146
 #, python-format
 msgid "Status :: Mail queue :: %(queue)s"
-msgstr ""
+msgstr "Tình trạng:: Thư hàng đợi:: %(queue)s"
 
 #: baruwa/templates/status/preview.html:48
 #, python-format
 msgid "Queued Message: %(msgid)s could not be previewed"
-msgstr ""
+msgstr "Xếp hàng đợi tin nhắn: %(msgid)s không có thể được xem trước"
 
 #: baruwa/templates/status/preview.html:54
 #: baruwa/templates/status/preview.html:58
 #, python-format
 msgid "Status :: Mail Queue :: Previewing Queued message : %(msgid)s"
 msgstr ""
+"Tình trạng:: Thư hàng đợi:: xem trước xếp hàng đợi tin nhắn: %(msgid)s"
 
 #: baruwa/templates/status/salint.html:10
 msgid "Spamassassin Lint"
-msgstr ""
+msgstr "SpamAssassin Lint"
 
 #: baruwa/templates/status/salint.html:21
 msgid "Backend did not return response, try again later"
-msgstr ""
+msgstr "Phụ trợ không trở về phản ứng, thử lại sau"
 
 #: baruwa/templates/status/salint.html:28
 #: baruwa/templates/status/salint.html:32
 #, python-format
 msgid "Status :: Spamassassin lint :: %(server)s"
-msgstr ""
+msgstr "Tình trạng:: Spamassassin lint:: %(server)s"
 
 #: baruwa/templates/status/salint.html:36
 msgid "Server status"
-msgstr ""
+msgstr "Tình trạng máy chủ"
 
 #: baruwa/templates/status/salint.html:37
 #: baruwa/templates/status/serverstatus.html:6
 msgid "Bayes info"
-msgstr ""
+msgstr "Thông tin Bayes"
 
 #: baruwa/templates/status/salint.html:38
 #: baruwa/templates/status/serverstatus.html:10
 msgid "Graphs"
-msgstr ""
+msgstr "Đồ thị"
 
 #: baruwa/templates/status/serverstatus.html:7
 msgid "Spamassassin lint"
-msgstr ""
+msgstr "SpamAssassin lint"
 
 #: baruwa/templates/status/serverstatus.html:63
 msgid "Hardware status"
-msgstr ""
+msgstr "Trạng thái phần cứng"
 
 #: baruwa/templates/status/serverstatus.html:66
 msgid "CPU"
-msgstr ""
+msgstr "CPU"
 
 #: baruwa/templates/status/serverstatus.html:73
 msgid "Error reading CPU status"
-msgstr ""
+msgstr "Lỗi đọc tình trạng CPU"
 
 #: baruwa/templates/status/serverstatus.html:78
 msgid "Memory"
-msgstr ""
+msgstr "Bộ nhớ"
 
 #: baruwa/templates/status/serverstatus.html:86
 #: baruwa/templates/status/serverstatus.html:109
 #, python-format
 msgid "Total: %s"
-msgstr ""
+msgstr "Tổng số: %s"
 
 #: baruwa/templates/status/serverstatus.html:87
 #: baruwa/templates/status/serverstatus.html:110
 #, python-format
 msgid "Used: %s"
-msgstr ""
+msgstr "Sử dụng: %s"
 
 #: baruwa/templates/status/serverstatus.html:88
 #: baruwa/templates/status/serverstatus.html:111
 #, python-format
 msgid "Free: %s"
-msgstr ""
+msgstr "Miễn phí: %s"
 
 #: baruwa/templates/status/serverstatus.html:92
 msgid "Error reading memory status."
-msgstr ""
+msgstr "Lỗi đọc traïng thaùi boä nhôù."
 
 #: baruwa/templates/status/serverstatus.html:96
 msgid "Hard disks"
-msgstr ""
+msgstr "Đĩa cứng"
 
 #: baruwa/templates/status/serverstatus.html:116
 msgid "Error reading disk information"
-msgstr ""
+msgstr "Lỗi đọc đĩa thông tin"
 
 #: baruwa/templates/status/serverstatus.html:120
 msgid "Network"
-msgstr ""
+msgstr "Mạng"
 
 #: baruwa/templates/status/serverstatus.html:124
 msgid "Nic"
-msgstr ""
+msgstr "Không có gì"
 
 #: baruwa/templates/status/serverstatus.html:125
 msgid "Sent"
-msgstr ""
+msgstr "Gửi"
 
 #: baruwa/templates/status/serverstatus.html:126
 msgid "Received"
-msgstr ""
+msgstr "Nhận được"
 
 #: baruwa/templates/status/serverstatus.html:140
 msgid "Error reading network interface information"
-msgstr ""
+msgstr "Lỗi đọc thông tin giao diện mạng"
 
 #: baruwa/templates/status/serverstatus.html:147
 msgid "Mail Graph"
-msgstr ""
+msgstr "Đồ thị thư"
 
 #: baruwa/templates/status/serverstatus.html:159
 msgid "System Status"
-msgstr ""
+msgstr "Trạng thái hệ thống"
 
 #: baruwa/templates/status/serverstatus.html:163
 msgid "Scanners"
-msgstr ""
+msgstr "Máy quét"
 
 #: baruwa/templates/status/serverstatus.html:166
 #, python-format
 msgid "%(s)d process"
 msgid_plural "%(s)d processes"
-msgstr[0] ""
+msgstr[0] "%(s)d quá trình"
+msgstr[1] "%(s)d quy trình"
 
 #: baruwa/templates/status/serverstatus.html:170
 msgid "MTA"
-msgstr ""
+msgstr "MTA"
 
 #: baruwa/templates/status/serverstatus.html:173
 #, python-format
 msgid "%(mta)d process"
 msgid_plural "%(mta)d processes"
-msgstr[0] ""
+msgstr[0] "%(mta)d quá trình"
+msgstr[1] "%(mta)d quy trình"
 
 #: baruwa/templates/status/serverstatus.html:177
 msgid "Anti-Virus"
-msgstr ""
+msgstr "Chống vi-rút"
 
 #: baruwa/templates/status/serverstatus.html:180
 #, python-format
 msgid "%(a)d process"
 msgid_plural "%(a)d processes"
-msgstr[0] ""
+msgstr[0] "%(a)d quá trình"
+msgstr[1] "%(a)d quy trình"
 
 #: baruwa/templates/status/serverstatus.html:184
 msgid "CPU Load (1 / 5 / 15 mins)"
-msgstr ""
+msgstr "CPU Load (1 / 5 / 15 phút)"
 
 #: baruwa/templates/status/serverstatus.html:191
 msgid "System Uptime"
-msgstr ""
+msgstr "Thời gian hoạt động hệ thống"
 
 #: baruwa/templates/status/serverstatus.html:195
 msgid "System Time"
-msgstr ""
+msgstr "Thời gian hệ thống"
 
 #: baruwa/templates/status/serverstatus.html:205
 #: baruwa/templates/status/serverstatus.html:209
 #, python-format
 msgid "Status :: Node status :: %(server)s"
-msgstr ""
-
+msgstr "Tình trạng:: Nút trạng thái:: %(server)s"

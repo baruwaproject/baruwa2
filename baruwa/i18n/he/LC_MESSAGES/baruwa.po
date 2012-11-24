@@ -1,22 +1,22 @@
 # Hebrew translations for baruwa.
 # Copyright (C) 2012 Andrew Colin Kissa
 # This file is distributed under the same license as the baruwa project.
-#
+# 
 # Translators:
 # datopdog  <andrew@topdog.za.net>, 2012.
 msgid ""
 msgstr ""
-"Project-Id-Version:  baruwa\n"
+"Project-Id-Version: baruwa\n"
 "Report-Msgid-Bugs-To: baruwa@lists.baruwa.org\n"
-"POT-Creation-Date: 2012-11-20 09:57+0200\n"
-"PO-Revision-Date: 2012-11-16 17:54+0200\n"
+"POT-Creation-Date: 2012-11-24 10:27+0200\n"
+"PO-Revision-Date: 2012-11-24 10:31+0200\n"
 "Last-Translator: Andrew Colin Kissa <andrew@topdog.za.net>\n"
 "Language-Team: Baruwa Project\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 0.9.6\n"
+"Generated-By: auto-translate.py 0.0.1\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
 
 #: baruwa/commands/pdfreport.py:116 baruwa/controllers/reports.py:62
 #: baruwa/templates/reports/index.html:13
@@ -189,8 +189,8 @@ msgstr "החשבון נמחק"
 #: baruwa/controllers/accounts.py:620
 #, python-format
 msgid ""
-"The account: %(a)s and all associated data will be deleted, This action "
-"is not reversible."
+"The account: %(a)s and all associated data will be deleted, This action is "
+"not reversible."
 msgstr ""
 
 #: baruwa/controllers/accounts.py:677
@@ -236,8 +236,8 @@ msgstr "הכתובת נמחקה"
 
 #: baruwa/controllers/accounts.py:874 baruwa/controllers/organizations.py:358
 msgid ""
-"File uploaded, and is being processed, this page will automatically "
-"refresh to show the status"
+"File uploaded, and is being processed, this page will automatically refresh "
+"to show the status"
 msgstr "קבצים שהועלו, מעובדת, דף זה ירענן באופן אוטומטי כדי להציג את המצב"
 
 #: baruwa/controllers/accounts.py:881 baruwa/controllers/organizations.py:364
@@ -317,8 +317,8 @@ msgstr "התחום נמחק"
 #: baruwa/controllers/domains.py:324
 #, python-format
 msgid ""
-"The domain: %(name)s and all associated data will be deleted, This action"
-" cannot be reversed."
+"The domain: %(name)s and all associated data will be deleted, This action "
+"cannot be reversed."
 msgstr ""
 
 #: baruwa/controllers/domains.py:372
@@ -373,8 +373,7 @@ msgstr "שרת היעד נמחק"
 #: baruwa/controllers/domains.py:540
 #, python-format
 msgid ""
-"The destination server: %(s)s will be deleted, This action is not "
-"reversible"
+"The destination server: %(s)s will be deleted, This action is not reversible"
 msgstr ""
 
 #: baruwa/controllers/domains.py:567
@@ -384,8 +383,8 @@ msgstr "יצרת את הגדרות אימות"
 #: baruwa/controllers/domains.py:574
 #, python-format
 msgid ""
-"The host %(dest)s already configured for %(auth)s authentication for this"
-" domain"
+"The host %(dest)s already configured for %(auth)s authentication for this "
+"domain"
 msgstr ""
 
 #: baruwa/controllers/domains.py:607
@@ -438,11 +437,11 @@ msgstr "הגדרות אימות כבר קיימים, השתמש ב- update כד�
 
 #: baruwa/controllers/domains.py:733
 msgid ""
-"The Radius secret is not be displayed in the form, To update type the new"
-" secret in \"Radius secret\" below."
+"The Radius secret is not be displayed in the form, To update type the new "
+"secret in \"Radius secret\" below."
 msgstr ""
-"רדיוס הסוד הוא לא יוצג בצורת, כדי לעדכן את סוג פריט מידע מוצפן חדש "
-"\"רדיוס בסוד\" להלן."
+"רדיוס הסוד הוא לא יוצג בצורת, כדי לעדכן את סוג פריט מידע מוצפן חדש \"רדיוס "
+"בסוד\" להלן."
 
 #: baruwa/controllers/domains.py:774
 #, python-format
@@ -804,10 +803,10 @@ msgid "The audit log export failed, try again later"
 msgstr "ייצוא יומן ביקורת נכשל, נסה שוב מאוחר יותר"
 
 #: baruwa/forms/accounts.py:32 baruwa/forms/domains.py:34
-#: baruwa/forms/lists.py:33 baruwa/forms/messages.py:27 baruwa/forms/misc.py:28
-#: baruwa/forms/organizations.py:33 baruwa/forms/reports.py:33
-#: baruwa/forms/settings.py:30 baruwa/model/status.py:32
-#: baruwa/tasks/status.py:45
+#: baruwa/forms/lists.py:33 baruwa/forms/messages.py:27
+#: baruwa/forms/misc.py:28 baruwa/forms/organizations.py:33
+#: baruwa/forms/reports.py:33 baruwa/forms/settings.py:30
+#: baruwa/model/status.py:32 baruwa/tasks/status.py:45
 msgid "hi"
 msgstr "היי"
 
@@ -1208,7 +1207,8 @@ msgid "Delivery Server address"
 msgstr "כתובת שרת משלוח"
 
 #: baruwa/forms/lists.py:51
-msgid "Provide either a valid IP, email, Domain address, or IP network or range"
+msgid ""
+"Provide either a valid IP, email, Domain address, or IP network or range"
 msgstr "לספק חוקי ה-IP, דוא ל, כתובת תחום, או IP ברשת או טווח"
 
 #: baruwa/forms/lists.py:68
@@ -1541,7 +1541,7 @@ msgstr "נא ספק זמן חוקית בתבנית של hh: mm"
 #: baruwa/forms/settings.py:35 baruwa/forms/settings.py:49
 #: baruwa/forms/settings.py:52
 msgid "Yes"
-msgstr ""
+msgstr "כן"
 
 #: baruwa/forms/settings.py:35 baruwa/forms/settings.py:38
 #: baruwa/forms/settings.py:50 baruwa/forms/settings.py:53
@@ -1564,7 +1564,7 @@ msgstr "להוסיף"
 
 #: baruwa/forms/settings.py:40
 msgid "Append"
-msgstr ""
+msgstr "צרף"
 
 #: baruwa/forms/settings.py:42
 #, fuzzy
@@ -1574,7 +1574,7 @@ msgstr "הפעולה אינה נתמכת"
 
 #: baruwa/forms/settings.py:43
 msgid "None"
-msgstr ""
+msgstr "אף אחד"
 
 #: baruwa/forms/settings.py:44
 #, fuzzy
@@ -1590,11 +1590,11 @@ msgstr "גרף"
 
 #: baruwa/forms/settings.py:46
 msgid "Beta"
-msgstr ""
+msgstr "בטא"
 
 #: baruwa/forms/settings.py:47
 msgid "Start"
-msgstr ""
+msgstr "התחלה"
 
 #: baruwa/forms/settings.py:48
 #, fuzzy
@@ -1604,11 +1604,11 @@ msgstr "זמין"
 
 #: baruwa/forms/settings.py:51
 msgid "Disarm"
-msgstr ""
+msgstr "לפרק"
 
 #: baruwa/forms/settings.py:59
 msgid "Auto detect"
-msgstr ""
+msgstr "זיהוי אוטומטי"
 
 #: baruwa/forms/settings.py:132
 #, fuzzy
@@ -1618,11 +1618,11 @@ msgstr "אינו מכיל"
 
 #: baruwa/forms/settings.py:134
 msgid "Flag as spam"
-msgstr ""
+msgstr "דגל כדואר זבל"
 
 #: baruwa/forms/settings.py:135
 msgid "Flag as high spam"
-msgstr ""
+msgstr "דגל כדואר זבל גבוהה"
 
 #: baruwa/forms/settings.py:173
 msgid "Invalid Domain name or IPv4 address"
@@ -3453,7 +3453,8 @@ msgstr[0] ""
 msgstr[1] ""
 
 #: baruwa/templates/accounts/index.html:94
-#: baruwa/templates/domains/index.html:93 baruwa/templates/lists/index.html:105
+#: baruwa/templates/domains/index.html:93
+#: baruwa/templates/lists/index.html:105
 #: baruwa/templates/messages/functions.html:208
 #: baruwa/templates/messages/searchresults.html:102
 #: baruwa/templates/organizations/index.html:50
@@ -3464,7 +3465,8 @@ msgid "Showing items %(i)d to %(l)d of %(count)d"
 msgstr ""
 
 #: baruwa/templates/accounts/index.html:96
-#: baruwa/templates/domains/index.html:95 baruwa/templates/lists/index.html:107
+#: baruwa/templates/domains/index.html:95
+#: baruwa/templates/lists/index.html:107
 #: baruwa/templates/messages/functions.html:210
 #: baruwa/templates/messages/searchresults.html:104
 #: baruwa/templates/organizations/index.html:52
@@ -3474,7 +3476,8 @@ msgid "Show items:"
 msgstr "הצג פריטים:"
 
 #: baruwa/templates/accounts/index.html:98
-#: baruwa/templates/domains/index.html:97 baruwa/templates/lists/index.html:109
+#: baruwa/templates/domains/index.html:97
+#: baruwa/templates/lists/index.html:109
 #: baruwa/templates/messages/functions.html:212
 #: baruwa/templates/messages/searchresults.html:106
 #: baruwa/templates/organizations/index.html:54
@@ -3515,8 +3518,8 @@ msgstr "שכחת את סיסמתך?"
 
 #: baruwa/templates/accounts/login.html:55
 msgid ""
-"Forgotten your password? Enter your e-mail address below, and we'll "
-"e-mail instructions on setting a new one."
+"Forgotten your password? Enter your e-mail address below, and we'll e-mail "
+"instructions on setting a new one."
 msgstr ""
 "שכחת הסיסמה? הזן את כתובת הדואר האלקטרוני שלך להלן, ואנו נשלח הוראות על "
 "הגדרת אחד חדש."
@@ -3943,16 +3946,16 @@ msgstr "שגיאה: %s"
 
 #: baruwa/templates/general/error.html:28
 msgid ""
-"You do not have sufficient permissions to access this page. Please sign "
-"in using an account with sufficient permissions"
+"You do not have sufficient permissions to access this page. Please sign in "
+"using an account with sufficient permissions"
 msgstr ""
 "אין לך הרשאות מספיקות כדי לגשת לדף זה. נא היכנס באמצעות חשבון בעל הרשאות "
 "מספיקות"
 
 #: baruwa/templates/general/error.html:30
 msgid ""
-"The system was unable to complete your request, the support team has been"
-" notified"
+"The system was unable to complete your request, the support team has been "
+"notified"
 msgstr "למערכת לא היתה אפשרות להשלים את בקשתך, קיבל הודעה לצוות התמיכה"
 
 #: baruwa/templates/includes/search.html:9 baruwa/templates/lists/index.html:6
@@ -3986,8 +3989,8 @@ msgstr "תודה."
 
 #: baruwa/templates/invite/thankyou.html:27
 msgid ""
-"Your registration request is being reviewed, you will be notified when it"
-" is approved."
+"Your registration request is being reviewed, you will be notified when it is"
+" approved."
 msgstr "הבקשה לרישום שלך עובר שינויים, תקבל הודעה כאשר יאושר."
 
 #: baruwa/templates/lists/add.html:4
@@ -4378,7 +4381,8 @@ msgstr "יומן הודעות זבל"
 
 #: baruwa/templates/messages/quarantine.html:27
 #: baruwa/templates/status/detail.html:69
-#: baruwa/templates/status/detail.html:75 baruwa/templates/status/mailq.html:23
+#: baruwa/templates/status/detail.html:75
+#: baruwa/templates/status/mailq.html:23
 msgid "Process"
 msgstr "תהליך"
 
@@ -4435,8 +4439,8 @@ msgstr ""
 #: baruwa/templates/messages/includes/released.html:4
 #, python-format
 msgid ""
-"The message id: %(id)s could not be released: %(error_msg)s, contact your"
-" email admin for assistance."
+"The message id: %(id)s could not be released: %(error_msg)s, contact your "
+"email admin for assistance."
 msgstr ""
 
 #: baruwa/templates/messages/includes/salearn.html:2
@@ -5384,4 +5388,3 @@ msgstr "זמן המערכת"
 #, python-format
 msgid "Status :: Node status :: %(server)s"
 msgstr ""
-

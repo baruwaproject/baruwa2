@@ -1,21 +1,21 @@
 # Greek translations for baruwa.
 # Copyright (C) 2012 Andrew Colin Kissa
 # This file is distributed under the same license as the baruwa project.
-#
+# 
 # Translators:
 msgid ""
 msgstr ""
-"Project-Id-Version:  baruwa\n"
+"Project-Id-Version: baruwa\n"
 "Report-Msgid-Bugs-To: baruwa@lists.baruwa.org\n"
-"POT-Creation-Date: 2012-11-20 09:57+0200\n"
-"PO-Revision-Date: 2012-11-15 13:22+0200\n"
+"POT-Creation-Date: 2012-11-24 10:27+0200\n"
+"PO-Revision-Date: 2012-11-24 10:30+0200\n"
 "Last-Translator: Andrew Colin Kissa <andrew@topdog.za.net>\n"
 "Language-Team: Baruwa Project\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 0.9.6\n"
+"Generated-By: auto-translate.py 0.0.1\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
 
 #: baruwa/commands/pdfreport.py:116 baruwa/controllers/reports.py:62
 #: baruwa/templates/reports/index.html:13
@@ -139,7 +139,8 @@ msgstr "Σας έχουν απαγορευθεί μετά την αποτυχί�
 
 #: baruwa/controllers/accounts.py:150
 msgid "First time Login from external auth, your local account was created"
-msgstr "Δημιουργήθηκε πρώτη φορά Login από το εξωτερικό ΑΠΘ, τοπικό λογαριασμό σας"
+msgstr ""
+"Δημιουργήθηκε πρώτη φορά Login από το εξωτερικό ΑΠΘ, τοπικό λογαριασμό σας"
 
 #: baruwa/controllers/accounts.py:266
 #, python-format
@@ -149,19 +150,19 @@ msgstr "Σύνδεση επιτυχημένη, Καλώς ορίσατε πίσ�
 #: baruwa/controllers/accounts.py:318 baruwa/controllers/accounts.py:348
 #, python-format
 msgid "The account password for %(name)s has been reset"
-msgstr "Ο κωδικός πρόσβασης λογαριασμού για %(name)s έχει εκτελεστεί επαναφορά του"
+msgstr ""
+"Ο κωδικός πρόσβασης λογαριασμού για %(name)s έχει εκτελεστεί επαναφορά του"
 
 #: baruwa/controllers/accounts.py:325 baruwa/controllers/accounts.py:355
 msgid "This is an external account, use external system to reset the password"
 msgstr ""
-"Πρόκειται για ένα εξωτερικό λογαριασμό, χρησιμοποιήστε εξωτερικού "
-"συστήματος για να επαναφέρετε τον κωδικό πρόσβασης"
+"Πρόκειται για ένα εξωτερικό λογαριασμό, χρησιμοποιήστε εξωτερικού συστήματος"
+" για να επαναφέρετε τον κωδικό πρόσβασης"
 
 #: baruwa/controllers/accounts.py:361
 msgid "The old password supplied does not match our records"
 msgstr ""
-"Ο παλιός κωδικός πρόσβασης που παρέχονται δεν ταιριάζει με τις εγγραφές "
-"μας"
+"Ο παλιός κωδικός πρόσβασης που παρέχονται δεν ταιριάζει με τις εγγραφές μας"
 
 #: baruwa/controllers/accounts.py:537
 #, python-format
@@ -192,11 +193,11 @@ msgstr "Ο λογαριασμός έχει διαγραφεί"
 #: baruwa/controllers/accounts.py:620
 #, python-format
 msgid ""
-"The account: %(a)s and all associated data will be deleted, This action "
-"is not reversible."
+"The account: %(a)s and all associated data will be deleted, This action is "
+"not reversible."
 msgstr ""
-"Ο λογαριασμός: %(a)s και θα διαγραφούν όλα τα συσχετισμένα δεδομένα, αυτή"
-" η ενέργεια δεν είναι αναστρέψιμες."
+"Ο λογαριασμός: %(a)s και θα διαγραφούν όλα τα συσχετισμένα δεδομένα, αυτή η "
+"ενέργεια δεν είναι αναστρέψιμες."
 
 #: baruwa/controllers/accounts.py:677
 msgid "The accounts have been deleted"
@@ -243,8 +244,8 @@ msgstr "Έχει διαγραφεί η διεύθυνση"
 
 #: baruwa/controllers/accounts.py:874 baruwa/controllers/organizations.py:358
 msgid ""
-"File uploaded, and is being processed, this page will automatically "
-"refresh to show the status"
+"File uploaded, and is being processed, this page will automatically refresh "
+"to show the status"
 msgstr ""
 "Αρχείο αποσταλούν, και γίνεται επεξεργασία, αυτή η σελίδα θα ανανεωθεί "
 "αυτόματα για να εμφανίσετε την κατάσταση"
@@ -326,8 +327,8 @@ msgstr "Ο τομέας έχει διαγραφεί"
 #: baruwa/controllers/domains.py:324
 #, python-format
 msgid ""
-"The domain: %(name)s and all associated data will be deleted, This action"
-" cannot be reversed."
+"The domain: %(name)s and all associated data will be deleted, This action "
+"cannot be reversed."
 msgstr ""
 "Τομέα: %(name)s και θα διαγραφούν όλα τα συσχετισμένα δεδομένα, αυτή η "
 "ενέργεια δεν είναι δυνατό να αντιστραφεί."
@@ -341,8 +342,8 @@ msgid ""
 "The following domains are about to be deleted, this action is not "
 "reversible, Do you wish to continue ?"
 msgstr ""
-"Τους ακόλουθους τομείς πρόκειται να διαγραφούν, αυτή η ενέργεια δεν είναι"
-" αναστρέψιμη, θέλετε να συνεχίσετε;"
+"Τους ακόλουθους τομείς πρόκειται να διαγραφούν, αυτή η ενέργεια δεν είναι "
+"αναστρέψιμη, θέλετε να συνεχίσετε;"
 
 #: baruwa/controllers/domains.py:410
 msgid "The destination server has been created"
@@ -386,8 +387,7 @@ msgstr "Ο διακομιστής προορισμού έχει διαγραφε
 #: baruwa/controllers/domains.py:540
 #, python-format
 msgid ""
-"The destination server: %(s)s will be deleted, This action is not "
-"reversible"
+"The destination server: %(s)s will be deleted, This action is not reversible"
 msgstr ""
 "Ο διακομιστής προορισμού: %(s)s θα διαγραφεί, αυτή η ενέργεια δεν είναι "
 "αναστρέψιμες"
@@ -399,11 +399,11 @@ msgstr "Έχουν δημιουργηθεί οι ρυθμίσεις ελέγχο
 #: baruwa/controllers/domains.py:574
 #, python-format
 msgid ""
-"The host %(dest)s already configured for %(auth)s authentication for this"
-" domain"
+"The host %(dest)s already configured for %(auth)s authentication for this "
+"domain"
 msgstr ""
-"Υποδοχής %(dest)s έχουν ήδη ρυθμιστεί για %(auth)s ελέγχου ταυτότητας για"
-" αυτόν τον τομέα"
+"Υποδοχής %(dest)s έχουν ήδη ρυθμιστεί για %(auth)s ελέγχου ταυτότητας για "
+"αυτόν τον τομέα"
 
 #: baruwa/controllers/domains.py:607
 msgid "The authentication settings have been updated"
@@ -427,8 +427,8 @@ msgid ""
 "The authentication server: %(s)s will be deleted, This action is not "
 "reversible"
 msgstr ""
-"Ο διακομιστής ελέγχου ταυτότητας: %(s)s θα διαγραφεί, αυτή η ενέργεια δεν"
-" είναι αναστρέψιμες"
+"Ο διακομιστής ελέγχου ταυτότητας: %(s)s θα διαγραφεί, αυτή η ενέργεια δεν "
+"είναι αναστρέψιμες"
 
 #: baruwa/controllers/domains.py:671
 msgid "The protocol supplied does not use extra settings"
@@ -441,8 +441,8 @@ msgid ""
 "attempting to configure the %(proto)s settings"
 msgstr ""
 "Παρακαλείσθε να προσθέσετε ένα διακομιστή ελέγχου ταυτότητας για το "
-"%(proto)s πρωτόκολλο προτού επιχειρήσετε να ρυθμίσετε τις παραμέτρους της"
-" %(proto)s ρυθμίσεις"
+"%(proto)s πρωτόκολλο προτού επιχειρήσετε να ρυθμίσετε τις παραμέτρους της "
+"%(proto)s ρυθμίσεις"
 
 #: baruwa/controllers/domains.py:715
 #, python-format
@@ -462,11 +462,11 @@ msgstr ""
 
 #: baruwa/controllers/domains.py:733
 msgid ""
-"The Radius secret is not be displayed in the form, To update type the new"
-" secret in \"Radius secret\" below."
+"The Radius secret is not be displayed in the form, To update type the new "
+"secret in \"Radius secret\" below."
 msgstr ""
-"Η ακτίνα είναι μυστικό δεν εμφανίζεται με τη μορφή, για την ενημέρωση του"
-" τύπου τα νέα μυστικά στο «Radius secret» κάτω από."
+"Η ακτίνα είναι μυστικό δεν εμφανίζεται με τη μορφή, για την ενημέρωση του "
+"τύπου τα νέα μυστικά στο «Radius secret» κάτω από."
 
 #: baruwa/controllers/domains.py:774
 #, python-format
@@ -571,12 +571,13 @@ msgstr ", "
 #: baruwa/controllers/messages.py:452
 msgid "The messages could not processed, try again later"
 msgstr ""
-"Τα μηνύματα θα μπορούσαν να μην υποβάλλονται σε επεξεργασία, δοκιμάστε "
-"ξανά αργότερα"
+"Τα μηνύματα θα μπορούσαν να μην υποβάλλονται σε επεξεργασία, δοκιμάστε ξανά "
+"αργότερα"
 
 #: baruwa/controllers/messages.py:559 baruwa/controllers/status.py:304
 msgid "This message contains external images, which have been blocked. "
-msgstr "Αυτό το μήνυμα περιέχει εξωτερικές εικόνες, οι οποίες έχουν αποκλειστεί. "
+msgstr ""
+"Αυτό το μήνυμα περιέχει εξωτερικές εικόνες, οι οποίες έχουν αποκλειστεί. "
 
 #: baruwa/controllers/messages.py:560 baruwa/controllers/status.py:305
 msgid "Display images"
@@ -633,7 +634,8 @@ msgstr "Η οργάνωση έχει διαγραφεί"
 #: baruwa/controllers/organizations.py:232
 #, python-format
 msgid "The organization: %(s)s will be deleted, This action is not reversible"
-msgstr "Η οργάνωση: %(s)s θα διαγραφεί, αυτή η ενέργεια δεν είναι αναστρέψιμες"
+msgstr ""
+"Η οργάνωση: %(s)s θα διαγραφεί, αυτή η ενέργεια δεν είναι αναστρέψιμες"
 
 #: baruwa/controllers/organizations.py:259
 msgid "The outbound settings have been created"
@@ -834,10 +836,10 @@ msgid "The audit log export failed, try again later"
 msgstr "Η εξαγωγή αρχείου καταγραφής ελέγχου απέτυχε, δοκιμάστε ξανά αργότερα"
 
 #: baruwa/forms/accounts.py:32 baruwa/forms/domains.py:34
-#: baruwa/forms/lists.py:33 baruwa/forms/messages.py:27 baruwa/forms/misc.py:28
-#: baruwa/forms/organizations.py:33 baruwa/forms/reports.py:33
-#: baruwa/forms/settings.py:30 baruwa/model/status.py:32
-#: baruwa/tasks/status.py:45
+#: baruwa/forms/lists.py:33 baruwa/forms/messages.py:27
+#: baruwa/forms/misc.py:28 baruwa/forms/organizations.py:33
+#: baruwa/forms/reports.py:33 baruwa/forms/settings.py:30
+#: baruwa/model/status.py:32 baruwa/tasks/status.py:45
 msgid "hi"
 msgstr "Γεια σου"
 
@@ -1238,8 +1240,10 @@ msgid "Delivery Server address"
 msgstr "Διεύθυνση διακομιστή παράδοσης"
 
 #: baruwa/forms/lists.py:51
-msgid "Provide either a valid IP, email, Domain address, or IP network or range"
-msgstr "Παρέχουν είτε μια έγκυρη IP, email, διεύθυνση τομέα ή IP δικτύου ή περιοχή"
+msgid ""
+"Provide either a valid IP, email, Domain address, or IP network or range"
+msgstr ""
+"Παρέχουν είτε μια έγκυρη IP, email, διεύθυνση τομέα ή IP δικτύου ή περιοχή"
 
 #: baruwa/forms/lists.py:68
 #, python-format
@@ -1573,7 +1577,7 @@ msgstr "Δώστε χρόνο έγκυρη μορφή ωω: λλ"
 #: baruwa/forms/settings.py:35 baruwa/forms/settings.py:49
 #: baruwa/forms/settings.py:52
 msgid "Yes"
-msgstr ""
+msgstr "Ναι"
 
 #: baruwa/forms/settings.py:35 baruwa/forms/settings.py:38
 #: baruwa/forms/settings.py:50 baruwa/forms/settings.py:53
@@ -1596,7 +1600,7 @@ msgstr "Προσθήκη"
 
 #: baruwa/forms/settings.py:40
 msgid "Append"
-msgstr ""
+msgstr "Προσάρτηση"
 
 #: baruwa/forms/settings.py:42
 #, fuzzy
@@ -1606,7 +1610,7 @@ msgstr "Η ενέργεια δεν υποστηρίζεται"
 
 #: baruwa/forms/settings.py:43
 msgid "None"
-msgstr ""
+msgstr "Κανένα"
 
 #: baruwa/forms/settings.py:44
 #, fuzzy
@@ -1622,11 +1626,11 @@ msgstr "Γράφημα"
 
 #: baruwa/forms/settings.py:46
 msgid "Beta"
-msgstr ""
+msgstr "Βήτα"
 
 #: baruwa/forms/settings.py:47
 msgid "Start"
-msgstr ""
+msgstr "Έναρξη"
 
 #: baruwa/forms/settings.py:48
 #, fuzzy
@@ -1636,11 +1640,11 @@ msgstr "ενεργοποιημένη"
 
 #: baruwa/forms/settings.py:51
 msgid "Disarm"
-msgstr ""
+msgstr "Αφοπλίσει"
 
 #: baruwa/forms/settings.py:59
 msgid "Auto detect"
-msgstr ""
+msgstr "Αυτόματη ανίχνευση"
 
 #: baruwa/forms/settings.py:132
 #, fuzzy
@@ -1650,11 +1654,11 @@ msgstr "δεν περιέχουν"
 
 #: baruwa/forms/settings.py:134
 msgid "Flag as spam"
-msgstr ""
+msgstr "Σημαία ως spam"
 
 #: baruwa/forms/settings.py:135
 msgid "Flag as high spam"
-msgstr ""
+msgstr "Σημαία ως υψηλό spam"
 
 #: baruwa/forms/settings.py:173
 msgid "Invalid Domain name or IPv4 address"
@@ -2530,12 +2534,14 @@ msgstr "Ψευδώνυμο: %(a)s προστεθεί στο λογαριασμό
 #: baruwa/lib/audit/msgs/accounts.py:32
 #, python-format
 msgid "Email Alias: %(a)s on account: %(ac)s updated"
-msgstr "Ψευδώνυμο ηλεκτρονικού ταχυδρομείου: %(a)s λογαριασμού: %(ac)s ενημέρωση"
+msgstr ""
+"Ψευδώνυμο ηλεκτρονικού ταχυδρομείου: %(a)s λογαριασμού: %(ac)s ενημέρωση"
 
 #: baruwa/lib/audit/msgs/accounts.py:33
 #, python-format
 msgid "Email Alias: %(a)s on account: %(ac)s deleted"
-msgstr "Ψευδώνυμο ηλεκτρονικού ταχυδρομείου: %(a)s λογαριασμού: %(ac)s διαγράφεται"
+msgstr ""
+"Ψευδώνυμο ηλεκτρονικού ταχυδρομείου: %(a)s λογαριασμού: %(ac)s διαγράφεται"
 
 #: baruwa/lib/audit/msgs/accounts.py:34
 msgid "Accounts exported"
@@ -2806,7 +2812,8 @@ msgstr "Αρχείο καταγραφής ελέγχου που εξάγοντα
 
 #: baruwa/lib/auth/predicates.py:35
 msgid "Only System Administrators can access this page"
-msgstr "Μόνο οι διαχειριστές συστήματος μπορούν να πρόσβαση σε αυτήν τη σελίδα"
+msgstr ""
+"Μόνο οι διαχειριστές συστήματος μπορούν να πρόσβαση σε αυτήν τη σελίδα"
 
 #: baruwa/lib/auth/predicates.py:47
 msgid "Only Administrators can access this page"
@@ -2818,7 +2825,8 @@ msgstr "Μόνο οι διαχειριστές ή ιδιοκτήτες να πρ
 
 #: baruwa/lib/auth/predicates.py:105
 msgid "Only Administrators or owners can view account details"
-msgstr "Μόνο οι διαχειριστές ή ιδιοκτήτες να προβάλετε λεπτομέρειες λογαριασμού"
+msgstr ""
+"Μόνο οι διαχειριστές ή ιδιοκτήτες να προβάλετε λεπτομέρειες λογαριασμού"
 
 #: baruwa/lib/templates/helpers.py:68
 msgid "unknown"
@@ -3487,7 +3495,8 @@ msgstr[0] ":: Εμφάνιση σελίδας %(n)d των %(c)d σελίδα."
 msgstr[1] ":: Εμφάνιση σελίδας %(n)d των %(c)d σελίδες."
 
 #: baruwa/templates/accounts/index.html:94
-#: baruwa/templates/domains/index.html:93 baruwa/templates/lists/index.html:105
+#: baruwa/templates/domains/index.html:93
+#: baruwa/templates/lists/index.html:105
 #: baruwa/templates/messages/functions.html:208
 #: baruwa/templates/messages/searchresults.html:102
 #: baruwa/templates/organizations/index.html:50
@@ -3498,7 +3507,8 @@ msgid "Showing items %(i)d to %(l)d of %(count)d"
 msgstr "Εμφάνιση των στοιχείων %(i)d να %(l)d των %(count)d"
 
 #: baruwa/templates/accounts/index.html:96
-#: baruwa/templates/domains/index.html:95 baruwa/templates/lists/index.html:107
+#: baruwa/templates/domains/index.html:95
+#: baruwa/templates/lists/index.html:107
 #: baruwa/templates/messages/functions.html:210
 #: baruwa/templates/messages/searchresults.html:104
 #: baruwa/templates/organizations/index.html:52
@@ -3508,7 +3518,8 @@ msgid "Show items:"
 msgstr "Εμφάνιση στοιχείων:"
 
 #: baruwa/templates/accounts/index.html:98
-#: baruwa/templates/domains/index.html:97 baruwa/templates/lists/index.html:109
+#: baruwa/templates/domains/index.html:97
+#: baruwa/templates/lists/index.html:109
 #: baruwa/templates/messages/functions.html:212
 #: baruwa/templates/messages/searchresults.html:106
 #: baruwa/templates/organizations/index.html:54
@@ -3537,7 +3548,8 @@ msgstr "Επαναφέρετε τον κωδικό πρόσβασής μου"
 
 #: baruwa/templates/accounts/login.html:36
 msgid "The username or password you entered is incorrect."
-msgstr "Το όνομα χρήστη ή κωδικός πρόσβασης που πληκτρολογήσατε είναι εσφαλμένος."
+msgstr ""
+"Το όνομα χρήστη ή κωδικός πρόσβασης που πληκτρολογήσατε είναι εσφαλμένος."
 
 #: baruwa/templates/accounts/login.html:40
 msgid "Password"
@@ -3549,12 +3561,12 @@ msgstr "Ξεχάσατε τον κωδικό?"
 
 #: baruwa/templates/accounts/login.html:55
 msgid ""
-"Forgotten your password? Enter your e-mail address below, and we'll "
-"e-mail instructions on setting a new one."
+"Forgotten your password? Enter your e-mail address below, and we'll e-mail "
+"instructions on setting a new one."
 msgstr ""
 "Ξεχάσατε τον κωδικό σας; Πληκτρολογήστε παρακάτω τη διεύθυνση σας "
-"ηλεκτρονικού ταχυδρομείου, και εμείς θα ηλεκτρονικού ταχυδρομείου οδηγίες"
-" σχετικά με τη ρύθμιση ένα νέο."
+"ηλεκτρονικού ταχυδρομείου, και εμείς θα ηλεκτρονικού ταχυδρομείου οδηγίες "
+"σχετικά με τη ρύθμιση ένα νέο."
 
 #: baruwa/templates/accounts/login.html:60
 msgid "Cancel"
@@ -3932,8 +3944,8 @@ msgid ""
 "Domains :: Search results :: %(q)s :: Showing page %(page)d of %(count)d "
 "pages."
 msgstr ""
-"Domains:: Αποτελέσματα αναζήτησης:: %(q)s :: Εμφάνιση σελίδας %(page)d "
-"των %(count)d σελίδες."
+"Domains:: Αποτελέσματα αναζήτησης:: %(q)s :: Εμφάνιση σελίδας %(page)d των "
+"%(count)d σελίδες."
 
 #: baruwa/templates/domains/searchresults.html:71
 #: baruwa/templates/domains/searchresults.html:75
@@ -3982,16 +3994,16 @@ msgstr "Σφάλμα: %s"
 
 #: baruwa/templates/general/error.html:28
 msgid ""
-"You do not have sufficient permissions to access this page. Please sign "
-"in using an account with sufficient permissions"
+"You do not have sufficient permissions to access this page. Please sign in "
+"using an account with sufficient permissions"
 msgstr ""
-"Δεν έχετε επαρκή δικαιώματα για πρόσβαση σε αυτήν τη σελίδα. Παρακαλούμε,"
-" εισέλθετε χρησιμοποιώντας ένα λογαριασμό με επαρκή δικαιώματα"
+"Δεν έχετε επαρκή δικαιώματα για πρόσβαση σε αυτήν τη σελίδα. Παρακαλούμε, "
+"εισέλθετε χρησιμοποιώντας ένα λογαριασμό με επαρκή δικαιώματα"
 
 #: baruwa/templates/general/error.html:30
 msgid ""
-"The system was unable to complete your request, the support team has been"
-" notified"
+"The system was unable to complete your request, the support team has been "
+"notified"
 msgstr ""
 "Το σύστημα δεν ήταν δυνατό να ολοκληρώσει την αίτησή σας, η ομάδα "
 "υποστήριξης της έχει κοινοποιηθεί"
@@ -4027,9 +4039,10 @@ msgstr "Ευχαριστούμε."
 
 #: baruwa/templates/invite/thankyou.html:27
 msgid ""
-"Your registration request is being reviewed, you will be notified when it"
-" is approved."
-msgstr "Επανεξετάζεται το αίτημα εγγραφής σας, θα ειδοποιηθείτε όταν εγκριθεί."
+"Your registration request is being reviewed, you will be notified when it is"
+" approved."
+msgstr ""
+"Επανεξετάζεται το αίτημα εγγραφής σας, θα ειδοποιηθείτε όταν εγκριθεί."
 
 #: baruwa/templates/lists/add.html:4
 msgid "Add Sender to a list"
@@ -4122,7 +4135,8 @@ msgstr "Εμφανίζονται τα φίλτρα που εφαρμόζοντα
 #: baruwa/templates/messages/archive.html:39
 #, python-format
 msgid "Messages :: Archive :: Showing page %(page)d of %(count)d pages."
-msgstr "Μηνύματα:: Αρχειοθέτηση:: Εμφάνιση σελίδας %(page)d των %(count)d σελίδες."
+msgstr ""
+"Μηνύματα:: Αρχειοθέτηση:: Εμφάνιση σελίδας %(page)d των %(count)d σελίδες."
 
 #: baruwa/templates/messages/archive.html:30
 #: baruwa/templates/messages/listing.html:39
@@ -4425,7 +4439,8 @@ msgstr "Αρχείο καταγραφής Spam"
 
 #: baruwa/templates/messages/quarantine.html:27
 #: baruwa/templates/status/detail.html:69
-#: baruwa/templates/status/detail.html:75 baruwa/templates/status/mailq.html:23
+#: baruwa/templates/status/detail.html:75
+#: baruwa/templates/status/mailq.html:23
 msgid "Process"
 msgstr "Διαδικασία"
 
@@ -4433,7 +4448,8 @@ msgstr "Διαδικασία"
 #: baruwa/templates/messages/quarantine.html:68
 #, python-format
 msgid "Messages :: Quarantine :: Showing page %(page)d of %(count)d pages."
-msgstr "Μηνύματα:: Καραντίνα:: Εμφάνιση σελίδας %(page)d των %(count)d σελίδες."
+msgstr ""
+"Μηνύματα:: Καραντίνα:: Εμφάνιση σελίδας %(page)d των %(count)d σελίδες."
 
 #: baruwa/templates/messages/quarantine.html:59
 #: baruwa/templates/messages/quarantine.html:70
@@ -4473,8 +4489,7 @@ msgstr "Το αναγνωριστικό μηνύματος: %(id)s έχει δι
 #, python-format
 msgid "The message id: %(id)s could not be deleted: %(error_msg)s"
 msgstr ""
-"Το αναγνωριστικό μηνύματος: %(id)s δεν ήταν δυνατή η διαγραφή: "
-"%(error_msg)s"
+"Το αναγνωριστικό μηνύματος: %(id)s δεν ήταν δυνατή η διαγραφή: %(error_msg)s"
 
 #: baruwa/templates/messages/includes/released.html:2
 #, python-format
@@ -4484,17 +4499,18 @@ msgstr "Το αναγνωριστικό μηνύματος: %(id)s έχει κυ
 #: baruwa/templates/messages/includes/released.html:4
 #, python-format
 msgid ""
-"The message id: %(id)s could not be released: %(error_msg)s, contact your"
-" email admin for assistance."
+"The message id: %(id)s could not be released: %(error_msg)s, contact your "
+"email admin for assistance."
 msgstr ""
 "Το αναγνωριστικό μηνύματος: %(id)s δεν θα μπορούσε να κυκλοφορήσει: "
-"%(error_msg)s, επικοινωνήστε με το διαχειριστή ηλεκτρονικού ταχυδρομείου "
-"σας για βοήθεια."
+"%(error_msg)s, επικοινωνήστε με το διαχειριστή ηλεκτρονικού ταχυδρομείου σας"
+" για βοήθεια."
 
 #: baruwa/templates/messages/includes/salearn.html:2
 #, python-format
 msgid "The message id: %(id)s processed by the bayesian engine"
-msgstr "Το αναγνωριστικό μηνύματος: %(id)s επεξεργασία από την μηχανή bayesian"
+msgstr ""
+"Το αναγνωριστικό μηνύματος: %(id)s επεξεργασία από την μηχανή bayesian"
 
 #: baruwa/templates/messages/includes/salearn.html:4
 #, python-format
@@ -5436,4 +5452,3 @@ msgstr "Ώρα του συστήματος"
 #, python-format
 msgid "Status :: Node status :: %(server)s"
 msgstr "Κατάσταση:: Κατάστασης του κόμβου:: %(server)s"
-

@@ -1,21 +1,21 @@
 # English translations for baruwa.
 # Copyright (C) 2011 ORGANIZATION
 # This file is distributed under the same license as the baruwa project.
-#
+# 
 # Translators:
 msgid ""
 msgstr ""
-"Project-Id-Version:  baruwa\n"
+"Project-Id-Version: baruwa\n"
 "Report-Msgid-Bugs-To: baruwa@lists.baruwa.org\n"
-"POT-Creation-Date: 2012-11-20 09:57+0200\n"
-"PO-Revision-Date: 2012-11-15 13:25+0200\n"
+"POT-Creation-Date: 2012-11-24 10:27+0200\n"
+"PO-Revision-Date: 2012-11-24 10:35+0200\n"
 "Last-Translator: Andrew Colin Kissa <andrew@topdog.za.net>\n"
 "Language-Team: Baruwa Project\n"
-"Plural-Forms: nplurals=1; plural=0\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 0.9.6\n"
+"Generated-By: auto-translate.py 0.0.1\n"
+"Plural-Forms: nplurals=1; plural=0\n"
 
 #: baruwa/commands/pdfreport.py:116 baruwa/controllers/reports.py:62
 #: baruwa/templates/reports/index.html:13
@@ -188,8 +188,8 @@ msgstr "该帐户已被删除"
 #: baruwa/controllers/accounts.py:620
 #, python-format
 msgid ""
-"The account: %(a)s and all associated data will be deleted, This action "
-"is not reversible."
+"The account: %(a)s and all associated data will be deleted, This action is "
+"not reversible."
 msgstr "帐户： %(a)s和所有关联的数据将被删除，此操作是不可逆的。"
 
 #: baruwa/controllers/accounts.py:677
@@ -235,8 +235,8 @@ msgstr "地址已被删除"
 
 #: baruwa/controllers/accounts.py:874 baruwa/controllers/organizations.py:358
 msgid ""
-"File uploaded, and is being processed, this page will automatically "
-"refresh to show the status"
+"File uploaded, and is being processed, this page will automatically refresh "
+"to show the status"
 msgstr "文件上载，并正在处理，此页将自动刷新，以显示状态"
 
 #: baruwa/controllers/accounts.py:881 baruwa/controllers/organizations.py:364
@@ -316,8 +316,8 @@ msgstr "域已被删除"
 #: baruwa/controllers/domains.py:324
 #, python-format
 msgid ""
-"The domain: %(name)s and all associated data will be deleted, This action"
-" cannot be reversed."
+"The domain: %(name)s and all associated data will be deleted, This action "
+"cannot be reversed."
 msgstr "域： %(name)s和所有关联的数据将被删除，此操作无法撤消。"
 
 #: baruwa/controllers/domains.py:372
@@ -372,8 +372,7 @@ msgstr "目标服务器已被删除"
 #: baruwa/controllers/domains.py:540
 #, python-format
 msgid ""
-"The destination server: %(s)s will be deleted, This action is not "
-"reversible"
+"The destination server: %(s)s will be deleted, This action is not reversible"
 msgstr "目标服务器: %(s)s将会被删除，此操作是不可逆的"
 
 #: baruwa/controllers/domains.py:567
@@ -383,8 +382,8 @@ msgstr "已创建的身份验证设置"
 #: baruwa/controllers/domains.py:574
 #, python-format
 msgid ""
-"The host %(dest)s already configured for %(auth)s authentication for this"
-" domain"
+"The host %(dest)s already configured for %(auth)s authentication for this "
+"domain"
 msgstr "主机 %(dest)s已配置为 %(auth)s此域的身份验证"
 
 #: baruwa/controllers/domains.py:607
@@ -437,8 +436,8 @@ msgstr "Auth 设置已经存在，使用更新来对其进行修改"
 
 #: baruwa/controllers/domains.py:733
 msgid ""
-"The Radius secret is not be displayed in the form, To update type the new"
-" secret in \"Radius secret\" below."
+"The Radius secret is not be displayed in the form, To update type the new "
+"secret in \"Radius secret\" below."
 msgstr "秘密就是的半径不会显示在表单中，下面更新类型中\"Radius 机密\"的新秘密。"
 
 #: baruwa/controllers/domains.py:774
@@ -801,10 +800,10 @@ msgid "The audit log export failed, try again later"
 msgstr "审计日志导出失败，请稍后再试"
 
 #: baruwa/forms/accounts.py:32 baruwa/forms/domains.py:34
-#: baruwa/forms/lists.py:33 baruwa/forms/messages.py:27 baruwa/forms/misc.py:28
-#: baruwa/forms/organizations.py:33 baruwa/forms/reports.py:33
-#: baruwa/forms/settings.py:30 baruwa/model/status.py:32
-#: baruwa/tasks/status.py:45
+#: baruwa/forms/lists.py:33 baruwa/forms/messages.py:27
+#: baruwa/forms/misc.py:28 baruwa/forms/organizations.py:33
+#: baruwa/forms/reports.py:33 baruwa/forms/settings.py:30
+#: baruwa/model/status.py:32 baruwa/tasks/status.py:45
 msgid "hi"
 msgstr "你好"
 
@@ -1205,7 +1204,8 @@ msgid "Delivery Server address"
 msgstr "传递服务器地址"
 
 #: baruwa/forms/lists.py:51
-msgid "Provide either a valid IP, email, Domain address, or IP network or range"
+msgid ""
+"Provide either a valid IP, email, Domain address, or IP network or range"
 msgstr "提供有效 IP、 电子邮件、 地址、 域或 IP 网络或范围"
 
 #: baruwa/forms/lists.py:68
@@ -1538,7 +1538,7 @@ msgstr "请提供有效的时间，在 hh: mm 格式"
 #: baruwa/forms/settings.py:35 baruwa/forms/settings.py:49
 #: baruwa/forms/settings.py:52
 msgid "Yes"
-msgstr ""
+msgstr "是"
 
 #: baruwa/forms/settings.py:35 baruwa/forms/settings.py:38
 #: baruwa/forms/settings.py:50 baruwa/forms/settings.py:53
@@ -1561,7 +1561,7 @@ msgstr "添加"
 
 #: baruwa/forms/settings.py:40
 msgid "Append"
-msgstr ""
+msgstr "追加"
 
 #: baruwa/forms/settings.py:42
 #, fuzzy
@@ -1571,7 +1571,7 @@ msgstr "不支持此操作"
 
 #: baruwa/forms/settings.py:43
 msgid "None"
-msgstr ""
+msgstr "无"
 
 #: baruwa/forms/settings.py:44
 #, fuzzy
@@ -1587,11 +1587,11 @@ msgstr "图"
 
 #: baruwa/forms/settings.py:46
 msgid "Beta"
-msgstr ""
+msgstr "试用版"
 
 #: baruwa/forms/settings.py:47
 msgid "Start"
-msgstr ""
+msgstr "启动"
 
 #: baruwa/forms/settings.py:48
 #, fuzzy
@@ -1601,11 +1601,11 @@ msgstr "已启用"
 
 #: baruwa/forms/settings.py:51
 msgid "Disarm"
-msgstr ""
+msgstr "解除武装"
 
 #: baruwa/forms/settings.py:59
 msgid "Auto detect"
-msgstr ""
+msgstr "自动检测"
 
 #: baruwa/forms/settings.py:132
 #, fuzzy
@@ -1615,11 +1615,11 @@ msgstr "不包含"
 
 #: baruwa/forms/settings.py:134
 msgid "Flag as spam"
-msgstr ""
+msgstr "标记为垃圾邮件"
 
 #: baruwa/forms/settings.py:135
 msgid "Flag as high spam"
-msgstr ""
+msgstr "标记为高的垃圾邮件"
 
 #: baruwa/forms/settings.py:173
 msgid "Invalid Domain name or IPv4 address"
@@ -3449,7 +3449,8 @@ msgid_plural ":: Showing page %(n)d of %(c)d pages."
 msgstr[0] ":: 显示页面 %(n)d%(c)d页。"
 
 #: baruwa/templates/accounts/index.html:94
-#: baruwa/templates/domains/index.html:93 baruwa/templates/lists/index.html:105
+#: baruwa/templates/domains/index.html:93
+#: baruwa/templates/lists/index.html:105
 #: baruwa/templates/messages/functions.html:208
 #: baruwa/templates/messages/searchresults.html:102
 #: baruwa/templates/organizations/index.html:50
@@ -3460,7 +3461,8 @@ msgid "Showing items %(i)d to %(l)d of %(count)d"
 msgstr "显示项目 %(i)d到 %(l)d%(count)d"
 
 #: baruwa/templates/accounts/index.html:96
-#: baruwa/templates/domains/index.html:95 baruwa/templates/lists/index.html:107
+#: baruwa/templates/domains/index.html:95
+#: baruwa/templates/lists/index.html:107
 #: baruwa/templates/messages/functions.html:210
 #: baruwa/templates/messages/searchresults.html:104
 #: baruwa/templates/organizations/index.html:52
@@ -3470,7 +3472,8 @@ msgid "Show items:"
 msgstr "显示项目："
 
 #: baruwa/templates/accounts/index.html:98
-#: baruwa/templates/domains/index.html:97 baruwa/templates/lists/index.html:109
+#: baruwa/templates/domains/index.html:97
+#: baruwa/templates/lists/index.html:109
 #: baruwa/templates/messages/functions.html:212
 #: baruwa/templates/messages/searchresults.html:106
 #: baruwa/templates/organizations/index.html:54
@@ -3511,8 +3514,8 @@ msgstr "忘记了密码吗？"
 
 #: baruwa/templates/accounts/login.html:55
 msgid ""
-"Forgotten your password? Enter your e-mail address below, and we'll "
-"e-mail instructions on setting a new one."
+"Forgotten your password? Enter your e-mail address below, and we'll e-mail "
+"instructions on setting a new one."
 msgstr "忘记了您的密码吗？请输入您的电子邮件地址，和我们将电子邮件设置一个新的说明。"
 
 #: baruwa/templates/accounts/login.html:60
@@ -3936,14 +3939,14 @@ msgstr "错误: %s"
 
 #: baruwa/templates/general/error.html:28
 msgid ""
-"You do not have sufficient permissions to access this page. Please sign "
-"in using an account with sufficient permissions"
+"You do not have sufficient permissions to access this page. Please sign in "
+"using an account with sufficient permissions"
 msgstr "您没有足够的权限访问此页面。请使用具有足够的权限的帐户登录"
 
 #: baruwa/templates/general/error.html:30
 msgid ""
-"The system was unable to complete your request, the support team has been"
-" notified"
+"The system was unable to complete your request, the support team has been "
+"notified"
 msgstr "系统无法完成您的请求，支持团队已收到通知"
 
 #: baruwa/templates/includes/search.html:9 baruwa/templates/lists/index.html:6
@@ -3977,8 +3980,8 @@ msgstr "谢谢。"
 
 #: baruwa/templates/invite/thankyou.html:27
 msgid ""
-"Your registration request is being reviewed, you will be notified when it"
-" is approved."
+"Your registration request is being reviewed, you will be notified when it is"
+" approved."
 msgstr "您的注册请求正在审查、 批准后，将通知您。"
 
 #: baruwa/templates/lists/add.html:4
@@ -4369,7 +4372,8 @@ msgstr "垃圾邮件日志"
 
 #: baruwa/templates/messages/quarantine.html:27
 #: baruwa/templates/status/detail.html:69
-#: baruwa/templates/status/detail.html:75 baruwa/templates/status/mailq.html:23
+#: baruwa/templates/status/detail.html:75
+#: baruwa/templates/status/mailq.html:23
 msgid "Process"
 msgstr "进程"
 
@@ -4426,8 +4430,8 @@ msgstr "消息的消息 id： %(id)s已释放"
 #: baruwa/templates/messages/includes/released.html:4
 #, python-format
 msgid ""
-"The message id: %(id)s could not be released: %(error_msg)s, contact your"
-" email admin for assistance."
+"The message id: %(id)s could not be released: %(error_msg)s, contact your "
+"email admin for assistance."
 msgstr "消息的消息 id： %(id)s无法释放: %(error_msg)s，您的电子邮件管理员联系获得帮助。"
 
 #: baruwa/templates/messages/includes/salearn.html:2
@@ -5372,4 +5376,3 @@ msgstr "系统时间"
 #, python-format
 msgid "Status :: Node status :: %(server)s"
 msgstr "状态:: 节点状态:: %(server)s"
-

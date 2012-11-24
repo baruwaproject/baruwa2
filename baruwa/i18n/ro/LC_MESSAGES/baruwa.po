@@ -1,22 +1,21 @@
 # Romanian translations for baruwa.
 # Copyright (C) 2012 Andrew Colin Kissa
 # This file is distributed under the same license as the baruwa project.
-#
+# 
 # Translators:
 msgid ""
 msgstr ""
-"Project-Id-Version:  baruwa\n"
+"Project-Id-Version: baruwa\n"
 "Report-Msgid-Bugs-To: baruwa@lists.baruwa.org\n"
-"POT-Creation-Date: 2012-11-20 09:57+0200\n"
-"PO-Revision-Date: 2012-11-16 18:23+0200\n"
+"POT-Creation-Date: 2012-11-24 10:27+0200\n"
+"PO-Revision-Date: 2012-11-24 10:33+0200\n"
 "Last-Translator: Andrew Colin Kissa <andrew@topdog.za.net>\n"
 "Language-Team: Baruwa Project\n"
-"Plural-Forms: nplurals=3; "
-"plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?2:1))\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 0.9.6\n"
+"Generated-By: auto-translate.py 0.0.1\n"
+"Plural-Forms: nplurals=3; plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?2:1))\n"
 
 #: baruwa/commands/pdfreport.py:116 baruwa/controllers/reports.py:62
 #: baruwa/templates/reports/index.html:13
@@ -155,8 +154,8 @@ msgstr "Parola contului pentru %(name)s a fost resetată"
 #: baruwa/controllers/accounts.py:325 baruwa/controllers/accounts.py:355
 msgid "This is an external account, use external system to reset the password"
 msgstr ""
-"Acesta este un cont de externe, utilizaţi sistemul extern pentru a reseta"
-" parola"
+"Acesta este un cont de externe, utilizaţi sistemul extern pentru a reseta "
+"parola"
 
 #: baruwa/controllers/accounts.py:361
 msgid "The old password supplied does not match our records"
@@ -191,11 +190,11 @@ msgstr "Contul a fost şters"
 #: baruwa/controllers/accounts.py:620
 #, python-format
 msgid ""
-"The account: %(a)s and all associated data will be deleted, This action "
-"is not reversible."
+"The account: %(a)s and all associated data will be deleted, This action is "
+"not reversible."
 msgstr ""
-"Cont: %(a)s şi vor fi şterse toate datele asociate, această acţiune nu "
-"este reversibilă."
+"Cont: %(a)s şi vor fi şterse toate datele asociate, această acţiune nu este "
+"reversibilă."
 
 #: baruwa/controllers/accounts.py:677
 msgid "The accounts have been deleted"
@@ -242,8 +241,8 @@ msgstr "Adresa a fost şters"
 
 #: baruwa/controllers/accounts.py:874 baruwa/controllers/organizations.py:358
 msgid ""
-"File uploaded, and is being processed, this page will automatically "
-"refresh to show the status"
+"File uploaded, and is being processed, this page will automatically refresh "
+"to show the status"
 msgstr ""
 "Dosar încărcat, şi este în curs de procesare, această pagină se va "
 "reîmprospăta automat pentru a afișa starea"
@@ -325,11 +324,11 @@ msgstr "Domeniu a fost şters"
 #: baruwa/controllers/domains.py:324
 #, python-format
 msgid ""
-"The domain: %(name)s and all associated data will be deleted, This action"
-" cannot be reversed."
+"The domain: %(name)s and all associated data will be deleted, This action "
+"cannot be reversed."
 msgstr ""
-"Domeniu: %(name)s şi vor fi şterse toate datele asociate, această acțiune"
-" nu poate fi inversat."
+"Domeniu: %(name)s şi vor fi şterse toate datele asociate, această acțiune nu"
+" poate fi inversat."
 
 #: baruwa/controllers/domains.py:372
 msgid "The domains have been deleted"
@@ -385,11 +384,9 @@ msgstr "Serverul de destinație a fost şters"
 #: baruwa/controllers/domains.py:540
 #, python-format
 msgid ""
-"The destination server: %(s)s will be deleted, This action is not "
-"reversible"
+"The destination server: %(s)s will be deleted, This action is not reversible"
 msgstr ""
-"Serverul destinație: %(s)s va fi şters, această acţiune nu este "
-"reversibilă"
+"Serverul destinație: %(s)s va fi şters, această acţiune nu este reversibilă"
 
 #: baruwa/controllers/domains.py:567
 msgid "The authentication settings have been created"
@@ -398,11 +395,11 @@ msgstr "S-au creat setările de autentificare"
 #: baruwa/controllers/domains.py:574
 #, python-format
 msgid ""
-"The host %(dest)s already configured for %(auth)s authentication for this"
-" domain"
+"The host %(dest)s already configured for %(auth)s authentication for this "
+"domain"
 msgstr ""
-"Gazdă %(dest)s deja configurat pentru %(auth)s autentificare pentru acest"
-" domeniu"
+"Gazdă %(dest)s deja configurat pentru %(auth)s autentificare pentru acest "
+"domeniu"
 
 #: baruwa/controllers/domains.py:607
 msgid "The authentication settings have been updated"
@@ -439,8 +436,8 @@ msgid ""
 "Please add an authentication server for the %(proto)s protocol Before "
 "attempting to configure the %(proto)s settings"
 msgstr ""
-"Vă rugăm să adăugaţi un server de autentificare pentru %(proto)s "
-"Protocolul înainte de a încerca să configuraţi %(proto)s Setări"
+"Vă rugăm să adăugaţi un server de autentificare pentru %(proto)s Protocolul "
+"înainte de a încerca să configuraţi %(proto)s Setări"
 
 #: baruwa/controllers/domains.py:715
 #, python-format
@@ -455,16 +452,16 @@ msgstr "%(proto)s setările au fost create"
 #: baruwa/controllers/domains.py:729
 msgid "The auth settings already exist, use update to modify them"
 msgstr ""
-"Setările de autentificare deja exista, utilizaţi actualizarea pentru a le"
-" modifica"
+"Setările de autentificare deja exista, utilizaţi actualizarea pentru a le "
+"modifica"
 
 #: baruwa/controllers/domains.py:733
 msgid ""
-"The Radius secret is not be displayed in the form, To update type the new"
-" secret in \"Radius secret\" below."
+"The Radius secret is not be displayed in the form, To update type the new "
+"secret in \"Radius secret\" below."
 msgstr ""
-"Raza secret este afişat în formă, să actualizeze tip nou secrete în "
-"\"Raza secret\" de mai jos."
+"Raza secret este afişat în formă, să actualizeze tip nou secrete în \"Raza "
+"secret\" de mai jos."
 
 #: baruwa/controllers/domains.py:774
 #, python-format
@@ -590,7 +587,8 @@ msgstr "Necunoscut"
 msgid ""
 "The message has already been released, you can only use the release link "
 "once"
-msgstr "Mesajul a fost deja lansat, puteţi utiliza doar link-ul de presă o dată"
+msgstr ""
+"Mesajul a fost deja lansat, puteţi utiliza doar link-ul de presă o dată"
 
 #: baruwa/controllers/messages.py:622
 msgid "Processing of message failed"
@@ -826,10 +824,10 @@ msgid "The audit log export failed, try again later"
 msgstr "Export jurnal de audit nu a reuşit, încercaţi din nou mai târziu"
 
 #: baruwa/forms/accounts.py:32 baruwa/forms/domains.py:34
-#: baruwa/forms/lists.py:33 baruwa/forms/messages.py:27 baruwa/forms/misc.py:28
-#: baruwa/forms/organizations.py:33 baruwa/forms/reports.py:33
-#: baruwa/forms/settings.py:30 baruwa/model/status.py:32
-#: baruwa/tasks/status.py:45
+#: baruwa/forms/lists.py:33 baruwa/forms/messages.py:27
+#: baruwa/forms/misc.py:28 baruwa/forms/organizations.py:33
+#: baruwa/forms/reports.py:33 baruwa/forms/settings.py:30
+#: baruwa/model/status.py:32 baruwa/tasks/status.py:45
 msgid "hi"
 msgstr "salut"
 
@@ -1230,10 +1228,10 @@ msgid "Delivery Server address"
 msgstr "Adresa de Server de livrare"
 
 #: baruwa/forms/lists.py:51
-msgid "Provide either a valid IP, email, Domain address, or IP network or range"
+msgid ""
+"Provide either a valid IP, email, Domain address, or IP network or range"
 msgstr ""
-"Oferă fie un valid IP, e-mail, domeniu adresa sau IP de reţea sau "
-"intervalul"
+"Oferă fie un valid IP, e-mail, domeniu adresa sau IP de reţea sau intervalul"
 
 #: baruwa/forms/lists.py:68
 #, python-format
@@ -1565,7 +1563,7 @@ msgstr "Vă rugăm să furnizaţi o oră validă în formatul hh: mm"
 #: baruwa/forms/settings.py:35 baruwa/forms/settings.py:49
 #: baruwa/forms/settings.py:52
 msgid "Yes"
-msgstr ""
+msgstr "da"
 
 #: baruwa/forms/settings.py:35 baruwa/forms/settings.py:38
 #: baruwa/forms/settings.py:50 baruwa/forms/settings.py:53
@@ -1588,7 +1586,7 @@ msgstr "Adauga"
 
 #: baruwa/forms/settings.py:40
 msgid "Append"
-msgstr ""
+msgstr "Adăugare"
 
 #: baruwa/forms/settings.py:42
 #, fuzzy
@@ -1598,7 +1596,7 @@ msgstr "Acţiune nu acceptate"
 
 #: baruwa/forms/settings.py:43
 msgid "None"
-msgstr ""
+msgstr "Nici unul"
 
 #: baruwa/forms/settings.py:44
 #, fuzzy
@@ -1614,11 +1612,11 @@ msgstr "Grafic"
 
 #: baruwa/forms/settings.py:46
 msgid "Beta"
-msgstr ""
+msgstr "Beta"
 
 #: baruwa/forms/settings.py:47
 msgid "Start"
-msgstr ""
+msgstr "Începe"
 
 #: baruwa/forms/settings.py:48
 #, fuzzy
@@ -1628,11 +1626,11 @@ msgstr "activat"
 
 #: baruwa/forms/settings.py:51
 msgid "Disarm"
-msgstr ""
+msgstr "Dezarma"
 
 #: baruwa/forms/settings.py:59
 msgid "Auto detect"
-msgstr ""
+msgstr "Detectare automată"
 
 #: baruwa/forms/settings.py:132
 #, fuzzy
@@ -1642,11 +1640,11 @@ msgstr "nu conține"
 
 #: baruwa/forms/settings.py:134
 msgid "Flag as spam"
-msgstr ""
+msgstr "Steagul ca spam-ul"
 
 #: baruwa/forms/settings.py:135
 msgid "Flag as high spam"
-msgstr ""
+msgstr "Steagul ca spam mare"
 
 #: baruwa/forms/settings.py:173
 msgid "Invalid Domain name or IPv4 address"
@@ -2194,7 +2192,8 @@ msgstr "Se notifică expeditorii de viruşi"
 
 #: baruwa/forms/settings.py:514
 msgid "Notify Senders Of Blocked Filenames Or Filetypes"
-msgstr "Se notifică expeditorii de nume de fișiere blocate sau tipuri de fişiere"
+msgstr ""
+"Se notifică expeditorii de nume de fișiere blocate sau tipuri de fişiere"
 
 #: baruwa/forms/settings.py:517
 msgid "Notify Senders Of Blocked Size Attachments"
@@ -2764,8 +2763,8 @@ msgstr "Din coada de aşteptare mesaj-identitate: %(m)s lansat %(a)s"
 #, python-format
 msgid "Queued Message-ID: %(m)s deleted from %(q)s queue"
 msgstr ""
-"Din coada de aşteptare mesaj-identitate: %(m)s elimină din %(q)s coada de"
-" aşteptare"
+"Din coada de aşteptare mesaj-identitate: %(m)s elimină din %(q)s coada de "
+"aşteptare"
 
 #: baruwa/lib/audit/msgs/status.py:29
 #, python-format
@@ -2776,8 +2775,7 @@ msgstr "Din coada de aşteptare mesaj-identitate: %(m)s previzualizare"
 #, python-format
 msgid "Queued Message-ID: %(m)s downloaded attachment %(a)s"
 msgstr ""
-"Din coada de aşteptare mesaj-identitate: %(m)s descarcat de ataşament "
-"%(a)s"
+"Din coada de aşteptare mesaj-identitate: %(m)s descarcat de ataşament %(a)s"
 
 #: baruwa/lib/audit/msgs/status.py:31
 #, python-format
@@ -3479,10 +3477,11 @@ msgid ":: Showing page %(n)d of %(c)d page."
 msgid_plural ":: Showing page %(n)d of %(c)d pages."
 msgstr[0] ":: Rezultate filme %(n)d de %(c)d pagina."
 msgstr[1] ":: Rezultate filme %(n)d de %(c)d pagini."
-msgstr[2] ""
+msgstr[2] ":: Rezultate filme %(n)d de %(c)d pagini."
 
 #: baruwa/templates/accounts/index.html:94
-#: baruwa/templates/domains/index.html:93 baruwa/templates/lists/index.html:105
+#: baruwa/templates/domains/index.html:93
+#: baruwa/templates/lists/index.html:105
 #: baruwa/templates/messages/functions.html:208
 #: baruwa/templates/messages/searchresults.html:102
 #: baruwa/templates/organizations/index.html:50
@@ -3493,7 +3492,8 @@ msgid "Showing items %(i)d to %(l)d of %(count)d"
 msgstr "Se afișează elemente %(i)d să %(l)d de %(count)d"
 
 #: baruwa/templates/accounts/index.html:96
-#: baruwa/templates/domains/index.html:95 baruwa/templates/lists/index.html:107
+#: baruwa/templates/domains/index.html:95
+#: baruwa/templates/lists/index.html:107
 #: baruwa/templates/messages/functions.html:210
 #: baruwa/templates/messages/searchresults.html:104
 #: baruwa/templates/organizations/index.html:52
@@ -3503,7 +3503,8 @@ msgid "Show items:"
 msgstr "Afișare elemente:"
 
 #: baruwa/templates/accounts/index.html:98
-#: baruwa/templates/domains/index.html:97 baruwa/templates/lists/index.html:109
+#: baruwa/templates/domains/index.html:97
+#: baruwa/templates/lists/index.html:109
 #: baruwa/templates/messages/functions.html:212
 #: baruwa/templates/messages/searchresults.html:106
 #: baruwa/templates/organizations/index.html:54
@@ -3544,11 +3545,11 @@ msgstr "Parola uitata?"
 
 #: baruwa/templates/accounts/login.html:55
 msgid ""
-"Forgotten your password? Enter your e-mail address below, and we'll "
-"e-mail instructions on setting a new one."
+"Forgotten your password? Enter your e-mail address below, and we'll e-mail "
+"instructions on setting a new one."
 msgstr ""
-"Aţi uitat parola? Introduceţi adresa de e-mail de mai jos, şi ne vom "
-"e-mail instrucţiuni privind configurarea unul nou."
+"Aţi uitat parola? Introduceţi adresa de e-mail de mai jos, şi ne vom e-mail "
+"instrucţiuni privind configurarea unul nou."
 
 #: baruwa/templates/accounts/login.html:60
 msgid "Cancel"
@@ -3888,7 +3889,7 @@ msgid "Domains :: Showing page %(page)d of %(count)d page."
 msgid_plural "Domains :: Showing page %(page)d of %(count)d pages."
 msgstr[0] "Domenii:: Care prezintă filme %(page)d de %(count)d pagina."
 msgstr[1] "Domenii:: Care prezintă filme %(page)d de %(count)d pagini."
-msgstr[2] ""
+msgstr[2] "Domenii:: Care prezintă filme %(page)d de %(count)d pagini."
 
 #: baruwa/templates/domains/index.html:76
 #: baruwa/templates/domains/index.html:84
@@ -3925,8 +3926,7 @@ msgid ""
 "Domains :: Search results :: %(q)s :: Showing page %(page)d of %(count)d "
 "pages."
 msgstr ""
-"Domenii:: Rezultate:: %(q)s :: Rezultate filme %(page)d de %(count)d "
-"pagini."
+"Domenii:: Rezultate:: %(q)s :: Rezultate filme %(page)d de %(count)d pagini."
 
 #: baruwa/templates/domains/searchresults.html:71
 #: baruwa/templates/domains/searchresults.html:75
@@ -3975,19 +3975,19 @@ msgstr "Eroare: %s"
 
 #: baruwa/templates/general/error.html:28
 msgid ""
-"You do not have sufficient permissions to access this page. Please sign "
-"in using an account with sufficient permissions"
+"You do not have sufficient permissions to access this page. Please sign in "
+"using an account with sufficient permissions"
 msgstr ""
-"Nu aveţi suficiente permisiuni pentru a accesa această pagină. "
-"Conectați-vă folosind un cont cu permisiuni suficiente"
+"Nu aveţi suficiente permisiuni pentru a accesa această pagină. Conectați-vă "
+"folosind un cont cu permisiuni suficiente"
 
 #: baruwa/templates/general/error.html:30
 msgid ""
-"The system was unable to complete your request, the support team has been"
-" notified"
+"The system was unable to complete your request, the support team has been "
+"notified"
 msgstr ""
-"Sistemul nu a reușit să finalizeze solicitarea, echipa de asistenţă a "
-"fost notificat"
+"Sistemul nu a reușit să finalizeze solicitarea, echipa de asistenţă a fost "
+"notificat"
 
 #: baruwa/templates/includes/search.html:9 baruwa/templates/lists/index.html:6
 #: baruwa/templates/messages/functions.html:300
@@ -4020,8 +4020,8 @@ msgstr "vă mulţumesc."
 
 #: baruwa/templates/invite/thankyou.html:27
 msgid ""
-"Your registration request is being reviewed, you will be notified when it"
-" is approved."
+"Your registration request is being reviewed, you will be notified when it is"
+" approved."
 msgstr ""
 "Solicitarea de înregistrare este în curs de revizuire, veţi fi notificat "
 "când este aprobat."
@@ -4084,8 +4084,7 @@ msgstr "Lista de management"
 #, python-format
 msgid "Lists :: Approved senders :: Showing page %(page)d of %(count)d pages."
 msgstr ""
-"Liste:: Aprobat expeditori:: Pagina de afişare %(page)d de %(count)d "
-"pagini."
+"Liste:: Aprobat expeditori:: Pagina de afişare %(page)d de %(count)d pagini."
 
 #: baruwa/templates/lists/index.html:87
 msgid "Lists :: Approved senders"
@@ -4420,7 +4419,8 @@ msgstr "Jurnalul de Spam"
 
 #: baruwa/templates/messages/quarantine.html:27
 #: baruwa/templates/status/detail.html:69
-#: baruwa/templates/status/detail.html:75 baruwa/templates/status/mailq.html:23
+#: baruwa/templates/status/detail.html:75
+#: baruwa/templates/status/mailq.html:23
 msgid "Process"
 msgstr "Procesul de"
 
@@ -4477,8 +4477,8 @@ msgstr "ID-ul mesajului: %(id)s a fost lansat"
 #: baruwa/templates/messages/includes/released.html:4
 #, python-format
 msgid ""
-"The message id: %(id)s could not be released: %(error_msg)s, contact your"
-" email admin for assistance."
+"The message id: %(id)s could not be released: %(error_msg)s, contact your "
+"email admin for assistance."
 msgstr ""
 "ID-ul mesajului: %(id)s nu ar putea fi lansat: %(error_msg)s, vă admin "
 "e-mail de contact pentru asistență."
@@ -5390,7 +5390,7 @@ msgid "%(s)d process"
 msgid_plural "%(s)d processes"
 msgstr[0] "%(s)d procesul de"
 msgstr[1] "%(s)d procese"
-msgstr[2] ""
+msgstr[2] "%(s)d procese"
 
 #: baruwa/templates/status/serverstatus.html:170
 msgid "MTA"
@@ -5402,7 +5402,7 @@ msgid "%(mta)d process"
 msgid_plural "%(mta)d processes"
 msgstr[0] "%(mta)d procesul de"
 msgstr[1] "%(mta)d procese"
-msgstr[2] ""
+msgstr[2] "%(mta)d procese"
 
 #: baruwa/templates/status/serverstatus.html:177
 msgid "Anti-Virus"
@@ -5414,7 +5414,7 @@ msgid "%(a)d process"
 msgid_plural "%(a)d processes"
 msgstr[0] "%(a)d procesul de"
 msgstr[1] "%(a)d procese"
-msgstr[2] ""
+msgstr[2] "%(a)d procese"
 
 #: baruwa/templates/status/serverstatus.html:184
 msgid "CPU Load (1 / 5 / 15 mins)"
@@ -5433,4 +5433,3 @@ msgstr "Timp de sistem"
 #, python-format
 msgid "Status :: Node status :: %(server)s"
 msgstr "Status:: Statutul de nod:: %(server)s"
-
