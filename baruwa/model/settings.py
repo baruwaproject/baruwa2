@@ -141,7 +141,7 @@ class IndexerCounter(Base):
     __tablename__ = 'indexer_counters'
 
     tablename = Column(Unicode(255), primary_key=True)
-    maxid = Column(TIMESTAMP(timezone=True), index=True, nullable=False)
+    maxts = Column(TIMESTAMP(timezone=True), index=True, nullable=False)
 
 
 class IndexerKillList(Base):
