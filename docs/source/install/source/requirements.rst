@@ -45,7 +45,7 @@ Running the following command will install any libraries that are missing.
     # install the necessary libraries for compiling
     yum install install libxml2-devel libxslt-devel Cython postgresql-devel \
 	freetype-devel libjpeg-devel zlib-devel openldap-devel openssl-devel swig \
-	cracklib-devel GeoIP-devel -y
+	cracklib-devel GeoIP-devel mysql-devel -y
 
 **NOTE: You need to install libmemcached from source as the version shipped in
 the repositories is too old, You need atleast version 0.32 or newer**
@@ -72,7 +72,7 @@ You have to install the required tools and python libraries.
    sudo apt-get install libjpeg62-dev libxml2-dev libxslt1-dev cython \
 	libpq-dev libfreetype-dev libldap2-dev libssl-dev \
 	swig libcrack2-dev libmemcached-dev libgeoip-dev \
-	python-dev libsasl2-dev -y
+	python-dev libsasl2-dev libmysqlclient-dev -y
 
 Now you can proceed with :ref:`installing_setuptools`.
 

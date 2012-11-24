@@ -39,12 +39,13 @@ Dependencies
 ~~~~~~~~~~~~
 
 The Baruwa Custom module uses the following perl packages ``String::CRC32``,
-``Encoding::FixLatin``, ``AnyEvent::Handle`` and ``EV``. These packages need
-to be installed on your system for the module to function correctly.
+``Encoding::FixLatin``, ``AnyEvent::Handle``, ``DBD::mysql`` and ``EV``.
+These packages need to be installed on your system for the module to function
+correctly.
 
 Install the Perl modules using CPAN::
 
-	cpan install String::CRC32 Encoding::FixLatin AnyEvent::Handle EV
+	cpan install String::CRC32 Encoding::FixLatin AnyEvent::Handle EV DBD::mysql
 
 .. _install_custom_module:
 

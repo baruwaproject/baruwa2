@@ -34,5 +34,6 @@ MailScanner Requirements
 	+ MailScanner >= 4.80.10-1
 	+ DBI
 	+ DBD-Pg
+	+ DBD-MySQL
 	+ DBD-SQLite
 
