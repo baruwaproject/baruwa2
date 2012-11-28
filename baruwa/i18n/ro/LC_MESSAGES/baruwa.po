@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: baruwa\n"
 "Report-Msgid-Bugs-To: baruwa@lists.baruwa.org\n"
-"POT-Creation-Date: 2012-11-24 10:27+0200\n"
-"PO-Revision-Date: 2012-11-24 10:33+0200\n"
+"POT-Creation-Date: 2012-11-27 08:23+0200\n"
+"PO-Revision-Date: 2012-11-27 08:31+0200\n"
 "Last-Translator: Andrew Colin Kissa <andrew@topdog.za.net>\n"
 "Language-Team: Baruwa Project\n"
 "MIME-Version: 1.0\n"
@@ -133,61 +133,61 @@ msgstr "Raport de utilizare vasile"
 msgid "Baruwa quarantine report"
 msgstr "Raport de carantină vasile"
 
-#: baruwa/controllers/accounts.py:98
+#: baruwa/controllers/accounts.py:99
 msgid "You have been banned after several failed logins"
 msgstr "Care au fost interzise după mai multe nu a reuşit logins"
 
-#: baruwa/controllers/accounts.py:150
+#: baruwa/controllers/accounts.py:152
 msgid "First time Login from external auth, your local account was created"
 msgstr "Prima dată Login autentificare externă, contul locale a fost creat"
 
-#: baruwa/controllers/accounts.py:266
+#: baruwa/controllers/accounts.py:268
 #, python-format
 msgid "Login successful, Welcome back %(username)s !"
 msgstr "Login de succes, bine ai venit înapoi %(username)s!"
 
-#: baruwa/controllers/accounts.py:318 baruwa/controllers/accounts.py:348
+#: baruwa/controllers/accounts.py:320 baruwa/controllers/accounts.py:350
 #, python-format
 msgid "The account password for %(name)s has been reset"
 msgstr "Parola contului pentru %(name)s a fost resetată"
 
-#: baruwa/controllers/accounts.py:325 baruwa/controllers/accounts.py:355
+#: baruwa/controllers/accounts.py:327 baruwa/controllers/accounts.py:357
 msgid "This is an external account, use external system to reset the password"
 msgstr ""
 "Acesta este un cont de externe, utilizaţi sistemul extern pentru a reseta "
 "parola"
 
-#: baruwa/controllers/accounts.py:361
+#: baruwa/controllers/accounts.py:363
 msgid "The old password supplied does not match our records"
 msgstr "Vechea parola furnizată nu corespunde înregistrărilor noastre"
 
-#: baruwa/controllers/accounts.py:537
+#: baruwa/controllers/accounts.py:539
 #, python-format
 msgid "The account: %(user)s was created successfully"
 msgstr "Cont: %(user)s a fost creat cu succes"
 
-#: baruwa/controllers/accounts.py:543
+#: baruwa/controllers/accounts.py:545
 msgid "Either the username or email address already exist"
 msgstr "Fie numele de utilizator sau adresa de email exista deja"
 
-#: baruwa/controllers/accounts.py:574
+#: baruwa/controllers/accounts.py:576
 msgid "The account has been updated"
 msgstr "Contul a fost actualizat"
 
-#: baruwa/controllers/accounts.py:583
+#: baruwa/controllers/accounts.py:585
 #, python-format
 msgid "The account: %(acc)s could not be updated"
 msgstr "Cont: %(acc)s Imposibil de actualizat"
 
-#: baruwa/controllers/accounts.py:589
+#: baruwa/controllers/accounts.py:591
 msgid "No changes made to the account"
 msgstr "Modificări făcute în contul"
 
-#: baruwa/controllers/accounts.py:611
+#: baruwa/controllers/accounts.py:613
 msgid "The account has been deleted"
 msgstr "Contul a fost şters"
 
-#: baruwa/controllers/accounts.py:620
+#: baruwa/controllers/accounts.py:622
 #, python-format
 msgid ""
 "The account: %(a)s and all associated data will be deleted, This action is "
@@ -196,11 +196,11 @@ msgstr ""
 "Cont: %(a)s şi vor fi şterse toate datele asociate, această acţiune nu este "
 "reversibilă."
 
-#: baruwa/controllers/accounts.py:677
+#: baruwa/controllers/accounts.py:679
 msgid "The accounts have been deleted"
 msgstr "Conturile au fost şterse"
 
-#: baruwa/controllers/accounts.py:680
+#: baruwa/controllers/accounts.py:682
 msgid ""
 "The following accounts are about to be deleted, this action is not "
 "reversible, Do you wish to continue ?"
@@ -208,38 +208,38 @@ msgstr ""
 "Următoarele conturi sunt pe cale să fie şters, această acţiune nu este "
 "reversibilă, doriti să continuaţi?"
 
-#: baruwa/controllers/accounts.py:689 baruwa/controllers/domains.py:384
+#: baruwa/controllers/accounts.py:691 baruwa/controllers/domains.py:384
 msgid "An error occured try again"
 msgstr "Eroare la încercaţi din nou"
 
-#: baruwa/controllers/accounts.py:726
+#: baruwa/controllers/accounts.py:728
 #, python-format
 msgid "The alias address %(address)s was successfully created."
 msgstr "Adresă alias %(address)s a fost creat cu succes."
 
-#: baruwa/controllers/accounts.py:728 baruwa/controllers/accounts.py:775
+#: baruwa/controllers/accounts.py:730 baruwa/controllers/accounts.py:777
 #, python-format
 msgid "The address %(addr)s already exists"
 msgstr "Adresa %(addr)s Există deja"
 
-#: baruwa/controllers/accounts.py:731 baruwa/controllers/accounts.py:778
+#: baruwa/controllers/accounts.py:733 baruwa/controllers/accounts.py:780
 #, python-format
 msgid "Domain: %(d)s does not belong to you"
 msgstr "Domeniu: %(d)s nu vă aparţine"
 
-#: baruwa/controllers/accounts.py:771
+#: baruwa/controllers/accounts.py:773
 msgid "The alias address has been updated"
 msgstr "Adresă alias a fost actualizat"
 
-#: baruwa/controllers/accounts.py:773
+#: baruwa/controllers/accounts.py:775
 msgid "No changes were made to the address"
 msgstr "Modificări au fost făcute la adresa"
 
-#: baruwa/controllers/accounts.py:806
+#: baruwa/controllers/accounts.py:808
 msgid "The address has been deleted"
 msgstr "Adresa a fost şters"
 
-#: baruwa/controllers/accounts.py:874 baruwa/controllers/organizations.py:358
+#: baruwa/controllers/accounts.py:876 baruwa/controllers/organizations.py:358
 msgid ""
 "File uploaded, and is being processed, this page will automatically refresh "
 "to show the status"
@@ -247,49 +247,49 @@ msgstr ""
 "Dosar încărcat, şi este în curs de procesare, această pagină se va "
 "reîmprospăta automat pentru a afișa starea"
 
-#: baruwa/controllers/accounts.py:881 baruwa/controllers/organizations.py:364
+#: baruwa/controllers/accounts.py:883 baruwa/controllers/organizations.py:364
 #, python-format
 msgid "The file: %s is not a CSV file"
 msgstr "Fişierul: %s nu este un fişier CSV"
 
-#: baruwa/controllers/accounts.py:884 baruwa/controllers/organizations.py:367
+#: baruwa/controllers/accounts.py:886 baruwa/controllers/organizations.py:367
 #, python-format
 msgid "The file: %s already exists and is being processed."
 msgstr "Fişierul: %s există deja şi este în curs de procesare."
 
-#: baruwa/controllers/accounts.py:888 baruwa/controllers/organizations.py:371
+#: baruwa/controllers/accounts.py:890 baruwa/controllers/organizations.py:371
 msgid "No CSV was file uploaded, try again"
 msgstr "CSV nu a fost dosar încărcat, încercaţi din nou"
 
-#: baruwa/controllers/accounts.py:898 baruwa/controllers/accounts.py:954
+#: baruwa/controllers/accounts.py:900 baruwa/controllers/accounts.py:956
 #: baruwa/controllers/domains.py:867 baruwa/controllers/messages.py:640
 #: baruwa/controllers/messages.py:642 baruwa/controllers/organizations.py:380
 #: baruwa/controllers/status.py:497
 msgid "The task status requested has expired or does not exist"
 msgstr "Starea de activitate a solicitat a expirat sau nu exista"
 
-#: baruwa/controllers/accounts.py:906 baruwa/controllers/accounts.py:962
+#: baruwa/controllers/accounts.py:908 baruwa/controllers/accounts.py:964
 #: baruwa/controllers/domains.py:875 baruwa/controllers/organizations.py:388
 #: baruwa/controllers/status.py:505
 #, python-format
 msgid "Error occured in processing %s"
 msgstr "Eroare la prelucrarea %s"
 
-#: baruwa/controllers/accounts.py:909 baruwa/controllers/accounts.py:965
+#: baruwa/controllers/accounts.py:911 baruwa/controllers/accounts.py:967
 #: baruwa/controllers/domains.py:878 baruwa/controllers/organizations.py:391
 #: baruwa/controllers/status.py:508
 msgid "Backend error occured during processing."
 msgstr "Back-end eroare în timpul prelucrării."
 
-#: baruwa/controllers/accounts.py:926 baruwa/controllers/organizations.py:411
+#: baruwa/controllers/accounts.py:928 baruwa/controllers/organizations.py:411
 msgid "The import could not be processed, try again later"
 msgstr "Importul nu a putut fi prelucrate, încercaţi din nou mai târziu"
 
-#: baruwa/controllers/accounts.py:946
+#: baruwa/controllers/accounts.py:948
 msgid "Accounts export is being processed"
 msgstr "Conturile de export este în curs de procesare"
 
-#: baruwa/controllers/accounts.py:981 baruwa/controllers/domains.py:888
+#: baruwa/controllers/accounts.py:983 baruwa/controllers/domains.py:888
 msgid "The export could not be processed, try again later"
 msgstr "Exportul nu a putut fi prelucrate, încercaţi din nou mai târziu"
 
@@ -532,13 +532,13 @@ msgid "System was unable to process your request"
 msgstr "Sistemul nu a reușit să proceseze solicitarea dvs"
 
 #: baruwa/controllers/lists.py:248 baruwa/controllers/lists.py:291
-#: baruwa/forms/lists.py:39 baruwa/templates/base.html:86
+#: baruwa/forms/lists.py:39 baruwa/templates/base.html:75
 #: baruwa/templates/lists/add.html:49 baruwa/templates/lists/delete.html:38
 msgid "Approved senders"
 msgstr "Aprobat expeditori"
 
 #: baruwa/controllers/lists.py:250 baruwa/controllers/lists.py:293
-#: baruwa/forms/lists.py:40 baruwa/templates/base.html:87
+#: baruwa/forms/lists.py:40 baruwa/templates/base.html:76
 #: baruwa/templates/lists/add.html:50 baruwa/templates/lists/delete.html:39
 msgid "Banned senders"
 msgstr "Interzis expeditori"
@@ -774,7 +774,7 @@ msgid "The signature has been deleted"
 msgstr "Semnătura a fost şters"
 
 #: baruwa/controllers/status.py:96 baruwa/lib/misc.py:176
-#: baruwa/model/messages.py:146 baruwa/templates/messages/functions.html:42
+#: baruwa/model/messages.py:150 baruwa/templates/messages/functions.html:42
 #: baruwa/templates/messages/index.html:71
 #: baruwa/templates/messages/searchresults.html:66
 #: baruwa/templates/status/index.html:25
@@ -823,36 +823,36 @@ msgstr "Nici o interogare specificată pentru export de jurnal auditare"
 msgid "The audit log export failed, try again later"
 msgstr "Export jurnal de audit nu a reuşit, încercaţi din nou mai târziu"
 
-#: baruwa/forms/accounts.py:32 baruwa/forms/domains.py:34
+#: baruwa/forms/accounts.py:33 baruwa/forms/domains.py:34
 #: baruwa/forms/lists.py:33 baruwa/forms/messages.py:27
 #: baruwa/forms/misc.py:28 baruwa/forms/organizations.py:33
 #: baruwa/forms/reports.py:33 baruwa/forms/settings.py:30
-#: baruwa/model/status.py:32 baruwa/tasks/status.py:45
+#: baruwa/model/status.py:33 baruwa/tasks/status.py:45
 msgid "hi"
 msgstr "salut"
 
-#: baruwa/forms/accounts.py:41
+#: baruwa/forms/accounts.py:42 baruwa/templates/accounts/account.html:5
 msgid "User"
 msgstr "Utilizator"
 
-#: baruwa/forms/accounts.py:42
+#: baruwa/forms/accounts.py:43
 msgid "Domain admin"
 msgstr "Domeniu de admin"
 
-#: baruwa/forms/accounts.py:43
+#: baruwa/forms/accounts.py:44 baruwa/templates/accounts/account.html:5
 msgid "Administrator"
 msgstr "Administrator"
 
-#: baruwa/forms/accounts.py:59
+#: baruwa/forms/accounts.py:60
 #, python-format
 msgid "The domain: %(dom)s is not local"
 msgstr "Domeniu: %(dom)s nu este local"
 
-#: baruwa/forms/accounts.py:68 baruwa/forms/accounts.py:105
+#: baruwa/forms/accounts.py:69 baruwa/forms/accounts.py:106
 msgid "Please select atleast one domain"
 msgstr "Vă rugăm să selectaţi atleast un domeniu"
 
-#: baruwa/forms/accounts.py:74 baruwa/forms/accounts.py:110
+#: baruwa/forms/accounts.py:75 baruwa/forms/accounts.py:111
 #: baruwa/tasks/status.py:296 baruwa/templates/accounts/account.html:38
 #: baruwa/templates/accounts/confirmbulkdel.html:8
 #: baruwa/templates/accounts/importstatus.html:5
@@ -863,32 +863,32 @@ msgstr "Vă rugăm să selectaţi atleast un domeniu"
 msgid "Username"
 msgstr "Numele de utilizator"
 
-#: baruwa/forms/accounts.py:77 baruwa/forms/accounts.py:112
+#: baruwa/forms/accounts.py:78 baruwa/forms/accounts.py:113
 #: baruwa/forms/invite.py:98
 msgid "First name"
 msgstr "Prenume"
 
-#: baruwa/forms/accounts.py:79 baruwa/forms/accounts.py:113
+#: baruwa/forms/accounts.py:80 baruwa/forms/accounts.py:114
 #: baruwa/forms/invite.py:99
 msgid "Last name"
 msgstr "Numele de familie"
 
-#: baruwa/forms/accounts.py:81 baruwa/forms/accounts.py:138
+#: baruwa/forms/accounts.py:82 baruwa/forms/accounts.py:140
 #: baruwa/forms/invite.py:101
 msgid "New Password"
 msgstr "Parolă nouă"
 
-#: baruwa/forms/accounts.py:84 baruwa/forms/accounts.py:141
+#: baruwa/forms/accounts.py:85 baruwa/forms/accounts.py:143
 #: baruwa/forms/invite.py:105 baruwa/forms/organizations.py:65
 msgid "Passwords must match"
 msgstr "Parolele trebuie să corespundă"
 
-#: baruwa/forms/accounts.py:85 baruwa/forms/accounts.py:142
+#: baruwa/forms/accounts.py:86 baruwa/forms/accounts.py:144
 #: baruwa/forms/invite.py:106 baruwa/forms/organizations.py:64
 msgid "Retype Password"
 msgstr "Tastați din nou parola"
 
-#: baruwa/forms/accounts.py:87 baruwa/forms/accounts.py:114
+#: baruwa/forms/accounts.py:88 baruwa/forms/accounts.py:115
 #: baruwa/forms/invite.py:100 baruwa/templates/accounts/confirmbulkdel.html:10
 #: baruwa/templates/accounts/index.html:36
 #: baruwa/templates/accounts/login.html:58
@@ -896,63 +896,67 @@ msgstr "Tastați din nou parola"
 msgid "Email address"
 msgstr "Adresa de e-mail"
 
-#: baruwa/forms/accounts.py:91 baruwa/templates/accounts/account.html:86
+#: baruwa/forms/accounts.py:91 baruwa/forms/accounts.py:116
+msgid "Timezone"
+msgstr "Fusul orar"
+
+#: baruwa/forms/accounts.py:92 baruwa/templates/accounts/account.html:86
 msgid "Account type"
 msgstr "Tip de cont"
 
-#: baruwa/forms/accounts.py:93 baruwa/forms/accounts.py:115
-#: baruwa/forms/organizations.py:49 baruwa/templates/base.html:103
+#: baruwa/forms/accounts.py:94 baruwa/forms/accounts.py:117
+#: baruwa/forms/organizations.py:49 baruwa/templates/base.html:92
 #: baruwa/templates/accounts/account.html:112
 msgid "Domains"
 msgstr "Domenii"
 
-#: baruwa/forms/accounts.py:96 baruwa/forms/accounts.py:117
-#: baruwa/forms/accounts.py:133 baruwa/forms/domains.py:95
-#: baruwa/forms/domains.py:133 baruwa/forms/domains.py:141
-#: baruwa/forms/domains.py:150 baruwa/forms/domains.py:165
+#: baruwa/forms/accounts.py:97 baruwa/forms/accounts.py:119
+#: baruwa/forms/accounts.py:135 baruwa/forms/domains.py:95
+#: baruwa/forms/domains.py:134 baruwa/forms/domains.py:142
+#: baruwa/forms/domains.py:151 baruwa/forms/domains.py:166
 #: baruwa/forms/organizations.py:61 baruwa/forms/settings.py:174
 #: baruwa/forms/settings.py:705 baruwa/forms/settings.py:710
-#: baruwa/lib/templates/helpers.py:225 baruwa/templates/settings/index.html:17
+#: baruwa/lib/templates/helpers.py:226 baruwa/templates/settings/index.html:17
 msgid "Enabled"
 msgstr "Activat"
 
-#: baruwa/forms/accounts.py:97 baruwa/forms/accounts.py:118
+#: baruwa/forms/accounts.py:98 baruwa/forms/accounts.py:120
 #: baruwa/templates/accounts/account.html:132
 msgid "Send reports"
 msgstr "Trimite rapoarte"
 
-#: baruwa/forms/accounts.py:98 baruwa/forms/accounts.py:119
+#: baruwa/forms/accounts.py:99 baruwa/forms/accounts.py:121
 msgid "Enable spam checks"
 msgstr "Activare verificări de spam"
 
-#: baruwa/forms/accounts.py:99 baruwa/forms/domains.py:104
+#: baruwa/forms/accounts.py:100 baruwa/forms/domains.py:104
 msgid "Probable spam score"
 msgstr "Scor de spam-ul probabil"
 
-#: baruwa/forms/accounts.py:100 baruwa/forms/domains.py:105
+#: baruwa/forms/accounts.py:101 baruwa/forms/domains.py:105
 msgid "Definite spam score"
 msgstr "Scor de spam certă"
 
-#: baruwa/forms/accounts.py:120 baruwa/templates/domains/detail.html:108
+#: baruwa/forms/accounts.py:122 baruwa/templates/domains/detail.html:108
 msgid "Spam low score"
 msgstr "Spam-ul scor redus"
 
-#: baruwa/forms/accounts.py:121 baruwa/templates/domains/detail.html:116
+#: baruwa/forms/accounts.py:123 baruwa/templates/domains/detail.html:116
 msgid "Spam high score"
 msgstr "Mare scor de spam"
 
-#: baruwa/forms/accounts.py:147
+#: baruwa/forms/accounts.py:149
 msgid "Old Password"
 msgstr "Parola veche"
 
-#: baruwa/forms/domains.py:48 baruwa/templates/base.html:79
+#: baruwa/forms/domains.py:48 baruwa/templates/base.html:68
 #: baruwa/templates/messages/detail.html:150
 #: baruwa/templates/messages/taskstatus.html:6
 msgid "Quarantine"
 msgstr "Carantină"
 
 #: baruwa/forms/domains.py:49 baruwa/forms/messages.py:79
-#: baruwa/forms/settings.py:133 baruwa/model/status.py:41
+#: baruwa/forms/settings.py:133 baruwa/model/status.py:42
 #: baruwa/templates/accounts/account.html:175
 #: baruwa/templates/accounts/account.html:177
 #: baruwa/templates/accounts/account.html:203
@@ -990,7 +994,7 @@ msgstr "Săptămânal"
 msgid "Daily"
 msgstr "Zilnic"
 
-#: baruwa/forms/domains.py:57 baruwa/lib/templates/helpers.py:228
+#: baruwa/forms/domains.py:57 baruwa/lib/templates/helpers.py:229
 msgid "Disabled"
 msgstr "Cu handicap"
 
@@ -1044,7 +1048,7 @@ msgstr "Nume incorect de domeniu sau o adresă IP"
 msgid "Domain name"
 msgstr "Nume de domeniu"
 
-#: baruwa/forms/domains.py:92 baruwa/forms/domains.py:132
+#: baruwa/forms/domains.py:92 baruwa/forms/domains.py:133
 #: baruwa/forms/invite.py:110
 msgid "Invalid Domain name"
 msgstr "Nume de domeniu nevalid"
@@ -1094,102 +1098,106 @@ msgid "Language"
 msgstr "Limba"
 
 #: baruwa/forms/domains.py:114
+msgid "Default Timezone"
+msgstr "Fus orar implicit"
+
+#: baruwa/forms/domains.py:115
 msgid "Report frequency"
 msgstr "Raport de frecvenţă"
 
-#: baruwa/forms/domains.py:116 baruwa/templates/base.html:125
+#: baruwa/forms/domains.py:117 baruwa/templates/base.html:114
 #: baruwa/templates/accounts/account.html:95
 msgid "Organizations"
 msgstr "Organizaţii"
 
-#: baruwa/forms/domains.py:130
+#: baruwa/forms/domains.py:131
 msgid "Domain alias name"
 msgstr "Numele de alias domeniu"
 
-#: baruwa/forms/domains.py:134
+#: baruwa/forms/domains.py:135
 msgid "Parent domain"
 msgstr "Domeniul părinte"
 
-#: baruwa/forms/domains.py:146 baruwa/forms/domains.py:155
-#: baruwa/forms/domains.py:160
+#: baruwa/forms/domains.py:147 baruwa/forms/domains.py:156
+#: baruwa/forms/domains.py:161
 msgid "Server address"
 msgstr "Adresa de server"
 
-#: baruwa/forms/domains.py:148 baruwa/forms/domains.py:162
+#: baruwa/forms/domains.py:149 baruwa/forms/domains.py:163
 #: baruwa/forms/invite.py:113
 msgid "Protocol"
 msgstr "Protocolul"
 
-#: baruwa/forms/domains.py:149 baruwa/forms/domains.py:163
+#: baruwa/forms/domains.py:150 baruwa/forms/domains.py:164
 #: baruwa/forms/invite.py:114
 msgid "Port"
 msgstr "Port"
 
-#: baruwa/forms/domains.py:164
+#: baruwa/forms/domains.py:165
 msgid "must be numeric"
 msgstr "trebuie să fie numerică"
 
-#: baruwa/forms/domains.py:166
+#: baruwa/forms/domains.py:167
 msgid "Split address"
 msgstr "Split adresa"
 
-#: baruwa/forms/domains.py:167
+#: baruwa/forms/domains.py:168
 msgid "Username map template"
 msgstr "Şablon de hartă de utilizator"
 
-#: baruwa/forms/domains.py:172
+#: baruwa/forms/domains.py:173
 msgid "Base DN"
 msgstr "Baza DN"
 
-#: baruwa/forms/domains.py:173
+#: baruwa/forms/domains.py:174
 msgid "Username attribute"
 msgstr "Atributul username"
 
-#: baruwa/forms/domains.py:176
+#: baruwa/forms/domains.py:177
 msgid "Email attribute"
 msgstr "Atribut de e-mail"
 
-#: baruwa/forms/domains.py:179
+#: baruwa/forms/domains.py:180
 msgid "Bind DN"
 msgstr "Obligati DN"
 
-#: baruwa/forms/domains.py:180
+#: baruwa/forms/domains.py:181
 msgid "Bind password"
 msgstr "Obligati parola"
 
-#: baruwa/forms/domains.py:181
+#: baruwa/forms/domains.py:182
 msgid "Use TLS"
 msgstr "Utilizarea TLS"
 
-#: baruwa/forms/domains.py:182
+#: baruwa/forms/domains.py:183
 msgid "Search for UserDN"
 msgstr "Cauta UserDN"
 
-#: baruwa/forms/domains.py:183
+#: baruwa/forms/domains.py:184
 msgid "Auth Search Filter"
 msgstr "Filtru căutare auth"
 
-#: baruwa/forms/domains.py:184
+#: baruwa/forms/domains.py:185
 msgid "Auth Search Scope"
 msgstr "Domeniu de căutare auth"
 
-#: baruwa/forms/domains.py:186
+#: baruwa/forms/domains.py:187
 msgid "Email Search Filter"
 msgstr "Filtrul de căutare poştă electronică"
 
-#: baruwa/forms/domains.py:187
+#: baruwa/forms/domains.py:188
 msgid "Email Search Scope"
 msgstr "Domeniu de căutare poştă electronică"
 
-#: baruwa/forms/domains.py:202
+#: baruwa/forms/domains.py:203
 msgid "Unsupported search scope"
 msgstr "Domeniu de căutare neacceptat"
 
-#: baruwa/forms/domains.py:208
+#: baruwa/forms/domains.py:209
 msgid "Radius secret"
 msgstr "Raza secret"
 
-#: baruwa/forms/domains.py:209
+#: baruwa/forms/domains.py:210
 msgid "Request timeout"
 msgstr "Cerere de expirare"
 
@@ -1568,13 +1576,11 @@ msgstr "da"
 #: baruwa/forms/settings.py:35 baruwa/forms/settings.py:38
 #: baruwa/forms/settings.py:50 baruwa/forms/settings.py:53
 #, fuzzy
-#| msgid "Info"
 msgid "No"
 msgstr "Info"
 
 #: baruwa/forms/settings.py:36 baruwa/forms/settings.py:41
 #, fuzzy
-#| msgid "Create"
 msgid "Replace"
 msgstr "Creaţi"
 
@@ -1590,7 +1596,6 @@ msgstr "Adăugare"
 
 #: baruwa/forms/settings.py:42
 #, fuzzy
-#| msgid "Action not supported"
 msgid "Supported"
 msgstr "Acţiune nu acceptate"
 
@@ -1600,13 +1605,11 @@ msgstr "Nici unul"
 
 #: baruwa/forms/settings.py:44
 #, fuzzy
-#| msgid "Action not supported"
 msgid "Unsupported"
 msgstr "Acţiune nu acceptate"
 
 #: baruwa/forms/settings.py:45
 #, fuzzy
-#| msgid "Graph"
 msgid "Alpha"
 msgstr "Grafic"
 
@@ -1620,7 +1623,6 @@ msgstr "Începe"
 
 #: baruwa/forms/settings.py:48
 #, fuzzy
-#| msgid "enabled"
 msgid "End"
 msgstr "activat"
 
@@ -1634,7 +1636,6 @@ msgstr "Detectare automată"
 
 #: baruwa/forms/settings.py:132
 #, fuzzy
-#| msgid "does not contain"
 msgid "Do nothing"
 msgstr "nu conține"
 
@@ -2457,7 +2458,11 @@ msgstr "Semnatura HTML"
 msgid "Signature"
 msgstr "Semnătura"
 
-#: baruwa/lib/misc.py:165 baruwa/model/messages.py:135
+#: baruwa/lib/filters.py:25
+msgid "System default"
+msgstr "Sistem implicit"
+
+#: baruwa/lib/misc.py:165 baruwa/model/messages.py:139
 #: baruwa/templates/messages/functions.html:31
 #: baruwa/templates/messages/index.html:60
 #: baruwa/templates/messages/quarantine.html:3
@@ -2472,7 +2477,7 @@ msgstr "Spam-ul"
 msgid "BL"
 msgstr "BL"
 
-#: baruwa/lib/misc.py:171 baruwa/model/messages.py:141
+#: baruwa/lib/misc.py:171 baruwa/model/messages.py:145
 #: baruwa/templates/messages/functions.html:37
 #: baruwa/templates/messages/index.html:66
 #: baruwa/templates/messages/searchresults.html:61
@@ -2484,7 +2489,7 @@ msgstr "Infectate"
 msgid "WL"
 msgstr "WL"
 
-#: baruwa/lib/misc.py:180 baruwa/model/messages.py:150
+#: baruwa/lib/misc.py:180 baruwa/model/messages.py:154
 #: baruwa/templates/messages/functions.html:46
 #: baruwa/templates/messages/index.html:75
 #: baruwa/templates/messages/searchresults.html:70
@@ -2812,58 +2817,58 @@ msgstr "Numai administratorii sau proprietarii pot vizualiza detalii domeniu"
 msgid "Only Administrators or owners can view account details"
 msgstr "Numai administratorii sau proprietarii pot vizualiza detalii cont"
 
-#: baruwa/lib/templates/helpers.py:68
+#: baruwa/lib/templates/helpers.py:69
 msgid "unknown"
 msgstr "necunoscut"
 
-#: baruwa/lib/templates/helpers.py:142
+#: baruwa/lib/templates/helpers.py:143
 msgid "IPv6 Link local address"
 msgstr "Adresă IPv6 Link local"
 
-#: baruwa/lib/templates/helpers.py:145
+#: baruwa/lib/templates/helpers.py:146
 msgid "RFC1918 Private address"
 msgstr "RFC1918 Private adresa"
 
-#: baruwa/lib/templates/helpers.py:147
+#: baruwa/lib/templates/helpers.py:148
 msgid "Reverse lookup failed"
 msgstr "Căutare inversă nu a reușit"
 
-#: baruwa/lib/templates/helpers.py:168 baruwa/lib/templates/helpers.py:175
-#: baruwa/lib/templates/helpers.py:218
+#: baruwa/lib/templates/helpers.py:169 baruwa/lib/templates/helpers.py:176
+#: baruwa/lib/templates/helpers.py:219
 msgid "N"
 msgstr "N"
 
-#: baruwa/lib/templates/helpers.py:172 baruwa/lib/templates/helpers.py:217
+#: baruwa/lib/templates/helpers.py:173 baruwa/lib/templates/helpers.py:218
 msgid "Y"
 msgstr "ŞI"
 
-#: baruwa/model/messages.py:137 baruwa/templates/messages/functions.html:33
+#: baruwa/model/messages.py:141 baruwa/templates/messages/functions.html:33
 msgid "BS"
 msgstr "BS"
 
-#: baruwa/model/messages.py:148 baruwa/templates/messages/functions.html:44
+#: baruwa/model/messages.py:152 baruwa/templates/messages/functions.html:44
 msgid "AS"
 msgstr "CA"
 
-#: baruwa/model/status.py:38
+#: baruwa/model/status.py:39
 msgid "Read"
 msgstr "Citeste"
 
-#: baruwa/model/status.py:39 baruwa/templates/accounts/editaddress.html:18
+#: baruwa/model/status.py:40 baruwa/templates/accounts/editaddress.html:18
 #: baruwa/templates/domains/editalias.html:16
 #: baruwa/templates/domains/editauth.html:16
 msgid "Update"
 msgstr "Actualizare"
 
-#: baruwa/model/status.py:40 baruwa/templates/accounts/addaddress.html:18
+#: baruwa/model/status.py:41 baruwa/templates/accounts/addaddress.html:18
 msgid "Create"
 msgstr "Creaţi"
 
-#: baruwa/model/status.py:42
+#: baruwa/model/status.py:43
 msgid "Export"
 msgstr "Export"
 
-#: baruwa/model/status.py:43
+#: baruwa/model/status.py:44
 msgid "Auth"
 msgstr "Autentificare"
 
@@ -2938,7 +2943,7 @@ msgstr "Jurnalul de audit eroare: %s %s %s %s %s %s eroare: %s"
 msgid "Audit Log exported report"
 msgstr "Jurnalul de audit exportate raport"
 
-#: baruwa/tasks/status.py:294 baruwa/templates/base.html:98
+#: baruwa/tasks/status.py:294 baruwa/templates/base.html:87
 msgid "Audit Logs"
 msgstr "Jurnalele de auditare"
 
@@ -2982,87 +2987,83 @@ msgstr "Jurnal de export complet de audit: %s"
 msgid "Audit Log export FAILURE: %s"
 msgstr "Jurnal de export eşecul de audit: %s"
 
-#: baruwa/templates/base.html:33
-msgid "Language: "
-msgstr "Limba: "
-
-#: baruwa/templates/base.html:44 baruwa/templates/status/index.html:83
+#: baruwa/templates/base.html:33 baruwa/templates/status/index.html:83
 msgid "OK"
 msgstr "ok"
 
-#: baruwa/templates/base.html:44 baruwa/templates/status/index.html:83
+#: baruwa/templates/base.html:33 baruwa/templates/status/index.html:83
 msgid "FAULTY"
 msgstr "DEFECT"
 
-#: baruwa/templates/base.html:51
+#: baruwa/templates/base.html:40
 msgid "Total "
 msgstr "Total "
 
-#: baruwa/templates/base.html:51
+#: baruwa/templates/base.html:40
 msgid "Spam "
 msgstr "Spam-ul "
 
-#: baruwa/templates/base.html:51
+#: baruwa/templates/base.html:40
 msgid "Virus "
 msgstr "Virus "
 
-#: baruwa/templates/base.html:54
+#: baruwa/templates/base.html:43
 msgid "Msgs: "
 msgstr "Mesaje: "
 
-#: baruwa/templates/base.html:56
+#: baruwa/templates/base.html:45
 msgid "In: "
 msgstr "În: "
 
-#: baruwa/templates/base.html:58
+#: baruwa/templates/base.html:47
 msgid "Out: "
 msgstr "Out: "
 
-#: baruwa/templates/base.html:63
+#: baruwa/templates/base.html:52
 msgid "Signed in as "
 msgstr "Semnat în ca "
 
-#: baruwa/templates/base.html:64
+#: baruwa/templates/base.html:53
 msgid "Logout"
 msgstr "Deconectare"
 
-#: baruwa/templates/base.html:66
+#: baruwa/templates/base.html:55
 msgid "Not logged in :: "
 msgstr "Nu logat:: "
 
-#: baruwa/templates/base.html:66 baruwa/templates/accounts/login.html:11
+#: baruwa/templates/base.html:55 baruwa/templates/accounts/login.html:11
 #: baruwa/templates/accounts/login.html:34
 #: baruwa/templates/accounts/login.html:50
 msgid "Login"
 msgstr "Login"
 
-#: baruwa/templates/base.html:76
+#: baruwa/templates/base.html:65
 msgid "Messages"
 msgstr "Mesaje"
 
-#: baruwa/templates/base.html:78 baruwa/templates/reports/index.html:30
+#: baruwa/templates/base.html:67 baruwa/templates/reports/index.html:30
 msgid "Full message list"
 msgstr "Lista completa mesaj"
 
-#: baruwa/templates/base.html:80
+#: baruwa/templates/base.html:69
 msgid "Archive"
 msgstr "Arhiva"
 
-#: baruwa/templates/base.html:84
+#: baruwa/templates/base.html:73
 msgid "Lists"
 msgstr "Liste"
 
-#: baruwa/templates/base.html:88
+#: baruwa/templates/base.html:77
 msgid "Add to List"
 msgstr "Adauga la lista"
 
-#: baruwa/templates/base.html:91 baruwa/templates/reports/index.html:8
+#: baruwa/templates/base.html:80 baruwa/templates/reports/index.html:8
 #: baruwa/templates/reports/index.html:116
 #: baruwa/templates/reports/index.html:117
 msgid "Reports"
 msgstr "Rapoarte"
 
-#: baruwa/templates/base.html:94
+#: baruwa/templates/base.html:83
 #: baruwa/templates/accounts/confirmbulkdel.html:11
 #: baruwa/templates/accounts/importstatus.html:6
 #: baruwa/templates/accounts/index.html:37
@@ -3081,46 +3082,56 @@ msgstr "Rapoarte"
 msgid "Status"
 msgstr "Statutul"
 
-#: baruwa/templates/base.html:96
+#: baruwa/templates/base.html:85
 msgid "Mail Queues"
 msgstr "Cozi de mail"
 
-#: baruwa/templates/base.html:106
+#: baruwa/templates/base.html:95
 msgid "Add a domain"
 msgstr "Adauga un domeniu"
 
-#: baruwa/templates/base.html:111
+#: baruwa/templates/base.html:100
 #: baruwa/templates/domains/confirmbulkdel.html:9
 #: baruwa/templates/domains/index.html:30
 #: baruwa/templates/domains/searchresults.html:27
 msgid "Accounts"
 msgstr "Conturi"
 
-#: baruwa/templates/base.html:113
+#: baruwa/templates/base.html:102
 msgid "Add account"
 msgstr "Adăugare cont"
 
-#: baruwa/templates/base.html:118 baruwa/templates/domains/detail.html:229
+#: baruwa/templates/base.html:107 baruwa/templates/domains/detail.html:229
 #: baruwa/templates/domains/detail.html:231
 #: baruwa/templates/settings/index.html:32
 msgid "Settings"
 msgstr "Setări"
 
-#: baruwa/templates/base.html:120
+#: baruwa/templates/base.html:109
 msgid "Add scanning node"
 msgstr "Adauga nod de scanare"
 
-#: baruwa/templates/base.html:121
+#: baruwa/templates/base.html:110
 msgid "MailScanner settings"
 msgstr "MailScanner setările"
 
-#: baruwa/templates/base.html:127 baruwa/templates/organizations/add.html:11
+#: baruwa/templates/base.html:116 baruwa/templates/organizations/add.html:11
 msgid "Add organization"
 msgstr "Se adaugă Organizaţia"
 
-#: baruwa/templates/base.html:132
+#: baruwa/templates/base.html:121
 msgid "Account"
 msgstr "Cont"
+
+#: baruwa/templates/base.html:141
+msgid "Language: "
+msgstr "Limba: "
+
+#: baruwa/templates/accounts/account.html:5
+#, fuzzy
+#| msgid "Administrator"
+msgid "Domain Administrator"
+msgstr "Administrator"
 
 #: baruwa/templates/accounts/account.html:12
 msgid "Add signatures"

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: baruwa\n"
 "Report-Msgid-Bugs-To: baruwa@lists.baruwa.org\n"
-"POT-Creation-Date: 2012-11-24 10:27+0200\n"
-"PO-Revision-Date: 2012-11-24 10:34+0200\n"
+"POT-Creation-Date: 2012-11-27 08:23+0200\n"
+"PO-Revision-Date: 2012-11-27 08:31+0200\n"
 "Last-Translator: Andrew Colin Kissa <andrew@topdog.za.net>\n"
 "Language-Team: Baruwa Project\n"
 "MIME-Version: 1.0\n"
@@ -133,63 +133,63 @@ msgstr "Baruwa sử dụng báo cáo"
 msgid "Baruwa quarantine report"
 msgstr "Baruwa cách ly báo cáo"
 
-#: baruwa/controllers/accounts.py:98
+#: baruwa/controllers/accounts.py:99
 msgid "You have been banned after several failed logins"
 msgstr "Bạn đã bị cấm sau khi một số thất bại trong việc thông tin đăng nhập"
 
-#: baruwa/controllers/accounts.py:150
+#: baruwa/controllers/accounts.py:152
 msgid "First time Login from external auth, your local account was created"
 msgstr ""
 "Lần đầu tiên đăng nhập từ bên ngoài auth, tài khoản địa phương của bạn được "
 "tạo ra"
 
-#: baruwa/controllers/accounts.py:266
+#: baruwa/controllers/accounts.py:268
 #, python-format
 msgid "Login successful, Welcome back %(username)s !"
 msgstr "Đăng nhập thành công, hoan nghênh trở lại %(username)s!"
 
-#: baruwa/controllers/accounts.py:318 baruwa/controllers/accounts.py:348
+#: baruwa/controllers/accounts.py:320 baruwa/controllers/accounts.py:350
 #, python-format
 msgid "The account password for %(name)s has been reset"
 msgstr "Mật khẩu tài khoản cho %(name)s đã được đặt lại"
 
-#: baruwa/controllers/accounts.py:325 baruwa/controllers/accounts.py:355
+#: baruwa/controllers/accounts.py:327 baruwa/controllers/accounts.py:357
 msgid "This is an external account, use external system to reset the password"
 msgstr ""
 "Đây là một tài khoản bên ngoài, sử dụng hệ thống bên ngoài để đặt lại mật "
 "khẩu"
 
-#: baruwa/controllers/accounts.py:361
+#: baruwa/controllers/accounts.py:363
 msgid "The old password supplied does not match our records"
 msgstr "Mật khẩu cũ được cung cấp không khớp với hồ sơ của chúng tôi"
 
-#: baruwa/controllers/accounts.py:537
+#: baruwa/controllers/accounts.py:539
 #, python-format
 msgid "The account: %(user)s was created successfully"
 msgstr "Tài khoản: %(user)s được tạo ra thành công"
 
-#: baruwa/controllers/accounts.py:543
+#: baruwa/controllers/accounts.py:545
 msgid "Either the username or email address already exist"
 msgstr "Hoặc các tên người dùng hoặc địa chỉ email đã tồn tại"
 
-#: baruwa/controllers/accounts.py:574
+#: baruwa/controllers/accounts.py:576
 msgid "The account has been updated"
 msgstr "Các tài khoản đã được Cập Nhật"
 
-#: baruwa/controllers/accounts.py:583
+#: baruwa/controllers/accounts.py:585
 #, python-format
 msgid "The account: %(acc)s could not be updated"
 msgstr "Tài khoản: %(acc)s có thể không được Cập Nhật"
 
-#: baruwa/controllers/accounts.py:589
+#: baruwa/controllers/accounts.py:591
 msgid "No changes made to the account"
 msgstr "Không có thay đổi được thực hiện cho tài khoản"
 
-#: baruwa/controllers/accounts.py:611
+#: baruwa/controllers/accounts.py:613
 msgid "The account has been deleted"
 msgstr "Các tài khoản đã bị xóa"
 
-#: baruwa/controllers/accounts.py:620
+#: baruwa/controllers/accounts.py:622
 #, python-format
 msgid ""
 "The account: %(a)s and all associated data will be deleted, This action is "
@@ -198,11 +198,11 @@ msgstr ""
 "Tài khoản: %(a)s và tất cả dữ liệu liên quan sẽ bị xóa, hành động này là "
 "không thể đảo ngược."
 
-#: baruwa/controllers/accounts.py:677
+#: baruwa/controllers/accounts.py:679
 msgid "The accounts have been deleted"
 msgstr "Các tài khoản đã bị xóa"
 
-#: baruwa/controllers/accounts.py:680
+#: baruwa/controllers/accounts.py:682
 msgid ""
 "The following accounts are about to be deleted, this action is not "
 "reversible, Do you wish to continue ?"
@@ -210,38 +210,38 @@ msgstr ""
 "Các tài khoản về để được xóa, hành động này là không thể đảo ngược, bạn có "
 "muốn tiếp tục?"
 
-#: baruwa/controllers/accounts.py:689 baruwa/controllers/domains.py:384
+#: baruwa/controllers/accounts.py:691 baruwa/controllers/domains.py:384
 msgid "An error occured try again"
 msgstr "Một lỗi xảy ra thử lại"
 
-#: baruwa/controllers/accounts.py:726
+#: baruwa/controllers/accounts.py:728
 #, python-format
 msgid "The alias address %(address)s was successfully created."
 msgstr "Địa chỉ bí danh %(address)s được thành lập."
 
-#: baruwa/controllers/accounts.py:728 baruwa/controllers/accounts.py:775
+#: baruwa/controllers/accounts.py:730 baruwa/controllers/accounts.py:777
 #, python-format
 msgid "The address %(addr)s already exists"
 msgstr "Địa chỉ %(addr)s đã tồn tại"
 
-#: baruwa/controllers/accounts.py:731 baruwa/controllers/accounts.py:778
+#: baruwa/controllers/accounts.py:733 baruwa/controllers/accounts.py:780
 #, python-format
 msgid "Domain: %(d)s does not belong to you"
 msgstr "Tên miền: %(d)s không thuộc về bạn"
 
-#: baruwa/controllers/accounts.py:771
+#: baruwa/controllers/accounts.py:773
 msgid "The alias address has been updated"
 msgstr "Địa chỉ bí danh đã được Cập Nhật"
 
-#: baruwa/controllers/accounts.py:773
+#: baruwa/controllers/accounts.py:775
 msgid "No changes were made to the address"
 msgstr "Không có thay đổi đã được thực hiện đến địa chỉ"
 
-#: baruwa/controllers/accounts.py:806
+#: baruwa/controllers/accounts.py:808
 msgid "The address has been deleted"
 msgstr "Địa chỉ đã bị xóa"
 
-#: baruwa/controllers/accounts.py:874 baruwa/controllers/organizations.py:358
+#: baruwa/controllers/accounts.py:876 baruwa/controllers/organizations.py:358
 msgid ""
 "File uploaded, and is being processed, this page will automatically refresh "
 "to show the status"
@@ -249,49 +249,49 @@ msgstr ""
 "Tập tin tải lên, và đang được xử lý, Trang này sẽ tự động làm mới để hiển "
 "thị tình trạng"
 
-#: baruwa/controllers/accounts.py:881 baruwa/controllers/organizations.py:364
+#: baruwa/controllers/accounts.py:883 baruwa/controllers/organizations.py:364
 #, python-format
 msgid "The file: %s is not a CSV file"
 msgstr "Tập tin: %s không phải là một tệp CSV"
 
-#: baruwa/controllers/accounts.py:884 baruwa/controllers/organizations.py:367
+#: baruwa/controllers/accounts.py:886 baruwa/controllers/organizations.py:367
 #, python-format
 msgid "The file: %s already exists and is being processed."
 msgstr "Tập tin: %s đã tồn tại và đang được xử lý."
 
-#: baruwa/controllers/accounts.py:888 baruwa/controllers/organizations.py:371
+#: baruwa/controllers/accounts.py:890 baruwa/controllers/organizations.py:371
 msgid "No CSV was file uploaded, try again"
 msgstr "CSV không là tập tin tải lên, hãy thử lại"
 
-#: baruwa/controllers/accounts.py:898 baruwa/controllers/accounts.py:954
+#: baruwa/controllers/accounts.py:900 baruwa/controllers/accounts.py:956
 #: baruwa/controllers/domains.py:867 baruwa/controllers/messages.py:640
 #: baruwa/controllers/messages.py:642 baruwa/controllers/organizations.py:380
 #: baruwa/controllers/status.py:497
 msgid "The task status requested has expired or does not exist"
 msgstr "Trạng thái nhiệm vụ yêu cầu đã hết hạn hoặc không tồn tại"
 
-#: baruwa/controllers/accounts.py:906 baruwa/controllers/accounts.py:962
+#: baruwa/controllers/accounts.py:908 baruwa/controllers/accounts.py:964
 #: baruwa/controllers/domains.py:875 baruwa/controllers/organizations.py:388
 #: baruwa/controllers/status.py:505
 #, python-format
 msgid "Error occured in processing %s"
 msgstr "Lỗi xảy ra trong xử lý %s"
 
-#: baruwa/controllers/accounts.py:909 baruwa/controllers/accounts.py:965
+#: baruwa/controllers/accounts.py:911 baruwa/controllers/accounts.py:967
 #: baruwa/controllers/domains.py:878 baruwa/controllers/organizations.py:391
 #: baruwa/controllers/status.py:508
 msgid "Backend error occured during processing."
 msgstr "Phụ trợ lỗi xảy ra trong khi xử lý."
 
-#: baruwa/controllers/accounts.py:926 baruwa/controllers/organizations.py:411
+#: baruwa/controllers/accounts.py:928 baruwa/controllers/organizations.py:411
 msgid "The import could not be processed, try again later"
 msgstr "Chuyển nhập không thể xử lý, hãy thử lại sau"
 
-#: baruwa/controllers/accounts.py:946
+#: baruwa/controllers/accounts.py:948
 msgid "Accounts export is being processed"
 msgstr "Xuất khẩu tài khoản đang được xử lý"
 
-#: baruwa/controllers/accounts.py:981 baruwa/controllers/domains.py:888
+#: baruwa/controllers/accounts.py:983 baruwa/controllers/domains.py:888
 msgid "The export could not be processed, try again later"
 msgstr "Xuất khẩu có thể không xử lý, hãy thử lại sau"
 
@@ -529,13 +529,13 @@ msgid "System was unable to process your request"
 msgstr "Hệ thống đã không thể xử lý yêu cầu của bạn"
 
 #: baruwa/controllers/lists.py:248 baruwa/controllers/lists.py:291
-#: baruwa/forms/lists.py:39 baruwa/templates/base.html:86
+#: baruwa/forms/lists.py:39 baruwa/templates/base.html:75
 #: baruwa/templates/lists/add.html:49 baruwa/templates/lists/delete.html:38
 msgid "Approved senders"
 msgstr "Người gửi đã được phê duyệt"
 
 #: baruwa/controllers/lists.py:250 baruwa/controllers/lists.py:293
-#: baruwa/forms/lists.py:40 baruwa/templates/base.html:87
+#: baruwa/forms/lists.py:40 baruwa/templates/base.html:76
 #: baruwa/templates/lists/add.html:50 baruwa/templates/lists/delete.html:39
 msgid "Banned senders"
 msgstr "Người gửi bị Cấm"
@@ -771,7 +771,7 @@ msgid "The signature has been deleted"
 msgstr "Chữ ký đã bị xóa"
 
 #: baruwa/controllers/status.py:96 baruwa/lib/misc.py:176
-#: baruwa/model/messages.py:146 baruwa/templates/messages/functions.html:42
+#: baruwa/model/messages.py:150 baruwa/templates/messages/functions.html:42
 #: baruwa/templates/messages/index.html:71
 #: baruwa/templates/messages/searchresults.html:66
 #: baruwa/templates/status/index.html:25
@@ -820,36 +820,36 @@ msgstr "Không có truy vấn chỉ định kiểm toán đăng nhập xuất kh
 msgid "The audit log export failed, try again later"
 msgstr "Xuất khẩu đăng nhập kiểm tra không thành công, thử lại sau"
 
-#: baruwa/forms/accounts.py:32 baruwa/forms/domains.py:34
+#: baruwa/forms/accounts.py:33 baruwa/forms/domains.py:34
 #: baruwa/forms/lists.py:33 baruwa/forms/messages.py:27
 #: baruwa/forms/misc.py:28 baruwa/forms/organizations.py:33
 #: baruwa/forms/reports.py:33 baruwa/forms/settings.py:30
-#: baruwa/model/status.py:32 baruwa/tasks/status.py:45
+#: baruwa/model/status.py:33 baruwa/tasks/status.py:45
 msgid "hi"
 msgstr "Chào bạn"
 
-#: baruwa/forms/accounts.py:41
+#: baruwa/forms/accounts.py:42 baruwa/templates/accounts/account.html:5
 msgid "User"
 msgstr "Người dùng"
 
-#: baruwa/forms/accounts.py:42
+#: baruwa/forms/accounts.py:43
 msgid "Domain admin"
 msgstr "Admin tên miền"
 
-#: baruwa/forms/accounts.py:43
+#: baruwa/forms/accounts.py:44 baruwa/templates/accounts/account.html:5
 msgid "Administrator"
 msgstr "Người quản trị"
 
-#: baruwa/forms/accounts.py:59
+#: baruwa/forms/accounts.py:60
 #, python-format
 msgid "The domain: %(dom)s is not local"
 msgstr "Tên miền: %(dom)s không phải là địa phương"
 
-#: baruwa/forms/accounts.py:68 baruwa/forms/accounts.py:105
+#: baruwa/forms/accounts.py:69 baruwa/forms/accounts.py:106
 msgid "Please select atleast one domain"
 msgstr "Vui lòng chọn ít nhất một tên miền"
 
-#: baruwa/forms/accounts.py:74 baruwa/forms/accounts.py:110
+#: baruwa/forms/accounts.py:75 baruwa/forms/accounts.py:111
 #: baruwa/tasks/status.py:296 baruwa/templates/accounts/account.html:38
 #: baruwa/templates/accounts/confirmbulkdel.html:8
 #: baruwa/templates/accounts/importstatus.html:5
@@ -860,32 +860,32 @@ msgstr "Vui lòng chọn ít nhất một tên miền"
 msgid "Username"
 msgstr "Tên người dùng"
 
-#: baruwa/forms/accounts.py:77 baruwa/forms/accounts.py:112
+#: baruwa/forms/accounts.py:78 baruwa/forms/accounts.py:113
 #: baruwa/forms/invite.py:98
 msgid "First name"
 msgstr "Tên đầu tiên"
 
-#: baruwa/forms/accounts.py:79 baruwa/forms/accounts.py:113
+#: baruwa/forms/accounts.py:80 baruwa/forms/accounts.py:114
 #: baruwa/forms/invite.py:99
 msgid "Last name"
 msgstr "Tên cuối cùng"
 
-#: baruwa/forms/accounts.py:81 baruwa/forms/accounts.py:138
+#: baruwa/forms/accounts.py:82 baruwa/forms/accounts.py:140
 #: baruwa/forms/invite.py:101
 msgid "New Password"
 msgstr "Mật khẩu mới"
 
-#: baruwa/forms/accounts.py:84 baruwa/forms/accounts.py:141
+#: baruwa/forms/accounts.py:85 baruwa/forms/accounts.py:143
 #: baruwa/forms/invite.py:105 baruwa/forms/organizations.py:65
 msgid "Passwords must match"
 msgstr "Mật khẩu phải phù hợp với"
 
-#: baruwa/forms/accounts.py:85 baruwa/forms/accounts.py:142
+#: baruwa/forms/accounts.py:86 baruwa/forms/accounts.py:144
 #: baruwa/forms/invite.py:106 baruwa/forms/organizations.py:64
 msgid "Retype Password"
 msgstr "Gõ lại mật khẩu"
 
-#: baruwa/forms/accounts.py:87 baruwa/forms/accounts.py:114
+#: baruwa/forms/accounts.py:88 baruwa/forms/accounts.py:115
 #: baruwa/forms/invite.py:100 baruwa/templates/accounts/confirmbulkdel.html:10
 #: baruwa/templates/accounts/index.html:36
 #: baruwa/templates/accounts/login.html:58
@@ -893,63 +893,67 @@ msgstr "Gõ lại mật khẩu"
 msgid "Email address"
 msgstr "Địa chỉ email"
 
-#: baruwa/forms/accounts.py:91 baruwa/templates/accounts/account.html:86
+#: baruwa/forms/accounts.py:91 baruwa/forms/accounts.py:116
+msgid "Timezone"
+msgstr "Timezone"
+
+#: baruwa/forms/accounts.py:92 baruwa/templates/accounts/account.html:86
 msgid "Account type"
 msgstr "Loại trương mục"
 
-#: baruwa/forms/accounts.py:93 baruwa/forms/accounts.py:115
-#: baruwa/forms/organizations.py:49 baruwa/templates/base.html:103
+#: baruwa/forms/accounts.py:94 baruwa/forms/accounts.py:117
+#: baruwa/forms/organizations.py:49 baruwa/templates/base.html:92
 #: baruwa/templates/accounts/account.html:112
 msgid "Domains"
 msgstr "Tên miền"
 
-#: baruwa/forms/accounts.py:96 baruwa/forms/accounts.py:117
-#: baruwa/forms/accounts.py:133 baruwa/forms/domains.py:95
-#: baruwa/forms/domains.py:133 baruwa/forms/domains.py:141
-#: baruwa/forms/domains.py:150 baruwa/forms/domains.py:165
+#: baruwa/forms/accounts.py:97 baruwa/forms/accounts.py:119
+#: baruwa/forms/accounts.py:135 baruwa/forms/domains.py:95
+#: baruwa/forms/domains.py:134 baruwa/forms/domains.py:142
+#: baruwa/forms/domains.py:151 baruwa/forms/domains.py:166
 #: baruwa/forms/organizations.py:61 baruwa/forms/settings.py:174
 #: baruwa/forms/settings.py:705 baruwa/forms/settings.py:710
-#: baruwa/lib/templates/helpers.py:225 baruwa/templates/settings/index.html:17
+#: baruwa/lib/templates/helpers.py:226 baruwa/templates/settings/index.html:17
 msgid "Enabled"
 msgstr "Kích hoạt"
 
-#: baruwa/forms/accounts.py:97 baruwa/forms/accounts.py:118
+#: baruwa/forms/accounts.py:98 baruwa/forms/accounts.py:120
 #: baruwa/templates/accounts/account.html:132
 msgid "Send reports"
 msgstr "Gửi báo cáo"
 
-#: baruwa/forms/accounts.py:98 baruwa/forms/accounts.py:119
+#: baruwa/forms/accounts.py:99 baruwa/forms/accounts.py:121
 msgid "Enable spam checks"
 msgstr "Sử kiểm tra thư rác"
 
-#: baruwa/forms/accounts.py:99 baruwa/forms/domains.py:104
+#: baruwa/forms/accounts.py:100 baruwa/forms/domains.py:104
 msgid "Probable spam score"
 msgstr "Có thể xảy ra thư rác được điểm"
 
-#: baruwa/forms/accounts.py:100 baruwa/forms/domains.py:105
+#: baruwa/forms/accounts.py:101 baruwa/forms/domains.py:105
 msgid "Definite spam score"
 msgstr "Xác định thư rác được điểm"
 
-#: baruwa/forms/accounts.py:120 baruwa/templates/domains/detail.html:108
+#: baruwa/forms/accounts.py:122 baruwa/templates/domains/detail.html:108
 msgid "Spam low score"
 msgstr "Thư rác điểm thấp"
 
-#: baruwa/forms/accounts.py:121 baruwa/templates/domains/detail.html:116
+#: baruwa/forms/accounts.py:123 baruwa/templates/domains/detail.html:116
 msgid "Spam high score"
 msgstr "Thư rác được điểm số cao"
 
-#: baruwa/forms/accounts.py:147
+#: baruwa/forms/accounts.py:149
 msgid "Old Password"
 msgstr "Mật khẩu cũ"
 
-#: baruwa/forms/domains.py:48 baruwa/templates/base.html:79
+#: baruwa/forms/domains.py:48 baruwa/templates/base.html:68
 #: baruwa/templates/messages/detail.html:150
 #: baruwa/templates/messages/taskstatus.html:6
 msgid "Quarantine"
 msgstr "Cách ly"
 
 #: baruwa/forms/domains.py:49 baruwa/forms/messages.py:79
-#: baruwa/forms/settings.py:133 baruwa/model/status.py:41
+#: baruwa/forms/settings.py:133 baruwa/model/status.py:42
 #: baruwa/templates/accounts/account.html:175
 #: baruwa/templates/accounts/account.html:177
 #: baruwa/templates/accounts/account.html:203
@@ -987,7 +991,7 @@ msgstr "Lượt"
 msgid "Daily"
 msgstr "Hàng ngày"
 
-#: baruwa/forms/domains.py:57 baruwa/lib/templates/helpers.py:228
+#: baruwa/forms/domains.py:57 baruwa/lib/templates/helpers.py:229
 msgid "Disabled"
 msgstr "Khuyết tật"
 
@@ -1041,7 +1045,7 @@ msgstr "Tên miền không hợp lệ hoặc địa chỉ IP"
 msgid "Domain name"
 msgstr "Tên miền"
 
-#: baruwa/forms/domains.py:92 baruwa/forms/domains.py:132
+#: baruwa/forms/domains.py:92 baruwa/forms/domains.py:133
 #: baruwa/forms/invite.py:110
 msgid "Invalid Domain name"
 msgstr "Tên miền không hợp lệ"
@@ -1091,102 +1095,106 @@ msgid "Language"
 msgstr "Ngôn ngữ"
 
 #: baruwa/forms/domains.py:114
+msgid "Default Timezone"
+msgstr "Mặc định Timezone"
+
+#: baruwa/forms/domains.py:115
 msgid "Report frequency"
 msgstr "Tần số báo cáo"
 
-#: baruwa/forms/domains.py:116 baruwa/templates/base.html:125
+#: baruwa/forms/domains.py:117 baruwa/templates/base.html:114
 #: baruwa/templates/accounts/account.html:95
 msgid "Organizations"
 msgstr "Tổ chức"
 
-#: baruwa/forms/domains.py:130
+#: baruwa/forms/domains.py:131
 msgid "Domain alias name"
 msgstr "Bí danh tên miền"
 
-#: baruwa/forms/domains.py:134
+#: baruwa/forms/domains.py:135
 msgid "Parent domain"
 msgstr "Tên miền phụ huynh"
 
-#: baruwa/forms/domains.py:146 baruwa/forms/domains.py:155
-#: baruwa/forms/domains.py:160
+#: baruwa/forms/domains.py:147 baruwa/forms/domains.py:156
+#: baruwa/forms/domains.py:161
 msgid "Server address"
 msgstr "Địa chỉ máy chủ"
 
-#: baruwa/forms/domains.py:148 baruwa/forms/domains.py:162
+#: baruwa/forms/domains.py:149 baruwa/forms/domains.py:163
 #: baruwa/forms/invite.py:113
 msgid "Protocol"
 msgstr "Giao thức"
 
-#: baruwa/forms/domains.py:149 baruwa/forms/domains.py:163
+#: baruwa/forms/domains.py:150 baruwa/forms/domains.py:164
 #: baruwa/forms/invite.py:114
 msgid "Port"
 msgstr "Cổng"
 
-#: baruwa/forms/domains.py:164
+#: baruwa/forms/domains.py:165
 msgid "must be numeric"
 msgstr "phải là số"
 
-#: baruwa/forms/domains.py:166
+#: baruwa/forms/domains.py:167
 msgid "Split address"
 msgstr "Phân chia địa chỉ"
 
-#: baruwa/forms/domains.py:167
+#: baruwa/forms/domains.py:168
 msgid "Username map template"
 msgstr "Tên người dùng bản đồ mẫu"
 
-#: baruwa/forms/domains.py:172
+#: baruwa/forms/domains.py:173
 msgid "Base DN"
 msgstr "Cơ sở DN"
 
-#: baruwa/forms/domains.py:173
+#: baruwa/forms/domains.py:174
 msgid "Username attribute"
 msgstr "Tên thuộc tính"
 
-#: baruwa/forms/domains.py:176
+#: baruwa/forms/domains.py:177
 msgid "Email attribute"
 msgstr "Thuộc tính thư điện tử"
 
-#: baruwa/forms/domains.py:179
+#: baruwa/forms/domains.py:180
 msgid "Bind DN"
 msgstr "Ràng buộc các DN"
 
-#: baruwa/forms/domains.py:180
+#: baruwa/forms/domains.py:181
 msgid "Bind password"
 msgstr "Ràng buộc mật khẩu"
 
-#: baruwa/forms/domains.py:181
+#: baruwa/forms/domains.py:182
 msgid "Use TLS"
 msgstr "Sử dụng TLS"
 
-#: baruwa/forms/domains.py:182
+#: baruwa/forms/domains.py:183
 msgid "Search for UserDN"
 msgstr "Tìm kiếm UserDN"
 
-#: baruwa/forms/domains.py:183
+#: baruwa/forms/domains.py:184
 msgid "Auth Search Filter"
 msgstr "Bộ lọc tìm kiếm Auth"
 
-#: baruwa/forms/domains.py:184
+#: baruwa/forms/domains.py:185
 msgid "Auth Search Scope"
 msgstr "Auth tìm phạm vi"
 
-#: baruwa/forms/domains.py:186
+#: baruwa/forms/domains.py:187
 msgid "Email Search Filter"
 msgstr "Bộ lọc tìm kiếm thư điện tử"
 
-#: baruwa/forms/domains.py:187
+#: baruwa/forms/domains.py:188
 msgid "Email Search Scope"
 msgstr "Thư điện tử tìm phạm vi"
 
-#: baruwa/forms/domains.py:202
+#: baruwa/forms/domains.py:203
 msgid "Unsupported search scope"
 msgstr "Phạm vi tìm kiếm không được hỗ trợ"
 
-#: baruwa/forms/domains.py:208
+#: baruwa/forms/domains.py:209
 msgid "Radius secret"
 msgstr "Bán kính bí mật"
 
-#: baruwa/forms/domains.py:209
+#: baruwa/forms/domains.py:210
 msgid "Request timeout"
 msgstr "Yêu cầu thời gian chờ"
 
@@ -1566,13 +1574,11 @@ msgstr "Có"
 #: baruwa/forms/settings.py:35 baruwa/forms/settings.py:38
 #: baruwa/forms/settings.py:50 baruwa/forms/settings.py:53
 #, fuzzy
-#| msgid "Info"
 msgid "No"
 msgstr "Thông tin"
 
 #: baruwa/forms/settings.py:36 baruwa/forms/settings.py:41
 #, fuzzy
-#| msgid "Create"
 msgid "Replace"
 msgstr "Tạo"
 
@@ -1588,7 +1594,6 @@ msgstr "Thêm"
 
 #: baruwa/forms/settings.py:42
 #, fuzzy
-#| msgid "Action not supported"
 msgid "Supported"
 msgstr "Hành động không được hỗ trợ"
 
@@ -1598,13 +1603,11 @@ msgstr "Không có"
 
 #: baruwa/forms/settings.py:44
 #, fuzzy
-#| msgid "Action not supported"
 msgid "Unsupported"
 msgstr "Hành động không được hỗ trợ"
 
 #: baruwa/forms/settings.py:45
 #, fuzzy
-#| msgid "Graph"
 msgid "Alpha"
 msgstr "Biểu đồ"
 
@@ -1618,7 +1621,6 @@ msgstr "Bắt đầu"
 
 #: baruwa/forms/settings.py:48
 #, fuzzy
-#| msgid "enabled"
 msgid "End"
 msgstr "kích hoạt"
 
@@ -1632,7 +1634,6 @@ msgstr "Tự động phát hiện"
 
 #: baruwa/forms/settings.py:132
 #, fuzzy
-#| msgid "does not contain"
 msgid "Do nothing"
 msgstr "không chứa"
 
@@ -2454,7 +2455,11 @@ msgstr "Chữ ký HTML"
 msgid "Signature"
 msgstr "Chữ ký"
 
-#: baruwa/lib/misc.py:165 baruwa/model/messages.py:135
+#: baruwa/lib/filters.py:25
+msgid "System default"
+msgstr "Mặc định hệ thống"
+
+#: baruwa/lib/misc.py:165 baruwa/model/messages.py:139
 #: baruwa/templates/messages/functions.html:31
 #: baruwa/templates/messages/index.html:60
 #: baruwa/templates/messages/quarantine.html:3
@@ -2469,7 +2474,7 @@ msgstr "Thư rác"
 msgid "BL"
 msgstr "BL"
 
-#: baruwa/lib/misc.py:171 baruwa/model/messages.py:141
+#: baruwa/lib/misc.py:171 baruwa/model/messages.py:145
 #: baruwa/templates/messages/functions.html:37
 #: baruwa/templates/messages/index.html:66
 #: baruwa/templates/messages/searchresults.html:61
@@ -2481,7 +2486,7 @@ msgstr "Bị nhiễm bệnh"
 msgid "WL"
 msgstr "WL"
 
-#: baruwa/lib/misc.py:180 baruwa/model/messages.py:150
+#: baruwa/lib/misc.py:180 baruwa/model/messages.py:154
 #: baruwa/templates/messages/functions.html:46
 #: baruwa/templates/messages/index.html:75
 #: baruwa/templates/messages/searchresults.html:70
@@ -2809,58 +2814,58 @@ msgid "Only Administrators or owners can view account details"
 msgstr ""
 "Chỉ có quản trị viên hoặc chủ sở hữu có thể xem thông tin chi tiết tài khoản"
 
-#: baruwa/lib/templates/helpers.py:68
+#: baruwa/lib/templates/helpers.py:69
 msgid "unknown"
 msgstr "không rõ"
 
-#: baruwa/lib/templates/helpers.py:142
+#: baruwa/lib/templates/helpers.py:143
 msgid "IPv6 Link local address"
 msgstr "IPv6 Link địa chỉ cục bộ"
 
-#: baruwa/lib/templates/helpers.py:145
+#: baruwa/lib/templates/helpers.py:146
 msgid "RFC1918 Private address"
 msgstr "Địa chỉ RFC1918 riêng."
 
-#: baruwa/lib/templates/helpers.py:147
+#: baruwa/lib/templates/helpers.py:148
 msgid "Reverse lookup failed"
 msgstr "Đảo ngược tra cứu thất bại"
 
-#: baruwa/lib/templates/helpers.py:168 baruwa/lib/templates/helpers.py:175
-#: baruwa/lib/templates/helpers.py:218
+#: baruwa/lib/templates/helpers.py:169 baruwa/lib/templates/helpers.py:176
+#: baruwa/lib/templates/helpers.py:219
 msgid "N"
 msgstr "N"
 
-#: baruwa/lib/templates/helpers.py:172 baruwa/lib/templates/helpers.py:217
+#: baruwa/lib/templates/helpers.py:173 baruwa/lib/templates/helpers.py:218
 msgid "Y"
 msgstr "VÀ"
 
-#: baruwa/model/messages.py:137 baruwa/templates/messages/functions.html:33
+#: baruwa/model/messages.py:141 baruwa/templates/messages/functions.html:33
 msgid "BS"
 msgstr "BS"
 
-#: baruwa/model/messages.py:148 baruwa/templates/messages/functions.html:44
+#: baruwa/model/messages.py:152 baruwa/templates/messages/functions.html:44
 msgid "AS"
 msgstr "NHƯ"
 
-#: baruwa/model/status.py:38
+#: baruwa/model/status.py:39
 msgid "Read"
 msgstr "Đọc"
 
-#: baruwa/model/status.py:39 baruwa/templates/accounts/editaddress.html:18
+#: baruwa/model/status.py:40 baruwa/templates/accounts/editaddress.html:18
 #: baruwa/templates/domains/editalias.html:16
 #: baruwa/templates/domains/editauth.html:16
 msgid "Update"
 msgstr "Cập Nhật"
 
-#: baruwa/model/status.py:40 baruwa/templates/accounts/addaddress.html:18
+#: baruwa/model/status.py:41 baruwa/templates/accounts/addaddress.html:18
 msgid "Create"
 msgstr "Tạo"
 
-#: baruwa/model/status.py:42
+#: baruwa/model/status.py:43
 msgid "Export"
 msgstr "Xuất khẩu"
 
-#: baruwa/model/status.py:43
+#: baruwa/model/status.py:44
 msgid "Auth"
 msgstr "Auth"
 
@@ -2935,7 +2940,7 @@ msgstr "Kiểm tra các đăng nhập thất bại: %s %s %s %s %s %s lỗi: %s"
 msgid "Audit Log exported report"
 msgstr "Xuất khẩu Nhật ký kiểm tra báo cáo"
 
-#: baruwa/tasks/status.py:294 baruwa/templates/base.html:98
+#: baruwa/tasks/status.py:294 baruwa/templates/base.html:87
 msgid "Audit Logs"
 msgstr "Nhật ký kiểm tra"
 
@@ -2979,87 +2984,83 @@ msgstr "Kiểm tra đăng nhập khẩu hoàn toàn: %s"
 msgid "Audit Log export FAILURE: %s"
 msgstr "Kiểm toán xuất khẩu đăng nhập thất bại: %s"
 
-#: baruwa/templates/base.html:33
-msgid "Language: "
-msgstr "Ngôn ngữ: "
-
-#: baruwa/templates/base.html:44 baruwa/templates/status/index.html:83
+#: baruwa/templates/base.html:33 baruwa/templates/status/index.html:83
 msgid "OK"
 msgstr "Ok"
 
-#: baruwa/templates/base.html:44 baruwa/templates/status/index.html:83
+#: baruwa/templates/base.html:33 baruwa/templates/status/index.html:83
 msgid "FAULTY"
 msgstr "BỊ LỖI"
 
-#: baruwa/templates/base.html:51
+#: baruwa/templates/base.html:40
 msgid "Total "
 msgstr "Tổng cộng "
 
-#: baruwa/templates/base.html:51
+#: baruwa/templates/base.html:40
 msgid "Spam "
 msgstr "Thư rác "
 
-#: baruwa/templates/base.html:51
+#: baruwa/templates/base.html:40
 msgid "Virus "
 msgstr "Virus "
 
-#: baruwa/templates/base.html:54
+#: baruwa/templates/base.html:43
 msgid "Msgs: "
 msgstr "Dịch: "
 
-#: baruwa/templates/base.html:56
+#: baruwa/templates/base.html:45
 msgid "In: "
 msgstr "Trong: "
 
-#: baruwa/templates/base.html:58
+#: baruwa/templates/base.html:47
 msgid "Out: "
 msgstr "Ra: "
 
-#: baruwa/templates/base.html:63
+#: baruwa/templates/base.html:52
 msgid "Signed in as "
 msgstr "Đăng nhập "
 
-#: baruwa/templates/base.html:64
+#: baruwa/templates/base.html:53
 msgid "Logout"
 msgstr "Đăng xuất"
 
-#: baruwa/templates/base.html:66
+#: baruwa/templates/base.html:55
 msgid "Not logged in :: "
 msgstr "Không đăng nhập vào:: "
 
-#: baruwa/templates/base.html:66 baruwa/templates/accounts/login.html:11
+#: baruwa/templates/base.html:55 baruwa/templates/accounts/login.html:11
 #: baruwa/templates/accounts/login.html:34
 #: baruwa/templates/accounts/login.html:50
 msgid "Login"
 msgstr "Đăng nhập"
 
-#: baruwa/templates/base.html:76
+#: baruwa/templates/base.html:65
 msgid "Messages"
 msgstr "Tin nhắn"
 
-#: baruwa/templates/base.html:78 baruwa/templates/reports/index.html:30
+#: baruwa/templates/base.html:67 baruwa/templates/reports/index.html:30
 msgid "Full message list"
 msgstr "Danh sách đầy đủ các thư"
 
-#: baruwa/templates/base.html:80
+#: baruwa/templates/base.html:69
 msgid "Archive"
 msgstr "Lưu trữ"
 
-#: baruwa/templates/base.html:84
+#: baruwa/templates/base.html:73
 msgid "Lists"
 msgstr "Danh sách"
 
-#: baruwa/templates/base.html:88
+#: baruwa/templates/base.html:77
 msgid "Add to List"
 msgstr "Thêm vào danh sách"
 
-#: baruwa/templates/base.html:91 baruwa/templates/reports/index.html:8
+#: baruwa/templates/base.html:80 baruwa/templates/reports/index.html:8
 #: baruwa/templates/reports/index.html:116
 #: baruwa/templates/reports/index.html:117
 msgid "Reports"
 msgstr "Báo cáo"
 
-#: baruwa/templates/base.html:94
+#: baruwa/templates/base.html:83
 #: baruwa/templates/accounts/confirmbulkdel.html:11
 #: baruwa/templates/accounts/importstatus.html:6
 #: baruwa/templates/accounts/index.html:37
@@ -3078,46 +3079,56 @@ msgstr "Báo cáo"
 msgid "Status"
 msgstr "Tình trạng"
 
-#: baruwa/templates/base.html:96
+#: baruwa/templates/base.html:85
 msgid "Mail Queues"
 msgstr "Hàng đợi thư"
 
-#: baruwa/templates/base.html:106
+#: baruwa/templates/base.html:95
 msgid "Add a domain"
 msgstr "Thêm một tên miền"
 
-#: baruwa/templates/base.html:111
+#: baruwa/templates/base.html:100
 #: baruwa/templates/domains/confirmbulkdel.html:9
 #: baruwa/templates/domains/index.html:30
 #: baruwa/templates/domains/searchresults.html:27
 msgid "Accounts"
 msgstr "Tài khoản"
 
-#: baruwa/templates/base.html:113
+#: baruwa/templates/base.html:102
 msgid "Add account"
 msgstr "Thêm tài khoản"
 
-#: baruwa/templates/base.html:118 baruwa/templates/domains/detail.html:229
+#: baruwa/templates/base.html:107 baruwa/templates/domains/detail.html:229
 #: baruwa/templates/domains/detail.html:231
 #: baruwa/templates/settings/index.html:32
 msgid "Settings"
 msgstr "Cài đặt"
 
-#: baruwa/templates/base.html:120
+#: baruwa/templates/base.html:109
 msgid "Add scanning node"
 msgstr "Thêm nút quét"
 
-#: baruwa/templates/base.html:121
+#: baruwa/templates/base.html:110
 msgid "MailScanner settings"
 msgstr "Cài đặt MailScanner"
 
-#: baruwa/templates/base.html:127 baruwa/templates/organizations/add.html:11
+#: baruwa/templates/base.html:116 baruwa/templates/organizations/add.html:11
 msgid "Add organization"
 msgstr "Thêm tổ chức"
 
-#: baruwa/templates/base.html:132
+#: baruwa/templates/base.html:121
 msgid "Account"
 msgstr "Tài khoản"
+
+#: baruwa/templates/base.html:141
+msgid "Language: "
+msgstr "Ngôn ngữ: "
+
+#: baruwa/templates/accounts/account.html:5
+#, fuzzy
+#| msgid "Administrator"
+msgid "Domain Administrator"
+msgstr "Người quản trị"
 
 #: baruwa/templates/accounts/account.html:12
 msgid "Add signatures"
