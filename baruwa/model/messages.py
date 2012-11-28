@@ -19,18 +19,19 @@
 """Messages SQLAlchemy models
 """
 
-from datetime import datetime
+#from datetime import datetime
 
 from pylons.i18n.translation import _
 from webhelpers.html import escape
 from webhelpers.number import format_byte_size
 from webhelpers.text import wrap_paragraphs, truncate
 from sqlalchemy import Column
-from sqlalchemy.sql.expression import text
+#from sqlalchemy.sql.expression import text
 from sqlalchemy.types import Integer, Unicode, String
 from sqlalchemy.types import SmallInteger, Boolean, Date, BigInteger
 from sqlalchemy.types import UnicodeText, Float, Time, TIMESTAMP
 
+from baruwa.lib.custom_ddl import utcnow
 from baruwa.model.meta import Base
 
 
@@ -42,7 +43,7 @@ class Message(Base):
     messageid = Column(Unicode(255), index=True, unique=True)
     actions = Column(Unicode(128))
     clientip = Column(Unicode(128))
-    date = Column(Date, index=True)
+    date = Column(Date(timezone=True), index=True)
     from_address = Column(Unicode(255), index=True)
     from_domain = Column(Unicode(255), index=True)
     headers = Column(UnicodeText)
@@ -62,12 +63,15 @@ class Message(Base):
     spamreport = Column(UnicodeText)
     whitelisted = Column(SmallInteger, default=0, index=True)
     subject = Column(UnicodeText)
-    time = Column(Time)
-    timestamp = Column(TIMESTAMP, index=True)
+    time = Column(Time(timezone=True))
+    timestamp = Column(TIMESTAMP(timezone=True),
+                        server_default=utcnow(),
+                        index=True)
     to_address = Column(Unicode(255), index=True)
     to_domain = Column(Unicode(255), index=True)
     virusinfected = Column(SmallInteger, default=0)
-    ts = Column(TIMESTAMP(timezone=True), default=datetime.now())
+    ts = Column(TIMESTAMP(timezone=True),
+                server_default=utcnow())
 
     def __init__(self, messageid):
         "init"
@@ -169,7 +173,7 @@ class Archive(Base):
     messageid = Column(Unicode(255), index=True)
     actions = Column(Unicode(255))
     clientip = Column(Unicode(128))
-    date = Column(Date, index=True)
+    date = Column(Date(timezone=True), index=True)
     from_address = Column(Unicode(255), index=True)
     from_domain = Column(Unicode(255), index=True)
     headers = Column(UnicodeText)
@@ -189,12 +193,14 @@ class Archive(Base):
     spamreport = Column(UnicodeText)
     whitelisted = Column(SmallInteger, default=0, index=True)
     subject = Column(UnicodeText)
-    time = Column(Time)
-    timestamp = Column(TIMESTAMP, index=True)
+    time = Column(Time(timezone=True))
+    timestamp = Column(TIMESTAMP(timezone=True),
+                        server_default=utcnow(),
+                        index=True)
     to_address = Column(Unicode(255), index=True)
     to_domain = Column(Unicode(255), index=True)
     virusinfected = Column(SmallInteger, default=0)
-    ts = Column(TIMESTAMP(timezone=True), default=datetime.now())
+    ts = Column(TIMESTAMP(timezone=True), server_default=utcnow())
 
     def __init__(self, messageid):
         "init"
@@ -224,7 +230,8 @@ class Release(Base):
     id = Column(BigInteger, primary_key=True)
     messageid = Column(BigInteger)
     uuid = Column(String(128), unique=True)
-    timestamp = Column(TIMESTAMP(), default=datetime.now())
+    timestamp = Column(TIMESTAMP(timezone=True),
+                        server_default=utcnow())
     released = Column(Boolean(), default=False)
 
     __mapper_args__ = {'order_by':id}
@@ -247,7 +254,8 @@ class MessageStatus(Base):
     confirmation = Column(Unicode(255))
     errorno = Column(Integer, server_default='0')
     errorstr = Column(UnicodeText, server_default=u'')
-    timestamp = Column(TIMESTAMP(), server_default=text('NOW()'))
+    timestamp = Column(TIMESTAMP(timezone=True),
+                        server_default=utcnow())
 
     __mapper_args__ = {'order_by':timestamp}
 

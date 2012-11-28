@@ -21,7 +21,6 @@ import json
 import base64
 import logging
 
-from datetime import datetime
 from urlparse import urlparse
 from cStringIO import StringIO
 
@@ -43,6 +42,7 @@ from lxml.html import fromstring, tostring, iterlinks
 from sphinxapi import SphinxClient, SPH_MATCH_EXTENDED2
 from celery.exceptions import TimeoutError, QueueNotFound
 
+from baruwa.lib.dates import now
 from baruwa.lib.base import BaseController, render
 from baruwa.model.meta import Session
 from baruwa.lib.helpers import flash, flash_alert
@@ -276,7 +276,7 @@ class StatusController(BaseController):
                                                         a=task.result['name'])
                         audit_log(c.user.username,
                                 1, info, request.host,
-                                request.remote_addr, datetime.now())
+                                request.remote_addr, now())
                         return base64.decodestring(task.result['img'])
                     abort(404)
                 if attachid:
@@ -284,7 +284,7 @@ class StatusController(BaseController):
                                                     a=task.result['name'])
                     audit_log(c.user.username,
                             1, info, request.host,
-                            request.remote_addr, datetime.now())
+                            request.remote_addr, now())
                     response.content_type = task.result['mimetype']
                     dispos = 'attachment; filename="%s"' % task.result['name']
                     response.headers['Content-Disposition'] = str(dispos)
@@ -314,7 +314,7 @@ class StatusController(BaseController):
                 info = QUEUEPREVIEW_MSG % dict(m=mailqitem.messageid)
                 audit_log(c.user.username,
                         1, info, request.host,
-                        request.remote_addr, datetime.now())
+                        request.remote_addr, now())
             else:
                 raise TimeoutError
         except (TimeoutError, QueueNotFound):
@@ -364,7 +364,7 @@ class StatusController(BaseController):
             info = HOSTSTATUS_MSG % dict(n=server.hostname)
             audit_log(c.user.username,
                     1, info, request.host,
-                    request.remote_addr, datetime.now())
+                    request.remote_addr, now())
         except (TimeoutError, QueueNotFound):
             pass
 
@@ -386,7 +386,7 @@ class StatusController(BaseController):
             info = HOSTBAYES_MSG % dict(n=server.hostname)
             audit_log(c.user.username,
                     1, info, request.host,
-                    request.remote_addr, datetime.now())
+                    request.remote_addr, now())
         except (TimeoutError, QueueNotFound, OSError):
             result = {}
         c.server = server
@@ -407,7 +407,7 @@ class StatusController(BaseController):
             info = HOSTSALINT_MSG % dict(n=server.hostname)
             audit_log(c.user.username,
                     1, info, request.host,
-                    request.remote_addr, datetime.now())
+                    request.remote_addr, now())
         except (TimeoutError, QueueNotFound, OSError):
             result = []
         c.server = server
@@ -526,7 +526,7 @@ class StatusController(BaseController):
         if finished and (d and d == 'y'):
             audit_log(c.user.username,
                     5, AUDITLOGEXPORT_MSG, request.host,
-                    request.remote_addr, datetime.now())
+                    request.remote_addr, now())
             response.content_type = result.result['content_type']
             response.headers['Cache-Control'] = 'max-age=0'
             respdata = result.result['f']

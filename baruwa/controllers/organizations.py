@@ -22,7 +22,6 @@ import os
 import shutil
 import logging
 
-from datetime import datetime
 from urlparse import urlparse
 
 from pylons import request, response, session, tmpl_context as c, url, config
@@ -37,6 +36,7 @@ from repoze.what.predicates import All, not_anonymous
 from sphinxapi import SphinxClient, SPH_MATCH_EXTENDED2
 from repoze.what.plugins.pylonshq import ControllerProtector
 
+from baruwa.lib.dates import now
 from baruwa.lib.base import BaseController, render
 from baruwa.lib.helpers import flash, flash_info, flash_alert
 from baruwa.lib.query import clean_sphinx_q, restore_sphinx_q
@@ -162,7 +162,7 @@ class OrganizationsController(BaseController):
                 info = ADDORG_MSG % dict(o=org.name)
                 audit_log(c.user.username,
                         3, info, request.host,
-                        request.remote_addr, datetime.now())
+                        request.remote_addr, now())
                 flash(_('The organization has been created'))
                 redirect(url(controller='organizations'))
             except IntegrityError:
@@ -194,7 +194,7 @@ class OrganizationsController(BaseController):
                     info = UPDATEORG_MSG % dict(o=org.name)
                     audit_log(c.user.username,
                             2, info, request.host,
-                            request.remote_addr, datetime.now())
+                            request.remote_addr, now())
                     flash(_('The organization has been updated'))
                 except IntegrityError:
                     Session.rollback()
@@ -225,7 +225,7 @@ class OrganizationsController(BaseController):
             info = DELETEORG_MSG % dict(o=org_name)
             audit_log(c.user.username,
                     4, info, request.host,
-                    request.remote_addr, datetime.now())
+                    request.remote_addr, now())
             flash(_('The organization has been deleted'))
             redirect(url(controller='organizations'))
         else:
@@ -255,7 +255,7 @@ class OrganizationsController(BaseController):
                 info = ADDRELAY_MSG % dict(r=relay_name)
                 audit_log(c.user.username,
                         3, info, request.host,
-                        request.remote_addr, datetime.now())
+                        request.remote_addr, now())
                 flash(_('The outbound settings have been created'))
             except IntegrityError:
                 Session.rollback()
@@ -294,7 +294,7 @@ class OrganizationsController(BaseController):
                     info = UPDATERELAY_MSG % dict(r=c.relayname)
                     audit_log(c.user.username,
                             2, info, request.host,
-                            request.remote_addr, datetime.now())
+                            request.remote_addr, now())
                     flash(_('The outbound settings have been updated'))
                 except IntegrityError:
                     Session.rollback()
@@ -322,7 +322,7 @@ class OrganizationsController(BaseController):
                 info = DELETERELAY_MSG % dict(r=c.relayname)
                 audit_log(c.user.username,
                         4, info, request.host,
-                        request.remote_addr, datetime.now())
+                        request.remote_addr, now())
                 flash(_('The outbound settings have been deleted'))
             except:
                 flash(_('The outbound settings could not be deleted'))
@@ -394,7 +394,7 @@ class OrganizationsController(BaseController):
             info = IMPORTORG_MSG % dict(o='-')
             audit_log(c.user.username,
                     3, info, request.host,
-                    request.remote_addr, datetime.now())
+                    request.remote_addr, now())
         else:
             session['dimport-counter'] += 1
             session.save()

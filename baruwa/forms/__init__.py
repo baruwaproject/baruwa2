@@ -18,10 +18,14 @@
 #
 """Baruwa forms"""
 
+import pytz
+
 from datetime import timedelta
 
 from wtforms.ext.csrf.session import SessionSecureForm
 from pylons import config
+
+TIMEZONE_TUPLES = [(timz, timz) for timz in pytz.common_timezones]
 
 
 class Form(SessionSecureForm):

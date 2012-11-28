@@ -24,6 +24,7 @@ import datetime
 from sqlalchemy.sql import text
 from sqlalchemy.exc import IntegrityError
 
+from baruwa.lib.dates import now
 from baruwa.commands import BaseCommand
 from baruwa.model.meta import Session
 
@@ -42,7 +43,7 @@ class DBCleanCommand(BaseCommand):
         self.init()
 
         interval = datetime.timedelta(days=self.options.days)
-        last_date = datetime.datetime.now() - interval
+        last_date = now() - interval
         params = dict(date=last_date)
         sql1 = text("""INSERT INTO archive
                     SELECT * FROM messages WHERE timestamp <

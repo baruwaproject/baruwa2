@@ -20,7 +20,6 @@
 
 import logging
 
-from datetime import datetime
 from urlparse import urlparse
 
 from pylons import request, response, session, tmpl_context as c, url
@@ -35,6 +34,7 @@ from sphinxapi import SphinxClient, SPH_MATCH_EXTENDED2
 #from repoze.what.plugins.pylonshq import ActionProtector
 from repoze.what.plugins.pylonshq import ControllerProtector
 
+from baruwa.lib.dates import now
 from baruwa.lib.base import BaseController, render
 from baruwa.lib.helpers import flash, flash_alert
 from baruwa.model.meta import Session
@@ -251,7 +251,7 @@ class ListsController(BaseController):
                 info = LISTADD_MSG % dict(s=item.from_address, l=listname)
                 audit_log(c.user.username,
                         3, info, request.host,
-                        request.remote_addr, datetime.now())
+                        request.remote_addr, now())
                 flash(_('The item has been added to the list'))
                 if not request.is_xhr:
                     redirect(url('lists-index',
@@ -298,7 +298,7 @@ class ListsController(BaseController):
             info = LISTDEL_MSG % dict(s=name, l=listname)
             audit_log(c.user.username,
                     4, info, request.host,
-                    request.remote_addr, datetime.now())
+                    request.remote_addr, now())
             flash(_('The item has been deleted'))
             if not request.is_xhr:
                 redirect(url(controller='lists'))

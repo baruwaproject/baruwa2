@@ -25,7 +25,7 @@ import logging
 
 from urllib import unquote
 from urlparse import urlparse
-from datetime import datetime, timedelta
+from datetime import timedelta
 
 from pylons import request, response, session, tmpl_context as c, url, config
 from pylons.controllers.util import redirect, abort
@@ -50,6 +50,7 @@ from baruwa.lib.misc import check_language, iscsv, convert_acct_to_json
 from baruwa.lib.base import BaseController, render
 from baruwa.lib.caching_query import FromCache
 from baruwa.tasks.settings import update_serial
+from baruwa.lib.dates import now
 from baruwa.lib.audit import audit_log
 from baruwa.lib.regex import PROXY_ADDR_RE
 from baruwa.tasks.accounts import importaccounts, exportaccounts
@@ -68,7 +69,8 @@ from baruwa.lib.audit.msgs.accounts import *
 
 log = logging.getLogger(__name__)
 FORM_FIELDS = ['username', 'firstname', 'lastname', 'email', 'active',
-    'send_report', 'spam_checks', 'low_score', 'high_score', 'domains']
+    'send_report', 'spam_checks', 'low_score', 'high_score', 'domains',
+    'timezone']
 
 
 class AccountsController(BaseController):
@@ -94,7 +96,7 @@ class AccountsController(BaseController):
     def login(self):
         "login"
         if request.remote_addr in session:
-            if session[request.remote_addr] > datetime.now():
+            if session[request.remote_addr] > now():
                 abort(409, _('You have been banned after'
                             ' several failed logins'))
             else:
@@ -115,12 +117,12 @@ class AccountsController(BaseController):
             c.came_from = came_from
             c.login_counter = request.environ['repoze.who.logins']
             if c.login_counter >= 3:
-                ban_until = datetime.now() + timedelta(minutes=5)
+                ban_until = now() + timedelta(minutes=5)
                 if request.remote_addr not in session:
                     session[request.remote_addr] = ban_until
                     session.save()
                 else:
-                    if datetime.now() > session[request.remote_addr]:
+                    if now() > session[request.remote_addr]:
                         del session[request.remote_addr]
                         session.save()
             return render('/accounts/login.html')
@@ -145,6 +147,7 @@ class AccountsController(BaseController):
                         .filter(Domain.name == domain)\
                         .all()
                 user.domains = domains
+                user.timezone = domains[0].timezone
                 Session.add(user)
                 Session.commit()
                 msg = _('First time Login from external auth,'
@@ -264,7 +267,7 @@ class AccountsController(BaseController):
         else:
             msg = _('Login successful, Welcome back %(username)s !' %
                     dict(username=userid))
-        user.last_login = datetime.now()
+        user.last_login = now()
         Session.add(user)
         Session.commit()
         if user.is_peleb:
@@ -278,7 +281,7 @@ class AccountsController(BaseController):
         info = ACCOUNTLOGIN_MSG % dict(u=user.username)
         audit_log(user.username,
                 6, info, request.host,
-                request.remote_addr, datetime.now())
+                request.remote_addr, now())
         flash(msg)
         redirect(url(came_from))
 
@@ -320,7 +323,7 @@ class AccountsController(BaseController):
                 info = PASSWORDCHANGE_MSG % dict(u=user.username)
                 audit_log(c.user.username,
                         2, info, request.host,
-                        request.remote_addr, datetime.now())
+                        request.remote_addr, now())
             else:
                 flash(_('This is an external account, use'
                     ' external system to reset the password'))
@@ -350,7 +353,7 @@ class AccountsController(BaseController):
                 info = PASSWORDCHANGE_MSG % dict(u=user.username)
                 audit_log(c.user.username,
                         2, info, request.host,
-                        request.remote_addr, datetime.now())
+                        request.remote_addr, now())
             else:
                 flash(_('This is an external account, use'
                     ' external system to reset the password'))
@@ -521,7 +524,7 @@ class AccountsController(BaseController):
                         email=c.form.email.data)
                 for attr in ['firstname', 'lastname', 'email', 'active',
                     'account_type', 'send_report', 'spam_checks',
-                    'low_score', 'high_score']:
+                    'low_score', 'high_score', 'timezone']:
                     setattr(user, attr, getattr(c.form, attr).data)
                 user.local = True
                 user.set_password(c.form.password1.data)
@@ -533,7 +536,7 @@ class AccountsController(BaseController):
                 info = ADDACCOUNT_MSG % dict(u=user.username)
                 audit_log(c.user.username,
                         3, info, request.host,
-                        request.remote_addr, datetime.now())
+                        request.remote_addr, now())
                 flash(_('The account: %(user)s was created successfully') %
                         {'user': c.form.username.data})
                 redirect(url('account-detail', userid=user.id))
@@ -576,7 +579,7 @@ class AccountsController(BaseController):
                     info = UPDATEACCOUNT_MSG % dict(u=user.username)
                     audit_log(c.user.username,
                             2, info, request.host,
-                            request.remote_addr, datetime.now())
+                            request.remote_addr, now())
                 except IntegrityError:
                     Session.rollback()
                     flash_alert(
@@ -612,7 +615,7 @@ class AccountsController(BaseController):
             info = DELETEACCOUNT_MSG % dict(u=username)
             audit_log(c.user.username,
                     4, info, request.host,
-                    request.remote_addr, datetime.now())
+                    request.remote_addr, now())
             if userid == c.user.id:
                 redirect(url('/logout'))
             redirect(url(controller='accounts', action='index'))
@@ -664,7 +667,7 @@ class AccountsController(BaseController):
                             info,
                             request.host,
                             request.remote_addr,
-                            datetime.now()])
+                            now()])
             Session.commit()
             # except DataError:
             #     flash_alert(_('An error occured try again'))
@@ -720,7 +723,7 @@ class AccountsController(BaseController):
                 info = ADDRADD_MSG % dict(a=addr.address, ac=user.username)
                 audit_log(c.user.username,
                         3, info, request.host,
-                        request.remote_addr, datetime.now())
+                        request.remote_addr, now())
                 flash(
                 _('The alias address %(address)s was successfully created.' %
                 dict(address=addr.address)))
@@ -767,7 +770,7 @@ class AccountsController(BaseController):
                                                 ac=address.user.username)
                     audit_log(c.user.username,
                             2, info, request.host,
-                            request.remote_addr, datetime.now())
+                            request.remote_addr, now())
                     flash(_('The alias address has been updated'))
                 else:
                     flash_info(_('No changes were made to the address'))
@@ -802,7 +805,7 @@ class AccountsController(BaseController):
             info = ADDRDELETE_MSG % dict(a=addr, ac=username)
             audit_log(c.user.username,
                     4, info, request.host,
-                    request.remote_addr, datetime.now())
+                    request.remote_addr, now())
             flash(_('The address has been deleted'))
             redirect(url(controller='accounts', action='detail',
             userid=user_id))
@@ -911,7 +914,7 @@ class AccountsController(BaseController):
             update_serial.delay()
             audit_log(c.user.username,
                     3, ACCOUNTIMPORT_MSG, request.host,
-                    request.remote_addr, datetime.now())
+                    request.remote_addr, now())
         else:
             session['acimport-count'] += 1
             if (session['acimport-count'] >= 10 and
@@ -969,7 +972,7 @@ class AccountsController(BaseController):
                         id=taskid, global_error=result.result['global_error'])
             audit_log(c.user.username,
                     5, ACCOUNTEXPORT_MSG, request.host,
-                    request.remote_addr, datetime.now())
+                    request.remote_addr, now())
         else:
             session['acexport-count'] += 1
             if (session['acexport-count'] >= 10 and

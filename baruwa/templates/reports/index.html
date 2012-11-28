@@ -1,3 +1,6 @@
+<%!
+from baruwa.lib.dates import TZFMT
+%>
 <div id="content">
 	<div id="form-area">
 		${filter.form()}
@@ -41,11 +44,11 @@
 		</div>
 		<div class="grid_6 drow alpha">
 			<div class="grid_3 alpha">${_('Oldest message')}</div>
-			<div class="grid_3 alpha" id="newestmsg">${c.data[0].newest}</div>
+			<div class="grid_3 alpha" id="newestmsg">${h.format_date(c.data[0].newest, c.tzinfo).strftime(TZFMT)}</div>
 		</div>
 		<div class="grid_6 drow alpha">
 			<div class="grid_3 alpha">${_('Newest message')}</div>
-			<div class="grid_3 alpha" id="oldestmsg">${c.data[0].oldest}</div>
+			<div class="grid_3 alpha" id="oldestmsg">${h.format_date(c.data[0].oldest, c.tzinfo).strftime(TZFMT)}</div>
 		</div>
 	</div>
 	<div class="grid_8">

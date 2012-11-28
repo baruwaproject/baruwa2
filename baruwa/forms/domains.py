@@ -25,7 +25,7 @@ from wtforms import SelectField, validators, DecimalField, PasswordField
 from wtforms.ext.sqlalchemy.fields import QuerySelectField
 from wtforms.ext.sqlalchemy.fields import QuerySelectMultipleField
 
-from baruwa.forms import Form
+from baruwa.forms import Form, TIMEZONE_TUPLES
 from baruwa.lib.misc import ipaddr_is_valid, get_languages
 from baruwa.lib.regex import DOM_RE, MSGSIZE_RE, NUMORSPACE_RE
 from baruwa.forms.messages import MultiCheckboxField
@@ -111,6 +111,7 @@ class AddDomainForm(Form):
     delivery_mode = SelectField(_('Multi destination delivery mode'),
                                 choices=DELIVERY_MODES)
     language = SelectField(_('Language'), choices=LANGUAGES, default='en')
+    timezone = SelectField(_('Default Timezone'), choices=TIMEZONE_TUPLES)
     report_every = SelectField(_('Report frequency'),
                                 choices=REPORT_FREQ, default='3')
     organizations = QuerySelectMultipleField(_('Organizations'),

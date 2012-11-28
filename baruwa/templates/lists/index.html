@@ -102,7 +102,7 @@ kwd = {}
 if hasattr(c, 'q') and c.q:
 	kwd['q'] = c.q
 %>
-<p>${_('Showing items %(i)d to %(l)d of %(count)d' % dict(i=c.page.first_item, l=c.page.last_item, count=c.page.item_count))}.</p>
+<p>${_('Showing items %(i)d to %(l)d of %(count)d') % dict(i=c.page.first_item, l=c.page.last_item, count=c.page.item_count)}.</p>
 <div class="limiter">
 ${_('Show items:')}
 ${h.pager_select(fieldname, str(c.page.items_per_page))}

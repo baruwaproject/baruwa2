@@ -70,7 +70,7 @@ You have to install the required tools and python libraries.
 
    # install the necessary libraries for compiling
    sudo apt-get install libjpeg62-dev libxml2-dev libxslt1-dev cython \
-	libpq-dev libfreetype-dev libldap2-dev libssl-dev \
+	libpq-dev libfreetype6-dev libldap2-dev libssl-dev \
 	swig libcrack2-dev libmemcached-dev libgeoip-dev \
 	python-dev libsasl2-dev libmysqlclient-dev -y
 

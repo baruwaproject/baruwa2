@@ -19,10 +19,10 @@
 """Domains SQLAlchemy models
 """
 
+from sqlalchemy.types import BigInteger
 from sqlalchemy import Column, ForeignKey
 from sqlalchemy.schema import UniqueConstraint
 from sqlalchemy.orm import relationship, backref
-from sqlalchemy.types import BigInteger
 from sqlalchemy.types import Integer, Unicode, SmallInteger, Boolean, Float
 
 from baruwa.model.meta import Base
@@ -47,6 +47,7 @@ class Domain(Base):
     high_score = Column(Float(), default=0)
     message_size = Column(Unicode(12), default=u'0')
     language = Column(Unicode(2), default=u'en')
+    timezone = Column(Unicode(255), default=u'UTC')
     report_every = Column(SmallInteger, default=3)
     servers = relationship('DeliveryServer',
                             backref=backref('domains', order_by=id),
@@ -78,7 +79,7 @@ class Domain(Base):
                     'ldap_callout', 'virus_checks', 'spam_checks',
                     'spam_actions', 'highspam_actions', 'low_score',
                     'high_score', 'message_size', 'delivery_mode',
-                    'language', 'report_every',]:
+                    'language', 'report_every', 'timezone']:
             try:
                 csvdict[field] = str(getattr(self, field))
             except UnicodeEncodeError:

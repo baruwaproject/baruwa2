@@ -43,7 +43,7 @@ value = 'white'
 %>
 % for item in c.page.items:
 <tr class="${value}_row">
-	<td class="audit_date_td">${h.datetimeformat(item.timestamp)}</td>
+	<td class="audit_date_td">${h.datetimeformat(h.format_date(item.timestamp, c.tzinfo), '%Y-%m-%d %H:%M:%S')}</td>
 	<td class="audit_user_td">${item.username}</td>
 	<td class="audit_info_td">${item.info}</td>
 	<td class="audit_host_td">${item.hostname}</td>

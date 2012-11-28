@@ -23,7 +23,6 @@ import json
 import logging
 import threading
 
-from datetime import datetime
 from cStringIO import StringIO
 
 from pylons import request, response, session, tmpl_context as c, url, config
@@ -38,6 +37,7 @@ from reportlab.lib import colors
 from reportlab.graphics import renderPM
 from webhelpers.number import format_byte_size
 
+from baruwa.lib.dates import now
 from baruwa.lib.base import BaseController, render
 from baruwa.lib.helpers import flash, flash_alert
 from baruwa.lib.outputformats import CSVWriter
@@ -352,7 +352,7 @@ class ReportsController(BaseController):
                 info = REPORTDL_MSG % dict(r=c.report_title, f='csv')
                 audit_log(c.user.username,
                         1, info, request.host,
-                        request.remote_addr, datetime.now())
+                        request.remote_addr, now())
                 return self._generate_csv(data, reportid)
             jsondata = [dict(tooltip=getattr(item, 'address'),
                         y=getattr(item, REPORTS[reportid]['sort']),
@@ -457,7 +457,7 @@ class ReportsController(BaseController):
                 info = REPORTDL_MSG % dict(r=c.report_title, f='csv')
                 audit_log(c.user.username,
                         1, info, request.host,
-                        request.remote_addr, datetime.now())
+                        request.remote_addr, now())
                 return self._generate_csv(data, reportid)
             else:
                 jsondata = dict(mail=[],
@@ -480,7 +480,7 @@ class ReportsController(BaseController):
             info = REPORTDL_MSG % dict(r=c.report_title, f='pdf')
             audit_log(c.user.username,
                     1, info, request.host,
-                    request.remote_addr, datetime.now())
+                    request.remote_addr, now())
             return self._generate_pdf(data, reportid)
         c.reportid = reportid
         c.chart_data = json.dumps(jsondata)
@@ -493,7 +493,7 @@ class ReportsController(BaseController):
         info = REPORTVIEW_MSG % dict(r=c.report_title)
         audit_log(c.user.username,
                 1, info, request.host,
-                request.remote_addr, datetime.now())
+                request.remote_addr, now())
         return render(template)
 
     def delete(self, filterid, format=None):

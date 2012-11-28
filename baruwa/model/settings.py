@@ -24,6 +24,7 @@ from sqlalchemy.schema import UniqueConstraint
 from sqlalchemy.types import Unicode, Integer, Boolean, UnicodeText
 from sqlalchemy.types import BigInteger, TIMESTAMP
 
+from baruwa.lib.custom_ddl import utcnow
 from baruwa.model.meta import Base
 
 
@@ -141,7 +142,10 @@ class IndexerCounter(Base):
     __tablename__ = 'indexer_counters'
 
     tablename = Column(Unicode(255), primary_key=True)
-    maxts = Column(TIMESTAMP(timezone=True), index=True, nullable=False)
+    maxts = Column(TIMESTAMP(timezone=True),
+                    server_default=utcnow(),
+                    index=True,
+                    nullable=False)
 
 
 class IndexerKillList(Base):
@@ -149,8 +153,13 @@ class IndexerKillList(Base):
     __tablename__ = 'indexer_killlist'
 
     id = Column(BigInteger, primary_key=True)
-    ts = Column(TIMESTAMP(timezone=True), nullable=False, primary_key=True)
-    tablename = Column(Unicode(255), nullable=False, primary_key=True)
+    ts = Column(TIMESTAMP(timezone=True),
+                server_default=utcnow(),
+                nullable=False,
+                primary_key=True)
+    tablename = Column(Unicode(255),
+                nullable=False,
+                primary_key=True)
 
 
 class DKIMKeys(Base):

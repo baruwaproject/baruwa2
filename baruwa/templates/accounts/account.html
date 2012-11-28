@@ -1,8 +1,9 @@
 <%!
 from baruwa.lib.filters import default
+from baruwa.lib.dates import TZFMT
 %>
 <% 
-account_types = {1: 'Administrator', 2: 'Domain Administrator', 3: 'User'}
+account_types = {1: _('Administrator'), 2: _('Domain Administrator'), 3: _('User')}
 account_type = account_types[c.account.account_type]
 %>
 <div class="alpos">
@@ -67,10 +68,18 @@ account_type = account_types[c.account.account_type]
 </div>
 <div class="grid_16 drow">
 	<div class="grid_7">
+		${_('Timezone')}:
+	</div>
+	<div class="grid_8">
+		${c.user.timezone}
+	</div>
+</div>
+<div class="grid_16 drow">
+	<div class="grid_7">
 		${_('Last login')}:
 	</div>
 	<div class="grid_8">
-		${c.account.last_login}
+		${h.format_date(c.account.last_login, c.tzinfo).strftime(TZFMT)}
 	</div>
 </div>
 <div class="grid_16 drow">
@@ -78,7 +87,7 @@ account_type = account_types[c.account.account_type]
 		${_('Account created on')}:
 	</div>
 	<div class="grid_8">
-		${c.account.created_on}
+		${h.format_date(c.account.created_on, c.tzinfo).strftime(TZFMT)}
 	</div>
 </div>
 <div class="grid_16 drow">

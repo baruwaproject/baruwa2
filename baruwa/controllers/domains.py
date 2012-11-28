@@ -19,7 +19,6 @@
 
 import logging
 
-from datetime import datetime
 from urlparse import urlparse
 
 from pylons import request, response, session, tmpl_context as c, url
@@ -41,6 +40,7 @@ from baruwa.lib.auth.predicates import OnlyAdminUsers, OnlySuperUsers
 from baruwa.lib.auth.predicates import OwnsDomain
 from baruwa.lib.caching_query import FromCache
 from baruwa.lib.query import get_dom_crcs
+from baruwa.lib.dates import now
 from baruwa.lib.audit import audit_log
 from baruwa.lib.query import clean_sphinx_q, restore_sphinx_q
 from baruwa.lib.misc import check_num_param
@@ -234,7 +234,7 @@ class DomainsController(BaseController):
                 info = ADDDOMAIN_MSG % dict(d=domain.name)
                 audit_log(c.user.username,
                         3, info, request.host,
-                        request.remote_addr, datetime.now())
+                        request.remote_addr, now())
                 flash(_('The domain: %(dom)s has been created') %
                     dict(dom=domain.name))
                 redirect(url(controller='domains'))
@@ -287,7 +287,7 @@ class DomainsController(BaseController):
                     info = UPDATEDOMAIN_MSG % dict(d=domain.name)
                     audit_log(c.user.username,
                             2, info, request.host,
-                            request.remote_addr, datetime.now())
+                            request.remote_addr, now())
                     flash(_('The domain: %(dom)s has been updated') %
                         dict(dom=domain.name))
                     kw['uc'] = 1
@@ -317,7 +317,7 @@ class DomainsController(BaseController):
             info = DELETEDOMAIN_MSG % dict(d=name)
             audit_log(c.user.username,
                     4, info, request.host,
-                    request.remote_addr, datetime.now())
+                    request.remote_addr, now())
             flash(_('The domain has been deleted'))
             redirect(url(controller='domains'))
         else:
@@ -362,7 +362,7 @@ class DomainsController(BaseController):
                 tasks.append((c.user.username,
                         4, info, request.host,
                         request.remote_addr,
-                        datetime.now()))
+                        now()))
                 Session.delete(domain)
             Session.commit()
             del session['bulk_domain_delete']
@@ -406,7 +406,7 @@ class DomainsController(BaseController):
                 info = ADDDELSVR_MSG % dict(d=domain.name, ds=server.address)
                 audit_log(c.user.username,
                         3, info, request.host,
-                        request.remote_addr, datetime.now())
+                        request.remote_addr, now())
                 flash(_('The destination server has been created'))
                 redirect(url(controller='domains', action='detail',
                         domainid=domain.id))
@@ -443,7 +443,7 @@ class DomainsController(BaseController):
                                                     ds=server.address)
                     audit_log(c.user.username,
                             2, info, request.host,
-                            request.remote_addr, datetime.now())
+                            request.remote_addr, now())
                     self.invalidate = 1
                     self._get_server(destinationid)
                     redirect(url('domain-detail', **kw))
@@ -534,7 +534,7 @@ class DomainsController(BaseController):
             info = DELETEDELSVR_MSG % dict(d=name, ds=server_addr)
             audit_log(c.user.username,
                     4, info, request.host,
-                    request.remote_addr, datetime.now())
+                    request.remote_addr, now())
             redirect(url('domain-detail', domainid=domainid))
         else:
             flash(_('The destination server: %(s)s will be deleted,'
@@ -563,7 +563,7 @@ class DomainsController(BaseController):
                 info = ADDAUTHSVR_MSG % dict(d=domain.name, ds=server.address)
                 audit_log(c.user.username,
                         3, info, request.host,
-                        request.remote_addr, datetime.now())
+                        request.remote_addr, now())
                 flash(_('The authentication settings have been created'))
                 redirect(url(controller='domains', action='detail',
                         domainid=domain.id))
@@ -611,7 +611,7 @@ class DomainsController(BaseController):
                                                     ds=server.address)
                     audit_log(c.user.username,
                             2, info, request.host,
-                            request.remote_addr, datetime.now())
+                            request.remote_addr, now())
                     redirect(url('domain-detail', **kw))
                 except IntegrityError:
                     Session.rollback()
@@ -642,7 +642,7 @@ class DomainsController(BaseController):
             info = DELETEAUTHSVR_MSG % dict(d=name, ds=server_addr)
             audit_log(c.user.username,
                     4, info, request.host,
-                    request.remote_addr, datetime.now())
+                    request.remote_addr, now())
             redirect(url('domain-detail', domainid=domainid))
         else:
             flash(_('The authentication server: %(s)s will be deleted,'
@@ -720,7 +720,7 @@ class DomainsController(BaseController):
                 info = AUTHSETTINGS_MSG % dict(d=domain.name, a=proto)
                 audit_log(c.user.username,
                         2, info, request.host,
-                        request.remote_addr, datetime.now())
+                        request.remote_addr, now())
                 redirect(url(controller='domains', action='detail',
                 domainid=domain.id))
             except IntegrityError:
@@ -770,7 +770,7 @@ class DomainsController(BaseController):
                 info = ADDDOMALIAS_MSG % dict(d=alias.name)
                 audit_log(c.user.username,
                         3, info, request.host,
-                        request.remote_addr, datetime.now())
+                        request.remote_addr, now())
                 flash(_('The domain alias: %s has been created') % alias.name)
                 redirect(url(controller='domains', action='detail',
                         domainid=domain.id))
@@ -807,7 +807,7 @@ class DomainsController(BaseController):
                     info = UPDATEDOMALIAS_MSG % dict(d=alias.name)
                     audit_log(c.user.username,
                             2, info, request.host,
-                            request.remote_addr, datetime.now())
+                            request.remote_addr, now())
                     flash(_('The domain alias: %s has been updated') %
                             alias.name)
                     redirect(url('domain-detail', domainid=alias.domain_id))
@@ -841,7 +841,7 @@ class DomainsController(BaseController):
             info = DELETEDOMALIAS_MSG % dict(d=aliasname)
             audit_log(c.user.username,
                     4, info, request.host,
-                    request.remote_addr, datetime.now())
+                    request.remote_addr, now())
             flash(_('The domain alias: %s has been deleted') % aliasname)
             redirect(url('domain-detail', domainid=domainid))
 
@@ -901,7 +901,7 @@ class DomainsController(BaseController):
             info = EXPORTDOM_MSG % dict(d='all')
             audit_log(c.user.username,
                     5, info, request.host,
-                    request.remote_addr, datetime.now())
+                    request.remote_addr, now())
             response.content_type = 'text/csv'
             response.headers['Cache-Control'] = 'max-age=0'
             csvdata = result.result['f']

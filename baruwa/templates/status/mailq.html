@@ -43,7 +43,7 @@ ${h.form(url('mailq-process'), method='post')}
 % for item in c.page.items:
 <tr>
 	<td class="mailq_select_td"><input class="selector" type="checkbox" name="id" value="${item.id}" /></td>
-	<td class="mailq_date_td"><a href="${url('mailq-detail', queueid=item.id)}">${item.timestamp}</a></td>
+	<td class="mailq_date_td"><a href="${url('mailq-detail', queueid=item.id)}">${h.format_date(item.timestamp, c.tzinfo)}</a></td>
 	<td class="mailq_from_td"><a href="${url('mailq-detail', queueid=item.id)}">${h.truncate(item.from_address, 30)}</a></td>
 	<td class="mailq_to_td"><a href="${url('mailq-detail', queueid=item.id)}">${item.to_address}</a></td>
 	<td class="mailq_subject_td"><a href="${url('mailq-detail', queueid=item.id)}">${h.truncate(item.subject, 45)}</a></td>

@@ -21,10 +21,11 @@
 
 from sqlalchemy import Column
 from pylons.i18n.translation import _
-from sqlalchemy.sql.expression import text
+#from sqlalchemy.sql.expression import text
 from sqlalchemy.types import Unicode, UnicodeText, Integer
 from sqlalchemy.types import DateTime, SmallInteger, TIMESTAMP, BigInteger
 
+from baruwa.lib.custom_ddl import utcnow
 from baruwa.model.meta import Base
 
 
@@ -49,7 +50,7 @@ class MailQueueItem(Base):
 
     id = Column(Integer, primary_key=True)
     messageid = Column(Unicode(255))
-    timestamp = Column(DateTime())
+    timestamp = Column(DateTime(timezone=True))
     from_address = Column(Unicode(255), index=True)
     to_address = Column(Unicode(255), index=True)
     from_domain = Column(Unicode(255), index=True)
@@ -58,7 +59,7 @@ class MailQueueItem(Base):
     hostname = Column(UnicodeText)
     size = Column(Integer)
     attempts = Column(Integer)
-    lastattempt = Column(DateTime)
+    lastattempt = Column(DateTime(timezone=True))
     direction = Column(SmallInteger, default=1, index=True)
     reason = Column(UnicodeText)
     flag = Column(SmallInteger, default=0)
@@ -79,7 +80,8 @@ class AuditLog(Base):
     info = Column(UnicodeText)
     hostname = Column(UnicodeText)
     remoteip = Column(UnicodeText)
-    timestamp = Column(TIMESTAMP, server_default=text('NOW()'))
+    timestamp = Column(TIMESTAMP(timezone=True),
+                    server_default=utcnow())
 
     __mapper_args__ = {'order_by':timestamp}
 

@@ -22,14 +22,13 @@
 import bcrypt
 # import hashlib
 
-from datetime import datetime
-
 from sqlalchemy import Column, ForeignKey, Table
 from sqlalchemy.orm import relationship, backref
 from sqlalchemy.types import DateTime, Boolean, Float
 from sqlalchemy.schema import PrimaryKeyConstraint, UniqueConstraint
 from sqlalchemy.types import Integer, Unicode, SmallInteger, BigInteger
 
+from baruwa.lib.dates import now
 from baruwa.model.meta import Base
 
 
@@ -65,9 +64,10 @@ class User(Base):
     lastname = Column(Unicode(255))
     __password = Column('password', Unicode(255))
     email = Column(Unicode(255), unique=True)
+    timezone = Column(Unicode(255), default=u'UTC')
     account_type = Column(SmallInteger(), default=3, index=True)
-    created_on = Column(DateTime(), default=datetime.now())
-    last_login = Column(DateTime(), default=datetime.now())
+    created_on = Column(DateTime(timezone=True), default=now())
+    last_login = Column(DateTime(timezone=True), default=now())
     active = Column(Boolean(), default=True)
     local = Column(Boolean(), default=False)
     send_report = Column(Boolean(), default=True)
@@ -116,7 +116,8 @@ class User(Base):
                     'send_report',
                     'spam_checks',
                     'low_score',
-                    'high_score']:
+                    'high_score',
+                    'timezone']:
             try:
                 csvdict[field] = str(getattr(self, field))
             except UnicodeEncodeError:

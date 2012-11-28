@@ -24,6 +24,7 @@ from wtforms.ext.sqlalchemy.fields import QuerySelectMultipleField
 from pylons.i18n.translation import lazy_ugettext as _
 from sqlalchemy.orm.exc import NoResultFound
 
+from baruwa.forms import TIMEZONE_TUPLES
 from baruwa.model.domains import Domain
 from baruwa.model.meta import Session
 from baruwa.forms.organizations import check_pw_strength
@@ -87,8 +88,8 @@ class AddUserForm(Form):
     email = TextField(_('Email address'),
                         [validators.Required(),
                         validators.Email()])
-    account_type = SelectField(
-                                _('Account type'),
+    timezone = SelectField(_('Timezone'), choices=TIMEZONE_TUPLES)
+    account_type = SelectField(_('Account type'),
                                 choices=list(ACCOUNT_TYPES))
     domains = QuerySelectMultipleField(_('Domains'),
                                         get_label='name',
@@ -112,6 +113,7 @@ class EditUserForm(Form):
     firstname = TextField(_('First name'), [validators.Length(max=254)])
     lastname = TextField(_('Last name'), [validators.Length(max=254)])
     email = TextField(_('Email address'), [validators.Required()])
+    timezone = SelectField(_('Timezone'), choices=TIMEZONE_TUPLES)
     domains = QuerySelectMultipleField(_('Domains'), get_label='name', 
                                         allow_blank=False)
     active = BooleanField(_('Enabled'))

@@ -19,7 +19,7 @@
 		</div>
 		<div class="grid_16 alpha drow">
 			<div class="grid_7">${_('Received on')}</div>
-			<div class="grid_8">${c.mailqitem.timestamp}</div>
+			<div class="grid_8">${h.format_date(c.mailqitem.timestamp, c.tzinfo)}</div>
 		</div>
 		<div class="grid_16 alpha drow">
 			<div class="grid_7">${_('Subject')}</div>
@@ -55,7 +55,7 @@
 		</div>
 		<div class="grid_16 alpha drow">
 			<div class="grid_7">${_('Last delivery attempt at')}</div>
-			<div class="grid_8">${c.mailqitem.lastattempt}</div>
+			<div class="grid_8">${h.format_date(c.mailqitem.lastattempt, c.tzinfo)}</div>
 		</div>
 		<div class="grid_16 alpha drow">
 			<div class="grid_7">${_('Reason for queuing')}</div>

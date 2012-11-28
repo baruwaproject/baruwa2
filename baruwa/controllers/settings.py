@@ -21,7 +21,6 @@
 import os
 import logging
 
-from datetime import datetime
 from urlparse import urlparse
 
 from pylons import request, response, session, config, tmpl_context as c, url
@@ -35,6 +34,7 @@ from repoze.what.predicates import not_anonymous
 from repoze.what.plugins.pylonshq import ActionProtector
 from repoze.what.plugins.pylonshq import ControllerProtector
 
+from baruwa.lib.dates import now
 from baruwa.lib.base import BaseController, render
 from baruwa.lib.regex import CONFIG_RE
 from baruwa.lib.auth.predicates import OwnsDomain
@@ -150,7 +150,7 @@ class SettingsController(BaseController):
                 info = HOSTADD_MSG % dict(n=server.hostname)
                 audit_log(c.user.username,
                         3, info, request.host,
-                        request.remote_addr, datetime.now())
+                        request.remote_addr, now())
                 flash(_('The scanning server has been added'))
                 redirect(url(controller='settings'))
             except IntegrityError:
@@ -180,7 +180,7 @@ class SettingsController(BaseController):
                     info = HOSTUPDATE_MSG % dict(n=server.hostname)
                     audit_log(c.user.username,
                             2, info, request.host,
-                            request.remote_addr, datetime.now())
+                            request.remote_addr, now())
                     flash(_('The scanning server has been updated'))
                 except IntegrityError:
                     Session.rollback()
@@ -207,7 +207,7 @@ class SettingsController(BaseController):
             info = HOSTDELETE_MSG % dict(n=hostname)
             audit_log(c.user.username,
                     4, info, request.host,
-                    request.remote_addr, datetime.now())
+                    request.remote_addr, now())
             flash(_('The scanning server has been deleted'))
             redirect(url(controller='settings'))
         return render('/settings/deleteserver.html')
@@ -272,7 +272,7 @@ class SettingsController(BaseController):
                             info = HOSTSETTING_MSG % subs
                             audit_log(c.user.username,
                                     3, info, request.host,
-                                    request.remote_addr, datetime.now())
+                                    request.remote_addr, now())
                     else:
                         if conf.value != field.data:
                             conf.value = field.data
@@ -285,7 +285,7 @@ class SettingsController(BaseController):
                             info = HOSTSETTING_MSG % subs
                             audit_log(c.user.username,
                                     2, info, request.host,
-                                    request.remote_addr, datetime.now())
+                                    request.remote_addr, now())
             if updated:
                 flash(_('%(settings)s updated') % dict(
                 settings=CONFIG_SECTIONS[int(sectionid)]))
@@ -337,7 +337,7 @@ class SettingsController(BaseController):
             info = DKIMGEN_MSG % dict(d=domain.name)
             audit_log(c.user.username,
                     3, info, request.host,
-                    request.remote_addr, datetime.now())
+                    request.remote_addr, now())
             flash(_('DKIM keys successfully generated'))
         except DatabaseError:
             flash_alert(_('Generation of DKIM keys failed'))
@@ -370,7 +370,7 @@ class SettingsController(BaseController):
                     state = _('disabled')
                 audit_log(c.user.username,
                         2, info, request.host,
-                        request.remote_addr, datetime.now())
+                        request.remote_addr, now())
                 reload_exim.delay()
                 flash(_('DKIM signing for: %s has been %s') %
                         (domain.name, state))
@@ -420,7 +420,7 @@ class SettingsController(BaseController):
                 info = ADDDOMSIG_MSG % dict(d=domain.name)
                 audit_log(c.user.username,
                         3, info, request.host,
-                        request.remote_addr, datetime.now())
+                        request.remote_addr, now())
                 flash(_('The signature has been created'))
                 redirect(url('domain-settings-sigs', domainid=domainid))
             except IntegrityError:
@@ -453,7 +453,7 @@ class SettingsController(BaseController):
                     info = UPDATEDOMSIG_MSG % dict(d=sign.domain.name)
                     audit_log(c.user.username,
                             2, info, request.host,
-                            request.remote_addr, datetime.now())
+                            request.remote_addr, now())
                     flash(_('The signature has been updated'))
                 else:
                     flash(_('No changes made, signature not updated'))
@@ -504,7 +504,7 @@ class SettingsController(BaseController):
             info = DELETEDOMSIG_MSG % dict(d=domain_name)
             audit_log(c.user.username,
                     4, info, request.host,
-                    request.remote_addr, datetime.now())
+                    request.remote_addr, now())
             flash(_('The signature has been deleted'))
             redirect(url('domain-settings-sigs', domainid=domain_id))
         c.sign = sign
@@ -532,7 +532,7 @@ class SettingsController(BaseController):
                 info = ADDACCSIG_MSG % dict(u=account.username)
                 audit_log(c.user.username,
                         3, info, request.host,
-                        request.remote_addr, datetime.now())
+                        request.remote_addr, now())
                 flash(_('The signature has been created'))
                 redirect(url('account-detail', userid=userid))
             except IntegrityError:
@@ -565,7 +565,7 @@ class SettingsController(BaseController):
                     info = UPDATEACCSIG_MSG % dict(u=sign.user.username)
                     audit_log(c.user.username,
                             2, info, request.host,
-                            request.remote_addr, datetime.now())
+                            request.remote_addr, now())
                     flash(_('The signature has been updated'))
                 else:
                     flash(_('No changes made, signature not updated'))
@@ -616,7 +616,7 @@ class SettingsController(BaseController):
             info = DELETEACCSIG_MSG % dict(u=user_name)
             audit_log(c.user.username,
                     4, info, request.host,
-                    request.remote_addr, datetime.now())
+                    request.remote_addr, now())
             flash(_('The signature has been deleted'))
             redirect(url('account-detail', userid=user_id))
         c.sign = sign

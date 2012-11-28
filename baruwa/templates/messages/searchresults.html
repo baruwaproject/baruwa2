@@ -1,3 +1,6 @@
+<%!
+    from baruwa.lib.dates import SHTFMT
+%>
 <!-- <div class="alpos">
 	<ul id="msgops">
 		<li><a href="#">${_('Show applied filters')}</a></li>
@@ -74,7 +77,7 @@ else:
 	from_addr =  msg.from_address
 %>
 <tr class="${value}_row">
-	<td class="date_td">${h.link_to(msg.timestamp, view_url)}</td>
+	<td class="date_td">${h.link_to(h.format_date(msg.timestamp, c.tzinfo).strftime(SHTFMT), view_url)}</td>
 	<td class="from_td">${h.link_to(h.wrap_paragraphs(from_addr,32), view_url)}</td>
 	<td class="to_td">${h.link_to(h.truncate(h.do_breaks(msg.to_address), 50), view_url)}</td>
 	<td class="subject_td">${h.link_to(h.truncate((msg.subject and msg.subject.strip()) or '---', 50), view_url)}</td>
@@ -99,7 +102,7 @@ ${self.pager('sresultsbottom')}
 <div class="alpos">
 	<div class="toolbar">
 		% if c.page['total'] != 0:
-		<p>${_('Showing items %(i)d to %(l)d of %(count)d' % dict(i=c.page['first'], l=c.page['last'], count=c.page['total']))}.</p>
+		<p>${_('Showing items %(i)d to %(l)d of %(count)d') % dict(i=c.page['first'], l=c.page['last'], count=c.page['total'])}.</p>
 		<div class="limiter">
 		${_('Show items:')}
 		${h.pager_select(name, str(c.page['results_per_page']))}

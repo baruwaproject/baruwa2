@@ -22,10 +22,9 @@ import base64
 import socket
 import urllib2
 
-from datetime import datetime
 from urlparse import urlparse
 
-from pylons import request, response, session, tmpl_context as c, url
+from pylons import request, response, session, tmpl_context as c, url, config
 from pylons.controllers.util import abort, redirect
 from pylons.i18n.translation import _
 from webhelpers import paginate
@@ -42,6 +41,7 @@ from sphinxapi import SphinxClient, SPH_MATCH_EXTENDED2 #, SPH_SORT_EXTENDED
 from celery.backends.database import DatabaseBackend
 from celery.exceptions import TimeoutError, QueueNotFound
 
+from baruwa.lib.dates import now, convert_date
 from baruwa.lib.base import BaseController, render
 from baruwa.lib.misc import check_num_param
 from baruwa.lib.misc import jsonify_msg_list, convert_to_json
@@ -515,8 +515,9 @@ class MessagesController(BaseController):
             abort(404)
 
         try:
+            localtmz = config.get('baruwa.timezone', 'Africa/Johannesburg')
             args = [message.messageid,
-                    str(message.date),
+                    convert_date(message.timestamp, localtmz).strftime('%Y%m%d'),
                     attachment,
                     img,
                     allowimgs]
@@ -531,7 +532,7 @@ class MessagesController(BaseController):
                                                 a=task.result['name'])
                         audit_log(c.user.username,
                                 1, info, request.host,
-                                request.remote_addr, datetime.now())
+                                request.remote_addr, now())
                         return base64.decodestring(task.result['img'])
                     abort(404)
                 if attachment:
@@ -539,7 +540,7 @@ class MessagesController(BaseController):
                                             a=task.result['name'])
                     audit_log(c.user.username,
                             1, info, request.host,
-                            request.remote_addr, datetime.now())
+                            request.remote_addr, now())
                     response.content_type = task.result['mimetype']
                     content_disposition = 'attachment; filename="%s"' % \
                         task.result['name'].encode('ascii', 'replace')
@@ -570,7 +571,7 @@ class MessagesController(BaseController):
                 info = MSGPREVIEW_MSG % dict(m=message.id)
                 audit_log(c.user.username,
                         1, info, request.host,
-                        request.remote_addr, datetime.now())
+                        request.remote_addr, now())
             else:
                 c.message = {}
         except (socket.error, TimeoutError, QueueNotFound):

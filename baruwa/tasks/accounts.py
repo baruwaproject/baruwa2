@@ -28,7 +28,7 @@ from baruwa.forms.accounts import AddUserForm, AddressForm
 
 ACCOUNTFIELDS = ['username', 'password1', 'email', 'account_type', 'active',
                 'firstname', 'lastname', 'send_report', 'spam_checks',
-                'low_score', 'high_score']
+                'low_score', 'high_score', 'timezone']
 ADDRESSFIELDS = ['address', 'enabled']
 BOOLEANFIELDS = ['active', 'send_report', 'spam_checks', 'enabled']
 
@@ -141,7 +141,8 @@ def importaccounts(domid, filename, skipfirst, userid):
                             user = User(form.username.data, form.email.data)
                             for attr in ['firstname', 'lastname', 'email',
                                 'active', 'account_type', 'send_report',
-                                'spam_checks', 'low_score', 'high_score']:
+                                'spam_checks', 'low_score', 'high_score',
+                                'timezone']:
                                 setattr(user, attr, getattr(form, attr).data)
                             user.local = True
                             user.set_password(form.password1.data)

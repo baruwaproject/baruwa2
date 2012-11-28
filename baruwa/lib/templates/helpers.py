@@ -20,6 +20,7 @@
 """ Helper functions for mail operations """
 import socket
 
+import pytz
 #from textwrap import wrap
 
 from IPy import IP
@@ -309,6 +310,11 @@ def portable_img(name, alt, **kwargs):
     return image(media_url() + name, alt, **kwargs)
 
 
-def datetimeformat(value, format='%Y-%m-%d %H:%M'):
+def datetimeformat(value, format='%Y-%m-%d %H:%M:%S'):
     "return formated date"
     return value.strftime(format)
+
+
+def format_date(date, timezone):
+    "return a localized datetime"
+    return pytz.UTC.normalize(date).astimezone(timezone)

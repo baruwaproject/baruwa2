@@ -85,7 +85,7 @@ kwd = {}
 if c.org:
 	kwd['o'] = c.org
 %>
-<p>${_('Showing results %(i)d to %(l)d of %(count)d' % dict(i=c.page.first_item, l=c.page.last_item, count=c.page.item_count))}.</p>
+<p>${_('Showing results %(i)d to %(l)d of %(count)d') % dict(i=c.page.first_item, l=c.page.last_item, count=c.page.item_count)}.</p>
 <div class="limiter">
 ${_('Show:')}
 ${h.pager_select(fieldname, str(c.page.items_per_page))}

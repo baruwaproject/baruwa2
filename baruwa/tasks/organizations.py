@@ -32,7 +32,7 @@ DOMAINFIELDS = ['name', 'site_url', 'status', 'smtp_callout',
                 'ldap_callout', 'virus_checks', 'spam_checks',
                 'spam_actions', 'highspam_actions', 'low_score',
                 'high_score', 'message_size', 'delivery_mode',
-                'language', 'report_every',]
+                'language', 'report_every', 'timezone']
 DAFIELDS = ['da_name', 'da_status',]
 DSFIELDS = ['ds_address', 'ds_protocol', 'ds_port', 'ds_enabled',]
 ASFIELDS = ['as_address', 'as_protocol', 'as_port', 'as_enabled',

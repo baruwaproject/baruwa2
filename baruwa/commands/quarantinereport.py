@@ -33,6 +33,7 @@ from marrow.mailer import Message as Msg, Mailer
 
 from baruwa.model.meta import Session
 from baruwa.model.accounts import User
+from baruwa.lib.dates import now
 from baruwa.lib.query import UserFilter
 from baruwa.model.messages import Message, Release
 from baruwa.commands import BaseCommand, set_lang, get_conf_options
@@ -40,8 +41,7 @@ from baruwa.commands import BaseCommand, set_lang, get_conf_options
 
 def gen_uuid(account):
     "Generates a uuid"
-    seed = "%s%s%s" % (account.username, account.email,
-                        datetime.datetime.now())
+    seed = "%s%s%s" % (account.username, account.email, now())
     messageuuid = hashlib.sha1(seed).hexdigest()
     return messageuuid
 

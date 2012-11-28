@@ -25,7 +25,7 @@ available to Controllers. This module is available to templates as 'h'.
 #from webhelpers.html.tags import checkbox, password
 from webhelpers.html import literal, HTML
 from webhelpers.text import wrap_paragraphs, truncate
-from webhelpers.number import format_byte_size
+from webhelpers.number import format_byte_size, percent_of
 from webhelpers.pylonslib.flash import Flash as _Flash, Message as Msg
 #from webhelpers.pylonslib.secure_form import secure_form as form
 from webhelpers.pylonslib.minify import stylesheet_link, javascript_link
@@ -38,7 +38,7 @@ from baruwa.lib.templates.helpers import (relayed_via, sa_learned,
     spam_actions, do_breaks, enabled_or_not, country_flag,
     get_hostname, service_status, media_url, highlight_errors,
     wrap_headers, pager_img, pager_select, portable_img,
-    datetimeformat)
+    datetimeformat, format_date)
 from baruwa.lib.misc import get_languages
 
 flash = _Flash()

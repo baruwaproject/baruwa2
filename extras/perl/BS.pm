@@ -493,7 +493,7 @@ sub BaruwaLog {
         $archived = 1;
     }
 
-    my ( $sec, $min, $hour, $mday, $mon, $year, $wday, $yday, $isdst ) = localtime();
+    my ( $sec, $min, $hour, $mday, $mon, $year, $wday, $yday, $isdst ) = gmtime();
     my ($timestamp) = sprintf("%d-%02d-%02d %02d:%02d:%02d", $year + 1900, $mon + 1, $mday, $hour, $min, $sec);
 
     my $sphinxts = timelocal($sec, $min, $hour, $mday, $mon, $year); 

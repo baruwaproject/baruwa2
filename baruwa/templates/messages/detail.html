@@ -1,3 +1,6 @@
+<%!
+    from baruwa.lib.dates import TZFMT
+%>
 <div class="alpos">
 	<div class="grid_16">
 		<ul id="msgops">
@@ -33,7 +36,7 @@
 		</div>
 		<div class="grid_16 drow">
 			<div class="grid_7">${_('Received on')}</div>
-			<div class="grid_8">${c.msg.timestamp}</div>
+			<div class="grid_8">${h.format_date(c.msg.timestamp, c.tzinfo).strftime(TZFMT)}</div>
 		</div>
 		<div class="grid_16 drow">
 			<div class="grid_7">${_('Received by')}</div>
@@ -193,7 +196,7 @@
 			<div class="grid_2 omega">${h.portable_img('imgs/passed_relay.png', _('Ok'), class_="positio") if status.errorno == 0 else h.portable_img('imgs/failed_relay.png', _('Fail'), class_="positio")}</div>
 			<div class="grid_4 omega">${status.hostname}</div>
 			<div class="grid_6 omega">${status.confirmation if status.errorno == 0 else status.errorstr}</div>
-			<div class="grid_4 omega">${h.datetimeformat(status.timestamp)}</div>
+			<div class="grid_4 omega">${h.datetimeformat(h.format_date(status.timestamp, c.tzinfo), format='%Y-%m-%d %H:%M:%S %z (%Z)')}</div>
 		</div>
 		% endfor
 		<div class="clear"></div>

@@ -48,6 +48,7 @@ def sanitize_signature(mapper, connection, target):
                                     safe_attrs_only=False)
         target.signature_content = cleaner.clean_html(target.signature_content)
 
+
 def delete_totals(mapper, connection, target):
     "Delete totals for the domain"
     query1 = text("DELETE FROM srcmsgtotals WHERE id='dom:'")

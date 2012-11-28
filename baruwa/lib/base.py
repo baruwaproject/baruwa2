@@ -20,6 +20,9 @@
 
 Provides the BaseController class for subclassing.
 """
+
+from pytz import timezone
+from babel.util import UTC
 from pylons import request, session
 from pylons import tmpl_context as c
 from pylons.i18n.translation import set_lang
@@ -41,11 +44,12 @@ class BaseController(WSGIController):
 
     def __before__(self):
         "before"
-        languages = [lang.split('-')[0] for lang in request.languages
-        if check_language(lang.split('-')[0])]
-        set_lang(languages)
         if 'lang' in session:
             set_lang(session['lang'])
+        else:
+            languages = [lang.split('-')[0] for lang in request.languages
+                        if check_language(lang.split('-')[0])]
+            set_lang(languages)
         self.invalidate = request.GET.get('uc', None)
 
     def __call__(self, environ, start_response):
@@ -75,6 +79,12 @@ class BaseController(WSGIController):
                 c.baruwa_outbound = mailq.get(2)[0]
                 if self.identity['user'].is_admin:
                     c.baruwa_status = cluster_status()
+
+                tzinfo = self.identity['user'].timezone or UTC
+                if isinstance(tzinfo, basestring):
+                    tzinfo = timezone(tzinfo)
+
+                c.tzinfo = tzinfo
         try:
             return WSGIController.__call__(self, environ, start_response)
         finally:

@@ -17,16 +17,24 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 
-from pylons.i18n.translation import _
+import pytz
+
+from datetime import datetime
 
 
-def default(value):
-    if value == '0' or value == '0.0' or value == '' or value is None:
-        return _('System default')
-    return value
+SHTFMT = "%Y-%m-%d %I:%M:%S"
+TZFMT = "%Y-%m-%d %H:%M:%S %z (%Z)"
 
 
-def totals(value):
-    if value is None or str(value) == '':
-        value = '0'
-    return value
+def now():
+    """
+    Returns an aware datetime.datetime
+    """
+    return datetime.utcnow().replace(tzinfo=pytz.utc)
+
+
+def convert_date(date, tmzone):
+    "Convert UTC date to timezone"
+    if isinstance(tmzone, basestring):
+        tmzone = pytz.timezone(tmzone)
+    return pytz.UTC.normalize(date).astimezone(tmzone)

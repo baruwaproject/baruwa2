@@ -17,16 +17,15 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 
-from pylons.i18n.translation import _
+from sqlalchemy.sql import expression
+from sqlalchemy.types import DateTime
+from sqlalchemy.ext.compiler import compiles
 
 
-def default(value):
-    if value == '0' or value == '0.0' or value == '' or value is None:
-        return _('System default')
-    return value
+class utcnow(expression.FunctionElement):
+    type = DateTime()
 
 
-def totals(value):
-    if value is None or str(value) == '':
-        value = '0'
-    return value
+@compiles(utcnow, 'postgresql')
+def pg_utcnow(element, compiler, **kw):
+    return "TIMEZONE('utc', CURRENT_TIMESTAMP)"
