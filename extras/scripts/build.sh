@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # -*- coding: utf-8 -*-
 # vim: ai ts=4 sts=4 et sw=4
 # Baruwa - Web 2.0 MailScanner front-end.
