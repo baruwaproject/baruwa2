@@ -27,11 +27,13 @@ from reportlab.lib import colors
 from reportlab.lib.colors import HexColor
 from reportlab.graphics.charts.piecharts import Pie
 from reportlab.graphics.shapes import Drawing, Rect
-from reportlab.lib.styles import getSampleStyleSheet
+from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 from reportlab.graphics.charts.linecharts import HorizontalLineChart
 from reportlab.graphics.charts.barcharts import VerticalBarChart
 from reportlab.platypus import Spacer, Table, TableStyle, Paragraph
 from reportlab.platypus import PageBreak, Image
+from reportlab.pdfbase import pdfmetrics
+from reportlab.pdfbase.ttfonts import TTFont
 from webhelpers.number import format_byte_size
 
 from baruwa.lib.outputformats import BaruwaPDFTemplate
@@ -40,9 +42,19 @@ PIE_COLORS = ['#FF0000', '#ffa07a', '#deb887', '#d2691e', '#008b8b',
             '#006400', '#ff8c00', '#ffd700', '#f0e68c', '#000000']
 PIE_CHART_COLORS = [HexColor(pie_color) for pie_color in PIE_COLORS]
 
+pdfmetrics.registerFont(TTFont('Vera', 'Vera.ttf'))
+pdfmetrics.registerFont(TTFont('VeraBd', 'VeraBd.ttf'))
+pdfmetrics.registerFont(TTFont('VeraIt', 'VeraIt.ttf'))
+pdfmetrics.registerFont(TTFont('VeraBI', 'VeraBI.ttf'))
+pdfmetrics.registerFontFamily('Vera',
+                    normal='Vera',
+                    bold='VeraBd',
+                    italic='VeraIt',
+                    boldItalic='VeraBI')
+
 TABLE_STYLE = TableStyle([
-    ('FONT', (0, 0), (-1, -1), 'Helvetica'),
-    ('FONT', (0, 0), (-1, 0), 'Helvetica-Bold'),
+    ('FONT', (0, 0), (-1, -1), 'Vera'),
+    ('FONT', (0, 0), (-1, 0), 'VeraBd'),
     ('FONTSIZE', (0, 0), (-1, -1), 8),
     ('GRID', (0, 0), (-1, -1), 0.15, colors.black),
     ('ALIGN', (0, 0), (-1, 0), 'CENTER'),
@@ -53,7 +65,7 @@ TABLE_STYLE = TableStyle([
 ])
 
 PIE_TABLE = TableStyle([
-    ('FONT', (0, 0), (-1, 0), 'Helvetica-Bold'),
+    ('FONT', (0, 0), (-1, 0), 'VeraBd'),
     ('ALIGN', (0, 0), (-1, 0), 'LEFT'),
     ('ALIGN', (1, 0), (-1, 0), 'RIGHT'),
     ('FONTSIZE', (1, 0), (-1, 0), 10),
@@ -62,6 +74,18 @@ PIE_TABLE = TableStyle([
 
 
 STYLES = getSampleStyleSheet()
+
+CUSTOM_HEADING1 = ParagraphStyle(
+    name="custheading1", 
+    fontName="Vera",
+    parent=STYLES['Heading1'], 
+)
+
+CUSTOM_HEADING6 = ParagraphStyle(
+    name="custheading6", 
+    fontName="VeraBd",
+    parent=STYLES['Heading6'], 
+)
 
 
 class MessageTotalsGraph(Drawing):
@@ -214,7 +238,7 @@ class PDFReport(object):
                             2.8 * inch, 0.5 * inch,
                             0.7 * inch, 3.2 * inch])
         table_with_style.setStyle(TABLE_STYLE)
-        paragraph = Paragraph(title, STYLES['Heading1'])
+        paragraph = Paragraph(title, CUSTOM_HEADING1)
 
         self.parts.append(paragraph)
         self.parts.append(table_with_style)
@@ -224,22 +248,22 @@ class PDFReport(object):
 
     def _bar_chart(self, data, title, headers):
         "Build the bar chart"
-        self.parts.append(Paragraph(title, STYLES['Heading1']))
+        self.parts.append(Paragraph(title, CUSTOM_HEADING1))
         rows = [(
                 Table([[self._draw_square(colors.white),
-                    Paragraph(headers['date'], STYLES["Heading6"])]],
+                    Paragraph(headers['date'], CUSTOM_HEADING6)]],
                     [0.35 * inch, 1.13 * inch, ]),
                 Table([[self._draw_square(colors.green),
-                    Paragraph(headers['mail'], STYLES["Heading6"])]],
+                    Paragraph(headers['mail'], CUSTOM_HEADING6)]],
                     [0.35 * inch, 1.13 * inch, ]),
                 Table([[self._draw_square(colors.pink),
-                    Paragraph(headers['spam'], STYLES["Heading6"])]],
+                    Paragraph(headers['spam'], CUSTOM_HEADING6)]],
                     [0.35 * inch, 1.13 * inch, ]),
                 Table([[self._draw_square(colors.red),
-                    Paragraph(headers['virus'], STYLES["Heading6"])]],
+                    Paragraph(headers['virus'], CUSTOM_HEADING6)]],
                     [0.35 * inch, 1.13 * inch, ]),
                 Table([[self._draw_square(colors.blue),
-                    Paragraph(headers['volume'], STYLES["Heading6"])]],
+                    Paragraph(headers['volume'], CUSTOM_HEADING6)]],
                     [0.35 * inch, 1.13 * inch, ]),
                 ),]
         if not data:
