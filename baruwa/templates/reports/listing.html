@@ -22,7 +22,9 @@
 	<td colspan="7">
 	<div id="chart" style="width: 950px; height: 260px;">
 		<!--<noscript>${_('Enable Javascript to view graphs')}</noscript>-->
+% if c.top_items:
 		<img src="${url(controller='reports', action='display', reportid=request.environ['pylons.routes_dict']['reportid'])}.png" alt="graph" />
+% endif
 	</div>
 	</td>	
 </tr>

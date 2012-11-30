@@ -1,6 +1,3 @@
-<%!
-from baruwa.lib.dates import TZFMT
-%>
 <div id="content">
 	<div id="form-area">
 		${filter.form()}
@@ -44,11 +41,15 @@ from baruwa.lib.dates import TZFMT
 		</div>
 		<div class="grid_6 drow alpha">
 			<div class="grid_3 alpha">${_('Oldest message')}</div>
-			<div class="grid_3 alpha" id="newestmsg">${h.format_date(c.data[0].newest, c.tzinfo).strftime(TZFMT)}</div>
+			<div class="grid_3 alpha" id="newestmsg">
+			${_('No messages found') if c.data[0][0] is None else h.datetimeformat(h.format_date(c.data[0].newest, c.tzinfo), format='%Y-%m-%d %H:%M:%S %z (%Z)')}
+			</div>
 		</div>
 		<div class="grid_6 drow alpha">
 			<div class="grid_3 alpha">${_('Newest message')}</div>
-			<div class="grid_3 alpha" id="oldestmsg">${h.format_date(c.data[0].oldest, c.tzinfo).strftime(TZFMT)}</div>
+			<div class="grid_3 alpha" id="oldestmsg">
+			${_('No messages found') if c.data[0][0] is None else h.datetimeformat(h.format_date(c.data[0].oldest, c.tzinfo), format='%Y-%m-%d %H:%M:%S %z (%Z)')}
+			</div>
 		</div>
 	</div>
 	<div class="grid_8">
