@@ -68,7 +68,7 @@ setup(
     name='baruwa',
     version='2.0.0',
     description='Baruwa email security',
-    long_description=read('README'),
+    long_description=read('README.rst'),
     author='Andrew Colin Kissa',
     author_email='andrew@topdog.za.net',
     url='http://www.baruwa.org',

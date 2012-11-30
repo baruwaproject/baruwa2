@@ -7,6 +7,7 @@ Install ``baruwa``::
     git clone git://github.com/akissa/baruwa2.git
     cd baruwa2
     ./extras/scripts/build.sh full
+    pip install -r requirements.txt
     pip install sdist/baruwa-2.0.0.tar.bz2
 
 Make a config file as follows::
@@ -23,6 +24,14 @@ Run the paste server::
 
 You can then deploy the application using any WSGI server.
 
+
+Detailed documentation
+======================
+
+Detailed documentation is available in the ``docs`` folder. To generate
+HTML run::
+
+	cd docs && make html
 
 Support
 =======
