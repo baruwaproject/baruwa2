@@ -24,7 +24,7 @@ import urllib2
 
 from urlparse import urlparse
 
-from pylons import request, response, session, tmpl_context as c, url, config
+from pylons import request, response, session, tmpl_context as c, url
 from pylons.controllers.util import abort, redirect
 from pylons.i18n.translation import _
 from webhelpers import paginate
@@ -41,7 +41,7 @@ from sphinxapi import SphinxClient, SPH_MATCH_EXTENDED2 #, SPH_SORT_EXTENDED
 from celery.backends.database import DatabaseBackend
 from celery.exceptions import TimeoutError, QueueNotFound
 
-from baruwa.lib.dates import now, convert_date
+from baruwa.lib.dates import now
 from baruwa.lib.base import BaseController, render
 from baruwa.lib.misc import check_num_param
 from baruwa.lib.misc import jsonify_msg_list, convert_to_json
@@ -515,9 +515,8 @@ class MessagesController(BaseController):
             abort(404)
 
         try:
-            localtmz = config.get('baruwa.timezone', 'Africa/Johannesburg')
             args = [message.messageid,
-                    convert_date(message.timestamp, localtmz).strftime('%Y%m%d'),
+                    unicode(message.date)
                     attachment,
                     img,
                     allowimgs]
