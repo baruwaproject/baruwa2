@@ -47,13 +47,16 @@ def check_pw_strength(passwd):
 class OrgForm(Form):
     name = TextField(_('Organization name'), [validators.Required()])
     domains = QuerySelectMultipleField(_('Domains'),
-    get_label='name', allow_blank=True)
+                            get_label='name',
+                            allow_blank=True)
     admins = QuerySelectMultipleField(_('Admins'),
-    get_label='username', allow_blank=True)
+                            get_label='username',
+                            allow_blank=True)
 
 
 class DelOrgForm(OrgForm):
-    delete_domains = BooleanField(_('Delete Organization domains'), default=False)
+    delete_domains = BooleanField(_('Delete Organization domains'),
+                            default=False)
 
 
 class RelayForm(Form):

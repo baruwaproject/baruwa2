@@ -1,6 +1,3 @@
-<%!
-    from baruwa.lib.dates import TZFMT
-%>
 <div class="alpos">
 	<div class="grid_16">
 		<ul id="msgops">
@@ -36,7 +33,7 @@
 		</div>
 		<div class="grid_16 drow">
 			<div class="grid_7">${_('Received on')}</div>
-			<div class="grid_8">${h.format_date(c.msg.timestamp, c.tzinfo).strftime(TZFMT)}</div>
+			<div class="grid_8">${h.datetimeformat(h.format_date(c.msg.timestamp, c.tzinfo), format='%Y-%m-%d %H:%M:%S %z (%Z)')}</div>
 		</div>
 		<div class="grid_16 drow">
 			<div class="grid_7">${_('Received by')}</div>
