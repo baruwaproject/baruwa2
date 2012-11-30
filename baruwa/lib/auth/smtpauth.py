@@ -53,8 +53,8 @@ class BaruwaSMTPAuthPlugin(object):
             if check_failed_logins(environ):
                 return None
 
-            login = identity['login']
-            password = identity['password']
+            login = identity['login'].encode('utf-8')
+            password = identity['password'].encode('utf-8')
             username = login
             domain = None
             if '@' not in login:
@@ -85,9 +85,9 @@ class BaruwaSMTPAuthPlugin(object):
                 login = username
 
             if domain != domain_name:
-                identity['login'] = "%s@%s" % (username, domain_name)
+                identity['login'] = u"%s@%s" % (username, domain_name)
                 if not split_address:
-                    login = "%s@%s" % (username, domain_name)
+                    login = u"%s@%s" % (username, domain_name)
 
             if (template and (USER_TEMPLATE_MAP_RE.search(template) or
                 DOM_TEMPLATE_MAP_RE.search(template))):
