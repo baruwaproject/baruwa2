@@ -291,8 +291,8 @@ class AccountsController(BaseController):
         if 'lang' in session:
             lang = session['lang']
         session.clear()
-        if 'lang' in locals():
-            session['lang'] = lang
+        # if 'lang' in locals():
+        #     session['lang'] = lang
         session.save()
         #flash(_('You have been logged out !'))
         came_from = (unquote(str(request.params.get('came_from', '')))
