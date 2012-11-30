@@ -1,6 +1,5 @@
 <%!
 from baruwa.lib.filters import default
-from baruwa.lib.dates import TZFMT
 %>
 <% 
 account_types = {1: _('Administrator'), 2: _('Domain Administrator'), 3: _('User')}
@@ -79,7 +78,7 @@ account_type = account_types[c.account.account_type]
 		${_('Last login')}:
 	</div>
 	<div class="grid_8">
-		${h.format_date(c.account.last_login, c.tzinfo).strftime(TZFMT)}
+		${h.datetimeformat(h.format_date(c.account.last_login, c.tzinfo), format='%Y-%m-%d %H:%M:%S %z (%Z)')}
 	</div>
 </div>
 <div class="grid_16 drow">
@@ -87,7 +86,7 @@ account_type = account_types[c.account.account_type]
 		${_('Account created on')}:
 	</div>
 	<div class="grid_8">
-		${h.format_date(c.account.created_on, c.tzinfo).strftime(TZFMT)}
+		${h.datetimeformat(h.format_date(c.account.created_on, c.tzinfo), format='%Y-%m-%d %H:%M:%S %z (%Z)')}
 	</div>
 </div>
 <div class="grid_16 drow">
