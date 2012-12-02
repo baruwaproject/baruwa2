@@ -18,12 +18,15 @@
 #
 "base class for commands"
 import os
+import warnings
 #import sys
 
 from gettext import NullTranslations, translation
 
 from paste.script.command import Command, BadCommand
 from paste.deploy import loadapp, appconfig
+
+warnings.filterwarnings("ignore", category=DeprecationWarning)
 
 
 def set_lang(lang, pkgname, localedir):
