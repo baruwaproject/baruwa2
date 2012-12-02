@@ -287,16 +287,10 @@ class AccountsController(BaseController):
 
     def loggedout(self):
         "Logged out page"
-        # response.delete_cookie('baruwacsrf')
-        if 'lang' in session:
-            lang = session['lang']
         session.clear()
-        # if 'lang' in locals():
-        #     session['lang'] = lang
         session.save()
-        #flash(_('You have been logged out !'))
         came_from = (unquote(str(request.params.get('came_from', '')))
-        or url('/accounts/login/'))
+                    or url('/accounts/login/'))
         redirect(url(came_from))
 
     def passwdreset(self):
