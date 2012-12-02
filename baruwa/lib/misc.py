@@ -180,7 +180,7 @@ def jsonify_msg_list(element):
         status = _('NS')
     return dict(
                 id=element.id,
-                timestamp=str(element.timestamp),
+                timestamp=element.timestamp.strftime('%A, %d %b %Y %H:%M:%S %Z'),
                 sascore=element.sascore,
                 size=format_byte_size(element.size),
                 subject=truncate(escape(element.subject), 50),

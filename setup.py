@@ -46,6 +46,7 @@ required_packages = [
         "pyrad",
         "python-ldap",
         "psycopg2",
+        "mysql-python",
         "eventlet",
         "pylibmc",
         "M2Crypto",
@@ -105,6 +106,7 @@ setup(
     send-quarantine-reports = baruwa.commands.quarantinereport:QuarantineReports
     prunedb = baruwa.commands.dbclean:DBCleanCommand
     prunequarantine = baruwa.commands.cleanquarantine:CleanQuarantineCommand
+    update-delta-index = baruwa.commands.updatedelta:UpdateDeltaIndex
     routes = pylons.commands:RoutesCommand
     shell = pylons.commands:ShellCommand
     """,

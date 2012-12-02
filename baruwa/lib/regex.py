@@ -152,6 +152,20 @@ USER_DN_RE = re.compile('<dn:(?P<b64dn>[A-Za-z0-9+/]+=*)>')
 
 PROXY_ADDR_RE = re.compile(r'(SMTP|smtp):')
 
+SQL_URL_RE = re.compile(r'''
+        (?P<name>[\w\+]+)://
+        (?:
+            (?P<user>[^:/]*)
+            (?::(?P<passwd>[^/]*))?
+        @)?
+        (?:
+            (?P<host>[^/:]*)
+            (?::(?P<port>[^/]*))?
+        )?
+        (?:/(?P<db>.*))?
+        '''
+        , re.X)
+
 def clean_regex(rule):
     """
     Formats a regex for parsing MailScanner
