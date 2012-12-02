@@ -311,7 +311,7 @@ every hour::
 	#!/bin/bash
 	#
 	indexer auditlog lists domains accounts organizations --rotate &>/dev/null
-	paster update-delta-index --index messages --realtime /etc/baruwa/production.ini
+	/home/baruwa/px/bin/paster update-delta-index --index messages --realtime /etc/baruwa/production.ini
 	EOF
 
 Make the cronjob executable::
