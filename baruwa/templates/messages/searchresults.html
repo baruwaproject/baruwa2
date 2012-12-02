@@ -77,7 +77,7 @@ else:
 	from_addr =  msg.from_address
 %>
 <tr class="${value}_row">
-	<td class="date_td">${h.link_to(h.datetimeformat(h.format_date(msg.timestamp, c.tzinfo), format='%Y-%m-%d %H:%M:%S %z (%Z)'), view_url)}</td>
+	<td class="date_td">${h.link_to(h.datetimeformat(h.format_date(msg.timestamp, c.tzinfo), format='%Y-%m-%d %H:%M:%S'), view_url)}</td>
 	<td class="from_td">${h.link_to(h.wrap_paragraphs(from_addr,32), view_url)}</td>
 	<td class="to_td">${h.link_to(h.truncate(h.do_breaks(msg.to_address), 50), view_url)}</td>
 	<td class="subject_td">${h.link_to(h.truncate((msg.subject and msg.subject.strip()) or '---', 50), view_url)}</td>
@@ -173,6 +173,7 @@ var setitems_url = "${url(controller='messages', action='setnum')}";
 var search_url = "${url(controller='messages', action='search')}";
 </script>
 ${h.javascript_link(h.media_url() + 'js/jquery.address-1.4.min.js',
+h.media_url() + 'js/baruwa/dates.js',
 h.media_url() + 'js/baruwa/messages.search.js')}
 </%def>
 <%namespace name="functions" file="functions.html"/>
