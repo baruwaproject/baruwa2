@@ -50,6 +50,7 @@ buildrows = (items, action) ->
         rows = []
         $.each items, (i,n) ->
             n['action'] = action
+            n['timestamp'] = BaruwaDateString(n['timestamp'])
             html = $.mustache row, n
             rows.push html
         replacement = rows.join ''

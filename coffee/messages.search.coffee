@@ -41,6 +41,7 @@ process_response = (data, textStatus, XHR)->
                 '<td class="status_td"><a href="/messages/detail/{{id}}">{{status}}</a></td></tr>'
         rows = []
         $.each data.items, (i,n) ->
+            n['timestamp'] = BaruwaDateString(n['timestamp'])
             html = $.mustache row, n
             rows.push html
         replacement = rows.join ''

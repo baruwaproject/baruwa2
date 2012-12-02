@@ -41,6 +41,7 @@ request_json = ->
                 rows = []
                 exports.last_ts = data.items[0].timestamp
                 $.each data.items, (i,n) ->
+                    n['timestamp'] = BaruwaDateString(n['timestamp'])
                     html = $.mustache row, n
                     rows.push html
                 replacement = rows.join ''

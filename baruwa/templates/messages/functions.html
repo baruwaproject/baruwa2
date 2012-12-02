@@ -52,7 +52,7 @@ else:
 % if isqtne:
 <tr class="${value}_row">
 	<td class="select_row">${ids[index]}</td>
-	<td class="date_td">${h.link_to(h.datetimeformat(h.format_date(msg.timestamp, c.tzinfo), format='%Y-%m-%d %H:%M:%S %z (%Z)'), view_url)}</td>
+	<td class="date_td">${h.link_to(h.datetimeformat(h.format_date(msg.timestamp, c.tzinfo), format='%Y-%m-%d %H:%M:%S'), view_url)}</td>
 	<td class="from_row">${h.link_to(h.wrap_paragraphs(from_addr,32), view_url)}</td>
 	<td class="to_row">${h.link_to(h.wrap_paragraphs(msg.to_address or '---', 32), view_url)}</td>
 	<td class="subject_row">${h.link_to(h.truncate((msg.subject and msg.subject.strip()) or '---', 50), view_url)}</td>
@@ -61,7 +61,7 @@ else:
 </tr>
 % else:
 <tr class="${value}_row">
-	<td class="date_td">${h.link_to(h.datetimeformat(h.format_date(msg.timestamp, c.tzinfo), format='%Y-%m-%d %H:%M:%S %z (%Z)'), view_url)}</td>
+	<td class="date_td">${h.link_to(h.datetimeformat(h.format_date(msg.timestamp, c.tzinfo), format='%Y-%m-%d %H:%M:%S'), view_url)}</td>
 	<td class="from_td">${h.link_to(h.wrap_paragraphs(from_addr,32), view_url)}</td>
 	<td class="to_td">${h.link_to(h.wrap_paragraphs(msg.to_address or '---', 32), view_url)}</td>
 	<td class="subject_td">${h.link_to(h.truncate((msg.subject and msg.subject.strip()) or '---', 50), view_url)}</td>

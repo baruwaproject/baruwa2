@@ -24,6 +24,7 @@ import urllib2
 
 from urlparse import urlparse
 
+from pylons import config
 from pylons import request, response, session, tmpl_context as c, url
 from pylons.controllers.util import abort, redirect
 from pylons.i18n.translation import _
@@ -41,7 +42,7 @@ from sphinxapi import SphinxClient, SPH_MATCH_EXTENDED2 #, SPH_SORT_EXTENDED
 from celery.backends.database import DatabaseBackend
 from celery.exceptions import TimeoutError, QueueNotFound
 
-from baruwa.lib.dates import now
+from baruwa.lib.dates import now, convert_date
 from baruwa.lib.base import BaseController, render
 from baruwa.lib.misc import check_num_param
 from baruwa.lib.misc import jsonify_msg_list, convert_to_json
@@ -132,6 +133,7 @@ class MessagesController(BaseController):
         c.selectedtab = 'messages'
 
     def _get_msg(self, id, archived):
+        "Return message object"
         if archived:
             message = self._get_archive(id)
         else:
@@ -171,6 +173,7 @@ class MessagesController(BaseController):
         return message
 
     def _get_messages(self):
+        "Return messages query object"
         return Session.query(Message.id, Message.from_address,
                         Message.to_address, Message.subject,
                         Message.size, Message.sascore,
@@ -182,6 +185,7 @@ class MessagesController(BaseController):
                         Message.spam)
 
     def _get_messagez(self):
+        "Return message query object"
         return Session.query(Message)
 
     def _get_msg_count(self, archived=None):
@@ -192,6 +196,7 @@ class MessagesController(BaseController):
             return Session.query(Message.id)
 
     def _get_archived(self):
+        "Return archived messages query object"
         return Session.query(Archive.id, Archive.from_address,
                         Archive.to_address, Archive.subject,
                         Archive.size, Archive.sascore,
@@ -203,6 +208,7 @@ class MessagesController(BaseController):
                         Archive.spam)
 
     def _get_releasereq(self, uuid):
+        "return a release request object"
         try:
             msg = Session.query(Release).filter(Release.uuid==uuid)\
                         .one()
@@ -256,6 +262,7 @@ class MessagesController(BaseController):
 
         c.form = ReleaseMsgForm(request.POST, csrf_context=session)
         if request.POST and c.form.validate():
+            localtmz = config.get('baruwa.timezone', 'Africa/Johannesburg')
             job = dict(release=c.form.release.data,
                         learn=c.form.learn.data, 
                         salearn_as=c.form.learnas.data,
@@ -264,7 +271,7 @@ class MessagesController(BaseController):
                         altrecipients=c.form.altrecipients.data,
                         message_id=message.messageid,
                         from_address=message.from_address,
-                        date=str(message.date),
+                        date=convert_date(message.timestamp, localtmz).strftime('%Y%m%d'),
                         to_address=message.to_address,
                         hostname=message.hostname,
                         mid=message.id)
@@ -411,11 +418,12 @@ class MessagesController(BaseController):
             msgs = Session.query(Message.id,
                     Message.messageid,
                     Message.from_address,
-                    Message.date, Message.to_address,
+                    Message.timestamp, Message.to_address,
                     Message.hostname)\
                     .filter(Message.id.in_(c.form.message_id.data))
             query = UserFilter(Session, c.user, msgs)
             msgs = query.filter()
+            localtmz = config.get('baruwa.timezone', 'Africa/Johannesburg')
             formvals = (dict(release=c.form.release.data,
                             learn=c.form.learn.data, 
                             salearn_as=c.form.learnas.data,
@@ -424,7 +432,8 @@ class MessagesController(BaseController):
                             altrecipients=c.form.altrecipients.data,
                             message_id=msg.messageid,
                             from_address=msg.from_address,
-                            date=str(msg.date), to_address=msg.to_address,
+                            date=convert_date(msg.timestamp, localtmz).strftime('%Y%m%d'),
+                            to_address=msg.to_address,
                             hostname=msg.hostname,
                             mid=msg.id)
                         for msg in msgs)
@@ -507,6 +516,15 @@ class MessagesController(BaseController):
     @ActionProtector(not_anonymous())
     def preview(self, id, archive=None, attachment=None, img=None,
                 allowimgs=None):
+        """Preview a message stored in the quarantine
+        
+        :param id: the database message id
+        :param archive: optional. message archived status
+        :param attachment: optional. request is for an attachmeny
+        :param img: optional request is for an image
+        :param allowimgs: optional allow display of remote images
+        
+        """
         if archive:
             message = self._get_archive(id)
         else:
@@ -515,8 +533,9 @@ class MessagesController(BaseController):
             abort(404)
 
         try:
+            localtmz = config.get('baruwa.timezone', 'Africa/Johannesburg')
             args = [message.messageid,
-                    unicode(message.date)
+                    convert_date(message.timestamp, localtmz).strftime('%Y%m%d'),
                     attachment,
                     img,
                     allowimgs]
@@ -604,9 +623,10 @@ class MessagesController(BaseController):
             msgid = msg.messageid
             to_address = msg.to_address
             try:
+                localtmz = config.get('baruwa.timezone', 'Africa/Johannesburg')
                 task = release_message.apply_async(
                         args=[msg.messageid,
-                            str(msg.date),
+                            convert_date(msg.timestamp, localtmz).strftime('%Y%m%d'),
                             msg.from_address,
                             msg.to_address.split(',')],
                         queue=msg.hostname)
@@ -684,12 +704,12 @@ class MessagesController(BaseController):
         q = request.GET.get('q', None)
         if q is None:
             redirect(url(controller='messages', action='listing'))
-        index = 'messages, messages_rt'
+        index = 'messages, messagesdelta, messages_rt'
         action = request.GET.get('a', 'listing')
         if not action in ['listing', 'quarantine', 'archive']:
             action = 'listing'
         if action == 'archive':
-            index = 'archive'
+            index = 'archive archivedelta'
         try:
             page = int(request.GET.get('page', 1))
         except ValueError:

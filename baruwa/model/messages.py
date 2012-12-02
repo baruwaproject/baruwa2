@@ -154,7 +154,7 @@ class Message(Base):
             status = _('NS')
         return dict(
                     id=self.id,
-                    timestamp=str(self.timestamp),
+                    timestamp=self.timestamp.strftime('%A, %d %b %Y %H:%M:%S %Z'),
                     sascore=self.sascore,
                     size=format_byte_size(self.size),
                     subject=escape(truncate((self.subject and self.subject.strip()) or '---', 50)),
