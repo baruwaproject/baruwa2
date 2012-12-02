@@ -1,22 +1,21 @@
-# Translations template for PROJECT.
+# Vietnamese translations for .
 # Copyright (C) 2012 ORGANIZATION
-# This file is distributed under the same license as the PROJECT project.
-# 
+# This file is distributed under the same license as the  project.
+#
 # Translators:
 msgid ""
 msgstr ""
-"Project-Id-Version: baruwa\n"
+"Project-Id-Version:  baruwa\n"
 "Report-Msgid-Bugs-To: baruwa@lists.baruwa.org\n"
-"POT-Creation-Date: 2012-11-14 14:04+0200\n"
+"POT-Creation-Date: 2012-12-02 15:42+0200\n"
 "PO-Revision-Date: 2012-11-24 10:21+0200\n"
 "Last-Translator: Andrew Colin Kissa <andrew@topdog.za.net>\n"
 "Language-Team: Baruwa Project\n"
+"Plural-Forms: nplurals=1; plural=0\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: auto-translate.py 0.0.1\n"
-"Language: vi\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Generated-By: Babel 0.9.6\n"
 
 #: baruwa/public/js/baruwa/accounts.js:1 baruwa/public/js/baruwa/domains.js:1
 #: baruwa/public/js/baruwa/lists.js:1
@@ -90,7 +89,8 @@ msgstr "Tên miền"
 #: baruwa/public/js/baruwa/lists.js:1
 msgid "Lists :: {{listname}} Showing page {{page}} of {{page_count}} pages."
 msgstr ""
-"Danh sách:: {{listname}} Đang hiện trang {{page}} của {{page_count}} Trang."
+"Danh sách:: {{listname}} Đang hiện trang {{page}} của {{page_count}} "
+"Trang."
 
 #: baruwa/public/js/baruwa/lists.js:1
 msgid "Lists"
@@ -106,8 +106,7 @@ msgstr "Đặt lại mật khẩu của tôi"
 
 #: baruwa/public/js/baruwa/messages.archive.js:1
 msgid "Messages :: Archive :: Showing page {{page}} of {{page_count}} pages."
-msgstr ""
-"Tin nhắn:: Lưu trữ:: Đang hiện trang {{page}} của {{page_count}} Trang."
+msgstr "Tin nhắn:: Lưu trữ:: Đang hiện trang {{page}} của {{page_count}} Trang."
 
 #: baruwa/public/js/baruwa/messages.archive.js:1
 msgid "Messages :: Archive"
@@ -198,8 +197,8 @@ msgstr "Không áp dụng tại thời điểm này"
 #: baruwa/public/js/baruwa/messages.js:1
 #: baruwa/public/js/baruwa/messages.quarantine.js:1
 msgid ""
-"Messages :: Full message listing :: Showing page {{page}} of {{page_count}} "
-"pages."
+"Messages :: Full message listing :: Showing page {{page}} of "
+"{{page_count}} pages."
 msgstr ""
 "Tin nhắn:: Đầy đủ danh sách thông báo:: Đang hiện trang {{page}} của "
 "{{page_count}} Trang."
@@ -335,8 +334,7 @@ msgstr "Không có máy quét được tìm thấy"
 
 #: baruwa/public/js/baruwa/settings.js:1
 msgid "Settings :: Nodes :: Showing page {{page}} of {{page_count}} pages."
-msgstr ""
-"Cài đặt:: Các nút:: Đang hiện trang {{page}} của {{page_count}} Trang."
+msgstr "Cài đặt:: Các nút:: Đang hiện trang {{page}} của {{page_count}} Trang."
 
 #: baruwa/public/js/baruwa/settings.js:1
 msgid "Settings :: Nodes"
@@ -349,9 +347,10 @@ msgstr "Không có Nhật ký kiểm tra được tìm thấy"
 #: baruwa/public/js/baruwa/status.audit.js:1
 msgid "Status :: Audit log :: Showing page {{page}} of {{page_count}} pages."
 msgstr ""
-"Tình trạng:: Nhật ký kiểm tra:: Đang hiện trang {{page}} của {{page_count}} "
-"Trang."
+"Tình trạng:: Nhật ký kiểm tra:: Đang hiện trang {{page}} của "
+"{{page_count}} Trang."
 
 #: baruwa/public/js/baruwa/status.audit.js:1
 msgid "Status :: Audit log"
 msgstr "Tình trạng:: Nhật ký kiểm tra"
+
