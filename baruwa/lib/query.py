@@ -19,6 +19,8 @@
 
 "Query functions"
 
+import MySQLdb
+
 from datetime import date
 from sqlalchemy import func, desc
 from sqlalchemy.sql import and_, or_, case
@@ -33,7 +35,7 @@ from baruwa.model.accounts import organizations_admins as oa
 from baruwa.model.reports import MessageTotals, SrcMessageTotals
 from baruwa.model.reports import DstMessageTotals
 from baruwa.lib.misc import REPORTS, crc32
-from baruwa.lib.regex import CLEANQRE, EXIM_MSGID_RE
+from baruwa.lib.regex import CLEANQRE, EXIM_MSGID_RE, SQL_URL_RE
 
 
 class DynaQuery(object):
@@ -478,3 +480,35 @@ def clean_sphinx_q(query):
 def restore_sphinx_q(query):
     "restore for display"
     return query.replace('\@', '@').replace('\-', '-')
+
+
+def make_conn_dict(url):
+    "Make a dict that can be used by mysqldb"
+    match = SQL_URL_RE.match(url)
+    if match:
+        conndict = match.groupdict()
+        conndict['port'] = int(conndict['port'])
+        conndict['use_unicode'] = True
+        del conndict['db']
+        del conndict['name']
+    else:
+        conndict = dict(host='127.0.0.1',
+                        port=9306,
+                        use_unicode=True,
+                        user='root')
+    return conndict
+
+
+def format_sphinx_ids(length):
+    "Format ids as string to add to SQL query"
+    mstr = '%s,' * length
+    mstr = mstr.rstrip(',')
+    return mstr
+
+
+def sphinx_connection(url):
+    "Make a connection to sphinx return connection object"
+    conn = MySQLdb.connect(**make_conn_dict(url))
+    return conn
+
+    

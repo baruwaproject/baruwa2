@@ -310,7 +310,8 @@ every hour::
 	cat > /etc/cron.hourly/baruwa-updateindex << 'EOF'
 	#!/bin/bash
 	#
-	indexer auditlog lists domains accounts organizations archive --rotate &>/dev/null
+	indexer auditlog lists domains accounts organizations --rotate &>/dev/null
+	paster update-delta-index --index messages --realtime /etc/baruwa/production.ini
 	EOF
 
 Make the cronjob executable::
@@ -422,7 +423,14 @@ admin user is taken care of via this Pylons command::
 
 Next create the required directories and start the celeryd daemon.
 
-Step 5c: Create the required directories
+Step 5c: Create the sphinx indexes
+----------------------------------
+
+The initial sphinx search indexes need to be created by running the command::
+
+	indexer --all --rotate
+
+Step 5d: Create the required directories
 ----------------------------------------
 
 Create log, pid and data directories::
@@ -431,14 +439,14 @@ Create log, pid and data directories::
 
 .. _start_celeryd:
 
-Step 5d: Start the celery daemon
+Step 5e: Start the celery daemon
 --------------------------------
 
 Start the celeryd daemon::
 
 	paster celeryd /etc/baruwa/production.ini -f /var/log/baruwa/celeryd.log &
 
-Step 5e: Test using builtin server
+Step 5f: Test using builtin server
 ----------------------------------
 
 Now that Baruwa itself is installed and the basics are configured,

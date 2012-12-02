@@ -37,6 +37,7 @@ marrow.mailer
 marrow.util
 psutil
 psycopg2
+mysql-python
 py-bcrypt
 pylibmc
 pyparsing
