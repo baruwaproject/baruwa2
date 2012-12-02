@@ -1,22 +1,21 @@
-# Translations template for PROJECT.
+# Catalan translations for .
 # Copyright (C) 2012 ORGANIZATION
-# This file is distributed under the same license as the PROJECT project.
-# 
+# This file is distributed under the same license as the  project.
+#
 # Translators:
 msgid ""
 msgstr ""
-"Project-Id-Version: baruwa\n"
+"Project-Id-Version:  baruwa\n"
 "Report-Msgid-Bugs-To: baruwa@lists.baruwa.org\n"
-"POT-Creation-Date: 2012-11-14 14:04+0200\n"
+"POT-Creation-Date: 2012-12-02 15:42+0200\n"
 "PO-Revision-Date: 2012-11-15 01:51+0200\n"
 "Last-Translator: Andrew Colin Kissa <andrew@topdog.za.net>\n"
 "Language-Team: (http://www.transifex.com/projects/p/baruwa/language/ca/)\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: auto-translate.py\n"
-"Language: ca\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Generated-By: Babel 0.9.6\n"
 
 #: baruwa/public/js/baruwa/accounts.js:1 baruwa/public/js/baruwa/domains.js:1
 #: baruwa/public/js/baruwa/lists.js:1
@@ -91,8 +90,7 @@ msgstr "Dominis"
 
 #: baruwa/public/js/baruwa/lists.js:1
 msgid "Lists :: {{listname}} Showing page {{page}} of {{page_count}} pages."
-msgstr ""
-"Llistes:: {{listname}} Mostrant pàgina {{page}} de {{page_count}} pàgines."
+msgstr "Llistes:: {{listname}} Mostrant pàgina {{page}} de {{page_count}} pàgines."
 
 #: baruwa/public/js/baruwa/lists.js:1
 msgid "Lists"
@@ -108,8 +106,7 @@ msgstr "Reinicia la contrasenya"
 
 #: baruwa/public/js/baruwa/messages.archive.js:1
 msgid "Messages :: Archive :: Showing page {{page}} of {{page_count}} pages."
-msgstr ""
-"Missatges:: Arxiu:: mostrant pàgina {{page}} de {{page_count}} pàgines."
+msgstr "Missatges:: Arxiu:: mostrant pàgina {{page}} de {{page_count}} pàgines."
 
 #: baruwa/public/js/baruwa/messages.archive.js:1
 msgid "Messages :: Archive"
@@ -200,8 +197,8 @@ msgstr "Habitacions per a no aplicar en el moment"
 #: baruwa/public/js/baruwa/messages.js:1
 #: baruwa/public/js/baruwa/messages.quarantine.js:1
 msgid ""
-"Messages :: Full message listing :: Showing page {{page}} of {{page_count}} "
-"pages."
+"Messages :: Full message listing :: Showing page {{page}} of "
+"{{page_count}} pages."
 msgstr ""
 "Missatges:: Plena llista de missatge:: mostrant pàgina {{page}} de "
 "{{page_count}} pàgines."
@@ -261,8 +258,7 @@ msgstr "No hi ha organitzacions que s'ha trobat"
 
 #: baruwa/public/js/baruwa/organizations.js:1
 msgid "Organizations :: Showing page {{page}} of {{page_count}} pages."
-msgstr ""
-"Organitzacions:: Llistat de pàgina {{page}} de {{page_count}} pàgines."
+msgstr "Organitzacions:: Llistat de pàgina {{page}} de {{page_count}} pàgines."
 
 #: baruwa/public/js/baruwa/organizations.js:1
 msgid "Organizations"
@@ -338,8 +334,7 @@ msgstr "Cap amfitrió d'escaneig s'ha trobat"
 
 #: baruwa/public/js/baruwa/settings.js:1
 msgid "Settings :: Nodes :: Showing page {{page}} of {{page_count}} pages."
-msgstr ""
-"Configuració:: Nodes:: mostrant pàgina {{page}} de {{page_count}} pàgines."
+msgstr "Configuració:: Nodes:: mostrant pàgina {{page}} de {{page_count}} pàgines."
 
 #: baruwa/public/js/baruwa/settings.js:1
 msgid "Settings :: Nodes"
@@ -352,9 +347,10 @@ msgstr "No hi ha registres d'auditoria s'ha trobat"
 #: baruwa/public/js/baruwa/status.audit.js:1
 msgid "Status :: Audit log :: Showing page {{page}} of {{page_count}} pages."
 msgstr ""
-"L'estat:: Registre d'auditoria:: mostrant pàgina {{page}} de {{page_count}} "
-"pàgines."
+"L'estat:: Registre d'auditoria:: mostrant pàgina {{page}} de "
+"{{page_count}} pàgines."
 
 #: baruwa/public/js/baruwa/status.audit.js:1
 msgid "Status :: Audit log"
 msgstr "L'estat:: Registre d'auditoria"
+
