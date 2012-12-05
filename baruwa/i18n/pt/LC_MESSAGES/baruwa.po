@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: baruwa 2.0.0\n"
 "Report-Msgid-Bugs-To: baruwa@lists.baruwa.org\n"
-"POT-Creation-Date: 2012-12-02 15:42+0200\n"
+"POT-Creation-Date: 2012-12-05 14:11+0200\n"
 "PO-Revision-Date: 2012-11-27 08:31+0200\n"
 "Last-Translator: Andrew Colin Kissa <andrew@topdog.za.net>\n"
 "Language-Team: Baruwa Project\n"
@@ -2794,21 +2794,21 @@ msgstr "Estatísticas de bayes nó para: %(n)s visualizaram"
 msgid "Audit log exported"
 msgstr "Log de auditoria exportado"
 
-#: baruwa/lib/auth/predicates.py:35
+#: baruwa/lib/auth/predicates.py:37
 msgid "Only System Administrators can access this page"
 msgstr "Somente os administradores do sistema podem acessar esta página"
 
-#: baruwa/lib/auth/predicates.py:47
+#: baruwa/lib/auth/predicates.py:49
 msgid "Only Administrators can access this page"
 msgstr "Apenas administradores podem acessar esta página"
 
-#: baruwa/lib/auth/predicates.py:70
+#: baruwa/lib/auth/predicates.py:72
 msgid "Only Administrators or owners can view domain details"
 msgstr ""
 "Somente os administradores ou proprietários podem Ver os detalhes do "
 "domínio"
 
-#: baruwa/lib/auth/predicates.py:105
+#: baruwa/lib/auth/predicates.py:107
 msgid "Only Administrators or owners can view account details"
 msgstr "Apenas administradores ou proprietários podem Ver os detalhes da conta"
 

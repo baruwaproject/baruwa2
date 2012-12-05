@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  baruwa\n"
 "Report-Msgid-Bugs-To: baruwa@lists.baruwa.org\n"
-"POT-Creation-Date: 2012-12-02 15:42+0200\n"
+"POT-Creation-Date: 2012-12-05 14:11+0200\n"
 "PO-Revision-Date: 2012-11-27 08:29+0200\n"
 "Last-Translator: Andrew Colin Kissa <andrew@topdog.za.net>\n"
 "Language-Team: Baruwa Project\n"
@@ -2806,19 +2806,19 @@ msgstr "Estadístiques de bayes node per: %(n)s han"
 msgid "Audit log exported"
 msgstr "Exportar el Registre d'auditoria"
 
-#: baruwa/lib/auth/predicates.py:35
+#: baruwa/lib/auth/predicates.py:37
 msgid "Only System Administrators can access this page"
 msgstr "Només els administradors de sistema poden accedir a aquesta pàgina"
 
-#: baruwa/lib/auth/predicates.py:47
+#: baruwa/lib/auth/predicates.py:49
 msgid "Only Administrators can access this page"
 msgstr "Només els administradors poden accedir a aquesta pàgina"
 
-#: baruwa/lib/auth/predicates.py:70
+#: baruwa/lib/auth/predicates.py:72
 msgid "Only Administrators or owners can view domain details"
 msgstr "Només els administradors o propietaris poden veure detalls de domini"
 
-#: baruwa/lib/auth/predicates.py:105
+#: baruwa/lib/auth/predicates.py:107
 msgid "Only Administrators or owners can view account details"
 msgstr "Només els administradors o propietaris poden veure detalls del compte"
 
