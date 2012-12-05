@@ -3,11 +3,6 @@
 #
 # The %(here)s variable will be replaced with the parent directory of this file
 #
-[DEFAULT]
-debug = true
-email_to = you@yourdomain
-smtp_server = 127.0.0.1
-error_email_from = baruwa@localhost
 
 [uwsgi]
 socket = /var/run/baruwa/baruwa.sock
@@ -24,6 +19,9 @@ port = 5000
 use = egg:baruwa
 full_stack = true
 static_files = false
+email_to = baruwa@localhost
+smtp_server = 127.0.0.1
+error_email_from = baruwa@localhost
 
 cache_dir = /var/lib/baruwa/data
 beaker.session.key = baruwa
@@ -79,9 +77,6 @@ sphinx.url = mysql://root:@127.0.0.1:9306
 # execute malicious code after an exception is raised.
 set debug = false
 
-# authentication settings
-what_config_file = %(here)s/what.ini
-who_config_file = %(here)s/who.ini
 what_log_file = /var/log/baruwa/what-who.log
 
 # MailScanner settings
@@ -166,3 +161,99 @@ formatter = generic
 
 [formatter_generic]
 format = %(asctime)s %(levelname)-5.5s [%(name)s] [%(threadName)s] %(message)s
+
+# repoze who/what
+[plugin:form]
+use = repoze.who.plugins.friendlyform:FriendlyFormPlugin
+login_form_url = /accounts/login
+login_handler_path = /login
+logout_handler_path = /logout
+post_login_url = /accounts/loggedin
+post_logout_url = /accounts/loggedout
+rememberer_name = auth_tkt
+
+[plugin:sa_auth]
+use = repoze.who.plugins.sa:make_sa_authenticator
+user_class = baruwa.model.accounts:User
+dbsession = baruwa.model:Session
+user_name_translation = username
+
+[plugin:baruwa_ldap_auth]
+use = baruwa.lib.auth.ldapauth:make_ldap_authenticator
+dbsession = baruwa.model:Session
+lsm = baruwa.model.auth:LDAPSettings
+dommodel = baruwa.model.domains:Domain
+dam = baruwa.model.domains:DomainAlias
+asm = baruwa.model.domains:AuthServer
+
+[plugin:baruwa_radius_auth]
+use = baruwa.lib.auth.radiusauth:make_rad_authenticator
+dbsession = baruwa.model:Session
+rsm = baruwa.model.auth:RadiusSettings
+dommodel = baruwa.model.domains:Domain
+dam = baruwa.model.domains:DomainAlias
+asm = baruwa.model.domains:AuthServer
+
+[plugin:baruwa_smtp_auth]
+use = baruwa.lib.auth.smtpauth:make_smtp_authenticator
+dbsession = baruwa.model:Session
+dommodel = baruwa.model.domains:Domain
+dam = baruwa.model.domains:DomainAlias
+asm = baruwa.model.domains:AuthServer
+
+[plugin:baruwa_pop3_auth]
+use = baruwa.lib.auth.pop3auth:make_pop3_authenticator
+dbsession = baruwa.model:Session
+dommodel = baruwa.model.domains:Domain
+dam = baruwa.model.domains:DomainAlias
+asm = baruwa.model.domains:AuthServer
+
+[plugin:baruwa_imap_auth]
+use = baruwa.lib.auth.imapauth:make_imap_authenticator
+dbsession = baruwa.model:Session
+dommodel = baruwa.model.domains:Domain
+dam = baruwa.model.domains:DomainAlias
+asm = baruwa.model.domains:AuthServer
+
+[plugin:sa_md]
+use = repoze.who.plugins.sa:make_sa_user_mdprovider
+user_class = baruwa.model.accounts:User
+dbsession = baruwa.model:Session
+user_name_translation = username
+
+[plugin:auth_tkt]
+# identification
+use = repoze.who.plugins.auth_tkt:make_plugin
+secret = ${app_instance_secret}
+cookie_name = baruwaauth
+secure = False
+timeout = 28800
+reissue_time = 28700
+include_ip = False
+
+[general]
+request_classifier = repoze.who.classifiers:default_request_classifier
+challenge_decider = repoze.who.classifiers:default_challenge_decider
+remote_user_key = REMOTE_USER
+
+[identifiers]
+plugins =
+      form;browser
+      auth_tkt
+
+[authenticators]
+plugins =
+      sa_auth
+      baruwa_pop3_auth
+      baruwa_imap_auth
+      baruwa_smtp_auth
+      baruwa_ldap_auth
+      baruwa_radius_auth
+
+[challengers]
+plugins =
+      form;browser
+
+[mdproviders]
+plugins =
+      sa_md

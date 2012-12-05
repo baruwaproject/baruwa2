@@ -390,22 +390,17 @@ Set the broker password and enable the queues::
 		-e "s:snowy.local:$(hostname):g" \
 		-e 's:^#celery.queues:celery.queues:' production.ini
 
-Extract the repoze-who and repoze-what configuration files::
-
-	tar xjvf baruwa-2.0.0.tar.bz2 --strip-components=1 \
-		baruwa-2.0.0/who.ini baruwa-2.0.0/what.ini
-
 Create configuration directory and move the configuration files into it
 
 CentOS/RHEL/SL::
 
 	mkdir /etc/baruwa
-	mv production.ini who.ini what.ini /etc/baruwa
+	mv production.ini /etc/baruwa
 
 Debian/Ubuntu::
 
 	sudo mkdir /etc/baruwa
-	sudo mv production.ini who.ini what.ini /etc/baruwa
+	sudo mv production.ini /etc/baruwa
 
 FreeBSD::
 

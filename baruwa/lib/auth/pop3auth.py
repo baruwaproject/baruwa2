@@ -28,8 +28,6 @@ from zope.interface import implements
 from repoze.who.utils import resolveDotted
 from repoze.who.interfaces import IAuthenticator
 from sqlalchemy.orm.exc import NoResultFound
-from sqlalchemy import func
-from sqlalchemy.sql import and_, or_
 
 from baruwa.lib.auth import check_param, check_failed_logins
 from baruwa.lib.regex import USER_TEMPLATE_MAP_RE, DOM_TEMPLATE_MAP_RE, APOP_RE
@@ -40,12 +38,11 @@ class BaruwaPOPAuthPlugin(object):
     implements(IAuthenticator)
     name = 'pop3'
 
-    def __init__(self, dbsession, authsettingsmodel, domainmodel,
-                domainaliasmodel):
+    def __init__(self, dbsession, asm, dommodel, dam):
         self.dbsession = dbsession
-        self.domainmodel = domainmodel
-        self.aliasmodel = domainaliasmodel
-        self.authsettingsmodel = authsettingsmodel
+        self.dommodel = dommodel
+        self.dam = dam
+        self.asm = asm
 
     def authenticate(self, environ, identity):
         """authenticator"""
@@ -56,37 +53,42 @@ class BaruwaPOPAuthPlugin(object):
             login = identity['login']
             password = identity['password']
             username = login
+            is_alias = False
             domain = None
+
             if '@' not in login:
                 return None
 
             username, domain = login.split('@')
 
-            and_clause = and_(self.domainmodel.id == self.aliasmodel.domain_id,
-                            self.aliasmodel.name == domain,
-                            self.aliasmodel.status == True)
+            try:
+                dma = self.dbsession.query(self.dommodel.name)\
+                        .join(self.dam)\
+                        .filter(self.dam.name == domain).one()
+                domain = dma.name
+                is_alias = True
+            except NoResultFound:
+                pass
 
-            popsettings = self.dbsession.query(self.authsettingsmodel.port,
-                            self.authsettingsmodel.address,
-                            self.authsettingsmodel.split_address,
-                            self.authsettingsmodel.user_map_template,
-                            self.domainmodel.name)\
-                            .join(self.domainmodel)\
-                            .filter(self.authsettingsmodel.protocol == 1)\
-                            .filter(self.authsettingsmodel.enabled == True)\
-                            .filter(self.domainmodel.status == True)\
-                            .filter(or_(self.domainmodel.name == domain,
-                                    func._(and_clause)))\
-                            .all()
-            port, address, split_address, template, domain_name = popsettings[0]
+            popsettings = self.dbsession.query(self.asm.port,
+                            self.asm.address,
+                            self.asm.split_address,
+                            self.asm.user_map_template)\
+                            .join(self.dommodel)\
+                            .filter(self.asm.protocol == 1)\
+                            .filter(self.asm.enabled == True)\
+                            .filter(self.dommodel.status == True)\
+                            .filter(self.dommodel.name == domain)\
+                            .one()
+            port, address, split_address, template = popsettings
 
             if split_address:
                 login = username
 
-            if domain != domain_name:
-                identity['login'] = "%s@%s" % (username, domain_name)
+            if is_alias:
+                identity['login'] = "%s@%s" % (username, domain)
                 if not split_address:
-                    login = "%s@%s" % (username, domain_name)
+                    login = "%s@%s" % (username, domain)
 
             if (template and (USER_TEMPLATE_MAP_RE.search(template) or
                 DOM_TEMPLATE_MAP_RE.search(template))):
@@ -117,18 +119,17 @@ class BaruwaPOPAuthPlugin(object):
         return None
 
 
-def make_pop3_authenticator(dbsession, authsettingsmodel,
-                            domainmodel, domainaliasmodel):
+def make_pop3_authenticator(dbsession, asm, dommodel, dam):
     "return pop3 authenticator"
     for param in [('dbsession', dbsession),
-                ('authsettingsmodel', authsettingsmodel),
-                ('domainmodel', domainmodel),
-                ('domainaliasmodel', domainaliasmodel)]:
+                ('asm', asm),
+                ('dommodel', dommodel),
+                ('dam', dam)]:
         check_param(param[0], param[1])
     session = resolveDotted(dbsession)
-    authmodel = resolveDotted(authsettingsmodel)
-    dmodel = resolveDotted(domainmodel)
-    damodel = resolveDotted(domainaliasmodel)
+    authmodel = resolveDotted(asm)
+    dmodel = resolveDotted(dommodel)
+    damodel = resolveDotted(dam)
 
     authenticator = BaruwaPOPAuthPlugin(session, authmodel, dmodel, damodel)
 

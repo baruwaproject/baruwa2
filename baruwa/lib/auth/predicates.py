@@ -17,6 +17,8 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
+"""Repoze predicates
+"""
 
 from repoze.what.predicates import Predicate
 from pylons.i18n.translation import _
@@ -75,22 +77,22 @@ class OwnsDomain(Predicate):
         user = identity['user']
         if not user.is_superadmin:
             try:
-                vars = self.parse_variables(environ)
-                if 'domainid' in vars['named_args']:
-                    domainid = vars['named_args'].get('domainid')
-                if 'destinationid' in vars['named_args']:
-                    destinationid = vars['named_args'].get('destinationid')
+                varbs = self.parse_variables(environ)
+                if 'domainid' in varbs['named_args']:
+                    domainid = varbs['named_args'].get('domainid')
+                if 'destinationid' in varbs['named_args']:
+                    destinationid = varbs['named_args'].get('destinationid')
                     dest = Session.query(DeliveryServer.domain_id)\
                                 .filter(DeliveryServer.id == destinationid)\
                                 .one()
                     domainid = dest.domain_id
-                if 'authid' in vars['named_args']:
-                    authid = vars['named_args'].get('authid')
+                if 'authid' in varbs['named_args']:
+                    authid = varbs['named_args'].get('authid')
                     authsvr = Session.query(AuthServer.domain_id)\
                                 .filter(AuthServer.id == authid).one()
                     domainid = authsvr.domain_id
-                if 'sigid' in vars['named_args']:
-                    sigid = vars['named_args'].get('sigid')
+                if 'sigid' in varbs['named_args']:
+                    sigid = varbs['named_args'].get('sigid')
                     sig = Session.query(DomSignature.domain_id)\
                             .filter(DomSignature.id == sigid).one()
                     domainid = sig.domain_id
@@ -110,15 +112,15 @@ class CanAccessAccount(Predicate):
         user = identity['user']
         if not user.is_superadmin:
             try:
-                vars = self.parse_variables(environ)
-                accountid = vars['named_args'].get('userid')
-                if accountid is None and vars['named_args'].get('addressid'):
-                    addressid = vars['named_args'].get('addressid')
+                varbs = self.parse_variables(environ)
+                accountid = varbs['named_args'].get('userid')
+                if accountid is None and varbs['named_args'].get('addressid'):
+                    addressid = varbs['named_args'].get('addressid')
                     acct = Session.query(Address.user_id)\
                             .filter(Address.id == addressid).one()
                     accountid = acct.user_id
-                if accountid is None and vars['named_args'].get('sigid'):
-                    sigid = vars['named_args'].get('sigid')
+                if accountid is None and varbs['named_args'].get('sigid'):
+                    sigid = varbs['named_args'].get('sigid')
                     sig = Session.query(UserSignature.user_id)\
                         .filter(UserSignature.id == sigid).one()
                     accountid = sig.user_id
@@ -156,6 +158,7 @@ class CanAccessAccount(Predicate):
 
 
 def check_dom_access(orgs, udomains):
+    "Check if an org owns the domains"
     doms = Session.query(Domain.id).join(domain_owners)\
          .filter(domain_owners.c.organization_id.in_(orgs)).all()
     domains = [dom.id for dom in doms]

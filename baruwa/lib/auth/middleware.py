@@ -245,18 +245,16 @@ def setup_auth(app, group_adapters=None, permission_adapters=None, **who_args):
     return middleware
 
 
-def make_middleware_with_config(app, global_conf, config_file,
-                                who_config_file = '',
-                                log_file=None, log_level=None):
+def make_middleware_with_config(app, global_conf, log_file=None):
     """Override repoze.what.plugins.config:make_middleware_with_config
-    Allows us to call a Baruwa modified authentication stark
+    Allows us to call a Baruwa modified authentication stark and use
+    single configuration file
     """
-    if not who_config_file:
-        who_config_file = config_file
     who_parser = WhoConfig(global_conf['here'])
-    who_parser.parse(open(who_config_file))
+    who_parser.parse(open(global_conf['__file__']))
     what_parser = WhatConfig(global_conf['here'])
-    what_parser.parse(open(config_file))
+    what_parser.parse(open(global_conf['__file__']))
+    log_level = 'DEBUG' if asbool(global_conf['debug']) else 'INFO'
 
     log_stream = None
 

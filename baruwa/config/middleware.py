@@ -66,20 +66,10 @@ def make_app(global_conf, full_stack=True, static_files=True, **app_conf):
     # CUSTOM MIDDLEWARE HERE (filtered by error handling middlewares)
     if 'what_log_file' in app_conf:
         what_log_file = app_conf['what_log_file']
-        # if (not os.path.exists(what_log_file) or
-        #     not os.path.isfile(what_log_file)):
-        #     what_log_file = None
     else:
         what_log_file = None
 
-    what_log_level = 'DEBUG' if asbool(config['debug']) else 'INFO'
-
-    app = make_middleware_with_config(app,
-                                global_conf,
-                                app_conf['what_config_file'],
-                                who_config_file=app_conf['who_config_file'],
-                                log_file=what_log_file,
-                                log_level=what_log_level)
+    app = make_middleware_with_config(app, global_conf, what_log_file)
 
     if asbool(full_stack):
         # Handle Python exceptions

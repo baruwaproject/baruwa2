@@ -28,8 +28,6 @@ from zope.interface import implements
 from repoze.who.utils import resolveDotted
 from repoze.who.interfaces import IAuthenticator
 from sqlalchemy.orm.exc import NoResultFound
-from sqlalchemy import func
-from sqlalchemy.sql import and_, or_
 
 from baruwa.lib.auth import check_param, check_failed_logins
 from baruwa.lib.regex import USER_TEMPLATE_MAP_RE, DOM_TEMPLATE_MAP_RE
@@ -40,12 +38,11 @@ class BaruwaSMTPAuthPlugin(object):
     implements(IAuthenticator)
     name = 'smtp'
 
-    def __init__(self, dbsession, authsettingsmodel, domainmodel,
-                domainaliasmodel):
+    def __init__(self, dbsession, asm, dommodel, dam):
         self.dbsession = dbsession
-        self.domainmodel = domainmodel
-        self.aliasmodel = domainaliasmodel
-        self.authsettingsmodel = authsettingsmodel
+        self.dommodel = dommodel
+        self.dam = dam
+        self.asm = asm
 
     def authenticate(self, environ, identity):
         """authenticator"""
@@ -57,37 +54,40 @@ class BaruwaSMTPAuthPlugin(object):
             password = identity['password'].encode('utf-8')
             username = login
             domain = None
+            is_alias = False
+
             if '@' not in login:
                 return None
 
             username, domain = login.split('@')
+            
+            try:
+                dma = self.dbsession.query(self.dommodel.name)\
+                        .join(self.dam)\
+                        .filter(self.dam.name == domain).one()
+                domain = dma.name
+                is_alias = True
+            except NoResultFound:
+                pass
 
-            and_clause = and_(self.domainmodel.id == self.aliasmodel.domain_id,
-                            self.aliasmodel.name == domain,
-                            self.aliasmodel.status == True)
-
-            smtpsettings = self.dbsession.query(self.authsettingsmodel.port,
-                            self.authsettingsmodel.address,
-                            self.authsettingsmodel.split_address,
-                            self.authsettingsmodel.user_map_template,
-                            self.domainmodel.name)\
-                            .join(self.domainmodel)\
-                            .filter(self.authsettingsmodel.protocol == 3)\
-                            .filter(self.authsettingsmodel.enabled == True)\
-                            .filter(self.domainmodel.status == True)\
-                            .filter(or_(self.domainmodel.name == domain,
-                                    func._(and_clause)))\
-                            .all()
-            port, address, split_address, template, \
-            domain_name = smtpsettings[0]
+            smtpsettings = self.dbsession.query(self.asm.port,
+                            self.asm.address,
+                            self.asm.split_address,
+                            self.asm.user_map_template)\
+                            .join(self.dommodel)\
+                            .filter(self.asm.protocol == 3)\
+                            .filter(self.asm.enabled == True)\
+                            .filter(self.dommodel.status == True)\
+                            .filter(self.dommodel.name == domain).one()
+            port, address, split_address, template = smtpsettings
 
             if split_address:
                 login = username
 
-            if domain != domain_name:
-                identity['login'] = u"%s@%s" % (username, domain_name)
+            if is_alias:
+                identity['login'] = u"%s@%s" % (username, domain)
                 if not split_address:
-                    login = u"%s@%s" % (username, domain_name)
+                    login = u"%s@%s" % (username, domain)
 
             if (template and (USER_TEMPLATE_MAP_RE.search(template) or
                 DOM_TEMPLATE_MAP_RE.search(template))):
@@ -120,18 +120,17 @@ class BaruwaSMTPAuthPlugin(object):
         return None
 
 
-def make_smtp_authenticator(dbsession, authsettingsmodel, domainmodel,
-                            domainaliasmodel):
+def make_smtp_authenticator(dbsession, asm, dommodel, dam):
     "return smtp authenticator"
     for param in [('dbsession', dbsession),
-                ('authsettingsmodel', authsettingsmodel),
-                ('domainmodel', domainmodel),
-                ('domainaliasmodel', domainaliasmodel)]:
+                ('asm', asm),
+                ('dommodel', dommodel),
+                ('dam', dam)]:
         check_param(param[0], param[1])
     session = resolveDotted(dbsession)
-    authmodel = resolveDotted(authsettingsmodel)
-    dmodel = resolveDotted(domainmodel)
-    damodel = resolveDotted(domainaliasmodel)
+    authmodel = resolveDotted(asm)
+    dmodel = resolveDotted(dommodel)
+    damodel = resolveDotted(dam)
 
     authenticator = BaruwaSMTPAuthPlugin(session, authmodel, dmodel, damodel)
 

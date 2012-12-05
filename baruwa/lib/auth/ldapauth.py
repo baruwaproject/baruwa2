@@ -20,8 +20,6 @@
 
 import ldap
 
-from sqlalchemy import func
-from sqlalchemy.sql import and_, or_
 from zope.interface import implements
 from repoze.who.utils import resolveDotted
 from sqlalchemy.orm.exc import NoResultFound
@@ -73,14 +71,14 @@ class BaruwaLDAPAuthPlugin(object):
     implements(IAuthenticator)
     name = 'ldap'
 
-    def __init__(self, dbsession, ldapsettingsmodel, authsettingsmodel,
-                domainmodel, domainaliasmodel, returned_id='login'):
+    def __init__(self, dbsession, lsm, asm, dommodel, dam,
+        returned_id='login'):
         "init"
         self.dbsession = dbsession
-        self.ldapsettingsmodel = ldapsettingsmodel
-        self.authsettingsmodel = authsettingsmodel
-        self.domainmodel = domainmodel
-        self.alias = domainaliasmodel
+        self.lsm = lsm
+        self.asm = asm
+        self.dommodel = dommodel
+        self.dam = dam
         self.naming_attribute = 'uid'
         self.returned_id = returned_id
 
@@ -96,27 +94,26 @@ class BaruwaLDAPAuthPlugin(object):
 
             login = identity['login']
             username, domain = login.split('@')
-            ldapsettings = self.dbsession.query(self.ldapsettingsmodel,
-                            self.authsettingsmodel.address,
-                            self.authsettingsmodel.port,
-                            self.authsettingsmodel.split_address,
-                            self.domainmodel.name)\
-                            .join(self.authsettingsmodel)\
-                            .join(self.domainmodel)\
-                            .filter(self.authsettingsmodel.enabled == True)\
-                            .filter(self.domainmodel.status == True)\
-                            .filter(or_(self.domainmodel.name == domain,
-                                func._(and_(\
-                                self.domainmodel.id == self.alias.domain_id,
-                                self.alias.name == domain,
-                                self.alias.status == True)
-                                )
-                            )).all()
-            (settings,
-            address,
-            port,
-            split_address,
-            domain_name) = ldapsettings[0]
+
+            try:
+                dma = self.dbsession.query(self.dommodel.name)\
+                        .join(self.dam)\
+                        .filter(self.dam.name == domain).one()
+                domain = dma.name
+            except NoResultFound:
+                pass
+
+            ldapsettings = self.dbsession.query(self.lsm,
+                            self.asm.address,
+                            self.asm.port,
+                            self.asm.split_address)\
+                            .join(self.asm)\
+                            .join(self.dommodel)\
+                            .filter(self.asm.enabled == True)\
+                            .filter(self.dommodel.status == True)\
+                            .filter(self.dommodel.name == domain)\
+                            .one()
+            settings, address, port, split_address = ldapsettings
 
             ldap.set_option(ldap.OPT_NETWORK_TIMEOUT, 5)
             ldap_uri = make_ldap_uri(address, port)
@@ -128,9 +125,9 @@ class BaruwaLDAPAuthPlugin(object):
                         bind_pass=settings.bindpw,
                         start_tls=settings.usetls)
 
-            if domain != domain_name:
-                # override alias domain
-                domain = domain_name
+            # if domain != domain_name:
+            #     # override alias domain
+            #     domain = domain_name
 
             if settings.usesearch:
                 ldap_module = 'LDAPSearchAuthenticatorPlugin'
@@ -174,20 +171,19 @@ class BaruwaLDAPAuthPlugin(object):
             return None
 
 
-def make_ldap_authenticator(dbsession, ldapsettingsmodel, authsettingsmodel,
-                            domainmodel, domainaliasmodel):
+def make_ldap_authenticator(dbsession, lsm, asm, dommodel, dam):
     "return ldap authenticator"
     for param in [('dbsession', dbsession),
-                ('ldapsettingsmodel', ldapsettingsmodel),
-                ('authsettingsmodel', authsettingsmodel),
-                ('domainmodel', domainmodel),
-                ('domainaliasmodel', domainaliasmodel)]:
+                ('lsm', lsm),
+                ('asm', asm),
+                ('dommodel', dommodel),
+                ('dam', dam)]:
         check_param(param[0], param[1])
     session = resolveDotted(dbsession)
-    ldapmodel = resolveDotted(ldapsettingsmodel)
-    authmodel = resolveDotted(authsettingsmodel)
-    dmodel = resolveDotted(domainmodel)
-    damodel = resolveDotted(domainaliasmodel)
+    ldapmodel = resolveDotted(lsm)
+    authmodel = resolveDotted(asm)
+    dmodel = resolveDotted(dommodel)
+    damodel = resolveDotted(dam)
 
     authenticator = BaruwaLDAPAuthPlugin(session,
                                         ldapmodel,

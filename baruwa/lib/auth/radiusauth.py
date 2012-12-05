@@ -16,6 +16,8 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
+"""Baruwa Radius authentication module
+"""
 
 from StringIO import StringIO
 
@@ -26,8 +28,6 @@ from zope.interface import implements
 from repoze.who.utils import resolveDotted
 from repoze.who.interfaces import IAuthenticator
 from sqlalchemy.orm.exc import NoResultFound
-from sqlalchemy import func
-from sqlalchemy.sql import and_, or_
 
 from baruwa.lib.auth import check_param, check_failed_logins
 from baruwa.lib.regex import USER_TEMPLATE_MAP_RE, DOM_TEMPLATE_MAP_RE
@@ -43,13 +43,12 @@ class BaruwaRadiusAuthPlugin(object):
     implements(IAuthenticator)
     name = 'radius'
 
-    def __init__(self, dbsession, radsettingsmodel, authsettingsmodel,
-                domainmodel, domainaliasmodel):
+    def __init__(self, dbsession, rsm, asm, dommodel, dam):
         self.dbsession = dbsession
-        self.domainmodel = domainmodel
-        self.aliasmodel = domainaliasmodel
-        self.radsettingsmodel = radsettingsmodel
-        self.authsettingsmodel = authsettingsmodel
+        self.dommodel = dommodel
+        self.dam = dam
+        self.rsm = rsm
+        self.asm = asm
 
     def authenticate(self, environ, identity):
         """authenticator"""
@@ -61,31 +60,38 @@ class BaruwaRadiusAuthPlugin(object):
             password = identity['password'].decode('utf-8')
             username = login
             domain = None
+            is_alias = False
+
             if '@' not in login:
                 return None
+
             username, domain = login.split('@')
 
-            and_clause = and_(self.domainmodel.id == self.aliasmodel.domain_id,
-                            self.aliasmodel.name == domain,
-                            self.aliasmodel.status == True)
+            try:
+                dma = self.dbsession.query(self.dommodel.name)\
+                        .join(self.dam)\
+                        .filter(self.dam.name == domain).one()
+                domain = dma.name
+                is_alias = True
+            except NoResultFound:
+                pass
 
-            radiussettings = self.dbsession.query(self.radsettingsmodel,
-                            self.authsettingsmodel.address,
-                            self.authsettingsmodel.port,
-                            self.authsettingsmodel.split_address,
-                            self.authsettingsmodel.user_map_template,
-                            self.domainmodel.name)\
-                            .join(self.authsettingsmodel)\
-                            .join(self.domainmodel)\
-                            .filter(self.authsettingsmodel.enabled == True)\
-                            .filter(self.domainmodel.status == True)\
-                            .filter(or_(self.domainmodel.name == domain,
-                                    func._(and_clause)))\
-                            .all()
-            settings, address, port, split_address, template, \
-            domain_name = radiussettings[0]
+            radiussettings = self.dbsession.query(self.rsm,
+                                        self.asm.address,
+                                        self.asm.port,
+                                        self.asm.split_address,
+                                        self.asm.user_map_template)\
+                                        .join(self.asm)\
+                                        .join(self.dommodel)\
+                                        .filter(self.asm.enabled == True)\
+                                        .filter(self.dommodel.status == True)\
+                                        .filter(self.dommodel.name == domain)\
+                                        .one()
+            settings, address, port, split_address, template = radiussettings
+
             if not port:
                 port = 1812
+
             radclient = Client(server=address, authport=port,
                         secret=settings.secret.encode('utf-8'),
                         dict=Dictionary(StringIO(DICTIONARY)))
@@ -95,10 +101,10 @@ class BaruwaRadiusAuthPlugin(object):
             if split_address:
                 login = username
 
-            if domain != domain_name:
-                identity['login'] = "%s@%s" % (username, domain_name)
+            if is_alias:
+                identity['login'] = "%s@%s" % (username, domain)
                 if not split_address:
-                    login = "%s@%s" % (username, domain_name)
+                    login = "%s@%s" % (username, domain)
 
             if (template and (USER_TEMPLATE_MAP_RE.search(template) or
                 DOM_TEMPLATE_MAP_RE.search(template))):
@@ -117,20 +123,19 @@ class BaruwaRadiusAuthPlugin(object):
         return None
 
 
-def make_rad_authenticator(dbsession, radsettingsmodel, authsettingsmodel,
-                            domainmodel, domainaliasmodel):
+def make_rad_authenticator(dbsession, rsm, asm, dommodel, dam):
     "return radius authenticator"
     for param in [('dbsession', dbsession),
-                ('radsettingsmodel', radsettingsmodel),
-                ('authsettingsmodel', authsettingsmodel),
-                ('domainmodel', domainmodel),
-                ('domainaliasmodel', domainaliasmodel)]:
+                ('rsm', rsm),
+                ('asm', asm),
+                ('dommodel', dommodel),
+                ('dam', dam)]:
         check_param(param[0], param[1])
     session = resolveDotted(dbsession)
-    radmodel = resolveDotted(radsettingsmodel)
-    authmodel = resolveDotted(authsettingsmodel)
-    dmodel = resolveDotted(domainmodel)
-    damodel = resolveDotted(domainaliasmodel)
+    radmodel = resolveDotted(rsm)
+    authmodel = resolveDotted(asm)
+    dmodel = resolveDotted(dommodel)
+    damodel = resolveDotted(dam)
 
     authenticator = BaruwaRadiusAuthPlugin(session, radmodel,
                                         authmodel, dmodel,
