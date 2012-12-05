@@ -104,8 +104,8 @@ setup(
     celeryev = baruwa.lib.mq.commands:CeleryEventCommand
     send-pdf-reports = baruwa.commands.pdfreport:SendPdfReports
     send-quarantine-reports = baruwa.commands.quarantinereport:QuarantineReports
-    prunedb = baruwa.commands.dbclean:DBCleanCommand
-    prunequarantine = baruwa.commands.cleanquarantine:CleanQuarantineCommand
+    prune-database = baruwa.commands.dbclean:DBCleanCommand
+    prune-quarantine = baruwa.commands.cleanquarantine:CleanQuarantineCommand
     update-delta-index = baruwa.commands.updatedelta:UpdateDeltaIndex
     routes = pylons.commands:RoutesCommand
     shell = pylons.commands:ShellCommand

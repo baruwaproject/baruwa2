@@ -17,7 +17,7 @@ Quarantine management
 ---------------------
 ::
 
-	paster prunequarantine /etc/baruwa/production.ini
+	paster prune-quarantine /etc/baruwa/production.ini
 
 Deletes quarantined files older than ``ms.quarantine.days_to_keep``.
 This is set in the ``/etc/baruwa/production.ini`` file
@@ -35,7 +35,7 @@ Database maintenance
 --------------------
 ::
 
-	paster prunedb /etc/baruwa/production.ini
+	paster prune-database /etc/baruwa/production.ini
 
 Deletes records older than 30 days from the messages table of the database, and
 archives them to the archive table.
