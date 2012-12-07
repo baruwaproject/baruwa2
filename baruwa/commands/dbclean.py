@@ -20,6 +20,7 @@
 
 import sys
 import datetime
+import subprocess
 
 from sqlalchemy.sql import text
 from sqlalchemy.exc import IntegrityError
@@ -29,38 +30,90 @@ from baruwa.commands import BaseCommand
 from baruwa.model.meta import Session
 
 
+def process_messages(last_date):
+    "process messages table"
+    params = dict(date=last_date)
+    sql1 = text("""INSERT INTO archive
+                SELECT * FROM messages WHERE timestamp <
+                :date;""")
+    try:
+        Session.execute(sql1, params=params)
+    except IntegrityError, error:
+        Session.rollback()
+        sql = text("""DELETE FROM archive WHERE id in
+                    (SELECT id FROM messages WHERE timestamp < :date);"""
+                    )
+        Session.execute(sql, params=params)
+        Session.execute(sql1, params=params)
+        print >> sys.stderr, "Integrety error occured: %s" % str(error)
+        sys.exit(2)
+    sql = text("""DELETE FROM messages WHERE timestamp < :date;""")
+    result = Session.execute(sql, params=params)
+    sql = text("""DELETE FROM releases WHERE timestamp < :date;""")
+    Session.execute(sql, params=params)
+    Session.commit()
+    if result.rowcount > 0:
+        index_cmd = ['/usr/bin/indexer', '--rotate', 'messages']
+        pipe = subprocess.Popen(index_cmd,
+                                stdout=subprocess.PIPE,
+                                stderr=subprocess.PIPE)
+        _, stderr = pipe.communicate()
+        pipe.wait()
+        if stderr:
+            print >> sys.stderr, stderr
+
+
+def prune_archive(last_date):
+    "prune the messages archive"
+    params = dict(date=last_date)
+    sql = text("""DELETE FROM archive WHERE timestamp < :date;""")
+    result = Session.execute(sql, params=params)
+    Session.commit()
+    if result.rowcount > 0:
+        index_cmd = ['/usr/bin/indexer', '--rotate', 'archive']
+        pipe = subprocess.Popen(index_cmd,
+                                stdout=subprocess.PIPE,
+                                stderr=subprocess.PIPE)
+        _, stderr = pipe.communicate()
+        pipe.wait()
+        if stderr:
+            print >> sys.stderr, stderr
+
+
 class DBCleanCommand(BaseCommand):
     "DB clean command"
     BaseCommand.parser.add_option('-d', '--days',
-        help='Archive, the delete records older than days',
+        help='Archive, then delete records older than days',
         type='int', default=30)
-    summary = 'archive, then delete old records'
+    BaseCommand.parser.add_option('-a', '--adays',
+        help='Delete achived records older than archive',
+        type='int', default=90)
+    summary = 'archives, then deletes old records, and trims archive'
     # usage = 'NAME '
     group_name = 'baruwa'
 
     def command(self):
         "command"
         self.init()
+        
+        if (self.conf.get('baruwa.messages.keep.days', 30) !=
+            self.options.days):
+            days = self.options.days
+        else:
+            days = self.conf.get('baruwa.messages.keep.days', 30)
+        if (self.conf.get('baruwa.archive.keep.days', 90) !=
+            self.options.adays):
+            adays = self.options.adays
+        else:
+            adays = self.conf.get('baruwa.archive.keep.days', 90)
 
-        interval = datetime.timedelta(days=self.options.days)
-        last_date = now() - interval
-        params = dict(date=last_date)
-        sql1 = text("""INSERT INTO archive
-                    SELECT * FROM messages WHERE timestamp <
-                    :date;""")
-        try:
-            Session.execute(sql1, params=params)
-        except IntegrityError, error:
-            Session.rollback()
-            sql = text("""DELETE FROM archive WHERE id in
-                        (SELECT id FROM messages WHERE timestamp < :date);"""
-                        )
-            Session.execute(sql, params=params)
-            Session.execute(sql1, params=params)
-            print >> sys.stderr, "Integrety error occured: %s" % str(error)
-            sys.exit(2)
-        sql = text("""DELETE FROM messages WHERE timestamp < :date;""")
-        Session.execute(sql, params=params)
-        sql = text("""DELETE FROM releases WHERE timestamp < :date;""")
-        Session.execute(sql, params=params)
-        Session.commit()
+        interval = datetime.timedelta(days=days)
+        archive_interval = datetime.timedelta(days=adays)
+        msgs_date = now() - interval
+        last_achive_date = now() - archive_interval
+        # process messages table
+        process_messages(msgs_date)
+        # process archive table
+        prune_archive(last_achive_date)
+        
+        

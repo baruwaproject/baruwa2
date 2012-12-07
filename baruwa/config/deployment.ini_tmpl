@@ -108,6 +108,8 @@ baruwa.reports.sender = baruwa@ms.home.topdog-software.com
 baruwa.locks.dir = /var/lock/baruwa
 baruwa.dkim.dir = /etc/MailScanner/baruwa/dkim
 baruwa.timezone = Africa/Johannesburg
+baruwa.messages.keep.days = 30
+baruwa.archive.keep.days = 90
 
 # celery settings
 broker.host = 127.0.0.1
