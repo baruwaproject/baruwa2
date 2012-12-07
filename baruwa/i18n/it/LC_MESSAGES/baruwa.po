@@ -1,21 +1,23 @@
-# Italian translations for baruwa.
-# Copyright (C) 2011 ORGANIZATION
+# Translations template for baruwa.
+# Copyright (C) 2012 Andrew Colin Kissa
 # This file is distributed under the same license as the baruwa project.
+# 
+# Translators:
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2011.
-#
 msgid ""
 msgstr ""
-"Project-Id-Version: baruwa 2.0.0\n"
+"Project-Id-Version: baruwa\n"
 "Report-Msgid-Bugs-To: baruwa@lists.baruwa.org\n"
-"POT-Creation-Date: 2012-12-05 14:11+0200\n"
-"PO-Revision-Date: 2012-11-27 08:30+0200\n"
+"POT-Creation-Date: 2012-12-06 17:05+0200\n"
+"PO-Revision-Date: 2012-12-06 17:26+0200\n"
 "Last-Translator: Andrew Colin Kissa <andrew@topdog.za.net>\n"
 "Language-Team: Baruwa Project\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 0.9.6\n"
+"Generated-By: auto-translate.py 0.0.1\n"
+"Language: it\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: baruwa/commands/pdfreport.py:116 baruwa/controllers/reports.py:62
 #: baruwa/templates/reports/index.html:13
@@ -88,7 +90,7 @@ msgid "Volume"
 msgstr "Volume"
 
 #: baruwa/commands/pdfreport.py:139 baruwa/controllers/reports.py:230
-#: baruwa/forms/reports.py:60 baruwa/templates/reports/listing.html:38
+#: baruwa/forms/reports.py:55 baruwa/templates/reports/listing.html:38
 msgid "Date"
 msgstr "Data"
 
@@ -139,7 +141,8 @@ msgstr "Sei stato bannato dopo molti falliti gli accessi"
 
 #: baruwa/controllers/accounts.py:153
 msgid "First time Login from external auth, your local account was created"
-msgstr "Prima volta Login da esterno auth, è stato creato il tuo account locali"
+msgstr ""
+"Prima volta Login da esterno auth, è stato creato il tuo account locali"
 
 #: baruwa/controllers/accounts.py:269
 #, python-format
@@ -154,8 +157,8 @@ msgstr "La password dell'account per %(name)s è stato reimpostato"
 #: baruwa/controllers/accounts.py:322 baruwa/controllers/accounts.py:352
 msgid "This is an external account, use external system to reset the password"
 msgstr ""
-"Questo è un account esterno, utilizzare il sistema esterno per "
-"reimpostare la password"
+"Questo è un account esterno, utilizzare il sistema esterno per reimpostare "
+"la password"
 
 #: baruwa/controllers/accounts.py:358
 msgid "The old password supplied does not match our records"
@@ -190,11 +193,11 @@ msgstr "L'account è stato cancellato"
 #: baruwa/controllers/accounts.py:617
 #, python-format
 msgid ""
-"The account: %(a)s and all associated data will be deleted, This action "
-"is not reversible."
+"The account: %(a)s and all associated data will be deleted, This action is "
+"not reversible."
 msgstr ""
-"Il conto: %(a)s e verranno cancellati tutti i dati associati, questa "
-"azione non è reversibile."
+"Il conto: %(a)s e verranno cancellati tutti i dati associati, questa azione "
+"non è reversibile."
 
 #: baruwa/controllers/accounts.py:674
 msgid "The accounts have been deleted"
@@ -208,7 +211,7 @@ msgstr ""
 "Seguenti conti stanno per essere eliminati, questa operazione non è "
 "reversibile, si desidera continuare?"
 
-#: baruwa/controllers/accounts.py:686 baruwa/controllers/domains.py:384
+#: baruwa/controllers/accounts.py:686 baruwa/controllers/domains.py:385
 msgid "An error occured try again"
 msgstr "Si è verificato un errore riprovare"
 
@@ -241,8 +244,8 @@ msgstr "L'indirizzo è stato cancellato"
 
 #: baruwa/controllers/accounts.py:871 baruwa/controllers/organizations.py:358
 msgid ""
-"File uploaded, and is being processed, this page will automatically "
-"refresh to show the status"
+"File uploaded, and is being processed, this page will automatically refresh "
+"to show the status"
 msgstr ""
 "File caricato ed è in fase di elaborazione, questa pagina si aggiornerà "
 "automaticamente per mostrare lo stato"
@@ -262,21 +265,21 @@ msgid "No CSV was file uploaded, try again"
 msgstr "No CSV era file caricato, riprovare"
 
 #: baruwa/controllers/accounts.py:895 baruwa/controllers/accounts.py:951
-#: baruwa/controllers/domains.py:867 baruwa/controllers/messages.py:660
+#: baruwa/controllers/domains.py:868 baruwa/controllers/messages.py:660
 #: baruwa/controllers/messages.py:662 baruwa/controllers/organizations.py:380
 #: baruwa/controllers/status.py:497
 msgid "The task status requested has expired or does not exist"
 msgstr "Lo stato di attività richiesto è scaduto o non esiste"
 
 #: baruwa/controllers/accounts.py:903 baruwa/controllers/accounts.py:959
-#: baruwa/controllers/domains.py:875 baruwa/controllers/organizations.py:388
+#: baruwa/controllers/domains.py:876 baruwa/controllers/organizations.py:388
 #: baruwa/controllers/status.py:505
 #, python-format
 msgid "Error occured in processing %s"
 msgstr "Si è verificato un errore nell'elaborazione di %s"
 
 #: baruwa/controllers/accounts.py:906 baruwa/controllers/accounts.py:962
-#: baruwa/controllers/domains.py:878 baruwa/controllers/organizations.py:391
+#: baruwa/controllers/domains.py:879 baruwa/controllers/organizations.py:391
 #: baruwa/controllers/status.py:508
 msgid "Backend error occured during processing."
 msgstr "Back-end si è verificato un errore durante l'elaborazione."
@@ -289,52 +292,52 @@ msgstr "L'importazione non poteva essere elaborati, riprovare più tardi"
 msgid "Accounts export is being processed"
 msgstr "Esportazione di conti è in fase di elaborazione"
 
-#: baruwa/controllers/accounts.py:978 baruwa/controllers/domains.py:888
+#: baruwa/controllers/accounts.py:978 baruwa/controllers/domains.py:889
 msgid "The export could not be processed, try again later"
 msgstr "L'esportazione non poteva essere elaborati, riprovare più tardi"
 
-#: baruwa/controllers/domains.py:238
+#: baruwa/controllers/domains.py:239
 #, python-format
 msgid "The domain: %(dom)s has been created"
 msgstr "Il dominio: %(dom)s è stato creato"
 
-#: baruwa/controllers/domains.py:243
+#: baruwa/controllers/domains.py:244
 #, python-format
 msgid "The domain name %(dom)s already exists"
 msgstr "Il nome di dominio %(dom)s esiste già"
 
-#: baruwa/controllers/domains.py:291
+#: baruwa/controllers/domains.py:292
 #, python-format
 msgid "The domain: %(dom)s has been updated"
 msgstr "Il dominio: %(dom)s è stato aggiornato"
 
-#: baruwa/controllers/domains.py:296
+#: baruwa/controllers/domains.py:297
 #, python-format
 msgid "The domain %(dom)s could not be updated"
 msgstr "Il dominio %(dom)s potrebbe non essere aggiornato"
 
-#: baruwa/controllers/domains.py:299
+#: baruwa/controllers/domains.py:300
 msgid "No changes were made to the domain"
 msgstr "Non sono state apportate modifiche al dominio"
 
-#: baruwa/controllers/domains.py:321
+#: baruwa/controllers/domains.py:322
 msgid "The domain has been deleted"
 msgstr "Il dominio è stato cancellato"
 
-#: baruwa/controllers/domains.py:324
+#: baruwa/controllers/domains.py:325
 #, python-format
 msgid ""
-"The domain: %(name)s and all associated data will be deleted, This action"
-" cannot be reversed."
+"The domain: %(name)s and all associated data will be deleted, This action "
+"cannot be reversed."
 msgstr ""
-"Il dominio: %(name)s e verranno cancellati tutti i dati associati, questa"
-" azione non può essere invertita."
+"Il dominio: %(name)s e verranno cancellati tutti i dati associati, questa "
+"azione non può essere invertita."
 
-#: baruwa/controllers/domains.py:372
+#: baruwa/controllers/domains.py:373
 msgid "The domains have been deleted"
 msgstr "I domini sono stati eliminati"
 
-#: baruwa/controllers/domains.py:375
+#: baruwa/controllers/domains.py:376
 msgid ""
 "The following domains are about to be deleted, this action is not "
 "reversible, Do you wish to continue ?"
@@ -342,84 +345,84 @@ msgstr ""
 "I seguenti domini stanno per essere eliminati, questa operazione non è "
 "reversibile, si desidera continuare?"
 
-#: baruwa/controllers/domains.py:410
+#: baruwa/controllers/domains.py:411
 msgid "The destination server has been created"
 msgstr "È stato creato il server di destinazione"
 
-#: baruwa/controllers/domains.py:416
+#: baruwa/controllers/domains.py:417
 #, python-format
 msgid "The destination server %(dest)s already exists "
 msgstr "Il server di destinazione %(dest)s esiste già "
 
-#: baruwa/controllers/domains.py:441
+#: baruwa/controllers/domains.py:442
 msgid "The destination server has been updated"
 msgstr "Il server di destinazione è stato aggiornato"
 
-#: baruwa/controllers/domains.py:452 baruwa/controllers/domains.py:816
+#: baruwa/controllers/domains.py:453 baruwa/controllers/domains.py:817
 msgid "The update failed"
 msgstr "L'aggiornamento non riuscito"
 
-#: baruwa/controllers/domains.py:454
+#: baruwa/controllers/domains.py:455
 msgid "No changes were made to the destination server"
 msgstr "Non sono state apportate modifiche al server di destinazione"
 
-#: baruwa/controllers/domains.py:485
+#: baruwa/controllers/domains.py:486
 msgid "The connection test failed try again later"
 msgstr "Il test di connessione fallito riprovare più tardi"
 
-#: baruwa/controllers/domains.py:490
+#: baruwa/controllers/domains.py:491
 #, python-format
 msgid "The server: %s is up and accepting mail from us"
 msgstr "Server: %s è posta su e accetta da noi"
 
-#: baruwa/controllers/domains.py:497
+#: baruwa/controllers/domains.py:498
 #, python-format
 msgid "The server: %s is not accepting mail from us: %s"
 msgstr "Server: %s non accetta posta da noi: %s"
 
-#: baruwa/controllers/domains.py:533
+#: baruwa/controllers/domains.py:534
 msgid "The destination server has been deleted"
 msgstr "Il server di destinazione è stato cancellato"
 
-#: baruwa/controllers/domains.py:540
+#: baruwa/controllers/domains.py:541
 #, python-format
 msgid ""
-"The destination server: %(s)s will be deleted, This action is not "
-"reversible"
+"The destination server: %(s)s will be deleted, This action is not reversible"
 msgstr ""
 "Il server di destinazione: %(s)s sarà eliminato, questa azione non è "
 "reversibile"
 
-#: baruwa/controllers/domains.py:567
+#: baruwa/controllers/domains.py:568
 msgid "The authentication settings have been created"
 msgstr "Le impostazioni di autenticazione sono state create"
 
-#: baruwa/controllers/domains.py:574
+#: baruwa/controllers/domains.py:575
 #, python-format
 msgid ""
-"The host %(dest)s already configured for %(auth)s authentication for this"
-" domain"
+"The host %(dest)s already configured for %(auth)s authentication for this "
+"domain"
 msgstr ""
 "L'host %(dest)s già configurato per %(auth)s autenticazione per questo "
 "dominio"
 
-#: baruwa/controllers/domains.py:607
+#: baruwa/controllers/domains.py:608
 msgid "The authentication settings have been updated"
 msgstr "Sono state aggiornate le impostazioni di autenticazione"
 
-#: baruwa/controllers/domains.py:618
+#: baruwa/controllers/domains.py:619
 msgid "The authentication settings update failed"
 msgstr "L'aggiornamento di impostazioni di autenticazione non riuscita"
 
-#: baruwa/controllers/domains.py:620
+#: baruwa/controllers/domains.py:621
 msgid "No changes were made to the authentication settings"
-msgstr "Non sono state apportate modifiche alle impostazioni di autenticazione"
+msgstr ""
+"Non sono state apportate modifiche alle impostazioni di autenticazione"
 
-#: baruwa/controllers/domains.py:641
+#: baruwa/controllers/domains.py:642
 msgid "The authentication settings have been deleted"
 msgstr "Le impostazioni di autenticazione sono state eliminate"
 
-#: baruwa/controllers/domains.py:648
+#: baruwa/controllers/domains.py:649
 #, python-format
 msgid ""
 "The authentication server: %(s)s will be deleted, This action is not "
@@ -428,11 +431,11 @@ msgstr ""
 "Il server di autenticazione: %(s)s sarà eliminato, questa azione non è "
 "reversibile"
 
-#: baruwa/controllers/domains.py:671
+#: baruwa/controllers/domains.py:672
 msgid "The protocol supplied does not use extra settings"
 msgstr "Il protocollo fornito non utilizza le impostazioni extra"
 
-#: baruwa/controllers/domains.py:676
+#: baruwa/controllers/domains.py:677
 #, python-format
 msgid ""
 "Please add an authentication server for the %(proto)s protocol Before "
@@ -441,55 +444,55 @@ msgstr ""
 "Si prega di aggiungere un server di autenticazione per la %(proto)s "
 "protocollo prima di tentare di configurare il %(proto)s Impostazioni"
 
-#: baruwa/controllers/domains.py:715
+#: baruwa/controllers/domains.py:716
 #, python-format
 msgid "The %(proto)s settings have been updated"
 msgstr "I %(proto)s le impostazioni sono state aggiornate"
 
-#: baruwa/controllers/domains.py:718
+#: baruwa/controllers/domains.py:719
 #, python-format
 msgid "The %(proto)s settings have been created"
 msgstr "I %(proto)s le impostazioni sono state create"
 
-#: baruwa/controllers/domains.py:729
+#: baruwa/controllers/domains.py:730
 msgid "The auth settings already exist, use update to modify them"
 msgstr ""
 "Le impostazioni di autenticazione già esiste, utilizzare update per "
 "modificarli"
 
-#: baruwa/controllers/domains.py:733
+#: baruwa/controllers/domains.py:734
 msgid ""
-"The Radius secret is not be displayed in the form, To update type the new"
-" secret in \"Radius secret\" below."
+"The Radius secret is not be displayed in the form, To update type the new "
+"secret in \"Radius secret\" below."
 msgstr ""
-"Il raggio segreto non è essere visualizzato nel modulo, aggiornare tipo "
-"il nuovo segreto nel \"Segreto Radius\" sotto."
+"Il raggio segreto non è essere visualizzato nel modulo, aggiornare tipo il "
+"nuovo segreto nel \"Segreto Radius\" sotto."
 
-#: baruwa/controllers/domains.py:774
+#: baruwa/controllers/domains.py:775
 #, python-format
 msgid "The domain alias: %s has been created"
 msgstr "L'alias di dominio: %s è stato creato"
 
-#: baruwa/controllers/domains.py:779
+#: baruwa/controllers/domains.py:780
 #, python-format
 msgid "The domain alias: %s already exists"
 msgstr "L'alias di dominio: %s esiste già"
 
-#: baruwa/controllers/domains.py:811
+#: baruwa/controllers/domains.py:812
 #, python-format
 msgid "The domain alias: %s has been updated"
 msgstr "L'alias di dominio: %s è stato aggiornato"
 
-#: baruwa/controllers/domains.py:818
+#: baruwa/controllers/domains.py:819
 msgid "No changes were made to the domain alias"
 msgstr "Non sono state apportate modifiche all'alias di dominio"
 
-#: baruwa/controllers/domains.py:845
+#: baruwa/controllers/domains.py:846
 #, python-format
 msgid "The domain alias: %s has been deleted"
 msgstr "L'alias di dominio: %s è stato cancellato"
 
-#: baruwa/controllers/domains.py:860
+#: baruwa/controllers/domains.py:861
 msgid "Domains export is being processed"
 msgstr "Esportazione di domini è in fase di elaborazione"
 
@@ -521,26 +524,44 @@ msgstr "Richiesta di caricamento non valido"
 msgid "The file has been deleted"
 msgstr "Il file è stato eliminato"
 
-#: baruwa/controllers/invite.py:118
+#: baruwa/controllers/invite.py:66 baruwa/controllers/invite.py:162
+#: baruwa/controllers/invite.py:177
 msgid "Baruwa Hosted"
 msgstr "Baruwa ospitato"
 
-#: baruwa/controllers/invite.py:121
+#: baruwa/controllers/invite.py:69
+#, python-format
+msgid "[Baruwa] Please verify your email: '%s'"
+msgstr "[Baruwa] Si prega di verificare il tuo indirizzo email: '% s'"
+
+#: baruwa/controllers/invite.py:74
+msgid ""
+"An email has been sent to the address provided, please follow the "
+"instructions in that email to proceed with your registration."
+msgstr ""
+"Un'email è stata inviata all'indirizzo indicato, si prega di seguire le "
+"istruzioni che la posta elettronica per procedere con la registrazione."
+
+#: baruwa/controllers/invite.py:89
+msgid "The access token supplied is invalid"
+msgstr "Il token di accesso fornito non è valido"
+
+#: baruwa/controllers/invite.py:165 baruwa/controllers/invite.py:181
 msgid "Baruwa Hosted Registration"
 msgstr "Baruwa ospitato registrazione"
 
-#: baruwa/controllers/invite.py:136
+#: baruwa/controllers/invite.py:191
 msgid "System was unable to process your request"
 msgstr "Sistema è stato in grado di elaborare la richiesta"
 
 #: baruwa/controllers/lists.py:248 baruwa/controllers/lists.py:291
-#: baruwa/forms/lists.py:39 baruwa/templates/base.html:75
+#: baruwa/forms/lists.py:34 baruwa/templates/base.html:75
 #: baruwa/templates/lists/add.html:49 baruwa/templates/lists/delete.html:38
 msgid "Approved senders"
 msgstr "Mittenti autorizzati"
 
 #: baruwa/controllers/lists.py:250 baruwa/controllers/lists.py:293
-#: baruwa/forms/lists.py:40 baruwa/templates/base.html:76
+#: baruwa/forms/lists.py:35 baruwa/templates/base.html:76
 #: baruwa/templates/lists/add.html:50 baruwa/templates/lists/delete.html:39
 msgid "Banned senders"
 msgstr "Vietati i mittenti"
@@ -580,8 +601,8 @@ msgstr "Visualizzare le immagini"
 #: baruwa/controllers/messages.py:596
 msgid "The message could not be previewed, try again later"
 msgstr ""
-"Il messaggio potrebbe non essere visualizzato in anteprima, riprovare più"
-" tardi"
+"Il messaggio potrebbe non essere visualizzato in anteprima, riprovare più "
+"tardi"
 
 #: baruwa/controllers/messages.py:612
 msgid "Unknown"
@@ -650,7 +671,8 @@ msgstr "Le impostazioni in uscita potrebbero non essere aggiornate"
 
 #: baruwa/controllers/organizations.py:303
 msgid "No changes made, The outbound settings not updated"
-msgstr "Senza le modifiche apportate, le impostazioni in uscita non aggiornate"
+msgstr ""
+"Senza le modifiche apportate, le impostazioni in uscita non aggiornate"
 
 #: baruwa/controllers/organizations.py:326
 msgid "The outbound settings have been deleted"
@@ -828,36 +850,56 @@ msgstr "No query specificata per l'esportazione di audit log"
 msgid "The audit log export failed, try again later"
 msgstr "L'esportazione di registro verifica non riuscita, riprovare più tardi"
 
-#: baruwa/forms/accounts.py:33 baruwa/forms/domains.py:34
-#: baruwa/forms/lists.py:33 baruwa/forms/messages.py:27 baruwa/forms/misc.py:28
-#: baruwa/forms/organizations.py:33 baruwa/forms/reports.py:33
-#: baruwa/forms/settings.py:30 baruwa/model/status.py:33
-#: baruwa/tasks/status.py:45
-msgid "hi"
-msgstr "Ciao"
+#: baruwa/forms/__init__.py:38
+msgid "This field is required."
+msgstr "Questo campo è obbligatorio."
 
-#: baruwa/forms/accounts.py:42 baruwa/templates/accounts/account.html:5
+#: baruwa/forms/__init__.py:39
+msgid "Invalid email address."
+msgstr "Indirizzo email non valido."
+
+#: baruwa/forms/__init__.py:81
+msgid "The domain is a free mail domain"
+msgstr "Il dominio è un dominio di posta gratis"
+
+#: baruwa/forms/__init__.py:89 baruwa/forms/__init__.py:100
+msgid "The domain already exists on the system"
+msgstr "Il dominio è già presente sul sistema"
+
+#: baruwa/forms/__init__.py:109
+msgid "The username cannot be an email address"
+msgstr "L'username non può essere un indirizzo email"
+
+#: baruwa/forms/__init__.py:111 baruwa/forms/__init__.py:113
+msgid "The username is not available"
+msgstr "Il nome utente non è disponibile"
+
+#: baruwa/forms/__init__.py:124
+msgid "Email from a domain that is already registered"
+msgstr "E-mail da un dominio già registrato"
+
+#: baruwa/forms/accounts.py:35 baruwa/templates/accounts/account.html:5
 msgid "User"
 msgstr "Utente"
 
-#: baruwa/forms/accounts.py:43
+#: baruwa/forms/accounts.py:36
 msgid "Domain admin"
 msgstr "Amministratore di dominio"
 
-#: baruwa/forms/accounts.py:44 baruwa/templates/accounts/account.html:5
+#: baruwa/forms/accounts.py:37 baruwa/templates/accounts/account.html:5
 msgid "Administrator"
 msgstr "Amministratore"
 
-#: baruwa/forms/accounts.py:60
+#: baruwa/forms/accounts.py:53
 #, python-format
 msgid "The domain: %(dom)s is not local"
 msgstr "Il dominio: %(dom)s non è locale"
 
-#: baruwa/forms/accounts.py:69 baruwa/forms/accounts.py:106
+#: baruwa/forms/accounts.py:62 baruwa/forms/accounts.py:99
 msgid "Please select atleast one domain"
 msgstr "Si prega di selezionare almeno un dominio"
 
-#: baruwa/forms/accounts.py:75 baruwa/forms/accounts.py:111
+#: baruwa/forms/accounts.py:68 baruwa/forms/accounts.py:104
 #: baruwa/tasks/status.py:296 baruwa/templates/accounts/account.html:38
 #: baruwa/templates/accounts/confirmbulkdel.html:8
 #: baruwa/templates/accounts/importstatus.html:5
@@ -868,103 +910,127 @@ msgstr "Si prega di selezionare almeno un dominio"
 msgid "Username"
 msgstr "Username"
 
-#: baruwa/forms/accounts.py:78 baruwa/forms/accounts.py:113
-#: baruwa/forms/invite.py:98
+#: baruwa/forms/accounts.py:71 baruwa/forms/accounts.py:106
+#: baruwa/forms/invite.py:50
 msgid "First name"
 msgstr "Primo nome"
 
-#: baruwa/forms/accounts.py:80 baruwa/forms/accounts.py:114
-#: baruwa/forms/invite.py:99
+#: baruwa/forms/accounts.py:73 baruwa/forms/accounts.py:107
+#: baruwa/forms/invite.py:52
 msgid "Last name"
 msgstr "Cognome"
 
-#: baruwa/forms/accounts.py:82 baruwa/forms/accounts.py:140
-#: baruwa/forms/invite.py:101
+#: baruwa/forms/accounts.py:75 baruwa/forms/accounts.py:138
+#: baruwa/forms/invite.py:56
 msgid "New Password"
 msgstr "Nuova Password"
 
-#: baruwa/forms/accounts.py:85 baruwa/forms/accounts.py:143
-#: baruwa/forms/invite.py:105 baruwa/forms/organizations.py:68
+#: baruwa/forms/accounts.py:78 baruwa/forms/accounts.py:141
+#: baruwa/forms/invite.py:60 baruwa/forms/organizations.py:67
 msgid "Passwords must match"
 msgstr "Le password devono corrispondere"
 
-#: baruwa/forms/accounts.py:86 baruwa/forms/accounts.py:144
-#: baruwa/forms/invite.py:106 baruwa/forms/organizations.py:67
+#: baruwa/forms/accounts.py:79 baruwa/forms/accounts.py:142
+#: baruwa/forms/invite.py:61 baruwa/forms/organizations.py:66
 msgid "Retype Password"
 msgstr "Ridigita la Password"
 
-#: baruwa/forms/accounts.py:88 baruwa/forms/accounts.py:115
-#: baruwa/forms/invite.py:100 baruwa/templates/accounts/confirmbulkdel.html:10
+#: baruwa/forms/accounts.py:81 baruwa/forms/accounts.py:108
+#: baruwa/forms/invite.py:54 baruwa/templates/accounts/confirmbulkdel.html:10
 #: baruwa/templates/accounts/index.html:36
 #: baruwa/templates/accounts/login.html:58
 #: baruwa/templates/accounts/searchresults.html:26
 msgid "Email address"
 msgstr "Indirizzo di posta elettronica"
 
-#: baruwa/forms/accounts.py:91 baruwa/forms/accounts.py:116
+#: baruwa/forms/accounts.py:84 baruwa/forms/accounts.py:110
 #: baruwa/templates/accounts/account.html:70
 #: baruwa/templates/domains/detail.html:140
 msgid "Timezone"
 msgstr "Fuso orario"
 
-#: baruwa/forms/accounts.py:92 baruwa/templates/accounts/account.html:94
+#: baruwa/forms/accounts.py:85 baruwa/templates/accounts/account.html:94
 msgid "Account type"
 msgstr "Tipo di conto"
 
-#: baruwa/forms/accounts.py:94 baruwa/forms/accounts.py:117
-#: baruwa/forms/organizations.py:49 baruwa/templates/base.html:92
+#: baruwa/forms/accounts.py:87 baruwa/forms/accounts.py:111
+#: baruwa/forms/organizations.py:46 baruwa/templates/base.html:92
 #: baruwa/templates/accounts/account.html:120
 msgid "Domains"
 msgstr "Domini"
 
-#: baruwa/forms/accounts.py:97 baruwa/forms/accounts.py:119
-#: baruwa/forms/accounts.py:135 baruwa/forms/domains.py:95
-#: baruwa/forms/domains.py:134 baruwa/forms/domains.py:142
-#: baruwa/forms/domains.py:151 baruwa/forms/domains.py:166
-#: baruwa/forms/organizations.py:64 baruwa/forms/settings.py:174
-#: baruwa/forms/settings.py:705 baruwa/forms/settings.py:710
+#: baruwa/forms/accounts.py:90 baruwa/forms/accounts.py:113
+#: baruwa/forms/accounts.py:133 baruwa/forms/domains.py:93
+#: baruwa/forms/domains.py:143 baruwa/forms/domains.py:155
+#: baruwa/forms/domains.py:173 baruwa/forms/domains.py:189
+#: baruwa/forms/organizations.py:63 baruwa/forms/settings.py:169
+#: baruwa/forms/settings.py:700 baruwa/forms/settings.py:705
 #: baruwa/lib/templates/helpers.py:226 baruwa/templates/settings/index.html:17
 msgid "Enabled"
 msgstr "Abilitato"
 
-#: baruwa/forms/accounts.py:98 baruwa/forms/accounts.py:120
+#: baruwa/forms/accounts.py:91 baruwa/forms/accounts.py:114
 #: baruwa/templates/accounts/account.html:140
 msgid "Send reports"
 msgstr "Inviare le segnalazioni"
 
-#: baruwa/forms/accounts.py:99 baruwa/forms/accounts.py:121
+#: baruwa/forms/accounts.py:92 baruwa/forms/accounts.py:115
 msgid "Enable spam checks"
 msgstr "Attivare i controlli dello spam"
 
-#: baruwa/forms/accounts.py:100 baruwa/forms/domains.py:104
+#: baruwa/forms/accounts.py:93 baruwa/forms/domains.py:102
 msgid "Probable spam score"
 msgstr "Probabile spam segno"
 
-#: baruwa/forms/accounts.py:101 baruwa/forms/domains.py:105
+#: baruwa/forms/accounts.py:94 baruwa/forms/domains.py:103
 msgid "Definite spam score"
 msgstr "Punteggio definito spam"
 
-#: baruwa/forms/accounts.py:122 baruwa/templates/domains/detail.html:108
+#: baruwa/forms/accounts.py:116 baruwa/templates/domains/detail.html:108
 msgid "Spam low score"
 msgstr "Punteggio basso spam"
 
-#: baruwa/forms/accounts.py:123 baruwa/templates/domains/detail.html:116
+#: baruwa/forms/accounts.py:117 baruwa/templates/domains/detail.html:116
 msgid "Spam high score"
 msgstr "Punteggio elevato spam"
 
-#: baruwa/forms/accounts.py:149
+#: baruwa/forms/accounts.py:123 baruwa/forms/domains.py:130
+msgid "delete"
+msgstr "eliminare"
+
+#: baruwa/forms/accounts.py:124 baruwa/forms/domains.py:131
+msgid "disable"
+msgstr "Disable"
+
+#: baruwa/forms/accounts.py:125 baruwa/forms/domains.py:132
+msgid "enable"
+msgstr "Enable"
+
+#: baruwa/forms/accounts.py:130 baruwa/templates/accounts/account.html:54
+msgid "Email Address"
+msgstr "Indirizzo di posta elettronica"
+
+#: baruwa/forms/accounts.py:148
 msgid "Old Password"
 msgstr "Vecchia Password"
 
-#: baruwa/forms/domains.py:48 baruwa/templates/base.html:68
+#: baruwa/forms/domains.py:36
+msgid "Load balance"
+msgstr "Bilanciamento del carico"
+
+#: baruwa/forms/domains.py:37
+msgid "Fail over"
+msgstr "Il failover"
+
+#: baruwa/forms/domains.py:43 baruwa/templates/base.html:68
 #: baruwa/templates/messages/detail.html:150
 #: baruwa/templates/messages/taskstatus.html:6
 msgid "Quarantine"
 msgstr "Quarantena"
 
-#: baruwa/forms/domains.py:49 baruwa/forms/messages.py:79
-#: baruwa/forms/settings.py:133 baruwa/model/status.py:42
-#: baruwa/templates/accounts/account.html:183
+#: baruwa/forms/domains.py:44 baruwa/forms/messages.py:73
+#: baruwa/forms/settings.py:128 baruwa/forms/status.py:32
+#: baruwa/model/status.py:42 baruwa/templates/accounts/account.html:183
 #: baruwa/templates/accounts/account.html:185
 #: baruwa/templates/accounts/account.html:211
 #: baruwa/templates/accounts/deleteaddress.html:17
@@ -985,277 +1051,270 @@ msgstr "Quarantena"
 msgid "Delete"
 msgstr "Eliminare"
 
-#: baruwa/forms/domains.py:50
+#: baruwa/forms/domains.py:45 baruwa/forms/status.py:29
 msgid "Deliver"
 msgstr "Consegnare"
 
-#: baruwa/forms/domains.py:54
+#: baruwa/forms/domains.py:49
 msgid "Monthly"
 msgstr "Mensile"
 
-#: baruwa/forms/domains.py:55
+#: baruwa/forms/domains.py:50
 msgid "Weekly"
 msgstr "Settimanale"
 
-#: baruwa/forms/domains.py:56
+#: baruwa/forms/domains.py:51
 msgid "Daily"
 msgstr "Quotidiano"
 
-#: baruwa/forms/domains.py:57 baruwa/lib/templates/helpers.py:229
+#: baruwa/forms/domains.py:52 baruwa/lib/templates/helpers.py:229
 msgid "Disabled"
 msgstr "Disabili"
 
-#: baruwa/forms/domains.py:61 baruwa/forms/domains.py:68
+#: baruwa/forms/domains.py:56 baruwa/forms/domains.py:63
 msgid "SMTP"
 msgstr "SMTP"
 
-#: baruwa/forms/domains.py:62
+#: baruwa/forms/domains.py:57
 msgid "LMTP"
 msgstr "LMTP"
 
-#: baruwa/forms/domains.py:66
+#: baruwa/forms/domains.py:61
 msgid "POP3"
 msgstr "POP3"
 
-#: baruwa/forms/domains.py:67
+#: baruwa/forms/domains.py:62
 msgid "IMAP"
 msgstr "IMAP"
 
-#: baruwa/forms/domains.py:69
+#: baruwa/forms/domains.py:64
 msgid "RADIUS/RSA SECUREID"
 msgstr "RAGGIO/RSA SECUREID"
 
-#: baruwa/forms/domains.py:70
+#: baruwa/forms/domains.py:65
 msgid "LDAP"
 msgstr "LDAP"
 
-#: baruwa/forms/domains.py:71
+#: baruwa/forms/domains.py:66
 msgid "YUBIKEY"
 msgstr "YUBIKEY"
 
-#: baruwa/forms/domains.py:72
+#: baruwa/forms/domains.py:67
 msgid "OAUTH"
 msgstr "OAUTH"
 
-#: baruwa/forms/domains.py:76
+#: baruwa/forms/domains.py:71
 msgid "SUBTREE"
 msgstr "SOTTOSTRUTTURA"
 
-#: baruwa/forms/domains.py:77
+#: baruwa/forms/domains.py:72
 msgid "ONE LEVEL"
 msgstr "UN LIVELLO"
 
-#: baruwa/forms/domains.py:85
+#: baruwa/forms/domains.py:80
 msgid "Invalid Domain name or IP address"
 msgstr "Indirizzo IP o nome dominio non valido"
 
-#: baruwa/forms/domains.py:90 baruwa/forms/invite.py:108
-#: baruwa/forms/lists.py:85 baruwa/templates/domains/detail.html:21
+#: baruwa/forms/domains.py:85 baruwa/forms/domains.py:122
+#: baruwa/forms/invite.py:67 baruwa/forms/lists.py:84
+#: baruwa/templates/domains/detail.html:21
 #: baruwa/templates/organizations/importstatus.html:5
 msgid "Domain name"
 msgstr "Nome di dominio"
 
-#: baruwa/forms/domains.py:92 baruwa/forms/domains.py:133
-#: baruwa/forms/invite.py:110
+#: baruwa/forms/domains.py:87 baruwa/forms/domains.py:124
+#: baruwa/forms/domains.py:140 baruwa/forms/domains.py:154
+#: baruwa/forms/domains.py:163 baruwa/forms/invite.py:69
 msgid "Invalid Domain name"
 msgstr "Nome di dominio non valido"
 
-#: baruwa/forms/domains.py:93 baruwa/templates/domains/detail.html:148
+#: baruwa/forms/domains.py:90 baruwa/templates/domains/detail.html:148
 msgid "Site url"
 msgstr "Url del sito"
 
-#: baruwa/forms/domains.py:96
+#: baruwa/forms/domains.py:94
 msgid "Enable SMTP callouts"
 msgstr "Abilitare SMTP callout"
 
-#: baruwa/forms/domains.py:97
+#: baruwa/forms/domains.py:95
 msgid "Enable LDAP callouts"
 msgstr "Attivare LDAP callout"
 
-#: baruwa/forms/domains.py:98
+#: baruwa/forms/domains.py:96
 msgid "Enable Virus checks"
 msgstr "Attivare i controlli di Virus"
 
-#: baruwa/forms/domains.py:99
+#: baruwa/forms/domains.py:97
 msgid "Enable SPAM checks"
 msgstr "Attivare i controlli di SPAM"
 
-#: baruwa/forms/domains.py:100
+#: baruwa/forms/domains.py:98
 msgid "What to do with probable spam"
 msgstr "Cosa fare con probabile spam"
 
-#: baruwa/forms/domains.py:102
+#: baruwa/forms/domains.py:100
 msgid "What to do with definite spam"
 msgstr "Cosa fare con lo spam definitivo"
 
-#: baruwa/forms/domains.py:106 baruwa/templates/domains/detail.html:124
+#: baruwa/forms/domains.py:104 baruwa/templates/domains/detail.html:124
 msgid "Maximum Message Size"
 msgstr "Dimensione massima del messaggio"
 
-#: baruwa/forms/domains.py:108
+#: baruwa/forms/domains.py:106
 msgid "Invalid message size, only B, K, M accepted"
 msgstr "Dimensione del messaggio non valido, solo B, K, M accettato"
 
-#: baruwa/forms/domains.py:111 baruwa/templates/domains/detail.html:52
+#: baruwa/forms/domains.py:109 baruwa/templates/domains/detail.html:52
 msgid "Multi destination delivery mode"
 msgstr "Modalità di consegna multi destinazione"
 
-#: baruwa/forms/domains.py:113 baruwa/templates/domains/detail.html:132
+#: baruwa/forms/domains.py:111 baruwa/templates/domains/detail.html:132
 msgid "Language"
 msgstr "Lingua"
 
-#: baruwa/forms/domains.py:114
+#: baruwa/forms/domains.py:112 baruwa/forms/invite.py:65
 msgid "Default Timezone"
 msgstr "Fuso orario predefinito"
 
-#: baruwa/forms/domains.py:115
+#: baruwa/forms/domains.py:113
 msgid "Report frequency"
 msgstr "Relazione frequenza"
 
-#: baruwa/forms/domains.py:117 baruwa/templates/base.html:114
+#: baruwa/forms/domains.py:115 baruwa/templates/base.html:114
 #: baruwa/templates/accounts/account.html:103
 msgid "Organizations"
 msgstr "Organizzazioni"
 
-#: baruwa/forms/domains.py:131
+#: baruwa/forms/domains.py:137 baruwa/forms/domains.py:151
+#: baruwa/forms/domains.py:160
 msgid "Domain alias name"
 msgstr "Nome di alias di dominio"
 
-#: baruwa/forms/domains.py:135
+#: baruwa/forms/domains.py:144
 msgid "Parent domain"
 msgstr "Dominio padre"
 
-#: baruwa/forms/domains.py:147 baruwa/forms/domains.py:156
-#: baruwa/forms/domains.py:161
+#: baruwa/forms/domains.py:168 baruwa/forms/domains.py:178
+#: baruwa/forms/domains.py:183
 msgid "Server address"
 msgstr "Indirizzo del server"
 
-#: baruwa/forms/domains.py:149 baruwa/forms/domains.py:163
-#: baruwa/forms/invite.py:113
+#: baruwa/forms/domains.py:171 baruwa/forms/domains.py:186
+#: baruwa/forms/invite.py:73
 msgid "Protocol"
 msgstr "Protocollo"
 
-#: baruwa/forms/domains.py:150 baruwa/forms/domains.py:164
-#: baruwa/forms/invite.py:114
+#: baruwa/forms/domains.py:172 baruwa/forms/domains.py:187
+#: baruwa/forms/invite.py:75
 msgid "Port"
 msgstr "Porta"
 
-#: baruwa/forms/domains.py:165
+#: baruwa/forms/domains.py:188
 msgid "must be numeric"
 msgstr "deve essere numerico"
 
-#: baruwa/forms/domains.py:167
+#: baruwa/forms/domains.py:190
 msgid "Split address"
 msgstr "Indirizzo di Split"
 
-#: baruwa/forms/domains.py:168
+#: baruwa/forms/domains.py:191
 msgid "Username map template"
 msgstr "Modello mappa username"
 
-#: baruwa/forms/domains.py:173
+#: baruwa/forms/domains.py:196
 msgid "Base DN"
 msgstr "Base DN"
 
-#: baruwa/forms/domains.py:174
+#: baruwa/forms/domains.py:197
 msgid "Username attribute"
 msgstr "Attributo UserName"
 
-#: baruwa/forms/domains.py:177
+#: baruwa/forms/domains.py:200
 msgid "Email attribute"
 msgstr "Attributo email"
 
-#: baruwa/forms/domains.py:180
+#: baruwa/forms/domains.py:203
 msgid "Bind DN"
 msgstr "Bind DN"
 
-#: baruwa/forms/domains.py:181
+#: baruwa/forms/domains.py:204
 msgid "Bind password"
 msgstr "Bind password"
 
-#: baruwa/forms/domains.py:182
+#: baruwa/forms/domains.py:205
 msgid "Use TLS"
 msgstr "Utilizzare TLS"
 
-#: baruwa/forms/domains.py:183
+#: baruwa/forms/domains.py:206
 msgid "Search for UserDN"
 msgstr "Cerca DNUtente"
 
-#: baruwa/forms/domains.py:184
+#: baruwa/forms/domains.py:207
 msgid "Auth Search Filter"
 msgstr "Filtro di ricerca auth"
 
-#: baruwa/forms/domains.py:185
+#: baruwa/forms/domains.py:208
 msgid "Auth Search Scope"
 msgstr "Ambito di ricerca auth"
 
-#: baruwa/forms/domains.py:187
+#: baruwa/forms/domains.py:210
 msgid "Email Search Filter"
 msgstr "Filtro di ricerca e-mail"
 
-#: baruwa/forms/domains.py:188
+#: baruwa/forms/domains.py:211
 msgid "Email Search Scope"
 msgstr "Ambito di ricerca e-mail"
 
-#: baruwa/forms/domains.py:203
+#: baruwa/forms/domains.py:226
 msgid "Unsupported search scope"
 msgstr "Ambito di ricerca non supportato"
 
-#: baruwa/forms/domains.py:209
+#: baruwa/forms/domains.py:232
 msgid "Radius secret"
 msgstr "Segreto RADIUS"
 
-#: baruwa/forms/domains.py:210
+#: baruwa/forms/domains.py:234
 msgid "Request timeout"
 msgstr "Timeout della richiesta"
 
-#: baruwa/forms/invite.py:60
-msgid "The domain is already registered"
-msgstr "Il dominio è già registrato"
-
-#: baruwa/forms/invite.py:69
-msgid "The username cannot be an email address"
-msgstr "L'username non può essere un indirizzo email"
-
-#: baruwa/forms/invite.py:71 baruwa/forms/invite.py:73
-msgid "The username is not available"
-msgstr "Il nome utente non è disponibile"
-
-#: baruwa/forms/invite.py:83
-msgid "Email from a domain that is already registered"
-msgstr "E-mail da un dominio già registrato"
-
-#: baruwa/forms/invite.py:91
+#: baruwa/forms/invite.py:42
 msgid "You must accept the terms and conditions"
 msgstr "È necessario accettare i termini e le condizioni"
 
-#: baruwa/forms/invite.py:96
+#: baruwa/forms/invite.py:47
 msgid "Admin Username"
 msgstr "Nome utente admin"
 
-#: baruwa/forms/invite.py:107 baruwa/forms/organizations.py:48
+#: baruwa/forms/invite.py:63 baruwa/forms/organizations.py:44
 #: baruwa/templates/organizations/detail.html:19
 #: baruwa/templates/organizations/index.html:11
 msgid "Organization name"
 msgstr "Nome dell'organizzazione"
 
-#: baruwa/forms/invite.py:111
+#: baruwa/forms/invite.py:71
 msgid "Delivery Server address"
 msgstr "Indirizzo Server di consegna"
 
-#: baruwa/forms/lists.py:51
-msgid "Provide either a valid IP, email, Domain address, or IP network or range"
-msgstr "Fornire sia un valido IP, email, indirizzo di dominio o IP di rete o gamma"
+#: baruwa/forms/invite.py:81
+msgid "Enter a valid email address"
+msgstr "Inserire un indirizzo email valido"
 
-#: baruwa/forms/lists.py:68
+#: baruwa/forms/lists.py:46
+msgid ""
+"Provide either a valid IP, email, Domain address, or IP network or range"
+msgstr ""
+"Fornire sia un valido IP, email, indirizzo di dominio o IP di rete o gamma"
+
+#: baruwa/forms/lists.py:63
 #, python-format
 msgid "The domain %(dom)s is not local"
 msgstr "Il dominio %(dom)s non è locale"
 
-#: baruwa/forms/lists.py:71
+#: baruwa/forms/lists.py:66
 msgid "Provide either a valid email or domain address"
 msgstr "Fornire un email valido o un indirizzo di dominio"
 
-#: baruwa/forms/lists.py:76 baruwa/forms/lists.py:83 baruwa/forms/lists.py:98
+#: baruwa/forms/lists.py:71 baruwa/forms/lists.py:80 baruwa/forms/lists.py:97
 #: baruwa/templates/lists/index.html:27
 #: baruwa/templates/messages/detail.html:23
 #: baruwa/templates/messages/taskstatus.html:16
@@ -1263,7 +1322,7 @@ msgstr "Fornire un email valido o un indirizzo di dominio"
 msgid "From address"
 msgstr "Dall'indirizzo"
 
-#: baruwa/forms/lists.py:77 baruwa/forms/lists.py:99
+#: baruwa/forms/lists.py:74 baruwa/forms/lists.py:100
 #: baruwa/templates/lists/index.html:28
 #: baruwa/templates/messages/detail.html:27
 #: baruwa/templates/messages/taskstatus.html:17
@@ -1271,75 +1330,75 @@ msgstr "Dall'indirizzo"
 msgid "To address"
 msgstr "All'indirizzo"
 
-#: baruwa/forms/lists.py:78 baruwa/forms/lists.py:86 baruwa/forms/lists.py:100
+#: baruwa/forms/lists.py:75 baruwa/forms/lists.py:85 baruwa/forms/lists.py:101
 msgid "List type"
 msgstr "Elenco Tipo"
 
-#: baruwa/forms/lists.py:84
+#: baruwa/forms/lists.py:83
 msgid "User account"
 msgstr "Account utente"
 
-#: baruwa/forms/lists.py:87 baruwa/forms/lists.py:101
+#: baruwa/forms/lists.py:86 baruwa/forms/lists.py:102
 msgid "Add to aliases as well"
 msgstr "Aggiungere a alias pure"
 
-#: baruwa/forms/lists.py:93
+#: baruwa/forms/lists.py:92
 msgid "Invalid user account supplied"
 msgstr "Account utente non valido fornito"
 
-#: baruwa/forms/messages.py:53
+#: baruwa/forms/messages.py:47
 msgid "Select atleast one action to perform"
 msgstr "Selezionare almeno una azione da eseguire"
 
-#: baruwa/forms/messages.py:69
+#: baruwa/forms/messages.py:63
 msgid "Provide atleast one alternative recipient"
 msgstr "Fornire almeno un destinatario alternativo"
 
-#: baruwa/forms/messages.py:76
+#: baruwa/forms/messages.py:70
 msgid "Invalid email address"
 msgstr "Indirizzo email non valido"
 
-#: baruwa/forms/messages.py:78 baruwa/templates/email/quarantine.html:66
+#: baruwa/forms/messages.py:72 baruwa/templates/email/quarantine.html:66
 #: baruwa/templates/email/quarantine.html:81
 #: baruwa/templates/email/quarantine.html:95
 msgid "Release"
 msgstr "Rilascio"
 
-#: baruwa/forms/messages.py:80
+#: baruwa/forms/messages.py:74
 msgid "Bayesian Learn"
 msgstr "Bayesian apprendere"
 
-#: baruwa/forms/messages.py:81
+#: baruwa/forms/messages.py:75
 msgid "Alt recipients"
 msgstr "Destinatari Alt"
 
-#: baruwa/forms/misc.py:36
+#: baruwa/forms/misc.py:31
 msgid "Show items"
 msgstr "Visualizza gli elementi"
 
-#: baruwa/forms/misc.py:41
+#: baruwa/forms/misc.py:36
 msgid "Image file"
 msgstr "File di immagine"
 
-#: baruwa/forms/misc.py:42
+#: baruwa/forms/misc.py:37
 msgid "File name"
 msgstr "Nome del file"
 
-#: baruwa/forms/organizations.py:43 baruwa/forms/organizations.py:98
+#: baruwa/forms/organizations.py:38 baruwa/forms/organizations.py:98
 #, python-format
 msgid "Password %(msg)s."
 msgstr "Password %(msg)s."
 
-#: baruwa/forms/organizations.py:52
+#: baruwa/forms/organizations.py:49
 msgid "Admins"
 msgstr "Amministratori"
 
-#: baruwa/forms/organizations.py:58
+#: baruwa/forms/organizations.py:56
 msgid "Delete Organization domains"
 msgstr "Eliminare i domini di organizzazione"
 
-#: baruwa/forms/organizations.py:63 baruwa/forms/settings.py:170
-#: baruwa/forms/settings.py:310 baruwa/tasks/status.py:298
+#: baruwa/forms/organizations.py:62 baruwa/forms/settings.py:165
+#: baruwa/forms/settings.py:305 baruwa/tasks/status.py:298
 #: baruwa/templates/messages/detail.html:176
 #: baruwa/templates/reports/relays.html:26
 #: baruwa/templates/settings/index.html:16
@@ -1347,27 +1406,27 @@ msgstr "Eliminare i domini di organizzazione"
 msgid "Hostname"
 msgstr "Hostname"
 
-#: baruwa/forms/organizations.py:65
+#: baruwa/forms/organizations.py:64
 msgid "SMTP-AUTH username"
 msgstr "Nome utente SMTP-AUTH"
 
-#: baruwa/forms/organizations.py:66
+#: baruwa/forms/organizations.py:65
 msgid "SMTP-AUTH password"
 msgstr "SMTP-AUTH password"
 
-#: baruwa/forms/organizations.py:73
+#: baruwa/forms/organizations.py:72
 msgid "Provide either a hostname or username & password"
 msgstr "Fornire un nome host o username & password"
 
-#: baruwa/forms/organizations.py:77
+#: baruwa/forms/organizations.py:76
 msgid "Provide a valid hostname or IP address"
 msgstr "Fornire un nome di host valido o un indirizzo IP"
 
-#: baruwa/forms/organizations.py:81
+#: baruwa/forms/organizations.py:80
 msgid "Required"
 msgstr "Obbligatorio"
 
-#: baruwa/forms/organizations.py:84
+#: baruwa/forms/organizations.py:83
 msgid "Email usernames not supported"
 msgstr "E-mail username non supportato"
 
@@ -1379,33 +1438,33 @@ msgstr "File CSV"
 msgid "Skip first line"
 msgstr "Saltare la prima riga"
 
-#: baruwa/forms/reports.py:39 baruwa/templates/messages/detail.html:19
+#: baruwa/forms/reports.py:34 baruwa/templates/messages/detail.html:19
 #: baruwa/templates/status/detail.html:17
 msgid "Message ID"
 msgstr "ID messaggio"
 
-#: baruwa/forms/reports.py:40
+#: baruwa/forms/reports.py:35
 msgid "Message size"
 msgstr "Dimensione del messaggio"
 
-#: baruwa/forms/reports.py:41 baruwa/templates/email/quarantine.html:64
+#: baruwa/forms/reports.py:36 baruwa/templates/email/quarantine.html:64
 #: baruwa/templates/email/quarantine.html:93
 msgid "From Address"
 msgstr "Dall'indirizzo"
 
-#: baruwa/forms/reports.py:42
+#: baruwa/forms/reports.py:37
 msgid "From Domain"
 msgstr "Dal dominio"
 
-#: baruwa/forms/reports.py:43
+#: baruwa/forms/reports.py:38
 msgid "To Address"
 msgstr "All'indirizzo"
 
-#: baruwa/forms/reports.py:44
+#: baruwa/forms/reports.py:39
 msgid "To Domain"
 msgstr "Al dominio"
 
-#: baruwa/forms/reports.py:45 baruwa/templates/email/quarantine.html:65
+#: baruwa/forms/reports.py:40 baruwa/templates/email/quarantine.html:65
 #: baruwa/templates/email/quarantine.html:94
 #: baruwa/templates/messages/detail.html:31
 #: baruwa/templates/messages/functions.html:110
@@ -1418,1049 +1477,1054 @@ msgstr "Al dominio"
 msgid "Subject"
 msgstr "Oggetto"
 
-#: baruwa/forms/reports.py:46 baruwa/templates/messages/detail.html:43
+#: baruwa/forms/reports.py:41 baruwa/templates/messages/detail.html:43
 msgid "Received from"
 msgstr "Ricevuto da"
 
-#: baruwa/forms/reports.py:48
+#: baruwa/forms/reports.py:43
 msgid "Was scanned"
 msgstr "È stato digitalizzato"
 
-#: baruwa/forms/reports.py:49
+#: baruwa/forms/reports.py:44
 msgid "Is Spam"
 msgstr "È Spam"
 
-#: baruwa/forms/reports.py:50
+#: baruwa/forms/reports.py:45
 msgid "Is Definite spam"
 msgstr "È definito spam"
 
-#: baruwa/forms/reports.py:52
+#: baruwa/forms/reports.py:47
 msgid "Is RBL listed"
 msgstr "RBL è elencato"
 
-#: baruwa/forms/reports.py:53
+#: baruwa/forms/reports.py:48
 msgid "Is approved sender"
 msgstr "È approvato mittente"
 
-#: baruwa/forms/reports.py:54
+#: baruwa/forms/reports.py:49
 msgid "Is banned sender"
 msgstr "È vietato mittente"
 
-#: baruwa/forms/reports.py:55
+#: baruwa/forms/reports.py:50
 msgid "Spam score"
 msgstr "Punteggio di spam"
 
-#: baruwa/forms/reports.py:56
+#: baruwa/forms/reports.py:51
 msgid "Spam report"
 msgstr "Spam report"
 
-#: baruwa/forms/reports.py:57
+#: baruwa/forms/reports.py:52
 msgid "Is virus infected"
 msgstr "Virus è infetto"
 
-#: baruwa/forms/reports.py:58
+#: baruwa/forms/reports.py:53
 msgid "Is name infected"
 msgstr "Nome è infetto"
 
-#: baruwa/forms/reports.py:59
+#: baruwa/forms/reports.py:54
 msgid "Is other infected"
 msgstr "Altro è infetto"
 
-#: baruwa/forms/reports.py:61
+#: baruwa/forms/reports.py:56
 msgid "Time"
 msgstr "Tempo"
 
-#: baruwa/forms/reports.py:62
+#: baruwa/forms/reports.py:57
 msgid "Headers"
 msgstr "Intestazioni"
 
-#: baruwa/forms/reports.py:63
+#: baruwa/forms/reports.py:58
 msgid "Is quarantined"
 msgstr "Viene messo in quarantena"
 
-#: baruwa/forms/reports.py:64
+#: baruwa/forms/reports.py:59
 msgid "Processed by host"
 msgstr "Elaborati dall'host"
 
-#: baruwa/forms/reports.py:68
+#: baruwa/forms/reports.py:63
 msgid "is equal to"
 msgstr "è uguale a"
 
-#: baruwa/forms/reports.py:69
+#: baruwa/forms/reports.py:64
 msgid "is not equal to"
 msgstr "non è uguale a"
 
-#: baruwa/forms/reports.py:70
+#: baruwa/forms/reports.py:65
 msgid "is greater than"
 msgstr "è maggiore di"
 
-#: baruwa/forms/reports.py:71
+#: baruwa/forms/reports.py:66
 msgid "is less than"
 msgstr "è inferiore a"
 
-#: baruwa/forms/reports.py:72
+#: baruwa/forms/reports.py:67
 msgid "contains"
 msgstr "contiene"
 
-#: baruwa/forms/reports.py:73
+#: baruwa/forms/reports.py:68
 msgid "does not contain"
 msgstr "non contiene"
 
-#: baruwa/forms/reports.py:74
+#: baruwa/forms/reports.py:69
 msgid "matches regex"
 msgstr "matches regex"
 
-#: baruwa/forms/reports.py:75
+#: baruwa/forms/reports.py:70
 msgid "does not match regex"
 msgstr "non corrisponde a regex"
 
-#: baruwa/forms/reports.py:76
+#: baruwa/forms/reports.py:71
 msgid "is null"
 msgstr "è null"
 
-#: baruwa/forms/reports.py:77
+#: baruwa/forms/reports.py:72
 msgid "is not null"
 msgstr "non è null"
 
-#: baruwa/forms/reports.py:78
+#: baruwa/forms/reports.py:73
 msgid "is true"
 msgstr "è vero"
 
-#: baruwa/forms/reports.py:79
+#: baruwa/forms/reports.py:74
 msgid "is false"
 msgstr "è falso"
 
-#: baruwa/forms/reports.py:117
+#: baruwa/forms/reports.py:113
 #, python-format
 msgid "%(field)s does not support the \"%(filt)s\" filter"
 msgstr "%(field)s non supporta il \"%(filt)s\" filtro"
 
-#: baruwa/forms/reports.py:124
+#: baruwa/forms/reports.py:120
 msgid "Please supply a value to query"
 msgstr "Si prega di fornire un valore alla query"
 
-#: baruwa/forms/reports.py:127
+#: baruwa/forms/reports.py:123
 msgid "The value has to be numeric"
 msgstr "Il valore deve essere numerico"
 
-#: baruwa/forms/reports.py:133
+#: baruwa/forms/reports.py:129
 #, python-format
 msgid "%(email)s is not a valid e-mail address."
 msgstr "%(email)s non è un indirizzo e-mail valido."
 
-#: baruwa/forms/reports.py:140
+#: baruwa/forms/reports.py:136
 #, python-format
 msgid "%(dom)s is not a valid domain address."
 msgstr "%(dom)s non è un indirizzo di dominio valido."
 
-#: baruwa/forms/reports.py:147
+#: baruwa/forms/reports.py:143
 msgid "Invalid regex supplied"
 msgstr "Regex non valido fornito"
 
-#: baruwa/forms/reports.py:153
+#: baruwa/forms/reports.py:149
 msgid "Please provide a valid ipv4 address"
 msgstr "Si prega di fornire un indirizzo ipv4 valido"
 
-#: baruwa/forms/reports.py:159
+#: baruwa/forms/reports.py:155
 msgid "Please provide a valid hostname or ipv4 address"
 msgstr "Si prega di fornire un indirizzo valido di hostname o ipv4"
 
-#: baruwa/forms/reports.py:167
+#: baruwa/forms/reports.py:163
 msgid "Please provide a valid date in YYYY-MM-DD format"
 msgstr "Si prega di fornire una data valida in formato AAAA-MM-GG"
 
-#: baruwa/forms/reports.py:174
+#: baruwa/forms/reports.py:170
 msgid "Please provide valid time in HH:MM format"
 msgstr "Si prega di fornire valido ora nel formato hh: mm"
 
-#: baruwa/forms/settings.py:35 baruwa/forms/settings.py:49
-#: baruwa/forms/settings.py:52
+#: baruwa/forms/settings.py:30 baruwa/forms/settings.py:44
+#: baruwa/forms/settings.py:47
 msgid "Yes"
 msgstr "Sì"
 
-#: baruwa/forms/settings.py:35 baruwa/forms/settings.py:38
-#: baruwa/forms/settings.py:50 baruwa/forms/settings.py:53
-#, fuzzy
+#: baruwa/forms/settings.py:30 baruwa/forms/settings.py:33
+#: baruwa/forms/settings.py:45 baruwa/forms/settings.py:48
 msgid "No"
-msgstr "Info"
+msgstr "Non"
 
-#: baruwa/forms/settings.py:36 baruwa/forms/settings.py:41
-#, fuzzy
+#: baruwa/forms/settings.py:31 baruwa/forms/settings.py:36
 msgid "Replace"
-msgstr "Creare"
+msgstr "Sostituire"
 
-#: baruwa/forms/settings.py:37 baruwa/forms/settings.py:39
+#: baruwa/forms/settings.py:32 baruwa/forms/settings.py:34
 #: baruwa/templates/domains/addalias.html:18
 #: baruwa/templates/domains/addauth.html:18
 msgid "Add"
 msgstr "Aggiungi"
 
-#: baruwa/forms/settings.py:40
+#: baruwa/forms/settings.py:35
 msgid "Append"
 msgstr "Append"
 
-#: baruwa/forms/settings.py:42
-#, fuzzy
+#: baruwa/forms/settings.py:37
 msgid "Supported"
-msgstr "Azione non supportata"
+msgstr "Supportato"
 
-#: baruwa/forms/settings.py:43
+#: baruwa/forms/settings.py:38
 msgid "None"
 msgstr "Nessuno"
 
-#: baruwa/forms/settings.py:44
-#, fuzzy
+#: baruwa/forms/settings.py:39
 msgid "Unsupported"
-msgstr "Azione non supportata"
+msgstr "Non supportato"
 
-#: baruwa/forms/settings.py:45
-#, fuzzy
+#: baruwa/forms/settings.py:40
 msgid "Alpha"
-msgstr "Grafico"
+msgstr "Alfa"
 
-#: baruwa/forms/settings.py:46
+#: baruwa/forms/settings.py:41
 msgid "Beta"
 msgstr "Beta"
 
-#: baruwa/forms/settings.py:47
+#: baruwa/forms/settings.py:42
 msgid "Start"
 msgstr "Start"
 
-#: baruwa/forms/settings.py:48
-#, fuzzy
+#: baruwa/forms/settings.py:43
 msgid "End"
-msgstr "abilitato"
+msgstr "Fine"
 
-#: baruwa/forms/settings.py:51
+#: baruwa/forms/settings.py:46
 msgid "Disarm"
 msgstr "Disarmare"
 
-#: baruwa/forms/settings.py:59
+#: baruwa/forms/settings.py:54
 msgid "Auto detect"
 msgstr "Rilevamento automatico"
 
-#: baruwa/forms/settings.py:132
-#, fuzzy
+#: baruwa/forms/settings.py:127
 msgid "Do nothing"
-msgstr "non contiene"
+msgstr "Non fare nulla"
 
-#: baruwa/forms/settings.py:134
+#: baruwa/forms/settings.py:129
 msgid "Flag as spam"
 msgstr "Contrassegna come spam"
 
-#: baruwa/forms/settings.py:135
+#: baruwa/forms/settings.py:130
 msgid "Flag as high spam"
 msgstr "Contrassegna come spam ad alto"
 
-#: baruwa/forms/settings.py:173
+#: baruwa/forms/settings.py:168
 msgid "Invalid Domain name or IPv4 address"
 msgstr "Nome di dominio non valido o un indirizzo IPv4"
 
-#: baruwa/forms/settings.py:179
+#: baruwa/forms/settings.py:174
 msgid "Sitename"
 msgstr "Nomesito"
 
-#: baruwa/forms/settings.py:180
+#: baruwa/forms/settings.py:175
 msgid "Your Organisation Name"
 msgstr "Il nome dell'organizzazione"
 
-#: baruwa/forms/settings.py:182
+#: baruwa/forms/settings.py:177
 msgid "Organisation website"
 msgstr "Sito web organizzazione"
 
-#: baruwa/forms/settings.py:184
+#: baruwa/forms/settings.py:179
 msgid "Max Children"
 msgstr "Max bambini"
 
-#: baruwa/forms/settings.py:186
+#: baruwa/forms/settings.py:181
 msgid "Queue Scan Interval"
 msgstr "Intervallo di scansione di coda"
 
-#: baruwa/forms/settings.py:188
+#: baruwa/forms/settings.py:183
 msgid "Restart Every"
 msgstr "Riavviare ogni"
 
-#: baruwa/forms/settings.py:190
+#: baruwa/forms/settings.py:185
 msgid "Use Default Rules With Multiple Recipients"
 msgstr "Utilizzare le regole di Default con più destinatari"
 
-#: baruwa/forms/settings.py:193
+#: baruwa/forms/settings.py:188
 msgid "Read IP Address From Received Header"
 msgstr "Leggere l'indirizzo IP dall'intestazione ricevuti"
 
-#: baruwa/forms/settings.py:196
+#: baruwa/forms/settings.py:191
 msgid "Debug"
 msgstr "Eseguire il debug"
 
-#: baruwa/forms/settings.py:199
+#: baruwa/forms/settings.py:194
 msgid "Debug SpamAssassin"
 msgstr "Debug di SpamAssassin"
 
-#: baruwa/forms/settings.py:202
+#: baruwa/forms/settings.py:197
 msgid "Deliver In Background"
 msgstr "Consegnare In Background"
 
-#: baruwa/forms/settings.py:205
+#: baruwa/forms/settings.py:200
 msgid "Delivery Method"
 msgstr "Metodo di consegna"
 
-#: baruwa/forms/settings.py:208
+#: baruwa/forms/settings.py:203
 msgid "Automatic Syntax Check"
 msgstr "Controllo automatico sintassi"
 
-#: baruwa/forms/settings.py:211
+#: baruwa/forms/settings.py:206
 msgid "Minimum Code Status"
 msgstr "Minimo codice Status"
 
-#: baruwa/forms/settings.py:218
+#: baruwa/forms/settings.py:213
 msgid "Max Unscanned Bytes Per Scan"
 msgstr "Max byte analizzati Per scansione"
 
-#: baruwa/forms/settings.py:220
+#: baruwa/forms/settings.py:215
 msgid "Max Unsafe Bytes Per Scan"
 msgstr "Max Unsafe byte Per scansione"
 
-#: baruwa/forms/settings.py:222
+#: baruwa/forms/settings.py:217
 msgid "Max Unscanned Messages Per Scan"
 msgstr "Max messaggi analizzati Per scansione"
 
-#: baruwa/forms/settings.py:224
+#: baruwa/forms/settings.py:219
 msgid "Max Unsafe Messages Per Scan"
 msgstr "Max messaggi non sicuri Per scansione"
 
-#: baruwa/forms/settings.py:226
+#: baruwa/forms/settings.py:221
 msgid "Max Normal Queue Size"
 msgstr "Dimensione coda Max normale"
 
-#: baruwa/forms/settings.py:228
+#: baruwa/forms/settings.py:223
 msgid "Maximum Processing Attempts"
 msgstr "Massimo tentativi di elaborazione"
 
-#: baruwa/forms/settings.py:230
+#: baruwa/forms/settings.py:225
 msgid "Maximum Attachments Per Message"
 msgstr "Massimi allegati al messaggio"
 
-#: baruwa/forms/settings.py:232
+#: baruwa/forms/settings.py:227
 msgid "Expand TNEF"
 msgstr "Espandere TNEF"
 
-#: baruwa/forms/settings.py:235
+#: baruwa/forms/settings.py:230
 msgid "Use TNEF Contents"
 msgstr "Utilizzare TNEF contenuto"
 
-#: baruwa/forms/settings.py:238
+#: baruwa/forms/settings.py:233
 msgid "Deliver Unparsable TNEF"
 msgstr "Consegnare TNEF non analizzabile"
 
-#: baruwa/forms/settings.py:241
+#: baruwa/forms/settings.py:236
 msgid "TNEF Timeout"
 msgstr "Timeout TNEF"
 
-#: baruwa/forms/settings.py:243
+#: baruwa/forms/settings.py:238
 msgid "File Timeout"
 msgstr "Timeout del file"
 
-#: baruwa/forms/settings.py:245
+#: baruwa/forms/settings.py:240
 msgid "Gunzip Timeout"
 msgstr "Gunzip Timeout"
 
-#: baruwa/forms/settings.py:247
+#: baruwa/forms/settings.py:242
 msgid "Unrar Timeout"
 msgstr "Unrar Timeout"
 
-#: baruwa/forms/settings.py:249
+#: baruwa/forms/settings.py:244
 msgid "Maximum Archive Depth"
 msgstr "Profondità massima di archivio"
 
-#: baruwa/forms/settings.py:251
+#: baruwa/forms/settings.py:246
 msgid "Find Archives By Content"
 msgstr "Trovare archivi di contenuti"
 
-#: baruwa/forms/settings.py:254
+#: baruwa/forms/settings.py:249
 msgid "Unpack Microsoft Documents"
 msgstr "Decomprimere i documenti di Microsoft"
 
-#: baruwa/forms/settings.py:257
+#: baruwa/forms/settings.py:252
 msgid "Zip Attachments"
 msgstr "Allegati zip"
 
-#: baruwa/forms/settings.py:260
+#: baruwa/forms/settings.py:255
 msgid "Attachments Zip Filename"
 msgstr "Allegati Zip Filename"
 
-#: baruwa/forms/settings.py:262
+#: baruwa/forms/settings.py:257
 msgid "Attachments Min Total Size To Zip"
 msgstr "Dimensione Min totale allegati a Zip"
 
-#: baruwa/forms/settings.py:264
+#: baruwa/forms/settings.py:259
 msgid "Attachment Extensions Not To Zip"
 msgstr "Estensioni di allegati non a Zip"
 
-#: baruwa/forms/settings.py:266
+#: baruwa/forms/settings.py:261
 msgid "Add Text Of Doc"
 msgstr "Aggiungere testo di Doc"
 
-#: baruwa/forms/settings.py:269
+#: baruwa/forms/settings.py:264
 msgid "Antiword Timeout"
 msgstr "Antiword Timeout"
 
-#: baruwa/forms/settings.py:271
+#: baruwa/forms/settings.py:266
 msgid "Unzip Maximum Files Per Archive"
 msgstr "Decomprimere file massima per ogni archivio"
 
-#: baruwa/forms/settings.py:273
+#: baruwa/forms/settings.py:268
 msgid "Unzip Maximum File Size"
 msgstr "Decomprimere la dimensione massima del File"
 
-#: baruwa/forms/settings.py:275
+#: baruwa/forms/settings.py:270
 msgid "Unzip Filenames"
 msgstr "Decomprimere i nomi dei file"
 
-#: baruwa/forms/settings.py:277
+#: baruwa/forms/settings.py:272
 msgid "Unzip MimeType"
 msgstr "Decomprimere MimeType"
 
-#: baruwa/forms/settings.py:279
+#: baruwa/forms/settings.py:274
 msgid "Mail Header"
 msgstr "Intestazione di posta elettronica"
 
-#: baruwa/forms/settings.py:281
+#: baruwa/forms/settings.py:276
 msgid "Information Header"
 msgstr "Intestazione di informazioni"
 
-#: baruwa/forms/settings.py:283
+#: baruwa/forms/settings.py:278
 msgid "Add Envelope From Header"
 msgstr "Aggiungere la busta dall'intestazione"
 
-#: baruwa/forms/settings.py:286
+#: baruwa/forms/settings.py:281
 msgid "Add Envelope To Header"
 msgstr "Aggiungere intestazione busta"
 
-#: baruwa/forms/settings.py:289
+#: baruwa/forms/settings.py:284
 msgid "Envelope From Header"
 msgstr "Busta da intestazione"
 
-#: baruwa/forms/settings.py:291
+#: baruwa/forms/settings.py:286
 msgid "Envelope To Header"
 msgstr "Busta all'intestazione"
 
-#: baruwa/forms/settings.py:293
+#: baruwa/forms/settings.py:288
 msgid "ID Header"
 msgstr "Intestazione ID"
 
-#: baruwa/forms/settings.py:295
+#: baruwa/forms/settings.py:290
 msgid "IP Protocol Version Header"
 msgstr "Protocollo IP versione intestazione"
 
-#: baruwa/forms/settings.py:297
+#: baruwa/forms/settings.py:292
 msgid "Clean Header Value"
 msgstr "Pulire il valore dell'intestazione"
 
-#: baruwa/forms/settings.py:299
+#: baruwa/forms/settings.py:294
 msgid "Infected Header Value"
 msgstr "Valore dell'intestazione infetti"
 
-#: baruwa/forms/settings.py:301
+#: baruwa/forms/settings.py:296
 msgid "Disinfected Header Value"
 msgstr "Valore dell'intestazione disinfettati"
 
-#: baruwa/forms/settings.py:303
+#: baruwa/forms/settings.py:298
 msgid "Information Header Value"
 msgstr "Informazioni intestazione valore"
 
-#: baruwa/forms/settings.py:304
+#: baruwa/forms/settings.py:299
 msgid "Multiple Headers"
 msgstr "Intestazioni multiple"
 
-#: baruwa/forms/settings.py:307
+#: baruwa/forms/settings.py:302
 msgid "Place New Headers At Top Of Message"
 msgstr "Inserire intestazioni di nuove alla parte superiore del messaggio"
 
-#: baruwa/forms/settings.py:312
+#: baruwa/forms/settings.py:307
 msgid "Sign Messages Already Processed"
 msgstr "Segno i messaggi già elaborati"
 
-#: baruwa/forms/settings.py:315
+#: baruwa/forms/settings.py:310
 msgid "Allow Multiple HTML Signatures"
 msgstr "Consentire più firme HTML"
 
-#: baruwa/forms/settings.py:318
+#: baruwa/forms/settings.py:313
 msgid "Dont Sign HTML If Headers Exist"
 msgstr "Intestazioni HTML se dont segno esiste"
 
-#: baruwa/forms/settings.py:319
+#: baruwa/forms/settings.py:314
 msgid "Mark Infected Messages"
 msgstr "Contrassegnare i messaggi infetti"
 
-#: baruwa/forms/settings.py:322
+#: baruwa/forms/settings.py:317
 msgid "Mark Unscanned Messages"
 msgstr "Contrassegnare i messaggi analizzati"
 
-#: baruwa/forms/settings.py:325
+#: baruwa/forms/settings.py:320
 msgid "Unscanned Header Value"
 msgstr "Valore dell'intestazione non analizzati"
 
-#: baruwa/forms/settings.py:327
+#: baruwa/forms/settings.py:322
 msgid "Remove These Headers"
 msgstr "Rimuovere queste intestazioni"
 
-#: baruwa/forms/settings.py:329
+#: baruwa/forms/settings.py:324
 msgid "Deliver Cleaned Messages"
 msgstr "Recapitare i messaggi puliti"
 
-#: baruwa/forms/settings.py:332
+#: baruwa/forms/settings.py:327
 msgid "Scanned Modify Subject"
 msgstr "Scansionato modifica soggetto"
 
-#: baruwa/forms/settings.py:335
+#: baruwa/forms/settings.py:330
 msgid "Scanned Subject Text"
 msgstr "Testo di soggetto acquisito"
 
-#: baruwa/forms/settings.py:337
+#: baruwa/forms/settings.py:332
 msgid "Virus Modify Subject"
 msgstr "Virus modifica soggetto"
 
-#: baruwa/forms/settings.py:340
+#: baruwa/forms/settings.py:335
 msgid "Virus Subject Text"
 msgstr "Virus soggetto testo"
 
-#: baruwa/forms/settings.py:342
+#: baruwa/forms/settings.py:337
 msgid "Filename Modify Subject"
 msgstr "Filename modifica soggetto"
 
-#: baruwa/forms/settings.py:345
+#: baruwa/forms/settings.py:340
 msgid "Filename Subject Text"
 msgstr "Nome del file oggetto testo"
 
-#: baruwa/forms/settings.py:347
+#: baruwa/forms/settings.py:342
 msgid "Content Modify Subject"
 msgstr "Contenuto modificare oggetto"
 
-#: baruwa/forms/settings.py:350
+#: baruwa/forms/settings.py:345
 msgid "Content Subject Text"
 msgstr "Contenuto testo oggetto"
 
-#: baruwa/forms/settings.py:352
+#: baruwa/forms/settings.py:347
 msgid "Size Modify Subject"
 msgstr "Dimensione modifica soggetto"
 
-#: baruwa/forms/settings.py:355
+#: baruwa/forms/settings.py:350
 msgid "Size Subject Text"
 msgstr "Dimensione testo oggetto"
 
-#: baruwa/forms/settings.py:357
+#: baruwa/forms/settings.py:352
 msgid "Disarmed Modify Subject"
 msgstr "Disarmato modifica soggetto"
 
-#: baruwa/forms/settings.py:360
+#: baruwa/forms/settings.py:355
 msgid "Disarmed Subject Text"
 msgstr "Testo oggetto disarmato"
 
-#: baruwa/forms/settings.py:362
+#: baruwa/forms/settings.py:357
 msgid "Phishing Modify Subject"
 msgstr "Phishing modifica soggetto"
 
-#: baruwa/forms/settings.py:365
+#: baruwa/forms/settings.py:360
 msgid "Phishing Subject Text"
 msgstr "Testo oggetto di phishing"
 
-#: baruwa/forms/settings.py:367
+#: baruwa/forms/settings.py:362
 msgid "Spam Modify Subject"
 msgstr "Spam modifica soggetto"
 
-#: baruwa/forms/settings.py:370
+#: baruwa/forms/settings.py:365
 msgid "Spam Subject Text"
 msgstr "Testo oggetto di spam"
 
-#: baruwa/forms/settings.py:372
+#: baruwa/forms/settings.py:367
 msgid "High Scoring Spam Modify Subject"
 msgstr "Alto punteggio Spam modifica soggetto"
 
-#: baruwa/forms/settings.py:375
+#: baruwa/forms/settings.py:370
 msgid "High Scoring Spam Subject Text"
 msgstr "Alto punteggio Spam soggetto testo"
 
-#: baruwa/forms/settings.py:377
+#: baruwa/forms/settings.py:372
 msgid "Warning Is Attachment"
 msgstr "Avviso è allegato"
 
-#: baruwa/forms/settings.py:380
+#: baruwa/forms/settings.py:375
 msgid "Attachment Warning Filename"
 msgstr "Allegato avviso nomefile"
 
-#: baruwa/forms/settings.py:382
+#: baruwa/forms/settings.py:377
 msgid "Attachment Encoding Charset"
 msgstr "Charset di codifica degli allegati"
 
-#: baruwa/forms/settings.py:388
+#: baruwa/forms/settings.py:383
 msgid "Virus Scanners"
 msgstr "Virus scanner"
 
-#: baruwa/forms/settings.py:390
+#: baruwa/forms/settings.py:385
 msgid "Virus Scanner Timeout"
 msgstr "Virus Scanner Timeout"
 
-#: baruwa/forms/settings.py:392
+#: baruwa/forms/settings.py:387
 msgid "Deliver Disinfected Files"
 msgstr "Consegnare i file disinfettati"
 
-#: baruwa/forms/settings.py:395
+#: baruwa/forms/settings.py:390
 msgid "Silent Viruses"
 msgstr "Virus silenzioso"
 
-#: baruwa/forms/settings.py:397
+#: baruwa/forms/settings.py:392
 msgid "Still Deliver Silent Viruses"
 msgstr "Ancora consegnare virus silenzioso"
 
-#: baruwa/forms/settings.py:400
+#: baruwa/forms/settings.py:395
 msgid "Non-Forging Viruses"
 msgstr "Virus non-forgiatura"
 
-#: baruwa/forms/settings.py:401
+#: baruwa/forms/settings.py:396
 msgid "Spam-Virus Header"
 msgstr "Spam-Virus intestazione"
 
-#: baruwa/forms/settings.py:403
+#: baruwa/forms/settings.py:398
 msgid "Virus Names Which Are Spam"
 msgstr "Nomi di virus sono Spam"
 
-#: baruwa/forms/settings.py:405
+#: baruwa/forms/settings.py:400
 msgid "Block Encrypted Messages"
 msgstr "Bloccare i messaggi crittografati"
 
-#: baruwa/forms/settings.py:408
+#: baruwa/forms/settings.py:403
 msgid "Block Unencrypted Messages"
 msgstr "Bloccare i messaggi cifrati"
 
-#: baruwa/forms/settings.py:411
+#: baruwa/forms/settings.py:406
 msgid "Allow Password-Protected Archives"
 msgstr "Permettere archivi protetti da Password"
 
-#: baruwa/forms/settings.py:412
+#: baruwa/forms/settings.py:407
 msgid "Check Filenames In Password-Protected Archives"
 msgstr "Controllare i nomi dei file In archivi protetti da Password"
 
-#: baruwa/forms/settings.py:413
+#: baruwa/forms/settings.py:408
 msgid "Clamd Use Threads"
 msgstr "Uso di clamd discussioni"
 
-#: baruwa/forms/settings.py:416
+#: baruwa/forms/settings.py:411
 msgid "ClamAV Full Message Scan"
 msgstr "ClamAV pieno messaggio scansione"
 
-#: baruwa/forms/settings.py:419
+#: baruwa/forms/settings.py:414
 msgid "Fpscand Port"
 msgstr "Fpscand porta"
 
-#: baruwa/forms/settings.py:426
+#: baruwa/forms/settings.py:421
 msgid "Allow Partial Messages"
 msgstr "Consenti messaggi parziali"
 
-#: baruwa/forms/settings.py:429
+#: baruwa/forms/settings.py:424
 msgid "Allow External Message Bodies"
 msgstr "Lasciare messaggio organismi esterni"
 
-#: baruwa/forms/settings.py:432
+#: baruwa/forms/settings.py:427
 msgid "Also Find Numeric Phishing"
 msgstr "Anche trovare numerico Phishing"
 
-#: baruwa/forms/settings.py:435
+#: baruwa/forms/settings.py:430
 msgid "Use Stricter Phishing Net"
 msgstr "Uso più severe Phishing Net"
 
-#: baruwa/forms/settings.py:438
+#: baruwa/forms/settings.py:433
 msgid "Highlight Phishing Fraud"
 msgstr "Evidenziare frodi di Phishing"
 
-#: baruwa/forms/settings.py:441
+#: baruwa/forms/settings.py:436
 msgid "Allow IFrame Tags"
 msgstr "Consentire il tag IFrame"
 
-#: baruwa/forms/settings.py:444
+#: baruwa/forms/settings.py:439
 msgid "Allow Form Tags"
 msgstr "Consentire tag Form"
 
-#: baruwa/forms/settings.py:447
+#: baruwa/forms/settings.py:442
 msgid "Allow Script Tags"
 msgstr "Consentire il tag Script"
 
-#: baruwa/forms/settings.py:450
+#: baruwa/forms/settings.py:445
 msgid "Allow WebBugs"
 msgstr "Consentire WebBugs"
 
-#: baruwa/forms/settings.py:453
+#: baruwa/forms/settings.py:448
 msgid "Ignored Web Bug Filenames"
 msgstr "Ignorato Web Bug Filenames"
 
-#: baruwa/forms/settings.py:455
+#: baruwa/forms/settings.py:450
 msgid "Known Web Bug Servers"
 msgstr "Noto Bug di Web server"
 
-#: baruwa/forms/settings.py:457
+#: baruwa/forms/settings.py:452
 msgid "Web Bug Replacement"
 msgstr "Web Bug sostituzione"
 
-#: baruwa/forms/settings.py:459
+#: baruwa/forms/settings.py:454
 msgid "Allow Object Codebase Tags"
 msgstr "Consentire il tag Object Codebase"
 
-#: baruwa/forms/settings.py:462
+#: baruwa/forms/settings.py:457
 msgid "Convert Dangerous HTML To Text"
 msgstr "Converti in testo HTML pericoloso"
 
-#: baruwa/forms/settings.py:465
+#: baruwa/forms/settings.py:460
 msgid "Convert HTML To Text"
 msgstr "Convertire HTML in testo"
 
-#: baruwa/forms/settings.py:468
+#: baruwa/forms/settings.py:463
 msgid "Archives Are"
 msgstr "Gli archivi sono"
 
-#: baruwa/forms/settings.py:470
+#: baruwa/forms/settings.py:465
 msgid "Allow Filenames"
 msgstr "Consentire i nomi dei file"
 
-#: baruwa/forms/settings.py:471
+#: baruwa/forms/settings.py:466
 msgid "Deny Filenames"
 msgstr "Negare i nomi dei file"
 
-#: baruwa/forms/settings.py:472
+#: baruwa/forms/settings.py:467
 msgid "Allow Filetypes"
 msgstr "Consentire Filetypes"
 
-#: baruwa/forms/settings.py:473
+#: baruwa/forms/settings.py:468
 msgid "Allow File MIME Types"
 msgstr "Consentire i tipi MIME di File"
 
-#: baruwa/forms/settings.py:474
+#: baruwa/forms/settings.py:469
 msgid "Deny Filetypes"
 msgstr "Negare Filetypes"
 
-#: baruwa/forms/settings.py:475
+#: baruwa/forms/settings.py:470
 msgid "Deny File MIME Types"
 msgstr "Negare i tipi MIME di File"
 
-#: baruwa/forms/settings.py:476
+#: baruwa/forms/settings.py:471
 msgid "Archives: Allow Filenames"
 msgstr "Archivi: Consente nomi di file"
 
-#: baruwa/forms/settings.py:477
+#: baruwa/forms/settings.py:472
 msgid "Archives: Deny Filenames"
 msgstr "Archivi: Negare i nomi dei file"
 
-#: baruwa/forms/settings.py:478
+#: baruwa/forms/settings.py:473
 msgid "Archives: Allow Filetypes"
 msgstr "Archivi: Consentire Filetypes"
 
-#: baruwa/forms/settings.py:479
+#: baruwa/forms/settings.py:474
 msgid "Archives: Allow File MIME Types"
 msgstr "Archivi: Consentire i tipi MIME di File"
 
-#: baruwa/forms/settings.py:480
+#: baruwa/forms/settings.py:475
 msgid "Archives: Deny Filetypes"
 msgstr "Archivi: Negare Filetypes"
 
-#: baruwa/forms/settings.py:481
+#: baruwa/forms/settings.py:476
 msgid "Archives: Deny File MIME Types"
 msgstr "Archivi: Negare i tipi MIME di File"
 
-#: baruwa/forms/settings.py:486
+#: baruwa/forms/settings.py:481
 msgid "Quarantine Infections"
 msgstr "Infezioni da quarantena"
 
-#: baruwa/forms/settings.py:489
+#: baruwa/forms/settings.py:484
 msgid "Quarantine Silent Viruses"
 msgstr "Quarantena virus silenzioso"
 
-#: baruwa/forms/settings.py:492
+#: baruwa/forms/settings.py:487
 msgid "Quarantine Modified Body"
 msgstr "Corpo modificato in quarantena"
 
-#: baruwa/forms/settings.py:495
+#: baruwa/forms/settings.py:490
 msgid "Keep Spam And MCP Archive Clean"
 msgstr "Tenere pulito lo Spam e archivio MCP"
 
-#: baruwa/forms/settings.py:498
+#: baruwa/forms/settings.py:493
 msgid "Hide Incoming Work Dir"
 msgstr "Nascondere in arrivo lavoro Dir"
 
-#: baruwa/forms/settings.py:501
+#: baruwa/forms/settings.py:496
 msgid "Include Scanner Name In Reports"
 msgstr "Includere nome Scanner nei rapporti"
 
-#: baruwa/forms/settings.py:508
+#: baruwa/forms/settings.py:503
 msgid "Notify Senders"
 msgstr "Notificare i mittenti"
 
-#: baruwa/forms/settings.py:511
+#: baruwa/forms/settings.py:506
 msgid "Notify Senders Of Viruses"
 msgstr "Notificare i mittenti dei virus"
 
-#: baruwa/forms/settings.py:514
+#: baruwa/forms/settings.py:509
 msgid "Notify Senders Of Blocked Filenames Or Filetypes"
 msgstr "Notificare i mittenti dei nomi di file bloccati o tipi di file"
 
-#: baruwa/forms/settings.py:517
+#: baruwa/forms/settings.py:512
 msgid "Notify Senders Of Blocked Size Attachments"
 msgstr "Notificare i mittenti di dimensione allegati bloccati"
 
-#: baruwa/forms/settings.py:520
+#: baruwa/forms/settings.py:515
 msgid "Notify Senders Of Other Blocked Content"
 msgstr "Notificare i mittenti di altri contenuti bloccati"
 
-#: baruwa/forms/settings.py:523
+#: baruwa/forms/settings.py:518
 msgid "Never Notify Senders Of Precedence"
 msgstr "Mai notificare i mittenti di precedenza"
 
-#: baruwa/forms/settings.py:525
+#: baruwa/forms/settings.py:520
 msgid "Send Notices"
 msgstr "Inviare le comunicazioni"
 
-#: baruwa/forms/settings.py:528
+#: baruwa/forms/settings.py:523
 msgid "Notices Include Full Headers"
 msgstr "Avvisi includono intestazioni complete"
 
-#: baruwa/forms/settings.py:531
+#: baruwa/forms/settings.py:526
 msgid "Hide Incoming Work Dir in Notices"
 msgstr "Nascondere Dir lavoro Incoming in avvisi"
 
-#: baruwa/forms/settings.py:534
+#: baruwa/forms/settings.py:529
 msgid "Notice Signature"
 msgstr "Avviso firma"
 
-#: baruwa/forms/settings.py:536
+#: baruwa/forms/settings.py:531
 msgid "Notices From"
 msgstr "Avvisi da"
 
-#: baruwa/forms/settings.py:538
+#: baruwa/forms/settings.py:533
 msgid "Notices To"
 msgstr "Avvisi di"
 
-#: baruwa/forms/settings.py:540
+#: baruwa/forms/settings.py:535
 msgid "Local Postmaster"
 msgstr "Postmaster locali"
 
-#: baruwa/forms/settings.py:546
+#: baruwa/forms/settings.py:541
 msgid "Max SpamAssassin Size"
 msgstr "Dimensione massima di SpamAssassin"
 
-#: baruwa/forms/settings.py:548
+#: baruwa/forms/settings.py:543
 msgid "SpamAssassin Auto Whitelist"
 msgstr "SpamAssassin automatica Whitelist"
 
-#: baruwa/forms/settings.py:551
+#: baruwa/forms/settings.py:546
 msgid "SpamAssassin Timeout"
 msgstr "SpamAssassin Timeout"
 
-#: baruwa/forms/settings.py:553
+#: baruwa/forms/settings.py:548
 msgid "Max SpamAssassin Timeouts"
 msgstr "Max SpamAssassin timeout"
 
-#: baruwa/forms/settings.py:555
+#: baruwa/forms/settings.py:550
 msgid "SpamAssassin Timeouts History"
 msgstr "SpamAssassin i timeout di storia"
 
-#: baruwa/forms/settings.py:557
+#: baruwa/forms/settings.py:552
 msgid "Check SpamAssassin If On Spam List"
 msgstr "Controllare se SpamAssassin su lista di Spam"
 
-#: baruwa/forms/settings.py:560
+#: baruwa/forms/settings.py:555
 msgid "Include Binary Attachments In SpamAssassin"
 msgstr "Includere allegati binari In SpamAssassin"
 
-#: baruwa/forms/settings.py:563
+#: baruwa/forms/settings.py:558
 msgid "Spam Score"
 msgstr "Punteggio di spam"
 
-#: baruwa/forms/settings.py:566
+#: baruwa/forms/settings.py:561
 msgid "Cache SpamAssassin Results"
 msgstr "Cache SpamAssassin risultati"
 
-#: baruwa/forms/settings.py:569
+#: baruwa/forms/settings.py:564
 msgid "Rebuild Bayes Every"
 msgstr "Ricostruire Bayes ogni"
 
-#: baruwa/forms/settings.py:571
+#: baruwa/forms/settings.py:566
 msgid "Wait During Bayes Rebuild"
 msgstr "Attendere durante la ricostruzione di Bayes"
 
-#: baruwa/forms/settings.py:576
+#: baruwa/forms/settings.py:571
 msgid "Spam List"
 msgstr "Lista di spam"
 
-#: baruwa/forms/settings.py:578
+#: baruwa/forms/settings.py:573
 msgid "Spam Domain List"
 msgstr "Elenco di dominio dello spam"
 
-#: baruwa/forms/settings.py:580
+#: baruwa/forms/settings.py:575
 msgid "Spam Lists To Be Spam"
 msgstr "Liste di spam per essere Spam"
 
-#: baruwa/forms/settings.py:582
+#: baruwa/forms/settings.py:577
 msgid "Spam Lists To Reach High Score"
 msgstr "Spam liste per raggiungere il punteggio più alto"
 
-#: baruwa/forms/settings.py:584
+#: baruwa/forms/settings.py:579
 msgid "Spam List Timeout"
 msgstr "Spam List Timeout"
 
-#: baruwa/forms/settings.py:586
+#: baruwa/forms/settings.py:581
 msgid "Max Spam List Timeouts"
 msgstr "Max Spam List timeout"
 
-#: baruwa/forms/settings.py:588
+#: baruwa/forms/settings.py:583
 msgid "Spam List Timeouts History"
 msgstr "Spam List i timeout di storia"
 
-#: baruwa/forms/settings.py:590
+#: baruwa/forms/settings.py:585
 msgid "Definite Spam Is High Scoring"
 msgstr "Definita Spam è alto punteggio"
 
-#: baruwa/forms/settings.py:593
+#: baruwa/forms/settings.py:588
 msgid "Ignore Spam Whitelist If Recipients Exceed"
 msgstr "Ignorare Spam Whitelist se superano i destinatari"
 
-#: baruwa/forms/settings.py:595
+#: baruwa/forms/settings.py:590
 msgid "Max Spam Check Size"
 msgstr "Max Spam Check Size"
 
-#: baruwa/forms/settings.py:597
+#: baruwa/forms/settings.py:592
 msgid "Enable Spam Bounce"
 msgstr "Abilitare Bounce Spam"
 
-#: baruwa/forms/settings.py:600
+#: baruwa/forms/settings.py:595
 msgid "Bounce Spam As Attachment"
 msgstr "Bounce Spam come allegato"
 
-#: baruwa/forms/settings.py:603
+#: baruwa/forms/settings.py:598
 msgid "Detailed Spam Report"
 msgstr "Spam Report dettagliato"
 
-#: baruwa/forms/settings.py:606
+#: baruwa/forms/settings.py:601
 msgid "Include Scores In SpamAssassin Report"
 msgstr "Includono punteggi In relazione SpamAssassin"
 
-#: baruwa/forms/settings.py:609
+#: baruwa/forms/settings.py:604
 msgid "Always Include SpamAssassin Report"
 msgstr "Sempre includere Report di SpamAssassin"
 
-#: baruwa/forms/settings.py:612
+#: baruwa/forms/settings.py:607
 msgid "Spam Header"
 msgstr "Intestazione di spam"
 
-#: baruwa/forms/settings.py:614
+#: baruwa/forms/settings.py:609
 msgid "Spam Score Header"
 msgstr "Spam Score Header"
 
-#: baruwa/forms/settings.py:616
+#: baruwa/forms/settings.py:611
 msgid "Spam Score Number Format"
 msgstr "Spam Score formato numero"
 
-#: baruwa/forms/settings.py:618
+#: baruwa/forms/settings.py:613
 msgid "Spam Score Character"
 msgstr "Spam Score carattere"
 
-#: baruwa/forms/settings.py:620
+#: baruwa/forms/settings.py:615
 msgid "SpamScore Number Instead Of Stars"
 msgstr "Numero di SpamScore invece di stelle"
 
-#: baruwa/forms/settings.py:623
+#: baruwa/forms/settings.py:618
 msgid "Minimum Stars If On Spam List"
 msgstr "Stelle minime se sulla lista di Spam"
 
-#: baruwa/forms/settings.py:625
+#: baruwa/forms/settings.py:620
 msgid "Use Watermarking"
 msgstr "Utilizzare l'applicazione di filigrane"
 
-#: baruwa/forms/settings.py:628
+#: baruwa/forms/settings.py:623
 msgid "Add Watermark"
 msgstr "Aggiungi filigrana"
 
-#: baruwa/forms/settings.py:631
+#: baruwa/forms/settings.py:626
 msgid "Check Watermarks With No Sender"
 msgstr "Controllare le filigrane con nessun mittente"
 
-#: baruwa/forms/settings.py:634
+#: baruwa/forms/settings.py:629
 msgid "Treat Invalid Watermarks With No Sender as Spam"
 msgstr "Considerare valide filigrane con nessun mittente come Spam"
 
-#: baruwa/forms/settings.py:637
+#: baruwa/forms/settings.py:632
 msgid "Check Watermarks To Skip Spam Checks"
 msgstr "Controllare filigrane a Skip Spam controlli"
 
-#: baruwa/forms/settings.py:640
+#: baruwa/forms/settings.py:635
 msgid "Watermark Secret"
 msgstr "Filigrana segreto"
 
-#: baruwa/forms/settings.py:642
+#: baruwa/forms/settings.py:637
 msgid "Watermark Lifetime"
 msgstr "Durata filigrana"
 
-#: baruwa/forms/settings.py:644
+#: baruwa/forms/settings.py:639
 msgid "Watermark Header"
 msgstr "Intestazione di filigrana"
 
-#: baruwa/forms/settings.py:650
+#: baruwa/forms/settings.py:645
 msgid "Syslog Facility"
 msgstr "Funzione syslog"
 
-#: baruwa/forms/settings.py:653
+#: baruwa/forms/settings.py:648
 msgid "Log Speed"
 msgstr "Registro Velocità"
 
-#: baruwa/forms/settings.py:656
+#: baruwa/forms/settings.py:651
 msgid "Log Spam"
 msgstr "Registro Spam"
 
-#: baruwa/forms/settings.py:659
+#: baruwa/forms/settings.py:654
 msgid "Log Non Spam"
 msgstr "Registro Non Spam"
 
-#: baruwa/forms/settings.py:662
+#: baruwa/forms/settings.py:657
 msgid "Log Delivery And Non-Delivery"
 msgstr "Registro di consegna e mancata consegna"
 
-#: baruwa/forms/settings.py:665
+#: baruwa/forms/settings.py:660
 msgid "Log Permitted Filenames"
 msgstr "Consentiti i nomi dei file di log"
 
-#: baruwa/forms/settings.py:668
+#: baruwa/forms/settings.py:663
 msgid "Log Permitted Filetypes"
 msgstr "Registro consentito Filetypes"
 
-#: baruwa/forms/settings.py:671
+#: baruwa/forms/settings.py:666
 msgid "Log Permitted File MIME Types"
 msgstr "Registro permessi File MIME tipi"
 
-#: baruwa/forms/settings.py:674
+#: baruwa/forms/settings.py:669
 msgid "Log Silent Viruses"
 msgstr "Registro virus silenzioso"
 
-#: baruwa/forms/settings.py:677
+#: baruwa/forms/settings.py:672
 msgid "Log Dangerous HTML Tags"
 msgstr "Registro pericolose HTML Tags"
 
-#: baruwa/forms/settings.py:680
+#: baruwa/forms/settings.py:675
 msgid "Log SpamAssassin Rule Actions"
 msgstr "Registro SpamAssassin regola le azioni"
 
-#: baruwa/forms/settings.py:699
+#: baruwa/forms/settings.py:694
 msgid "Signature type"
 msgstr "Tipo di firma"
 
-#: baruwa/forms/settings.py:700 baruwa/templates/accounts/account.html:202
+#: baruwa/forms/settings.py:695 baruwa/templates/accounts/account.html:202
 #: baruwa/templates/settings/domain_sigs.html:20
 msgid "Text signature"
 msgstr "Firma testo"
 
-#: baruwa/forms/settings.py:701 baruwa/templates/accounts/account.html:202
+#: baruwa/forms/settings.py:696 baruwa/templates/accounts/account.html:202
 #: baruwa/templates/settings/domain_sigs.html:20
 msgid "HTML Signature"
 msgstr "Firma HTML"
 
-#: baruwa/forms/settings.py:703
+#: baruwa/forms/settings.py:698
 msgid "Signature"
 msgstr "Firma"
+
+#: baruwa/forms/status.py:28
+msgid "Select action"
+msgstr "Selezionare azione"
+
+#: baruwa/forms/status.py:30
+msgid "Bounce"
+msgstr "Rimbalzo"
+
+#: baruwa/forms/status.py:31
+msgid "Hold"
+msgstr "Tenere premuto"
 
 #: baruwa/lib/filters.py:25
 msgid "System default"
@@ -2500,305 +2564,305 @@ msgstr "WL"
 msgid "NS"
 msgstr "NS"
 
-#: baruwa/lib/audit/msgs/accounts.py:27
+#: baruwa/lib/audit/msgs/accounts.py:24
 #, python-format
 msgid "User account: %(u)s created"
 msgstr "Account utente: %(u)s creato"
 
-#: baruwa/lib/audit/msgs/accounts.py:28
+#: baruwa/lib/audit/msgs/accounts.py:25
 #, python-format
 msgid "User account: %(u)s updated"
 msgstr "Account utente: %(u)s aggiornato"
 
-#: baruwa/lib/audit/msgs/accounts.py:29
+#: baruwa/lib/audit/msgs/accounts.py:26
 #, python-format
 msgid "User account: %(u)s deleted"
 msgstr "Account utente: %(u)s eliminato"
 
-#: baruwa/lib/audit/msgs/accounts.py:30
+#: baruwa/lib/audit/msgs/accounts.py:27
 #, python-format
 msgid "User account: %(u)s password changed"
 msgstr "Account utente: %(u)s Password cambiata"
 
-#: baruwa/lib/audit/msgs/accounts.py:31
+#: baruwa/lib/audit/msgs/accounts.py:28
 #, python-format
 msgid "Alias: %(a)s added to account: %(ac)s"
 msgstr "Alias: %(a)s aggiunto al conto: %(ac)s"
 
-#: baruwa/lib/audit/msgs/accounts.py:32
+#: baruwa/lib/audit/msgs/accounts.py:29
 #, python-format
 msgid "Email Alias: %(a)s on account: %(ac)s updated"
 msgstr "Alias email: %(a)s sul cliente: %(ac)s aggiornato"
 
-#: baruwa/lib/audit/msgs/accounts.py:33
+#: baruwa/lib/audit/msgs/accounts.py:30
 #, python-format
 msgid "Email Alias: %(a)s on account: %(ac)s deleted"
 msgstr "Alias email: %(a)s sul cliente: %(ac)s eliminato"
 
-#: baruwa/lib/audit/msgs/accounts.py:34
+#: baruwa/lib/audit/msgs/accounts.py:31
 msgid "Accounts exported"
 msgstr "Conti esportati"
 
-#: baruwa/lib/audit/msgs/accounts.py:35
+#: baruwa/lib/audit/msgs/accounts.py:32
 msgid "Accounts imported"
 msgstr "Account importati"
 
-#: baruwa/lib/audit/msgs/accounts.py:36
+#: baruwa/lib/audit/msgs/accounts.py:33
 #, python-format
 msgid "User: %(u)s logged in"
 msgstr "Utente: %(u)s loggato"
 
-#: baruwa/lib/audit/msgs/domains.py:27
+#: baruwa/lib/audit/msgs/domains.py:24
 #, python-format
 msgid "Domain: %(d)s created"
 msgstr "Dominio: %(d)s creato"
 
-#: baruwa/lib/audit/msgs/domains.py:28
+#: baruwa/lib/audit/msgs/domains.py:25
 #, python-format
 msgid "Domain: %(d)s updated"
 msgstr "Dominio: %(d)s aggiornato"
 
-#: baruwa/lib/audit/msgs/domains.py:29
+#: baruwa/lib/audit/msgs/domains.py:26
 #, python-format
 msgid "Domain: %(d)s deleted"
 msgstr "Dominio: %(d)s eliminato"
 
-#: baruwa/lib/audit/msgs/domains.py:30
+#: baruwa/lib/audit/msgs/domains.py:27
 #, python-format
 msgid "Domain Alias: %(d)s created"
 msgstr "Alias di dominio: %(d)s creato"
 
-#: baruwa/lib/audit/msgs/domains.py:31
+#: baruwa/lib/audit/msgs/domains.py:28
 #, python-format
 msgid "Domain Alias: %(d)s updated"
 msgstr "Alias di dominio: %(d)s aggiornato"
 
-#: baruwa/lib/audit/msgs/domains.py:32
+#: baruwa/lib/audit/msgs/domains.py:29
 #, python-format
 msgid "Domain Alias: %(d)s deleted"
 msgstr "Alias di dominio: %(d)s eliminato"
 
-#: baruwa/lib/audit/msgs/domains.py:33
+#: baruwa/lib/audit/msgs/domains.py:30
 #, python-format
 msgid "Domain: %(d)s accounts exported"
 msgstr "Dominio: %(d)s conti esportati"
 
-#: baruwa/lib/audit/msgs/domains.py:35
+#: baruwa/lib/audit/msgs/domains.py:32
 #, python-format
 msgid "Domain: %(d)s Delivery server: %(ds)s added"
 msgstr "Dominio: %(d)s Server di consegna: %(ds)s aggiunto"
 
-#: baruwa/lib/audit/msgs/domains.py:36
+#: baruwa/lib/audit/msgs/domains.py:33
 #, python-format
 msgid "Domain: %(d)s Delivery server: %(ds)s updated"
 msgstr "Dominio: %(d)s Server di consegna: %(ds)s aggiornato"
 
-#: baruwa/lib/audit/msgs/domains.py:37
+#: baruwa/lib/audit/msgs/domains.py:34
 #, python-format
 msgid "Domain: %(d)s Delivery server: %(ds)s deleted"
 msgstr "Dominio: %(d)s Server di consegna: %(ds)s eliminato"
 
-#: baruwa/lib/audit/msgs/domains.py:38
+#: baruwa/lib/audit/msgs/domains.py:35
 #, python-format
 msgid "Domain: %(d)s AUTH server: %(ds)s added"
 msgstr "Dominio: %(d)s Server di autenticazione: %(ds)s aggiunto"
 
-#: baruwa/lib/audit/msgs/domains.py:39
+#: baruwa/lib/audit/msgs/domains.py:36
 #, python-format
 msgid "Domain: %(d)s AUTH server: %(ds)s updated"
 msgstr "Dominio: %(d)s Server di autenticazione: %(ds)s aggiornato"
 
-#: baruwa/lib/audit/msgs/domains.py:40
+#: baruwa/lib/audit/msgs/domains.py:37
 #, python-format
 msgid "Domain: %(d)s AUTH server: %(ds)s deleted"
 msgstr "Dominio: %(d)s Server di autenticazione: %(ds)s eliminato"
 
-#: baruwa/lib/audit/msgs/domains.py:41
+#: baruwa/lib/audit/msgs/domains.py:38
 #, python-format
 msgid "Domain: %(d)s AUTH settings updated for: %(a)s"
 msgstr "Dominio: %(d)s Impostazioni AUTH aggiornate per: %(a)s"
 
-#: baruwa/lib/audit/msgs/lists.py:27
+#: baruwa/lib/audit/msgs/lists.py:24
 #, python-format
 msgid "Sender: %(s)s added to %(l)s"
 msgstr "Mittente: %(s)s aggiunto a %(l)s"
 
-#: baruwa/lib/audit/msgs/lists.py:28
+#: baruwa/lib/audit/msgs/lists.py:25
 #, python-format
 msgid "Sender: %(s)s deleted from %(l)s"
 msgstr "Mittente: %(s)s cancellato da %(l)s"
 
-#: baruwa/lib/audit/msgs/messages.py:27
+#: baruwa/lib/audit/msgs/messages.py:24
 #, python-format
 msgid "Message with id: %(m)s released to %(a)s"
 msgstr "Messaggio con id: %(m)s rilasciato a %(a)s"
 
-#: baruwa/lib/audit/msgs/messages.py:28
+#: baruwa/lib/audit/msgs/messages.py:25
 #, python-format
 msgid "Message with id: %(m)s learnt as %(l)s"
 msgstr "Messaggio con id: %(m)s imparato come %(l)s"
 
-#: baruwa/lib/audit/msgs/messages.py:29
+#: baruwa/lib/audit/msgs/messages.py:26
 #, python-format
 msgid "Message with id: %(m)s deleted from quarantine"
 msgstr "Messaggio con id: %(m)s cancellato dalla quarantena"
 
-#: baruwa/lib/audit/msgs/messages.py:30
+#: baruwa/lib/audit/msgs/messages.py:27
 #, python-format
 msgid "Message with id: %(m)s previewed"
 msgstr "Messaggio con id: %(m)s in anteprima"
 
-#: baruwa/lib/audit/msgs/messages.py:31
+#: baruwa/lib/audit/msgs/messages.py:28
 #, python-format
 msgid "Message with id: %(m)s attachment %(a)s downloaded"
 msgstr "Messaggio con id: %(m)s attaccamento %(a)s scaricato"
 
-#: baruwa/lib/audit/msgs/organizations.py:27
+#: baruwa/lib/audit/msgs/organizations.py:24
 #, python-format
 msgid "Organization: %(o)s added"
 msgstr "Organizzazione: %(o)s aggiunto"
 
-#: baruwa/lib/audit/msgs/organizations.py:28
+#: baruwa/lib/audit/msgs/organizations.py:25
 #, python-format
 msgid "Organization: %(o)s updated"
 msgstr "Organizzazione: %(o)s aggiornato"
 
-#: baruwa/lib/audit/msgs/organizations.py:29
+#: baruwa/lib/audit/msgs/organizations.py:26
 #, python-format
 msgid "Organization: %(o)s deleted"
 msgstr "Organizzazione: %(o)s eliminato"
 
-#: baruwa/lib/audit/msgs/organizations.py:30
+#: baruwa/lib/audit/msgs/organizations.py:27
 #, python-format
 msgid "Organization: %(o)s domains imported"
 msgstr "Organizzazione: %(o)s domini importati"
 
-#: baruwa/lib/audit/msgs/organizations.py:32
+#: baruwa/lib/audit/msgs/organizations.py:29
 #, python-format
 msgid "Relay: %(r)s added"
 msgstr "Relè: %(r)s aggiunto"
 
-#: baruwa/lib/audit/msgs/organizations.py:33
+#: baruwa/lib/audit/msgs/organizations.py:30
 #, python-format
 msgid "Relay: %(r)s updated"
 msgstr "Relè: %(r)s aggiornato"
 
-#: baruwa/lib/audit/msgs/organizations.py:34
+#: baruwa/lib/audit/msgs/organizations.py:31
 #, python-format
 msgid "Relay: %(r)s deleted"
 msgstr "Relè: %(r)s eliminato"
 
-#: baruwa/lib/audit/msgs/reports.py:27
+#: baruwa/lib/audit/msgs/reports.py:24
 #, python-format
 msgid "Report: %(r)s viewed"
 msgstr "Relazione: %(r)s hanno guardato"
 
-#: baruwa/lib/audit/msgs/reports.py:28
+#: baruwa/lib/audit/msgs/reports.py:25
 #, python-format
 msgid "Report: %(r)s downloaded as %(f)s"
 msgstr "Relazione: %(r)s scaricato come %(f)s"
 
-#: baruwa/lib/audit/msgs/settings.py:27
+#: baruwa/lib/audit/msgs/settings.py:24
 #, python-format
 msgid "Account: %(u)s signature created"
 msgstr "Conto: %(u)s firma creata"
 
-#: baruwa/lib/audit/msgs/settings.py:28
+#: baruwa/lib/audit/msgs/settings.py:25
 #, python-format
 msgid "Account: %(u)s signature updated"
 msgstr "Conto: %(u)s firma aggiornata"
 
-#: baruwa/lib/audit/msgs/settings.py:29
+#: baruwa/lib/audit/msgs/settings.py:26
 #, python-format
 msgid "Account: %(u)s signature deleted"
 msgstr "Conto: %(u)s Firma eliminata"
 
-#: baruwa/lib/audit/msgs/settings.py:30
+#: baruwa/lib/audit/msgs/settings.py:27
 #, python-format
 msgid "Domain: %(d)s signature created"
 msgstr "Dominio: %(d)s firma creata"
 
-#: baruwa/lib/audit/msgs/settings.py:31
+#: baruwa/lib/audit/msgs/settings.py:28
 #, python-format
 msgid "Domain: %(d)s signature updated"
 msgstr "Dominio: %(d)s firma aggiornata"
 
-#: baruwa/lib/audit/msgs/settings.py:32
+#: baruwa/lib/audit/msgs/settings.py:29
 #, python-format
 msgid "Domain: %(d)s signature deleted"
 msgstr "Dominio: %(d)s Firma eliminata"
 
-#: baruwa/lib/audit/msgs/settings.py:33
+#: baruwa/lib/audit/msgs/settings.py:30
 #, python-format
 msgid "Node: %(n)s created"
 msgstr "Nodo: %(n)s creato"
 
-#: baruwa/lib/audit/msgs/settings.py:34
+#: baruwa/lib/audit/msgs/settings.py:31
 #, python-format
 msgid "Node: %(n)s updated"
 msgstr "Nodo: %(n)s aggiornato"
 
-#: baruwa/lib/audit/msgs/settings.py:35
+#: baruwa/lib/audit/msgs/settings.py:32
 #, python-format
 msgid "Node: %(n)s deleted"
 msgstr "Nodo: %(n)s eliminato"
 
-#: baruwa/lib/audit/msgs/settings.py:36
+#: baruwa/lib/audit/msgs/settings.py:33
 #, python-format
 msgid "Scanner %(svr)s setting: %(s)s set to %(a)s"
 msgstr "Scanner %(svr)s impostazione: %(s)s impostare %(a)s"
 
-#: baruwa/lib/audit/msgs/settings.py:38
+#: baruwa/lib/audit/msgs/settings.py:35
 #, python-format
 msgid "DKIM keys generated for: %(d)s"
 msgstr "Tasti DKIM generati per: %(d)s"
 
-#: baruwa/lib/audit/msgs/settings.py:39
+#: baruwa/lib/audit/msgs/settings.py:36
 #, python-format
 msgid "DKIM signing enabled for: %(d)s"
 msgstr "DKIM firma attivata per: %(d)s"
 
-#: baruwa/lib/audit/msgs/settings.py:40
+#: baruwa/lib/audit/msgs/settings.py:37
 #, python-format
 msgid "DKIM signing disabled for: %(d)s"
 msgstr "DKIM firma disabilitata per: %(d)s"
 
-#: baruwa/lib/audit/msgs/status.py:27
+#: baruwa/lib/audit/msgs/status.py:24
 #, python-format
 msgid "Queued Message-ID: %(m)s released to %(a)s"
 msgstr "In coda Message-ID: %(m)s rilasciato a %(a)s"
 
-#: baruwa/lib/audit/msgs/status.py:28
+#: baruwa/lib/audit/msgs/status.py:25
 #, python-format
 msgid "Queued Message-ID: %(m)s deleted from %(q)s queue"
 msgstr "In coda Message-ID: %(m)s cancellato da %(q)s coda"
 
-#: baruwa/lib/audit/msgs/status.py:29
+#: baruwa/lib/audit/msgs/status.py:26
 #, python-format
 msgid "Queued Message-ID: %(m)s preview"
 msgstr "In coda Message-ID: %(m)s Anteprima"
 
-#: baruwa/lib/audit/msgs/status.py:30
+#: baruwa/lib/audit/msgs/status.py:27
 #, python-format
 msgid "Queued Message-ID: %(m)s downloaded attachment %(a)s"
 msgstr "In coda Message-ID: %(m)s scaricato attaccamento %(a)s"
 
-#: baruwa/lib/audit/msgs/status.py:31
+#: baruwa/lib/audit/msgs/status.py:28
 #, python-format
 msgid "Node status for: %(n)s viewed"
 msgstr "Lo stato del nodo per: %(n)s hanno guardato"
 
-#: baruwa/lib/audit/msgs/status.py:32
+#: baruwa/lib/audit/msgs/status.py:29
 #, python-format
 msgid "Node lint status for: %(n)s viewed"
 msgstr "Lo status di lanugine nodo per: %(n)s hanno guardato"
 
-#: baruwa/lib/audit/msgs/status.py:33
+#: baruwa/lib/audit/msgs/status.py:30
 #, python-format
 msgid "Node bayes stats for: %(n)s viewed"
 msgstr "Statistiche di bayes nodo per: %(n)s hanno guardato"
 
-#: baruwa/lib/audit/msgs/status.py:34
+#: baruwa/lib/audit/msgs/status.py:31
 msgid "Audit log exported"
 msgstr "Controllo registro esportato"
 
@@ -2813,14 +2877,14 @@ msgstr "Solo gli amministratori possono accedere a questa pagina"
 #: baruwa/lib/auth/predicates.py:72
 msgid "Only Administrators or owners can view domain details"
 msgstr ""
-"Solo gli amministratori o i proprietari possono visualizzare i dettagli "
-"del dominio"
+"Solo gli amministratori o i proprietari possono visualizzare i dettagli del "
+"dominio"
 
 #: baruwa/lib/auth/predicates.py:107
 msgid "Only Administrators or owners can view account details"
 msgstr ""
-"Solo gli amministratori o i proprietari possono visualizzare dettagli del"
-" conto"
+"Solo gli amministratori o i proprietari possono visualizzare dettagli del "
+"conto"
 
 #: baruwa/lib/templates/helpers.py:69
 msgid "unknown"
@@ -2854,6 +2918,10 @@ msgstr "BS"
 #: baruwa/model/messages.py:152 baruwa/templates/messages/functions.html:44
 msgid "AS"
 msgstr "COME"
+
+#: baruwa/model/status.py:33 baruwa/tasks/status.py:45
+msgid "hi"
+msgstr "Ciao"
 
 #: baruwa/model/status.py:39
 msgid "Read"
@@ -3133,9 +3201,8 @@ msgid "Language: "
 msgstr "Lingua: "
 
 #: baruwa/templates/accounts/account.html:5
-#, fuzzy
 msgid "Domain Administrator"
-msgstr "Amministratore"
+msgstr "Amministratore di dominio"
 
 #: baruwa/templates/accounts/account.html:12
 msgid "Add signatures"
@@ -3175,10 +3242,6 @@ msgstr "Visualizzando: %(a)s Dettagli del conto"
 #: baruwa/templates/accounts/searchresults.html:25
 msgid "Full names"
 msgstr "Nomi completi"
-
-#: baruwa/templates/accounts/account.html:54
-msgid "Email Address"
-msgstr "Indirizzo di posta elettronica"
 
 #: baruwa/templates/accounts/account.html:62
 msgid "Account status"
@@ -3269,8 +3332,9 @@ msgstr "Creare indirizzo di alias"
 #: baruwa/templates/accounts/new.html:10
 #: baruwa/templates/accounts/pwchange.html:17
 #: baruwa/templates/domains/adddestination.html:17
-#: baruwa/templates/domains/new.html:10 baruwa/templates/invite/index.html:45
-#: baruwa/templates/lists/add.html:31
+#: baruwa/templates/domains/new.html:10
+#: baruwa/templates/invite/confirmemail.html:52
+#: baruwa/templates/invite/index.html:45 baruwa/templates/lists/add.html:31
 #: baruwa/templates/organizations/add.html:10
 #: baruwa/templates/organizations/addrelay.html:16
 #: baruwa/templates/organizations/deleterelay.html:16
@@ -3494,7 +3558,8 @@ msgstr[0] ":: Mostrando pagina %(n)d di %(c)d pagina."
 msgstr[1] ":: Mostrando pagina %(n)d di %(c)d pagine."
 
 #: baruwa/templates/accounts/index.html:94
-#: baruwa/templates/domains/index.html:93 baruwa/templates/lists/index.html:105
+#: baruwa/templates/domains/index.html:93
+#: baruwa/templates/lists/index.html:105
 #: baruwa/templates/messages/functions.html:208
 #: baruwa/templates/messages/searchresults.html:105
 #: baruwa/templates/organizations/index.html:50
@@ -3505,7 +3570,8 @@ msgid "Showing items %(i)d to %(l)d of %(count)d"
 msgstr "Visualizzando gli elementi %(i)d a %(l)d di %(count)d"
 
 #: baruwa/templates/accounts/index.html:96
-#: baruwa/templates/domains/index.html:95 baruwa/templates/lists/index.html:107
+#: baruwa/templates/domains/index.html:95
+#: baruwa/templates/lists/index.html:107
 #: baruwa/templates/messages/functions.html:210
 #: baruwa/templates/messages/searchresults.html:107
 #: baruwa/templates/organizations/index.html:52
@@ -3515,7 +3581,8 @@ msgid "Show items:"
 msgstr "Visualizza gli articoli:"
 
 #: baruwa/templates/accounts/index.html:98
-#: baruwa/templates/domains/index.html:97 baruwa/templates/lists/index.html:109
+#: baruwa/templates/domains/index.html:97
+#: baruwa/templates/lists/index.html:109
 #: baruwa/templates/messages/functions.html:212
 #: baruwa/templates/messages/searchresults.html:109
 #: baruwa/templates/organizations/index.html:54
@@ -3556,11 +3623,11 @@ msgstr "Dimenticato la password?"
 
 #: baruwa/templates/accounts/login.html:55
 msgid ""
-"Forgotten your password? Enter your e-mail address below, and we'll "
-"e-mail instructions on setting a new one."
+"Forgotten your password? Enter your e-mail address below, and we'll e-mail "
+"instructions on setting a new one."
 msgstr ""
-"Dimenticato la password? Inserisci il tuo indirizzo e-mail qui sotto e "
-"noi ti e-mail le istruzioni su come impostare una nuova."
+"Dimenticato la password? Inserisci il tuo indirizzo e-mail qui sotto e noi "
+"ti e-mail le istruzioni su come impostare una nuova."
 
 #: baruwa/templates/accounts/login.html:60
 msgid "Cancel"
@@ -3593,7 +3660,8 @@ msgstr "Nessun account trovato corrispondenza: %s"
 #: baruwa/templates/accounts/searchresults.html:69
 #, python-format
 msgid "Accounts :: Search results :: Showing page %(n)d of %(c)d pages."
-msgstr "Conti:: Risultati di ricerca:: mostrando pagina %(n)d di %(c)d pagine."
+msgstr ""
+"Conti:: Risultati di ricerca:: mostrando pagina %(n)d di %(c)d pagine."
 
 #: baruwa/templates/accounts/searchresults.html:65
 #: baruwa/templates/accounts/searchresults.html:69
@@ -3986,20 +4054,19 @@ msgstr "ERRORE: %s"
 
 #: baruwa/templates/general/error.html:28
 msgid ""
-"You do not have sufficient permissions to access this page. Please sign "
-"in using an account with sufficient permissions"
+"You do not have sufficient permissions to access this page. Please sign in "
+"using an account with sufficient permissions"
 msgstr ""
 "Non si dispone delle autorizzazioni sufficienti per accedere a questa "
-"pagina. Per favore Accedi usando un account con autorizzazioni "
-"sufficienti"
+"pagina. Per favore Accedi usando un account con autorizzazioni sufficienti"
 
 #: baruwa/templates/general/error.html:30
 msgid ""
-"The system was unable to complete your request, the support team has been"
-" notified"
+"The system was unable to complete your request, the support team has been "
+"notified"
 msgstr ""
-"Il sistema è riuscito a completare la richiesta, il team di supporto è "
-"stato notificato"
+"Il sistema è riuscito a completare la richiesta, il team di supporto è stato"
+" notificato"
 
 #: baruwa/templates/includes/search.html:9 baruwa/templates/lists/index.html:6
 #: baruwa/templates/messages/functions.html:300
@@ -4010,17 +4077,35 @@ msgstr "Info su %(n)s risultati (%(t)s secondi)"
 #: baruwa/templates/includes/search.html:15
 #: baruwa/templates/messages/functions.html:306
 #: baruwa/templates/messages/search.html:7
-#, fuzzy
 msgid "Search"
-msgstr "Elenco ricerca"
+msgstr "Ricerca"
 
+#: baruwa/templates/invite/confirmemail.html:31
 #: baruwa/templates/invite/index.html:31
 msgid "Baruwa hosted Beta registration"
 msgstr "Baruwa ospitato registrazione Beta"
 
+#: baruwa/templates/invite/confirmemail.html:37
+msgid ""
+"Please NOTE: you will not be able to login, until you change your MX records"
+" to point to the Baruwa hosted platform. Only proceed with registration if "
+"you intend on changing your MX records for mail to flow through the Baruwa "
+"hosted platform systems"
+msgstr ""
+"Si prega di notare: non sarà in grado di effettuare il login, fino a quando "
+"si modifica il record MX per puntare alla piattaforma Baruwa ospitato. "
+"Procedere solo con la registrazione, se avete intenzione di modificare i "
+"record MX per mail a fluire attraverso i sistemi di piattaforma Baruwa "
+"ospitato"
+
+#: baruwa/templates/invite/confirmemail.html:45
 #: baruwa/templates/invite/index.html:38
 msgid "Registration"
 msgstr "Registrazione"
+
+#: baruwa/templates/invite/confirmemail.html:53
+msgid "Send confirmation email"
+msgstr "Invia email di conferma"
 
 #: baruwa/templates/invite/index.html:46
 msgid "Register"
@@ -4032,11 +4117,27 @@ msgstr "Grazie."
 
 #: baruwa/templates/invite/thankyou.html:27
 msgid ""
-"Your registration request is being reviewed, you will be notified when it"
-" is approved."
+"Your registration has been processed. The systems are ready to process\n"
+"\t\t\t\t\tmessages for your domain. "
 msgstr ""
-"Sta rivedendo la tua richiesta di registrazione, verrà notificato quando "
-"è stato approvato."
+"La registrazione è stata elaborata. I sistemi sono pronti per elaborare i "
+"messaggi per il dominio. "
+
+#: baruwa/templates/invite/thankyou.html:29
+msgid ""
+"You will however NOT be able to login until you\n"
+"\t\t\t\t\tcomplete the change of your domain's MX records."
+msgstr ""
+"Tuttavia non sarete in grado di accedere fino a completare la modifica del "
+"record MX del dominio."
+
+#: baruwa/templates/invite/thankyou.html:31
+msgid ""
+"An email has been sent to the email address you used for registering\n"
+"\t\t\t\t\twith instructions on how to change your MX records"
+msgstr ""
+"Un'email è stata inviata all'indirizzo email utilizzato per la registrazione"
+" con le istruzioni su come modificare i record MX"
 
 #: baruwa/templates/lists/add.html:4
 msgid "Add Sender to a list"
@@ -4107,8 +4208,7 @@ msgstr "Elenchi:: Mittenti approvati"
 #, python-format
 msgid "Lists :: Banned senders :: Showing page %(page)d of %(count)d pages."
 msgstr ""
-"Liste:: Vietati i mittenti:: mostrando pagina %(page)d di %(count)d "
-"pagine."
+"Liste:: Vietati i mittenti:: mostrando pagina %(page)d di %(count)d pagine."
 
 #: baruwa/templates/lists/index.html:93
 msgid "Lists :: Banned senders"
@@ -4428,13 +4528,13 @@ msgstr "Messaggi:: Messaggio anteprima: %(msgid)s"
 
 #: baruwa/templates/messages/quarantine.html:4
 #: baruwa/templates/messages/taskstatus.html:5
-#, fuzzy
 msgid "Not Spam"
-msgstr "Registro Spam"
+msgstr "Non Spam"
 
 #: baruwa/templates/messages/quarantine.html:27
 #: baruwa/templates/status/detail.html:69
-#: baruwa/templates/status/detail.html:75 baruwa/templates/status/mailq.html:23
+#: baruwa/templates/status/detail.html:75
+#: baruwa/templates/status/mailq.html:23
 msgid "Process"
 msgstr "Processo"
 
@@ -4443,8 +4543,8 @@ msgstr "Processo"
 #, python-format
 msgid "Messages :: Quarantine :: Showing page %(page)d of %(count)d pages."
 msgstr ""
-"I messaggi:: Mettere in quarantena:: mostrando pagina %(page)d di "
-"%(count)d pagine."
+"I messaggi:: Mettere in quarantena:: mostrando pagina %(page)d di %(count)d "
+"pagine."
 
 #: baruwa/templates/messages/quarantine.html:59
 #: baruwa/templates/messages/quarantine.html:70
@@ -4493,11 +4593,11 @@ msgstr "Id messaggio: %(id)s è stata rilasciata"
 #: baruwa/templates/messages/includes/released.html:4
 #, python-format
 msgid ""
-"The message id: %(id)s could not be released: %(error_msg)s, contact your"
-" email admin for assistance."
+"The message id: %(id)s could not be released: %(error_msg)s, contact your "
+"email admin for assistance."
 msgstr ""
-"Id messaggio: %(id)s non poteva essere rilasciato: %(error_msg)s, "
-"contattare il vostro amministratore e-mail per assistenza."
+"Id messaggio: %(id)s non poteva essere rilasciato: %(error_msg)s, contattare"
+" il vostro amministratore e-mail per assistenza."
 
 #: baruwa/templates/messages/includes/salearn.html:2
 #, python-format
@@ -5228,21 +5328,18 @@ msgstr "Statistiche di oggi"
 
 #: baruwa/templates/status/index.html:20
 #: baruwa/templates/status/serverstatus.html:22
-#, fuzzy
 msgid "Processed"
-msgstr "Processo"
+msgstr "Elaborati"
 
 #: baruwa/templates/status/index.html:50
 #: baruwa/templates/status/serverstatus.html:52
-#, fuzzy
 msgid "Inbound queues"
-msgstr "Coda in entrata"
+msgstr "Code in ingresso"
 
 #: baruwa/templates/status/index.html:55
 #: baruwa/templates/status/serverstatus.html:57
-#, fuzzy
 msgid "Outbound queues"
-msgstr "Coda in uscita"
+msgstr "Code in uscita"
 
 #: baruwa/templates/status/index.html:63
 msgid "Graph"
@@ -5280,7 +5377,8 @@ msgstr "Stato:: Coda di posta:: %(queue)s"
 #: baruwa/templates/status/preview.html:48
 #, python-format
 msgid "Queued Message: %(msgid)s could not be previewed"
-msgstr "Messaggio in coda: %(msgid)s potrebbe non essere visualizzato in anteprima"
+msgstr ""
+"Messaggio in coda: %(msgid)s potrebbe non essere visualizzato in anteprima"
 
 #: baruwa/templates/status/preview.html:54
 #: baruwa/templates/status/preview.html:58
@@ -5444,4 +5542,3 @@ msgstr "Ora di sistema"
 #, python-format
 msgid "Status :: Node status :: %(server)s"
 msgstr ":: Stato nodi:: %(server)s"
-

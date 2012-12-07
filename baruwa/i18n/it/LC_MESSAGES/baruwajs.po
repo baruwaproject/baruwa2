@@ -1,21 +1,21 @@
 # English translations for .
 # Copyright (C) 2011 Andrew Colin Kissa
 # This file is distributed under the same license as the  project.
-#
+# 
 # Translators:
 msgid ""
 msgstr ""
-"Project-Id-Version:  baruwa\n"
+"Project-Id-Version: baruwa\n"
 "Report-Msgid-Bugs-To: baruwa@lists.baruwa.org\n"
-"POT-Creation-Date: 2012-12-05 14:11+0200\n"
+"POT-Creation-Date: 2012-11-14 14:04+0200\n"
 "PO-Revision-Date: 2012-11-14 18:01+0200\n"
 "Last-Translator: Andrew Colin Kissa <andrew@topdog.za.net>\n"
 "Language-Team: (http://www.transifex.com/projects/p/baruwa/language/it/)\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 0.9.6\n"
+"Generated-By: auto-translate.py\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
 
 #: baruwa/public/js/baruwa/accounts.js:1 baruwa/public/js/baruwa/domains.js:1
 #: baruwa/public/js/baruwa/lists.js:1
@@ -27,8 +27,7 @@ msgstr ""
 #: baruwa/public/js/baruwa/status.audit.js:1
 msgid "Showing items {{first_item}} to {{last_item}} of {{item_count}}."
 msgstr ""
-"Visualizzando gli elementi {{first_item}} a {{last_item}} di "
-"{{item_count}}."
+"Visualizzando gli elementi {{first_item}} a {{last_item}} di {{item_count}}."
 
 #: baruwa/public/js/baruwa/accounts.js:1
 msgid "Accounts :: Showing page {{page}} of {{page_count}} pages."
@@ -90,7 +89,8 @@ msgstr "Domini"
 
 #: baruwa/public/js/baruwa/lists.js:1
 msgid "Lists :: {{listname}} Showing page {{page}} of {{page_count}} pages."
-msgstr "Liste:: {{listname}} Mostrando pagina {{page}} di {{page_count}} pagine."
+msgstr ""
+"Liste:: {{listname}} Mostrando pagina {{page}} di {{page_count}} pagine."
 
 #: baruwa/public/js/baruwa/lists.js:1
 msgid "Lists"
@@ -106,7 +106,8 @@ msgstr "Reimpostare la mia password"
 
 #: baruwa/public/js/baruwa/messages.archive.js:1
 msgid "Messages :: Archive :: Showing page {{page}} of {{page_count}} pages."
-msgstr "Messaggi:: Archivio:: mostrando pagina {{page}} di {{page_count}} pagine."
+msgstr ""
+"Messaggi:: Archivio:: mostrando pagina {{page}} di {{page_count}} pagine."
 
 #: baruwa/public/js/baruwa/messages.archive.js:1
 msgid "Messages :: Archive"
@@ -197,8 +198,8 @@ msgstr "Non applicate al momento"
 #: baruwa/public/js/baruwa/messages.js:1
 #: baruwa/public/js/baruwa/messages.quarantine.js:1
 msgid ""
-"Messages :: Full message listing :: Showing page {{page}} of "
-"{{page_count}} pages."
+"Messages :: Full message listing :: Showing page {{page}} of {{page_count}} "
+"pages."
 msgstr ""
 "Messaggi:: Completo elenco di messaggi:: mostrando pagina {{page}} di "
 "{{page_count}} pagine."
@@ -334,7 +335,8 @@ msgstr "Nessuna scansione ospita trovato"
 
 #: baruwa/public/js/baruwa/settings.js:1
 msgid "Settings :: Nodes :: Showing page {{page}} of {{page_count}} pages."
-msgstr "Impostazioni:: Nodi:: mostrando pagina {{page}} di {{page_count}} pagine."
+msgstr ""
+"Impostazioni:: Nodi:: mostrando pagina {{page}} di {{page_count}} pagine."
 
 #: baruwa/public/js/baruwa/settings.js:1
 msgid "Settings :: Nodes"
@@ -347,10 +349,9 @@ msgstr "No trovati i registri di controllo"
 #: baruwa/public/js/baruwa/status.audit.js:1
 msgid "Status :: Audit log :: Showing page {{page}} of {{page_count}} pages."
 msgstr ""
-"Stato:: Registro di controllo:: mostrando pagina {{page}} di "
-"{{page_count}} pagine."
+"Stato:: Registro di controllo:: mostrando pagina {{page}} di {{page_count}} "
+"pagine."
 
 #: baruwa/public/js/baruwa/status.audit.js:1
 msgid "Status :: Audit log"
 msgstr "Stato:: Registro di controllo"
-
