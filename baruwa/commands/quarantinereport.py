@@ -105,14 +105,8 @@ class QuarantineReports(BaseCommand):
                                 Message.virusinfected == 0,
                                 Message.nameinfected == 0,
                                 Message.otherinfected == 0,
-                                Message.highspam == 0), True)],
+                                ), True)],
                                 else_=False).label('spam'),
-                            case([(and_(Message.spam == 0,
-                                Message.virusinfected == 0,
-                                Message.highspam == 0,
-                                or_(Message.nameinfected == 1,
-                                Message.otherinfected == 1)), True)],
-                                else_=False).label('policy'),
                             Message.to_domain)\
                             .filter(Message.isquarantined > 0)\
                             .filter(or_(Message.spam > 0,
