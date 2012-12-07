@@ -21,11 +21,11 @@
 
 import MySQLdb
 
-from datetime import date
 from sqlalchemy import func, desc
 from sqlalchemy.sql import and_, or_, case
 
 from baruwa.model.meta import Session
+from baruwa.lib.dates import now
 from baruwa.model.messages import Message, Archive
 from baruwa.model.domains import Domain
 from baruwa.model.status import MailQueueItem
@@ -263,7 +263,7 @@ class DailyTotals(object):
                 Message.otherinfected == 0, Message.nameinfected == 0,
                 Message.highspam > 0), 1)],
                 else_=0)).label('highspam'))\
-                .filter(Message.date == date.today())
+                .filter(Message.date == now().date())
 
     def get(self, hostname=None):
         if not hostname is None:
