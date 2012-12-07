@@ -18,10 +18,7 @@
 #
 "Accounts audit messages"
 
-try:
-    from pylons.i18n.translation import _
-except ImportError:
-    from baruwa.lib.misc import _
+from pylons.i18n.translation import lazy_ugettext as _
 
 
 ADDACCOUNT_MSG = _("User account: %(u)s created")

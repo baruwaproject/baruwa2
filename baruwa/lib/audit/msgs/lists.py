@@ -18,10 +18,7 @@
 #
 "Lists audit messages"
 
-try:
-    from pylons.i18n.translation import _
-except ImportError:
-    from baruwa.lib.misc import _
+from pylons.i18n.translation import lazy_ugettext as _
 
 
 LISTADD_MSG = _("Sender: %(s)s added to %(l)s")
