@@ -37,6 +37,11 @@ from baruwa.model.messages import Message, Archive, SARule, Release
 from baruwa.lib.regex import CLEANRE
 from baruwa.lib.outputformats import SignatureCleaner
 
+try:
+    from baruwa.model.invite import InviteToken
+except ImportError:
+    pass
+
 
 def sanitize_signature(mapper, connection, target):
     "clean up signature before storing to DB"

@@ -534,6 +534,12 @@ def make_map(config):
         submap.connect('fm-view-img',
                 '/{sigtype:(domains|users)}/{imgid}{.format:(gif|png|jpg)}',
                 action='view_img')
+    # invite
+    with urlmap.submapper(path_prefix="/invite",
+        controller="invite") as submap:
+        submap.connect('invite-register',
+                '/register/{token}',
+                action='register')
     
     urlmap.connect('/{controller}/{action}{.format}')
     urlmap.connect('/{controller}/{action}/{id}{.format}')
