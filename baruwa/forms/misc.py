@@ -21,14 +21,9 @@
 from wtforms import SelectField, TextField, FileField
 from pylons.i18n.translation import lazy_ugettext as _
 
-NO_ITEMS = ((50, 50), (20, 20), (10, 10),)
-
 from baruwa.forms import Form
-try:
-    x = _('hi')
-    x
-except TypeError:
-    from baruwa.lib.misc import _
+
+NO_ITEMS = ((50, 50), (20, 20), (10, 10),)
 
 
 class ItemsPerPage(Form):

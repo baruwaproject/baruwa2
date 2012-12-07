@@ -24,18 +24,11 @@ from wtforms.ext.sqlalchemy.fields import QuerySelectMultipleField
 from pylons.i18n.translation import lazy_ugettext as _
 from sqlalchemy.orm.exc import NoResultFound
 
-from baruwa.forms import TIMEZONE_TUPLES
+from baruwa.forms import Form
 from baruwa.model.domains import Domain
 from baruwa.model.meta import Session
 from baruwa.forms.organizations import check_pw_strength
-
-try:
-    x = _('hi')
-    x
-except TypeError:
-    from baruwa.lib.misc import _
-
-from baruwa.forms import Form
+from baruwa.forms import TIMEZONE_TUPLES, REQ_MSG, EMAIL_MSG
 from baruwa.forms.messages import MultiCheckboxField
 
 ACCOUNT_TYPES = (
@@ -57,7 +50,7 @@ def check_domain(form, field):
         Session.query(Domain).filter(Domain.name == domain).one()
     except NoResultFound:
         raise validators.ValidationError(
-                    _('The domain: %(dom)s is not local')
+                    _(u'The domain: %(dom)s is not local')
                     % dict(dom=domain)
                 )
 
@@ -66,28 +59,28 @@ def check_account(form, field):
     "check account"
     if field.data == 3 and not form.domains.data:
         raise validators.ValidationError(
-                    _('Please select atleast one domain')
+                    _(u'Please select atleast one domain')
                 )
 
 
 class AddUserForm(Form):
     """Add user"""
     username = TextField(_('Username'),
-                        [validators.Required(),
+                        [validators.Required(message=REQ_MSG),
                         validators.Length(min=4, max=254)])
     firstname = TextField(_('First name'),
                         [validators.Length(max=254)])
     lastname = TextField(_('Last name'),
                         [validators.Length(max=254)])
     password1 = PasswordField(_('New Password'), [check_password,
-                            validators.Required(),
+                            validators.Required(message=REQ_MSG),
                             validators.EqualTo('password2',
                             message=_('Passwords must match'))])
     password2 = PasswordField(_('Retype Password'),
-                        [validators.Required()])
+                        [validators.Required(message=REQ_MSG)])
     email = TextField(_('Email address'),
-                        [validators.Required(),
-                        validators.Email()])
+                        [validators.Required(message=REQ_MSG),
+                        validators.Email(message=EMAIL_MSG)])
     timezone = SelectField(_('Timezone'), choices=TIMEZONE_TUPLES)
     account_type = SelectField(_('Account type'),
                                 choices=list(ACCOUNT_TYPES))
@@ -103,16 +96,17 @@ class AddUserForm(Form):
     def validate_domains(form, field):
         if int(form.account_type.data) == 3 and not field.data:
             raise validators.ValidationError(
-            _('Please select atleast one domain'))
+            _(u'Please select atleast one domain'))
 
 
 class EditUserForm(Form):
     """Edit user"""
-    username = TextField(_('Username'), [validators.Required(),
+    username = TextField(_('Username'), [validators.Required(message=REQ_MSG),
                         validators.Length(min=4, max=254)])
     firstname = TextField(_('First name'), [validators.Length(max=254)])
     lastname = TextField(_('Last name'), [validators.Length(max=254)])
-    email = TextField(_('Email address'), [validators.Required()])
+    email = TextField(_('Email address'),
+                [validators.Required(message=REQ_MSG)])
     timezone = SelectField(_('Timezone'), choices=TIMEZONE_TUPLES)
     domains = QuerySelectMultipleField(_('Domains'), get_label='name', 
                                         allow_blank=False)
@@ -124,26 +118,32 @@ class EditUserForm(Form):
 
 
 class BulkDelUsers(Form):
+    """Bulk account delete form"""
     accountid = MultiCheckboxField('')
-    whatdo = RadioField('', choices=[('delete', 'delete',), ('disable', 'disable',),('enable', 'enable',),])
+    whatdo = RadioField('', choices=[('delete', _('delete'),),
+                                    ('disable', _('disable'),),
+                                    ('enable', _('enable'),),])
 
 
 class AddressForm(Form):
     """Add alias address"""
-    address = TextField('Email Address', [validators.Required(),
-                        validators.Email(), check_domain])
+    address = TextField(_('Email Address'),
+                    [validators.Required(message=REQ_MSG),
+                    validators.Email(message=EMAIL_MSG), check_domain])
     enabled = BooleanField(_('Enabled'))
 
 
 class ChangePasswordForm(Form):
     """Admin change user password"""
-    password1 = PasswordField(_('New Password'), [check_password,
-                            validators.Required(),
-                            validators.EqualTo('password2',
-                            message=_('Passwords must match'))])
-    password2 = PasswordField(_('Retype Password'), [validators.Required()])
+    password1 = PasswordField(_('New Password'),
+                    [check_password, validators.Required(message=REQ_MSG),
+                    validators.EqualTo('password2',
+                    message=_('Passwords must match'))])
+    password2 = PasswordField(_('Retype Password'),
+                    [validators.Required(message=REQ_MSG)])
 
 
 class UserPasswordForm(ChangePasswordForm):
     """User password change"""
-    password3 = PasswordField(_('Old Password'), [validators.Required()])
+    password3 = PasswordField(_('Old Password'),
+                    [validators.Required(message=REQ_MSG)])

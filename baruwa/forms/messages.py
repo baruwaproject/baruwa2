@@ -23,12 +23,6 @@ from wtforms import TextField, SelectMultipleField
 from wtforms.widgets import CheckboxInput, ListWidget
 from pylons.i18n.translation import lazy_ugettext as _
 
-try:
-    x = _('hi')
-    x
-except TypeError:
-    from baruwa.lib.misc import _
-
 from baruwa.forms import Form
 from baruwa.lib.regex import ADDRESS_RE
 

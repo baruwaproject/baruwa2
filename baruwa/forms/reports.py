@@ -29,11 +29,6 @@ from pylons.i18n.translation import lazy_ugettext as _
 from baruwa.forms import Form
 from baruwa.lib.regex import ADDRESS_RE, DOM_RE, IPV4_RE
 
-try:
-    x = _('hi')
-    x
-except TypeError:
-    from baruwa.lib.misc import _
 
 FILTER_ITEMS = (
     ('messageid', _('Message ID')),
@@ -104,6 +99,7 @@ def isnumeric(value):
 
 
 def check_form(form, field):
+    "validate the form"
     filteredby = dict(FILTER_BY)
     filteritems = dict(FILTER_ITEMS)
     # field <-> filter checks
@@ -175,6 +171,7 @@ def check_form(form, field):
 
 
 class FilterForm(Form):
+    "Filters form"
     filtered_field = SelectField('', [check_form], choices=list(FILTER_ITEMS))
     filtered_by = SelectField('', choices=list(FILTER_BY))
     filtered_value = TextField('')

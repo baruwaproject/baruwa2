@@ -19,19 +19,21 @@
 "Status forms"
 
 from wtforms import SelectField
+from pylons.i18n.translation import lazy_ugettext as _
 
 from baruwa.forms import Form
 from baruwa.forms.messages import MultiCheckboxField
 
 QUEUE_OPTS = (
-    ('0', 'Select action'),
-    ('deliver', 'Deliver'),
-    ('bounce', 'Bounce'),
-    ('freeze', 'Hold'),
-    ('delete', 'Delete'),
+    ('0', _('Select action')),
+    ('deliver', _('Deliver')),
+    ('bounce', _('Bounce')),
+    ('freeze', _('Hold')),
+    ('delete', _('Delete')),
 )
 
 
 class MailQueueProcessForm(Form):
+    "mail queue process form"
     id = MultiCheckboxField('')
     queue_action = SelectField('', choices=QUEUE_OPTS, default='none')

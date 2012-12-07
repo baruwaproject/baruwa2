@@ -22,18 +22,13 @@ from wtforms import validators, TextField, SelectField, BooleanField
 from sqlalchemy.orm.exc import NoResultFound
 from pylons.i18n.translation import lazy_ugettext as _
 
-from baruwa.forms import Form
+from baruwa.forms import Form, REQ_MSG
 from baruwa.model.meta import Session
 from baruwa.model.domains import Domain
 from baruwa.lib.misc import ipaddr_is_valid
 from baruwa.lib.regex import EMAIL_RE, DOM_RE, IPV4_RE
 from baruwa.lib.regex import IPV4_NET_OR_RANGE_RE, LOCAL_PART_RE
 
-try:
-    x = _('hi')
-    x
-except TypeError:
-    from baruwa.lib.misc import _
 
 LIST_TYPES = (
     ('1', _('Approved senders')),
@@ -73,14 +68,18 @@ def admin_toaddr_check(form, field):
 
 class AddtoList(Form):
     "Add list form"
-    from_address = TextField(_('From address'), [validators.Required(), from_addr_check])
+    from_address = TextField(_('From address'),
+                        [validators.Required(message=REQ_MSG),
+                        from_addr_check])
     to_address = TextField(_('To address'), [admin_toaddr_check])
     list_type = SelectField(_('List type'), choices=list(LIST_TYPES))
 
 
 class AddtoDomainList(Form):
     "Add list to domain form"
-    from_address = TextField(_('From address'), [validators.Required(), from_addr_check])
+    from_address = TextField(_('From address'),
+                        [validators.Required(message=REQ_MSG),
+                        from_addr_check])
     to_address = TextField(_('User account'))
     to_domain = SelectField(_('Domain name'))
     list_type = SelectField(_('List type'), choices=list(LIST_TYPES))
@@ -95,7 +94,9 @@ class AddtoDomainList(Form):
 
 class AddtoUserList(Form):
     "Add list to user form"
-    from_address = TextField(_('From address'), [validators.Required(), from_addr_check])
+    from_address = TextField(_('From address'),
+                        [validators.Required(message=REQ_MSG),
+                        from_addr_check])
     to_address = SelectField(_('To address'))
     list_type = SelectField(_('List type'), choices=list(LIST_TYPES))
     add_to_alias = BooleanField(_('Add to aliases as well'), default=False)

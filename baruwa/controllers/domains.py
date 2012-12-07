@@ -53,6 +53,7 @@ from baruwa.model.accounts import Group, domain_owners
 from baruwa.model.accounts import organizations_admins as oa
 from baruwa.model.domains import DomainAlias
 from baruwa.model.domains import Domain, DeliveryServer, AuthServer
+from baruwa.forms.domains import DelDomainAlias, EditDomainForm
 from baruwa.forms.domains import BulkDelDomains, AddLDAPSettingsForm
 from baruwa.forms.domains import AddDomainForm, AddDeliveryServerForm
 from baruwa.forms.domains import AddAuthForm, AUTH_PROTOCOLS, EditDomainAlias
@@ -260,7 +261,7 @@ class DomainsController(BaseController):
         domain = self._get_domain(domainid)
         if not domain:
             abort(404)
-        c.form = AddDomainForm(request.POST, domain, csrf_context=session)
+        c.form = EditDomainForm(request.POST, domain, csrf_context=session)
         if c.user.is_superadmin:
             c.form.organizations.query_factory = self._get_organizations
         else:
@@ -306,7 +307,7 @@ class DomainsController(BaseController):
         domain = self._get_domain(domainid)
         if not domain:
             abort(404)
-        c.form = AddDomainForm(request.POST, domain, csrf_context=session)
+        c.form = EditDomainForm(request.POST, domain, csrf_context=session)
         del c.form.organizations
         c.id = domainid
         if request.POST and c.form.validate():
@@ -829,7 +830,7 @@ class DomainsController(BaseController):
         if not alias:
             abort(404)
 
-        c.form = AddDomainAlias(request.POST, alias, csrf_context=session)
+        c.form = DelDomainAlias(request.POST, alias, csrf_context=session)
         c.form.domain.query = Session.query(Domain)\
                             .filter(Domain.id==alias.domain_id)
         if request.POST and c.form.validate():

@@ -25,18 +25,13 @@ from wtforms import FileField
 from wtforms.ext.sqlalchemy.fields import QuerySelectMultipleField
 from pylons.i18n.translation import lazy_ugettext as _
 
-from baruwa.forms import Form
+from baruwa.forms import Form, REQ_MSG
 from baruwa.lib.regex import DOM_RE
 from baruwa.lib.misc import ipaddr_is_valid
 
-try:
-    x = _('hi')
-    x
-except TypeError:
-    from baruwa.lib.misc import _
-
 
 def check_pw_strength(passwd):
+    "Check password strength"
     try:
         cracklib.VeryFascistCheck(passwd)
     except ValueError, message:
@@ -45,7 +40,9 @@ def check_pw_strength(passwd):
 
 
 class OrgForm(Form):
-    name = TextField(_('Organization name'), [validators.Required()])
+    "Organization form"
+    name = TextField(_('Organization name'),
+                [validators.Required(message=REQ_MSG)])
     domains = QuerySelectMultipleField(_('Domains'),
                             get_label='name',
                             allow_blank=True)
@@ -55,11 +52,13 @@ class OrgForm(Form):
 
 
 class DelOrgForm(OrgForm):
+    "Bulk delete organizations domains"
     delete_domains = BooleanField(_('Delete Organization domains'),
                             default=False)
 
 
 class RelayForm(Form):
+    "Organization relay form"
     address = TextField(_('Hostname'))
     enabled = BooleanField(_('Enabled'), default=True)
     username = TextField(_('SMTP-AUTH username'))
@@ -89,6 +88,7 @@ class RelayForm(Form):
 
 
 class RelayEditForm(RelayForm):
+    "Edit relay"
     def validate_password1(self, field):
         if (self.address.data == '' and self.username.data != ''
             and field.data != ''):

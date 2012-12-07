@@ -25,21 +25,16 @@ from wtforms import SelectField, validators, DecimalField, PasswordField
 from wtforms.ext.sqlalchemy.fields import QuerySelectField
 from wtforms.ext.sqlalchemy.fields import QuerySelectMultipleField
 
-from baruwa.forms import Form, TIMEZONE_TUPLES
+from baruwa.forms.messages import MultiCheckboxField
+from baruwa.forms import Form, TIMEZONE_TUPLES, REQ_MSG
+from baruwa.forms import check_domain, check_domain_alias
 from baruwa.lib.misc import ipaddr_is_valid, get_languages
 from baruwa.lib.regex import DOM_RE, MSGSIZE_RE, NUMORSPACE_RE
-from baruwa.forms.messages import MultiCheckboxField
-
-try:
-    x = _('hi')
-    x
-except TypeError:
-    from baruwa.lib.misc import _
 
 
 DELIVERY_MODES = (
-    ('1', 'Load balance'),
-    ('2', 'Fail over'),
+    ('1', _('Load balance')),
+    ('2', _('Fail over')),
 )
 
 LANGUAGES = [lang.popitem() for lang in get_languages()]
@@ -87,11 +82,14 @@ def check_server_addr(form, field):
 
 class AddDomainForm(Form):
     """Add domain"""
-    name = TextField(_('Domain name'), [validators.Required(),
+    name = TextField(_('Domain name'), [validators.Required(message=REQ_MSG),
                     validators.Regexp(DOM_RE,
-                    message=_('Invalid Domain name'))])
+                    message=_('Invalid Domain name')),
+                    check_domain,
+                    check_domain_alias])
     site_url = TextField(_('Site url'),
-                        [validators.Required(), validators.URL()])
+                        [validators.Required(message=REQ_MSG),
+                        validators.URL()])
     status = BooleanField(_('Enabled'), default=True)
     smtp_callout = BooleanField(_('Enable SMTP callouts'), default=False)
     ldap_callout = BooleanField(_('Enable LDAP callouts'), default=False)
@@ -119,18 +117,29 @@ class AddDomainForm(Form):
                                     allow_blank=True)
 
 
+class EditDomainForm(AddDomainForm):
+    """Edit/Delete a domain"""
+    name = TextField(_('Domain name'), [validators.Required(message=REQ_MSG),
+                    validators.Regexp(DOM_RE,
+                    message=_('Invalid Domain name'))])
+
+
 class BulkDelDomains(Form):
+    """Bulk domains delete"""
     domainid = MultiCheckboxField('')
-    whatdo = RadioField('', choices=[('delete', 'delete',),
-                                    ('disable', 'disable',),
-                                    ('enable', 'enable',),])
+    whatdo = RadioField('', choices=[('delete', _('delete'),),
+                                    ('disable', _('disable'),),
+                                    ('enable', _('enable'),),])
 
 
 class AddDomainAlias(Form):
     """Add domain alias"""
-    name = TextField(_('Domain alias name'), [validators.Required(),
+    name = TextField(_('Domain alias name'),
+                    [validators.Required(message=REQ_MSG),
                     validators.Regexp(DOM_RE,
-                    message=_('Invalid Domain name'))])
+                    message=_('Invalid Domain name')),
+                    check_domain,
+                    check_domain_alias])
     status = BooleanField(_('Enabled'), default=True)
     domain = QuerySelectField(_('Parent domain'),
                             get_label='name',
@@ -139,13 +148,26 @@ class AddDomainAlias(Form):
 
 class EditDomainAlias(AddDomainAlias):
     """Override to make status work"""
+    name = TextField(_('Domain alias name'),
+                    [validators.Required(message=REQ_MSG),
+                    validators.Regexp(DOM_RE,
+                    message=_('Invalid Domain name')),])
     status = BooleanField(_('Enabled'))
+
+
+class DelDomainAlias(AddDomainAlias):
+    """Override to make prevent validation"""
+    name = TextField(_('Domain alias name'),
+                    [validators.Required(message=REQ_MSG),
+                    validators.Regexp(DOM_RE,
+                    message=_('Invalid Domain name')),])
 
 
 class AddDeliveryServerForm(Form):
     """Add delivery server"""
-    address = TextField(_('Server address'), [validators.Required(),
-                        check_server_addr])
+    address = TextField(_('Server address'),
+                    [validators.Required(message=REQ_MSG),
+                    check_server_addr])
     protocol = SelectField(_('Protocol'), choices=list(DELIVERY_PROTOCOLS))
     port = IntegerField(_('Port'), default=25)
     enabled = BooleanField(_('Enabled'), default=True)
@@ -158,8 +180,9 @@ class LinkDeliveryServerForm(Form):
 
 class AddAuthForm(Form):
     """Add auth server"""
-    address = TextField(_('Server address'), [validators.Required(),
-                        check_server_addr])
+    address = TextField(_('Server address'),
+                [validators.Required(message=REQ_MSG),
+                check_server_addr])
     protocol = SelectField(_('Protocol'), choices=list(AUTH_PROTOCOLS))
     port = TextField(_('Port'), [validators.Regexp(NUMORSPACE_RE,
                     message=_('must be numeric'))])
@@ -170,12 +193,12 @@ class AddAuthForm(Form):
 
 class AddLDAPSettingsForm(Form):
     """Add ldap settings"""
-    basedn = TextField(_('Base DN'), [validators.Required()])
+    basedn = TextField(_('Base DN'), [validators.Required(message=REQ_MSG)])
     nameattribute = TextField(_('Username attribute'),
-                            [validators.Required()],
+                            [validators.Required(message=REQ_MSG)],
                             default='uid')
     emailattribute = TextField(_('Email attribute'), 
-                            [validators.Required()],
+                            [validators.Required(message=REQ_MSG)],
                                default='mail')
     binddn = TextField(_('Bind DN'))
     bindpw = PasswordField(_('Bind password'))
@@ -206,5 +229,6 @@ class AddLDAPSettingsForm(Form):
 
 class AddRadiusSettingsForm(Form):
     """Add radius settings"""
-    secret = PasswordField(_('Radius secret'), [validators.Required()])
+    secret = PasswordField(_('Radius secret'),
+            [validators.Required(message=REQ_MSG)])
     timeout = IntegerField(_('Request timeout'), default=0)

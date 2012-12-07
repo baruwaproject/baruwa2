@@ -23,14 +23,9 @@ from wtforms import IntegerField, SelectField, TextAreaField
 from wtforms import SelectMultipleField
 from pylons.i18n.translation import lazy_ugettext as _
 
-from baruwa.forms import Form
+from baruwa.forms import Form, REQ_MSG
 from baruwa.lib.regex import HOST_OR_IPV4_RE
 
-try:
-    x = _('hi')
-    x
-except TypeError:
-    from baruwa.lib.misc import _
 
 YES_NO = (('yes', _('Yes')), ('no', _('No')))
 TNEF_ACTIONS = (('replace', _('Replace')),
@@ -48,7 +43,7 @@ START_END = (('start', _('Start')),
             ('end', _('End')),
             ('yes', _('Yes')),
             ('no', _('No')))
-CONVERT = (('convert',_ ('Disarm')),
+CONVERT = (('convert', _('Disarm')),
             ('yes', _('Yes')),
             ('no', _('No')))
 MTAS = (('exim', 'Exim'),
@@ -168,7 +163,7 @@ global_settings_dict = {
 class ServerForm(Form):
     "Server form"
     hostname = TextField(_('Hostname'),
-                        [validators.Required(),
+                        [validators.Required(message=REQ_MSG),
                         validators.Regexp(HOST_OR_IPV4_RE,
                         message=_('Invalid Domain name or IPv4 address'))])
     enabled = BooleanField(_('Enabled'))
@@ -701,7 +696,7 @@ class SigForm(Form):
                         ('2', _('HTML Signature')),),
                         default=1)
     signature_content = TextAreaField(_('Signature'),
-                            [validators.Required()])
+                            [validators.Required(message=REQ_MSG)])
     enabled = BooleanField(_('Enabled'))
 
 
