@@ -3,13 +3,13 @@ Baruwa
 ======
 <% 
 	spam_items = [spam for spam in messages if spam.spam]
-	policy_items = [spam for spam in messages if spam.policy]
+	policy_items = [spam for spam in messages if not spam.spam]
 %>
 % if spam_items:
 Spam Report
 ============
 
-Date/Time   From            To          Subject          
+Date/Time   From                     Subject          
 ==================================================================================================	
 % for item in spam_items:
 + ${str(item.timestamp) + '\t' + item.from_address + '\t' + item.subject}              
@@ -19,7 +19,7 @@ Date/Time   From            To          Subject
 Policy Blocked Report
 =====================
 
-Date/Time   From            To          Subject             
+Date/Time   From                     Subject             
 =================================================================================================
 % for item in policy_items:
 + ${str(item.timestamp) + '\t' + item.from_address + '\t' +item.subject}              

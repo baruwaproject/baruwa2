@@ -1,7 +1,7 @@
 <%
 from baruwa.lib.misc import _
 spam = [item for item in messages if item.spam]
-policy = [item for item in messages if item.policy]
+policy = [item for item in messages if not item.spam]
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
