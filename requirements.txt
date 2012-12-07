@@ -35,6 +35,7 @@ python-dateutil==1.5
 marrow.interface
 marrow.mailer
 marrow.util
+futures
 psutil
 psycopg2
 mysql-python
