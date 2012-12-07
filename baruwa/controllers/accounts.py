@@ -832,6 +832,8 @@ class AccountsController(BaseController):
                         value = urlparts[2] or '/'
                     params.append('%s=%s' % (urllib2.quote(param),
                                             urllib2.quote(value)))
+        if 'lc=1' not in params:
+            params.append('lc=1')
         if params:
             nextpage = "%s?%s" % (nextpage, '&amp;'.join(params))
         redirect(nextpage)

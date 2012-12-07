@@ -51,6 +51,7 @@ class BaseController(WSGIController):
                         if check_language(lang.split('-')[0])]
             set_lang(languages)
         self.invalidate = request.GET.get('uc', None)
+        self.langchange = request.GET.get('lc', None)
 
     def __call__(self, environ, start_response):
         """Invoke the Controller"""

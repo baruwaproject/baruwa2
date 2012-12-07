@@ -23,7 +23,7 @@ import gettext
 
 from pylons import config, response
 from pylons.i18n.translation import get_lang
-from beaker.cache import cache_region
+from beaker.cache import cache_region, region_invalidate
 
 from baruwa.lib.base import BaseController
 from baruwa.lib.misc import quote_js
@@ -104,14 +104,20 @@ function pluralidx(n) {
 
 class UtilsController(BaseController):
 
+    def js_localization(self):
+        "return localized strings from cache or compute"
+        locale = get_lang()[0]
+        if self.langchange:
+            region_invalidate(self._js_localization, None, 'baruwajs', locale)
+        return self._js_localization(locale)
+
     @cache_region('long_term', 'baruwajs')
-    def js_localization(self, domain='baruwajs'):
+    def _js_localization(self, locale):
         "Return dict of localized strings for JS"
         locale_t = {}
-        locale = get_lang()[0]
         path = os.path.join(config['pylons.paths']['root'], 'i18n')
         try:
-            catalog = gettext.translation(domain, path, [locale])
+            catalog = gettext.translation('baruwajs', path, [locale])
         except IOError:
             catalog = None
         if catalog is not None:
@@ -153,8 +159,7 @@ class UtilsController(BaseController):
         src.append(LIBFOOT)
         src.append(INTERPOLATE)
         src = ''.join(src)
-        del response.headers['Cache-Control']
-        del response.headers['Pragma']
-        response.cache_expires(seconds=360)
+        response.headers['Pragma'] = 'public'
+        response.headers['Cache-Control'] = 'max-age=0'
         response.headers['Content-Type'] = 'text/javascript;charset=utf-8'
         return src
