@@ -38,7 +38,18 @@ Database maintenance
 	paster prune-database /etc/baruwa/production.ini
 
 Deletes records older than 30 days from the messages table of the database, and
-archives them to the archive table.
+archives them to the archive table. It deletes records older than 90 days from
+the archives table. These defaults can be configured in the configuration file
+as the following options:
+
+	* ``baruwa.messages.keep.days``
+	* ``baruwa.archive.keep.days``
+
+The following options allow you to specify the periods of the records that need
+to be processed.
+
+	* ``-d`` ``--days`` records older than this number are deleted from messages
+	* ``-a`` ``--adays`` records older than this number are deleted from archives
 
 Spamassassin rule description updates
 -------------------------------------
