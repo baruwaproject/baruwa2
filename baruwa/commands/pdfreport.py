@@ -188,8 +188,8 @@ class SendPdfReports(BaseCommand):
                 pdf_file = base64.b64encode(pdfcreator.build())
                 email.attach('baruwa-reports.pdf',
                             data=pdf_file,
-                            maintype='application/pdf',
-                            subtype='application/x-pdf')
+                            maintype='application',
+                            subtype='pdf')
                 try:
                     mailer.send(email)
                 except (TransportFailedException, MessageFailedException), err:

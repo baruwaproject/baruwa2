@@ -31,7 +31,7 @@ from baruwa.lib.query import sphinx_connection, format_sphinx_ids
 
 def update_rt_index(index_name, sphinxurl):
     "Update the realtime index"
-    ts_sql_temp = """SELECT maxts FROM indexer_counters WHERE
+    ts_sql_temp = """SELECT UNIX_TIMESTAMP(maxts) FROM indexer_counters WHERE
                     tablename='%s_delta'"""
     ids_sql_temp = """SELECT id FROM %s_rt WHERE timestamp <= %%s
                     option max_matches=500"""
@@ -40,8 +40,7 @@ def update_rt_index(index_name, sphinxurl):
     conn = sphinx_connection(sphinxurl)
     try:
         cursor = conn.cursor()
-        cursor.execute(ids_sql_temp % index_name,
-                [int(timestamp.strftime('%s'))])
+        cursor.execute(ids_sql_temp % index_name, [timestamp])
         ids = [int(msgid[0]) for msgid in cursor.fetchall()]
         if ids:
             idstr = format_sphinx_ids(len(ids))

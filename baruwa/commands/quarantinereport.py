@@ -155,7 +155,8 @@ class QuarantineReports(BaseCommand):
                 email.rich = html
                 email.attach('logo.png',
                             data=logo,
-                            maintype='image/png',
+                            maintype='image',
+                            subtype='png',
                             inline=True)
                 mailer.send(email)
                 Session.add_all(torelease)
