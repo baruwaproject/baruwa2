@@ -18,7 +18,7 @@
 #
 "Reports audit messages"
 
-from pylons.i18n.translation import lazy_ugettext as _
+from baruwa.lib.misc import _
 
 
 REPORTVIEW_MSG = _("Report: %(r)s viewed")

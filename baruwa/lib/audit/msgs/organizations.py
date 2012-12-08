@@ -18,7 +18,7 @@
 #
 "Organizations audit messages"
 
-from pylons.i18n.translation import lazy_ugettext as _
+from baruwa.lib.misc import _
 
 
 ADDORG_MSG = _("Organization: %(o)s added")

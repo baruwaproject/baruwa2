@@ -18,7 +18,7 @@
 #
 "Accounts audit messages"
 
-from pylons.i18n.translation import lazy_ugettext as _
+from baruwa.lib.misc import _
 
 
 QUEUERELEASE_MSG = _("Queued Message-ID: %(m)s released to %(a)s")

@@ -168,6 +168,8 @@ class UserFilter(object):
                     .filter(Domain.status == True)\
                     .filter(oa.c.user_id == self.user.id).all()
             domains = [domain.name for domain in dquery]
+            if not domains:
+                domains.append('xx')
             if self.direction and self.direction == 'in':
                 self.query = self.query\
                             .filter(self.model.to_domain.in_(domains))
@@ -207,6 +209,8 @@ class MailQueue(object):
                     .filter(Domain.status == True)\
                     .filter(oa.c.user_id == self.user.id).all()
             domains = [domain.name for domain in dquery]
+            if not domains:
+                domains.append('xx')
             self.query = self.query.filter(
                             func._(or_(MailQueueItem.to_domain.in_(domains),
                             MailQueueItem.from_domain.in_(domains))))
@@ -273,6 +277,8 @@ class DailyTotals(object):
                     (oa, downs.c.organization_id == oa.c.organization_id))\
                     .filter(Domain.status == True)\
                     .filter(oa.c.user_id == self.user.id).all()
+            if not dquery:
+                dquery.append('xx')
             self.query = self.query.filter(func._(
                         or_(Message.to_domain.in_(dquery),
                         Message.from_domain.in_(dquery))))
@@ -455,6 +461,8 @@ def filter_sphinx(dbsession, user, conn):
     "Set Sphinx filters"
     if user.is_domain_admin:
         crcs = get_dom_crcs(dbsession, user)
+        if not crcs:
+            crcs.append(crc32('xx'))
         addrs = ', '.join([str(crc) for crc in crcs])
         select = 'IN(from_dom,%s) OR IN(to_dom,%s) AS cond2' % (addrs, addrs)
         conn.SetSelect(str(select))

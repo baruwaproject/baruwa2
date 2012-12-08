@@ -18,7 +18,7 @@
 #
 "Messages audit messages"
 
-from pylons.i18n.translation import lazy_ugettext as _
+from baruwa.lib.misc import _
 
 
 MSGRELEASE_MSG = _("Message with id: %(m)s released to %(a)s")

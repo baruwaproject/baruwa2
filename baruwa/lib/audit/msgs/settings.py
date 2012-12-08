@@ -18,7 +18,7 @@
 #
 "Settings audit messages"
 
-from pylons.i18n.translation import lazy_ugettext as _
+from baruwa.lib.misc import _
 
 
 ADDACCSIG_MSG = _("Account: %(u)s signature created")

@@ -139,11 +139,15 @@ class CanAccessAccount(Predicate):
                     if accountid and user.id == int(accountid):
                         return
                     orgs = [org.id for org in user.organizations]
+                    if not orgs:
+                        self.unmet()
                     doms = Session.query(Domain.name)\
                             .join(domain_owners)\
                             .filter(domain_owners.c.organization_id.in_(orgs))\
                             .all()
                     domains = [dom.name for dom in doms]
+                    if not domains:
+                        self.unmet()
                     addrs = [requested_account.email.split('@')[1]]
                     if '@' in requested_account.username:
                         addrs.append(requested_account.username.split('@')[1])

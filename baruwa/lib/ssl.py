@@ -28,7 +28,7 @@ def blank_callback():
     return
 
 
-def make_key_pair(key_length=1024):
+def make_key_pair(key_length=2048):
     "Make public/private keys"
     Rand.rand_seed (os.urandom (key_length))
     key = RSA.gen_key (key_length, 65537, blank_callback)

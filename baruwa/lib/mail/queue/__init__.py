@@ -106,7 +106,7 @@ class Mailq(list):
             attribs = {}
             attribs['messageid'] = lines[0][:-3]
             attribs['timestamp'] = str(datetime\
-                                    .fromtimestamp(float(lines[3]\
+                                    .utcfromtimestamp(float(lines[3]\
                                     .split()[0])))
             attribs['lastattempt'] = attribs['timestamp']
             attribs['from_address'] = lines[2].lstrip('<').rstrip('>\n')

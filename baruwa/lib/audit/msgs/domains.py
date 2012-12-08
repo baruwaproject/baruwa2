@@ -18,7 +18,7 @@
 #
 "Domains audit messages"
 
-from pylons.i18n.translation import lazy_ugettext as _
+from baruwa.lib.misc import _
 
 
 ADDDOMAIN_MSG = _("Domain: %(d)s created")
