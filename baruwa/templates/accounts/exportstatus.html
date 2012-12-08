@@ -19,7 +19,7 @@
 		count = session['acexport-count']
 		if count > 10:
 			count = 10
-		percent = percent_of(count, 10)
+		percent = h.percent_of(count, 10)
 		%>
 		${h.portable_img('imgs/ajax-pager.gif', alt="")} ${_('The request is being processed. %d%%') % percent}
 	</div>

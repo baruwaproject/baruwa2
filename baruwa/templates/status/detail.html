@@ -70,7 +70,7 @@
 		</div>
 		${h.form(url('mailq-process'), method='post')}
 		<div class="grid_16 alpha drow">
-			<div class="prefix_10 grid_2 omega">${', '.join(c.form.queue_action.errors) if c.form.queue_action.errors else h.literal('&nbsp;')}</div>
+			<div class="prefix_10 grid_2 omega">${u', '.join([unicode(e) for e in c.form.queue_action.errors]) if c.form.queue_action.errors else h.literal('&nbsp;')}</div>
 			<div class="grid_2 omega">${c.form.queue_action(class_="searchrow")}</div>
 			<div class="grid_2 omega">${h.submit('mqs', _("Process"))}</div>
 		</div>

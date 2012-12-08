@@ -19,7 +19,7 @@
 		<div class="grid_5"></div>
 	</div>
 	% if c.form.signature_content.errors:
-	<div class="grid_16 drow"><div class="formerror">${', '.join(c.form.signature_content.errors)}</div></div>
+	<div class="grid_16 drow"><div class="formerror">${u', '.join([unicode(e) for e in c.form.signature_content.errors])}</div></div>
 	% endif
 	<div class="grid_16 drow" id="editorcontainer">
 	    ${h.highlight_errors(c.form.signature_content)}
