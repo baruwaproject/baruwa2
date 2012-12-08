@@ -126,6 +126,15 @@ let's configure that now.
 NGINX Configuration
 -------------------
 
+Create the template directory ``/var/lib/baruwa/data/templates`` and set the
+correct ownership on the template, sessions, uploads and cache directories::
+
+	mkdir /var/lib/baruwa/data/templates
+	chown baruwa.baruwa /var/lib/baruwa/data/cache
+	chown baruwa.baruwa /var/lib/baruwa/data/uploads
+	chown baruwa.baruwa /var/lib/baruwa/data/templates
+	chown baruwa.baruwa /var/lib/baruwa/data/sessions
+
 A sample configuration file is provided in the source tar ball with the
 contents below, you will modify and use this sample configuration file:
 

@@ -428,9 +428,11 @@ The initial sphinx search indexes need to be created by running the command::
 Step 5d: Create the required directories
 ----------------------------------------
 
-Create log, pid and data directories::
+Create log, pid, locks, dkim, signatures, rules and data directories::
 
-	mkdir -p /var/log/baruwa /var/run/baruwa /var/lib/baruwa/data/{cache,sessions,uploads}
+	mkdir -p /var/log/baruwa /var/run/baruwa /var/lib/baruwa/data/{cache,sessions,uploads} \
+	/var/lock/baruwa /etc/MailScanner/baruwa/signatures /etc/MailScanner/baruwa/dkim \
+	/etc/MailScanner/baruwa/rules
 
 .. _start_celeryd:
 

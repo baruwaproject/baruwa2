@@ -63,7 +63,7 @@ Mod_wsgi configuration
 ----------------------
 
 Create the template directory ``/var/lib/baruwa/data/templates`` and set the
-correct ownership on the template, sessions and cache directories::
+correct ownership on the template, sessions, uploads and cache directories::
 
 	mkdir /var/lib/baruwa/data/templates
 
@@ -111,11 +111,10 @@ contents below, you will modify and use this sample configuration file.
 	            Allow from all
 	            Options -Indexes
 	        </Directory>
-	        WSGIDaemonProcess baruwa threads=10 display-name=baruwa-wsgi \
-	            python-path=/home/baruwa/px/lib/python2.6/site-packages \
-	            python-eggs=/var/tmp
-
-	        WSGIProcessGroup baruwa
+	        #WSGIDaemonProcess baruwa threads=10 display-name=baruwa-wsgi \
+	        #    python-path=/home/baruwa/px/lib/python2.6/site-packages \
+	        #    python-eggs=/var/tmp
+	        #WSGIProcessGroup baruwa
 
 	        WSGIScriptAlias / /home/baruwa/px/lib/python2.6/site-packages/baruwa/baruwa.wsgi
 
