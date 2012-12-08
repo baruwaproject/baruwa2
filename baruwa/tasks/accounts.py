@@ -8,6 +8,8 @@
 import os
 import csv
 
+import pylons
+
 from pylons import config
 from celery.task import task
 from webob.multidict import MultiDict
@@ -15,8 +17,9 @@ from sqlalchemy.sql import and_
 from sqlalchemy.orm import joinedload
 from sqlalchemy.pool import NullPool
 from sqlalchemy import engine_from_config
-from sqlalchemy.exc import IntegrityError, ProgrammingError
 from sqlalchemy.orm.exc import NoResultFound
+from pylons.i18n.translation import _get_translator
+from sqlalchemy.exc import IntegrityError, ProgrammingError
 
 from baruwa.model.meta import Session
 from baruwa.model.domains import Domain
@@ -97,7 +100,8 @@ def importaccounts(domid, filename, skipfirst, userid):
     logger = importaccounts.get_logger()
     results = dict(rows=[], global_error=[])
     keys = tuple(ACCOUNTFIELDS + ADDRESSFIELDS)
-
+    translator = _get_translator(None)
+    pylons.translator._push_object(translator)
     try:
         with open(filename, 'rU') as handle:
             dialect = csv.Sniffer().sniff(handle.read(1024))
@@ -195,6 +199,7 @@ def importaccounts(domid, filename, skipfirst, userid):
         os.unlink(filename)
     except OSError:
         pass
+    pylons.translator._pop_object()
     return results
 
 

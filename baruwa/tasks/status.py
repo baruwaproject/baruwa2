@@ -16,7 +16,6 @@ from pylons import config
 from celery.task import task
 from sqlalchemy.pool import NullPool
 from eventlet.green import subprocess
-from pylons.i18n.translation import _
 from sqlalchemy import desc
 from sqlalchemy import engine_from_config
 from sqlalchemy.exc import DatabaseError
@@ -29,23 +28,17 @@ from reportlab.lib.styles import ParagraphStyle
 from reportlab.platypus import Paragraph, Image, Spacer, TableStyle
 
 from baruwa.model.meta import Session
-from baruwa.model.status import AuditLog, CATEGORY_MAP
+from baruwa.lib.graphs import PIE_TABLE
 from baruwa.lib.query import clean_sphinx_q
 from baruwa.lib.mail.queue.exim import EximQueue
 from baruwa.lib.mail.message import PreviewMessage
 from baruwa.lib.mail.queue.convert import Exim2Mbox
 from baruwa.lib.mail.queue.search import search_queue
+from baruwa.model.status import AuditLog, CATEGORY_MAP
 from baruwa.commands.queuestats import update_queue_stats
 from baruwa.lib.regex import EXIM_MSGID_RE, BAYES_INFO_RE
-from baruwa.lib.misc import get_processes, get_config_option, wrap_string
-from baruwa.lib.graphs import PIE_TABLE
 from baruwa.lib.outputformats import build_csv, BaruwaPDFTemplate
-
-try:
-    x = _('hi')
-    x
-except TypeError:
-    from baruwa.lib.misc import _
+from baruwa.lib.misc import get_processes, get_config_option, wrap_string, _
 
 
 STYLES = getSampleStyleSheet()
@@ -60,7 +53,7 @@ if not Session.registry.has():
 def systemstatus():
     "process via mq"
     logger = systemstatus.get_logger()
-    logger.info(_("Checking system status"))
+    logger.info("Checking system status")
 
     stats = dict(mem=None,
                 cpu=None,
@@ -113,7 +106,7 @@ def systemstatus():
 def salint():
     "Spamassassin lint"
     logger = salint.get_logger()
-    logger.info(_("Running Spamassassin lint checks"))
+    logger.info("Running Spamassassin lint checks")
     lint = []
     saprefs = config.get('ms.saprefs',
             '/etc/MailScanner/spam.assassin.prefs.conf')
@@ -139,7 +132,7 @@ def salint():
 def bayesinfo():
     "Get bayes info"
     logger = bayesinfo.get_logger()
-    logger.info(_("Generating Bayesian stats"))
+    logger.info("Generating Bayesian stats")
     info = {}
     saprefs = config.get(
                     'ms.saprefs',
@@ -196,19 +189,20 @@ def preview_queued_msg(msgid, direction, attachid=None, imgid=None):
         msgfile = StringIO(mbox)
         previewer = PreviewMessage(msgfile)
         if attachid:
-            logger.info(_("Download attachment: %(attachid)s of "
-                        "message: %(id)s"),
+            logger.info("Download attachment: %(attachid)s of "
+                        "message: %(id)s",
                         dict(id=msgid, attachid=attachid))
             return previewer.attachment(attachid)
         if imgid:
-            logger.info(_("Image access: %(img)s"), dict(img=imgid))
+            logger.info("Image access: %(img)s", dict(img=imgid))
             return previewer.img(imgid)
-        logger.info(_("Preview of message: %(id)s"), dict(id=msgid))
+        logger.info("Preview of message: %(id)s", dict(id=msgid))
         return previewer.preview()
-    except TypeError:
+    except TypeError, type_error:
+        logger.info("Error occured: %s" % str(type_error))
         return {}
     except (AssertionError, IOError), error:
-        logger.info(_("Accessing message: %(id)s, Failed: %(error)s"),
+        logger.info("Accessing message: %(id)s, Failed: %(error)s",
         dict(id=msgid, error=error))
         return None
     finally:
@@ -223,25 +217,25 @@ def process_queued_msgs(msgids, action, direction, *args):
         logger = process_queued_msgs.get_logger()
         eximcmd = get_config_option('Sendmail2') if direction == 2 else 'exim'
         if not 'exim' in eximcmd:
-            logger.info(_("Invalid exim command: %s") % eximcmd)
+            logger.info("Invalid exim command: %s" % eximcmd)
             return
         if direction == 1 and action not in ['bounce', 'delete']:
-            logger.info(_("Invalid action: %s") % action)
+            logger.info("Invalid action: %s" % action)
             return
         queue = EximQueue('sudo -u exim ' + eximcmd)
         func = getattr(queue, action)
         msgids = [msgid for msgid in msgids if EXIM_MSGID_RE.match(msgid)]
         func(msgids, *args)
         for result in queue.results:
-            logger.info(_("STDOUT: %s") % result)
+            logger.info("STDOUT: %s" % result)
         if queue.errors:
             for errmsg in queue.errors:
-                logger.info(_("STDERR: %s") % errmsg)
+                logger.info("STDERR: %s" % errmsg)
         update_queue_stats()
     except TypeError, error:
-        logger.info(_("Invalid input: %s") % error)
+        logger.info("Invalid input: %s" % error)
     except AttributeError:
-        logger.info(_("Invalid action: %s") % action)
+        logger.info("Invalid action: %s" % action)
         
 
 @task(name='update-audit-log', ignore_result=True)
@@ -263,10 +257,10 @@ def update_audit_log(username,
             entry.timestamp = timestamp
         Session.add(entry)
         Session.commit()
-        logger.info(_("Audit Log update for: %s from: %s") %
+        logger.info("Audit Log update for: %s from: %s" %
                     (username, remoteip))
     except DatabaseError, err:
-        logger.error(_("Audit Log FAILURE: %s %s %s %s %s %s Error: %s") %
+        logger.error("Audit Log FAILURE: %s %s %s %s %s %s Error: %s" %
                     (username,
                     category,
                     info,
@@ -362,10 +356,10 @@ def export_auditlog(format, query):
                     'remoteip',
                     'category')
             results['f'] = build_csv(rows, keys)
-        logger.info(_("Audit Log export complete: %s") % results['filename'])
+        logger.info("Audit Log export complete: %s" % results['filename'])
         return results
     except (DatabaseError), err:
         results['errormsg'] = str(err)
-        logger.info(_("Audit Log export FAILURE: %s") % str(err))
+        logger.info("Audit Log export FAILURE: %s" % str(err))
         return results
         

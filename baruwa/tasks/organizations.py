@@ -9,12 +9,15 @@ import os
 import re
 import csv
 
+import pylons
+
 from pylons import config
 from celery.task import task
 from sqlalchemy.pool import NullPool
 from webob.multidict import MultiDict
 from sqlalchemy import engine_from_config
 from sqlalchemy.exc import IntegrityError
+from pylons.i18n.translation import _get_translator
 
 from baruwa.model.meta import Session
 from baruwa.model.accounts import Group
@@ -131,6 +134,8 @@ def importdomains(orgid, filename, skipfirst):
     logger = importdomains.get_logger()
     results = dict(rows=[], global_error=[])
     keys = tuple(DOMAINFIELDS + DAFIELDS + DSFIELDS + ASFIELDS)
+    translator = _get_translator(None)
+    pylons.translator._push_object(translator)
     try:
         with open(filename, 'rU') as handle:
             dialect = csv.Sniffer().sniff(handle.read(1024))
@@ -212,5 +217,6 @@ def importdomains(orgid, filename, skipfirst):
         os.unlink(filename)
     except OSError:
         pass
+    pylons.translator._pop_object()
     return results
 
