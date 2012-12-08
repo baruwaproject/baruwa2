@@ -275,7 +275,7 @@ class StatusController(BaseController):
                         info = QUEUEDOWNLOAD_MSG % dict(m=mailqitem.messageid,
                                                         a=task.result['name'])
                         audit_log(c.user.username,
-                                1, info, request.host,
+                                1, unicode(info), request.host,
                                 request.remote_addr, now())
                         return base64.decodestring(task.result['img'])
                     abort(404)
@@ -283,7 +283,7 @@ class StatusController(BaseController):
                     info = QUEUEDOWNLOAD_MSG % dict(m=mailqitem.messageid,
                                                     a=task.result['name'])
                     audit_log(c.user.username,
-                            1, info, request.host,
+                            1, unicode(info), request.host,
                             request.remote_addr, now())
                     response.content_type = task.result['mimetype']
                     dispos = 'attachment; filename="%s"' % task.result['name']
@@ -313,7 +313,7 @@ class StatusController(BaseController):
                 c.message = task.result
                 info = QUEUEPREVIEW_MSG % dict(m=mailqitem.messageid)
                 audit_log(c.user.username,
-                        1, info, request.host,
+                        1, unicode(info), request.host,
                         request.remote_addr, now())
             else:
                 raise TimeoutError
@@ -363,7 +363,7 @@ class StatusController(BaseController):
             statusdict.update(hoststatus)
             info = HOSTSTATUS_MSG % dict(n=server.hostname)
             audit_log(c.user.username,
-                    1, info, request.host,
+                    1, unicode(info), request.host,
                     request.remote_addr, now())
         except (TimeoutError, QueueNotFound):
             pass
@@ -385,7 +385,7 @@ class StatusController(BaseController):
             result = task.result
             info = HOSTBAYES_MSG % dict(n=server.hostname)
             audit_log(c.user.username,
-                    1, info, request.host,
+                    1, unicode(info), request.host,
                     request.remote_addr, now())
         except (TimeoutError, QueueNotFound, OSError):
             result = {}
@@ -406,7 +406,7 @@ class StatusController(BaseController):
             result = task.result
             info = HOSTSALINT_MSG % dict(n=server.hostname)
             audit_log(c.user.username,
-                    1, info, request.host,
+                    1, unicode(info), request.host,
                     request.remote_addr, now())
         except (TimeoutError, QueueNotFound, OSError):
             result = []
@@ -525,7 +525,7 @@ class StatusController(BaseController):
         d = request.GET.get('d', None)
         if finished and (d and d == 'y'):
             audit_log(c.user.username,
-                    5, AUDITLOGEXPORT_MSG, request.host,
+                    5, unicode(AUDITLOGEXPORT_MSG), request.host,
                     request.remote_addr, now())
             response.content_type = result.result['content_type']
             response.headers['Cache-Control'] = 'max-age=0'

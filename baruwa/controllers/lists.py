@@ -250,7 +250,7 @@ class ListsController(BaseController):
                     listname = _('Banned senders')
                 info = LISTADD_MSG % dict(s=item.from_address, l=listname)
                 audit_log(c.user.username,
-                        3, info, request.host,
+                        3, unicode(info), request.host,
                         request.remote_addr, now())
                 flash(_('The item has been added to the list'))
                 if not request.is_xhr:
@@ -297,7 +297,7 @@ class ListsController(BaseController):
             update_serial.delay()
             info = LISTDEL_MSG % dict(s=name, l=listname)
             audit_log(c.user.username,
-                    4, info, request.host,
+                    4, unicode(info), request.host,
                     request.remote_addr, now())
             flash(_('The item has been deleted'))
             if not request.is_xhr:

@@ -20,8 +20,7 @@
 "status models"
 
 from sqlalchemy import Column
-from pylons.i18n.translation import _
-#from sqlalchemy.sql.expression import text
+# from pylons.i18n.translation import lazy_ugettext as _
 from sqlalchemy.types import Unicode, UnicodeText, Integer
 from sqlalchemy.types import DateTime, SmallInteger, TIMESTAMP, BigInteger
 
@@ -29,19 +28,12 @@ from baruwa.lib.custom_ddl import utcnow
 from baruwa.model.meta import Base
 
 
-try:
-    x = _('hi')
-    x
-except TypeError:
-    from baruwa.lib.misc import _
-
-
-CATEGORY_MAP = {1: _('Read'),
-                2: _('Update'),
-                3: _('Create'),
-                4: _('Delete'),
-                5: _('Export'),
-                6: _('Auth')}
+CATEGORY_MAP = {1: 'Read',
+                2: 'Update',
+                3: 'Create',
+                4: 'Delete',
+                5: 'Export',
+                6: 'Auth'}
 
 
 class MailQueueItem(Base):
@@ -50,7 +42,7 @@ class MailQueueItem(Base):
 
     id = Column(Integer, primary_key=True)
     messageid = Column(Unicode(255))
-    timestamp = Column(DateTime(timezone=True))
+    timestamp = Column(DateTime(timezone=True), server_default=utcnow())
     from_address = Column(Unicode(255), index=True)
     to_address = Column(Unicode(255), index=True)
     from_domain = Column(Unicode(255), index=True)
@@ -59,7 +51,7 @@ class MailQueueItem(Base):
     hostname = Column(UnicodeText)
     size = Column(Integer)
     attempts = Column(Integer)
-    lastattempt = Column(DateTime(timezone=True))
+    lastattempt = Column(DateTime(timezone=True), server_default=utcnow())
     direction = Column(SmallInteger, default=1, index=True)
     reason = Column(UnicodeText)
     flag = Column(SmallInteger, default=0)
@@ -100,7 +92,7 @@ class AuditLog(Base):
     def tojson(self):
         "JSON friendly format"
         return dict(username=self.username,
-                    category=CATEGORY_MAP[self.category],
+                    category=unicode(CATEGORY_MAP[self.category]),
                     info=self.info,
                     hostname=self.hostname,
                     remoteip=self.remoteip,

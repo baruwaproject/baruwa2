@@ -338,7 +338,11 @@ class ReportsController(BaseController):
 
     def display(self, reportid, format=None):
         "Display a report"
-        c.report_title = REPORTS[reportid]['title']
+        try:
+            c.report_title = REPORTS[reportid]['title']
+        except KeyError:
+            abort(404)
+
         filters = session.get('filter_by', [])
         if reportid in ['1', '2', '3', '4', '5', '6', '7', '8', '10']:
             rquery = ReportQuery(c.user, reportid, filters)
@@ -351,7 +355,7 @@ class ReportsController(BaseController):
             if format == 'csv':
                 info = REPORTDL_MSG % dict(r=c.report_title, f='csv')
                 audit_log(c.user.username,
-                        1, info, request.host,
+                        1, unicode(info), request.host,
                         request.remote_addr, now())
                 return self._generate_csv(data, reportid)
             jsondata = [dict(tooltip=getattr(item, 'address'),
@@ -456,7 +460,7 @@ class ReportsController(BaseController):
             elif format == 'csv':
                 info = REPORTDL_MSG % dict(r=c.report_title, f='csv')
                 audit_log(c.user.username,
-                        1, info, request.host,
+                        1, unicode(info), request.host,
                         request.remote_addr, now())
                 return self._generate_csv(data, reportid)
             else:
@@ -479,7 +483,7 @@ class ReportsController(BaseController):
         if format == 'pdf' and reportid != '9':
             info = REPORTDL_MSG % dict(r=c.report_title, f='pdf')
             audit_log(c.user.username,
-                    1, info, request.host,
+                    1, unicode(info), request.host,
                     request.remote_addr, now())
             return self._generate_pdf(data, reportid)
         c.reportid = reportid
@@ -492,7 +496,7 @@ class ReportsController(BaseController):
         c.form = FilterForm(request.POST, csrf_context=session)
         info = REPORTVIEW_MSG % dict(r=c.report_title)
         audit_log(c.user.username,
-                1, info, request.host,
+                1, unicode(info), request.host,
                 request.remote_addr, now())
         return render(template)
 

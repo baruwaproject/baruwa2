@@ -303,7 +303,7 @@ class MessagesController(BaseController):
             if format == 'json':
                 html = flash.pop_messages()
                 response.headers['Content-Type'] = 'application/json'
-                return json.dumps(dict(result=html))
+                return json.dumps(dict(result=unicode(html[0])))
 
         if format == 'json':
             response.headers['Content-Type'] = 'application/json'
@@ -549,7 +549,7 @@ class MessagesController(BaseController):
                         info = MSGDOWNLOAD_MSG % dict(m=message.id,
                                                 a=task.result['name'])
                         audit_log(c.user.username,
-                                1, info, request.host,
+                                1, unicode(info), request.host,
                                 request.remote_addr, now())
                         return base64.decodestring(task.result['img'])
                     abort(404)
@@ -557,7 +557,7 @@ class MessagesController(BaseController):
                     info = MSGDOWNLOAD_MSG % dict(m=message.id,
                                             a=task.result['name'])
                     audit_log(c.user.username,
-                            1, info, request.host,
+                            1, unicode(info), request.host,
                             request.remote_addr, now())
                     response.content_type = task.result['mimetype']
                     content_disposition = 'attachment; filename="%s"' % \
@@ -588,7 +588,7 @@ class MessagesController(BaseController):
                 c.message = task.result
                 info = MSGPREVIEW_MSG % dict(m=message.id)
                 audit_log(c.user.username,
-                        1, info, request.host,
+                        1, unicode(info), request.host,
                         request.remote_addr, now())
             else:
                 c.message = {}

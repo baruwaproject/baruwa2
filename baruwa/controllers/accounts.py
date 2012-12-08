@@ -280,7 +280,7 @@ class AccountsController(BaseController):
         session.save()
         info = ACCOUNTLOGIN_MSG % dict(u=user.username)
         audit_log(user.username,
-                6, info, request.host,
+                6, unicode(info), request.host,
                 request.remote_addr, now())
         flash(msg)
         redirect(url(came_from))
@@ -316,7 +316,7 @@ class AccountsController(BaseController):
                     % dict(name=user.username))
                 info = PASSWORDCHANGE_MSG % dict(u=user.username)
                 audit_log(c.user.username,
-                        2, info, request.host,
+                        2, unicode(info), request.host,
                         request.remote_addr, now())
             else:
                 flash(_('This is an external account, use'
@@ -346,7 +346,7 @@ class AccountsController(BaseController):
                     % dict(name=user.username))
                 info = PASSWORDCHANGE_MSG % dict(u=user.username)
                 audit_log(c.user.username,
-                        2, info, request.host,
+                        2, unicode(info), request.host,
                         request.remote_addr, now())
             else:
                 flash(_('This is an external account, use'
@@ -529,7 +529,7 @@ class AccountsController(BaseController):
                 update_serial.delay()
                 info = ADDACCOUNT_MSG % dict(u=user.username)
                 audit_log(c.user.username,
-                        3, info, request.host,
+                        3, unicode(info), request.host,
                         request.remote_addr, now())
                 flash(_('The account: %(user)s was created successfully') %
                         {'user': c.form.username.data})
@@ -572,7 +572,7 @@ class AccountsController(BaseController):
                     kwd['uc'] = 1
                     info = UPDATEACCOUNT_MSG % dict(u=user.username)
                     audit_log(c.user.username,
-                            2, info, request.host,
+                            2, unicode(info), request.host,
                             request.remote_addr, now())
                 except IntegrityError:
                     Session.rollback()
@@ -608,7 +608,7 @@ class AccountsController(BaseController):
             flash(_('The account has been deleted'))
             info = DELETEACCOUNT_MSG % dict(u=username)
             audit_log(c.user.username,
-                    4, info, request.host,
+                    4, unicode(info), request.host,
                     request.remote_addr, now())
             if userid == c.user.id:
                 redirect(url('/logout'))
@@ -658,7 +658,7 @@ class AccountsController(BaseController):
                 Session.delete(account)
                 tasks.append([c.user.username,
                             4,
-                            info,
+                            unicode(info),
                             request.host,
                             request.remote_addr,
                             now()])
@@ -716,7 +716,7 @@ class AccountsController(BaseController):
                 update_serial.delay()
                 info = ADDRADD_MSG % dict(a=addr.address, ac=user.username)
                 audit_log(c.user.username,
-                        3, info, request.host,
+                        3, unicode(info), request.host,
                         request.remote_addr, now())
                 flash(
                 _('The alias address %(address)s was successfully created.' %
@@ -763,7 +763,7 @@ class AccountsController(BaseController):
                     info = ADDRUPDATE_MSG % dict(a=address.address,
                                                 ac=address.user.username)
                     audit_log(c.user.username,
-                            2, info, request.host,
+                            2, unicode(info), request.host,
                             request.remote_addr, now())
                     flash(_('The alias address has been updated'))
                 else:
@@ -798,7 +798,7 @@ class AccountsController(BaseController):
             update_serial.delay()
             info = ADDRDELETE_MSG % dict(a=addr, ac=username)
             audit_log(c.user.username,
-                    4, info, request.host,
+                    4, unicode(info), request.host,
                     request.remote_addr, now())
             flash(_('The address has been deleted'))
             redirect(url(controller='accounts', action='detail',
@@ -909,7 +909,7 @@ class AccountsController(BaseController):
                 redirect(url(controller='accounts'))
             update_serial.delay()
             audit_log(c.user.username,
-                    3, ACCOUNTIMPORT_MSG, request.host,
+                    3, unicode(ACCOUNTIMPORT_MSG), request.host,
                     request.remote_addr, now())
         else:
             session['acimport-count'] += 1
@@ -967,7 +967,7 @@ class AccountsController(BaseController):
                         f=True if not result.result['global_error'] else False,
                         id=taskid, global_error=result.result['global_error'])
             audit_log(c.user.username,
-                    5, ACCOUNTEXPORT_MSG, request.host,
+                    5, unicode(ACCOUNTEXPORT_MSG), request.host,
                     request.remote_addr, now())
         else:
             session['acexport-count'] += 1

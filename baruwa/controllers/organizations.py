@@ -161,7 +161,7 @@ class OrganizationsController(BaseController):
                 Session.commit()
                 info = ADDORG_MSG % dict(o=org.name)
                 audit_log(c.user.username,
-                        3, info, request.host,
+                        3, unicode(info), request.host,
                         request.remote_addr, now())
                 flash(_('The organization has been created'))
                 redirect(url(controller='organizations'))
@@ -193,7 +193,7 @@ class OrganizationsController(BaseController):
                     Session.commit()
                     info = UPDATEORG_MSG % dict(o=org.name)
                     audit_log(c.user.username,
-                            2, info, request.host,
+                            2, unicode(info), request.host,
                             request.remote_addr, now())
                     flash(_('The organization has been updated'))
                 except IntegrityError:
@@ -224,7 +224,7 @@ class OrganizationsController(BaseController):
             Session.commit()
             info = DELETEORG_MSG % dict(o=org_name)
             audit_log(c.user.username,
-                    4, info, request.host,
+                    4, unicode(info), request.host,
                     request.remote_addr, now())
             flash(_('The organization has been deleted'))
             redirect(url(controller='organizations'))
@@ -254,7 +254,7 @@ class OrganizationsController(BaseController):
                 relay_name = c.form.address.data or c.form.username.data
                 info = ADDRELAY_MSG % dict(r=relay_name)
                 audit_log(c.user.username,
-                        3, info, request.host,
+                        3, unicode(info), request.host,
                         request.remote_addr, now())
                 flash(_('The outbound settings have been created'))
             except IntegrityError:
@@ -293,7 +293,7 @@ class OrganizationsController(BaseController):
                     Session.commit()
                     info = UPDATERELAY_MSG % dict(r=c.relayname)
                     audit_log(c.user.username,
-                            2, info, request.host,
+                            2, unicode(info), request.host,
                             request.remote_addr, now())
                     flash(_('The outbound settings have been updated'))
                 except IntegrityError:
@@ -321,7 +321,7 @@ class OrganizationsController(BaseController):
                 Session.commit()
                 info = DELETERELAY_MSG % dict(r=c.relayname)
                 audit_log(c.user.username,
-                        4, info, request.host,
+                        4, unicode(info), request.host,
                         request.remote_addr, now())
                 flash(_('The outbound settings have been deleted'))
             except:
@@ -393,7 +393,7 @@ class OrganizationsController(BaseController):
             update_serial.delay()
             info = IMPORTORG_MSG % dict(o='-')
             audit_log(c.user.username,
-                    3, info, request.host,
+                    3, unicode(info), request.host,
                     request.remote_addr, now())
         else:
             session['dimport-counter'] += 1
