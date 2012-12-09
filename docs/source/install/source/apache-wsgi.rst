@@ -69,17 +69,17 @@ correct ownership on the template, sessions, uploads and cache directories::
 
 CentOS/RHEL/SL::
 
-	chown apache.apache /var/lib/baruwa/data/cache
-	chown apache.apache /var/lib/baruwa/data/uploads
-	chown apache.apache /var/lib/baruwa/data/templates
-	chown apache.apache /var/lib/baruwa/data/sessions
+	chown apache.apache -R /var/lib/baruwa/data/cache
+	chown apache.apache -R /var/lib/baruwa/data/uploads
+	chown apache.apache -R /var/lib/baruwa/data/templates
+	chown apache.apache -R /var/lib/baruwa/data/sessions
 
 Debian/Ubuntu::
 
-	chown www-data.www-data /var/lib/baruwa/data/cache
-	chown www-data.www-data /var/lib/baruwa/data/uploads
-	chown www-data.www-data /var/lib/baruwa/data/templates
-	chown www-data.www-data /var/lib/baruwa/data/sessions
+	chown www-data.www-data -R /var/lib/baruwa/data/cache
+	chown www-data.www-data -R /var/lib/baruwa/data/uploads
+	chown www-data.www-data -R /var/lib/baruwa/data/templates
+	chown www-data.www-data -R /var/lib/baruwa/data/sessions
 
 FreeBSD::
 

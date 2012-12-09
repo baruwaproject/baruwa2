@@ -83,6 +83,8 @@ over to it. You need to add ``home = /home/baruwa/px`` to the existing options:
     socket = /var/run/baruwa/baruwa.sock
     master = true
     processes = 5
+    uid = baruwa
+    gid = baruwa
     daemonize = /var/log/uwsgi/uwsgi-baruwa.log
     home = /home/baruwa/px
 
@@ -102,6 +104,15 @@ to correctly find your baruwa installation. If you get errors about baruwa not
 loading, check that this setting is correct first.
 
 ``daemonize:`` Run uWSGI in daemon mode, and log all data to the file specified.
+
+Create the template directory ``/var/lib/baruwa/data/templates`` and set the
+correct ownership on the template, sessions, uploads and cache directories::
+
+	mkdir /var/lib/baruwa/data/templates
+	chown baruwa.baruwa -R /var/lib/baruwa/data/cache
+	chown baruwa.baruwa -R /var/lib/baruwa/data/uploads
+	chown baruwa.baruwa -R /var/lib/baruwa/data/templates
+	chown baruwa.baruwa -R /var/lib/baruwa/data/sessions
 
 Now that you have configured uWSGI, you can point to your ini file and launch uWSGI
 like this:
@@ -125,15 +136,6 @@ let's configure that now.
 
 NGINX Configuration
 -------------------
-
-Create the template directory ``/var/lib/baruwa/data/templates`` and set the
-correct ownership on the template, sessions, uploads and cache directories::
-
-	mkdir /var/lib/baruwa/data/templates
-	chown baruwa.baruwa /var/lib/baruwa/data/cache
-	chown baruwa.baruwa /var/lib/baruwa/data/uploads
-	chown baruwa.baruwa /var/lib/baruwa/data/templates
-	chown baruwa.baruwa /var/lib/baruwa/data/sessions
 
 A sample configuration file is provided in the source tar ball with the
 contents below, you will modify and use this sample configuration file:

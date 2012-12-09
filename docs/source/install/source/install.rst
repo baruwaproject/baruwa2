@@ -311,7 +311,6 @@ every hour::
 	#!/bin/bash
 	#
 	indexer auditlog lists domains accounts organizations --rotate &>/dev/null
-	/home/baruwa/px/bin/paster update-delta-index --index messages --realtime /etc/baruwa/production.ini
 	EOF
 
 Make the cronjob executable::
@@ -405,6 +404,10 @@ Debian/Ubuntu::
 FreeBSD::
 
 	TODO
+
+Check the configuration file and ensure that the ``baruwa.timezone`` option matches
+the timezone configured on your server. Take time to review the other options to
+ensure that they are correct for your setup.
 
 .. _populate_db:
 
@@ -507,6 +510,58 @@ and reduced memory usage.
 
   .. toctree::
    nginx-uwsgi
+
+Step 6c: Install cronjobs and sudo file
+--------------------------------------
+
+Baruwa needs to run some commands as the mail server user, like managing the
+queue as well as reloading the mail server to pickup configuration changes.
+
+Add the baruwa user to the exim group::
+
+	usermod -G exim baruwa
+
+Then create a custom sudo file ``/etc/sudoers.d/baruwa``
+
+.. sourcecode:: bash
+
+	Defaults:baruwa   !requiretty, visiblepw
+
+	baruwa ALL=(exim) NOPASSWD: /usr/sbin/exim -C /etc/exim/exim_out.conf -M *, \
+	        /usr/sbin/exim -C /etc/exim/exim_out.conf -Mf *, \
+	        /usr/sbin/exim -C /etc/exim/exim_out.conf -Mrm *, \
+	        /usr/sbin/exim -C /etc/exim/exim_out.conf -Mg *, \
+	        /usr/sbin/exim -C /etc/exim/exim_out.conf -Mar *, \
+	        /usr/sbin/exim -C /etc/exim/exim_out.conf -qff, \
+			/usr/sbin/exim -Mrm *, \
+			/usr/sbin/exim -Mg *, \
+			/usr/sbin/exim -Mar *
+
+	baruwa ALL = NOPASSWD: /bin/kill -s HUP *
+
+Baruwa runs cronjobs to handle some background tasks such as sending reports,
+pruning databases, updating indexes etc.
+
+Create the cron file ``/etc/cron.d/baruwa`` with the following contents
+
+.. sourcecode:: bash
+
+	*/3 * * * * exim /home/baruwa/px/bin/paster update-queue-stats \
+					/etc/baruwa/production.ini >/dev/null 2>&1
+	0 * * * * baruwa /home/baruwa/px/bin/paster update-sa-rules \
+					/etc/baruwa/production.ini >/dev/null 2>&1
+	0 * * * * baruwa /home/baruwa/px/bin/paster update-delta-index \
+					--index messages --realtime /etc/baruwa/production.ini
+	0 0 * * * baruwa /home/baruwa/px/bin/paster send-quarantine-reports \
+					/etc/baruwa/production.ini >/dev/null 2>&1
+	0 1 * * * baruwa /home/baruwa/px/bin/paster prunedb \
+					/etc/baruwa/production.ini >/dev/null 2>&1
+	9 1 * * * baruwa /home/baruwa/px/bin/paster update-delta-index \
+					--index archive /etc/baruwa/production.ini
+	0 2 * * * baruwa /home/baruwa/px/bin/paster prunequarantine \
+					/etc/baruwa/production.ini >/dev/null 2>&1
+	0 6 1 * * baruwa /home/baruwa/px/bin/paster send-pdf-reports \
+					/etc/baruwa/production.ini >/dev/null 2>&1
 
 Step 7: Getting help
 ====================

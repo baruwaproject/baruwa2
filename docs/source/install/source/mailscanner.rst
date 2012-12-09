@@ -9,7 +9,7 @@ you are not familiar with MailScanner please refer to the
 MailScanner website or read the
 `MailScanner book <http://mailscanner.info/files/MailScanner-Guide.pdf>`_ which
 is freely available online. :ref:`ms_sample_configs` are provided for MailScanner
-and Exim you can reuse.
+and Exim which you can reuse.
 
 In order to use Baruwa with mailscanner you need to make a few changes to the
 MailScanner code and install the :ref:`install_custom_module`.

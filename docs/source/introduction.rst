@@ -13,8 +13,8 @@ monitoring the health of the services and a lot more.
 
 Baruwa is implemented using web 2.0 features (AJAX) where deemed fit.
 Baruwa has full support for i18n, enabling you to translate it into any
-language of your choosing. Baruwa has already been translated to over
-`25 languages <https://www.transifex.com/projects/p/baruwa/>`_.
+language of your choosing. Baruwa has already been translated into to
+over `25 languages <https://www.transifex.com/projects/p/baruwa/>`_.
 
 It includes reporting functionality with an easy to use query builder,
 results can be displayed as message lists or graphed as colorful and
@@ -25,7 +25,7 @@ information very fast and easily. Advanced searching options available
 in leading web search engines are supported in Baruwa.
 
 A Custom MailScanner module is provided for asynchronous logging of
-messages to a PostgreSQL database with SQLite as backup as well as
+messages to a PostgreSQL database with SQLite backup as well as
 updating of the realtime search index.
 
 Baruwa is open source software, written in Python/Perl using the Pylons

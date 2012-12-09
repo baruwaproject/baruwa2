@@ -15,7 +15,8 @@ Baruwa writes to::
 	    useradd -r -g baruwa -d /var/lib/baruwa \
 	    -s /sbin/nologin -c "Baruwa user" baruwa
 	chown baruwa.baruwa -R /var/lib/baruwa \
-		/var/run/baruwa /var/log/baruwa
+		/var/run/baruwa /var/log/baruwa \
+		/var/lock/baruwa /etc/MailScanner/baruwa
 
 A CentOS init file is provided in the source tar ball. Extract the init file
 from the tar ball and install to the init directory ``/etc/init.d`` ::
@@ -67,7 +68,8 @@ Baruwa writes to::
         --no-create-home --gecos "Baruwa user" \
         --disabled-login baruwa
 	chown baruwa.baruwa -R /var/lib/baruwa \
-		/var/run/baruwa /var/log/baruwa
+		/var/run/baruwa /var/log/baruwa \
+		/var/lock/baruwa /etc/MailScanner/baruwa
 
 A Debian init file is provided in the source tar ball. Extract it and install
 to the init directory ``/etc/init.d`` ::
