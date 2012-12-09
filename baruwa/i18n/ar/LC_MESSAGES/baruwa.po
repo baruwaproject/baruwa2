@@ -1,24 +1,23 @@
-# Translations template for baruwa.
+# Arabic translations for baruwa.
 # Copyright (C) 2012 Andrew Colin Kissa
 # This file is distributed under the same license as the baruwa project.
-# 
+#
 # Translators:
 # <andrew@topdog.za.net>, 2012.
-#   <andrew@topdog.za.net>, 2012.
 msgid ""
 msgstr ""
-"Project-Id-Version: baruwa\n"
+"Project-Id-Version:  baruwa\n"
 "Report-Msgid-Bugs-To: baruwa@lists.baruwa.org\n"
-"POT-Creation-Date: 2012-12-06 17:05+0200\n"
+"POT-Creation-Date: 2012-12-09 10:37+0200\n"
 "PO-Revision-Date: 2012-12-06 17:22+0200\n"
 "Last-Translator: Andrew Colin Kissa <andrew@topdog.za.net>\n"
 "Language-Team: Baruwa Project\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : "
+"n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: auto-translate.py 0.0.1\n"
-"Language: ar\n"
-"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+"Generated-By: Babel 0.9.6\n"
 
 #: baruwa/commands/pdfreport.py:116 baruwa/controllers/reports.py:62
 #: baruwa/templates/reports/index.html:13
@@ -124,7 +123,7 @@ msgstr "تقرير البريد تحت"
 msgid "Message Totals"
 msgstr "إجماليات رسالة"
 
-#: baruwa/commands/pdfreport.py:183 baruwa/commands/quarantinereport.py:156
+#: baruwa/commands/pdfreport.py:183 baruwa/commands/quarantinereport.py:150
 msgid "Baruwa Reports"
 msgstr "أهم التقارير"
 
@@ -132,7 +131,7 @@ msgstr "أهم التقارير"
 msgid "Baruwa usage report"
 msgstr "تقرير الاستخدام تحت"
 
-#: baruwa/commands/quarantinereport.py:159
+#: baruwa/commands/quarantinereport.py:153
 msgid "Baruwa quarantine report"
 msgstr "التقرير تحت الحجر الصحي"
 
@@ -191,8 +190,8 @@ msgstr "تم حذف الحساب"
 #: baruwa/controllers/accounts.py:617
 #, python-format
 msgid ""
-"The account: %(a)s and all associated data will be deleted, This action is "
-"not reversible."
+"The account: %(a)s and all associated data will be deleted, This action "
+"is not reversible."
 msgstr ""
 
 #: baruwa/controllers/accounts.py:674
@@ -238,56 +237,57 @@ msgstr "تم إجراء أية تغييرات إلى العنوان"
 msgid "The address has been deleted"
 msgstr "تم حذف العنوان"
 
-#: baruwa/controllers/accounts.py:871 baruwa/controllers/organizations.py:358
+#: baruwa/controllers/accounts.py:873 baruwa/controllers/organizations.py:358
 msgid ""
-"File uploaded, and is being processed, this page will automatically refresh "
-"to show the status"
+"File uploaded, and is being processed, this page will automatically "
+"refresh to show the status"
 msgstr ""
-"ملف تم الرفع، وتتم معالجته، سوف يقوم تلقائياً بتحديث هذه الصفحة لإظهار حالة"
+"ملف تم الرفع، وتتم معالجته، سوف يقوم تلقائياً بتحديث هذه الصفحة لإظهار "
+"حالة"
 
-#: baruwa/controllers/accounts.py:878 baruwa/controllers/organizations.py:364
+#: baruwa/controllers/accounts.py:880 baruwa/controllers/organizations.py:364
 #, python-format
 msgid "The file: %s is not a CSV file"
 msgstr "الملف: % s ليس ملف CSV"
 
-#: baruwa/controllers/accounts.py:881 baruwa/controllers/organizations.py:367
+#: baruwa/controllers/accounts.py:883 baruwa/controllers/organizations.py:367
 #, python-format
 msgid "The file: %s already exists and is being processed."
 msgstr "الملف: % s موجود بالفعل وهو يجري معالجتها."
 
-#: baruwa/controllers/accounts.py:885 baruwa/controllers/organizations.py:371
+#: baruwa/controllers/accounts.py:887 baruwa/controllers/organizations.py:371
 msgid "No CSV was file uploaded, try again"
 msgstr "كان لا CSV ملف تحميلها، حاول مرة أخرى"
 
-#: baruwa/controllers/accounts.py:895 baruwa/controllers/accounts.py:951
+#: baruwa/controllers/accounts.py:897 baruwa/controllers/accounts.py:953
 #: baruwa/controllers/domains.py:868 baruwa/controllers/messages.py:660
 #: baruwa/controllers/messages.py:662 baruwa/controllers/organizations.py:380
 #: baruwa/controllers/status.py:497
 msgid "The task status requested has expired or does not exist"
 msgstr "حالة المهمة المطلوبة قد انتهت صلاحيتها أو غير موجود"
 
-#: baruwa/controllers/accounts.py:903 baruwa/controllers/accounts.py:959
+#: baruwa/controllers/accounts.py:905 baruwa/controllers/accounts.py:961
 #: baruwa/controllers/domains.py:876 baruwa/controllers/organizations.py:388
 #: baruwa/controllers/status.py:505
 #, python-format
 msgid "Error occured in processing %s"
 msgstr "حدث خطأ في معالجة % s"
 
-#: baruwa/controllers/accounts.py:906 baruwa/controllers/accounts.py:962
+#: baruwa/controllers/accounts.py:908 baruwa/controllers/accounts.py:964
 #: baruwa/controllers/domains.py:879 baruwa/controllers/organizations.py:391
 #: baruwa/controllers/status.py:508
 msgid "Backend error occured during processing."
 msgstr "الخلفية: حدث خطأ أثناء معالجة."
 
-#: baruwa/controllers/accounts.py:923 baruwa/controllers/organizations.py:411
+#: baruwa/controllers/accounts.py:925 baruwa/controllers/organizations.py:411
 msgid "The import could not be processed, try again later"
 msgstr "لا يمكن الاستيراد المجهزة، حاول مرة أخرى لاحقاً"
 
-#: baruwa/controllers/accounts.py:943
+#: baruwa/controllers/accounts.py:945
 msgid "Accounts export is being processed"
 msgstr "تتم الآن معالجة حسابات التصدير"
 
-#: baruwa/controllers/accounts.py:978 baruwa/controllers/domains.py:889
+#: baruwa/controllers/accounts.py:980 baruwa/controllers/domains.py:889
 msgid "The export could not be processed, try again later"
 msgstr "لا يمكن التصدير المجهزة، حاول مرة أخرى لاحقاً"
 
@@ -322,8 +322,8 @@ msgstr "تم حذف المجال"
 #: baruwa/controllers/domains.py:325
 #, python-format
 msgid ""
-"The domain: %(name)s and all associated data will be deleted, This action "
-"cannot be reversed."
+"The domain: %(name)s and all associated data will be deleted, This action"
+" cannot be reversed."
 msgstr ""
 
 #: baruwa/controllers/domains.py:373
@@ -380,7 +380,8 @@ msgstr "تم حذف الملقم الوجهة"
 #: baruwa/controllers/domains.py:541
 #, python-format
 msgid ""
-"The destination server: %(s)s will be deleted, This action is not reversible"
+"The destination server: %(s)s will be deleted, This action is not "
+"reversible"
 msgstr ""
 
 #: baruwa/controllers/domains.py:568
@@ -390,8 +391,8 @@ msgstr "وقد تم إنشاء إعدادات المصادقة"
 #: baruwa/controllers/domains.py:575
 #, python-format
 msgid ""
-"The host %(dest)s already configured for %(auth)s authentication for this "
-"domain"
+"The host %(dest)s already configured for %(auth)s authentication for this"
+" domain"
 msgstr ""
 
 #: baruwa/controllers/domains.py:608
@@ -444,11 +445,11 @@ msgstr "إعدادات مصادقة موجودة بالفعل، استخدم ا�
 
 #: baruwa/controllers/domains.py:734
 msgid ""
-"The Radius secret is not be displayed in the form, To update type the new "
-"secret in \"Radius secret\" below."
+"The Radius secret is not be displayed in the form, To update type the new"
+" secret in \"Radius secret\" below."
 msgstr ""
-"لا يتم عرض في دائرة نصف قطرها سر في النموذج، لتحديث نوع سر جديد في \"دائرة "
-"نصف قطرها السري\" أدناه."
+"لا يتم عرض في دائرة نصف قطرها سر في النموذج، لتحديث نوع سر جديد في "
+"\"دائرة نصف قطرها السري\" أدناه."
 
 #: baruwa/controllers/domains.py:775
 #, python-format
@@ -506,33 +507,15 @@ msgstr "طلب تحميل غير صالح"
 msgid "The file has been deleted"
 msgstr "تم حذف الملف"
 
-#: baruwa/controllers/invite.py:66 baruwa/controllers/invite.py:162
-#: baruwa/controllers/invite.py:177
+#: baruwa/controllers/invite.py:118
 msgid "Baruwa Hosted"
 msgstr "أهم استضافت"
 
-#: baruwa/controllers/invite.py:69
-#, python-format
-msgid "[Baruwa] Please verify your email: '%s'"
-msgstr "[أهم] الرجاء التحقق من البريد الإلكتروني الخاص بك: '% s'"
-
-#: baruwa/controllers/invite.py:74
-msgid ""
-"An email has been sent to the address provided, please follow the "
-"instructions in that email to proceed with your registration."
-msgstr ""
-"وقد تم إرسال بريد إلكتروني إلى العنوان المذكور، الرجاء اتباع الإرشادات في "
-"هذا البريد الإلكتروني للمضي قدما في التسجيل الخاص بك."
-
-#: baruwa/controllers/invite.py:89
-msgid "The access token supplied is invalid"
-msgstr "الرمز المميز للوصول المتوفرة غير صالحة"
-
-#: baruwa/controllers/invite.py:165 baruwa/controllers/invite.py:181
+#: baruwa/controllers/invite.py:121
 msgid "Baruwa Hosted Registration"
 msgstr "واستضافت تحت التسجيل"
 
-#: baruwa/controllers/invite.py:191
+#: baruwa/controllers/invite.py:136
 msgid "System was unable to process your request"
 msgstr "النظام غير قادر على معالجة الطلب الخاص بك"
 
@@ -592,8 +575,7 @@ msgstr "المجهول"
 msgid ""
 "The message has already been released, you can only use the release link "
 "once"
-msgstr ""
-"لقد تم الإفراج عن الرسالة الفعل، يمكنك فقط استخدام وصلة الإصدار مرة واحدة"
+msgstr "لقد تم الإفراج عن الرسالة الفعل، يمكنك فقط استخدام وصلة الإصدار مرة واحدة"
 
 #: baruwa/controllers/messages.py:642
 msgid "Processing of message failed"
@@ -660,39 +642,39 @@ msgstr "تم حذف إعدادات الصادرة"
 msgid "The outbound settings could not be deleted"
 msgstr "لا يمكن حذف إعدادات الصادرة"
 
-#: baruwa/controllers/reports.py:377
+#: baruwa/controllers/reports.py:381
 msgid "Score "
 msgstr "نقاط "
 
-#: baruwa/controllers/reports.py:422
+#: baruwa/controllers/reports.py:426
 msgid "Mail totals on "
 msgstr "إجماليات البريد على "
 
-#: baruwa/controllers/reports.py:426
+#: baruwa/controllers/reports.py:430
 msgid "Spam totals on "
 msgstr "إجماليات البريد المزعج في "
 
-#: baruwa/controllers/reports.py:430
+#: baruwa/controllers/reports.py:434
 msgid "Virus totals on "
 msgstr "إجماليات الفيروس في "
 
-#: baruwa/controllers/reports.py:507 baruwa/controllers/reports.py:544
+#: baruwa/controllers/reports.py:511 baruwa/controllers/reports.py:548
 msgid "The filter does not exist"
 msgstr "عامل التصفية غير موجود"
 
-#: baruwa/controllers/reports.py:517
+#: baruwa/controllers/reports.py:521
 msgid "The filter has been removed"
 msgstr "تم إزالة عامل التصفية"
 
-#: baruwa/controllers/reports.py:547
+#: baruwa/controllers/reports.py:551
 msgid "The filter already exists"
 msgstr "عامل تصفية موجود بالفعل"
 
-#: baruwa/controllers/reports.py:554
+#: baruwa/controllers/reports.py:558
 msgid "The filter has been saved"
 msgstr "وقد تم حفظ عامل التصفية"
 
-#: baruwa/controllers/reports.py:587
+#: baruwa/controllers/reports.py:591
 msgid "The filter has been deleted"
 msgstr "تم حذف عامل التصفية"
 
@@ -844,15 +826,16 @@ msgstr "المجال مجال بريد مجاناً"
 msgid "The domain already exists on the system"
 msgstr "المجال موجود مسبقاً على النظام"
 
-#: baruwa/forms/__init__.py:109
+#: baruwa/forms/__init__.py:109 baruwa/forms/invite.py:69
 msgid "The username cannot be an email address"
 msgstr "لا يمكن أن يكون اسم المستخدم عنوان بريد إلكتروني"
 
 #: baruwa/forms/__init__.py:111 baruwa/forms/__init__.py:113
+#: baruwa/forms/invite.py:71 baruwa/forms/invite.py:73
 msgid "The username is not available"
 msgstr "اسم المستخدم غير متوفر"
 
-#: baruwa/forms/__init__.py:124
+#: baruwa/forms/__init__.py:124 baruwa/forms/invite.py:83
 msgid "Email from a domain that is already registered"
 msgstr "رسالة بريد إلكتروني من أحد المجالات التي تم بالفعل تسجيل"
 
@@ -878,7 +861,7 @@ msgid "Please select atleast one domain"
 msgstr "يرجى تحديد مجال واحد على الأقل"
 
 #: baruwa/forms/accounts.py:68 baruwa/forms/accounts.py:104
-#: baruwa/tasks/status.py:296 baruwa/templates/accounts/account.html:38
+#: baruwa/tasks/status.py:290 baruwa/templates/accounts/account.html:38
 #: baruwa/templates/accounts/confirmbulkdel.html:8
 #: baruwa/templates/accounts/importstatus.html:5
 #: baruwa/templates/accounts/index.html:34
@@ -889,32 +872,32 @@ msgid "Username"
 msgstr "اسم المستخدم"
 
 #: baruwa/forms/accounts.py:71 baruwa/forms/accounts.py:106
-#: baruwa/forms/invite.py:50
+#: baruwa/forms/invite.py:98
 msgid "First name"
 msgstr "الاسم الأول"
 
 #: baruwa/forms/accounts.py:73 baruwa/forms/accounts.py:107
-#: baruwa/forms/invite.py:52
+#: baruwa/forms/invite.py:99
 msgid "Last name"
 msgstr "الاسم الأخير"
 
 #: baruwa/forms/accounts.py:75 baruwa/forms/accounts.py:138
-#: baruwa/forms/invite.py:56
+#: baruwa/forms/invite.py:101
 msgid "New Password"
 msgstr "كلمة المرور الجديدة"
 
 #: baruwa/forms/accounts.py:78 baruwa/forms/accounts.py:141
-#: baruwa/forms/invite.py:60 baruwa/forms/organizations.py:67
+#: baruwa/forms/invite.py:105 baruwa/forms/organizations.py:67
 msgid "Passwords must match"
 msgstr "يجب أن تتطابق كلمات المرور"
 
 #: baruwa/forms/accounts.py:79 baruwa/forms/accounts.py:142
-#: baruwa/forms/invite.py:61 baruwa/forms/organizations.py:66
+#: baruwa/forms/invite.py:106 baruwa/forms/organizations.py:66
 msgid "Retype Password"
 msgstr "أعد كتابة كلمة المرور"
 
 #: baruwa/forms/accounts.py:81 baruwa/forms/accounts.py:108
-#: baruwa/forms/invite.py:54 baruwa/templates/accounts/confirmbulkdel.html:10
+#: baruwa/forms/invite.py:100 baruwa/templates/accounts/confirmbulkdel.html:10
 #: baruwa/templates/accounts/index.html:36
 #: baruwa/templates/accounts/login.html:58
 #: baruwa/templates/accounts/searchresults.html:26
@@ -1008,7 +991,7 @@ msgstr "الحجر الصحي"
 
 #: baruwa/forms/domains.py:44 baruwa/forms/messages.py:73
 #: baruwa/forms/settings.py:128 baruwa/forms/status.py:32
-#: baruwa/model/status.py:42 baruwa/templates/accounts/account.html:183
+#: baruwa/templates/accounts/account.html:183
 #: baruwa/templates/accounts/account.html:185
 #: baruwa/templates/accounts/account.html:211
 #: baruwa/templates/accounts/deleteaddress.html:17
@@ -1094,7 +1077,7 @@ msgid "Invalid Domain name or IP address"
 msgstr "اسم المجال غير صالح أو عنوان IP"
 
 #: baruwa/forms/domains.py:85 baruwa/forms/domains.py:122
-#: baruwa/forms/invite.py:67 baruwa/forms/lists.py:84
+#: baruwa/forms/invite.py:108 baruwa/forms/lists.py:84
 #: baruwa/templates/domains/detail.html:21
 #: baruwa/templates/organizations/importstatus.html:5
 msgid "Domain name"
@@ -1102,7 +1085,7 @@ msgstr "اسم المجال"
 
 #: baruwa/forms/domains.py:87 baruwa/forms/domains.py:124
 #: baruwa/forms/domains.py:140 baruwa/forms/domains.py:154
-#: baruwa/forms/domains.py:163 baruwa/forms/invite.py:69
+#: baruwa/forms/domains.py:163 baruwa/forms/invite.py:110
 msgid "Invalid Domain name"
 msgstr "اسم المجال غير صالح"
 
@@ -1150,7 +1133,7 @@ msgstr "وضع متعدد الوجهة التسليم"
 msgid "Language"
 msgstr "اللغة"
 
-#: baruwa/forms/domains.py:112 baruwa/forms/invite.py:65
+#: baruwa/forms/domains.py:112
 msgid "Default Timezone"
 msgstr "المنطقة الزمنية الافتراضية"
 
@@ -1178,12 +1161,12 @@ msgid "Server address"
 msgstr "عنوان الخادم"
 
 #: baruwa/forms/domains.py:171 baruwa/forms/domains.py:186
-#: baruwa/forms/invite.py:73
+#: baruwa/forms/invite.py:113
 msgid "Protocol"
 msgstr "بروتوكول"
 
 #: baruwa/forms/domains.py:172 baruwa/forms/domains.py:187
-#: baruwa/forms/invite.py:75
+#: baruwa/forms/invite.py:114
 msgid "Port"
 msgstr "منفذ"
 
@@ -1255,34 +1238,34 @@ msgstr "سر دائرة نصف قطرها"
 msgid "Request timeout"
 msgstr "مهلة الطلب"
 
-#: baruwa/forms/invite.py:42
+#: baruwa/forms/invite.py:60
+#, fuzzy
+msgid "The domain is already registered"
+msgstr "اسم النطاق المستعار: % s موجود بالفعل"
+
+#: baruwa/forms/invite.py:91
 msgid "You must accept the terms and conditions"
 msgstr "يجب عليك قبول الأحكام والشروط"
 
-#: baruwa/forms/invite.py:47
+#: baruwa/forms/invite.py:96
 msgid "Admin Username"
 msgstr "اسم المستخدم Admin"
 
-#: baruwa/forms/invite.py:63 baruwa/forms/organizations.py:44
+#: baruwa/forms/invite.py:107 baruwa/forms/organizations.py:44
 #: baruwa/templates/organizations/detail.html:19
 #: baruwa/templates/organizations/index.html:11
 msgid "Organization name"
 msgstr "اسم المؤسسة"
 
-#: baruwa/forms/invite.py:71
+#: baruwa/forms/invite.py:111
 msgid "Delivery Server address"
 msgstr "عنوان الملقم التسليم"
 
-#: baruwa/forms/invite.py:81
-msgid "Enter a valid email address"
-msgstr "أدخل عنوان بريد إلكتروني صحيح"
-
 #: baruwa/forms/lists.py:46
-msgid ""
-"Provide either a valid IP, email, Domain address, or IP network or range"
+msgid "Provide either a valid IP, email, Domain address, or IP network or range"
 msgstr ""
-"تقديم صالح الملكية الفكرية، والبريد الإلكتروني، وعنوان المجال، أو الملكية "
-"الفكرية شبكة أو مجموعة"
+"تقديم صالح الملكية الفكرية، والبريد الإلكتروني، وعنوان المجال، أو الملكية"
+" الفكرية شبكة أو مجموعة"
 
 #: baruwa/forms/lists.py:63
 #, python-format
@@ -1377,7 +1360,7 @@ msgid "Delete Organization domains"
 msgstr "حذف مجالات المنظمة"
 
 #: baruwa/forms/organizations.py:62 baruwa/forms/settings.py:165
-#: baruwa/forms/settings.py:305 baruwa/tasks/status.py:298
+#: baruwa/forms/settings.py:305 baruwa/tasks/status.py:292
 #: baruwa/templates/messages/detail.html:176
 #: baruwa/templates/reports/relays.html:26
 #: baruwa/templates/settings/index.html:16
@@ -2209,8 +2192,7 @@ msgstr "تعديل الحجر الصحي للجسم"
 
 #: baruwa/forms/settings.py:490
 msgid "Keep Spam And MCP Archive Clean"
-msgstr ""
-"الحفاظ على نظافة البريد المزعج وأرشيف العملية التشاورية المتعددة الأطراف"
+msgstr "الحفاظ على نظافة البريد المزعج وأرشيف العملية التشاورية المتعددة الأطراف"
 
 #: baruwa/forms/settings.py:493
 msgid "Hide Incoming Work Dir"
@@ -2895,108 +2877,15 @@ msgstr "BS"
 msgid "AS"
 msgstr "مثل"
 
-#: baruwa/model/status.py:33 baruwa/tasks/status.py:45
-msgid "hi"
-msgstr "مرحبا"
-
-#: baruwa/model/status.py:39
-msgid "Read"
-msgstr "القراءة"
-
-#: baruwa/model/status.py:40 baruwa/templates/accounts/editaddress.html:18
-#: baruwa/templates/domains/editalias.html:16
-#: baruwa/templates/domains/editauth.html:16
-msgid "Update"
-msgstr "التحديث"
-
-#: baruwa/model/status.py:41 baruwa/templates/accounts/addaddress.html:18
-msgid "Create"
-msgstr "إنشاء"
-
-#: baruwa/model/status.py:43
-msgid "Export"
-msgstr "تصدير"
-
-#: baruwa/model/status.py:44
-msgid "Auth"
-msgstr "المصادقة"
-
-#: baruwa/tasks/status.py:63
-msgid "Checking system status"
-msgstr "التحقق من حالة النظام"
-
-#: baruwa/tasks/status.py:116
-msgid "Running Spamassassin lint checks"
-msgstr "تشغيل Spamassassin لينت الشيكات"
-
-#: baruwa/tasks/status.py:142
-msgid "Generating Bayesian stats"
-msgstr "توليد إحصائيات بايزي"
-
-#: baruwa/tasks/status.py:199
-#, python-format
-msgid "Download attachment: %(attachid)s of message: %(id)s"
-msgstr ""
-
-#: baruwa/tasks/status.py:204
-#, python-format
-msgid "Image access: %(img)s"
-msgstr ""
-
-#: baruwa/tasks/status.py:206
-#, python-format
-msgid "Preview of message: %(id)s"
-msgstr ""
-
-#: baruwa/tasks/status.py:211
-#, python-format
-msgid "Accessing message: %(id)s, Failed: %(error)s"
-msgstr ""
-
-#: baruwa/tasks/status.py:226
-#, python-format
-msgid "Invalid exim command: %s"
-msgstr "الأمر غير صالح إكسيم: % s"
-
-#: baruwa/tasks/status.py:229 baruwa/tasks/status.py:244
-#, python-format
-msgid "Invalid action: %s"
-msgstr "عمل غير صالح: % s"
-
-#: baruwa/tasks/status.py:236
-#, python-format
-msgid "STDOUT: %s"
-msgstr "STDOUT: % s"
-
-#: baruwa/tasks/status.py:239
-#, python-format
-msgid "STDERR: %s"
-msgstr "STDERR: % s"
-
-#: baruwa/tasks/status.py:242
-#, python-format
-msgid "Invalid input: %s"
-msgstr "الإدخال غير صالح: % s"
-
-#: baruwa/tasks/status.py:266
-#, python-format
-msgid "Audit Log update for: %s from: %s"
-msgstr "تحديث سجل لتدوين: % s من: % s"
-
-#: baruwa/tasks/status.py:269
-#, python-format
-msgid "Audit Log FAILURE: %s %s %s %s %s %s Error: %s"
-msgstr "سجل تدوين الفشل: % s % s % s % s % s % s الخطأ: % s"
-
-#: baruwa/tasks/status.py:289
+#: baruwa/tasks/status.py:283
 msgid "Audit Log exported report"
 msgstr "سجل تصدير تقرير مراجعة الحسابات"
 
-#: baruwa/tasks/status.py:294 baruwa/templates/base.html:87
+#: baruwa/tasks/status.py:288 baruwa/templates/base.html:87
 msgid "Audit Logs"
 msgstr "سجلات التدقيق"
 
-#: baruwa/tasks/status.py:295 baruwa/templates/email/quarantine.html:63
+#: baruwa/tasks/status.py:289 baruwa/templates/email/quarantine.html:63
 #: baruwa/templates/email/quarantine.html:92
 #: baruwa/templates/messages/detail.html:178
 #: baruwa/templates/messages/functions.html:89
@@ -3009,32 +2898,22 @@ msgstr "سجلات التدقيق"
 msgid "Date/Time"
 msgstr "التاريخ/الوقت"
 
-#: baruwa/tasks/status.py:297 baruwa/templates/status/audit.html:28
+#: baruwa/tasks/status.py:291 baruwa/templates/status/audit.html:28
 msgid "Info"
 msgstr "معلومات"
 
-#: baruwa/tasks/status.py:299 baruwa/templates/status/audit.html:30
+#: baruwa/tasks/status.py:293 baruwa/templates/status/audit.html:30
 msgid "Remote IP"
 msgstr "IP البعيد"
 
-#: baruwa/tasks/status.py:300 baruwa/templates/lists/index.html:29
+#: baruwa/tasks/status.py:294 baruwa/templates/lists/index.html:29
 #: baruwa/templates/status/detail.html:68
 msgid "Action"
 msgstr "عمل"
 
-#: baruwa/tasks/status.py:313
+#: baruwa/tasks/status.py:307
 msgid "Baruwa Audit log export"
 msgstr "تصدير سجل تحت المراجعة"
-
-#: baruwa/tasks/status.py:365
-#, python-format
-msgid "Audit Log export complete: %s"
-msgstr "مراجعة سجل التصدير الكامل: % s"
-
-#: baruwa/tasks/status.py:369
-#, python-format
-msgid "Audit Log export FAILURE: %s"
-msgstr "مراجعة سجل تصدير الفشل: % s"
 
 #: baruwa/templates/base.html:33 baruwa/templates/status/index.html:83
 msgid "OK"
@@ -3308,9 +3187,8 @@ msgstr "إنشاء عنوان اسم مستعار"
 #: baruwa/templates/accounts/new.html:10
 #: baruwa/templates/accounts/pwchange.html:17
 #: baruwa/templates/domains/adddestination.html:17
-#: baruwa/templates/domains/new.html:10
-#: baruwa/templates/invite/confirmemail.html:52
-#: baruwa/templates/invite/index.html:45 baruwa/templates/lists/add.html:31
+#: baruwa/templates/domains/new.html:10 baruwa/templates/invite/index.html:45
+#: baruwa/templates/lists/add.html:31
 #: baruwa/templates/organizations/add.html:10
 #: baruwa/templates/organizations/addrelay.html:16
 #: baruwa/templates/organizations/deleterelay.html:16
@@ -3318,6 +3196,10 @@ msgstr "إنشاء عنوان اسم مستعار"
 #: baruwa/templates/settings/addserver.html:10
 msgid "Reset"
 msgstr "إعادة تعيين"
+
+#: baruwa/templates/accounts/addaddress.html:18
+msgid "Create"
+msgstr "إنشاء"
 
 #: baruwa/templates/accounts/addaddress.html:25
 #: baruwa/templates/accounts/addaddress.html:29
@@ -3389,6 +3271,12 @@ msgstr "حسابات:: حساب تحرير"
 #: baruwa/templates/accounts/editaddress.html:10
 msgid "Edit alias address"
 msgstr "تحرير عنوان اسم مستعار"
+
+#: baruwa/templates/accounts/editaddress.html:18
+#: baruwa/templates/domains/editalias.html:16
+#: baruwa/templates/domains/editauth.html:16
+msgid "Update"
+msgstr "التحديث"
 
 #: baruwa/templates/accounts/editaddress.html:25
 #: baruwa/templates/accounts/editaddress.html:29
@@ -3538,8 +3426,7 @@ msgstr[4] ""
 msgstr[5] ""
 
 #: baruwa/templates/accounts/index.html:94
-#: baruwa/templates/domains/index.html:93
-#: baruwa/templates/lists/index.html:105
+#: baruwa/templates/domains/index.html:93 baruwa/templates/lists/index.html:105
 #: baruwa/templates/messages/functions.html:208
 #: baruwa/templates/messages/searchresults.html:105
 #: baruwa/templates/organizations/index.html:50
@@ -3550,8 +3437,7 @@ msgid "Showing items %(i)d to %(l)d of %(count)d"
 msgstr ""
 
 #: baruwa/templates/accounts/index.html:96
-#: baruwa/templates/domains/index.html:95
-#: baruwa/templates/lists/index.html:107
+#: baruwa/templates/domains/index.html:95 baruwa/templates/lists/index.html:107
 #: baruwa/templates/messages/functions.html:210
 #: baruwa/templates/messages/searchresults.html:107
 #: baruwa/templates/organizations/index.html:52
@@ -3561,8 +3447,7 @@ msgid "Show items:"
 msgstr "إظهار العناصر:"
 
 #: baruwa/templates/accounts/index.html:98
-#: baruwa/templates/domains/index.html:97
-#: baruwa/templates/lists/index.html:109
+#: baruwa/templates/domains/index.html:97 baruwa/templates/lists/index.html:109
 #: baruwa/templates/messages/functions.html:212
 #: baruwa/templates/messages/searchresults.html:109
 #: baruwa/templates/organizations/index.html:54
@@ -3603,11 +3488,11 @@ msgstr "هل نسيت كلمة المرور؟"
 
 #: baruwa/templates/accounts/login.html:55
 msgid ""
-"Forgotten your password? Enter your e-mail address below, and we'll e-mail "
-"instructions on setting a new one."
+"Forgotten your password? Enter your e-mail address below, and we'll "
+"e-mail instructions on setting a new one."
 msgstr ""
-"هل نسيت كلمة المرور الخاصة بك؟ أدخل عنوان البريد الإلكتروني الخاص بك أدناه، "
-"ونحن سوف البريد الإلكتروني إرشادات حول إعداد كلمة مرور جديدة."
+"هل نسيت كلمة المرور الخاصة بك؟ أدخل عنوان البريد الإلكتروني الخاص بك "
+"أدناه، ونحن سوف البريد الإلكتروني إرشادات حول إعداد كلمة مرور جديدة."
 
 #: baruwa/templates/accounts/login.html:60
 msgid "Cancel"
@@ -4035,16 +3920,16 @@ msgstr "الخطأ: % s"
 
 #: baruwa/templates/general/error.html:28
 msgid ""
-"You do not have sufficient permissions to access this page. Please sign in "
-"using an account with sufficient permissions"
+"You do not have sufficient permissions to access this page. Please sign "
+"in using an account with sufficient permissions"
 msgstr ""
-"ليس لديك أذونات كافية للوصول إلى هذه الصفحة. الرجاء تسجيل الدخول باستخدام "
-"حساب مع أذونات كافية"
+"ليس لديك أذونات كافية للوصول إلى هذه الصفحة. الرجاء تسجيل الدخول باستخدام"
+" حساب مع أذونات كافية"
 
 #: baruwa/templates/general/error.html:30
 msgid ""
-"The system was unable to complete your request, the support team has been "
-"notified"
+"The system was unable to complete your request, the support team has been"
+" notified"
 msgstr "النظام غير قادر على إكمال الطلب الخاص بك، وقد تم إخطار فريق الدعم"
 
 #: baruwa/templates/includes/search.html:9 baruwa/templates/lists/index.html:6
@@ -4059,30 +3944,13 @@ msgstr ""
 msgid "Search"
 msgstr "البحث"
 
-#: baruwa/templates/invite/confirmemail.html:31
 #: baruwa/templates/invite/index.html:31
 msgid "Baruwa hosted Beta registration"
 msgstr "واستضافت تحت التسجيل بيتا"
 
-#: baruwa/templates/invite/confirmemail.html:37
-msgid ""
-"Please NOTE: you will not be able to login, until you change your MX records"
-" to point to the Baruwa hosted platform. Only proceed with registration if "
-"you intend on changing your MX records for mail to flow through the Baruwa "
-"hosted platform systems"
-msgstr ""
-"يرجى ملاحظة: سوف لا تكون قادراً على تسجيل الدخول، حتى تقوم بتغيير سجلات MX "
-"للإشارة إلى منصة تحت استضافت. المضي قدما مع التسجيل فقط إذا كنت ترغب في "
-"تغيير سجلات MX الخاصة بك للبريد بالتدفق من خلال نظم منهاج أهم استضافت"
-
-#: baruwa/templates/invite/confirmemail.html:45
 #: baruwa/templates/invite/index.html:38
 msgid "Registration"
 msgstr "التسجيل"
-
-#: baruwa/templates/invite/confirmemail.html:53
-msgid "Send confirmation email"
-msgstr "إرسال تأكيد بالبريد الإلكتروني"
 
 #: baruwa/templates/invite/index.html:46
 msgid "Register"
@@ -4094,27 +3962,9 @@ msgstr "شكرا."
 
 #: baruwa/templates/invite/thankyou.html:27
 msgid ""
-"Your registration has been processed. The systems are ready to process\n"
-"\t\t\t\t\tmessages for your domain. "
+"Your registration request is being reviewed, you will be notified when it"
+" is approved."
 msgstr ""
-"وقد تم تجهيز التسجيل الخاص بك. النظم مستعدون لمعالجة الرسائل للمجال الخاص "
-"بك. "
-
-#: baruwa/templates/invite/thankyou.html:29
-msgid ""
-"You will however NOT be able to login until you\n"
-"\t\t\t\t\tcomplete the change of your domain's MX records."
-msgstr ""
-"إلا أنك سوف لا تكون قادراً على تسجيل الدخول حتى تقوم بإكمال تغيير سجلات MX "
-"للمجال الخاص بك."
-
-#: baruwa/templates/invite/thankyou.html:31
-msgid ""
-"An email has been sent to the email address you used for registering\n"
-"\t\t\t\t\twith instructions on how to change your MX records"
-msgstr ""
-"وقد تم إرسال بريد إلكتروني إلى عنوان البريد الإلكتروني الذي استخدمته لتسجيل "
-"مع إرشادات حول كيفية تغيير سجلات MX الخاصة بك"
 
 #: baruwa/templates/lists/add.html:4
 msgid "Add Sender to a list"
@@ -4505,8 +4355,7 @@ msgstr "غير المرغوبة"
 
 #: baruwa/templates/messages/quarantine.html:27
 #: baruwa/templates/status/detail.html:69
-#: baruwa/templates/status/detail.html:75
-#: baruwa/templates/status/mailq.html:23
+#: baruwa/templates/status/detail.html:75 baruwa/templates/status/mailq.html:23
 msgid "Process"
 msgstr "عملية"
 
@@ -4563,8 +4412,8 @@ msgstr ""
 #: baruwa/templates/messages/includes/released.html:4
 #, python-format
 msgid ""
-"The message id: %(id)s could not be released: %(error_msg)s, contact your "
-"email admin for assistance."
+"The message id: %(id)s could not be released: %(error_msg)s, contact your"
+" email admin for assistance."
 msgstr ""
 
 #: baruwa/templates/messages/includes/salearn.html:2
@@ -5521,3 +5370,4 @@ msgstr "وقت النظام"
 #, python-format
 msgid "Status :: Node status :: %(server)s"
 msgstr ""
+
