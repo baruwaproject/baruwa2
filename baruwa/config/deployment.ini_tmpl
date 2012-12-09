@@ -8,6 +8,8 @@
 socket = /var/run/baruwa/baruwa.sock
 master = true
 processes = 5
+uid = baruwa
+gid = baruwa
 daemonize = /var/log/uwsgi/uwsgi-baruwa.log
 
 [server:main]
