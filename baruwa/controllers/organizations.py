@@ -166,6 +166,7 @@ class OrganizationsController(BaseController):
                 flash(_('The organization has been created'))
                 redirect(url(controller='organizations'))
             except IntegrityError:
+                Session.rollback()
                 flash_alert(_('The organization already exists'))
         return render('/organizations/add.html')
 

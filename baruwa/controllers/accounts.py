@@ -722,6 +722,7 @@ class AccountsController(BaseController):
                 _('The alias address %(address)s was successfully created.' %
                 dict(address=addr.address)))
             except IntegrityError:
+                Session.rollback()
                 flash_alert(_('The address %(addr)s already exists') %
                 dict(addr=addr.address))
             except NoResultFound:
@@ -769,6 +770,7 @@ class AccountsController(BaseController):
                 else:
                     flash_info(_('No changes were made to the address'))
             except IntegrityError:
+                Session.rollback()
                 flash_alert(_('The address %(addr)s already exists') %
                 dict(addr=c.form.address.data))
             except NoResultFound:
