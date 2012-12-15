@@ -107,6 +107,7 @@ setup(
     prune-database = baruwa.commands.dbclean:DBCleanCommand
     prune-quarantine = baruwa.commands.cleanquarantine:CleanQuarantineCommand
     update-delta-index = baruwa.commands.updatedelta:UpdateDeltaIndex
+    create-admin-user = baruwa.commands.createadmin:CreateAdminUser
     routes = pylons.commands:RoutesCommand
     shell = pylons.commands:ShellCommand
     """,
