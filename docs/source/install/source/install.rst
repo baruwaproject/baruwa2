@@ -550,14 +550,16 @@ Create the cron file ``/etc/cron.d/baruwa`` with the following contents
 					/etc/baruwa/production.ini >/dev/null 2>&1
 	0 * * * * baruwa /home/baruwa/px/bin/paster update-sa-rules \
 					/etc/baruwa/production.ini >/dev/null 2>&1
-	0 * * * * baruwa /home/baruwa/px/bin/paster update-delta-index \
-					--index messages --realtime /etc/baruwa/production.ini
+	0 * * * * root /home/baruwa/px/bin/paster update-delta-index \
+					--index messages --realtime /etc/baruwa/production.ini \
+					>/dev/null 2>&1
 	0 0 * * * baruwa /home/baruwa/px/bin/paster send-quarantine-reports \
 					/etc/baruwa/production.ini >/dev/null 2>&1
 	0 1 * * * baruwa /home/baruwa/px/bin/paster prunedb \
 					/etc/baruwa/production.ini >/dev/null 2>&1
-	9 1 * * * baruwa /home/baruwa/px/bin/paster update-delta-index \
-					--index archive /etc/baruwa/production.ini
+	9 1 * * * root /home/baruwa/px/bin/paster update-delta-index \
+					--index archive /etc/baruwa/production.ini \
+					>/dev/null 2>&1
 	0 2 * * * baruwa /home/baruwa/px/bin/paster prunequarantine \
 					/etc/baruwa/production.ini >/dev/null 2>&1
 	0 6 1 * * baruwa /home/baruwa/px/bin/paster send-pdf-reports \
