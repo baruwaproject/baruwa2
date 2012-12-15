@@ -1,0 +1,13 @@
+Hi ${c.firstname},
+
+Forgot your password, huh.
+
+Please login with the temporary password provided here.
+After logging in, you can create your own password.
+
+temporary password ${c.passwd}
+
+Regards,
+
+Baruwa Bot
+www.baruwa.net
