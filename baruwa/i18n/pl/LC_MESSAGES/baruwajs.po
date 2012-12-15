@@ -1,22 +1,22 @@
-# Polish translations for .
+# Translations template for PROJECT.
 # Copyright (C) 2012 ORGANIZATION
-# This file is distributed under the same license as the  project.
-#
+# This file is distributed under the same license as the PROJECT project.
+# 
 # Translators:
 msgid ""
 msgstr ""
-"Project-Id-Version:  baruwa\n"
-"Report-Msgid-Bugs-To: baruwa@lists.baruwa.org\n"
-"POT-Creation-Date: 2012-12-09 10:37+0200\n"
-"PO-Revision-Date: 2012-11-14 20:35+0200\n"
-"Last-Translator: Andrew Colin Kissa <andrew@topdog.za.net>\n"
-"Language-Team: (http://www.transifex.com/projects/p/baruwa/language/pl/)\n"
-"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && "
-"(n%100<10 || n%100>=20) ? 1 : 2)\n"
+"Project-Id-Version: baruwa\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2012-11-14 14:04+0200\n"
+"PO-Revision-Date: 2012-11-14 18:40+0000\n"
+"Last-Translator: datopdog <andrew@topdog.za.net>\n"
+"Language-Team: Polish (http://www.transifex.com/projects/p/baruwa/language/pl/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 0.9.6\n"
+"Language: pl\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: baruwa/public/js/baruwa/accounts.js:1 baruwa/public/js/baruwa/domains.js:1
 #: baruwa/public/js/baruwa/lists.js:1
@@ -105,9 +105,7 @@ msgstr "Resetowanie hasła"
 
 #: baruwa/public/js/baruwa/messages.archive.js:1
 msgid "Messages :: Archive :: Showing page {{page}} of {{page_count}} pages."
-msgstr ""
-"Wiadomości:: Archiwum:: Strona wyświetlone {{page}} z {{page_count}} "
-"strony."
+msgstr "Wiadomości:: Archiwum:: Strona wyświetlone {{page}} z {{page_count}} strony."
 
 #: baruwa/public/js/baruwa/messages.archive.js:1
 msgid "Messages :: Archive"
@@ -198,11 +196,9 @@ msgstr "Nie stosować w tej chwili"
 #: baruwa/public/js/baruwa/messages.js:1
 #: baruwa/public/js/baruwa/messages.quarantine.js:1
 msgid ""
-"Messages :: Full message listing :: Showing page {{page}} of "
-"{{page_count}} pages."
-msgstr ""
-"Wiadomości:: Pełna lista wiadomości:: Strona wyświetlone {{page}} z "
-"{{page_count}} strony."
+"Messages :: Full message listing :: Showing page {{page}} of {{page_count}} "
+"pages."
+msgstr "Wiadomości:: Pełna lista wiadomości:: Strona wyświetlone {{page}} z {{page_count}} strony."
 
 #: baruwa/public/js/baruwa/messages.js:1
 #: baruwa/public/js/baruwa/messages.quarantine.js:1
@@ -347,11 +343,8 @@ msgstr "Nie znaleziono dzienników inspekcji"
 
 #: baruwa/public/js/baruwa/status.audit.js:1
 msgid "Status :: Audit log :: Showing page {{page}} of {{page_count}} pages."
-msgstr ""
-"Stanu:: Dziennika inspekcji:: Strona wyświetlone {{page}} z "
-"{{page_count}} strony."
+msgstr "Stanu:: Dziennika inspekcji:: Strona wyświetlone {{page}} z {{page_count}} strony."
 
 #: baruwa/public/js/baruwa/status.audit.js:1
 msgid "Status :: Audit log"
 msgstr "Stan:: Dziennika inspekcji"
-

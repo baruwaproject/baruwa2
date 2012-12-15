@@ -1,21 +1,22 @@
-# Swedish translations for .
+# Translations template for PROJECT.
 # Copyright (C) 2012 ORGANIZATION
-# This file is distributed under the same license as the  project.
-#
+# This file is distributed under the same license as the PROJECT project.
+# 
 # Translators:
 msgid ""
 msgstr ""
-"Project-Id-Version:  baruwa\n"
-"Report-Msgid-Bugs-To: baruwa@lists.baruwa.org\n"
-"POT-Creation-Date: 2012-12-09 10:37+0200\n"
-"PO-Revision-Date: 2012-11-14 19:43+0200\n"
-"Last-Translator: Andrew Colin Kissa <andrew@topdog.za.net>\n"
-"Language-Team: (http://www.transifex.com/projects/p/baruwa/language/sv/)\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"Project-Id-Version: baruwa\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2012-11-14 14:04+0200\n"
+"PO-Revision-Date: 2012-11-14 18:18+0000\n"
+"Last-Translator: datopdog <andrew@topdog.za.net>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 0.9.6\n"
+"Language: sv\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: baruwa/public/js/baruwa/accounts.js:1 baruwa/public/js/baruwa/domains.js:1
 #: baruwa/public/js/baruwa/lists.js:1
@@ -195,11 +196,9 @@ msgstr "Icke tillämpas för närvarande"
 #: baruwa/public/js/baruwa/messages.js:1
 #: baruwa/public/js/baruwa/messages.quarantine.js:1
 msgid ""
-"Messages :: Full message listing :: Showing page {{page}} of "
-"{{page_count}} pages."
-msgstr ""
-"Meddelanden:: Full meddelande notering:: visa sidan {{page}} av "
-"{{page_count}} sidor."
+"Messages :: Full message listing :: Showing page {{page}} of {{page_count}} "
+"pages."
+msgstr "Meddelanden:: Full meddelande notering:: visa sidan {{page}} av {{page_count}} sidor."
 
 #: baruwa/public/js/baruwa/messages.js:1
 #: baruwa/public/js/baruwa/messages.quarantine.js:1
@@ -349,4 +348,3 @@ msgstr "Status:: Granskningsloggen:: visa sidan {{page}} av {{page_count}} sidor
 #: baruwa/public/js/baruwa/status.audit.js:1
 msgid "Status :: Audit log"
 msgstr "Status:: Granskningsloggen"
-
