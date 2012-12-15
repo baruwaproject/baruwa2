@@ -22,10 +22,11 @@ import os
 import shutil
 import urllib2
 import logging
+import hashlib
 
 from urllib import unquote
 from urlparse import urlparse
-from datetime import timedelta
+from datetime import timedelta, datetime
 
 from pylons import request, response, session, tmpl_context as c, url, config
 from pylons.controllers.util import redirect, abort
@@ -35,6 +36,7 @@ from celery.result import AsyncResult
 from sqlalchemy.sql import and_
 from sqlalchemy.orm import joinedload
 from sqlalchemy.orm.exc import NoResultFound
+from marrow.mailer import Message as Msg, Mailer
 from sqlalchemy.exc import IntegrityError, DataError
 from repoze.what.predicates import All, not_anonymous
 from repoze.what.plugins.pylonshq import ActionProtector
@@ -45,7 +47,7 @@ from baruwa.model.domains import Domain, AuthServer
 from baruwa.model.auth import LDAPSettings
 from baruwa.lib.auth.ldapauth import make_ldap_uri
 from baruwa.lib.directory import LDAPAttributes, get_user_dn
-from baruwa.lib.misc import check_num_param
+from baruwa.lib.misc import check_num_param, mkpasswd
 from baruwa.lib.misc import check_language, iscsv, convert_acct_to_json
 from baruwa.lib.base import BaseController, render
 from baruwa.lib.caching_query import FromCache
@@ -53,6 +55,7 @@ from baruwa.tasks.settings import update_serial
 from baruwa.lib.dates import now
 from baruwa.lib.audit import audit_log
 from baruwa.lib.regex import PROXY_ADDR_RE
+from baruwa.commands import get_conf_options
 from baruwa.tasks.accounts import importaccounts, exportaccounts
 from baruwa.lib.query import clean_sphinx_q, restore_sphinx_q
 from baruwa.lib.helpers import flash, flash_info, flash_alert
@@ -61,10 +64,10 @@ from baruwa.lib.auth.predicates import OnlyAdminUsers, CanAccessAccount
 from baruwa.forms.organizations import ImportCSVForm
 from baruwa.forms.accounts import EditUserForm, AddressForm, AddUserForm
 from baruwa.forms.accounts import ChangePasswordForm, UserPasswordForm
-from baruwa.forms.accounts import BulkDelUsers
+from baruwa.forms.accounts import BulkDelUsers, ResetPwForm
 from baruwa.model.accounts import User, Address, domain_users
 from baruwa.model.accounts import domain_owners as dom_owns
-from baruwa.model.accounts import organizations_admins as oas
+from baruwa.model.accounts import organizations_admins as oas, ResetToken
 from baruwa.lib.audit.msgs.accounts import *
 
 log = logging.getLogger(__name__)
@@ -125,6 +128,7 @@ class AccountsController(BaseController):
                     if now() > session[request.remote_addr]:
                         del session[request.remote_addr]
                         session.save()
+            c.form = ResetPwForm(request.POST, csrf_context=session)
             return render('/accounts/login.html')
 
     def loggedin(self):
@@ -290,14 +294,87 @@ class AccountsController(BaseController):
         session.clear()
         session.save()
         came_from = (unquote(str(request.params.get('came_from', '')))
-                    or url('/accounts/login/'))
+                    or url('/accounts/login'))
         redirect(url(came_from))
 
     def passwdreset(self):
         """Render password reset page"""
         c.came_from = '/'
         c.login_counter = 0
+        c.form = ResetPwForm(request.POST, csrf_context=session)
+        if request.POST and c.form.validate():
+            key_seed = '%s%s' % (c.form.email.data, datetime.now().ctime())
+            token = hashlib.sha1(key_seed).hexdigest()
+            user = Session.query(User)\
+                            .filter(User.email == c.form.email.data)\
+                            .one()
+            rtoken = Session\
+                    .query(ResetToken.used)\
+                    .filter(ResetToken.used == False)\
+                    .filter(ResetToken.user_id == user.id)\
+                    .all()
+            if not rtoken:
+                rtoken = ResetToken(token, user.id)
+                Session.add(rtoken)
+                Session.commit()
+                host = request.host_url.lstrip('http://').lstrip('https://')
+                c.username = user.username
+                c.firstname = user.firstname or user.username
+                c.reset_url = url('accounts-pw-token-reset',
+                                token=token,
+                                host=host)
+                text = render('/email/pwreset.txt')
+                mailer = Mailer(get_conf_options(config))
+                mailer.start()
+                email = Msg(author=[(_('Baruwa Hosted'),
+                            config.get('baruwa.reports.sender'))],
+                            to=[('', c.form.email.data)],
+                            subject=_("[Baruwa] Password reset request"))
+                email.plain = text
+                mailer.send(email)
+                mailer.stop()
+            flash(_('An email has been sent to the address provided, '
+                    'please follow the instructions in that email to '
+                    'reset your password.'))
+            redirect(url('/accounts/login'))
         return render('/accounts/login.html')
+
+    def pwtokenreset(self, token):
+        """Reset password using token"""
+        try:
+            token = Session.query(ResetToken)\
+                    .filter(ResetToken.token == token)\
+                    .filter(ResetToken.used == False).one()
+            threshold = token.timestamp + timedelta(minutes=20)
+            if now() > threshold:
+                Session.delete(token)
+                Session.commit()
+                raise NoResultFound
+            user = self._get_user(token.user_id)
+            if not user:
+                raise NoResultFound
+            passwd = mkpasswd()
+            user.set_password(passwd)
+            Session.add(user)
+            Session.delete(token)
+            Session.commit()
+            c.passwd = passwd
+            c.firstname = user.firstname or user.username
+            text = render('/email/pwchanged.txt')
+            mailer = Mailer(get_conf_options(config))
+            mailer.start()
+            email = Msg(author=[(_('Baruwa Hosted'),
+                        config.get('baruwa.reports.sender'))],
+                        to=[('', user.email)],
+                        subject=_("[Baruwa] Password reset"))
+            email.plain = text
+            mailer.send(email)
+            mailer.stop()
+            flash(_('The password has been reset, check your email for'
+                    ' the temporary password you should use to login.'))
+        except NoResultFound:
+            flash_alert(_('The token used is invalid or does not exist'))
+        redirect(url('/accounts/login'))
 
     @ActionProtector(All(not_anonymous(), OnlyAdminUsers(),
     CanAccessAccount()))

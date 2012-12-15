@@ -26,10 +26,11 @@ from sqlalchemy import Column, ForeignKey, Table
 from sqlalchemy.orm import relationship, backref
 from sqlalchemy.types import DateTime, Boolean, Float
 from sqlalchemy.schema import PrimaryKeyConstraint, UniqueConstraint
+from sqlalchemy.types import UnicodeText, TIMESTAMP
 from sqlalchemy.types import Integer, Unicode, SmallInteger, BigInteger
 
-from baruwa.lib.dates import now
 from baruwa.model.meta import Base
+from baruwa.lib.custom_ddl import utcnow
 
 
 domain_owners = Table(
@@ -66,8 +67,8 @@ class User(Base):
     email = Column(Unicode(255), unique=True)
     timezone = Column(Unicode(255), default=u'UTC')
     account_type = Column(SmallInteger(), default=3, index=True)
-    created_on = Column(DateTime(timezone=True), default=now())
-    last_login = Column(DateTime(timezone=True), default=now())
+    created_on = Column(DateTime(timezone=True), server_default=utcnow())
+    last_login = Column(DateTime(timezone=True), server_default=utcnow())
     active = Column(Boolean(), default=True)
     local = Column(Boolean(), default=False)
     send_report = Column(Boolean(), default=True)
@@ -224,4 +225,19 @@ class Relay(Base):
     # def _hash_password(self, raw_pass):
     #     "return hashed password"
     #     return bcrypt.hashpw(raw_pass, bcrypt.gensalt())
-        
+
+
+class ResetToken(Base):
+    "Password reset token"
+    __tablename__ = 'passwdtokens'
+
+    id = Column(Integer, primary_key=True)
+    token = Column(UnicodeText, unique=True)
+    timestamp = Column(TIMESTAMP(timezone=True), server_default=utcnow())
+    used = Column(Boolean(), default=False)
+    user_id = Column(Integer, ForeignKey('users.id'))
+
+    def __init__(self, token, user_id):
+        "Accept token arg"
+        self.token = token
+        self.user_id = user_id

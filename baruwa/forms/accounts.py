@@ -25,6 +25,7 @@ from pylons.i18n.translation import lazy_ugettext as _
 from sqlalchemy.orm.exc import NoResultFound
 
 from baruwa.forms import Form
+from baruwa.model.accounts import User
 from baruwa.model.domains import Domain
 from baruwa.model.meta import Session
 from baruwa.forms.organizations import check_pw_strength
@@ -61,6 +62,18 @@ def check_account(form, field):
         raise validators.ValidationError(
                     _(u'Please select atleast one domain')
                 )
+
+def can_reset(form, field):
+    "check account is legible to reset"
+    try:
+        user = Session.query(User)\
+                .filter(User.email == field.data)\
+                .one()
+        if user.account_type != 3:
+            raise validators.ValidationError(
+                    _("Admin accounts cannot be reset via the web"))
+    except NoResultFound:
+        raise validators.ValidationError(_("Account not found"))
 
 
 class AddUserForm(Form):
@@ -147,3 +160,11 @@ class UserPasswordForm(ChangePasswordForm):
     """User password change"""
     password3 = PasswordField(_('Old Password'),
                     [validators.Required(message=REQ_MSG)])
+
+
+class ResetPwForm(Form):
+    """User reset password form"""
+    email = TextField(_('Email Address'),
+            [validators.Required(message=REQ_MSG),
+            validators.Email(message=EMAIL_MSG),
+            can_reset])

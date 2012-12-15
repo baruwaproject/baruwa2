@@ -35,6 +35,16 @@ h.media_url() + 'js/baruwa/login.js')}
 			% if c.login_counter > 0:
 			    <p class="error">${_("The username or password you entered is incorrect.")}</p>
 			% endif
+			<% 
+			messages = h.flash.pop_messages()
+			if not messages and hasattr(c, 'form') and 'csrf_token' in c.form.errors:
+				message = c.form.errors.pop('csrf_token')[0]
+				msg = h.Msg('error', message)
+				messages.append(msg)
+			%>
+			% if messages:
+			<p class="error">${messages[0]}</p>
+			% endif
 			${h.form(url('/login', came_from=c.came_from, __logins=c.login_counter), id='loginform', method='post')}
 			<label>${_('Username')}</label><input type='text' name="login" />
 			<label>${_('Password')}</label><input type='password' name="password" />
@@ -52,11 +62,17 @@ h.media_url() + 'js/baruwa/login.js')}
 			<p><a id="iforgot" href="${url('accounts-pwreset', came_from=c.came_from)}">${_('Forgotten password ?')}</a></p>
 		</div>
 		<div id="forgottenpw"${'' if url.current() == url('accounts-pwreset') else ' class="hide"'|n}>
+		% if c.form.email.errors:
+		<p class="error">${u', '.join([unicode(ferr) for ferr in c.form.email.errors])}</p>
+		% endif
 		<p>${_("Forgotten your password? Enter your e-mail address below, and we'll e-mail instructions on setting a new one.")}</p>
 		<br />
 		${h.form(url('accounts-pwreset', came_from=c.came_from), id='resetform', method='post')}
-			<label>${_('Email address')}</label>
-			<input type="text" name="email" class="field" id="email" />
+			${h.HTML.div(c.form.csrf_token, style="display: none;")}
+			<!-- <label>${_('Email address')}</label> -->
+			${c.form.email.label}
+			${h.highlight_errors(c.form.email)}
+			<!-- <input type="text" name="email" class="field" id="email" /> -->
 			<a id="cancelrset" href="${url('accounts-login', came_from=c.came_from)}">${_('Cancel')}</a>
 			<input type="submit" class="button" id="pwreset" value="${_('Reset my password')}" />
 		${h.end_form()}

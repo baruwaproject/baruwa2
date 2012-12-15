@@ -99,6 +99,9 @@ def make_map(config):
         submap.connect('accounts-pwreset',
                 '/passwd/reset',
                 action='passwdreset')
+        submap.connect('accounts-pw-token-reset',
+                '/passwd/confirm/{token}',
+                action='pwtokenreset')
         submap.connect('accounts-set-lang',
                 '/setlang',
                 action='set_language')

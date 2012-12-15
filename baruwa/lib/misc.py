@@ -23,11 +23,13 @@ import json
 import magic
 import psutil
 import socket
+import string
 import gettext
 import binascii
 
 import GeoIP
 
+from random import choice
 from textwrap import wrap
 
 from IPy import IP
@@ -336,3 +338,10 @@ def get_ipaddr(value):
     except (ValueError, socket.error, socket.gaierror, socket.timeout):
         ipaddr = None
     return ipaddr
+
+
+def mkpasswd(length=15):
+    """Generate a random password"""
+    chars = "!#$%()*+,-./:;=?@^_`{|}~"
+    return ''.join([choice(string.letters + string.digits + chars)
+            for i in range(length)])
