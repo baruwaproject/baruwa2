@@ -105,7 +105,7 @@ def process_queue(queuedir, direction):
     return [item['messageid'] for item in mailq], mailq
 
 
-def update_queue_stats():
+def update_queue_stats(hostname):
     "Update queue stats"
     inqdir = get_config_option('IncomingQueueDir')
     outqdir = get_config_option('OutgoingQueueDir')
@@ -115,7 +115,9 @@ def update_queue_stats():
     allids.extend(tmpids)
 
     dbids = [item.messageid
-            for item in Session.query(MailQueueItem.messageid).all()]
+            for item in Session.query(MailQueueItem.messageid)\
+                                .filter(MailQueueItem.hostname == hostname)\
+                                .all()]
     remids = [item for item in dbids if not item in allids]
     preids = [item for item in dbids if not item in remids]
 
@@ -134,7 +136,6 @@ def update_queue_stats():
 class QueueStats(BaseCommand):
     "Read the items in the queue and populate DB"
     summary = 'Read the items in the queue and populate DB'
-    # usage = 'NAME '
     group_name = 'baruwa'
 
     def command(self):
@@ -143,8 +144,13 @@ class QueueStats(BaseCommand):
         try:
             lockfile = os.path.join(self.conf['baruwa.locks.dir'], 'queuestats.lock')
             with open(lockfile, 'w+') as lock:
-                fcntl.flock(lock, fcntl.LOCK_EX)
-                update_queue_stats()
+                fcntl.lockf(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
+                pipe = subprocess.Popen('hostname',
+                                        shell=True,
+                                        stdout=subprocess.PIPE,
+                                        stderr=subprocess.PIPE)
+                hostname = pipe.stdout.read().strip()
+                update_queue_stats(hostname)
         except IOError:
             warnings.warn("Queuestats already running !")
             sys.exit(2)
