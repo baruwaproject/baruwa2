@@ -9,6 +9,7 @@ include extras/perl/BS.pm
 include extras/perl/baruwa-backup2db.pl
 include extras/perl/exim-bcrypt.pl
 include extras/packaging/baruwa.*
+recursive-include debian *
 recursive-include extras/config *
 recursive-include extras/patches *
 recursive-include baruwa/public *

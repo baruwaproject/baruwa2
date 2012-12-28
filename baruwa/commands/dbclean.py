@@ -20,9 +20,9 @@
 
 import sys
 import datetime
-import subprocess
 
 from sqlalchemy.sql import text
+from eventlet.green import subprocess
 from sqlalchemy.exc import IntegrityError
 
 from baruwa.lib.dates import now

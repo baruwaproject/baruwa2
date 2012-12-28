@@ -22,10 +22,11 @@
 import os
 import re
 import codecs
-import subprocess
 
 from datetime import datetime
 from email.Header import decode_header
+
+from eventlet.green import subprocess
 
 
 SUBJECT_RE = re.compile(r'(?:\d+\s+Subject):(.+)')
@@ -140,7 +141,7 @@ class Mailq(list):
                 attribs['from_address'] = '<>'
             attribs['reason'] = '\n'.join(reasons)
             self.append(attribs)
-        except (os.error, IOError):
+        except (os.error, IOError, ValueError):
             pass
 
     def delete(self, items):

@@ -19,10 +19,10 @@
 "Update sphinx index"
 
 import sys
-import subprocess
 
 from MySQLdb import Error
 from sqlalchemy.sql import text
+from eventlet.green import subprocess
 
 from baruwa.model.meta import Session
 from baruwa.commands import BaseCommand
