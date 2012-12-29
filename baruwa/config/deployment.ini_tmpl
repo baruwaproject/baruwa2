@@ -112,6 +112,7 @@ baruwa.dkim.dir = /etc/MailScanner/baruwa/dkim
 baruwa.timezone = Africa/Johannesburg
 baruwa.messages.keep.days = 30
 baruwa.archive.keep.days = 90
+baruwa.mail.user = exim
 
 # celery settings
 broker.host = 127.0.0.1

@@ -222,7 +222,8 @@ def process_queued_msgs(msgids, action, direction, *args):
         if direction == 1 and action not in ['bounce', 'delete']:
             logger.info("Invalid action: %s" % action)
             return
-        queue = EximQueue('sudo -u exim ' + eximcmd)
+        exim_user = config.get('baruwa.mail.user', 'exim')
+        queue = EximQueue('sudo -u %s %s' % (exim_user, eximcmd))
         func = getattr(queue, action)
         msgids = [msgid for msgid in msgids if EXIM_MSGID_RE.match(msgid)]
         func(msgids, *args)
@@ -231,7 +232,13 @@ def process_queued_msgs(msgids, action, direction, *args):
         if queue.errors:
             for errmsg in queue.errors:
                 logger.info("STDERR: %s" % errmsg)
-        update_queue_stats()
+        pipe = subprocess.Popen(['/bin/hostname'],
+                            stdout=subprocess.PIPE,
+                            stderr=subprocess.PIPE)
+        hostname = pipe.communicate()[0]
+        pipe.wait(timeout=10)
+        hostname = hostname.strip()
+        update_queue_stats(hostname)
     except TypeError, error:
         logger.info("Invalid input: %s" % error)
     except AttributeError:
