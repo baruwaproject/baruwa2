@@ -150,6 +150,12 @@ have a fully working Baruwa installation::
 .. note::
 	If any of the tasks fails, rerun the above command.
 
-Step 3: Getting help
+Step 3: Finalize configuration
+------------------------------
+
+Now that the installation and setup are complete, you need to finalize the
+setup by creating settings, adding domains and creating accounts.
+
+Step 4: Getting help
 --------------------
 .. include:: ../../includes/help.rst
