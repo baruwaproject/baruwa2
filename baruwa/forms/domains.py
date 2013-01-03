@@ -117,11 +117,40 @@ class AddDomainForm(Form):
                                     allow_blank=True)
 
 
-class EditDomainForm(AddDomainForm):
+class EditDomainForm(Form):
     """Edit/Delete a domain"""
     name = TextField(_('Domain name'), [validators.Required(message=REQ_MSG),
                     validators.Regexp(DOM_RE,
                     message=_('Invalid Domain name'))])
+    # not inheriting from AddDomainForm cause it mangles output if we do
+    site_url = TextField(_('Site url'),
+                        [validators.Required(message=REQ_MSG),
+                        validators.URL()])
+    status = BooleanField(_('Enabled'), default=True)
+    smtp_callout = BooleanField(_('Enable SMTP callouts'), default=False)
+    ldap_callout = BooleanField(_('Enable LDAP callouts'), default=False)
+    virus_checks = BooleanField(_('Enable Virus checks'), default=True)
+    spam_checks = BooleanField(_('Enable SPAM checks'), default=True)
+    spam_actions = SelectField(_('What to do with probable spam'),
+                                choices=list(SPAM_ACTIONS))
+    highspam_actions = SelectField(_('What to do with definite spam'),
+                                    choices=list(SPAM_ACTIONS))
+    low_score = DecimalField(_('Probable spam score'), places=1, default=0)
+    high_score = DecimalField(_('Definite spam score'), places=1, default=0)
+    message_size = TextField(_('Maximum Message Size'),
+                            [validators.Regexp(MSGSIZE_RE,
+                            message=_('Invalid message size, '
+                                    'only B, K, M accepted'))],
+                            default='0')
+    delivery_mode = SelectField(_('Multi destination delivery mode'),
+                                choices=DELIVERY_MODES)
+    language = SelectField(_('Language'), choices=LANGUAGES, default='en')
+    timezone = SelectField(_('Default Timezone'), choices=TIMEZONE_TUPLES)
+    report_every = SelectField(_('Report frequency'),
+                                choices=REPORT_FREQ, default='3')
+    organizations = QuerySelectMultipleField(_('Organizations'),
+                                    get_label='name',
+                                    allow_blank=True)
 
 
 class BulkDelDomains(Form):
