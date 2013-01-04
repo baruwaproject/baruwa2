@@ -455,7 +455,7 @@ so you have it already, simply run::
 
    paster serve --reload /etc/baruwa/production.ini
 
-Now open http://localhost:8000/ to see how it works! You can try to login
+Now open http://localhost:5000/ to see how it works! You can try to login
 with the username and password you provided when you populated the database.
 
 If this produces errors then Baruwa or one of its dependencies is not
