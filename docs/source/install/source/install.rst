@@ -511,8 +511,10 @@ and reduced memory usage.
   .. toctree::
    nginx-uwsgi
 
+.. _install_cronjobs:
+
 Step 6c: Install cronjobs and sudo file
---------------------------------------
+---------------------------------------
 
 Baruwa needs to run some commands as the mail server user, like managing the
 queue as well as reloading the mail server to pickup configuration changes.

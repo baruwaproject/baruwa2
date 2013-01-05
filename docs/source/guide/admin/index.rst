@@ -1,4 +1,6 @@
 
+.. _admin_guide:
+
 ====================
 Administrators guide
 ====================
@@ -8,4 +10,5 @@ Administrators guide
    domains
    accounts
    settings
+   status
    :maxdepth: 2

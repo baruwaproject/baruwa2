@@ -3,61 +3,9 @@
 Automated Enterprise Edition installation
 =========================================
 
-Overview
-========
+.. include:: overview.rst
 
-Step 1: Installation requirements
-=================================
-
-Step 1a: Installation requirements for CentOS/RHEL/SL
------------------------------------------------------
-
-Install EPEL
-~~~~~~~~~~~~
-
-The EPEL repository is a volunteer-based community effort from the
-Fedora project to create a repository of high-quality add-on packages
-for Red Hat Enterprise (RHEL) and its compatible spinoffs such as CentOS,
-Oracle Enterprise Linux or Scientific Linux. You can find more details on
-EPEL including how to add it to your host at
-`http://fedoraproject.org/wiki/EPEL <http://fedoraproject.org/wiki/EPEL>`_
-and `http://fedoraproject.org/wiki/EPEL/FAQ#howtouse <http://fedoraproject.org/wiki/EPEL/FAQ#howtouse>`_.
-
-You need to install this repo in order to access certain packages
-that are required by Baruwa::
-
-	rpm -Uvh http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm
-
-Enable Baruwa enterprise repo
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-The Baruwa Centos/RHEL/SL enterprise repository is available to subscribers
-only. To install from this repo you need to enable the repo::
-
-	rpm -Uvh http://enterprise.baruwa.com/el6/i386/baruwa-enterprise-6-0.noarch.rpm
-
-Step 1b: Installation requirements for Debian/Ubuntu
-----------------------------------------------------
-
-Baruwa uses packages from only the main and universe repos, you should disable
-the other repos such as the multiverse and backports repos.
-
-Enable Baruwa enterprise repo
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-The Baruwa Debian/Ubuntu enterprise repository is available to subscribers
-only. To install from this repo you need to enable the repo::
-
-	wget xxxx
-
-The debian/ubuntu installer does not set the full host name, you need to
-manually set the full hostname by running the following commands. Be sure
-to change ``host.example.com`` to your actual hostname::
-
-	cat > /etc/hostname << 'EOF'
-	host.example.com
-	EOF
-	hostname host.example.com
+.. include:: requirements.rst
 
 Step 2: Installation
 --------------------
@@ -73,6 +21,11 @@ Install puppet::
 Install puppet::
 
 	apt-get install puppet -y
+
+Download and install the puppet toaster from the baruwa.com website::
+
+	wget http://www.baruwa.com/downloads/puppet-toaster-latest.tar.bz2
+	tar xjvf puppet-toaster-latest.tar.bz2 -C /etc/puppet/
 
 Create a puppet host manifest for your host by copying the provided
 sample::
@@ -158,4 +111,4 @@ setup by creating settings, adding domains and creating accounts.
 
 Step 4: Getting help
 --------------------
-.. include:: ../../includes/help.rst
+.. include:: help.rst

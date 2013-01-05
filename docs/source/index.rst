@@ -17,6 +17,7 @@ Contents:
    commands
    mta/index
    clustering
+   enterprise
    guide/user/index
    guide/admin/index
    contributing

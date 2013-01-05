@@ -3,21 +3,19 @@
 Manual Enterprise Edition installation
 ======================================
 
-Overview
---------
+.. include:: overview.rst
 
-Step 0: Required Repositories
------------------------------
+.. include:: requirements.rst
 
-Step 1: Install supporting packages
+Step 2: Install supporting packages
 -----------------------------------
 
-Step 2: Install Baruwa
+Step 3: Install Baruwa
 ----------------------
 
-Step 3: Configuration
+Step 4: Configuration
 ---------------------
 
-Step 4: Getting help
+Step 5: Getting help
 --------------------
-.. include:: ../../includes/help.rst
+.. include:: help.rst

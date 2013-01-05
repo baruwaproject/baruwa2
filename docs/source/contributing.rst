@@ -49,6 +49,9 @@ Translations for Baruwa are managed using `Transifex`_. To
 help with the translation effort join one of the language
 teams on our `Transifex project`_.
 
+Translations sent in via git pull requests are discouraged.
+Please try and use the `Transifex`_ system for all translations.
+
 .. _`Transifex`: https://www.transifex.com
 .. _`Transifex project`: https://www.transifex.com/projects/p/baruwa/
 .. _`Github`: http://github.com/akissa/baruwa2
