@@ -1,7 +1,7 @@
 
 Forgot your password, ${c.firstname}?
 
-Twitter received a request to reset the password for your Baruwa
+Baruwa received a request to reset the password for your Baruwa
 Account: (${c.username}).
 
 If you want to reset your password, click on the link below
