@@ -18,8 +18,8 @@ While logged in.
 3. Enter your new password twice then your old password.
 4. Click the ``Change Password`` button.
 
-Forgotten Password
-------------------
+Reset a Forgotten Password
+--------------------------
 
 At the login page.
 

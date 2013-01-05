@@ -4,10 +4,12 @@ Managing Organizations
 ======================
 
 Organizations enable easy management of large number of domains, Administrators
-are assigned to domains and can manage all the domains with in a organization.
+are assigned to Organizations and can manage all the domains with in the
+organization.
 
-You can create smaller organizations and add specific domains from a bigger
-organization to allow delegation of domain management.
+You can create smaller organizations out of bigger organizations and add
+specific domains from a bigger organization to allow delegation of domain
+management.
 
 .. _add_organization:
 

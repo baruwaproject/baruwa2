@@ -60,7 +60,7 @@ Spam or definite Spam.
 
 .. note::
 	* The ``Spam High score`` must be higher than the ``Spam low score``
-	* 0.0 uses the system defaults.
+	* Setting ``0.0`` makes Baruwa use the Domain or system defaults.
 
 1. Go to the the ``Account`` page
 2. Click ``Update Account``
@@ -73,6 +73,9 @@ Add Email signatures/Disclaimers
 Baruwa can manage email signatures / disclaimers that are added to messages
 that are sent outbound through it. Both HTML and Text signatures are supported.
 HTML signatures support a single embedded image.
+
+A WYSIWG Editor is used to setup the HTML signatures and it allows you to upload
+images that you can embed in your HTML signature.
 
 1. Go to the the ``Account`` page
 2. Click ``Add signature``

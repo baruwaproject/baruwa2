@@ -9,7 +9,7 @@ To signin in to Baruwa, you enter your name and password and select the
 language to use if the auto detected language is not the one you prefer
 to use.
 
-If you are signing in using external authentication such as your domain
+If you are signing in using external authentication such as your AD/LDAP
 or IMAP credentials then you need to provide the full username with the
 domain part included.
 

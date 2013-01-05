@@ -11,4 +11,5 @@ User guide
    lists
    reports
    mailq
+   search
    :maxdepth: 2
