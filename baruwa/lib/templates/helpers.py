@@ -29,7 +29,8 @@ from webhelpers.html.tags import image, select
 from pylons.i18n.translation import _
 from pylons import url, config
 from beaker.cache import cache_region
-from pyparsing import Word, alphas, restOfLine, Suppress, Group, SkipTo, Or
+from pyparsing import Word, alphas, restOfLine, Suppress
+from pyparsing import Group, SkipTo, Or, CaselessLiteral
 
 from baruwa.model import Session
 from baruwa.model.messages import SARule
@@ -98,8 +99,9 @@ def get_ips(headers):
     "Return a list of IP address from mail headers"
     ips = []
     end = Word(alphas, alphas + "-") + ":" + restOfLine
-    begin = Or((Suppress("Received: "), Suppress("X-Originating-IP: "),
-                Suppress("X-originating-ip: "))) + restOfLine
+    begin = Or((Suppress("Received: "),
+                Suppress(CaselessLiteral("X-Originating-IP: ")))
+            ) + restOfLine
     token = Group(begin + SkipTo(end, False))
     #hdrs = []
     def parse_headers():
