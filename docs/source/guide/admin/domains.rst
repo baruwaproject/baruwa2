@@ -155,7 +155,7 @@ added by :ref:`ad_additional_settings` and :ref:`radius_additional_setting`.
 Username map template variables
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Username map templates are low you to map Baruwa logins to complex user naming
+Username map templates allow you to map Baruwa logins to complex user naming
 schemes such as those used by web hosting control panels for ``virtual accounts``.
 
 The following variables are available to your ``username map template``:
@@ -177,9 +177,9 @@ AD/LDAP authentication requires the following additional setting.
 * ``Bind password`` - The BIND password
 * ``Use TLS`` - Use a TLS connection
 * ``Search for UserDN`` - Find the UserDN then Bind to that
-* ``Auth Search Filter`` - Filter used to find the UserDN
+* ``Auth Search Filter`` - Filter used to find the UserDN, :ref:`ldap_search_filter_vars` are supported
 * ``Auth Search Scope`` - Search Scope, defaults to ``subtree``
-* ``Email Search Filter`` - Filter used to find email addresses
+* ``Email Search Filter`` - Filter used to find email addresses, :ref:`ldap_search_filter_vars` are supported
 * ``Email Search Scope`` - Search Scope, defaults to ``subtree``
 
 To Add AD/LDAP Authentication additional settings:
@@ -190,6 +190,18 @@ To Add AD/LDAP Authentication additional settings:
 4. Select the LDAP ``Authentication server`` > Click ``Settings``
 5. Enter the required settings
 6. Click the ``Save settings`` button
+
+.. _ldap_search_filter_vars:
+
+LDAP Search Filter Variables
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The following variables are available for use in your LDAP search filters.
+
+* ``%n`` - login (user@domain)
+* ``%u`` - user (user part of the login)
+* ``%d`` - domain (domain part of the login)
+* ``%D`` - domainDN (domain DN)
 
 .. _radius_additional_setting:
 
@@ -278,7 +290,7 @@ Signatures
 
 Baruwa can manage email signatures / disclaimers that are added to messages
 that are sent outbound through it. Both HTML and Text signatures are supported.
-HTML signatures support a single embedded image.
+HTML signatures can contain a single embedded image.
 
 Adding Signatures/Disclaimers
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

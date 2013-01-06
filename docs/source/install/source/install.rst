@@ -164,6 +164,8 @@ CentOS/RHEL/SL::
 	host    all         all         127.0.0.1/32          md5
 	host    all         all         ::1/128               md5
 	EOF
+
+	sed -e "s/^#timezone = \(.*\)$/timezone = 'UTC'/" -i /var/lib/pgsql/data/postgresql.conf
 	
 	# restart the service
 	service postgresql restart
@@ -176,6 +178,8 @@ Debian/Ubuntu::
 	host    all         all         127.0.0.1/32          md5
 	host    all         all         ::1/128               md5
 	EOF
+
+	sed -e "s/^#timezone = \(.*\)$/timezone = 'UTC'/" -i /etc/postgresql/9.1/main/postgresql.conf
 
 	# restart the service
 	sudo service postgresql restart

@@ -47,10 +47,10 @@ Mail Security while not having the burden of maintenance of
 their own Baruwa infrastructure, Others require a self-hosted
 implementation using robust, tested and supported packages.
 
-Baruwa Enterprise Edition is tailored towards large entities with
+`Baruwa Enterprise Edition`_ is tailored towards large entities with
 complex requirements, hundreds of mail users and stability needs.
 
-Baruwa Enterprise Edition is shipped from a subscription based
+`Baruwa Enterprise Edition`_ is shipped from a subscription based
 repository and provides stable and tested Baruwa and dependency
 packages for Centos/RHEL/SL as well as Ubuntu and Debian.
 
@@ -60,3 +60,4 @@ Baruwa installation.
 
 .. _`try it`: https://hosted.baruwa.net/invite
 .. _`Baruwa.net`: http://www.baruwa.net/
+.. _`Baruwa Enterprise Edition`: https://www.baruwa.com/
