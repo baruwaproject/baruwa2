@@ -351,7 +351,7 @@ class AccountsController(BaseController):
                 Session.commit()
                 raise NoResultFound
             user = self._get_user(token.user_id)
-            if not user:
+            if not user or user.is_superadmin:
                 raise NoResultFound
             passwd = mkpasswd()
             user.set_password(passwd)
@@ -385,7 +385,7 @@ class AccountsController(BaseController):
             abort(404)
         c.form = ChangePasswordForm(request.POST, csrf_context=session)
         if request.POST and c.form.validate():
-            if user.local:
+            if user.local and not user.is_superadmin:
                 user.set_password(c.form.password1.data)
                 Session.add(user)
                 Session.commit()
@@ -396,8 +396,11 @@ class AccountsController(BaseController):
                         2, unicode(info), request.host,
                         request.remote_addr, now())
             else:
-                flash(_('This is an external account, use'
-                    ' external system to reset the password'))
+                if user.is_superadmin:
+                    flash(_('Admin accounts can not be modified via the web'))
+                else:
+                    flash(_('This is an external account, use'
+                        ' external system to reset the password'))
             redirect(url('account-detail', userid=user.id))
         c.id = userid
         c.username = user.username
