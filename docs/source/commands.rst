@@ -12,6 +12,7 @@ Command options and help
 These commands may take options to get details on the supported options run::
 
 	paster baruwa
+	paster COMMAND_NAME -h
 
 Quarantine management
 ---------------------
@@ -87,3 +88,21 @@ the above commands merge the delta index with the main index and remove id's fro
 the realtime index that have been indexed to disk indexes.
 
 The ``messages`` index has a real time index while ``archive`` does not.
+
+Create an administrator account
+-------------------------------
+::
+
+	paster create-admin-user -u USERNAME -p PASSWORD -e EMAIL -t TIMEZONE /etc/baruwa/production.ini
+
+Create an administrator account
+
+
+Change user password
+--------------------
+::
+
+	paster change-user-password --username USERNAME /etc/baruwa/production.ini
+
+Changes an accounts password, This is the only way to change an administrator account's
+password as it cannot be changed via the web interface.

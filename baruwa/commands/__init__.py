@@ -57,6 +57,7 @@ class BaseCommand(Command):
     max_args = 1
     
     parser = Command.standard_parser(verbose=True)
+    parser.set_conflict_handler("resolve")
 
     def init(self):
         "init"
