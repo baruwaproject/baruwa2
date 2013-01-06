@@ -89,7 +89,6 @@ class DBCleanCommand(BaseCommand):
         help='Delete achived records older than archive',
         type='int', default=90)
     summary = 'archives, then deletes old records, and trims archive'
-    # usage = 'NAME '
     group_name = 'baruwa'
 
     def command(self):

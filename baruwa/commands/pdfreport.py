@@ -50,7 +50,6 @@ class SendPdfReports(BaseCommand):
         help='only messages newer than days ago',
         type='int', default=0)
     summary = 'Send summary PDF reports'
-    # usage = 'NAME '
     group_name = 'baruwa'
 
     def command(self):
