@@ -47,9 +47,12 @@ class BaseController(WSGIController):
         if 'lang' in session:
             set_lang(session['lang'])
         else:
-            languages = [lang.split('-')[0] for lang in request.languages
+            try:
+                languages = [lang.split('-')[0] for lang in request.languages
                         if check_language(lang.split('-')[0])]
-            set_lang(languages)
+                set_lang(languages)
+            except AttributeError:
+                set_lang(['en'])
         self.invalidate = request.GET.get('uc', None)
         self.langchange = request.GET.get('lc', None)
 
