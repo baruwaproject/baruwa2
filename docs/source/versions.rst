@@ -50,6 +50,10 @@ implementation using robust, tested and supported packages.
 `Baruwa Enterprise Edition`_ is tailored towards large entities with
 complex requirements, hundreds of mail users and stability needs.
 
+`Baruwa Enterprise Edition`_ is a fully fledged Mail Security solution,
+based on best of breed open source software packages. Included are all
+the packages to build an efficient and robust mail filtering solution.
+
 `Baruwa Enterprise Edition`_ is shipped from a subscription based
 repository and provides stable and tested Baruwa and dependency
 packages for Centos/RHEL/SL as well as Ubuntu and Debian.
