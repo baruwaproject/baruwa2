@@ -40,6 +40,7 @@ The certificate needs to be installed to ``/etc/pki/baruwa-enterprise/client.pem
 Install the private key that you created in :ref:`enterprise_pk` and used to
 :ref:`enterprise_csr` to ``/etc/pki/baruwa-enterprise/client.key``
 
+
 Step 1b: Installation requirements for Debian/Ubuntu
 ----------------------------------------------------
 

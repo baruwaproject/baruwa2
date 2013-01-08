@@ -34,7 +34,7 @@ maintenance.
 Baruwa Enterprise Editions. You can `try it`_ for free for
 30 days.
 
-`Baruwa.net`_ is managed by author of Baruwa.
+`Baruwa.net`_ is managed by the developer of Baruwa.
 
 
 .. _enterprise_edition:

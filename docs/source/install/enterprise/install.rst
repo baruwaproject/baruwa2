@@ -14,6 +14,8 @@ Manual Enterprise Edition installation
 
 .. include:: requirements.rst
 
+.. _install_support_packages:
+
 Step 2: Install and configure supporting packages
 =================================================
 

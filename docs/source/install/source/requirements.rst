@@ -25,7 +25,7 @@ EPEL Requirements
 required by Baruwa.**
 ::
 
-	rpm -Uvh http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-7.noarch.rpm
+	rpm -Uvh http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm
 
 
 Run the following command to install the required packages.
