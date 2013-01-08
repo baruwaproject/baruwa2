@@ -1,3 +1,4 @@
+.. _auto_install:
 
 =========================================
 Automated Enterprise Edition installation
@@ -24,7 +25,7 @@ Install puppet::
 
 Download and install the puppet toaster from the baruwa.com website::
 
-	wget http://www.baruwa.com/downloads/puppet-toaster-latest.tar.bz2
+	wget --no-check-certificate http://www.baruwa.com/downloads/puppet-toaster-latest.tar.bz2
 	tar xjvf puppet-toaster-latest.tar.bz2 -C /etc/puppet/
 
 Create a puppet host manifest for your host by copying the provided
@@ -107,7 +108,11 @@ Step 3: Finalize configuration
 ------------------------------
 
 Now that the installation and setup are complete, you need to finalize the
-setup by creating settings, adding domains and creating accounts.
+setup by :ref:`add_scanning_node`, :ref:`add_organization`,
+:ref:`add_domain` and :ref:`add_account`.
+
+Review the :ref:`admin_guide` for other configuration and setup options
+available.
 
 Step 4: Getting help
 --------------------

@@ -52,7 +52,20 @@ Enable Baruwa enterprise repo
 The Baruwa Debian/Ubuntu enterprise repository is available to subscribers
 only. To install from this repo you need to enable the repo::
 
-	TODO
+	wget --no-check-certificate https://www.baruwa.com/downloads/baruwa-enterprise-keyring_0.1-1_all.deb
+	dpkg -i baruwa-enterprise-keyring_0.1-1_all.deb
+
+Install Baruwa enterprise server certificate and key
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Install the certificate that you received when you purchased your server subscription.
+The certificate needs to be installed to ``/etc/apt/certs/baruwa-enterprise/client.pem``.
+
+Install the private key that you created in :ref:`enterprise_pk` and used to
+:ref:`enterprise_csr` to ``/etc/apt/certs/baruwa-enterprise/client.key``
+
+Set the hostname
+~~~~~~~~~~~~~~~~~
 
 The debian/ubuntu installer does not set the full host name, you need to
 manually set the full hostname by running the following commands. Be sure

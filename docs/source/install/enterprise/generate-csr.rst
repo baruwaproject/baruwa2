@@ -1,8 +1,8 @@
 .. _generate_csr:
 
-====================================
-Generate Certificate Signing Request
-====================================
+==============================================
+How to generate  a Certificate Signing Request
+==============================================
 
 Access to the Baruwa enterprise repository is authenticated using SSL/TLS
 machine certificates.
@@ -18,7 +18,8 @@ send it to us and we will issue your the server certificate.
 Generate the private key
 ------------------------
 
-To generate the private key you need openssl or gnutls installed.
+To generate the private key you need either **openssl** or **gnutls**
+installed.
 
 OpenSSL::
 

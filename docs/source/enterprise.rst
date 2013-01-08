@@ -1,11 +1,20 @@
 .. _enterprise_misc:
 
-========================
-Baruwa Enterprise Howtos
-========================
+=======================
+Baruwa Enterprise FAQ's
+=======================
 
 Certificates
 ============
 
-	.. toctree::
-	 install/enterprise/generate-csr
+	 :ref:`generate_csr`
+
+Supported Operating systems
+===========================
+
+	 :ref:`os_support`
+
+Supported MTA's
+===============
+
+	:ref:`enterprise_mta`

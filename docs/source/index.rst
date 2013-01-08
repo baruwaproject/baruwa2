@@ -11,16 +11,18 @@ Contents:
    requirements
    install/source/requirements
    install/source/install
-   install/source/issues
    install/enterprise/install
    install/enterprise/puppet
+   enterprise
    commands
+   authentication
    mta/index
    clustering
-   enterprise
    guide/user/index
    guide/admin/index
+   faq
    contributing
+   cla
    :maxdepth: 3
 
 

@@ -11,6 +11,10 @@ There are so many ways to help Baruwa's development,
 * Donate to the project
 * Documentation
 * Translation
+
+.. note::
+	All significant source code contributions to Baruwa will
+	require the signing of the :ref:`baruwa_cla`
 	
 Reporting bugs
 --------------
@@ -36,12 +40,7 @@ repo make the changes then either:
 * Submit old style patches to the `mailing-list`_
 
 You can also contribute tips and sightings on the 
-`baruwa wiki`_ at Github.
-
-Donations
----------
-Donations are appreciated please use the `Pledge`_ 
-system which accepts paypal payments 
+`baruwa wiki`_ at Github. 
 
 Translation
 -----------
@@ -51,6 +50,11 @@ teams on our `Transifex project`_.
 
 Translations sent in via git pull requests are discouraged.
 Please try and use the `Transifex`_ system for all translations.
+
+Donations
+---------
+Donations are appreciated please use the `Pledge`_ 
+system which accepts paypal payments
 
 .. _`Transifex`: https://www.transifex.com
 .. _`Transifex project`: https://www.transifex.com/projects/p/baruwa/

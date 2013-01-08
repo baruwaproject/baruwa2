@@ -11,6 +11,8 @@ The following information is provided:
 * Mail Queues
 * Audit logs
 
+.. _global_status:
+
 Global status
 =============
 
@@ -38,6 +40,8 @@ Scanner node status
 -------------------
 
 The status of all the scanning nodes in this Baruwa cluster.
+
+.. _scanner_node_status:
 
 Scanner node status
 ===================
