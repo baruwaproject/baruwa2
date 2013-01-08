@@ -250,6 +250,7 @@ epub_title = u'Baruwa 2.0'
 epub_author = u'Andrew Colin Kissa'
 epub_publisher = u'Andrew Colin Kissa'
 epub_copyright = u'2012, Andrew Colin Kissa'
+epub_basename = u'baruwa'
 
 # The language of the text. It defaults to the language option
 # or en if the language is not set.
