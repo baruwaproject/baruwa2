@@ -1,5 +1,5 @@
 # Translations template for baruwa.
-# Copyright (C) 2012 Andrew Colin Kissa
+# Copyright (C) 2013 Andrew Colin Kissa
 # This file is distributed under the same license as the baruwa project.
 # 
 # Translators:
@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: baruwa\n"
 "Report-Msgid-Bugs-To: andrew@topdog.za.net\n"
-"POT-Creation-Date: 2012-12-15 12:13+0200\n"
-"PO-Revision-Date: 2012-12-15 10:48+0000\n"
+"POT-Creation-Date: 2013-01-09 12:14+0200\n"
+"PO-Revision-Date: 2013-01-09 10:59+0000\n"
 "Last-Translator: datopdog <andrew@topdog.za.net>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -19,115 +19,115 @@ msgstr ""
 "Language: pt\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: baruwa/commands/pdfreport.py:116 baruwa/controllers/reports.py:62
+#: baruwa/commands/pdfreport.py:115 baruwa/controllers/reports.py:62
 #: baruwa/templates/reports/index.html:13
 msgid "Top Senders by Quantity"
 msgstr "Top remetentes por quantidade"
 
-#: baruwa/commands/pdfreport.py:118 baruwa/controllers/reports.py:64
+#: baruwa/commands/pdfreport.py:117 baruwa/controllers/reports.py:64
 #: baruwa/templates/reports/index.html:14
 msgid "Top Senders by Volume"
 msgstr "Top remetentes por Volume"
 
-#: baruwa/commands/pdfreport.py:120 baruwa/controllers/reports.py:66
+#: baruwa/commands/pdfreport.py:119 baruwa/controllers/reports.py:66
 #: baruwa/templates/reports/index.html:15
 msgid "Top Sender Domains by Quantity"
 msgstr "Principais domínios de remetentes por quantidade"
 
-#: baruwa/commands/pdfreport.py:122 baruwa/controllers/reports.py:68
+#: baruwa/commands/pdfreport.py:121 baruwa/controllers/reports.py:68
 #: baruwa/templates/reports/index.html:16
 msgid "Top Sender Domains by Volume"
 msgstr "Principais domínios de remetentes por Volume"
 
-#: baruwa/commands/pdfreport.py:124 baruwa/controllers/reports.py:70
+#: baruwa/commands/pdfreport.py:123 baruwa/controllers/reports.py:70
 #: baruwa/templates/reports/index.html:23
 msgid "Top Recipients by Quantity"
 msgstr "Principais destinatários por quantidade"
 
-#: baruwa/commands/pdfreport.py:126 baruwa/controllers/reports.py:72
+#: baruwa/commands/pdfreport.py:125 baruwa/controllers/reports.py:72
 #: baruwa/templates/reports/index.html:24
 msgid "Top Recipients by Volume"
 msgstr "Principais destinatários por Volume"
 
-#: baruwa/commands/pdfreport.py:128 baruwa/controllers/reports.py:74
+#: baruwa/commands/pdfreport.py:127 baruwa/controllers/reports.py:74
 #: baruwa/templates/reports/index.html:26
 msgid "Top Recipient Domains By Quantity"
 msgstr "Principais domínios de destinatário por quantidade"
 
-#: baruwa/commands/pdfreport.py:130 baruwa/controllers/reports.py:76
+#: baruwa/commands/pdfreport.py:129 baruwa/controllers/reports.py:76
 #: baruwa/templates/reports/index.html:27
 msgid "Top Recipient Domains By Volume"
 msgstr "Principais domínios de destinatário por Volume"
 
-#: baruwa/commands/pdfreport.py:132 baruwa/controllers/reports.py:78
+#: baruwa/commands/pdfreport.py:131 baruwa/controllers/reports.py:78
 msgid "Spam Score distribution"
 msgstr "Distribuição de Pontuação de spam"
 
-#: baruwa/commands/pdfreport.py:134 baruwa/controllers/reports.py:80
+#: baruwa/commands/pdfreport.py:133 baruwa/controllers/reports.py:80
 msgid "Top mail hosts by quantity"
 msgstr "Hosts de correio superior por quantidade"
 
-#: baruwa/commands/pdfreport.py:136 baruwa/controllers/reports.py:82
+#: baruwa/commands/pdfreport.py:135 baruwa/controllers/reports.py:82
 msgid "Total messages [ After SMTP ]"
 msgstr "Total de mensagens [depois SMTP]"
 
-#: baruwa/commands/pdfreport.py:138 baruwa/controllers/reports.py:226
+#: baruwa/commands/pdfreport.py:137 baruwa/controllers/reports.py:226
 #: baruwa/templates/reports/piereport.html:25
 msgid "Address"
 msgstr "Endereço"
 
-#: baruwa/commands/pdfreport.py:138 baruwa/controllers/reports.py:226
+#: baruwa/commands/pdfreport.py:137 baruwa/controllers/reports.py:226
 #: baruwa/templates/reports/barreport.html:32
 #: baruwa/templates/reports/piereport.html:26
 msgid "Count"
 msgstr "Contagem"
 
-#: baruwa/commands/pdfreport.py:138 baruwa/controllers/reports.py:226
+#: baruwa/commands/pdfreport.py:137 baruwa/controllers/reports.py:226
 #: baruwa/templates/reports/listing.html:56
 #: baruwa/templates/reports/piereport.html:27
 #: baruwa/templates/reports/relays.html:29
 msgid "Volume"
 msgstr "Volume"
 
-#: baruwa/commands/pdfreport.py:139 baruwa/controllers/reports.py:230
+#: baruwa/commands/pdfreport.py:138 baruwa/controllers/reports.py:230
 #: baruwa/forms/reports.py:55 baruwa/templates/reports/listing.html:38
 msgid "Date"
 msgstr "Data"
 
-#: baruwa/commands/pdfreport.py:139 baruwa/controllers/reports.py:230
+#: baruwa/commands/pdfreport.py:138 baruwa/controllers/reports.py:230
 msgid "Mail totals"
 msgstr "Mensagens totais"
 
-#: baruwa/commands/pdfreport.py:140 baruwa/controllers/reports.py:231
+#: baruwa/commands/pdfreport.py:139 baruwa/controllers/reports.py:231
 msgid "Spam totals"
 msgstr "Totais de spam"
 
-#: baruwa/commands/pdfreport.py:140 baruwa/controllers/reports.py:232
+#: baruwa/commands/pdfreport.py:139 baruwa/controllers/reports.py:232
 msgid "Virus totals"
 msgstr "Totais de vírus"
 
-#: baruwa/commands/pdfreport.py:141 baruwa/controllers/reports.py:233
+#: baruwa/commands/pdfreport.py:140 baruwa/controllers/reports.py:233
 msgid "Mail volume"
 msgstr "Volume de correio"
 
-#: baruwa/commands/pdfreport.py:141 baruwa/controllers/reports.py:234
+#: baruwa/commands/pdfreport.py:140 baruwa/controllers/reports.py:234
 msgid "Totals"
 msgstr "Totais"
 
-#: baruwa/commands/pdfreport.py:142 baruwa/controllers/reports.py:223
+#: baruwa/commands/pdfreport.py:141 baruwa/controllers/reports.py:223
 msgid "Baruwa mail report"
 msgstr "Relatório de e-mail Elonir"
 
-#: baruwa/commands/pdfreport.py:176 baruwa/controllers/reports.py:235
+#: baruwa/commands/pdfreport.py:175 baruwa/controllers/reports.py:235
 #: baruwa/templates/reports/index.html:29
 msgid "Message Totals"
 msgstr "Totais de mensagem"
 
-#: baruwa/commands/pdfreport.py:183 baruwa/commands/quarantinereport.py:150
+#: baruwa/commands/pdfreport.py:182 baruwa/commands/quarantinereport.py:150
 msgid "Baruwa Reports"
 msgstr "Elonir relatórios"
 
-#: baruwa/commands/pdfreport.py:186
+#: baruwa/commands/pdfreport.py:185
 msgid "Baruwa usage report"
 msgstr "Relatório de uso de João"
 
@@ -148,172 +148,176 @@ msgstr "Primeira vez Login de autenticação externa, sua conta local foi criada
 msgid "Login successful, Welcome back %(username)s !"
 msgstr "Login bem sucedido, boa vinda para trás %(username)s!"
 
-#: baruwa/controllers/accounts.py:324 baruwa/controllers/accounts.py:360
+#: baruwa/controllers/accounts.py:329 baruwa/controllers/accounts.py:366
 #: baruwa/controllers/invite.py:66 baruwa/controllers/invite.py:162
 #: baruwa/controllers/invite.py:177
 msgid "Baruwa Hosted"
 msgstr "Elonir hospedado"
 
-#: baruwa/controllers/accounts.py:327
+#: baruwa/controllers/accounts.py:332
 msgid "[Baruwa] Password reset request"
 msgstr "[João] Pedido de redefinição de senha"
 
-#: baruwa/controllers/accounts.py:331
+#: baruwa/controllers/accounts.py:336
 msgid ""
 "An email has been sent to the address provided, please follow the "
 "instructions in that email to reset your password."
 msgstr "Um e-mail foi enviado para o endereço fornecido, por favor, siga as instruções no e-mail para redefinir sua senha."
 
-#: baruwa/controllers/accounts.py:363
+#: baruwa/controllers/accounts.py:369
 msgid "[Baruwa] Password reset"
 msgstr "[João] Redefinição de senha"
 
-#: baruwa/controllers/accounts.py:367
+#: baruwa/controllers/accounts.py:373
 msgid ""
 "The password has been reset, check your email for the temporary password you"
 " should use to login."
 msgstr "A senha foi redefinida, verifique o seu e-mail a senha temporária, você deve usar para login."
 
-#: baruwa/controllers/accounts.py:370
+#: baruwa/controllers/accounts.py:376
 msgid "The token used is invalid or does not exist"
 msgstr "O símbolo usado é inválido ou não existe"
 
-#: baruwa/controllers/accounts.py:386 baruwa/controllers/accounts.py:416
+#: baruwa/controllers/accounts.py:392 baruwa/controllers/accounts.py:425
 #, python-format
 msgid "The account password for %(name)s has been reset"
 msgstr "A senha da conta para %(name)s foi redefinido"
 
-#: baruwa/controllers/accounts.py:393 baruwa/controllers/accounts.py:423
+#: baruwa/controllers/accounts.py:400
+msgid "Admin accounts can not be modified via the web"
+msgstr ""
+
+#: baruwa/controllers/accounts.py:402 baruwa/controllers/accounts.py:432
 msgid "This is an external account, use external system to reset the password"
 msgstr "Esta é uma conta externa, use o sistema externo para redefinir a senha"
 
-#: baruwa/controllers/accounts.py:429
+#: baruwa/controllers/accounts.py:438
 msgid "The old password supplied does not match our records"
 msgstr "A antiga senha fornecida não coincide com os nossos registos"
 
-#: baruwa/controllers/accounts.py:605
+#: baruwa/controllers/accounts.py:614
 #, python-format
 msgid "The account: %(user)s was created successfully"
 msgstr "A conta: %(user)s foi criado com sucesso"
 
-#: baruwa/controllers/accounts.py:611
+#: baruwa/controllers/accounts.py:620
 msgid "Either the username or email address already exist"
 msgstr "Tanto o nome de usuário ou endereço de e-mail já existe"
 
-#: baruwa/controllers/accounts.py:642
+#: baruwa/controllers/accounts.py:651
 msgid "The account has been updated"
 msgstr "A conta foi atualizada"
 
-#: baruwa/controllers/accounts.py:651
+#: baruwa/controllers/accounts.py:660
 #, python-format
 msgid "The account: %(acc)s could not be updated"
 msgstr "A conta: %(acc)s não pôde ser atualizado"
 
-#: baruwa/controllers/accounts.py:657
+#: baruwa/controllers/accounts.py:666
 msgid "No changes made to the account"
 msgstr "Sem alterações feitas para a conta"
 
-#: baruwa/controllers/accounts.py:679
+#: baruwa/controllers/accounts.py:688
 msgid "The account has been deleted"
 msgstr "A conta foi excluída"
 
-#: baruwa/controllers/accounts.py:688
+#: baruwa/controllers/accounts.py:697
 #, python-format
 msgid ""
 "The account: %(a)s and all associated data will be deleted, This action is "
 "not reversible."
 msgstr "A conta: %(a)s e todos os dados associados serão excluídos, esta ação não é reversível."
 
-#: baruwa/controllers/accounts.py:745
+#: baruwa/controllers/accounts.py:754
 msgid "The accounts have been deleted"
 msgstr "As contas foram excluídas"
 
-#: baruwa/controllers/accounts.py:748
+#: baruwa/controllers/accounts.py:757
 msgid ""
 "The following accounts are about to be deleted, this action is not "
 "reversible, Do you wish to continue ?"
 msgstr "As seguintes contas estão prestes a ser excluído, esta ação não é reversível, quer continuar?"
 
-#: baruwa/controllers/accounts.py:757 baruwa/controllers/domains.py:385
+#: baruwa/controllers/accounts.py:766 baruwa/controllers/domains.py:385
 msgid "An error occured try again"
 msgstr "Ocorreu um erro tente novamente"
 
-#: baruwa/controllers/accounts.py:794
+#: baruwa/controllers/accounts.py:803
 #, python-format
 msgid "The alias address %(address)s was successfully created."
 msgstr "O endereço de alias %(address)s foi criado com êxito."
 
-#: baruwa/controllers/accounts.py:797 baruwa/controllers/accounts.py:845
+#: baruwa/controllers/accounts.py:806 baruwa/controllers/accounts.py:854
 #, python-format
 msgid "The address %(addr)s already exists"
 msgstr "O endereço %(addr)s já existe"
 
-#: baruwa/controllers/accounts.py:800 baruwa/controllers/accounts.py:848
+#: baruwa/controllers/accounts.py:809 baruwa/controllers/accounts.py:857
 #, python-format
 msgid "Domain: %(d)s does not belong to you"
 msgstr "Domínio: %(d)s não pertence a você"
 
-#: baruwa/controllers/accounts.py:840
+#: baruwa/controllers/accounts.py:849
 msgid "The alias address has been updated"
 msgstr "O endereço de alias foi atualizado"
 
-#: baruwa/controllers/accounts.py:842
+#: baruwa/controllers/accounts.py:851
 msgid "No changes were made to the address"
 msgstr "Não foram feitas alterações para o endereço"
 
-#: baruwa/controllers/accounts.py:876
+#: baruwa/controllers/accounts.py:885
 msgid "The address has been deleted"
 msgstr "O endereço foi excluído"
 
-#: baruwa/controllers/accounts.py:946 baruwa/controllers/organizations.py:359
+#: baruwa/controllers/accounts.py:955 baruwa/controllers/organizations.py:359
 msgid ""
 "File uploaded, and is being processed, this page will automatically refresh "
 "to show the status"
 msgstr "Arquivo carregado e está sendo processado, nesta página será automaticamente atualizada para mostrar o status"
 
-#: baruwa/controllers/accounts.py:953 baruwa/controllers/organizations.py:365
+#: baruwa/controllers/accounts.py:962 baruwa/controllers/organizations.py:365
 #, python-format
 msgid "The file: %s is not a CSV file"
 msgstr "O arquivo: %s não é um arquivo CSV"
 
-#: baruwa/controllers/accounts.py:956 baruwa/controllers/organizations.py:368
+#: baruwa/controllers/accounts.py:965 baruwa/controllers/organizations.py:368
 #, python-format
 msgid "The file: %s already exists and is being processed."
 msgstr "O arquivo: %s já existe e está sendo processado."
 
-#: baruwa/controllers/accounts.py:960 baruwa/controllers/organizations.py:372
+#: baruwa/controllers/accounts.py:969 baruwa/controllers/organizations.py:372
 msgid "No CSV was file uploaded, try again"
 msgstr "Nenhum CSV foi arquivo carregado, tente novamente"
 
-#: baruwa/controllers/accounts.py:970 baruwa/controllers/accounts.py:1026
+#: baruwa/controllers/accounts.py:979 baruwa/controllers/accounts.py:1035
 #: baruwa/controllers/domains.py:868 baruwa/controllers/messages.py:660
 #: baruwa/controllers/messages.py:662 baruwa/controllers/organizations.py:381
 #: baruwa/controllers/status.py:497
 msgid "The task status requested has expired or does not exist"
 msgstr "O status da tarefa solicitada expirou ou não existe"
 
-#: baruwa/controllers/accounts.py:978 baruwa/controllers/accounts.py:1034
+#: baruwa/controllers/accounts.py:987 baruwa/controllers/accounts.py:1043
 #: baruwa/controllers/domains.py:876 baruwa/controllers/organizations.py:389
 #: baruwa/controllers/status.py:505
 #, python-format
 msgid "Error occured in processing %s"
 msgstr "Ocorreu um erro no processamento de %s"
 
-#: baruwa/controllers/accounts.py:981 baruwa/controllers/accounts.py:1037
+#: baruwa/controllers/accounts.py:990 baruwa/controllers/accounts.py:1046
 #: baruwa/controllers/domains.py:879 baruwa/controllers/organizations.py:392
 #: baruwa/controllers/status.py:508
 msgid "Backend error occured during processing."
 msgstr "Backend erro durante o processamento."
 
-#: baruwa/controllers/accounts.py:998 baruwa/controllers/organizations.py:412
+#: baruwa/controllers/accounts.py:1007 baruwa/controllers/organizations.py:412
 msgid "The import could not be processed, try again later"
 msgstr "A importação não poderia ser processado, tente novamente mais tarde"
 
-#: baruwa/controllers/accounts.py:1018
+#: baruwa/controllers/accounts.py:1027
 msgid "Accounts export is being processed"
 msgstr "Exportação de contas está sendo processada"
 
-#: baruwa/controllers/accounts.py:1053 baruwa/controllers/domains.py:889
+#: baruwa/controllers/accounts.py:1062 baruwa/controllers/domains.py:889
 msgid "The export could not be processed, try again later"
 msgstr "A exportação não poderia ser processados, tente novamente mais tarde"
 
@@ -900,7 +904,7 @@ msgid "Account not found"
 msgstr "Conta não encontrada"
 
 #: baruwa/forms/accounts.py:81 baruwa/forms/accounts.py:117
-#: baruwa/tasks/status.py:290 baruwa/templates/accounts/account.html:38
+#: baruwa/tasks/status.py:297 baruwa/templates/accounts/account.html:38
 #: baruwa/templates/accounts/confirmbulkdel.html:8
 #: baruwa/templates/accounts/importstatus.html:5
 #: baruwa/templates/accounts/index.html:34
@@ -938,7 +942,7 @@ msgstr "Redigite a senha"
 #: baruwa/forms/accounts.py:94 baruwa/forms/accounts.py:121
 #: baruwa/forms/invite.py:54 baruwa/templates/accounts/confirmbulkdel.html:10
 #: baruwa/templates/accounts/index.html:36
-#: baruwa/templates/accounts/login.html:69
+#: baruwa/templates/accounts/login.html:72
 #: baruwa/templates/accounts/searchresults.html:26
 msgid "Email address"
 msgstr "Endereço de e-mail"
@@ -961,11 +965,12 @@ msgstr "Domínios"
 
 #: baruwa/forms/accounts.py:103 baruwa/forms/accounts.py:126
 #: baruwa/forms/accounts.py:146 baruwa/forms/domains.py:93
-#: baruwa/forms/domains.py:143 baruwa/forms/domains.py:155
-#: baruwa/forms/domains.py:173 baruwa/forms/domains.py:189
-#: baruwa/forms/organizations.py:63 baruwa/forms/settings.py:169
-#: baruwa/forms/settings.py:700 baruwa/forms/settings.py:705
-#: baruwa/lib/templates/helpers.py:226 baruwa/templates/settings/index.html:17
+#: baruwa/forms/domains.py:129 baruwa/forms/domains.py:172
+#: baruwa/forms/domains.py:184 baruwa/forms/domains.py:202
+#: baruwa/forms/domains.py:218 baruwa/forms/organizations.py:63
+#: baruwa/forms/settings.py:169 baruwa/forms/settings.py:700
+#: baruwa/forms/settings.py:705 baruwa/lib/templates/helpers.py:228
+#: baruwa/templates/settings/index.html:17
 msgid "Enabled"
 msgstr "Habilitado"
 
@@ -979,10 +984,12 @@ msgid "Enable spam checks"
 msgstr "Assegurar o controlo de spam"
 
 #: baruwa/forms/accounts.py:106 baruwa/forms/domains.py:102
+#: baruwa/forms/domains.py:138
 msgid "Probable spam score"
 msgstr "Pontuação de provável spam"
 
 #: baruwa/forms/accounts.py:107 baruwa/forms/domains.py:103
+#: baruwa/forms/domains.py:139
 msgid "Definite spam score"
 msgstr "Pontuação de spam definitiva"
 
@@ -994,15 +1001,15 @@ msgstr "Baixa pontuação de spam"
 msgid "Spam high score"
 msgstr "Alta pontuação de spam"
 
-#: baruwa/forms/accounts.py:136 baruwa/forms/domains.py:130
+#: baruwa/forms/accounts.py:136 baruwa/forms/domains.py:159
 msgid "delete"
 msgstr "excluir"
 
-#: baruwa/forms/accounts.py:137 baruwa/forms/domains.py:131
+#: baruwa/forms/accounts.py:137 baruwa/forms/domains.py:160
 msgid "disable"
 msgstr "desativar"
 
-#: baruwa/forms/accounts.py:138 baruwa/forms/domains.py:132
+#: baruwa/forms/accounts.py:138 baruwa/forms/domains.py:161
 msgid "enable"
 msgstr "Enable"
 
@@ -1068,7 +1075,7 @@ msgstr "Semanal"
 msgid "Daily"
 msgstr "Diário"
 
-#: baruwa/forms/domains.py:52 baruwa/lib/templates/helpers.py:229
+#: baruwa/forms/domains.py:52 baruwa/lib/templates/helpers.py:231
 msgid "Disabled"
 msgstr "Com deficiência"
 
@@ -1124,157 +1131,162 @@ msgid "Domain name"
 msgstr "Nome de domínio"
 
 #: baruwa/forms/domains.py:87 baruwa/forms/domains.py:124
-#: baruwa/forms/domains.py:140 baruwa/forms/domains.py:154
-#: baruwa/forms/domains.py:163 baruwa/forms/invite.py:69
+#: baruwa/forms/domains.py:169 baruwa/forms/domains.py:183
+#: baruwa/forms/domains.py:192 baruwa/forms/invite.py:69
 msgid "Invalid Domain name"
 msgstr "Nome de domínio inválido"
 
-#: baruwa/forms/domains.py:90 baruwa/templates/domains/detail.html:148
+#: baruwa/forms/domains.py:90 baruwa/forms/domains.py:126
+#: baruwa/templates/domains/detail.html:148
 msgid "Site url"
 msgstr "Url do site"
 
-#: baruwa/forms/domains.py:94
+#: baruwa/forms/domains.py:94 baruwa/forms/domains.py:130
 msgid "Enable SMTP callouts"
 msgstr "Habilitar SMTP textos explicativos"
 
-#: baruwa/forms/domains.py:95
+#: baruwa/forms/domains.py:95 baruwa/forms/domains.py:131
 msgid "Enable LDAP callouts"
 msgstr "Habilitar LDAP textos explicativos"
 
-#: baruwa/forms/domains.py:96
+#: baruwa/forms/domains.py:96 baruwa/forms/domains.py:132
 msgid "Enable Virus checks"
 msgstr "Habilitar verificações de vírus"
 
-#: baruwa/forms/domains.py:97
+#: baruwa/forms/domains.py:97 baruwa/forms/domains.py:133
 msgid "Enable SPAM checks"
 msgstr "Assegurar o controlo de SPAM"
 
-#: baruwa/forms/domains.py:98
+#: baruwa/forms/domains.py:98 baruwa/forms/domains.py:134
 msgid "What to do with probable spam"
 msgstr "O que fazer com provável spam"
 
-#: baruwa/forms/domains.py:100
+#: baruwa/forms/domains.py:100 baruwa/forms/domains.py:136
 msgid "What to do with definite spam"
 msgstr "O que fazer com spam definitiva"
 
-#: baruwa/forms/domains.py:104 baruwa/templates/domains/detail.html:124
+#: baruwa/forms/domains.py:104 baruwa/forms/domains.py:140
+#: baruwa/templates/domains/detail.html:124
 msgid "Maximum Message Size"
 msgstr "Tamanho máximo da mensagem"
 
-#: baruwa/forms/domains.py:106
+#: baruwa/forms/domains.py:106 baruwa/forms/domains.py:142
 msgid "Invalid message size, only B, K, M accepted"
 msgstr "Tamanho de mensagem inválido, apenas B, K, M aceitado"
 
-#: baruwa/forms/domains.py:109 baruwa/templates/domains/detail.html:52
+#: baruwa/forms/domains.py:109 baruwa/forms/domains.py:145
+#: baruwa/templates/domains/detail.html:52
 msgid "Multi destination delivery mode"
 msgstr "Modo de entrega destino multi"
 
-#: baruwa/forms/domains.py:111 baruwa/templates/domains/detail.html:132
+#: baruwa/forms/domains.py:111 baruwa/forms/domains.py:147
+#: baruwa/templates/domains/detail.html:132
 msgid "Language"
 msgstr "Linguagem"
 
-#: baruwa/forms/domains.py:112 baruwa/forms/invite.py:65
+#: baruwa/forms/domains.py:112 baruwa/forms/domains.py:148
+#: baruwa/forms/invite.py:65
 msgid "Default Timezone"
 msgstr "Fuso horário de padrão"
 
-#: baruwa/forms/domains.py:113
+#: baruwa/forms/domains.py:113 baruwa/forms/domains.py:149
 msgid "Report frequency"
 msgstr "Frequência do relatório"
 
-#: baruwa/forms/domains.py:115 baruwa/templates/base.html:114
-#: baruwa/templates/accounts/account.html:103
+#: baruwa/forms/domains.py:115 baruwa/forms/domains.py:151
+#: baruwa/templates/base.html:114 baruwa/templates/accounts/account.html:103
 msgid "Organizations"
 msgstr "Organizações"
 
-#: baruwa/forms/domains.py:137 baruwa/forms/domains.py:151
-#: baruwa/forms/domains.py:160
+#: baruwa/forms/domains.py:166 baruwa/forms/domains.py:180
+#: baruwa/forms/domains.py:189
 msgid "Domain alias name"
 msgstr "Nome do alias de domínio"
 
-#: baruwa/forms/domains.py:144
+#: baruwa/forms/domains.py:173
 msgid "Parent domain"
 msgstr "Domínio pai"
 
-#: baruwa/forms/domains.py:168 baruwa/forms/domains.py:178
-#: baruwa/forms/domains.py:183
+#: baruwa/forms/domains.py:197 baruwa/forms/domains.py:207
+#: baruwa/forms/domains.py:212
 msgid "Server address"
 msgstr "Endereço do servidor"
 
-#: baruwa/forms/domains.py:171 baruwa/forms/domains.py:186
+#: baruwa/forms/domains.py:200 baruwa/forms/domains.py:215
 #: baruwa/forms/invite.py:73
 msgid "Protocol"
 msgstr "Protocolo"
 
-#: baruwa/forms/domains.py:172 baruwa/forms/domains.py:187
+#: baruwa/forms/domains.py:201 baruwa/forms/domains.py:216
 #: baruwa/forms/invite.py:75
 msgid "Port"
 msgstr "Porto"
 
-#: baruwa/forms/domains.py:188
+#: baruwa/forms/domains.py:217
 msgid "must be numeric"
 msgstr "deve ser numérico"
 
-#: baruwa/forms/domains.py:190
+#: baruwa/forms/domains.py:219
 msgid "Split address"
 msgstr "Endereço de Split"
 
-#: baruwa/forms/domains.py:191
+#: baruwa/forms/domains.py:220
 msgid "Username map template"
 msgstr "Modelo de mapa de nome de usuário"
 
-#: baruwa/forms/domains.py:196
+#: baruwa/forms/domains.py:225
 msgid "Base DN"
 msgstr "Base DN"
 
-#: baruwa/forms/domains.py:197
+#: baruwa/forms/domains.py:226
 msgid "Username attribute"
 msgstr "Atributo UserName"
 
-#: baruwa/forms/domains.py:200
+#: baruwa/forms/domains.py:229
 msgid "Email attribute"
 msgstr "Atributo de e-mail"
 
-#: baruwa/forms/domains.py:203
+#: baruwa/forms/domains.py:232
 msgid "Bind DN"
 msgstr "Bind DN"
 
-#: baruwa/forms/domains.py:204
+#: baruwa/forms/domains.py:233
 msgid "Bind password"
 msgstr "Ligar a senha"
 
-#: baruwa/forms/domains.py:205
+#: baruwa/forms/domains.py:234
 msgid "Use TLS"
 msgstr "Uso TLS"
 
-#: baruwa/forms/domains.py:206
+#: baruwa/forms/domains.py:235
 msgid "Search for UserDN"
 msgstr "Busca de NDUsuário"
 
-#: baruwa/forms/domains.py:207
+#: baruwa/forms/domains.py:236
 msgid "Auth Search Filter"
 msgstr "Filtro de pesquisa auth"
 
-#: baruwa/forms/domains.py:208
+#: baruwa/forms/domains.py:237
 msgid "Auth Search Scope"
 msgstr "Escopo da pesquisa auth"
 
-#: baruwa/forms/domains.py:210
+#: baruwa/forms/domains.py:239
 msgid "Email Search Filter"
 msgstr "Filtro de pesquisa de e-mail"
 
-#: baruwa/forms/domains.py:211
+#: baruwa/forms/domains.py:240
 msgid "Email Search Scope"
 msgstr "Escopo de pesquisa de e-mail"
 
-#: baruwa/forms/domains.py:226
+#: baruwa/forms/domains.py:255
 msgid "Unsupported search scope"
 msgstr "Escopo da pesquisa sem suporte"
 
-#: baruwa/forms/domains.py:232
+#: baruwa/forms/domains.py:261
 msgid "Radius secret"
 msgstr "Segredo do raio"
 
-#: baruwa/forms/domains.py:234
+#: baruwa/forms/domains.py:263
 msgid "Request timeout"
 msgstr "Tempo limite de solicitação"
 
@@ -1398,7 +1410,7 @@ msgid "Delete Organization domains"
 msgstr "Excluir domínios de organização"
 
 #: baruwa/forms/organizations.py:62 baruwa/forms/settings.py:165
-#: baruwa/forms/settings.py:305 baruwa/tasks/status.py:292
+#: baruwa/forms/settings.py:305 baruwa/tasks/status.py:299
 #: baruwa/templates/messages/detail.html:176
 #: baruwa/templates/reports/relays.html:26
 #: baruwa/templates/settings/index.html:16
@@ -2882,28 +2894,28 @@ msgstr "Somente os administradores ou proprietários podem Ver os detalhes do do
 msgid "Only Administrators or owners can view account details"
 msgstr "Apenas administradores ou proprietários podem Ver os detalhes da conta"
 
-#: baruwa/lib/templates/helpers.py:69
+#: baruwa/lib/templates/helpers.py:70
 msgid "unknown"
 msgstr "desconhecido"
 
-#: baruwa/lib/templates/helpers.py:143
+#: baruwa/lib/templates/helpers.py:145
 msgid "IPv6 Link local address"
 msgstr "Endereços locais de Link IPv6"
 
-#: baruwa/lib/templates/helpers.py:146
+#: baruwa/lib/templates/helpers.py:148
 msgid "RFC1918 Private address"
 msgstr "Endereço privado RFC1918"
 
-#: baruwa/lib/templates/helpers.py:148
+#: baruwa/lib/templates/helpers.py:150
 msgid "Reverse lookup failed"
 msgstr "Pesquisa inversa falhada"
 
-#: baruwa/lib/templates/helpers.py:169 baruwa/lib/templates/helpers.py:176
-#: baruwa/lib/templates/helpers.py:219
+#: baruwa/lib/templates/helpers.py:171 baruwa/lib/templates/helpers.py:178
+#: baruwa/lib/templates/helpers.py:221
 msgid "N"
 msgstr "N"
 
-#: baruwa/lib/templates/helpers.py:173 baruwa/lib/templates/helpers.py:218
+#: baruwa/lib/templates/helpers.py:175 baruwa/lib/templates/helpers.py:220
 msgid "Y"
 msgstr "E"
 
@@ -2915,15 +2927,15 @@ msgstr "BS"
 msgid "AS"
 msgstr "COMO"
 
-#: baruwa/tasks/status.py:283
+#: baruwa/tasks/status.py:290
 msgid "Audit Log exported report"
 msgstr "Relatório exportado do Log de auditoria"
 
-#: baruwa/tasks/status.py:288 baruwa/templates/base.html:87
+#: baruwa/tasks/status.py:295 baruwa/templates/base.html:87
 msgid "Audit Logs"
 msgstr "Logs de auditoria"
 
-#: baruwa/tasks/status.py:289 baruwa/templates/email/quarantine.html:63
+#: baruwa/tasks/status.py:296 baruwa/templates/email/quarantine.html:63
 #: baruwa/templates/email/quarantine.html:92
 #: baruwa/templates/messages/detail.html:178
 #: baruwa/templates/messages/functions.html:89
@@ -2936,20 +2948,20 @@ msgstr "Logs de auditoria"
 msgid "Date/Time"
 msgstr "Data/hora"
 
-#: baruwa/tasks/status.py:291 baruwa/templates/status/audit.html:28
+#: baruwa/tasks/status.py:298 baruwa/templates/status/audit.html:28
 msgid "Info"
 msgstr "Informação"
 
-#: baruwa/tasks/status.py:293 baruwa/templates/status/audit.html:30
+#: baruwa/tasks/status.py:300 baruwa/templates/status/audit.html:30
 msgid "Remote IP"
 msgstr "IP remoto"
 
-#: baruwa/tasks/status.py:294 baruwa/templates/lists/index.html:29
+#: baruwa/tasks/status.py:301 baruwa/templates/lists/index.html:29
 #: baruwa/templates/status/detail.html:68
 msgid "Action"
 msgstr "Ação"
 
-#: baruwa/tasks/status.py:307
+#: baruwa/tasks/status.py:314
 msgid "Baruwa Audit log export"
 msgstr "Exportação de log de auditoria de João"
 
@@ -3508,7 +3520,7 @@ msgid "No items found"
 msgstr "Nenhum item encontrado"
 
 #: baruwa/templates/accounts/login.html:11
-#: baruwa/templates/accounts/login.html:74
+#: baruwa/templates/accounts/login.html:77
 msgid "Reset my password"
 msgstr "Redefinir minha senha"
 
@@ -3524,13 +3536,13 @@ msgstr "Senha"
 msgid "Forgotten password ?"
 msgstr "Senha esquecida?"
 
-#: baruwa/templates/accounts/login.html:65
+#: baruwa/templates/accounts/login.html:68
 msgid ""
 "Forgotten your password? Enter your e-mail address below, and we'll e-mail "
 "instructions on setting a new one."
 msgstr "Esqueceu sua senha? Digite seu endereço de email abaixo, e nós vai e-mail instruções sobre como configurar um novo."
 
-#: baruwa/templates/accounts/login.html:73
+#: baruwa/templates/accounts/login.html:76
 msgid "Cancel"
 msgstr "Cancelar"
 

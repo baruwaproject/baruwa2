@@ -1,23 +1,24 @@
-# English translations for .
-# Copyright (C) 2011 Andrew Colin Kissa
-# This file is distributed under the same license as the  project.
-#
+# Translations template for PROJECT.
+# Copyright (C) 2012 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# 
 # Translators:
 # <andrew@topdog.za.net>, 2012.
+#   <andrew@topdog.za.net>, 2012.
 msgid ""
 msgstr ""
-"Project-Id-Version:  baruwa\n"
-"Report-Msgid-Bugs-To: andrew@topdog.za.net\n"
+"Project-Id-Version: baruwa\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2012-11-14 14:04+0200\n"
 "PO-Revision-Date: 2012-11-11 08:08+0000\n"
 "Last-Translator: datopdog <andrew@topdog.za.net>\n"
-"Language-Team: Dutch "
-"(http://www.transifex.com/projects/p/baruwa/language/nl/)\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"Language-Team: Dutch (http://www.transifex.com/projects/p/baruwa/language/nl/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 0.9.6\n"
+"Language: nl\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: baruwa/public/js/baruwa/accounts.js:1 baruwa/public/js/baruwa/domains.js:1
 #: baruwa/public/js/baruwa/lists.js:1
@@ -197,11 +198,9 @@ msgstr "Niet toegepast op dit moment"
 #: baruwa/public/js/baruwa/messages.js:1
 #: baruwa/public/js/baruwa/messages.quarantine.js:1
 msgid ""
-"Messages :: Full message listing :: Showing page {{page}} of "
-"{{page_count}} pages."
-msgstr ""
-"Messages:: Volledige bericht in de lijst:: resultaat pagina {{page}} "
-"{{page_count}} pagina's."
+"Messages :: Full message listing :: Showing page {{page}} of {{page_count}} "
+"pages."
+msgstr "Messages:: Volledige bericht in de lijst:: resultaat pagina {{page}} {{page_count}} pagina's."
 
 #: baruwa/public/js/baruwa/messages.js:1
 #: baruwa/public/js/baruwa/messages.quarantine.js:1
@@ -334,9 +333,7 @@ msgstr "Geen scannen hosts gevonden"
 
 #: baruwa/public/js/baruwa/settings.js:1
 msgid "Settings :: Nodes :: Showing page {{page}} of {{page_count}} pages."
-msgstr ""
-"Instellingen:: Knooppunten:: resultaat pagina {{page}} {{page_count}} "
-"pagina's."
+msgstr "Instellingen:: Knooppunten:: resultaat pagina {{page}} {{page_count}} pagina's."
 
 #: baruwa/public/js/baruwa/settings.js:1
 msgid "Settings :: Nodes"
@@ -348,11 +345,8 @@ msgstr "Geen audit logs gevonden"
 
 #: baruwa/public/js/baruwa/status.audit.js:1
 msgid "Status :: Audit log :: Showing page {{page}} of {{page_count}} pages."
-msgstr ""
-"Status:: Controlelogboek:: resultaat pagina {{page}} {{page_count}} "
-"pagina's."
+msgstr "Status:: Controlelogboek:: resultaat pagina {{page}} {{page_count}} pagina's."
 
 #: baruwa/public/js/baruwa/status.audit.js:1
 msgid "Status :: Audit log"
 msgstr "Status:: Controlelogboek"
-

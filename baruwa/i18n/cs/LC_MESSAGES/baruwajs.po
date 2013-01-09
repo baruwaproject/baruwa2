@@ -1,21 +1,22 @@
-# English translations for .
-# Copyright (C) 2011 Andrew Colin Kissa
-# This file is distributed under the same license as the  project.
-#
+# Translations template for PROJECT.
+# Copyright (C) 2012 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# 
 # Translators:
 msgid ""
 msgstr ""
-"Project-Id-Version:  baruwa\n"
-"Report-Msgid-Bugs-To: baruwa@lists.baruwa.org\n"
+"Project-Id-Version: baruwa\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2012-11-14 14:04+0200\n"
-"PO-Revision-Date: 2012-11-14 12:27+0200\n"
-"Last-Translator: Andrew Colin Kissa <andrew@topdog.za.net>\n"
-"Language-Team: (http://www.transifex.com/projects/p/baruwa/language/cs/)\n"
-"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2\n"
+"PO-Revision-Date: 2012-11-14 11:44+0000\n"
+"Last-Translator: datopdog <andrew@topdog.za.net>\n"
+"Language-Team: Czech (http://www.transifex.com/projects/p/baruwa/language/cs/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 0.9.6\n"
+"Language: cs\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
 #: baruwa/public/js/baruwa/accounts.js:1 baruwa/public/js/baruwa/domains.js:1
 #: baruwa/public/js/baruwa/lists.js:1
@@ -88,9 +89,7 @@ msgstr "Domény"
 
 #: baruwa/public/js/baruwa/lists.js:1
 msgid "Lists :: {{listname}} Showing page {{page}} of {{page_count}} pages."
-msgstr ""
-"Seznamy:: {{listname}} Zobrazeno stránka {{page}} z {{page_count}} "
-"stránky."
+msgstr "Seznamy:: {{listname}} Zobrazeno stránka {{page}} z {{page_count}} stránky."
 
 #: baruwa/public/js/baruwa/lists.js:1
 msgid "Lists"
@@ -197,11 +196,9 @@ msgstr "Jiné použité v současnosti"
 #: baruwa/public/js/baruwa/messages.js:1
 #: baruwa/public/js/baruwa/messages.quarantine.js:1
 msgid ""
-"Messages :: Full message listing :: Showing page {{page}} of "
-"{{page_count}} pages."
-msgstr ""
-"Zprávy:: Kompletní výpis zpráv:: zobrazeno page {{page}} z {{page_count}}"
-" stránky."
+"Messages :: Full message listing :: Showing page {{page}} of {{page_count}} "
+"pages."
+msgstr "Zprávy:: Kompletní výpis zpráv:: zobrazeno page {{page}} z {{page_count}} stránky."
 
 #: baruwa/public/js/baruwa/messages.js:1
 #: baruwa/public/js/baruwa/messages.quarantine.js:1
@@ -346,11 +343,8 @@ msgstr "Nalezeno žádné záznamy auditu"
 
 #: baruwa/public/js/baruwa/status.audit.js:1
 msgid "Status :: Audit log :: Showing page {{page}} of {{page_count}} pages."
-msgstr ""
-"Status:: Protokol auditu:: zobrazeno page {{page}} z {{page_count}} "
-"stránky."
+msgstr "Status:: Protokol auditu:: zobrazeno page {{page}} z {{page_count}} stránky."
 
 #: baruwa/public/js/baruwa/status.audit.js:1
 msgid "Status :: Audit log"
 msgstr "Status:: Protokol auditu"
-

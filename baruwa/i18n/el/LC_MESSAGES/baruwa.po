@@ -1,5 +1,5 @@
 # Translations template for baruwa.
-# Copyright (C) 2012 Andrew Colin Kissa
+# Copyright (C) 2013 Andrew Colin Kissa
 # This file is distributed under the same license as the baruwa project.
 # 
 # Translators:
@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: baruwa\n"
 "Report-Msgid-Bugs-To: andrew@topdog.za.net\n"
-"POT-Creation-Date: 2012-12-15 12:13+0200\n"
-"PO-Revision-Date: 2012-12-15 10:40+0000\n"
+"POT-Creation-Date: 2013-01-09 12:14+0200\n"
+"PO-Revision-Date: 2013-01-09 10:50+0000\n"
 "Last-Translator: datopdog <andrew@topdog.za.net>\n"
 "Language-Team: Greek (http://www.transifex.com/projects/p/baruwa/language/el/)\n"
 "MIME-Version: 1.0\n"
@@ -18,115 +18,115 @@ msgstr ""
 "Language: el\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: baruwa/commands/pdfreport.py:116 baruwa/controllers/reports.py:62
+#: baruwa/commands/pdfreport.py:115 baruwa/controllers/reports.py:62
 #: baruwa/templates/reports/index.html:13
 msgid "Top Senders by Quantity"
 msgstr "Επάνω αποστολείς από ποσότητα"
 
-#: baruwa/commands/pdfreport.py:118 baruwa/controllers/reports.py:64
+#: baruwa/commands/pdfreport.py:117 baruwa/controllers/reports.py:64
 #: baruwa/templates/reports/index.html:14
 msgid "Top Senders by Volume"
 msgstr "Επάνω αποστολείς από όγκο"
 
-#: baruwa/commands/pdfreport.py:120 baruwa/controllers/reports.py:66
+#: baruwa/commands/pdfreport.py:119 baruwa/controllers/reports.py:66
 #: baruwa/templates/reports/index.html:15
 msgid "Top Sender Domains by Quantity"
 msgstr "Επάνω τους τομείς αποστολέα την ποσότητα"
 
-#: baruwa/commands/pdfreport.py:122 baruwa/controllers/reports.py:68
+#: baruwa/commands/pdfreport.py:121 baruwa/controllers/reports.py:68
 #: baruwa/templates/reports/index.html:16
 msgid "Top Sender Domains by Volume"
 msgstr "Επάνω αποστολέα Domains σε όγκο"
 
-#: baruwa/commands/pdfreport.py:124 baruwa/controllers/reports.py:70
+#: baruwa/commands/pdfreport.py:123 baruwa/controllers/reports.py:70
 #: baruwa/templates/reports/index.html:23
 msgid "Top Recipients by Quantity"
 msgstr "Επάνω στους παραλήπτες από ποσότητα"
 
-#: baruwa/commands/pdfreport.py:126 baruwa/controllers/reports.py:72
+#: baruwa/commands/pdfreport.py:125 baruwa/controllers/reports.py:72
 #: baruwa/templates/reports/index.html:24
 msgid "Top Recipients by Volume"
 msgstr "Επάνω στους παραλήπτες του όγκου"
 
-#: baruwa/commands/pdfreport.py:128 baruwa/controllers/reports.py:74
+#: baruwa/commands/pdfreport.py:127 baruwa/controllers/reports.py:74
 #: baruwa/templates/reports/index.html:26
 msgid "Top Recipient Domains By Quantity"
 msgstr "Επάνω τους τομείς αποδέκτη την ποσότητα"
 
-#: baruwa/commands/pdfreport.py:130 baruwa/controllers/reports.py:76
+#: baruwa/commands/pdfreport.py:129 baruwa/controllers/reports.py:76
 #: baruwa/templates/reports/index.html:27
 msgid "Top Recipient Domains By Volume"
 msgstr "Επάνω παραλήπτης Domains σε όγκο"
 
-#: baruwa/commands/pdfreport.py:132 baruwa/controllers/reports.py:78
+#: baruwa/commands/pdfreport.py:131 baruwa/controllers/reports.py:78
 msgid "Spam Score distribution"
 msgstr "Διανομή spam σκορ"
 
-#: baruwa/commands/pdfreport.py:134 baruwa/controllers/reports.py:80
+#: baruwa/commands/pdfreport.py:133 baruwa/controllers/reports.py:80
 msgid "Top mail hosts by quantity"
 msgstr "Επάνω mail φιλοξενεί την ποσότητα"
 
-#: baruwa/commands/pdfreport.py:136 baruwa/controllers/reports.py:82
+#: baruwa/commands/pdfreport.py:135 baruwa/controllers/reports.py:82
 msgid "Total messages [ After SMTP ]"
 msgstr "Σύνολο μηνυμάτων [μετά SMTP]"
 
-#: baruwa/commands/pdfreport.py:138 baruwa/controllers/reports.py:226
+#: baruwa/commands/pdfreport.py:137 baruwa/controllers/reports.py:226
 #: baruwa/templates/reports/piereport.html:25
 msgid "Address"
 msgstr "Διεύθυνση"
 
-#: baruwa/commands/pdfreport.py:138 baruwa/controllers/reports.py:226
+#: baruwa/commands/pdfreport.py:137 baruwa/controllers/reports.py:226
 #: baruwa/templates/reports/barreport.html:32
 #: baruwa/templates/reports/piereport.html:26
 msgid "Count"
 msgstr "Καταμέτρηση"
 
-#: baruwa/commands/pdfreport.py:138 baruwa/controllers/reports.py:226
+#: baruwa/commands/pdfreport.py:137 baruwa/controllers/reports.py:226
 #: baruwa/templates/reports/listing.html:56
 #: baruwa/templates/reports/piereport.html:27
 #: baruwa/templates/reports/relays.html:29
 msgid "Volume"
 msgstr "Όγκος"
 
-#: baruwa/commands/pdfreport.py:139 baruwa/controllers/reports.py:230
+#: baruwa/commands/pdfreport.py:138 baruwa/controllers/reports.py:230
 #: baruwa/forms/reports.py:55 baruwa/templates/reports/listing.html:38
 msgid "Date"
 msgstr "Ημερομηνία"
 
-#: baruwa/commands/pdfreport.py:139 baruwa/controllers/reports.py:230
+#: baruwa/commands/pdfreport.py:138 baruwa/controllers/reports.py:230
 msgid "Mail totals"
 msgstr "Συγκεντρωτικά στοιχεία αλληλογραφίας"
 
-#: baruwa/commands/pdfreport.py:140 baruwa/controllers/reports.py:231
+#: baruwa/commands/pdfreport.py:139 baruwa/controllers/reports.py:231
 msgid "Spam totals"
 msgstr "Spam συνόλων"
 
-#: baruwa/commands/pdfreport.py:140 baruwa/controllers/reports.py:232
+#: baruwa/commands/pdfreport.py:139 baruwa/controllers/reports.py:232
 msgid "Virus totals"
 msgstr "Ιός συνόλων"
 
-#: baruwa/commands/pdfreport.py:141 baruwa/controllers/reports.py:233
+#: baruwa/commands/pdfreport.py:140 baruwa/controllers/reports.py:233
 msgid "Mail volume"
 msgstr "Όγκου αλληλογραφίας"
 
-#: baruwa/commands/pdfreport.py:141 baruwa/controllers/reports.py:234
+#: baruwa/commands/pdfreport.py:140 baruwa/controllers/reports.py:234
 msgid "Totals"
 msgstr "Σύνολα"
 
-#: baruwa/commands/pdfreport.py:142 baruwa/controllers/reports.py:223
+#: baruwa/commands/pdfreport.py:141 baruwa/controllers/reports.py:223
 msgid "Baruwa mail report"
 msgstr "Baruwa αλληλογραφίας έκθεση"
 
-#: baruwa/commands/pdfreport.py:176 baruwa/controllers/reports.py:235
+#: baruwa/commands/pdfreport.py:175 baruwa/controllers/reports.py:235
 #: baruwa/templates/reports/index.html:29
 msgid "Message Totals"
 msgstr "Μήνυμα συνόλων"
 
-#: baruwa/commands/pdfreport.py:183 baruwa/commands/quarantinereport.py:150
+#: baruwa/commands/pdfreport.py:182 baruwa/commands/quarantinereport.py:150
 msgid "Baruwa Reports"
 msgstr "Baruwa εκθέσεις"
 
-#: baruwa/commands/pdfreport.py:186
+#: baruwa/commands/pdfreport.py:185
 msgid "Baruwa usage report"
 msgstr "Έκθεση χρήσης Baruwa"
 
@@ -147,172 +147,176 @@ msgstr "Δημιουργήθηκε πρώτη φορά Login από το εξω�
 msgid "Login successful, Welcome back %(username)s !"
 msgstr "Σύνδεση επιτυχημένη, Καλώς ορίσατε πίσω %(username)s!"
 
-#: baruwa/controllers/accounts.py:324 baruwa/controllers/accounts.py:360
+#: baruwa/controllers/accounts.py:329 baruwa/controllers/accounts.py:366
 #: baruwa/controllers/invite.py:66 baruwa/controllers/invite.py:162
 #: baruwa/controllers/invite.py:177
 msgid "Baruwa Hosted"
 msgstr "Baruwa φιλοξένησε"
 
-#: baruwa/controllers/accounts.py:327
+#: baruwa/controllers/accounts.py:332
 msgid "[Baruwa] Password reset request"
 msgstr "[Baruwa] Αίτηση επαναφοράς κωδικού πρόσβασης"
 
-#: baruwa/controllers/accounts.py:331
+#: baruwa/controllers/accounts.py:336
 msgid ""
 "An email has been sent to the address provided, please follow the "
 "instructions in that email to reset your password."
 msgstr "Έχει αποσταλεί ένα email στην διεύθυνση που παρέχεται, παρακαλούμε ακολουθήστε τις οδηγίες σε αυτό το email για να επαναφέρετε τον κωδικό πρόσβασής σας."
 
-#: baruwa/controllers/accounts.py:363
+#: baruwa/controllers/accounts.py:369
 msgid "[Baruwa] Password reset"
 msgstr "[Baruwa] Επαναφορά κωδικού πρόσβασης"
 
-#: baruwa/controllers/accounts.py:367
+#: baruwa/controllers/accounts.py:373
 msgid ""
 "The password has been reset, check your email for the temporary password you"
 " should use to login."
 msgstr "Έχει γίνει επαναφορά του κωδικού πρόσβασης, ελέγξτε το email σας για το προσωρινό κωδικό πρόσβασης που θα πρέπει να χρησιμοποιήσετε για να συνδεθείτε."
 
-#: baruwa/controllers/accounts.py:370
+#: baruwa/controllers/accounts.py:376
 msgid "The token used is invalid or does not exist"
 msgstr "Το διακριτικό που χρησιμοποιούνται δεν είναι έγκυρη ή δεν υπάρχει"
 
-#: baruwa/controllers/accounts.py:386 baruwa/controllers/accounts.py:416
+#: baruwa/controllers/accounts.py:392 baruwa/controllers/accounts.py:425
 #, python-format
 msgid "The account password for %(name)s has been reset"
 msgstr "Ο κωδικός πρόσβασης λογαριασμού για %(name)s έχει εκτελεστεί επαναφορά του"
 
-#: baruwa/controllers/accounts.py:393 baruwa/controllers/accounts.py:423
+#: baruwa/controllers/accounts.py:400
+msgid "Admin accounts can not be modified via the web"
+msgstr ""
+
+#: baruwa/controllers/accounts.py:402 baruwa/controllers/accounts.py:432
 msgid "This is an external account, use external system to reset the password"
 msgstr "Πρόκειται για ένα εξωτερικό λογαριασμό, χρησιμοποιήστε εξωτερικού συστήματος για να επαναφέρετε τον κωδικό πρόσβασης"
 
-#: baruwa/controllers/accounts.py:429
+#: baruwa/controllers/accounts.py:438
 msgid "The old password supplied does not match our records"
 msgstr "Ο παλιός κωδικός πρόσβασης που παρέχονται δεν ταιριάζει με τις εγγραφές μας"
 
-#: baruwa/controllers/accounts.py:605
+#: baruwa/controllers/accounts.py:614
 #, python-format
 msgid "The account: %(user)s was created successfully"
 msgstr "Ο λογαριασμός: %(user)s δημιουργήθηκε με επιτυχία"
 
-#: baruwa/controllers/accounts.py:611
+#: baruwa/controllers/accounts.py:620
 msgid "Either the username or email address already exist"
 msgstr "Είτε το όνομα ή την email διεύθυνση που υπάρχει ήδη"
 
-#: baruwa/controllers/accounts.py:642
+#: baruwa/controllers/accounts.py:651
 msgid "The account has been updated"
 msgstr "Ο λογαριασμός έχει ενημερωθεί"
 
-#: baruwa/controllers/accounts.py:651
+#: baruwa/controllers/accounts.py:660
 #, python-format
 msgid "The account: %(acc)s could not be updated"
 msgstr "Ο λογαριασμός: %(acc)s δεν ήταν δυνατή η ενημέρωση"
 
-#: baruwa/controllers/accounts.py:657
+#: baruwa/controllers/accounts.py:666
 msgid "No changes made to the account"
 msgstr "Κανένα αλλαγές που έγιναν στο λογαριασμό"
 
-#: baruwa/controllers/accounts.py:679
+#: baruwa/controllers/accounts.py:688
 msgid "The account has been deleted"
 msgstr "Ο λογαριασμός έχει διαγραφεί"
 
-#: baruwa/controllers/accounts.py:688
+#: baruwa/controllers/accounts.py:697
 #, python-format
 msgid ""
 "The account: %(a)s and all associated data will be deleted, This action is "
 "not reversible."
 msgstr "Ο λογαριασμός: %(a)s και θα διαγραφούν όλα τα συσχετισμένα δεδομένα, αυτή η ενέργεια δεν είναι αναστρέψιμες."
 
-#: baruwa/controllers/accounts.py:745
+#: baruwa/controllers/accounts.py:754
 msgid "The accounts have been deleted"
 msgstr "Οι λογαριασμοί έχουν διαγραφεί"
 
-#: baruwa/controllers/accounts.py:748
+#: baruwa/controllers/accounts.py:757
 msgid ""
 "The following accounts are about to be deleted, this action is not "
 "reversible, Do you wish to continue ?"
 msgstr "Οι παρακάτω λογαριασμοί που πρόκειται να διαγραφούν, αυτή η ενέργεια δεν είναι αναστρέψιμη, θέλετε να συνεχίσετε;"
 
-#: baruwa/controllers/accounts.py:757 baruwa/controllers/domains.py:385
+#: baruwa/controllers/accounts.py:766 baruwa/controllers/domains.py:385
 msgid "An error occured try again"
 msgstr "Παρουσιάστηκε σφάλμα προσπαθήστε ξανά"
 
-#: baruwa/controllers/accounts.py:794
+#: baruwa/controllers/accounts.py:803
 #, python-format
 msgid "The alias address %(address)s was successfully created."
 msgstr "Η διεύθυνση ψευδώνυμο %(address)s δημιουργήθηκε με επιτυχία."
 
-#: baruwa/controllers/accounts.py:797 baruwa/controllers/accounts.py:845
+#: baruwa/controllers/accounts.py:806 baruwa/controllers/accounts.py:854
 #, python-format
 msgid "The address %(addr)s already exists"
 msgstr "Η διεύθυνση %(addr)s υπάρχει ήδη"
 
-#: baruwa/controllers/accounts.py:800 baruwa/controllers/accounts.py:848
+#: baruwa/controllers/accounts.py:809 baruwa/controllers/accounts.py:857
 #, python-format
 msgid "Domain: %(d)s does not belong to you"
 msgstr "Τομέας: %(d)s δεν ανήκει σε εσάς"
 
-#: baruwa/controllers/accounts.py:840
+#: baruwa/controllers/accounts.py:849
 msgid "The alias address has been updated"
 msgstr "Έχει ενημερωθεί η διεύθυνση ψευδώνυμο"
 
-#: baruwa/controllers/accounts.py:842
+#: baruwa/controllers/accounts.py:851
 msgid "No changes were made to the address"
 msgstr "Κανένα αλλαγές που έγιναν στην διεύθυνση"
 
-#: baruwa/controllers/accounts.py:876
+#: baruwa/controllers/accounts.py:885
 msgid "The address has been deleted"
 msgstr "Έχει διαγραφεί η διεύθυνση"
 
-#: baruwa/controllers/accounts.py:946 baruwa/controllers/organizations.py:359
+#: baruwa/controllers/accounts.py:955 baruwa/controllers/organizations.py:359
 msgid ""
 "File uploaded, and is being processed, this page will automatically refresh "
 "to show the status"
 msgstr "Αρχείο αποσταλούν, και γίνεται επεξεργασία, αυτή η σελίδα θα ανανεωθεί αυτόματα για να εμφανίσετε την κατάσταση"
 
-#: baruwa/controllers/accounts.py:953 baruwa/controllers/organizations.py:365
+#: baruwa/controllers/accounts.py:962 baruwa/controllers/organizations.py:365
 #, python-format
 msgid "The file: %s is not a CSV file"
 msgstr "Το αρχείο: %s δεν είναι ένα αρχείο CSV"
 
-#: baruwa/controllers/accounts.py:956 baruwa/controllers/organizations.py:368
+#: baruwa/controllers/accounts.py:965 baruwa/controllers/organizations.py:368
 #, python-format
 msgid "The file: %s already exists and is being processed."
 msgstr "Το αρχείο: %s ήδη υπάρχει και γίνεται επεξεργασία."
 
-#: baruwa/controllers/accounts.py:960 baruwa/controllers/organizations.py:372
+#: baruwa/controllers/accounts.py:969 baruwa/controllers/organizations.py:372
 msgid "No CSV was file uploaded, try again"
 msgstr "CSV δεν ήταν αρχείο έχει γίνει upload, δοκιμάστε ξανά"
 
-#: baruwa/controllers/accounts.py:970 baruwa/controllers/accounts.py:1026
+#: baruwa/controllers/accounts.py:979 baruwa/controllers/accounts.py:1035
 #: baruwa/controllers/domains.py:868 baruwa/controllers/messages.py:660
 #: baruwa/controllers/messages.py:662 baruwa/controllers/organizations.py:381
 #: baruwa/controllers/status.py:497
 msgid "The task status requested has expired or does not exist"
 msgstr "Την κατάσταση της εργασίας που ζητήθηκε έχει λήξει ή δεν υπάρχει"
 
-#: baruwa/controllers/accounts.py:978 baruwa/controllers/accounts.py:1034
+#: baruwa/controllers/accounts.py:987 baruwa/controllers/accounts.py:1043
 #: baruwa/controllers/domains.py:876 baruwa/controllers/organizations.py:389
 #: baruwa/controllers/status.py:505
 #, python-format
 msgid "Error occured in processing %s"
 msgstr "Παρουσιάστηκε σφάλμα στο %s επεξεργασίας"
 
-#: baruwa/controllers/accounts.py:981 baruwa/controllers/accounts.py:1037
+#: baruwa/controllers/accounts.py:990 baruwa/controllers/accounts.py:1046
 #: baruwa/controllers/domains.py:879 baruwa/controllers/organizations.py:392
 #: baruwa/controllers/status.py:508
 msgid "Backend error occured during processing."
 msgstr "Παρασκηνίου Παρουσιάστηκε σφάλμα κατά την επεξεργασία."
 
-#: baruwa/controllers/accounts.py:998 baruwa/controllers/organizations.py:412
+#: baruwa/controllers/accounts.py:1007 baruwa/controllers/organizations.py:412
 msgid "The import could not be processed, try again later"
 msgstr "Δεν ήταν δυνατή η εισαγωγή μεταποιημένων, δοκιμάστε ξανά αργότερα"
 
-#: baruwa/controllers/accounts.py:1018
+#: baruwa/controllers/accounts.py:1027
 msgid "Accounts export is being processed"
 msgstr "Εξαγωγή λογαριασμών γίνεται επεξεργασία"
 
-#: baruwa/controllers/accounts.py:1053 baruwa/controllers/domains.py:889
+#: baruwa/controllers/accounts.py:1062 baruwa/controllers/domains.py:889
 msgid "The export could not be processed, try again later"
 msgstr "Δεν ήταν δυνατή η εξαγωγή μεταποιημένων, δοκιμάστε ξανά αργότερα"
 
@@ -899,7 +903,7 @@ msgid "Account not found"
 msgstr "Λογαριασμό δεν βρέθηκε"
 
 #: baruwa/forms/accounts.py:81 baruwa/forms/accounts.py:117
-#: baruwa/tasks/status.py:290 baruwa/templates/accounts/account.html:38
+#: baruwa/tasks/status.py:297 baruwa/templates/accounts/account.html:38
 #: baruwa/templates/accounts/confirmbulkdel.html:8
 #: baruwa/templates/accounts/importstatus.html:5
 #: baruwa/templates/accounts/index.html:34
@@ -937,7 +941,7 @@ msgstr "Πληκτρολογήστε ξανά τον κωδικό πρόσβασ
 #: baruwa/forms/accounts.py:94 baruwa/forms/accounts.py:121
 #: baruwa/forms/invite.py:54 baruwa/templates/accounts/confirmbulkdel.html:10
 #: baruwa/templates/accounts/index.html:36
-#: baruwa/templates/accounts/login.html:69
+#: baruwa/templates/accounts/login.html:72
 #: baruwa/templates/accounts/searchresults.html:26
 msgid "Email address"
 msgstr "Διεύθυνση ηλεκτρονικού ταχυδρομείου"
@@ -960,11 +964,12 @@ msgstr "Τομείς"
 
 #: baruwa/forms/accounts.py:103 baruwa/forms/accounts.py:126
 #: baruwa/forms/accounts.py:146 baruwa/forms/domains.py:93
-#: baruwa/forms/domains.py:143 baruwa/forms/domains.py:155
-#: baruwa/forms/domains.py:173 baruwa/forms/domains.py:189
-#: baruwa/forms/organizations.py:63 baruwa/forms/settings.py:169
-#: baruwa/forms/settings.py:700 baruwa/forms/settings.py:705
-#: baruwa/lib/templates/helpers.py:226 baruwa/templates/settings/index.html:17
+#: baruwa/forms/domains.py:129 baruwa/forms/domains.py:172
+#: baruwa/forms/domains.py:184 baruwa/forms/domains.py:202
+#: baruwa/forms/domains.py:218 baruwa/forms/organizations.py:63
+#: baruwa/forms/settings.py:169 baruwa/forms/settings.py:700
+#: baruwa/forms/settings.py:705 baruwa/lib/templates/helpers.py:228
+#: baruwa/templates/settings/index.html:17
 msgid "Enabled"
 msgstr "Ενεργοποιημένη"
 
@@ -978,10 +983,12 @@ msgid "Enable spam checks"
 msgstr "Ενεργοποίηση έλεγχοι ανεπιθύμητης αλληλογραφίας"
 
 #: baruwa/forms/accounts.py:106 baruwa/forms/domains.py:102
+#: baruwa/forms/domains.py:138
 msgid "Probable spam score"
 msgstr "Βαθμολογία πιθανής ανεπιθύμητης ηλεκτρονικής αλληλογραφίας"
 
 #: baruwa/forms/accounts.py:107 baruwa/forms/domains.py:103
+#: baruwa/forms/domains.py:139
 msgid "Definite spam score"
 msgstr "Βαθμολογία σαφή μηνύματα spam"
 
@@ -993,15 +1000,15 @@ msgstr "Χαμηλή βαθμολογία spam"
 msgid "Spam high score"
 msgstr "Υψηλό σκορ spam"
 
-#: baruwa/forms/accounts.py:136 baruwa/forms/domains.py:130
+#: baruwa/forms/accounts.py:136 baruwa/forms/domains.py:159
 msgid "delete"
 msgstr "Διαγραφή"
 
-#: baruwa/forms/accounts.py:137 baruwa/forms/domains.py:131
+#: baruwa/forms/accounts.py:137 baruwa/forms/domains.py:160
 msgid "disable"
 msgstr "Απενεργοποίηση"
 
-#: baruwa/forms/accounts.py:138 baruwa/forms/domains.py:132
+#: baruwa/forms/accounts.py:138 baruwa/forms/domains.py:161
 msgid "enable"
 msgstr "Ενεργοποίηση"
 
@@ -1067,7 +1074,7 @@ msgstr "Εβδομαδιαίες"
 msgid "Daily"
 msgstr "Καθημερινή"
 
-#: baruwa/forms/domains.py:52 baruwa/lib/templates/helpers.py:229
+#: baruwa/forms/domains.py:52 baruwa/lib/templates/helpers.py:231
 msgid "Disabled"
 msgstr "Άτομα με ειδικές ανάγκες"
 
@@ -1123,157 +1130,162 @@ msgid "Domain name"
 msgstr "Όνομα τομέα"
 
 #: baruwa/forms/domains.py:87 baruwa/forms/domains.py:124
-#: baruwa/forms/domains.py:140 baruwa/forms/domains.py:154
-#: baruwa/forms/domains.py:163 baruwa/forms/invite.py:69
+#: baruwa/forms/domains.py:169 baruwa/forms/domains.py:183
+#: baruwa/forms/domains.py:192 baruwa/forms/invite.py:69
 msgid "Invalid Domain name"
 msgstr "Μη έγκυρο όνομα τομέα"
 
-#: baruwa/forms/domains.py:90 baruwa/templates/domains/detail.html:148
+#: baruwa/forms/domains.py:90 baruwa/forms/domains.py:126
+#: baruwa/templates/domains/detail.html:148
 msgid "Site url"
 msgstr "Διεύθυνση url της τοποθεσίας"
 
-#: baruwa/forms/domains.py:94
+#: baruwa/forms/domains.py:94 baruwa/forms/domains.py:130
 msgid "Enable SMTP callouts"
 msgstr "Ενεργοποίηση SMTP επεξηγήσεις"
 
-#: baruwa/forms/domains.py:95
+#: baruwa/forms/domains.py:95 baruwa/forms/domains.py:131
 msgid "Enable LDAP callouts"
 msgstr "Ενεργοποίηση LDAP επεξηγήσεις"
 
-#: baruwa/forms/domains.py:96
+#: baruwa/forms/domains.py:96 baruwa/forms/domains.py:132
 msgid "Enable Virus checks"
 msgstr "Ενεργοποίηση ιού ελέγχων"
 
-#: baruwa/forms/domains.py:97
+#: baruwa/forms/domains.py:97 baruwa/forms/domains.py:133
 msgid "Enable SPAM checks"
 msgstr "Ενεργοποίηση έλεγχοι ανεπιθύμητης ΑΛΛΗΛΟΓΡΑΦΊΑΣ"
 
-#: baruwa/forms/domains.py:98
+#: baruwa/forms/domains.py:98 baruwa/forms/domains.py:134
 msgid "What to do with probable spam"
 msgstr "Τι να κάνετε με πιθανή ανεπιθύμητη αλληλογραφία"
 
-#: baruwa/forms/domains.py:100
+#: baruwa/forms/domains.py:100 baruwa/forms/domains.py:136
 msgid "What to do with definite spam"
 msgstr "Τι να κάνετε με σαφή μηνύματα spam"
 
-#: baruwa/forms/domains.py:104 baruwa/templates/domains/detail.html:124
+#: baruwa/forms/domains.py:104 baruwa/forms/domains.py:140
+#: baruwa/templates/domains/detail.html:124
 msgid "Maximum Message Size"
 msgstr "Μέγιστο μέγεθος μηνύματος"
 
-#: baruwa/forms/domains.py:106
+#: baruwa/forms/domains.py:106 baruwa/forms/domains.py:142
 msgid "Invalid message size, only B, K, M accepted"
 msgstr "Μη έγκυρο μήνυμα μέγεθος, δεκτή μόνο το B, K, M"
 
-#: baruwa/forms/domains.py:109 baruwa/templates/domains/detail.html:52
+#: baruwa/forms/domains.py:109 baruwa/forms/domains.py:145
+#: baruwa/templates/domains/detail.html:52
 msgid "Multi destination delivery mode"
 msgstr "Λειτουργία πολλαπλών προορισμού παράδοσης"
 
-#: baruwa/forms/domains.py:111 baruwa/templates/domains/detail.html:132
+#: baruwa/forms/domains.py:111 baruwa/forms/domains.py:147
+#: baruwa/templates/domains/detail.html:132
 msgid "Language"
 msgstr "Γλώσσα"
 
-#: baruwa/forms/domains.py:112 baruwa/forms/invite.py:65
+#: baruwa/forms/domains.py:112 baruwa/forms/domains.py:148
+#: baruwa/forms/invite.py:65
 msgid "Default Timezone"
 msgstr "Προεπιλεγμένη Timezone"
 
-#: baruwa/forms/domains.py:113
+#: baruwa/forms/domains.py:113 baruwa/forms/domains.py:149
 msgid "Report frequency"
 msgstr "Συχνότητα έκθεσης"
 
-#: baruwa/forms/domains.py:115 baruwa/templates/base.html:114
-#: baruwa/templates/accounts/account.html:103
+#: baruwa/forms/domains.py:115 baruwa/forms/domains.py:151
+#: baruwa/templates/base.html:114 baruwa/templates/accounts/account.html:103
 msgid "Organizations"
 msgstr "Οργανώσεις"
 
-#: baruwa/forms/domains.py:137 baruwa/forms/domains.py:151
-#: baruwa/forms/domains.py:160
+#: baruwa/forms/domains.py:166 baruwa/forms/domains.py:180
+#: baruwa/forms/domains.py:189
 msgid "Domain alias name"
 msgstr "Ψευδώνυμο όνομα τομέα"
 
-#: baruwa/forms/domains.py:144
+#: baruwa/forms/domains.py:173
 msgid "Parent domain"
 msgstr "Γονικό τομέα"
 
-#: baruwa/forms/domains.py:168 baruwa/forms/domains.py:178
-#: baruwa/forms/domains.py:183
+#: baruwa/forms/domains.py:197 baruwa/forms/domains.py:207
+#: baruwa/forms/domains.py:212
 msgid "Server address"
 msgstr "Διεύθυνση διακομιστή"
 
-#: baruwa/forms/domains.py:171 baruwa/forms/domains.py:186
+#: baruwa/forms/domains.py:200 baruwa/forms/domains.py:215
 #: baruwa/forms/invite.py:73
 msgid "Protocol"
 msgstr "Πρωτόκολλο"
 
-#: baruwa/forms/domains.py:172 baruwa/forms/domains.py:187
+#: baruwa/forms/domains.py:201 baruwa/forms/domains.py:216
 #: baruwa/forms/invite.py:75
 msgid "Port"
 msgstr "Θύρα"
 
-#: baruwa/forms/domains.py:188
+#: baruwa/forms/domains.py:217
 msgid "must be numeric"
 msgstr "πρέπει να είναι αριθμητικό"
 
-#: baruwa/forms/domains.py:190
+#: baruwa/forms/domains.py:219
 msgid "Split address"
 msgstr "Διεύθυνση διαίρεση"
 
-#: baruwa/forms/domains.py:191
+#: baruwa/forms/domains.py:220
 msgid "Username map template"
 msgstr "Username χάρτη πρότυπο"
 
-#: baruwa/forms/domains.py:196
+#: baruwa/forms/domains.py:225
 msgid "Base DN"
 msgstr "DN βάσης"
 
-#: baruwa/forms/domains.py:197
+#: baruwa/forms/domains.py:226
 msgid "Username attribute"
 msgstr "Το χαρακτηριστικό ονόματος χρήστη"
 
-#: baruwa/forms/domains.py:200
+#: baruwa/forms/domains.py:229
 msgid "Email attribute"
 msgstr "Χαρακτηριστικό email"
 
-#: baruwa/forms/domains.py:203
+#: baruwa/forms/domains.py:232
 msgid "Bind DN"
 msgstr "Δεσμεύει DN"
 
-#: baruwa/forms/domains.py:204
+#: baruwa/forms/domains.py:233
 msgid "Bind password"
 msgstr "Σύνδεση κωδικού πρόσβασης"
 
-#: baruwa/forms/domains.py:205
+#: baruwa/forms/domains.py:234
 msgid "Use TLS"
 msgstr "Χρήση TLS"
 
-#: baruwa/forms/domains.py:206
+#: baruwa/forms/domains.py:235
 msgid "Search for UserDN"
 msgstr "Αναζήτηση για UserDN"
 
-#: baruwa/forms/domains.py:207
+#: baruwa/forms/domains.py:236
 msgid "Auth Search Filter"
 msgstr "Φίλτρο αναζήτησης ΑΠΘ"
 
-#: baruwa/forms/domains.py:208
+#: baruwa/forms/domains.py:237
 msgid "Auth Search Scope"
 msgstr "Εμβέλεια αναζήτησης ΑΠΘ"
 
-#: baruwa/forms/domains.py:210
+#: baruwa/forms/domains.py:239
 msgid "Email Search Filter"
 msgstr "Το φίλτρο αναζήτησης"
 
-#: baruwa/forms/domains.py:211
+#: baruwa/forms/domains.py:240
 msgid "Email Search Scope"
 msgstr "Εμβέλεια αναζήτησης email"
 
-#: baruwa/forms/domains.py:226
+#: baruwa/forms/domains.py:255
 msgid "Unsupported search scope"
 msgstr "Το εύρος αναζήτησης που δεν υποστηρίζεται"
 
-#: baruwa/forms/domains.py:232
+#: baruwa/forms/domains.py:261
 msgid "Radius secret"
 msgstr "RADIUS secret"
 
-#: baruwa/forms/domains.py:234
+#: baruwa/forms/domains.py:263
 msgid "Request timeout"
 msgstr "Χρονικό όριο της αίτησης"
 
@@ -1397,7 +1409,7 @@ msgid "Delete Organization domains"
 msgstr "Διαγραφή οργάνωση τομέων"
 
 #: baruwa/forms/organizations.py:62 baruwa/forms/settings.py:165
-#: baruwa/forms/settings.py:305 baruwa/tasks/status.py:292
+#: baruwa/forms/settings.py:305 baruwa/tasks/status.py:299
 #: baruwa/templates/messages/detail.html:176
 #: baruwa/templates/reports/relays.html:26
 #: baruwa/templates/settings/index.html:16
@@ -2881,28 +2893,28 @@ msgstr "Μόνο οι διαχειριστές ή ιδιοκτήτες να πρ
 msgid "Only Administrators or owners can view account details"
 msgstr "Μόνο οι διαχειριστές ή ιδιοκτήτες να προβάλετε λεπτομέρειες λογαριασμού"
 
-#: baruwa/lib/templates/helpers.py:69
+#: baruwa/lib/templates/helpers.py:70
 msgid "unknown"
 msgstr "άγνωστο"
 
-#: baruwa/lib/templates/helpers.py:143
+#: baruwa/lib/templates/helpers.py:145
 msgid "IPv6 Link local address"
 msgstr "Τοπική διεύθυνση σύνδεσης IPv6"
 
-#: baruwa/lib/templates/helpers.py:146
+#: baruwa/lib/templates/helpers.py:148
 msgid "RFC1918 Private address"
 msgstr "Ιδιωτικού RFC1918 διεύθυνση"
 
-#: baruwa/lib/templates/helpers.py:148
+#: baruwa/lib/templates/helpers.py:150
 msgid "Reverse lookup failed"
 msgstr "Αντίστροφης αναζήτησης απέτυχε"
 
-#: baruwa/lib/templates/helpers.py:169 baruwa/lib/templates/helpers.py:176
-#: baruwa/lib/templates/helpers.py:219
+#: baruwa/lib/templates/helpers.py:171 baruwa/lib/templates/helpers.py:178
+#: baruwa/lib/templates/helpers.py:221
 msgid "N"
 msgstr "N"
 
-#: baruwa/lib/templates/helpers.py:173 baruwa/lib/templates/helpers.py:218
+#: baruwa/lib/templates/helpers.py:175 baruwa/lib/templates/helpers.py:220
 msgid "Y"
 msgstr "ΚΑΙ"
 
@@ -2914,15 +2926,15 @@ msgstr "BS"
 msgid "AS"
 msgstr "ΌΠΩΣ"
 
-#: baruwa/tasks/status.py:283
+#: baruwa/tasks/status.py:290
 msgid "Audit Log exported report"
 msgstr "Εξάγονται Log έκθεση ελέγχου"
 
-#: baruwa/tasks/status.py:288 baruwa/templates/base.html:87
+#: baruwa/tasks/status.py:295 baruwa/templates/base.html:87
 msgid "Audit Logs"
 msgstr "Τα αρχεία καταγραφής ελέγχου"
 
-#: baruwa/tasks/status.py:289 baruwa/templates/email/quarantine.html:63
+#: baruwa/tasks/status.py:296 baruwa/templates/email/quarantine.html:63
 #: baruwa/templates/email/quarantine.html:92
 #: baruwa/templates/messages/detail.html:178
 #: baruwa/templates/messages/functions.html:89
@@ -2935,20 +2947,20 @@ msgstr "Τα αρχεία καταγραφής ελέγχου"
 msgid "Date/Time"
 msgstr "Ημερομηνία/ώρα"
 
-#: baruwa/tasks/status.py:291 baruwa/templates/status/audit.html:28
+#: baruwa/tasks/status.py:298 baruwa/templates/status/audit.html:28
 msgid "Info"
 msgstr "Πληροφορίες"
 
-#: baruwa/tasks/status.py:293 baruwa/templates/status/audit.html:30
+#: baruwa/tasks/status.py:300 baruwa/templates/status/audit.html:30
 msgid "Remote IP"
 msgstr "Απομακρυσμένη ΠΕ"
 
-#: baruwa/tasks/status.py:294 baruwa/templates/lists/index.html:29
+#: baruwa/tasks/status.py:301 baruwa/templates/lists/index.html:29
 #: baruwa/templates/status/detail.html:68
 msgid "Action"
 msgstr "Δράση"
 
-#: baruwa/tasks/status.py:307
+#: baruwa/tasks/status.py:314
 msgid "Baruwa Audit log export"
 msgstr "Εξαγωγή αρχείου καταγραφής ελέγχου Baruwa"
 
@@ -3507,7 +3519,7 @@ msgid "No items found"
 msgstr "Δεν βρέθηκαν στοιχεία"
 
 #: baruwa/templates/accounts/login.html:11
-#: baruwa/templates/accounts/login.html:74
+#: baruwa/templates/accounts/login.html:77
 msgid "Reset my password"
 msgstr "Επαναφέρετε τον κωδικό πρόσβασής μου"
 
@@ -3523,13 +3535,13 @@ msgstr "Κωδικός πρόσβασης"
 msgid "Forgotten password ?"
 msgstr "Ξεχάσατε τον κωδικό?"
 
-#: baruwa/templates/accounts/login.html:65
+#: baruwa/templates/accounts/login.html:68
 msgid ""
 "Forgotten your password? Enter your e-mail address below, and we'll e-mail "
 "instructions on setting a new one."
 msgstr "Ξεχάσατε τον κωδικό σας; Πληκτρολογήστε παρακάτω τη διεύθυνση σας ηλεκτρονικού ταχυδρομείου, και εμείς θα ηλεκτρονικού ταχυδρομείου οδηγίες σχετικά με τη ρύθμιση ένα νέο."
 
-#: baruwa/templates/accounts/login.html:73
+#: baruwa/templates/accounts/login.html:76
 msgid "Cancel"
 msgstr "Άκυρο"
 
