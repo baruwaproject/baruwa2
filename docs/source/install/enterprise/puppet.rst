@@ -25,7 +25,7 @@ Install puppet::
 
 Download and install the puppet toaster from the baruwa.com website::
 
-	wget --no-check-certificate http://www.baruwa.com/downloads/puppet-toaster-latest.tar.bz2
+	curl -O https://www.baruwa.com/downloads/puppet-toaster-latest.tar.bz2
 	tar xjvf puppet-toaster-latest.tar.bz2 -C /etc/puppet/
 
 Create a puppet host manifest for your host by copying the provided

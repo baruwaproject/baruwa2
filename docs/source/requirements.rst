@@ -25,8 +25,8 @@ Baruwa Requirements
 	+ repoze.what
 	+ repoze.who
 	+ marrow.mailer
-	+ pyrad (Optional for RADIUS/RSA SECURID authentication)
-	+ python-ldap (optional for Active directory/LDAP authentication)
+	+ pyrad
+	+ python-ldap
 
 MailScanner Requirements
 ========================

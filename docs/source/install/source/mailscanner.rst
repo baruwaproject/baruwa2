@@ -29,10 +29,12 @@ It is assumed that your MailScanner file is located at ``/usr/sbin/MailScanner``
 and your modules at ``/usr/share/MailScanner/MailScanner``. If on your system
 they are in different locations please modify the commands below to reflect that::
 
+	curl -O https://raw.github.com/akissa/baruwa2/2.0.0/extras/patches/mailscanner-baruwa-iwantlint.patch
+	curl -O https://raw.github.com/akissa/baruwa2/2.0.0/extras/patches/mailscanner-baruwa-sql-config.patch
 	cd /usr/sbin
-	patch -i /home/baruwa/patches/mailscanner-baruwa-iwantlint.patch
+	patch -i /home/baruwa/mailscanner-baruwa-iwantlint.patch
 	cd /usr/share/MailScanner/MailScanner
-	patch -p3 -i /home/baruwa/patches/mailscanner-baruwa-sql-config.patch
+	patch -p3 -i /home/baruwa/mailscanner-baruwa-sql-config.patch
 	cd /home/baruwa
 
 Dependencies
@@ -60,8 +62,7 @@ The module has to be installed to the MailScanner custom functions directory
 ``/usr/share/MailScanner/MailScanner/CustomFunctions``. Please change to reflect
 the directory on your system::
 
-	tar xjvf baruwa-2.0.0.tar.bz2 --strip-components=3 \
-		baruwa-2.0.0/extras/perl/BS.pm
+	curl -O https://raw.github.com/akissa/baruwa2/2.0.0/extras/perl/BS.pm
 	mv BS.pm /usr/share/MailScanner/MailScanner/CustomFunctions
 
 .. _ms_sample_configs:
@@ -70,7 +71,8 @@ Sample configurations
 ~~~~~~~~~~~~~~~~~~~~~
 
 Sample configuration files for MailScanner and exim are provided in the source
-tar ball under ``extras/config/exim`` and ``extras/config/mailscanner``.
+under `extras/config/exim <https://github.com/akissa/baruwa2/tree/2.0.0/extras/config/exim>`_ 
+and `extras/config/mailscanner <https://github.com/akissa/baruwa2/tree/2.0.0/extras/config/mailscanner>`_.
 Please review and reuse.
 
 Proceed to :ref:`baruwa_install`

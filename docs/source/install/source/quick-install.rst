@@ -16,7 +16,7 @@ If you're not already familiar with the process, head to the main
    and to create a unique ``production.ini`` config. On development
    machines there's already a ``development.ini`` file for you to use.
 4. Install the sphinx api which is not on PyPi run
-   ``wget https://sphinxsearch.googlecode.com/svn/trunk/api/sphinxapi.py -O \``
+   ``curl https://sphinxsearch.googlecode.com/svn/trunk/api/sphinxapi.py -o \``
    ``path/to/virtualenv/lib/python2.6/site-packages/sphinxapi.py``
 5. :ref:`apply_patches`
 6. Configure your database credentials in the ini config file.

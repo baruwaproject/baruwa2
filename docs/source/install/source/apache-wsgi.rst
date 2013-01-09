@@ -85,8 +85,8 @@ FreeBSD::
 
 	TODO
 
-A sample configuration file is provided in the source tar ball with the
-contents below, you will modify and use this sample configuration file.
+A sample configuration file is provided in the source with the contents below,
+you will modify and use this sample configuration file.
 
 .. sourcecode:: apacheconf
 
@@ -129,10 +129,9 @@ contents below, you will modify and use this sample configuration file.
 	    CustomLog logs/baruwa-access_log common
 	</VirtualHost>
 
-Extract the provided sample configuration file::
+Download the provided sample configuration file::
 
-	tar xjvf baruwa-2.0.0.tar.bz2 --strip-components=4 \
-		baruwa-2.0.0/extras/config/mod_wsgi/apache.conf
+	curl -O https://raw.github.com/akissa/baruwa2/2.0.0/extras/config/mod_wsgi/apache.conf
 
 If system hostname is not the virtual host you want to use then change it
 below to the actual name that you want to use for the baruwa virtual host

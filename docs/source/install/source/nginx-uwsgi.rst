@@ -137,8 +137,8 @@ let's configure that now.
 NGINX Configuration
 -------------------
 
-A sample configuration file is provided in the source tar ball with the
-contents below, you will modify and use this sample configuration file:
+A sample configuration file is provided in the source with the contents below,
+you will modify and use this sample configuration file:
 
 .. sourcecode:: nginx
 
@@ -183,10 +183,9 @@ contents below, you will modify and use this sample configuration file:
 	        }
 	}
 
-Extract the provided sample configuration file::
+Download the provided sample configuration file::
 
-	tar xjvf baruwa-2.0.0.tar.bz2 --strip-components=4 \
-		baruwa-2.0.0/extras/config/uwsgi/nginx.conf
+	curl -O https://raw.github.com/akissa/baruwa2/2.0.0/extras/config/uwsgi/nginx.conf
 
 Install the configuration file:
 

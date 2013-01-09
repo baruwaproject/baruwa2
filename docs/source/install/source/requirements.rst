@@ -10,7 +10,7 @@ The following preliminary packages are required to install Baruwa from source
   * gcc
   * git
   * subversion
-  * wget
+  * curl
   * patch
 
 Step 1a: Preliminary Requirements for CentOS/RHEL/SL
@@ -33,7 +33,7 @@ Run the following command to install the required packages.
 .. sourcecode:: bash
 
    # install the necessary tools compiling
-   yum install gcc git gcc-c++ svn wget patch -y
+   yum install gcc git gcc-c++ svn curl patch -y
 
 System Libraries
 
@@ -66,7 +66,7 @@ You have to install the required tools and python libraries.
 .. sourcecode:: bash
 
    # install the necessary tools compiling
-   sudo apt-get install gcc g++ git subversion wget patch
+   sudo apt-get install gcc g++ git subversion curl patch
 
    # install the necessary libraries for compiling
    sudo apt-get install libjpeg62-dev libxml2-dev libxslt1-dev cython \

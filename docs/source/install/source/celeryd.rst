@@ -18,11 +18,10 @@ Baruwa writes to::
 		/var/run/baruwa /var/log/baruwa \
 		/var/lock/baruwa /etc/MailScanner/baruwa
 
-A CentOS init file is provided in the source tar ball. Extract the init file
-from the tar ball and install to the init directory ``/etc/init.d`` ::
+A CentOS init file is provided in the source. Download the init file and install
+to the init directory ``/etc/init.d`` ::
 
-	tar xjvf baruwa-2.0.0.tar.bz2 --strip-components=5 \
-		baruwa-2.0.0/extras/scripts/init/centos/baruwa.init
+	curl -O https://raw.github.com/akissa/baruwa2/2.0.0/extras/scripts/init/centos/baruwa.init
 	mv baruwa.init /etc/init.d/baruwa
 
 Create a configuration file for celeryd in ``/etc/sysconfig/baruwa`` with the
@@ -71,11 +70,10 @@ Baruwa writes to::
 		/var/run/baruwa /var/log/baruwa \
 		/var/lock/baruwa /etc/MailScanner/baruwa
 
-A Debian init file is provided in the source tar ball. Extract it and install
-to the init directory ``/etc/init.d`` ::
+A Debian init file is provided in the source. Download it and install to the
+init directory ``/etc/init.d`` ::
 
-	tar xjvf baruwa-2.0.0.tar.bz2 --strip-components=5 \
-		baruwa-2.0.0/extras/scripts/init/debian/baruwa.init
+	curl -O https://raw.github.com/akissa/baruwa2/2.0.0/extras/scripts/init/debian/baruwa.init
 	sudo mv baruwa.init /etc/init.d/baruwa
 	sudo chmod +x /etc/init.d/baruwa
 

@@ -41,8 +41,8 @@ For CentOS/RHEL/SL::
 
 	chown postgres.postgres /var/lib/pgsql
 	echo "strongPgP4ss" > /tmp/ps
-    su postgres -c "/usr/bin/initdb /var/lib/pgsql/data --auth='password' --pwfile=/tmp/ps -E UTF8"
-    rm -rf /tmp/ps
+	su postgres -c "/usr/bin/initdb /var/lib/pgsql/data --auth='password' --pwfile=/tmp/ps -E UTF8"
+	rm -rf /tmp/ps
 
 For Debian/Ubuntu::
 
@@ -225,6 +225,11 @@ Debian/Ubuntu::
 
 	apt-get install mailscanner -y
 
+Sample configuration files for MailScanner and exim are provided in the source
+under `extras/config/exim <https://github.com/akissa/baruwa2/tree/2.0.0/extras/config/exim>`_ 
+and `extras/config/mailscanner <https://github.com/akissa/baruwa2/tree/2.0.0/extras/config/mailscanner>`_.
+Please review and reuse.
+
 Step 2f: Nginx
 --------------
 
@@ -340,7 +345,7 @@ CentOS/RHEL/SL::
 
 Debian/Ubuntu::
 
-	psql -U postgres baruwa -f /usr/lib/python2.6/site-packages/baruwa/config/sql/admin-functions.sql
+	psql -U postgres baruwa -f /usr/share/pyshared/baruwa/config/sql/admin-functions.sql
 
 The creation of all database tables, addition of initial data and the creation of an
 admin user is taken care of via this Pylons command::

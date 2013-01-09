@@ -66,16 +66,16 @@ virtual environment as we just did in the line above.**
 Step 2: Install Python dependencies
 ===================================
 
-A pip requirements file is provided with in the Baruwa source tar ball, you
-will use that file to install all the required Python packages.
+A pip requirements file is provided with in the Baruwa source, you will use that
+file to install all the required Python packages.
 
 Set this environment variable to allow ``m2crypto`` to build on Linux::
 
 	export SWIG_FEATURES="-cpperraswarn -includeall -D__`uname -m`__ -I/usr/include/openssl"
 	
-Extract the requirements file::
+Download the requirements file::
 
-	tar xjvf baruwa-2.0.0.tar.bz2 --strip-components=1 baruwa-2.0.0/requirements.txt
+	curl -O https://raw.github.com/akissa/baruwa2/2.0.0/requirements.txt
 	
 Install the required packages using pip::
 
@@ -83,7 +83,7 @@ Install the required packages using pip::
 
 Install the sphinx search api module::
 
-	wget https://sphinxsearch.googlecode.com/svn/trunk/api/sphinxapi.py -O \
+	curl https://sphinxsearch.googlecode.com/svn/trunk/api/sphinxapi.py -o \
 		px/lib/python2.6/site-packages/sphinxapi.py
 
 .. _apply_patches:
@@ -91,12 +91,13 @@ Install the sphinx search api module::
 Apply required patches
 ----------------------
 
-Extract patches and apply them to the virtualenv::
+Download the required patches and apply them to the virtualenv::
 
-	tar xjvf baruwa-2.0.0.tar.bz2 --strip-components=2 baruwa-2.0.0/extras/patches
+	curl -O https://raw.github.com/akissa/baruwa2/2.0.0/extras/patches/repoze.who-friendly-form.patch
+	curl -O https://raw.github.com/akissa/baruwa2/master/extras/patches/repoze-who-fix-auth_tkt-tokens.patch
 	cd px/lib/python2.6/site-packages/repoze/who/plugins/
-	patch -p3 -i /home/baruwa/patches/repoze.who-friendly-form.patch
-	patch -p4 -i /home/baruwa/patches/repoze-who-fix-auth_tkt-tokens.patch
+	patch -p3 -i /home/baruwa/repoze.who-friendly-form.patch
+	patch -p4 -i /home/baruwa/repoze-who-fix-auth_tkt-tokens.patch
 	cd -
 
 If you are running **Centos/RHEL/SL** apply the eventlet subprocess patch which fixes
@@ -212,8 +213,7 @@ Enable these languages in the db::
 Creation of functions written in ``plpythonu`` requires PostgreSQL admin user access.
 So we create them in this step using the ``postgres`` admin account::
 
-	tar xjvf baruwa-2.0.0.tar.bz2 --strip-components=4 \
-		baruwa-2.0.0/baruwa/config/sql/admin-functions.sql
+	curl -O https://raw.github.com/akissa/baruwa2/2.0.0/baruwa/config/sql/admin-functions.sql
 	su - postgres -c 'psql baruwa -f /home/baruwa/admin-functions.sql'
 
 
@@ -276,13 +276,12 @@ FreeBSD::
 
 	TODO:
 
-Copy the provided sphinx configuration in place then start the sphinx server.
+Copy the provided Sphinx configuration in place then start the sphinx server.
 
 
-Extract the supplied file::
+Download the supplied sample Sphinx configuration file::
 
-	tar xjvf baruwa-2.0.0.tar.bz2 --strip-components=4 \
-		baruwa-2.0.0/extras/config/sphinx/sphinx.conf
+	curl -O https://raw.github.com/akissa/baruwa2/2.0.0/extras/config/sphinx/sphinx.conf
 
 Set the required database settings::
 
@@ -363,7 +362,7 @@ command.
 
 Install baruwa using pip::
 
-	pip install baruwa-2.0.0.tar.bz2
+	pip install baruwa
 
 .. _baruwa_setup:
 
@@ -586,15 +585,14 @@ ImportError: M2Crypto/__m2crypto.so: undefined symbol: SSLv2_method
 If you run across is issue (Ubuntu/Debian) you need to apply the patch
 from Debian, then install M2Crypto manually.
 
-The patch is included in the Baruwa patches directory, extract, apply
-and build and install::
+The patch is included in the Baruwa patches directory, download, apply,
+build and install::
 
-	tar xjvf baruwa-2.0.0.tar.bz2 --strip-components=4 \
-		baruwa-2.0.0/extras/patches/0002-Disable-SSLv2_method-when-disabled-in-OpenSSL-iself.patch
-	wget wget http://pypi.python.org/packages/source/M/M2Crypto/M2Crypto-0.21.1.tar.gz
+	curl -O https://raw.github.com/akissa/baruwa2/2.0.0/extras/patches/0002-Disable-SSLv2_method.patch
+	curl -O http://pypi.python.org/packages/source/M/M2Crypto/M2Crypto-0.21.1.tar.gz
 	tar xzvf M2Crypto-0.21.1.tar.gz
 	cd M2Crypto-0.21.1/
-	patch -p1 -i ../0002-Disable-SSLv2_method-when-disabled-in-OpenSSL-iself.patch
+	patch -p1 -i ../0002-Disable-SSLv2_method.patch
 	python setup.py install
 	cd -
 
@@ -605,6 +603,7 @@ TypeError: wait() got an unexpected keyword argument 'timeout'
 
 You need to apply a patch to eventlet to fix this issue::
 
+	curl -O https://raw.github.com/akissa/baruwa2/2.0.0/extras/patches/subprocess_timeout.patch
 	cd /home/baruwa/px/lib/python2.6/site-packages/
-	patch -p1 -i /home/baruwa/patches/subprocess_timeout.patch
+	patch -p1 -i /home/baruwa/subprocess_timeout.patch
 	cd /home/baruwa

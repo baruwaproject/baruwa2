@@ -53,7 +53,7 @@ Enable Baruwa enterprise repo
 The Baruwa Debian/Ubuntu enterprise repository is available to subscribers
 only. To install from this repo you need to enable the repo::
 
-	wget --no-check-certificate https://www.baruwa.com/downloads/baruwa-enterprise-keyring_0.1-1_all.deb
+	curl -O https://www.baruwa.com/downloads/baruwa-enterprise-keyring_0.1-1_all.deb
 	dpkg -i baruwa-enterprise-keyring_0.1-1_all.deb
 
 Install Baruwa enterprise server certificate and key
