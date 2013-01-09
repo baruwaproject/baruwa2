@@ -94,7 +94,7 @@ using a virtualenv.
 
 Packages
 ========
-Binary packages for Ubuntu/Debian, Fedora and RHEL/SL/CENTOS are available from
+Binary packages for Ubuntu/Debian and RHEL/SL/CENTOS are available from
 `Baruwa Enterprise <https://www.baruwa.com>`_ 
 
 Documentation
