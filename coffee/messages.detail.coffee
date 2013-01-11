@@ -127,7 +127,7 @@ handle_post = (e)->
     if $("#release").is(":checked")
         request_data['release'] = 1
     if $("#delete").is(":checked")
-        request_data['todelete'] = 1
+        request_data['delete'] = 1
     if $("#learn").is(":checked")
         request_data['learn'] = 1
     if $("#usealt").is(":checked")
