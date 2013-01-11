@@ -3,585 +3,604 @@
 # This file is distributed under the same license as the baruwa project.
 # 
 # Translators:
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2011.
 msgid ""
 msgstr ""
 "Project-Id-Version: baruwa\n"
-"Report-Msgid-Bugs-To: andrew@topdog.za.net\n"
+"Report-Msgid-Bugs-To: baruwa@lists.baruwa.org\n"
 "POT-Creation-Date: 2013-01-09 12:14+0200\n"
-"PO-Revision-Date: 2013-01-09 10:15+0000\n"
-"Last-Translator: datopdog <andrew@topdog.za.net>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2013-01-10 18:36+0200\n"
+"Last-Translator: Andrew Colin Kissa <andrew@topdog.za.net>\n"
+"Language-Team: Baruwa Project\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 0.9.6\n"
-"Language: en\n"
+"Generated-By: auto-translate.py 0.0.1\n"
+"Language: fi\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: baruwa/commands/pdfreport.py:115 baruwa/controllers/reports.py:62
 #: baruwa/templates/reports/index.html:13
 msgid "Top Senders by Quantity"
-msgstr "Top Senders by Quantity"
+msgstr "Alkuun lähettäjät määrä"
 
 #: baruwa/commands/pdfreport.py:117 baruwa/controllers/reports.py:64
 #: baruwa/templates/reports/index.html:14
 msgid "Top Senders by Volume"
-msgstr "Top Senders by Volume"
+msgstr "Alkuun lähettäjät tilavuudesta"
 
 #: baruwa/commands/pdfreport.py:119 baruwa/controllers/reports.py:66
 #: baruwa/templates/reports/index.html:15
 msgid "Top Sender Domains by Quantity"
-msgstr "Top Sender Domains by Quantity"
+msgstr "Ylin lähettäjän maatila määrä"
 
 #: baruwa/commands/pdfreport.py:121 baruwa/controllers/reports.py:68
 #: baruwa/templates/reports/index.html:16
 msgid "Top Sender Domains by Volume"
-msgstr "Top Sender Domains by Volume"
+msgstr "Ylin lähettäjän maatila tilavuudesta"
 
 #: baruwa/commands/pdfreport.py:123 baruwa/controllers/reports.py:70
 #: baruwa/templates/reports/index.html:23
 msgid "Top Recipients by Quantity"
-msgstr "Top Recipients by Quantity"
+msgstr "Alkuun vastaanottajien määrä"
 
 #: baruwa/commands/pdfreport.py:125 baruwa/controllers/reports.py:72
 #: baruwa/templates/reports/index.html:24
 msgid "Top Recipients by Volume"
-msgstr "Top Recipients by Volume"
+msgstr "Alkuun vastaanottajien määrä"
 
 #: baruwa/commands/pdfreport.py:127 baruwa/controllers/reports.py:74
 #: baruwa/templates/reports/index.html:26
 msgid "Top Recipient Domains By Quantity"
-msgstr "Top Recipient Domains By Quantity"
+msgstr "Ylin vastaanottaja maatila määrä"
 
 #: baruwa/commands/pdfreport.py:129 baruwa/controllers/reports.py:76
 #: baruwa/templates/reports/index.html:27
 msgid "Top Recipient Domains By Volume"
-msgstr "Top Recipient Domains By Volume"
+msgstr "Ylin vastaanottaja maatila tilavuudesta"
 
 #: baruwa/commands/pdfreport.py:131 baruwa/controllers/reports.py:78
 msgid "Spam Score distribution"
-msgstr "Spam Score distribution"
+msgstr "Roskapostin Pistemäärä jakelu"
 
 #: baruwa/commands/pdfreport.py:133 baruwa/controllers/reports.py:80
 msgid "Top mail hosts by quantity"
-msgstr "Top mail hosts by quantity"
+msgstr "Alkuun postin isäntien määrä"
 
 #: baruwa/commands/pdfreport.py:135 baruwa/controllers/reports.py:82
 msgid "Total messages [ After SMTP ]"
-msgstr "Total messages [ After SMTP ]"
+msgstr "Yhteensä viestit jälkeen SMTP]"
 
 #: baruwa/commands/pdfreport.py:137 baruwa/controllers/reports.py:226
 #: baruwa/templates/reports/piereport.html:25
 msgid "Address"
-msgstr "Address"
+msgstr "Osoite"
 
 #: baruwa/commands/pdfreport.py:137 baruwa/controllers/reports.py:226
 #: baruwa/templates/reports/barreport.html:32
 #: baruwa/templates/reports/piereport.html:26
 msgid "Count"
-msgstr "Count"
+msgstr "Kreivi"
 
 #: baruwa/commands/pdfreport.py:137 baruwa/controllers/reports.py:226
 #: baruwa/templates/reports/listing.html:56
 #: baruwa/templates/reports/piereport.html:27
 #: baruwa/templates/reports/relays.html:29
 msgid "Volume"
-msgstr "Volume"
+msgstr "Tilavuus"
 
 #: baruwa/commands/pdfreport.py:138 baruwa/controllers/reports.py:230
 #: baruwa/forms/reports.py:55 baruwa/templates/reports/listing.html:38
 msgid "Date"
-msgstr "Date"
+msgstr "Päivämäärä"
 
 #: baruwa/commands/pdfreport.py:138 baruwa/controllers/reports.py:230
 msgid "Mail totals"
-msgstr "Mail totals"
+msgstr "Postin yhteensä"
 
 #: baruwa/commands/pdfreport.py:139 baruwa/controllers/reports.py:231
 msgid "Spam totals"
-msgstr "Spam totals"
+msgstr "Spam yhteensä"
 
 #: baruwa/commands/pdfreport.py:139 baruwa/controllers/reports.py:232
 msgid "Virus totals"
-msgstr "Virus totals"
+msgstr "Virus yhteensä"
 
 #: baruwa/commands/pdfreport.py:140 baruwa/controllers/reports.py:233
 msgid "Mail volume"
-msgstr "Mail volume"
+msgstr "Postiliikennettä"
 
 #: baruwa/commands/pdfreport.py:140 baruwa/controllers/reports.py:234
 msgid "Totals"
-msgstr "Totals"
+msgstr "Yhteensä"
 
 #: baruwa/commands/pdfreport.py:141 baruwa/controllers/reports.py:223
 msgid "Baruwa mail report"
-msgstr "Baruwa mail report"
+msgstr "Baruwa postin mietintö"
 
 #: baruwa/commands/pdfreport.py:175 baruwa/controllers/reports.py:235
 #: baruwa/templates/reports/index.html:29
 msgid "Message Totals"
-msgstr "Message Totals"
+msgstr "Viestin yhteensä"
 
 #: baruwa/commands/pdfreport.py:182 baruwa/commands/quarantinereport.py:150
 msgid "Baruwa Reports"
-msgstr "Baruwa Reports"
+msgstr "Baruwa raportit"
 
 #: baruwa/commands/pdfreport.py:185
 msgid "Baruwa usage report"
-msgstr "Baruwa usage report"
+msgstr "Baruwa käyttöraportti"
 
 #: baruwa/commands/quarantinereport.py:153
 msgid "Baruwa quarantine report"
-msgstr "Baruwa quarantine report"
+msgstr "Baruwa karanteenin"
 
 #: baruwa/controllers/accounts.py:103
 msgid "You have been banned after several failed logins"
-msgstr "You have been banned after several failed logins"
+msgstr "Sinulla on kielletty kun monet epäonnistuneet kirjautumiset"
 
 #: baruwa/controllers/accounts.py:157
 msgid "First time Login from external auth, your local account was created"
-msgstr "First time Login from external auth, your local account was created"
+msgstr ""
+"Ensimmäistä kertaa johdonmukaisuus ulkoisten auth paikallinen tili luotiin"
 
 #: baruwa/controllers/accounts.py:273
 #, python-format
 msgid "Login successful, Welcome back %(username)s !"
-msgstr "Login successful, Welcome back %(username)s !"
+msgstr "Sisäänkirjautuminen onnistui, Tervetuloa takaisin %(username)s!"
 
 #: baruwa/controllers/accounts.py:329 baruwa/controllers/accounts.py:366
 #: baruwa/controllers/invite.py:66 baruwa/controllers/invite.py:162
 #: baruwa/controllers/invite.py:177
 msgid "Baruwa Hosted"
-msgstr "Baruwa Hosted"
+msgstr "Baruwa isännöi"
 
 #: baruwa/controllers/accounts.py:332
 msgid "[Baruwa] Password reset request"
-msgstr "[Baruwa] Password reset request"
+msgstr "[Baruwa] Salasanan pyyntö"
 
 #: baruwa/controllers/accounts.py:336
 msgid ""
 "An email has been sent to the address provided, please follow the "
 "instructions in that email to reset your password."
-msgstr "An email has been sent to the address provided, please follow the instructions in that email to reset your password."
+msgstr "On l├ñhetetty osoitteeseen, seuraa ohjeita sähköposti salasanan."
 
 #: baruwa/controllers/accounts.py:369
 msgid "[Baruwa] Password reset"
-msgstr "[Baruwa] Password reset"
+msgstr "[Baruwa] Salasanan palauttaminen"
 
 #: baruwa/controllers/accounts.py:373
 msgid ""
 "The password has been reset, check your email for the temporary password you"
 " should use to login."
-msgstr "The password has been reset, check your email for the temporary password you should use to login."
+msgstr ""
+"Salasana on nollattu, tarkista sähköpostistasi väliaikaisen salasanan, käytä"
+" login."
 
 #: baruwa/controllers/accounts.py:376
 msgid "The token used is invalid or does not exist"
-msgstr "The token used is invalid or does not exist"
+msgstr "Käytetty tunnus ei kelpaa, tai se ei ole"
 
 #: baruwa/controllers/accounts.py:392 baruwa/controllers/accounts.py:425
 #, python-format
 msgid "The account password for %(name)s has been reset"
-msgstr "The account password for %(name)s has been reset"
+msgstr "Tilin salasana %(name)s tyhjentämisen"
 
 #: baruwa/controllers/accounts.py:400
 msgid "Admin accounts can not be modified via the web"
-msgstr "Admin accounts can not be modified via the web"
+msgstr "Admin-tilejä ei voi muokata Internetin kautta"
 
 #: baruwa/controllers/accounts.py:402 baruwa/controllers/accounts.py:432
 msgid "This is an external account, use external system to reset the password"
-msgstr "This is an external account, use external system to reset the password"
+msgstr "Tämä on ulkoisen tilin, käyttää ulkoisen järjestelmän salasanan"
 
 #: baruwa/controllers/accounts.py:438
 msgid "The old password supplied does not match our records"
-msgstr "The old password supplied does not match our records"
+msgstr "Vanha salasana ei vastaa tietomme"
 
 #: baruwa/controllers/accounts.py:614
 #, python-format
 msgid "The account: %(user)s was created successfully"
-msgstr "The account: %(user)s was created successfully"
+msgstr "Tili: %(user)s luominen onnistui"
 
 #: baruwa/controllers/accounts.py:620
 msgid "Either the username or email address already exist"
-msgstr "Either the username or email address already exist"
+msgstr "Käyttäjätunnus tai sähköpostiosoite on jo olemassa"
 
 #: baruwa/controllers/accounts.py:651
 msgid "The account has been updated"
-msgstr "The account has been updated"
+msgstr "Tili on päivitetty"
 
 #: baruwa/controllers/accounts.py:660
 #, python-format
 msgid "The account: %(acc)s could not be updated"
-msgstr "The account: %(acc)s could not be updated"
+msgstr "Tili: %(acc)s ei voi päivittää"
 
 #: baruwa/controllers/accounts.py:666
 msgid "No changes made to the account"
-msgstr "No changes made to the account"
+msgstr "Tiliin tehdyt muutokset"
 
 #: baruwa/controllers/accounts.py:688
 msgid "The account has been deleted"
-msgstr "The account has been deleted"
+msgstr "Tili on poistettu"
 
 #: baruwa/controllers/accounts.py:697
 #, python-format
 msgid ""
 "The account: %(a)s and all associated data will be deleted, This action is "
 "not reversible."
-msgstr "The account: %(a)s and all associated data will be deleted, This action is not reversible."
+msgstr ""
+"Tili: %(a)s ja kaikki siihen liittyvät tiedot poistetaan, tämä toiminto ei "
+"ole palautuva."
 
 #: baruwa/controllers/accounts.py:754
 msgid "The accounts have been deleted"
-msgstr "The accounts have been deleted"
+msgstr "Tilit on poistettu"
 
 #: baruwa/controllers/accounts.py:757
 msgid ""
 "The following accounts are about to be deleted, this action is not "
 "reversible, Do you wish to continue ?"
-msgstr "The following accounts are about to be deleted, this action is not reversible, Do you wish to continue ?"
+msgstr ""
+"Seuraaville tileille on poistettava tämä toiminto ei ole palautuva, Haluatko"
+" jatkaa?"
 
 #: baruwa/controllers/accounts.py:766 baruwa/controllers/domains.py:385
 msgid "An error occured try again"
-msgstr "An error occured try again"
+msgstr "Tapahtui virhe-yritä uudelleen"
 
 #: baruwa/controllers/accounts.py:803
 #, python-format
 msgid "The alias address %(address)s was successfully created."
-msgstr "The alias address %(address)s was successfully created."
+msgstr "Alias-osoite %(address)s luotiin."
 
 #: baruwa/controllers/accounts.py:806 baruwa/controllers/accounts.py:854
 #, python-format
 msgid "The address %(addr)s already exists"
-msgstr "The address %(addr)s already exists"
+msgstr "Osoite %(addr)s on jo olemassa"
 
 #: baruwa/controllers/accounts.py:809 baruwa/controllers/accounts.py:857
 #, python-format
 msgid "Domain: %(d)s does not belong to you"
-msgstr "Domain: %(d)s does not belong to you"
+msgstr "Toimialue: %(d)s ei kuulu"
 
 #: baruwa/controllers/accounts.py:849
 msgid "The alias address has been updated"
-msgstr "The alias address has been updated"
+msgstr "Alias-osoite päivitetty"
 
 #: baruwa/controllers/accounts.py:851
 msgid "No changes were made to the address"
-msgstr "No changes were made to the address"
+msgstr "Ei tehty muutoksia osoitteeseen"
 
 #: baruwa/controllers/accounts.py:885
 msgid "The address has been deleted"
-msgstr "The address has been deleted"
+msgstr "Osoite on poistettu"
 
 #: baruwa/controllers/accounts.py:955 baruwa/controllers/organizations.py:359
 msgid ""
 "File uploaded, and is being processed, this page will automatically refresh "
 "to show the status"
-msgstr "File uploaded, and is being processed, this page will automatically refresh to show the status"
+msgstr ""
+"Tiedosto ladataan ja käsitellään, tämä sivu päivittyy automaattisesti tila"
 
 #: baruwa/controllers/accounts.py:962 baruwa/controllers/organizations.py:365
 #, python-format
 msgid "The file: %s is not a CSV file"
-msgstr "The file: %s is not a CSV file"
+msgstr "Tiedosto: %s ei ole CSV-tiedosto"
 
 #: baruwa/controllers/accounts.py:965 baruwa/controllers/organizations.py:368
 #, python-format
 msgid "The file: %s already exists and is being processed."
-msgstr "The file: %s already exists and is being processed."
+msgstr "Tiedosto: %s on jo olemassa ja käsitellään."
 
 #: baruwa/controllers/accounts.py:969 baruwa/controllers/organizations.py:372
 msgid "No CSV was file uploaded, try again"
-msgstr "No CSV was file uploaded, try again"
+msgstr "Ei CSV oli tiedosto, yritä uudelleen"
 
 #: baruwa/controllers/accounts.py:979 baruwa/controllers/accounts.py:1035
 #: baruwa/controllers/domains.py:868 baruwa/controllers/messages.py:660
 #: baruwa/controllers/messages.py:662 baruwa/controllers/organizations.py:381
 #: baruwa/controllers/status.py:497
 msgid "The task status requested has expired or does not exist"
-msgstr "The task status requested has expired or does not exist"
+msgstr "Tehtävän tilan pyysi on vanhentunut tai ei ole"
 
 #: baruwa/controllers/accounts.py:987 baruwa/controllers/accounts.py:1043
 #: baruwa/controllers/domains.py:876 baruwa/controllers/organizations.py:389
 #: baruwa/controllers/status.py:505
 #, python-format
 msgid "Error occured in processing %s"
-msgstr "Error occured in processing %s"
+msgstr "Virhe kohteen %s-käsittelyn"
 
 #: baruwa/controllers/accounts.py:990 baruwa/controllers/accounts.py:1046
 #: baruwa/controllers/domains.py:879 baruwa/controllers/organizations.py:392
 #: baruwa/controllers/status.py:508
 msgid "Backend error occured during processing."
-msgstr "Backend error occured during processing."
+msgstr "Backend virhe käsiteltäessä."
 
 #: baruwa/controllers/accounts.py:1007 baruwa/controllers/organizations.py:412
 msgid "The import could not be processed, try again later"
-msgstr "The import could not be processed, try again later"
+msgstr "Tuontia ei voitu käsitellä, yritä myöhemmin uudelleen"
 
 #: baruwa/controllers/accounts.py:1027
 msgid "Accounts export is being processed"
-msgstr "Accounts export is being processed"
+msgstr "Tilinpäätöksen viennissä käsitellään"
 
 #: baruwa/controllers/accounts.py:1062 baruwa/controllers/domains.py:889
 msgid "The export could not be processed, try again later"
-msgstr "The export could not be processed, try again later"
+msgstr "Vienti ei voitu käsitellä, yritä myöhemmin uudelleen"
 
 #: baruwa/controllers/domains.py:239
 #, python-format
 msgid "The domain: %(dom)s has been created"
-msgstr "The domain: %(dom)s has been created"
+msgstr "Toimialue: %(dom)s luonut"
 
 #: baruwa/controllers/domains.py:244
 #, python-format
 msgid "The domain name %(dom)s already exists"
-msgstr "The domain name %(dom)s already exists"
+msgstr "Verkkotunnusta %(dom)s on jo olemassa"
 
 #: baruwa/controllers/domains.py:292
 #, python-format
 msgid "The domain: %(dom)s has been updated"
-msgstr "The domain: %(dom)s has been updated"
+msgstr "Toimialue: %(dom)s on päivitetty"
 
 #: baruwa/controllers/domains.py:297
 #, python-format
 msgid "The domain %(dom)s could not be updated"
-msgstr "The domain %(dom)s could not be updated"
+msgstr "Toimialueen %(dom)s ei voi päivittää"
 
 #: baruwa/controllers/domains.py:300
 msgid "No changes were made to the domain"
-msgstr "No changes were made to the domain"
+msgstr "Toimialueelle ei tehdä mitään muutoksia"
 
 #: baruwa/controllers/domains.py:322
 msgid "The domain has been deleted"
-msgstr "The domain has been deleted"
+msgstr "Toimialue on poistettu"
 
 #: baruwa/controllers/domains.py:325
 #, python-format
 msgid ""
 "The domain: %(name)s and all associated data will be deleted, This action "
 "cannot be reversed."
-msgstr "The domain: %(name)s and all associated data will be deleted, This action cannot be reversed."
+msgstr ""
+"Toimialue: %(name)s ja kaikki siihen liittyvät tiedot poistetaan, toimintoa "
+"ei voi kumota."
 
 #: baruwa/controllers/domains.py:373
 msgid "The domains have been deleted"
-msgstr "The domains have been deleted"
+msgstr "Verkkotunnuksia on poistettu"
 
 #: baruwa/controllers/domains.py:376
 msgid ""
 "The following domains are about to be deleted, this action is not "
 "reversible, Do you wish to continue ?"
-msgstr "The following domains are about to be deleted, this action is not reversible, Do you wish to continue ?"
+msgstr ""
+"Seuraavia toimialueita poistettavaksi, tämä toiminto ei ole palautuva, "
+"Haluatko jatkaa?"
 
 #: baruwa/controllers/domains.py:411
 msgid "The destination server has been created"
-msgstr "The destination server has been created"
+msgstr "Kohdepalvelimeen luodaan"
 
 #: baruwa/controllers/domains.py:417
 #, python-format
 msgid "The destination server %(dest)s already exists "
-msgstr "The destination server %(dest)s already exists "
+msgstr "Kohdepalvelimen %(dest)s on jo olemassa "
 
 #: baruwa/controllers/domains.py:442
 msgid "The destination server has been updated"
-msgstr "The destination server has been updated"
+msgstr "Kohdepalvelin on päivitetty"
 
 #: baruwa/controllers/domains.py:453 baruwa/controllers/domains.py:817
 msgid "The update failed"
-msgstr "The update failed"
+msgstr "Päivitys epäonnistui"
 
 #: baruwa/controllers/domains.py:455
 msgid "No changes were made to the destination server"
-msgstr "No changes were made to the destination server"
+msgstr "Kohdepalvelimeen ei tehdä mitään muutoksia"
 
 #: baruwa/controllers/domains.py:486
 msgid "The connection test failed try again later"
-msgstr "The connection test failed try again later"
+msgstr "Yhteystesti epäonnistui, yritä myöhemmin uudelleen"
 
 #: baruwa/controllers/domains.py:491
 #, python-format
 msgid "The server: %s is up and accepting mail from us"
-msgstr "The server: %s is up and accepting mail from us"
+msgstr "Palvelin: %s on ajan ja hyväksyvä postia meille"
 
 #: baruwa/controllers/domains.py:498
 #, python-format
 msgid "The server: %s is not accepting mail from us: %s"
-msgstr "The server: %s is not accepting mail from us: %s"
+msgstr "Palvelin: %s ei hyväksy meiltä: %s"
 
 #: baruwa/controllers/domains.py:534
 msgid "The destination server has been deleted"
-msgstr "The destination server has been deleted"
+msgstr "Kohdepalvelin on poistettu"
 
 #: baruwa/controllers/domains.py:541
 #, python-format
 msgid ""
 "The destination server: %(s)s will be deleted, This action is not reversible"
-msgstr "The destination server: %(s)s will be deleted, This action is not reversible"
+msgstr "Kohdepalvelin: %(s)s on poistettu, tämä toiminto ei ole palautuva"
 
 #: baruwa/controllers/domains.py:568
 msgid "The authentication settings have been created"
-msgstr "The authentication settings have been created"
+msgstr "Luotu todennusasetukset"
 
 #: baruwa/controllers/domains.py:575
 #, python-format
 msgid ""
 "The host %(dest)s already configured for %(auth)s authentication for this "
 "domain"
-msgstr "The host %(dest)s already configured for %(auth)s authentication for this domain"
+msgstr "Isäntä %(dest)s jo määritetty %(auth)s todennus toimialueella"
 
 #: baruwa/controllers/domains.py:608
 msgid "The authentication settings have been updated"
-msgstr "The authentication settings have been updated"
+msgstr "Päivitetty todennusasetukset"
 
 #: baruwa/controllers/domains.py:619
 msgid "The authentication settings update failed"
-msgstr "The authentication settings update failed"
+msgstr "Todennuksen asetukset päivitys epäonnistui"
 
 #: baruwa/controllers/domains.py:621
 msgid "No changes were made to the authentication settings"
-msgstr "No changes were made to the authentication settings"
+msgstr "Ei tehty muutoksia todennuksen asetukset"
 
 #: baruwa/controllers/domains.py:642
 msgid "The authentication settings have been deleted"
-msgstr "The authentication settings have been deleted"
+msgstr "Todennusasetukset poistettu"
 
 #: baruwa/controllers/domains.py:649
 #, python-format
 msgid ""
 "The authentication server: %(s)s will be deleted, This action is not "
 "reversible"
-msgstr "The authentication server: %(s)s will be deleted, This action is not reversible"
+msgstr ""
+"Laillisuustarkistuspalvelimen: %(s)s on poistettu, tämä toiminto ei ole "
+"palautuva"
 
 #: baruwa/controllers/domains.py:672
 msgid "The protocol supplied does not use extra settings"
-msgstr "The protocol supplied does not use extra settings"
+msgstr "Myy-protokolla ei käytä Lisäasetukset"
 
 #: baruwa/controllers/domains.py:677
 #, python-format
 msgid ""
 "Please add an authentication server for the %(proto)s protocol Before "
 "attempting to configure the %(proto)s settings"
-msgstr "Please add an authentication server for the %(proto)s protocol Before attempting to configure the %(proto)s settings"
+msgstr ""
+"Lisätkää Laillisuustarkistuspalvelinta varten %(proto)s ennen kuin yrität "
+"määrittää protokollan %(proto)s asetukset"
 
 #: baruwa/controllers/domains.py:716
 #, python-format
 msgid "The %(proto)s settings have been updated"
-msgstr "The %(proto)s settings have been updated"
+msgstr "%(proto)s asetukset päivitetty"
 
 #: baruwa/controllers/domains.py:719
 #, python-format
 msgid "The %(proto)s settings have been created"
-msgstr "The %(proto)s settings have been created"
+msgstr "%(proto)s asetukset on luotu"
 
 #: baruwa/controllers/domains.py:730
 msgid "The auth settings already exist, use update to modify them"
-msgstr "The auth settings already exist, use update to modify them"
+msgstr "Auth-asetukset on jo olemassa, muokkaa niitä päivityksen avulla"
 
 #: baruwa/controllers/domains.py:734
 msgid ""
 "The Radius secret is not be displayed in the form, To update type the new "
 "secret in \"Radius secret\" below."
-msgstr "The Radius secret is not be displayed in the form, To update type the new secret in \"Radius secret\" below."
+msgstr ""
+"Salaisuus on säde ei näytetä lomake päivittää tyyppi uuden salaisuus "
+"\"Radius salaa\" alla."
 
 #: baruwa/controllers/domains.py:775
 #, python-format
 msgid "The domain alias: %s has been created"
-msgstr "The domain alias: %s has been created"
+msgstr "Toimialueen tunnus: %s on luotu"
 
 #: baruwa/controllers/domains.py:780
 #, python-format
 msgid "The domain alias: %s already exists"
-msgstr "The domain alias: %s already exists"
+msgstr "Toimialueen tunnus: %s on jo olemassa"
 
 #: baruwa/controllers/domains.py:812
 #, python-format
 msgid "The domain alias: %s has been updated"
-msgstr "The domain alias: %s has been updated"
+msgstr "Toimialueen tunnus: %s on päivitetty"
 
 #: baruwa/controllers/domains.py:819
 msgid "No changes were made to the domain alias"
-msgstr "No changes were made to the domain alias"
+msgstr "Ei tehty muutoksia verkkotunnuksen alias"
 
 #: baruwa/controllers/domains.py:846
 #, python-format
 msgid "The domain alias: %s has been deleted"
-msgstr "The domain alias: %s has been deleted"
+msgstr "Toimialueen tunnus: %s on poistettu"
 
 #: baruwa/controllers/domains.py:861
 msgid "Domains export is being processed"
-msgstr "Domains export is being processed"
+msgstr "Verkkotunnuksia vienti käsitellään"
 
 #: baruwa/controllers/error.py:48
 msgid "No status code found"
-msgstr "No status code found"
+msgstr "Ei löydy tilakoodi"
 
 #: baruwa/controllers/filemanager.py:59 baruwa/controllers/filemanager.py:178
 msgid "Action not supported"
-msgstr "Action not supported"
+msgstr "Toimintoa ei voi suorittaa"
 
 #: baruwa/controllers/filemanager.py:131
 msgid "Only one image is permitted per signature"
-msgstr "Only one image is permitted per signature"
+msgstr "Vain yksi kuva sallitaan kullakin allekirjoitus"
 
 #: baruwa/controllers/filemanager.py:139
 msgid "The uploaded file is not acceptable"
-msgstr "The uploaded file is not acceptable"
+msgstr "Ladatun tiedoston ei voida hyväksyä"
 
 #: baruwa/controllers/filemanager.py:150
 msgid "File has been uploaded"
-msgstr "File has been uploaded"
+msgstr "Tiedosto on ladattu"
 
 #: baruwa/controllers/filemanager.py:156
 msgid "Invalid upload request"
-msgstr "Invalid upload request"
+msgstr "Virheellinen upload-pyynnön"
 
 #: baruwa/controllers/filemanager.py:173
 msgid "The file has been deleted"
-msgstr "The file has been deleted"
+msgstr "Tiedosto on poistettu"
 
 #: baruwa/controllers/invite.py:69
 #, python-format
 msgid "[Baruwa] Please verify your email: '%s'"
-msgstr "[Baruwa] Please verify your email: '%s'"
+msgstr "[Baruwa] Tarkista sähköpostisi: % s"
 
 #: baruwa/controllers/invite.py:74
 msgid ""
 "An email has been sent to the address provided, please follow the "
 "instructions in that email to proceed with your registration."
-msgstr "An email has been sent to the address provided, please follow the instructions in that email to proceed with your registration."
+msgstr ""
+"On l├ñhetetty osoitteeseen, seuraa ohjeita sähköposti sinun "
+"rekisteröitäväksi."
 
 #: baruwa/controllers/invite.py:89
 msgid "The access token supplied is invalid"
-msgstr "The access token supplied is invalid"
+msgstr "Myy käyttötunnussanomaa ei kelpaa"
 
 #: baruwa/controllers/invite.py:165 baruwa/controllers/invite.py:181
 msgid "Baruwa Hosted Registration"
-msgstr "Baruwa Hosted Registration"
+msgstr "Baruwa isännöi rekisteröinti"
 
 #: baruwa/controllers/invite.py:191
 msgid "System was unable to process your request"
-msgstr "System was unable to process your request"
+msgstr "Järjestelmä ei voinut käsitellä pyyntöä"
 
 #: baruwa/controllers/lists.py:248 baruwa/controllers/lists.py:291
 #: baruwa/forms/lists.py:34 baruwa/templates/base.html:75
 #: baruwa/templates/lists/add.html:49 baruwa/templates/lists/delete.html:38
 msgid "Approved senders"
-msgstr "Approved senders"
+msgstr "Hyväksytyt lähettäjät"
 
 #: baruwa/controllers/lists.py:250 baruwa/controllers/lists.py:293
 #: baruwa/forms/lists.py:35 baruwa/templates/base.html:76
 #: baruwa/templates/lists/add.html:50 baruwa/templates/lists/delete.html:39
 msgid "Banned senders"
-msgstr "Banned senders"
+msgstr "Kiellettyjen lähettäjät"
 
 #: baruwa/controllers/lists.py:255
 msgid "The item has been added to the list"
-msgstr "The item has been added to the list"
+msgstr "Kohde lisätään luetteloon"
 
 #: baruwa/controllers/lists.py:261
 msgid "The list item already exists"
-msgstr "The list item already exists"
+msgstr "Luettelokohde on jo olemassa"
 
 #: baruwa/controllers/lists.py:302
 msgid "The item has been deleted"
-msgstr "The item has been deleted"
+msgstr "Kohde on poistettu"
 
 #: baruwa/controllers/messages.py:291 baruwa/controllers/messages.py:294
 msgid "Processing the request failed"
-msgstr "Processing the request failed"
+msgstr "Käsittely pyyntö epäonnistui"
 
 #: baruwa/controllers/messages.py:301 baruwa/controllers/messages.py:464
 msgid ", "
@@ -589,212 +608,212 @@ msgstr ", "
 
 #: baruwa/controllers/messages.py:461
 msgid "The messages could not processed, try again later"
-msgstr "The messages could not processed, try again later"
+msgstr "Viestejä ei voi käsitellä, yritä myöhemmin uudelleen"
 
 #: baruwa/controllers/messages.py:578 baruwa/controllers/status.py:304
 msgid "This message contains external images, which have been blocked. "
-msgstr "This message contains external images, which have been blocked. "
+msgstr "Tämä viesti sisältää ulkoisia kuvia, jotka on estetty. "
 
 #: baruwa/controllers/messages.py:579 baruwa/controllers/status.py:305
 msgid "Display images"
-msgstr "Display images"
+msgstr "Näytä kuvat"
 
 #: baruwa/controllers/messages.py:596
 msgid "The message could not be previewed, try again later"
-msgstr "The message could not be previewed, try again later"
+msgstr "Viestiä ei voitu olla katsellut, yritä myöhemmin uudelleen"
 
 #: baruwa/controllers/messages.py:612
 msgid "Unknown"
-msgstr "Unknown"
+msgstr "Tuntematon"
 
 #: baruwa/controllers/messages.py:613
 msgid ""
 "The message has already been released, you can only use the release link "
 "once"
-msgstr "The message has already been released, you can only use the release link once"
+msgstr "Viesti on jo julkaistu, voit käyttää julkaisun linkki kerran"
 
 #: baruwa/controllers/messages.py:642
 msgid "Processing of message failed"
-msgstr "Processing of message failed"
+msgstr "Asia epäonnistua käsittely"
 
 #: baruwa/controllers/messages.py:680 baruwa/controllers/messages.py:681
 msgid "An error occured in processing, try again later"
-msgstr "An error occured in processing, try again later"
+msgstr "Ilmeni virhe, käsittely, yritä myöhemmin uudelleen"
 
 #: baruwa/controllers/organizations.py:166
 msgid "The organization has been created"
-msgstr "The organization has been created"
+msgstr "Järjestö on perustettu"
 
 #: baruwa/controllers/organizations.py:170
 msgid "The organization already exists"
-msgstr "The organization already exists"
+msgstr "Organisaatio on jo olemassa"
 
 #: baruwa/controllers/organizations.py:199
 msgid "The organization has been updated"
-msgstr "The organization has been updated"
+msgstr "Organisaatio on päivitetty"
 
 #: baruwa/controllers/organizations.py:202
 msgid "The organization could not be updated"
-msgstr "The organization could not be updated"
+msgstr "Organisaatio ei voi päivittää"
 
 #: baruwa/controllers/organizations.py:204
 msgid "No changes made, Organization not updated"
-msgstr "No changes made, Organization not updated"
+msgstr "Ei muutoksia tehty, järjestö ei päivitetä"
 
 #: baruwa/controllers/organizations.py:230
 msgid "The organization has been deleted"
-msgstr "The organization has been deleted"
+msgstr "Organisaation on poistettu"
 
 #: baruwa/controllers/organizations.py:233
 #, python-format
 msgid "The organization: %(s)s will be deleted, This action is not reversible"
-msgstr "The organization: %(s)s will be deleted, This action is not reversible"
+msgstr "Organisaatio: %(s)s on poistettu, tämä toiminto ei ole palautuva"
 
 #: baruwa/controllers/organizations.py:260
 msgid "The outbound settings have been created"
-msgstr "The outbound settings have been created"
+msgstr "Luotu lähtevän asetukset"
 
 #: baruwa/controllers/organizations.py:263
 msgid "The outbound settings could not created, Try again"
-msgstr "The outbound settings could not created, Try again"
+msgstr "Lähtevä asetuksia ei luoda, yritä uudelleen"
 
 #: baruwa/controllers/organizations.py:299
 msgid "The outbound settings have been updated"
-msgstr "The outbound settings have been updated"
+msgstr "Lähtevä asetukset päivitetty"
 
 #: baruwa/controllers/organizations.py:302
 msgid "The outbound settings could not be updated"
-msgstr "The outbound settings could not be updated"
+msgstr "Lähtevä asetuksia ei voitu päivittää."
 
 #: baruwa/controllers/organizations.py:304
 msgid "No changes made, The outbound settings not updated"
-msgstr "No changes made, The outbound settings not updated"
+msgstr "Ei tehdä muutoksia, lähtevä asetuksia ei päivitetä"
 
 #: baruwa/controllers/organizations.py:327
 msgid "The outbound settings have been deleted"
-msgstr "The outbound settings have been deleted"
+msgstr "Lähtevä asetukset on poistettu"
 
 #: baruwa/controllers/organizations.py:329
 msgid "The outbound settings could not be deleted"
-msgstr "The outbound settings could not be deleted"
+msgstr "Lähtevä asetuksia ei voitu poistaa"
 
 #: baruwa/controllers/reports.py:381
 msgid "Score "
-msgstr "Score "
+msgstr "Pisteet "
 
 #: baruwa/controllers/reports.py:426
 msgid "Mail totals on "
-msgstr "Mail totals on "
+msgstr "Postin summat "
 
 #: baruwa/controllers/reports.py:430
 msgid "Spam totals on "
-msgstr "Spam totals on "
+msgstr "Roskapostien yhteensä "
 
 #: baruwa/controllers/reports.py:434
 msgid "Virus totals on "
-msgstr "Virus totals on "
+msgstr "Virus summat "
 
 #: baruwa/controllers/reports.py:511 baruwa/controllers/reports.py:548
 msgid "The filter does not exist"
-msgstr "The filter does not exist"
+msgstr "Suodatinta ei ole"
 
 #: baruwa/controllers/reports.py:521
 msgid "The filter has been removed"
-msgstr "The filter has been removed"
+msgstr "Suodatin on poistettu"
 
 #: baruwa/controllers/reports.py:551
 msgid "The filter already exists"
-msgstr "The filter already exists"
+msgstr "Suodatin on jo olemassa"
 
 #: baruwa/controllers/reports.py:558
 msgid "The filter has been saved"
-msgstr "The filter has been saved"
+msgstr "Suodatin on tallennettu"
 
 #: baruwa/controllers/reports.py:591
 msgid "The filter has been deleted"
-msgstr "The filter has been deleted"
+msgstr "Suodatin on poistettu"
 
 #: baruwa/controllers/settings.py:154
 msgid "The scanning server has been added"
-msgstr "The scanning server has been added"
+msgstr "Skannaus palvelin on lisätty"
 
 #: baruwa/controllers/settings.py:158
 msgid "The server already exists"
-msgstr "The server already exists"
+msgstr "Palvelin on jo olemassa"
 
 #: baruwa/controllers/settings.py:184
 msgid "The scanning server has been updated"
-msgstr "The scanning server has been updated"
+msgstr "Skannaus palvelin on päivitetty"
 
 #: baruwa/controllers/settings.py:187
 msgid "Update of server failed"
-msgstr "Update of server failed"
+msgstr "Päivitys palvelimeen epäonnistui"
 
 #: baruwa/controllers/settings.py:189
 msgid "No changes were made to the server"
-msgstr "No changes were made to the server"
+msgstr "Palvelimeen ei tehdä mitään muutoksia"
 
 #: baruwa/controllers/settings.py:211
 msgid "The scanning server has been deleted"
-msgstr "The scanning server has been deleted"
+msgstr "Skannaus palvelin on poistettu"
 
 #: baruwa/controllers/settings.py:290
 #, python-format
 msgid "%(settings)s updated"
-msgstr "%(settings)s updated"
+msgstr "%(settings)s päivitetty"
 
 #: baruwa/controllers/settings.py:294
 msgid "No configuration changes made"
-msgstr "No configuration changes made"
+msgstr "Ei asetuksia tehdyt muutokset"
 
 #: baruwa/controllers/settings.py:341
 msgid "DKIM keys successfully generated"
-msgstr "DKIM keys successfully generated"
+msgstr "DKIM avaimet onnistuu"
 
 #: baruwa/controllers/settings.py:343
 msgid "Generation of DKIM keys failed"
-msgstr "Generation of DKIM keys failed"
+msgstr "Sukupolven DKIM avaimet epäonnistui"
 
 #: baruwa/controllers/settings.py:361
 msgid "enabled"
-msgstr "enabled"
+msgstr "käytössä"
 
 #: baruwa/controllers/settings.py:370
 msgid "disabled"
-msgstr "disabled"
+msgstr "poistettu käytöstä"
 
 #: baruwa/controllers/settings.py:375
 #, python-format
 msgid "DKIM signing for: %s has been %s"
-msgstr "DKIM signing for: %s has been %s"
+msgstr "DKIM Ilmoittautuminen: %s on %s"
 
 #: baruwa/controllers/settings.py:378
 msgid "DKIM signing status: No changes made"
-msgstr "DKIM signing status: No changes made"
+msgstr "DKIM-allekirjoituksen tila: tehdyt muutokset"
 
 #: baruwa/controllers/settings.py:424 baruwa/controllers/settings.py:536
 msgid "The signature has been created"
-msgstr "The signature has been created"
+msgstr "Allekirjoitus on luotu"
 
 #: baruwa/controllers/settings.py:428 baruwa/controllers/settings.py:540
 msgid "This signature type already exists"
-msgstr "This signature type already exists"
+msgstr "Allekirjoitus-tällainen on jo olemassa"
 
 #: baruwa/controllers/settings.py:457 baruwa/controllers/settings.py:569
 msgid "The signature has been updated"
-msgstr "The signature has been updated"
+msgstr "Allekirjoitus on päivitetty"
 
 #: baruwa/controllers/settings.py:459 baruwa/controllers/settings.py:571
 msgid "No changes made, signature not updated"
-msgstr "No changes made, signature not updated"
+msgstr "Ei muutoksia tehty, ei päivitetä allekirjoitus"
 
 #: baruwa/controllers/settings.py:463 baruwa/controllers/settings.py:575
 msgid "Error occured updating the signature"
-msgstr "Error occured updating the signature"
+msgstr "Virhe päivittäminen allekirjoitus"
 
 #: baruwa/controllers/settings.py:508 baruwa/controllers/settings.py:620
 msgid "The signature has been deleted"
-msgstr "The signature has been deleted"
+msgstr "Allekirjoitus on poistettu"
 
 #: baruwa/controllers/status.py:96 baruwa/lib/misc.py:178
 #: baruwa/model/messages.py:150 baruwa/templates/messages/functions.html:42
@@ -803,105 +822,105 @@ msgstr "The signature has been deleted"
 #: baruwa/templates/status/index.html:25
 #: baruwa/templates/status/serverstatus.html:27
 msgid "Clean"
-msgstr "Clean"
+msgstr "Puhdista"
 
 #: baruwa/controllers/status.py:97 baruwa/templates/status/index.html:30
 #: baruwa/templates/status/serverstatus.html:32
 msgid "High scoring spam"
-msgstr "High scoring spam"
+msgstr "Korkean pisteytyksen roskapostia"
 
 #: baruwa/controllers/status.py:98 baruwa/templates/status/index.html:35
 #: baruwa/templates/status/serverstatus.html:37
 msgid "Low scoring spam"
-msgstr "Low scoring spam"
+msgstr "Alhainen pisteytys roskapostia"
 
 #: baruwa/controllers/status.py:99 baruwa/templates/messages/detail.html:77
 #: baruwa/templates/status/index.html:40
 #: baruwa/templates/status/serverstatus.html:42
 msgid "Virus infected"
-msgstr "Virus infected"
+msgstr "Saaneiden"
 
 #: baruwa/controllers/status.py:100 baruwa/templates/status/index.html:45
 #: baruwa/templates/status/serverstatus.html:47
 msgid "Policy blocked"
-msgstr "Policy blocked"
+msgstr "Politiikan estetty"
 
 #: baruwa/controllers/status.py:226
 msgid "The request has been queued for processing"
-msgstr "The request has been queued for processing"
+msgstr "Pyyntö on jonossa jalostukseen"
 
 #: baruwa/controllers/status.py:245 baruwa/controllers/status.py:263
 msgid "The requested queued message was not found."
-msgstr "The requested queued message was not found."
+msgstr "Pyydettyä sanoman jonoon ei löytynyt."
 
 #: baruwa/controllers/status.py:321
 msgid "The message could not be processed"
-msgstr "The message could not be processed"
+msgstr "Sanomaa ei voi käsitellä"
 
 #: baruwa/controllers/status.py:481
 msgid "No query specified for audit log export"
-msgstr "No query specified for audit log export"
+msgstr "Ei ole määritetty tarkastuksen loki vientiin kyselyä"
 
 #: baruwa/controllers/status.py:518
 msgid "The audit log export failed, try again later"
-msgstr "The audit log export failed, try again later"
+msgstr "Tarkastuksen loki vienti epäonnistui, yritä myöhemmin uudelleen"
 
 #: baruwa/forms/__init__.py:38
 msgid "This field is required."
-msgstr "This field is required."
+msgstr "Tämä kenttä on pakollinen."
 
 #: baruwa/forms/__init__.py:39
 msgid "Invalid email address."
-msgstr "Invalid email address."
+msgstr "Virheellinen sähköpostiosoite."
 
 #: baruwa/forms/__init__.py:81
 msgid "The domain is a free mail domain"
-msgstr "The domain is a free mail domain"
+msgstr "Toimialue on ilmainen sähköpostin verkkotunnuksen"
 
 #: baruwa/forms/__init__.py:89 baruwa/forms/__init__.py:100
 msgid "The domain already exists on the system"
-msgstr "The domain already exists on the system"
+msgstr "Toimialue on jo olemassa järjestelmässä"
 
 #: baruwa/forms/__init__.py:109
 msgid "The username cannot be an email address"
-msgstr "The username cannot be an email address"
+msgstr "Käyttäjänimi ei voi olla osoite"
 
 #: baruwa/forms/__init__.py:111 baruwa/forms/__init__.py:113
 msgid "The username is not available"
-msgstr "The username is not available"
+msgstr "Käyttäjänimi ei ole käytettävissä"
 
 #: baruwa/forms/__init__.py:124
 msgid "Email from a domain that is already registered"
-msgstr "Email from a domain that is already registered"
+msgstr "Sähköpostia toimialueesta, joka on jo rekisteröity"
 
 #: baruwa/forms/accounts.py:36 baruwa/templates/accounts/account.html:5
 msgid "User"
-msgstr "User"
+msgstr "Käyttäjän"
 
 #: baruwa/forms/accounts.py:37
 msgid "Domain admin"
-msgstr "Domain admin"
+msgstr "Toimialueen järjestelmänvalvojan"
 
 #: baruwa/forms/accounts.py:38 baruwa/templates/accounts/account.html:5
 msgid "Administrator"
-msgstr "Administrator"
+msgstr "Ylläpitäjä"
 
 #: baruwa/forms/accounts.py:54
 #, python-format
 msgid "The domain: %(dom)s is not local"
-msgstr "The domain: %(dom)s is not local"
+msgstr "Toimialue: %(dom)s ei ole paikallista"
 
 #: baruwa/forms/accounts.py:63 baruwa/forms/accounts.py:112
 msgid "Please select atleast one domain"
-msgstr "Please select atleast one domain"
+msgstr "Valitse vähintään yksi verkkotunnus"
 
 #: baruwa/forms/accounts.py:74
 msgid "Admin accounts cannot be reset via the web"
-msgstr "Admin accounts cannot be reset via the web"
+msgstr "Admin tilejä ei voida palauttaa verkon kautta"
 
 #: baruwa/forms/accounts.py:76
 msgid "Account not found"
-msgstr "Account not found"
+msgstr "Tiliä ei löydy"
 
 #: baruwa/forms/accounts.py:81 baruwa/forms/accounts.py:117
 #: baruwa/tasks/status.py:297 baruwa/templates/accounts/account.html:38
@@ -912,32 +931,32 @@ msgstr "Account not found"
 #: baruwa/templates/accounts/searchresults.html:24
 #: baruwa/templates/status/audit.html:27
 msgid "Username"
-msgstr "Username"
+msgstr "Käyttäjätunnus"
 
 #: baruwa/forms/accounts.py:84 baruwa/forms/accounts.py:119
 #: baruwa/forms/invite.py:50
 msgid "First name"
-msgstr "First name"
+msgstr "Etunimi"
 
 #: baruwa/forms/accounts.py:86 baruwa/forms/accounts.py:120
 #: baruwa/forms/invite.py:52
 msgid "Last name"
-msgstr "Last name"
+msgstr "Sukunimi"
 
 #: baruwa/forms/accounts.py:88 baruwa/forms/accounts.py:151
 #: baruwa/forms/invite.py:56
 msgid "New Password"
-msgstr "New Password"
+msgstr "Uusi salasana"
 
 #: baruwa/forms/accounts.py:91 baruwa/forms/accounts.py:154
 #: baruwa/forms/invite.py:60 baruwa/forms/organizations.py:67
 msgid "Passwords must match"
-msgstr "Passwords must match"
+msgstr "Salasanojen täytyy vastata"
 
 #: baruwa/forms/accounts.py:92 baruwa/forms/accounts.py:155
 #: baruwa/forms/invite.py:61 baruwa/forms/organizations.py:66
 msgid "Retype Password"
-msgstr "Retype Password"
+msgstr "Vahvista salasana"
 
 #: baruwa/forms/accounts.py:94 baruwa/forms/accounts.py:121
 #: baruwa/forms/invite.py:54 baruwa/templates/accounts/confirmbulkdel.html:10
@@ -945,23 +964,23 @@ msgstr "Retype Password"
 #: baruwa/templates/accounts/login.html:72
 #: baruwa/templates/accounts/searchresults.html:26
 msgid "Email address"
-msgstr "Email address"
+msgstr "Sähköpostiosoite"
 
 #: baruwa/forms/accounts.py:97 baruwa/forms/accounts.py:123
 #: baruwa/templates/accounts/account.html:70
 #: baruwa/templates/domains/detail.html:140
 msgid "Timezone"
-msgstr "Timezone"
+msgstr "Aikavyöhyke"
 
 #: baruwa/forms/accounts.py:98 baruwa/templates/accounts/account.html:94
 msgid "Account type"
-msgstr "Account type"
+msgstr "Tilityyppi"
 
 #: baruwa/forms/accounts.py:100 baruwa/forms/accounts.py:124
 #: baruwa/forms/organizations.py:46 baruwa/templates/base.html:92
 #: baruwa/templates/accounts/account.html:120
 msgid "Domains"
-msgstr "Domains"
+msgstr "Verkkotunnukset"
 
 #: baruwa/forms/accounts.py:103 baruwa/forms/accounts.py:126
 #: baruwa/forms/accounts.py:146 baruwa/forms/domains.py:93
@@ -972,69 +991,69 @@ msgstr "Domains"
 #: baruwa/forms/settings.py:705 baruwa/lib/templates/helpers.py:228
 #: baruwa/templates/settings/index.html:17
 msgid "Enabled"
-msgstr "Enabled"
+msgstr "Käytössä"
 
 #: baruwa/forms/accounts.py:104 baruwa/forms/accounts.py:127
 #: baruwa/templates/accounts/account.html:140
 msgid "Send reports"
-msgstr "Send reports"
+msgstr "Lähetä raportit"
 
 #: baruwa/forms/accounts.py:105 baruwa/forms/accounts.py:128
 msgid "Enable spam checks"
-msgstr "Enable spam checks"
+msgstr "Roskapostin varmistaa"
 
 #: baruwa/forms/accounts.py:106 baruwa/forms/domains.py:102
 #: baruwa/forms/domains.py:138
 msgid "Probable spam score"
-msgstr "Probable spam score"
+msgstr "Todennäköinen roskapostin Pistemäärä"
 
 #: baruwa/forms/accounts.py:107 baruwa/forms/domains.py:103
 #: baruwa/forms/domains.py:139
 msgid "Definite spam score"
-msgstr "Definite spam score"
+msgstr "Selvä roskapostin Pistemäärä"
 
 #: baruwa/forms/accounts.py:129 baruwa/templates/domains/detail.html:108
 msgid "Spam low score"
-msgstr "Spam low score"
+msgstr "Spam alhaiset pisteet"
 
 #: baruwa/forms/accounts.py:130 baruwa/templates/domains/detail.html:116
 msgid "Spam high score"
-msgstr "Spam high score"
+msgstr "Spam ennätyksen"
 
 #: baruwa/forms/accounts.py:136 baruwa/forms/domains.py:159
 msgid "delete"
-msgstr "delete"
+msgstr "Poista"
 
 #: baruwa/forms/accounts.py:137 baruwa/forms/domains.py:160
 msgid "disable"
-msgstr "disable"
+msgstr "Poista"
 
 #: baruwa/forms/accounts.py:138 baruwa/forms/domains.py:161
 msgid "enable"
-msgstr "enable"
+msgstr "Ota"
 
 #: baruwa/forms/accounts.py:143 baruwa/forms/accounts.py:167
 #: baruwa/templates/accounts/account.html:54
 msgid "Email Address"
-msgstr "Email Address"
+msgstr "Sähköpostiosoite"
 
 #: baruwa/forms/accounts.py:161
 msgid "Old Password"
-msgstr "Old Password"
+msgstr "Vanha salasana"
 
 #: baruwa/forms/domains.py:36
 msgid "Load balance"
-msgstr "Load balance"
+msgstr "Kuormitusta"
 
 #: baruwa/forms/domains.py:37
 msgid "Fail over"
-msgstr "Fail over"
+msgstr "Saattaa olla"
 
 #: baruwa/forms/domains.py:43 baruwa/templates/base.html:68
 #: baruwa/templates/messages/detail.html:150
 #: baruwa/templates/messages/taskstatus.html:6
 msgid "Quarantine"
-msgstr "Quarantine"
+msgstr "Karanteeni"
 
 #: baruwa/forms/domains.py:44 baruwa/forms/messages.py:73
 #: baruwa/forms/settings.py:128 baruwa/forms/status.py:32
@@ -1057,27 +1076,27 @@ msgstr "Quarantine"
 #: baruwa/templates/settings/domain_sigs.html:32
 #: baruwa/templates/settings/index.html:34
 msgid "Delete"
-msgstr "Delete"
+msgstr "Poista"
 
 #: baruwa/forms/domains.py:45 baruwa/forms/status.py:29
 msgid "Deliver"
-msgstr "Deliver"
+msgstr "Toimittaa"
 
 #: baruwa/forms/domains.py:49
 msgid "Monthly"
-msgstr "Monthly"
+msgstr "Kuukausittain"
 
 #: baruwa/forms/domains.py:50
 msgid "Weekly"
-msgstr "Weekly"
+msgstr "Viikoittain"
 
 #: baruwa/forms/domains.py:51
 msgid "Daily"
-msgstr "Daily"
+msgstr "Päivittäinen"
 
 #: baruwa/forms/domains.py:52 baruwa/lib/templates/helpers.py:231
 msgid "Disabled"
-msgstr "Disabled"
+msgstr "Vammaisten"
 
 #: baruwa/forms/domains.py:56 baruwa/forms/domains.py:63
 msgid "SMTP"
@@ -1085,7 +1104,7 @@ msgstr "SMTP"
 
 #: baruwa/forms/domains.py:57
 msgid "LMTP"
-msgstr "LMTP"
+msgstr "LMTP LIITTYVÄT PAKETIT"
 
 #: baruwa/forms/domains.py:61
 msgid "POP3"
@@ -1097,7 +1116,7 @@ msgstr "IMAP"
 
 #: baruwa/forms/domains.py:64
 msgid "RADIUS/RSA SECUREID"
-msgstr "RADIUS/RSA SECUREID"
+msgstr "SÄDE/RSA SECUREID"
 
 #: baruwa/forms/domains.py:65
 msgid "LDAP"
@@ -1113,126 +1132,126 @@ msgstr "OAUTH"
 
 #: baruwa/forms/domains.py:71
 msgid "SUBTREE"
-msgstr "SUBTREE"
+msgstr "ALIPUU"
 
 #: baruwa/forms/domains.py:72
 msgid "ONE LEVEL"
-msgstr "ONE LEVEL"
+msgstr "YKSI TASO"
 
 #: baruwa/forms/domains.py:80
 msgid "Invalid Domain name or IP address"
-msgstr "Invalid Domain name or IP address"
+msgstr "Virheellinen Domain-nimi tai IP-osoite"
 
 #: baruwa/forms/domains.py:85 baruwa/forms/domains.py:122
 #: baruwa/forms/invite.py:67 baruwa/forms/lists.py:84
 #: baruwa/templates/domains/detail.html:21
 #: baruwa/templates/organizations/importstatus.html:5
 msgid "Domain name"
-msgstr "Domain name"
+msgstr "Verkkotunnus"
 
 #: baruwa/forms/domains.py:87 baruwa/forms/domains.py:124
 #: baruwa/forms/domains.py:169 baruwa/forms/domains.py:183
 #: baruwa/forms/domains.py:192 baruwa/forms/invite.py:69
 msgid "Invalid Domain name"
-msgstr "Invalid Domain name"
+msgstr "Virheellinen toimialuenimi"
 
 #: baruwa/forms/domains.py:90 baruwa/forms/domains.py:126
 #: baruwa/templates/domains/detail.html:148
 msgid "Site url"
-msgstr "Site url"
+msgstr "Sivuston URL-osoite"
 
 #: baruwa/forms/domains.py:94 baruwa/forms/domains.py:130
 msgid "Enable SMTP callouts"
-msgstr "Enable SMTP callouts"
+msgstr "Ota käyttöön SMTP-kuvatekstit"
 
 #: baruwa/forms/domains.py:95 baruwa/forms/domains.py:131
 msgid "Enable LDAP callouts"
-msgstr "Enable LDAP callouts"
+msgstr "Ota käyttöön LDAP-kuvatekstit"
 
 #: baruwa/forms/domains.py:96 baruwa/forms/domains.py:132
 msgid "Enable Virus checks"
-msgstr "Enable Virus checks"
+msgstr "Ota virustarkastus"
 
 #: baruwa/forms/domains.py:97 baruwa/forms/domains.py:133
 msgid "Enable SPAM checks"
-msgstr "Enable SPAM checks"
+msgstr "SPAM varmistaa"
 
 #: baruwa/forms/domains.py:98 baruwa/forms/domains.py:134
 msgid "What to do with probable spam"
-msgstr "What to do with probable spam"
+msgstr "Mitä todennäköisesti roskapostia"
 
 #: baruwa/forms/domains.py:100 baruwa/forms/domains.py:136
 msgid "What to do with definite spam"
-msgstr "What to do with definite spam"
+msgstr "Mitä konkreettisia roskapostia"
 
 #: baruwa/forms/domains.py:104 baruwa/forms/domains.py:140
 #: baruwa/templates/domains/detail.html:124
 msgid "Maximum Message Size"
-msgstr "Maximum Message Size"
+msgstr "Viestin enimmäiskoko"
 
 #: baruwa/forms/domains.py:106 baruwa/forms/domains.py:142
 msgid "Invalid message size, only B, K, M accepted"
-msgstr "Invalid message size, only B, K, M accepted"
+msgstr "Virheellinen viestin enimmäiskoko, vain B, K, M, hyväksytty"
 
 #: baruwa/forms/domains.py:109 baruwa/forms/domains.py:145
 #: baruwa/templates/domains/detail.html:52
 msgid "Multi destination delivery mode"
-msgstr "Multi destination delivery mode"
+msgstr "Multi-kohde toimitustapa"
 
 #: baruwa/forms/domains.py:111 baruwa/forms/domains.py:147
 #: baruwa/templates/domains/detail.html:132
 msgid "Language"
-msgstr "Language"
+msgstr "Kieli"
 
 #: baruwa/forms/domains.py:112 baruwa/forms/domains.py:148
 #: baruwa/forms/invite.py:65
 msgid "Default Timezone"
-msgstr "Default Timezone"
+msgstr "Oletuksena aikavyöhyke"
 
 #: baruwa/forms/domains.py:113 baruwa/forms/domains.py:149
 msgid "Report frequency"
-msgstr "Report frequency"
+msgstr "Raportin taajuus"
 
 #: baruwa/forms/domains.py:115 baruwa/forms/domains.py:151
 #: baruwa/templates/base.html:114 baruwa/templates/accounts/account.html:103
 msgid "Organizations"
-msgstr "Organizations"
+msgstr "Järjestöjen"
 
 #: baruwa/forms/domains.py:166 baruwa/forms/domains.py:180
 #: baruwa/forms/domains.py:189
 msgid "Domain alias name"
-msgstr "Domain alias name"
+msgstr "Toimialueen aliaksen nimi"
 
 #: baruwa/forms/domains.py:173
 msgid "Parent domain"
-msgstr "Parent domain"
+msgstr "Päätoimialueen"
 
 #: baruwa/forms/domains.py:197 baruwa/forms/domains.py:207
 #: baruwa/forms/domains.py:212
 msgid "Server address"
-msgstr "Server address"
+msgstr "Palvelimen osoite"
 
 #: baruwa/forms/domains.py:200 baruwa/forms/domains.py:215
 #: baruwa/forms/invite.py:73
 msgid "Protocol"
-msgstr "Protocol"
+msgstr "Pöytäkirja"
 
 #: baruwa/forms/domains.py:201 baruwa/forms/domains.py:216
 #: baruwa/forms/invite.py:75
 msgid "Port"
-msgstr "Port"
+msgstr "Portti"
 
 #: baruwa/forms/domains.py:217
 msgid "must be numeric"
-msgstr "must be numeric"
+msgstr "on oltava numeerinen"
 
 #: baruwa/forms/domains.py:219
 msgid "Split address"
-msgstr "Split address"
+msgstr "Split-osoite"
 
 #: baruwa/forms/domains.py:220
 msgid "Username map template"
-msgstr "Username map template"
+msgstr "Username kartta malli"
 
 #: baruwa/forms/domains.py:225
 msgid "Base DN"
@@ -1240,91 +1259,93 @@ msgstr "Base DN"
 
 #: baruwa/forms/domains.py:226
 msgid "Username attribute"
-msgstr "Username attribute"
+msgstr "Käyttäjänimen määrite"
 
 #: baruwa/forms/domains.py:229
 msgid "Email attribute"
-msgstr "Email attribute"
+msgstr "Sähköposti-määrite"
 
 #: baruwa/forms/domains.py:232
 msgid "Bind DN"
-msgstr "Bind DN"
+msgstr "Sitoa DN"
 
 #: baruwa/forms/domains.py:233
 msgid "Bind password"
-msgstr "Bind password"
+msgstr "Sitoa salasana"
 
 #: baruwa/forms/domains.py:234
 msgid "Use TLS"
-msgstr "Use TLS"
+msgstr "Käytä TLS"
 
 #: baruwa/forms/domains.py:235
 msgid "Search for UserDN"
-msgstr "Search for UserDN"
+msgstr "Etsi UserDN"
 
 #: baruwa/forms/domains.py:236
 msgid "Auth Search Filter"
-msgstr "Auth Search Filter"
+msgstr "Auth hakusuodatin"
 
 #: baruwa/forms/domains.py:237
 msgid "Auth Search Scope"
-msgstr "Auth Search Scope"
+msgstr "Auth etsintäaluetta"
 
 #: baruwa/forms/domains.py:239
 msgid "Email Search Filter"
-msgstr "Email Search Filter"
+msgstr "Sähköposti hakusuodatin"
 
 #: baruwa/forms/domains.py:240
 msgid "Email Search Scope"
-msgstr "Email Search Scope"
+msgstr "Sähköposti etsintäaluetta"
 
 #: baruwa/forms/domains.py:255
 msgid "Unsupported search scope"
-msgstr "Unsupported search scope"
+msgstr "Ei tueta etsintäaluetta"
 
 #: baruwa/forms/domains.py:261
 msgid "Radius secret"
-msgstr "Radius secret"
+msgstr "Säde salaisuus"
 
 #: baruwa/forms/domains.py:263
 msgid "Request timeout"
-msgstr "Request timeout"
+msgstr "Pyynnön aikakatkaisu"
 
 #: baruwa/forms/invite.py:42
 msgid "You must accept the terms and conditions"
-msgstr "You must accept the terms and conditions"
+msgstr "Sinun täytyy hyväksyä Käyttöehdot"
 
 #: baruwa/forms/invite.py:47
 msgid "Admin Username"
-msgstr "Admin Username"
+msgstr "Admin tunnus"
 
 #: baruwa/forms/invite.py:63 baruwa/forms/organizations.py:44
 #: baruwa/templates/organizations/detail.html:19
 #: baruwa/templates/organizations/index.html:11
 msgid "Organization name"
-msgstr "Organization name"
+msgstr "Organisaationimi"
 
 #: baruwa/forms/invite.py:71
 msgid "Delivery Server address"
-msgstr "Delivery Server address"
+msgstr "Toimituksen osoite"
 
 #: baruwa/forms/invite.py:81
 msgid "Enter a valid email address"
-msgstr "Enter a valid email address"
+msgstr "Kirjoita kelvollinen sähköpostiosoite"
 
 #: baruwa/forms/lists.py:46
 msgid ""
 "Provide either a valid IP, email, Domain address, or IP network or range"
-msgstr "Provide either a valid IP, email, Domain address, or IP network or range"
+msgstr ""
+"Antaa joko kelvollinen IP, sähköposti, toimialuenimen tai IP verkko- tai "
+"alue"
 
 #: baruwa/forms/lists.py:63
 #, python-format
 msgid "The domain %(dom)s is not local"
-msgstr "The domain %(dom)s is not local"
+msgstr "Toimialueen %(dom)s ei ole paikallista"
 
 #: baruwa/forms/lists.py:66
 msgid "Provide either a valid email or domain address"
-msgstr "Provide either a valid email or domain address"
+msgstr "Anna kelvollinen sähköpostiosoite tai toimialueen osoitteen"
 
 #: baruwa/forms/lists.py:71 baruwa/forms/lists.py:80 baruwa/forms/lists.py:97
 #: baruwa/templates/lists/index.html:27
@@ -1332,7 +1353,7 @@ msgstr "Provide either a valid email or domain address"
 #: baruwa/templates/messages/taskstatus.html:16
 #: baruwa/templates/status/detail.html:29
 msgid "From address"
-msgstr "From address"
+msgstr "Osoitteesta"
 
 #: baruwa/forms/lists.py:74 baruwa/forms/lists.py:100
 #: baruwa/templates/lists/index.html:28
@@ -1340,74 +1361,74 @@ msgstr "From address"
 #: baruwa/templates/messages/taskstatus.html:17
 #: baruwa/templates/status/detail.html:33
 msgid "To address"
-msgstr "To address"
+msgstr "Osoitteeseen"
 
 #: baruwa/forms/lists.py:75 baruwa/forms/lists.py:85 baruwa/forms/lists.py:101
 msgid "List type"
-msgstr "List type"
+msgstr "Luettelon laji"
 
 #: baruwa/forms/lists.py:83
 msgid "User account"
-msgstr "User account"
+msgstr "Käyttäjätili"
 
 #: baruwa/forms/lists.py:86 baruwa/forms/lists.py:102
 msgid "Add to aliases as well"
-msgstr "Add to aliases as well"
+msgstr "Lisää aliaksia sekä"
 
 #: baruwa/forms/lists.py:92
 msgid "Invalid user account supplied"
-msgstr "Invalid user account supplied"
+msgstr "Virheellinen käyttäjätilin myy"
 
 #: baruwa/forms/messages.py:47
 msgid "Select atleast one action to perform"
-msgstr "Select atleast one action to perform"
+msgstr "Valitse vähintään yksi toiminto suorittamaan"
 
 #: baruwa/forms/messages.py:63
 msgid "Provide atleast one alternative recipient"
-msgstr "Provide atleast one alternative recipient"
+msgstr "Anna vähintään yksi vaihtoehtoinen vastaanottaja"
 
 #: baruwa/forms/messages.py:70
 msgid "Invalid email address"
-msgstr "Invalid email address"
+msgstr "Virheellinen sähköpostiosoite"
 
 #: baruwa/forms/messages.py:72 baruwa/templates/email/quarantine.html:66
 #: baruwa/templates/email/quarantine.html:81
 #: baruwa/templates/email/quarantine.html:95
 msgid "Release"
-msgstr "Release"
+msgstr "Julkaisu"
 
 #: baruwa/forms/messages.py:74
 msgid "Bayesian Learn"
-msgstr "Bayesian Learn"
+msgstr "Bayes-oppia"
 
 #: baruwa/forms/messages.py:75
 msgid "Alt recipients"
-msgstr "Alt recipients"
+msgstr "ALT vastaanottajat"
 
 #: baruwa/forms/misc.py:31
 msgid "Show items"
-msgstr "Show items"
+msgstr "Näytä kohteet"
 
 #: baruwa/forms/misc.py:36
 msgid "Image file"
-msgstr "Image file"
+msgstr "Kuvatiedosto"
 
 #: baruwa/forms/misc.py:37
 msgid "File name"
-msgstr "File name"
+msgstr "Tiedostonimi"
 
 #: baruwa/forms/organizations.py:38 baruwa/forms/organizations.py:98
 #, python-format
 msgid "Password %(msg)s."
-msgstr "Password %(msg)s."
+msgstr "Salasana %(msg)s."
 
 #: baruwa/forms/organizations.py:49
 msgid "Admins"
-msgstr "Admins"
+msgstr "Ylläpitäjät"
 
 #: baruwa/forms/organizations.py:56
 msgid "Delete Organization domains"
-msgstr "Delete Organization domains"
+msgstr "Poista organisaation verkkotunnukset"
 
 #: baruwa/forms/organizations.py:62 baruwa/forms/settings.py:165
 #: baruwa/forms/settings.py:305 baruwa/tasks/status.py:299
@@ -1420,61 +1441,61 @@ msgstr "Hostname"
 
 #: baruwa/forms/organizations.py:64
 msgid "SMTP-AUTH username"
-msgstr "SMTP-AUTH username"
+msgstr "SMTP AUTH käyttäjätunnus"
 
 #: baruwa/forms/organizations.py:65
 msgid "SMTP-AUTH password"
-msgstr "SMTP-AUTH password"
+msgstr "SMTP AUTH salasana"
 
 #: baruwa/forms/organizations.py:72
 msgid "Provide either a hostname or username & password"
-msgstr "Provide either a hostname or username & password"
+msgstr "Anna nimi tai käyttäjätunnus & salasana"
 
 #: baruwa/forms/organizations.py:76
 msgid "Provide a valid hostname or IP address"
-msgstr "Provide a valid hostname or IP address"
+msgstr "Anna kelvollinen isäntänimi tai IP-osoite"
 
 #: baruwa/forms/organizations.py:80
 msgid "Required"
-msgstr "Required"
+msgstr "Tarvitaan"
 
 #: baruwa/forms/organizations.py:83
 msgid "Email usernames not supported"
-msgstr "Email usernames not supported"
+msgstr "Sähköpostin käyttäjänimet ei tueta"
 
 #: baruwa/forms/organizations.py:104
 msgid "CSV file"
-msgstr "CSV file"
+msgstr "CSV-tiedosto"
 
 #: baruwa/forms/organizations.py:105
 msgid "Skip first line"
-msgstr "Skip first line"
+msgstr "Ohittaa ensimmäinen rivi"
 
 #: baruwa/forms/reports.py:34 baruwa/templates/messages/detail.html:19
 #: baruwa/templates/status/detail.html:17
 msgid "Message ID"
-msgstr "Message ID"
+msgstr "Viestitunnus"
 
 #: baruwa/forms/reports.py:35
 msgid "Message size"
-msgstr "Message size"
+msgstr "Viestin koko"
 
 #: baruwa/forms/reports.py:36 baruwa/templates/email/quarantine.html:64
 #: baruwa/templates/email/quarantine.html:93
 msgid "From Address"
-msgstr "From Address"
+msgstr "Osoitteesta"
 
 #: baruwa/forms/reports.py:37
 msgid "From Domain"
-msgstr "From Domain"
+msgstr "Toimialueen"
 
 #: baruwa/forms/reports.py:38
 msgid "To Address"
-msgstr "To Address"
+msgstr "Osoitteeseen"
 
 #: baruwa/forms/reports.py:39
 msgid "To Domain"
-msgstr "To Domain"
+msgstr "Toimialueelle"
 
 #: baruwa/forms/reports.py:40 baruwa/templates/email/quarantine.html:65
 #: baruwa/templates/email/quarantine.html:94
@@ -1487,238 +1508,238 @@ msgstr "To Domain"
 #: baruwa/templates/messages/searchresults.html:23
 #: baruwa/templates/status/detail.html:25
 msgid "Subject"
-msgstr "Subject"
+msgstr "Aihe"
 
 #: baruwa/forms/reports.py:41 baruwa/templates/messages/detail.html:43
 msgid "Received from"
-msgstr "Received from"
+msgstr "Sai"
 
 #: baruwa/forms/reports.py:43
 msgid "Was scanned"
-msgstr "Was scanned"
+msgstr "Skannattiin"
 
 #: baruwa/forms/reports.py:44
 msgid "Is Spam"
-msgstr "Is Spam"
+msgstr "Roskaposti"
 
 #: baruwa/forms/reports.py:45
 msgid "Is Definite spam"
-msgstr "Is Definite spam"
+msgstr "On selvä roskapostia"
 
 #: baruwa/forms/reports.py:47
 msgid "Is RBL listed"
-msgstr "Is RBL listed"
+msgstr "Näkyy RBL"
 
 #: baruwa/forms/reports.py:48
 msgid "Is approved sender"
-msgstr "Is approved sender"
+msgstr "Hyväksytyn lähettäjän on"
 
 #: baruwa/forms/reports.py:49
 msgid "Is banned sender"
-msgstr "Is banned sender"
+msgstr "On kielletty lähettäjän"
 
 #: baruwa/forms/reports.py:50
 msgid "Spam score"
-msgstr "Spam score"
+msgstr "Roskapostin Pistemäärä"
 
 #: baruwa/forms/reports.py:51
 msgid "Spam report"
-msgstr "Spam report"
+msgstr "Roskaposti-ilmoitus"
 
 #: baruwa/forms/reports.py:52
 msgid "Is virus infected"
-msgstr "Is virus infected"
+msgstr "On virus tartunnan"
 
 #: baruwa/forms/reports.py:53
 msgid "Is name infected"
-msgstr "Is name infected"
+msgstr "On nimi virus"
 
 #: baruwa/forms/reports.py:54
 msgid "Is other infected"
-msgstr "Is other infected"
+msgstr "On toinen tartunnan"
 
 #: baruwa/forms/reports.py:56
 msgid "Time"
-msgstr "Time"
+msgstr "Aika"
 
 #: baruwa/forms/reports.py:57
 msgid "Headers"
-msgstr "Headers"
+msgstr "Otsikot"
 
 #: baruwa/forms/reports.py:58
 msgid "Is quarantined"
-msgstr "Is quarantined"
+msgstr "On karanteenissa"
 
 #: baruwa/forms/reports.py:59
 msgid "Processed by host"
-msgstr "Processed by host"
+msgstr "Isäntä käsittelee"
 
 #: baruwa/forms/reports.py:63
 msgid "is equal to"
-msgstr "is equal to"
+msgstr "vastaa"
 
 #: baruwa/forms/reports.py:64
 msgid "is not equal to"
-msgstr "is not equal to"
+msgstr "ei ole sama kuin"
 
 #: baruwa/forms/reports.py:65
 msgid "is greater than"
-msgstr "is greater than"
+msgstr "on suurempi kuin"
 
 #: baruwa/forms/reports.py:66
 msgid "is less than"
-msgstr "is less than"
+msgstr "on alle"
 
 #: baruwa/forms/reports.py:67
 msgid "contains"
-msgstr "contains"
+msgstr "sisältää"
 
 #: baruwa/forms/reports.py:68
 msgid "does not contain"
-msgstr "does not contain"
+msgstr "sisällä"
 
 #: baruwa/forms/reports.py:69
 msgid "matches regex"
-msgstr "matches regex"
+msgstr "vastaa regex"
 
 #: baruwa/forms/reports.py:70
 msgid "does not match regex"
-msgstr "does not match regex"
+msgstr "vastaa regex"
 
 #: baruwa/forms/reports.py:71
 msgid "is null"
-msgstr "is null"
+msgstr "on null"
 
 #: baruwa/forms/reports.py:72
 msgid "is not null"
-msgstr "is not null"
+msgstr "ei ole null"
 
 #: baruwa/forms/reports.py:73
 msgid "is true"
-msgstr "is true"
+msgstr "on totta"
 
 #: baruwa/forms/reports.py:74
 msgid "is false"
-msgstr "is false"
+msgstr "on väärä"
 
 #: baruwa/forms/reports.py:113
 #, python-format
 msgid "%(field)s does not support the \"%(filt)s\" filter"
-msgstr "%(field)s does not support the \"%(filt)s\" filter"
+msgstr "%(field)s tue \"%(filt)s\" suodatin"
 
 #: baruwa/forms/reports.py:120
 msgid "Please supply a value to query"
-msgstr "Please supply a value to query"
+msgstr "Toimittakaa arvo kyselyn"
 
 #: baruwa/forms/reports.py:123
 msgid "The value has to be numeric"
-msgstr "The value has to be numeric"
+msgstr "Arvon on oltava numeerinen"
 
 #: baruwa/forms/reports.py:129
 #, python-format
 msgid "%(email)s is not a valid e-mail address."
-msgstr "%(email)s is not a valid e-mail address."
+msgstr "%(email)s ei ole kelvollinen sähköpostiosoite."
 
 #: baruwa/forms/reports.py:136
 #, python-format
 msgid "%(dom)s is not a valid domain address."
-msgstr "%(dom)s is not a valid domain address."
+msgstr "%(dom)s ei ole kelvollinen domain-osoite."
 
 #: baruwa/forms/reports.py:143
 msgid "Invalid regex supplied"
-msgstr "Invalid regex supplied"
+msgstr "Virheellinen regex myy"
 
 #: baruwa/forms/reports.py:149
 msgid "Please provide a valid ipv4 address"
-msgstr "Please provide a valid ipv4 address"
+msgstr "Anna kelvollinen ipv4-osoite"
 
 #: baruwa/forms/reports.py:155
 msgid "Please provide a valid hostname or ipv4 address"
-msgstr "Please provide a valid hostname or ipv4 address"
+msgstr "Anna kelvollinen isäntänimi tai ipv4-osoite"
 
 #: baruwa/forms/reports.py:163
 msgid "Please provide a valid date in YYYY-MM-DD format"
-msgstr "Please provide a valid date in YYYY-MM-DD format"
+msgstr "Anna kelvollinen päivämäärä muodossa VVVV-KK-PP"
 
 #: baruwa/forms/reports.py:170
 msgid "Please provide valid time in HH:MM format"
-msgstr "Please provide valid time in HH:MM format"
+msgstr "Anna kelvollinen aika hh: mm-muodossa"
 
 #: baruwa/forms/settings.py:30 baruwa/forms/settings.py:44
 #: baruwa/forms/settings.py:47
 msgid "Yes"
-msgstr "Yes"
+msgstr "Kyllä"
 
 #: baruwa/forms/settings.py:30 baruwa/forms/settings.py:33
 #: baruwa/forms/settings.py:45 baruwa/forms/settings.py:48
 msgid "No"
-msgstr "No"
+msgstr "Ei"
 
 #: baruwa/forms/settings.py:31 baruwa/forms/settings.py:36
 msgid "Replace"
-msgstr "Replace"
+msgstr "Korvaa"
 
 #: baruwa/forms/settings.py:32 baruwa/forms/settings.py:34
 #: baruwa/templates/domains/addalias.html:18
 #: baruwa/templates/domains/addauth.html:18
 msgid "Add"
-msgstr "Add"
+msgstr "Lisää"
 
 #: baruwa/forms/settings.py:35
 msgid "Append"
-msgstr "Append"
+msgstr "Liitä"
 
 #: baruwa/forms/settings.py:37
 msgid "Supported"
-msgstr "Supported"
+msgstr "Tuetut"
 
 #: baruwa/forms/settings.py:38
 msgid "None"
-msgstr "None"
+msgstr "Ei mitään"
 
 #: baruwa/forms/settings.py:39
 msgid "Unsupported"
-msgstr "Unsupported"
+msgstr "Ei tueta"
 
 #: baruwa/forms/settings.py:40
 msgid "Alpha"
-msgstr "Alpha"
+msgstr "Alfa"
 
 #: baruwa/forms/settings.py:41
 msgid "Beta"
-msgstr "Beta"
+msgstr "Beeta"
 
 #: baruwa/forms/settings.py:42
 msgid "Start"
-msgstr "Start"
+msgstr "Käynnistä"
 
 #: baruwa/forms/settings.py:43
 msgid "End"
-msgstr "End"
+msgstr "Loppu"
 
 #: baruwa/forms/settings.py:46
 msgid "Disarm"
-msgstr "Disarm"
+msgstr "Aseista"
 
 #: baruwa/forms/settings.py:54
 msgid "Auto detect"
-msgstr "Auto detect"
+msgstr "Automaattinen tunnistus"
 
 #: baruwa/forms/settings.py:127
 msgid "Do nothing"
-msgstr "Do nothing"
+msgstr "Ei"
 
 #: baruwa/forms/settings.py:129
 msgid "Flag as spam"
-msgstr "Flag as spam"
+msgstr "Merkitse roskapostiksi"
 
 #: baruwa/forms/settings.py:130
 msgid "Flag as high spam"
-msgstr "Flag as high spam"
+msgstr "Lippu korkealla roskapostiksi"
 
 #: baruwa/forms/settings.py:168
 msgid "Invalid Domain name or IPv4 address"
-msgstr "Invalid Domain name or IPv4 address"
+msgstr "Virheellinen toimialuenimi tai IPv4-osoite"
 
 #: baruwa/forms/settings.py:174
 msgid "Sitename"
@@ -1726,31 +1747,31 @@ msgstr "Sitename"
 
 #: baruwa/forms/settings.py:175
 msgid "Your Organisation Name"
-msgstr "Your Organisation Name"
+msgstr "Organisaation nimi"
 
 #: baruwa/forms/settings.py:177
 msgid "Organisation website"
-msgstr "Organisation website"
+msgstr "Järjestön verkkosivuilla"
 
 #: baruwa/forms/settings.py:179
 msgid "Max Children"
-msgstr "Max Children"
+msgstr "Max lasten"
 
 #: baruwa/forms/settings.py:181
 msgid "Queue Scan Interval"
-msgstr "Queue Scan Interval"
+msgstr "Jonon Scan Interval"
 
 #: baruwa/forms/settings.py:183
 msgid "Restart Every"
-msgstr "Restart Every"
+msgstr "Käynnistä jokainen"
 
 #: baruwa/forms/settings.py:185
 msgid "Use Default Rules With Multiple Recipients"
-msgstr "Use Default Rules With Multiple Recipients"
+msgstr "Käyttää oletussääntöjä usealle vastaanottajalle"
 
 #: baruwa/forms/settings.py:188
 msgid "Read IP Address From Received Header"
-msgstr "Read IP Address From Received Header"
+msgstr "Lue IP osoite vastaanotettuun ylätunnisteeseen"
 
 #: baruwa/forms/settings.py:191
 msgid "Debug"
@@ -1758,71 +1779,71 @@ msgstr "Debug"
 
 #: baruwa/forms/settings.py:194
 msgid "Debug SpamAssassin"
-msgstr "Debug SpamAssassin"
+msgstr "Debug-SpamAssassin"
 
 #: baruwa/forms/settings.py:197
 msgid "Deliver In Background"
-msgstr "Deliver In Background"
+msgstr "Antaa taustaa"
 
 #: baruwa/forms/settings.py:200
 msgid "Delivery Method"
-msgstr "Delivery Method"
+msgstr "Toimitustapa"
 
 #: baruwa/forms/settings.py:203
 msgid "Automatic Syntax Check"
-msgstr "Automatic Syntax Check"
+msgstr "Automaattinen syntaksitarkistus"
 
 #: baruwa/forms/settings.py:206
 msgid "Minimum Code Status"
-msgstr "Minimum Code Status"
+msgstr "Vähintään koodi tilan"
 
 #: baruwa/forms/settings.py:213
 msgid "Max Unscanned Bytes Per Scan"
-msgstr "Max Unscanned Bytes Per Scan"
+msgstr "Max tarkistamattomat tavua Scan"
 
 #: baruwa/forms/settings.py:215
 msgid "Max Unsafe Bytes Per Scan"
-msgstr "Max Unsafe Bytes Per Scan"
+msgstr "Max vaarallisia tavua Scan"
 
 #: baruwa/forms/settings.py:217
 msgid "Max Unscanned Messages Per Scan"
-msgstr "Max Unscanned Messages Per Scan"
+msgstr "Max tarkistamattomat viestit Per skannaus"
 
 #: baruwa/forms/settings.py:219
 msgid "Max Unsafe Messages Per Scan"
-msgstr "Max Unsafe Messages Per Scan"
+msgstr "Max vaarallisia viestit Per skannaus"
 
 #: baruwa/forms/settings.py:221
 msgid "Max Normal Queue Size"
-msgstr "Max Normal Queue Size"
+msgstr "Max normaali Datajonon koko"
 
 #: baruwa/forms/settings.py:223
 msgid "Maximum Processing Attempts"
-msgstr "Maximum Processing Attempts"
+msgstr "Maksimi käsittely-yritykset"
 
 #: baruwa/forms/settings.py:225
 msgid "Maximum Attachments Per Message"
-msgstr "Maximum Attachments Per Message"
+msgstr "Suurin viesti liitteitä"
 
 #: baruwa/forms/settings.py:227
 msgid "Expand TNEF"
-msgstr "Expand TNEF"
+msgstr "Laajenna TNEF"
 
 #: baruwa/forms/settings.py:230
 msgid "Use TNEF Contents"
-msgstr "Use TNEF Contents"
+msgstr "Käyttää TNEF sisältö"
 
 #: baruwa/forms/settings.py:233
 msgid "Deliver Unparsable TNEF"
-msgstr "Deliver Unparsable TNEF"
+msgstr "Toimittaa jota ei voi jäsentää TNEF"
 
 #: baruwa/forms/settings.py:236
 msgid "TNEF Timeout"
-msgstr "TNEF Timeout"
+msgstr "TNEF-aikakatkaisu"
 
 #: baruwa/forms/settings.py:238
 msgid "File Timeout"
-msgstr "File Timeout"
+msgstr "Tiedoston aikakatkaisu"
 
 #: baruwa/forms/settings.py:240
 msgid "Gunzip Timeout"
@@ -1834,479 +1855,479 @@ msgstr "Unrar Timeout"
 
 #: baruwa/forms/settings.py:244
 msgid "Maximum Archive Depth"
-msgstr "Maximum Archive Depth"
+msgstr "Suurin Arkisto syvyys"
 
 #: baruwa/forms/settings.py:246
 msgid "Find Archives By Content"
-msgstr "Find Archives By Content"
+msgstr "Etsi sisältö arkisto"
 
 #: baruwa/forms/settings.py:249
 msgid "Unpack Microsoft Documents"
-msgstr "Unpack Microsoft Documents"
+msgstr "Purkaa Microsoft-asiakirjat"
 
 #: baruwa/forms/settings.py:252
 msgid "Zip Attachments"
-msgstr "Zip Attachments"
+msgstr "Zip liitetiedostoja"
 
 #: baruwa/forms/settings.py:255
 msgid "Attachments Zip Filename"
-msgstr "Attachments Zip Filename"
+msgstr "Liitteet puhti tiedostonimen"
 
 #: baruwa/forms/settings.py:257
 msgid "Attachments Min Total Size To Zip"
-msgstr "Attachments Min Total Size To Zip"
+msgstr "Liitteet Min yhteensä koon Zip"
 
 #: baruwa/forms/settings.py:259
 msgid "Attachment Extensions Not To Zip"
-msgstr "Attachment Extensions Not To Zip"
+msgstr "Liite laajennuksia ei Zip"
 
 #: baruwa/forms/settings.py:261
 msgid "Add Text Of Doc"
-msgstr "Add Text Of Doc"
+msgstr "Lisää teksti Doc"
 
 #: baruwa/forms/settings.py:264
 msgid "Antiword Timeout"
-msgstr "Antiword Timeout"
+msgstr "Antiword aikakatkaisu"
 
 #: baruwa/forms/settings.py:266
 msgid "Unzip Maximum Files Per Archive"
-msgstr "Unzip Maximum Files Per Archive"
+msgstr "Pura enintään tiedostot / arkisto"
 
 #: baruwa/forms/settings.py:268
 msgid "Unzip Maximum File Size"
-msgstr "Unzip Maximum File Size"
+msgstr "Pura tiedoston enimmäiskoko"
 
 #: baruwa/forms/settings.py:270
 msgid "Unzip Filenames"
-msgstr "Unzip Filenames"
+msgstr "Pura tiedostonimet"
 
 #: baruwa/forms/settings.py:272
 msgid "Unzip MimeType"
-msgstr "Unzip MimeType"
+msgstr "Pura MimeType"
 
 #: baruwa/forms/settings.py:274
 msgid "Mail Header"
-msgstr "Mail Header"
+msgstr "Sähköpostiotsikko"
 
 #: baruwa/forms/settings.py:276
 msgid "Information Header"
-msgstr "Information Header"
+msgstr "Tiedot-otsikko"
 
 #: baruwa/forms/settings.py:278
 msgid "Add Envelope From Header"
-msgstr "Add Envelope From Header"
+msgstr "Lisää kirjekuoren Header"
 
 #: baruwa/forms/settings.py:281
 msgid "Add Envelope To Header"
-msgstr "Add Envelope To Header"
+msgstr "Lisää kirjekuoren Header"
 
 #: baruwa/forms/settings.py:284
 msgid "Envelope From Header"
-msgstr "Envelope From Header"
+msgstr "Kirjekuori-otsikosta"
 
 #: baruwa/forms/settings.py:286
 msgid "Envelope To Header"
-msgstr "Envelope To Header"
+msgstr "Kirjekuoren Header"
 
 #: baruwa/forms/settings.py:288
 msgid "ID Header"
-msgstr "ID Header"
+msgstr "Tunnuksen otsikkoa"
 
 #: baruwa/forms/settings.py:290
 msgid "IP Protocol Version Header"
-msgstr "IP Protocol Version Header"
+msgstr "IP-protokollan Version-otsikko"
 
 #: baruwa/forms/settings.py:292
 msgid "Clean Header Value"
-msgstr "Clean Header Value"
+msgstr "Puhtaan Header-arvoa"
 
 #: baruwa/forms/settings.py:294
 msgid "Infected Header Value"
-msgstr "Infected Header Value"
+msgstr "Tartunnan otsikon arvo"
 
 #: baruwa/forms/settings.py:296
 msgid "Disinfected Header Value"
-msgstr "Disinfected Header Value"
+msgstr "Desinfioidaan otsikon arvo"
 
 #: baruwa/forms/settings.py:298
 msgid "Information Header Value"
-msgstr "Information Header Value"
+msgstr "Tieto arvon"
 
 #: baruwa/forms/settings.py:299
 msgid "Multiple Headers"
-msgstr "Multiple Headers"
+msgstr "Useita otsikoita"
 
 #: baruwa/forms/settings.py:302
 msgid "Place New Headers At Top Of Message"
-msgstr "Place New Headers At Top Of Message"
+msgstr "Paikka uuden viestin otsikkoa"
 
 #: baruwa/forms/settings.py:307
 msgid "Sign Messages Already Processed"
-msgstr "Sign Messages Already Processed"
+msgstr "Merkki viestit jo käsitelty"
 
 #: baruwa/forms/settings.py:310
 msgid "Allow Multiple HTML Signatures"
-msgstr "Allow Multiple HTML Signatures"
+msgstr "Antaa useita HTML-allekirjoitukset"
 
 #: baruwa/forms/settings.py:313
 msgid "Dont Sign HTML If Headers Exist"
-msgstr "Dont Sign HTML If Headers Exist"
+msgstr "Dont Rekisteröidy HTML jos otsikot olemassa"
 
 #: baruwa/forms/settings.py:314
 msgid "Mark Infected Messages"
-msgstr "Mark Infected Messages"
+msgstr "Merkitä viruksen sisältävistä viesteistä"
 
 #: baruwa/forms/settings.py:317
 msgid "Mark Unscanned Messages"
-msgstr "Mark Unscanned Messages"
+msgstr "Merkitse tarkistamattomat viestit"
 
 #: baruwa/forms/settings.py:320
 msgid "Unscanned Header Value"
-msgstr "Unscanned Header Value"
+msgstr "Tarkistamattomat otsikon arvo"
 
 #: baruwa/forms/settings.py:322
 msgid "Remove These Headers"
-msgstr "Remove These Headers"
+msgstr "Poista nämä otsikot"
 
 #: baruwa/forms/settings.py:324
 msgid "Deliver Cleaned Messages"
-msgstr "Deliver Cleaned Messages"
+msgstr "Puhdistettu viestinvälitykseen"
 
 #: baruwa/forms/settings.py:327
 msgid "Scanned Modify Subject"
-msgstr "Scanned Modify Subject"
+msgstr "Skannattu muokata aihe"
 
 #: baruwa/forms/settings.py:330
 msgid "Scanned Subject Text"
-msgstr "Scanned Subject Text"
+msgstr "Skannatun aihetekstin"
 
 #: baruwa/forms/settings.py:332
 msgid "Virus Modify Subject"
-msgstr "Virus Modify Subject"
+msgstr "Virus muokata aihe"
 
 #: baruwa/forms/settings.py:335
 msgid "Virus Subject Text"
-msgstr "Virus Subject Text"
+msgstr "Virus aihetekstin"
 
 #: baruwa/forms/settings.py:337
 msgid "Filename Modify Subject"
-msgstr "Filename Modify Subject"
+msgstr "Tiedostonimi muokata aihe"
 
 #: baruwa/forms/settings.py:340
 msgid "Filename Subject Text"
-msgstr "Filename Subject Text"
+msgstr "Filename aihetekstin"
 
 #: baruwa/forms/settings.py:342
 msgid "Content Modify Subject"
-msgstr "Content Modify Subject"
+msgstr "Sisältöä muokata aihe"
 
 #: baruwa/forms/settings.py:345
 msgid "Content Subject Text"
-msgstr "Content Subject Text"
+msgstr "Sisällön aihetekstin"
 
 #: baruwa/forms/settings.py:347
 msgid "Size Modify Subject"
-msgstr "Size Modify Subject"
+msgstr "Kokoa muokata aihe"
 
 #: baruwa/forms/settings.py:350
 msgid "Size Subject Text"
-msgstr "Size Subject Text"
+msgstr "Koon aihetekstin"
 
 #: baruwa/forms/settings.py:352
 msgid "Disarmed Modify Subject"
-msgstr "Disarmed Modify Subject"
+msgstr "Aseista muokata aihe"
 
 #: baruwa/forms/settings.py:355
 msgid "Disarmed Subject Text"
-msgstr "Disarmed Subject Text"
+msgstr "Aseista aihetekstin"
 
 #: baruwa/forms/settings.py:357
 msgid "Phishing Modify Subject"
-msgstr "Phishing Modify Subject"
+msgstr "Phishing muokata aihe"
 
 #: baruwa/forms/settings.py:360
 msgid "Phishing Subject Text"
-msgstr "Phishing Subject Text"
+msgstr "Phishing aihetekstin"
 
 #: baruwa/forms/settings.py:362
 msgid "Spam Modify Subject"
-msgstr "Spam Modify Subject"
+msgstr "Spam muokata aihe"
 
 #: baruwa/forms/settings.py:365
 msgid "Spam Subject Text"
-msgstr "Spam Subject Text"
+msgstr "Spam aihetekstin"
 
 #: baruwa/forms/settings.py:367
 msgid "High Scoring Spam Modify Subject"
-msgstr "High Scoring Spam Modify Subject"
+msgstr "Korkean pisteytyksen Spam muokata aihe"
 
 #: baruwa/forms/settings.py:370
 msgid "High Scoring Spam Subject Text"
-msgstr "High Scoring Spam Subject Text"
+msgstr "Korkean pisteytyksen Spam aihetekstin"
 
 #: baruwa/forms/settings.py:372
 msgid "Warning Is Attachment"
-msgstr "Warning Is Attachment"
+msgstr "Varoitus on kiinnitys"
 
 #: baruwa/forms/settings.py:375
 msgid "Attachment Warning Filename"
-msgstr "Attachment Warning Filename"
+msgstr "Liite Varoitus tiedostonimi"
 
 #: baruwa/forms/settings.py:377
 msgid "Attachment Encoding Charset"
-msgstr "Attachment Encoding Charset"
+msgstr "Liite koodaus hiillyttää"
 
 #: baruwa/forms/settings.py:383
 msgid "Virus Scanners"
-msgstr "Virus Scanners"
+msgstr "Virusskannerit"
 
 #: baruwa/forms/settings.py:385
 msgid "Virus Scanner Timeout"
-msgstr "Virus Scanner Timeout"
+msgstr "Virus skanneri aikakatkaisu"
 
 #: baruwa/forms/settings.py:387
 msgid "Deliver Disinfected Files"
-msgstr "Deliver Disinfected Files"
+msgstr "Toimittaa desinfioidaan tiedostoja"
 
 #: baruwa/forms/settings.py:390
 msgid "Silent Viruses"
-msgstr "Silent Viruses"
+msgstr "Hiljainen viruksia"
 
 #: baruwa/forms/settings.py:392
 msgid "Still Deliver Silent Viruses"
-msgstr "Still Deliver Silent Viruses"
+msgstr "Silti hiljainen viruksia"
 
 #: baruwa/forms/settings.py:395
 msgid "Non-Forging Viruses"
-msgstr "Non-Forging Viruses"
+msgstr "Taonta virukset"
 
 #: baruwa/forms/settings.py:396
 msgid "Spam-Virus Header"
-msgstr "Spam-Virus Header"
+msgstr "Roskaposti-Virus ylä"
 
 #: baruwa/forms/settings.py:398
 msgid "Virus Names Which Are Spam"
-msgstr "Virus Names Which Are Spam"
+msgstr "Virusten nimiä, jotka ovat roskapostia"
 
 #: baruwa/forms/settings.py:400
 msgid "Block Encrypted Messages"
-msgstr "Block Encrypted Messages"
+msgstr "Salattujen viestien"
 
 #: baruwa/forms/settings.py:403
 msgid "Block Unencrypted Messages"
-msgstr "Block Unencrypted Messages"
+msgstr "Estää salaamattomia sanomia"
 
 #: baruwa/forms/settings.py:406
 msgid "Allow Password-Protected Archives"
-msgstr "Allow Password-Protected Archives"
+msgstr "Salli salasanasuojattu Arkisto"
 
 #: baruwa/forms/settings.py:407
 msgid "Check Filenames In Password-Protected Archives"
-msgstr "Check Filenames In Password-Protected Archives"
+msgstr "Tarkista tiedostonimiä salasanasuojattu Arkisto"
 
 #: baruwa/forms/settings.py:408
 msgid "Clamd Use Threads"
-msgstr "Clamd Use Threads"
+msgstr "Clamd käyttö viestiketjut"
 
 #: baruwa/forms/settings.py:411
 msgid "ClamAV Full Message Scan"
-msgstr "ClamAV Full Message Scan"
+msgstr "ClamAV täyden viestin tarkistus"
 
 #: baruwa/forms/settings.py:414
 msgid "Fpscand Port"
-msgstr "Fpscand Port"
+msgstr "Fpscand portti"
 
 #: baruwa/forms/settings.py:421
 msgid "Allow Partial Messages"
-msgstr "Allow Partial Messages"
+msgstr "Salli osittaisten viestien"
 
 #: baruwa/forms/settings.py:424
 msgid "Allow External Message Bodies"
-msgstr "Allow External Message Bodies"
+msgstr "Salli ulkoiset viestiluettelon"
 
 #: baruwa/forms/settings.py:427
 msgid "Also Find Numeric Phishing"
-msgstr "Also Find Numeric Phishing"
+msgstr "Myös löytää numeerisen Phishing"
 
 #: baruwa/forms/settings.py:430
 msgid "Use Stricter Phishing Net"
-msgstr "Use Stricter Phishing Net"
+msgstr "Käyttöön tiukempia Phishing Net"
 
 #: baruwa/forms/settings.py:433
 msgid "Highlight Phishing Fraud"
-msgstr "Highlight Phishing Fraud"
+msgstr "Korosta Phishing petosten"
 
 #: baruwa/forms/settings.py:436
 msgid "Allow IFrame Tags"
-msgstr "Allow IFrame Tags"
+msgstr "Anna IFrame-tunnisteita"
 
 #: baruwa/forms/settings.py:439
 msgid "Allow Form Tags"
-msgstr "Allow Form Tags"
+msgstr "Salli lomakkeen Tunnisteet"
 
 #: baruwa/forms/settings.py:442
 msgid "Allow Script Tags"
-msgstr "Allow Script Tags"
+msgstr "Salli koodit"
 
 #: baruwa/forms/settings.py:445
 msgid "Allow WebBugs"
-msgstr "Allow WebBugs"
+msgstr "Salli WebBugs"
 
 #: baruwa/forms/settings.py:448
 msgid "Ignored Web Bug Filenames"
-msgstr "Ignored Web Bug Filenames"
+msgstr "Huomiotta Web Bug tiedostonimet"
 
 #: baruwa/forms/settings.py:450
 msgid "Known Web Bug Servers"
-msgstr "Known Web Bug Servers"
+msgstr "Tunnettu bugi verkkopalvelimet"
 
 #: baruwa/forms/settings.py:452
 msgid "Web Bug Replacement"
-msgstr "Web Bug Replacement"
+msgstr "Web Bug korvaaminen"
 
 #: baruwa/forms/settings.py:454
 msgid "Allow Object Codebase Tags"
-msgstr "Allow Object Codebase Tags"
+msgstr "Salli Codebase objektitunnisteen"
 
 #: baruwa/forms/settings.py:457
 msgid "Convert Dangerous HTML To Text"
-msgstr "Convert Dangerous HTML To Text"
+msgstr "Vaarallinen HTML muuntaminen tekstiksi"
 
 #: baruwa/forms/settings.py:460
 msgid "Convert HTML To Text"
-msgstr "Convert HTML To Text"
+msgstr "Muuntaa HTML-teksti"
 
 #: baruwa/forms/settings.py:463
 msgid "Archives Are"
-msgstr "Archives Are"
+msgstr "Arkistot ovat"
 
 #: baruwa/forms/settings.py:465
 msgid "Allow Filenames"
-msgstr "Allow Filenames"
+msgstr "Anna tiedostonimiä"
 
 #: baruwa/forms/settings.py:466
 msgid "Deny Filenames"
-msgstr "Deny Filenames"
+msgstr "Kieltää tiedostonimet"
 
 #: baruwa/forms/settings.py:467
 msgid "Allow Filetypes"
-msgstr "Allow Filetypes"
+msgstr "Salli tiedostotyypit"
 
 #: baruwa/forms/settings.py:468
 msgid "Allow File MIME Types"
-msgstr "Allow File MIME Types"
+msgstr "Anna tiedoston MIME-tyypit"
 
 #: baruwa/forms/settings.py:469
 msgid "Deny Filetypes"
-msgstr "Deny Filetypes"
+msgstr "Kieltää tiedostotyypit"
 
 #: baruwa/forms/settings.py:470
 msgid "Deny File MIME Types"
-msgstr "Deny File MIME Types"
+msgstr "Kieltää tiedoston MIME-tyypit"
 
 #: baruwa/forms/settings.py:471
 msgid "Archives: Allow Filenames"
-msgstr "Archives: Allow Filenames"
+msgstr "Arkisto: Anna tiedostonimiä"
 
 #: baruwa/forms/settings.py:472
 msgid "Archives: Deny Filenames"
-msgstr "Archives: Deny Filenames"
+msgstr "Arkisto: Kieltää tiedostonimet"
 
 #: baruwa/forms/settings.py:473
 msgid "Archives: Allow Filetypes"
-msgstr "Archives: Allow Filetypes"
+msgstr "Arkisto: Salli tiedostotyypit"
 
 #: baruwa/forms/settings.py:474
 msgid "Archives: Allow File MIME Types"
-msgstr "Archives: Allow File MIME Types"
+msgstr "Arkisto: Salli tiedostojen MIME-tyypit"
 
 #: baruwa/forms/settings.py:475
 msgid "Archives: Deny Filetypes"
-msgstr "Archives: Deny Filetypes"
+msgstr "Arkisto: Kieltää tiedostotyypit"
 
 #: baruwa/forms/settings.py:476
 msgid "Archives: Deny File MIME Types"
-msgstr "Archives: Deny File MIME Types"
+msgstr "Arkisto: Kieltää tiedoston MIME-tyypit"
 
 #: baruwa/forms/settings.py:481
 msgid "Quarantine Infections"
-msgstr "Quarantine Infections"
+msgstr "Karanteeni infektiot"
 
 #: baruwa/forms/settings.py:484
 msgid "Quarantine Silent Viruses"
-msgstr "Quarantine Silent Viruses"
+msgstr "Karanteeni hiljainen viruksia"
 
 #: baruwa/forms/settings.py:487
 msgid "Quarantine Modified Body"
-msgstr "Quarantine Modified Body"
+msgstr "Karanteeniin muuttaa kehon"
 
 #: baruwa/forms/settings.py:490
 msgid "Keep Spam And MCP Archive Clean"
-msgstr "Keep Spam And MCP Archive Clean"
+msgstr "Pitää roskapostin ja MCP Arkisto puhtaana"
 
 #: baruwa/forms/settings.py:493
 msgid "Hide Incoming Work Dir"
-msgstr "Hide Incoming Work Dir"
+msgstr "Piilota saapuvat työn Dir"
 
 #: baruwa/forms/settings.py:496
 msgid "Include Scanner Name In Reports"
-msgstr "Include Scanner Name In Reports"
+msgstr "Liitä skannerin nimi raportit"
 
 #: baruwa/forms/settings.py:503
 msgid "Notify Senders"
-msgstr "Notify Senders"
+msgstr "Ilmoita lähettäjille"
 
 #: baruwa/forms/settings.py:506
 msgid "Notify Senders Of Viruses"
-msgstr "Notify Senders Of Viruses"
+msgstr "Ilmoita lähettäjille viruksia"
 
 #: baruwa/forms/settings.py:509
 msgid "Notify Senders Of Blocked Filenames Or Filetypes"
-msgstr "Notify Senders Of Blocked Filenames Or Filetypes"
+msgstr "Ilmoitettava lähettäjien, estettyjen tiedostonimiä tai tiedostotyypit"
 
 #: baruwa/forms/settings.py:512
 msgid "Notify Senders Of Blocked Size Attachments"
-msgstr "Notify Senders Of Blocked Size Attachments"
+msgstr "Ilmoita lähettäjille tukossa koon liitteet"
 
 #: baruwa/forms/settings.py:515
 msgid "Notify Senders Of Other Blocked Content"
-msgstr "Notify Senders Of Other Blocked Content"
+msgstr "Muistuta muiden lähettäjien estetty sisältö"
 
 #: baruwa/forms/settings.py:518
 msgid "Never Notify Senders Of Precedence"
-msgstr "Never Notify Senders Of Precedence"
+msgstr "Ei koskaan huomauta edelle lähettäjät"
 
 #: baruwa/forms/settings.py:520
 msgid "Send Notices"
-msgstr "Send Notices"
+msgstr "Lähetä ilmoituksia"
 
 #: baruwa/forms/settings.py:523
 msgid "Notices Include Full Headers"
-msgstr "Notices Include Full Headers"
+msgstr "Ilmoitukset sisältävät ylätunnisteet"
 
 #: baruwa/forms/settings.py:526
 msgid "Hide Incoming Work Dir in Notices"
-msgstr "Hide Incoming Work Dir in Notices"
+msgstr "Piilota saapuvat työn Dir ilmoitukset"
 
 #: baruwa/forms/settings.py:529
 msgid "Notice Signature"
-msgstr "Notice Signature"
+msgstr "Ilmoitus allekirjoitus"
 
 #: baruwa/forms/settings.py:531
 msgid "Notices From"
-msgstr "Notices From"
+msgstr "Ilmoitukset"
 
 #: baruwa/forms/settings.py:533
 msgid "Notices To"
-msgstr "Notices To"
+msgstr "Ilmoitukset"
 
 #: baruwa/forms/settings.py:535
 msgid "Local Postmaster"
-msgstr "Local Postmaster"
+msgstr "Paikallinen Postmaster"
 
 #: baruwa/forms/settings.py:541
 msgid "Max SpamAssassin Size"
-msgstr "Max SpamAssassin Size"
+msgstr "SpamAssassin enimmäiskoko"
 
 #: baruwa/forms/settings.py:543
 msgid "SpamAssassin Auto Whitelist"
@@ -2318,229 +2339,229 @@ msgstr "SpamAssassin Timeout"
 
 #: baruwa/forms/settings.py:548
 msgid "Max SpamAssassin Timeouts"
-msgstr "Max SpamAssassin Timeouts"
+msgstr "Max SpamAssassin aikakatkaisut"
 
 #: baruwa/forms/settings.py:550
 msgid "SpamAssassin Timeouts History"
-msgstr "SpamAssassin Timeouts History"
+msgstr "SpamAssassin aikakatkaisut historia"
 
 #: baruwa/forms/settings.py:552
 msgid "Check SpamAssassin If On Spam List"
-msgstr "Check SpamAssassin If On Spam List"
+msgstr "Tarkista SpamAssassin jos roskapostin luettelosta"
 
 #: baruwa/forms/settings.py:555
 msgid "Include Binary Attachments In SpamAssassin"
-msgstr "Include Binary Attachments In SpamAssassin"
+msgstr "Sisällyttää binaariliitteitä SpamAssassin"
 
 #: baruwa/forms/settings.py:558
 msgid "Spam Score"
-msgstr "Spam Score"
+msgstr "Roskapostin Pistemäärä"
 
 #: baruwa/forms/settings.py:561
 msgid "Cache SpamAssassin Results"
-msgstr "Cache SpamAssassin Results"
+msgstr "Välimuistin SpamAssassin tulokset"
 
 #: baruwa/forms/settings.py:564
 msgid "Rebuild Bayes Every"
-msgstr "Rebuild Bayes Every"
+msgstr "Rakentaa Bayes joka"
 
 #: baruwa/forms/settings.py:566
 msgid "Wait During Bayes Rebuild"
-msgstr "Wait During Bayes Rebuild"
+msgstr "Odotuksen aikana Bayes rakentaa"
 
 #: baruwa/forms/settings.py:571
 msgid "Spam List"
-msgstr "Spam List"
+msgstr "Roskapostin luettelosta"
 
 #: baruwa/forms/settings.py:573
 msgid "Spam Domain List"
-msgstr "Spam Domain List"
+msgstr "Spam toimialueluetteloa"
 
 #: baruwa/forms/settings.py:575
 msgid "Spam Lists To Be Spam"
-msgstr "Spam Lists To Be Spam"
+msgstr "Spam luettelot roskapostiksi"
 
 #: baruwa/forms/settings.py:577
 msgid "Spam Lists To Reach High Score"
-msgstr "Spam Lists To Reach High Score"
+msgstr "Roskapostin luettelot saavuttaa korkeat pisteet"
 
 #: baruwa/forms/settings.py:579
 msgid "Spam List Timeout"
-msgstr "Spam List Timeout"
+msgstr "Roskapostia lista aikakatkaisu"
 
 #: baruwa/forms/settings.py:581
 msgid "Max Spam List Timeouts"
-msgstr "Max Spam List Timeouts"
+msgstr "Max roskapostia lista aikakatkaisut"
 
 #: baruwa/forms/settings.py:583
 msgid "Spam List Timeouts History"
-msgstr "Spam List Timeouts History"
+msgstr "Roskapostia lista aikakatkaisut historia"
 
 #: baruwa/forms/settings.py:585
 msgid "Definite Spam Is High Scoring"
-msgstr "Definite Spam Is High Scoring"
+msgstr "Selvä viesti on korkea pisteytys"
 
 #: baruwa/forms/settings.py:588
 msgid "Ignore Spam Whitelist If Recipients Exceed"
-msgstr "Ignore Spam Whitelist If Recipients Exceed"
+msgstr "Ohita Spam-Whitelist vastaanottajat ylittäessä"
 
 #: baruwa/forms/settings.py:590
 msgid "Max Spam Check Size"
-msgstr "Max Spam Check Size"
+msgstr "Max Spam valintaruudun kokoa"
 
 #: baruwa/forms/settings.py:592
 msgid "Enable Spam Bounce"
-msgstr "Enable Spam Bounce"
+msgstr "Ota käyttöön Roskaposti Bounce"
 
 #: baruwa/forms/settings.py:595
 msgid "Bounce Spam As Attachment"
-msgstr "Bounce Spam As Attachment"
+msgstr "Pomppu Spam liitteenä"
 
 #: baruwa/forms/settings.py:598
 msgid "Detailed Spam Report"
-msgstr "Detailed Spam Report"
+msgstr "Yksityiskohtaiset Roskaposti-ilmoitus"
 
 #: baruwa/forms/settings.py:601
 msgid "Include Scores In SpamAssassin Report"
-msgstr "Include Scores In SpamAssassin Report"
+msgstr "Tulokset sisällytetään SpamAssassin-raportti"
 
 #: baruwa/forms/settings.py:604
 msgid "Always Include SpamAssassin Report"
-msgstr "Always Include SpamAssassin Report"
+msgstr "Aina myös SpamAssassin-raportti"
 
 #: baruwa/forms/settings.py:607
 msgid "Spam Header"
-msgstr "Spam Header"
+msgstr "Spam-otsikko"
 
 #: baruwa/forms/settings.py:609
 msgid "Spam Score Header"
-msgstr "Spam Score Header"
+msgstr "Spam pisteet otsikon"
 
 #: baruwa/forms/settings.py:611
 msgid "Spam Score Number Format"
-msgstr "Spam Score Number Format"
+msgstr "Spam pisteet lukumuoto"
 
 #: baruwa/forms/settings.py:613
 msgid "Spam Score Character"
-msgstr "Spam Score Character"
+msgstr "Spam pisteet merkki"
 
 #: baruwa/forms/settings.py:615
 msgid "SpamScore Number Instead Of Stars"
-msgstr "SpamScore Number Instead Of Stars"
+msgstr "SpamScore-numeron sijaan tähteä"
 
 #: baruwa/forms/settings.py:618
 msgid "Minimum Stars If On Spam List"
-msgstr "Minimum Stars If On Spam List"
+msgstr "Pienin tähteä, jos roskapostin luettelosta"
 
 #: baruwa/forms/settings.py:620
 msgid "Use Watermarking"
-msgstr "Use Watermarking"
+msgstr "Käytä vesileimaus"
 
 #: baruwa/forms/settings.py:623
 msgid "Add Watermark"
-msgstr "Add Watermark"
+msgstr "Lisää vesileima"
 
 #: baruwa/forms/settings.py:626
 msgid "Check Watermarks With No Sender"
-msgstr "Check Watermarks With No Sender"
+msgstr "Tarkista vesileimoja ei lähettäjän"
 
 #: baruwa/forms/settings.py:629
 msgid "Treat Invalid Watermarks With No Sender as Spam"
-msgstr "Treat Invalid Watermarks With No Sender as Spam"
+msgstr "Hoitoon virheellinen vesileimoja ei lähettäjän roskapostiksi"
 
 #: baruwa/forms/settings.py:632
 msgid "Check Watermarks To Skip Spam Checks"
-msgstr "Check Watermarks To Skip Spam Checks"
+msgstr "Tarkista vesileimat Skip Spam tarkastus"
 
 #: baruwa/forms/settings.py:635
 msgid "Watermark Secret"
-msgstr "Watermark Secret"
+msgstr "Vesileima salaisuus"
 
 #: baruwa/forms/settings.py:637
 msgid "Watermark Lifetime"
-msgstr "Watermark Lifetime"
+msgstr "Vesileima käyttöikä"
 
 #: baruwa/forms/settings.py:639
 msgid "Watermark Header"
-msgstr "Watermark Header"
+msgstr "Vesileiman otsikko"
 
 #: baruwa/forms/settings.py:645
 msgid "Syslog Facility"
-msgstr "Syslog Facility"
+msgstr "Lokitoiminto"
 
 #: baruwa/forms/settings.py:648
 msgid "Log Speed"
-msgstr "Log Speed"
+msgstr "Loki nopeus"
 
 #: baruwa/forms/settings.py:651
 msgid "Log Spam"
-msgstr "Log Spam"
+msgstr "Loki Spam"
 
 #: baruwa/forms/settings.py:654
 msgid "Log Non Spam"
-msgstr "Log Non Spam"
+msgstr "Loki ei roskapostia"
 
 #: baruwa/forms/settings.py:657
 msgid "Log Delivery And Non-Delivery"
-msgstr "Log Delivery And Non-Delivery"
+msgstr "Kirjaudu toimitusta ja toimituksen"
 
 #: baruwa/forms/settings.py:660
 msgid "Log Permitted Filenames"
-msgstr "Log Permitted Filenames"
+msgstr "Loki sallittua tiedostonimet"
 
 #: baruwa/forms/settings.py:663
 msgid "Log Permitted Filetypes"
-msgstr "Log Permitted Filetypes"
+msgstr "Loki sallitut tiedostotyypit"
 
 #: baruwa/forms/settings.py:666
 msgid "Log Permitted File MIME Types"
-msgstr "Log Permitted File MIME Types"
+msgstr "Loki sallittu tiedoston MIME-tyypit"
 
 #: baruwa/forms/settings.py:669
 msgid "Log Silent Viruses"
-msgstr "Log Silent Viruses"
+msgstr "Kirjaudu hiljainen viruksia"
 
 #: baruwa/forms/settings.py:672
 msgid "Log Dangerous HTML Tags"
-msgstr "Log Dangerous HTML Tags"
+msgstr "Loki vaarallisia HTML-Tunnisteet"
 
 #: baruwa/forms/settings.py:675
 msgid "Log SpamAssassin Rule Actions"
-msgstr "Log SpamAssassin Rule Actions"
+msgstr "SpamAssassin-sääntö toimintoja"
 
 #: baruwa/forms/settings.py:694
 msgid "Signature type"
-msgstr "Signature type"
+msgstr "Allekirjoitustyyppi"
 
 #: baruwa/forms/settings.py:695 baruwa/templates/accounts/account.html:202
 #: baruwa/templates/settings/domain_sigs.html:20
 msgid "Text signature"
-msgstr "Text signature"
+msgstr "Allekirjoitusteksti"
 
 #: baruwa/forms/settings.py:696 baruwa/templates/accounts/account.html:202
 #: baruwa/templates/settings/domain_sigs.html:20
 msgid "HTML Signature"
-msgstr "HTML Signature"
+msgstr "HTML-allekirjoitus"
 
 #: baruwa/forms/settings.py:698
 msgid "Signature"
-msgstr "Signature"
+msgstr "Allekirjoitus"
 
 #: baruwa/forms/status.py:28
 msgid "Select action"
-msgstr "Select action"
+msgstr "Valitse toiminto"
 
 #: baruwa/forms/status.py:30
 msgid "Bounce"
-msgstr "Bounce"
+msgstr "Pomppu"
 
 #: baruwa/forms/status.py:31
 msgid "Hold"
-msgstr "Hold"
+msgstr "Pidä"
 
 #: baruwa/lib/filters.py:25
 msgid "System default"
-msgstr "System default"
+msgstr "Järjestelmäoletus"
 
 #: baruwa/lib/misc.py:167 baruwa/model/messages.py:139
 #: baruwa/templates/messages/functions.html:31
@@ -2562,7 +2583,7 @@ msgstr "BL"
 #: baruwa/templates/messages/index.html:66
 #: baruwa/templates/messages/searchresults.html:64
 msgid "Infected"
-msgstr "Infected"
+msgstr "Tartunnan"
 
 #: baruwa/lib/misc.py:180 baruwa/templates/messages/index.html:73
 #: baruwa/templates/messages/searchresults.html:71
@@ -2579,336 +2600,336 @@ msgstr "NS"
 #: baruwa/lib/audit/msgs/accounts.py:24
 #, python-format
 msgid "User account: %(u)s created"
-msgstr "User account: %(u)s created"
+msgstr "Käyttäjätili: %(u)s Perustaja:"
 
 #: baruwa/lib/audit/msgs/accounts.py:25
 #, python-format
 msgid "User account: %(u)s updated"
-msgstr "User account: %(u)s updated"
+msgstr "Käyttäjätili: %(u)s päivitetty"
 
 #: baruwa/lib/audit/msgs/accounts.py:26
 #, python-format
 msgid "User account: %(u)s deleted"
-msgstr "User account: %(u)s deleted"
+msgstr "Käyttäjätili: %(u)s poistettu"
 
 #: baruwa/lib/audit/msgs/accounts.py:27
 #, python-format
 msgid "User account: %(u)s password changed"
-msgstr "User account: %(u)s password changed"
+msgstr "Käyttäjätili: %(u)s salasana vaihdettu"
 
 #: baruwa/lib/audit/msgs/accounts.py:28
 #, python-format
 msgid "Alias: %(a)s added to account: %(ac)s"
-msgstr "Alias: %(a)s added to account: %(ac)s"
+msgstr "Alias: %(a)s lisätty huomioon: %(ac)s"
 
 #: baruwa/lib/audit/msgs/accounts.py:29
 #, python-format
 msgid "Email Alias: %(a)s on account: %(ac)s updated"
-msgstr "Email Alias: %(a)s on account: %(ac)s updated"
+msgstr "Sähköpostialias: %(a)s ennakko: %(ac)s päivitetty"
 
 #: baruwa/lib/audit/msgs/accounts.py:30
 #, python-format
 msgid "Email Alias: %(a)s on account: %(ac)s deleted"
-msgstr "Email Alias: %(a)s on account: %(ac)s deleted"
+msgstr "Sähköpostialias: %(a)s ennakko: %(ac)s poistettu"
 
 #: baruwa/lib/audit/msgs/accounts.py:31
 msgid "Accounts exported"
-msgstr "Accounts exported"
+msgstr "Tilit, jotka on viety"
 
 #: baruwa/lib/audit/msgs/accounts.py:32
 msgid "Accounts imported"
-msgstr "Accounts imported"
+msgstr "Tilit, jotka on tuotu"
 
 #: baruwa/lib/audit/msgs/accounts.py:33
 #, python-format
 msgid "User: %(u)s logged in"
-msgstr "User: %(u)s logged in"
+msgstr "Käyttäjä: %(u)s kirjautunut"
 
 #: baruwa/lib/audit/msgs/domains.py:24
 #, python-format
 msgid "Domain: %(d)s created"
-msgstr "Domain: %(d)s created"
+msgstr "Toimialue: %(d)s Perustaja:"
 
 #: baruwa/lib/audit/msgs/domains.py:25
 #, python-format
 msgid "Domain: %(d)s updated"
-msgstr "Domain: %(d)s updated"
+msgstr "Toimialue: %(d)s päivitetty"
 
 #: baruwa/lib/audit/msgs/domains.py:26
 #, python-format
 msgid "Domain: %(d)s deleted"
-msgstr "Domain: %(d)s deleted"
+msgstr "Toimialue: %(d)s poistettu"
 
 #: baruwa/lib/audit/msgs/domains.py:27
 #, python-format
 msgid "Domain Alias: %(d)s created"
-msgstr "Domain Alias: %(d)s created"
+msgstr "Verkkotunnusalias: %(d)s Perustaja:"
 
 #: baruwa/lib/audit/msgs/domains.py:28
 #, python-format
 msgid "Domain Alias: %(d)s updated"
-msgstr "Domain Alias: %(d)s updated"
+msgstr "Verkkotunnusalias: %(d)s päivitetty"
 
 #: baruwa/lib/audit/msgs/domains.py:29
 #, python-format
 msgid "Domain Alias: %(d)s deleted"
-msgstr "Domain Alias: %(d)s deleted"
+msgstr "Verkkotunnusalias: %(d)s poistettu"
 
 #: baruwa/lib/audit/msgs/domains.py:30
 #, python-format
 msgid "Domain: %(d)s accounts exported"
-msgstr "Domain: %(d)s accounts exported"
+msgstr "Toimialue: %(d)s tilit, jotka on viety"
 
 #: baruwa/lib/audit/msgs/domains.py:32
 #, python-format
 msgid "Domain: %(d)s Delivery server: %(ds)s added"
-msgstr "Domain: %(d)s Delivery server: %(ds)s added"
+msgstr "Toimialue: %(d)s Toimitus palvelin: %(ds)s lisätty"
 
 #: baruwa/lib/audit/msgs/domains.py:33
 #, python-format
 msgid "Domain: %(d)s Delivery server: %(ds)s updated"
-msgstr "Domain: %(d)s Delivery server: %(ds)s updated"
+msgstr "Toimialue: %(d)s Toimitus palvelin: %(ds)s päivitetty"
 
 #: baruwa/lib/audit/msgs/domains.py:34
 #, python-format
 msgid "Domain: %(d)s Delivery server: %(ds)s deleted"
-msgstr "Domain: %(d)s Delivery server: %(ds)s deleted"
+msgstr "Toimialue: %(d)s Toimitus palvelin: %(ds)s poistettu"
 
 #: baruwa/lib/audit/msgs/domains.py:35
 #, python-format
 msgid "Domain: %(d)s AUTH server: %(ds)s added"
-msgstr "Domain: %(d)s AUTH server: %(ds)s added"
+msgstr "Toimialue: %(d)s AUTH palvelin: %(ds)s lisätty"
 
 #: baruwa/lib/audit/msgs/domains.py:36
 #, python-format
 msgid "Domain: %(d)s AUTH server: %(ds)s updated"
-msgstr "Domain: %(d)s AUTH server: %(ds)s updated"
+msgstr "Toimialue: %(d)s AUTH palvelin: %(ds)s päivitetty"
 
 #: baruwa/lib/audit/msgs/domains.py:37
 #, python-format
 msgid "Domain: %(d)s AUTH server: %(ds)s deleted"
-msgstr "Domain: %(d)s AUTH server: %(ds)s deleted"
+msgstr "Toimialue: %(d)s AUTH palvelin: %(ds)s poistettu"
 
 #: baruwa/lib/audit/msgs/domains.py:38
 #, python-format
 msgid "Domain: %(d)s AUTH settings updated for: %(a)s"
-msgstr "Domain: %(d)s AUTH settings updated for: %(a)s"
+msgstr "Toimialue: %(d)s AUTH asetukset päivitetty: %(a)s"
 
 #: baruwa/lib/audit/msgs/lists.py:24
 #, python-format
 msgid "Sender: %(s)s added to %(l)s"
-msgstr "Sender: %(s)s added to %(l)s"
+msgstr "Lähettäjä: %(s)s lisätään %(l)s"
 
 #: baruwa/lib/audit/msgs/lists.py:25
 #, python-format
 msgid "Sender: %(s)s deleted from %(l)s"
-msgstr "Sender: %(s)s deleted from %(l)s"
+msgstr "Lähettäjä: %(s)s poistetaan %(l)s"
 
 #: baruwa/lib/audit/msgs/messages.py:24
 #, python-format
 msgid "Message with id: %(m)s released to %(a)s"
-msgstr "Message with id: %(m)s released to %(a)s"
+msgstr "Viesti ID: %(m)s luovutettu %(a)s"
 
 #: baruwa/lib/audit/msgs/messages.py:25
 #, python-format
 msgid "Message with id: %(m)s learnt as %(l)s"
-msgstr "Message with id: %(m)s learnt as %(l)s"
+msgstr "Viesti ID: %(m)s oppinut kuin %(l)s"
 
 #: baruwa/lib/audit/msgs/messages.py:26
 #, python-format
 msgid "Message with id: %(m)s deleted from quarantine"
-msgstr "Message with id: %(m)s deleted from quarantine"
+msgstr "Viesti ID: %(m)s poistettu karanteeni"
 
 #: baruwa/lib/audit/msgs/messages.py:27
 #, python-format
 msgid "Message with id: %(m)s previewed"
-msgstr "Message with id: %(m)s previewed"
+msgstr "Viesti ID: %(m)s esikatsella"
 
 #: baruwa/lib/audit/msgs/messages.py:28
 #, python-format
 msgid "Message with id: %(m)s attachment %(a)s downloaded"
-msgstr "Message with id: %(m)s attachment %(a)s downloaded"
+msgstr "Viesti ID: %(m)s Liite %(a)s ladattu"
 
 #: baruwa/lib/audit/msgs/organizations.py:24
 #, python-format
 msgid "Organization: %(o)s added"
-msgstr "Organization: %(o)s added"
+msgstr "Organisaatio: %(o)s lisätty"
 
 #: baruwa/lib/audit/msgs/organizations.py:25
 #, python-format
 msgid "Organization: %(o)s updated"
-msgstr "Organization: %(o)s updated"
+msgstr "Organisaatio: %(o)s päivitetty"
 
 #: baruwa/lib/audit/msgs/organizations.py:26
 #, python-format
 msgid "Organization: %(o)s deleted"
-msgstr "Organization: %(o)s deleted"
+msgstr "Organisaatio: %(o)s poistettu"
 
 #: baruwa/lib/audit/msgs/organizations.py:27
 #, python-format
 msgid "Organization: %(o)s domains imported"
-msgstr "Organization: %(o)s domains imported"
+msgstr "Organisaatio: %(o)s tuotujen toimialueita"
 
 #: baruwa/lib/audit/msgs/organizations.py:29
 #, python-format
 msgid "Relay: %(r)s added"
-msgstr "Relay: %(r)s added"
+msgstr "Viestissä: %(r)s lisätty"
 
 #: baruwa/lib/audit/msgs/organizations.py:30
 #, python-format
 msgid "Relay: %(r)s updated"
-msgstr "Relay: %(r)s updated"
+msgstr "Viestissä: %(r)s päivitetty"
 
 #: baruwa/lib/audit/msgs/organizations.py:31
 #, python-format
 msgid "Relay: %(r)s deleted"
-msgstr "Relay: %(r)s deleted"
+msgstr "Viestissä: %(r)s poistettu"
 
 #: baruwa/lib/audit/msgs/reports.py:24
 #, python-format
 msgid "Report: %(r)s viewed"
-msgstr "Report: %(r)s viewed"
+msgstr "Mietintö: %(r)s ovat katsoneet"
 
 #: baruwa/lib/audit/msgs/reports.py:25
 #, python-format
 msgid "Report: %(r)s downloaded as %(f)s"
-msgstr "Report: %(r)s downloaded as %(f)s"
+msgstr "Mietintö: %(r)s latasi %(f)s"
 
 #: baruwa/lib/audit/msgs/settings.py:24
 #, python-format
 msgid "Account: %(u)s signature created"
-msgstr "Account: %(u)s signature created"
+msgstr "Tili: %(u)s allekirjoitus luonut"
 
 #: baruwa/lib/audit/msgs/settings.py:25
 #, python-format
 msgid "Account: %(u)s signature updated"
-msgstr "Account: %(u)s signature updated"
+msgstr "Tili: %(u)s allekirjoitus ajantasaistaa"
 
 #: baruwa/lib/audit/msgs/settings.py:26
 #, python-format
 msgid "Account: %(u)s signature deleted"
-msgstr "Account: %(u)s signature deleted"
+msgstr "Tili: %(u)s allekirjoitus poistetaan"
 
 #: baruwa/lib/audit/msgs/settings.py:27
 #, python-format
 msgid "Domain: %(d)s signature created"
-msgstr "Domain: %(d)s signature created"
+msgstr "Toimialue: %(d)s allekirjoitus luonut"
 
 #: baruwa/lib/audit/msgs/settings.py:28
 #, python-format
 msgid "Domain: %(d)s signature updated"
-msgstr "Domain: %(d)s signature updated"
+msgstr "Toimialue: %(d)s allekirjoitus ajantasaistaa"
 
 #: baruwa/lib/audit/msgs/settings.py:29
 #, python-format
 msgid "Domain: %(d)s signature deleted"
-msgstr "Domain: %(d)s signature deleted"
+msgstr "Toimialue: %(d)s allekirjoitus poistetaan"
 
 #: baruwa/lib/audit/msgs/settings.py:30
 #, python-format
 msgid "Node: %(n)s created"
-msgstr "Node: %(n)s created"
+msgstr "Solmu: %(n)s Perustaja:"
 
 #: baruwa/lib/audit/msgs/settings.py:31
 #, python-format
 msgid "Node: %(n)s updated"
-msgstr "Node: %(n)s updated"
+msgstr "Solmu: %(n)s päivitetty"
 
 #: baruwa/lib/audit/msgs/settings.py:32
 #, python-format
 msgid "Node: %(n)s deleted"
-msgstr "Node: %(n)s deleted"
+msgstr "Solmu: %(n)s poistettu"
 
 #: baruwa/lib/audit/msgs/settings.py:33
 #, python-format
 msgid "Scanner %(svr)s setting: %(s)s set to %(a)s"
-msgstr "Scanner %(svr)s setting: %(s)s set to %(a)s"
+msgstr "Skanneri %(svr)s asetus: %(s)s Aseta %(a)s"
 
 #: baruwa/lib/audit/msgs/settings.py:35
 #, python-format
 msgid "DKIM keys generated for: %(d)s"
-msgstr "DKIM keys generated for: %(d)s"
+msgstr "DKIM avaimet luodaan: %(d)s"
 
 #: baruwa/lib/audit/msgs/settings.py:36
 #, python-format
 msgid "DKIM signing enabled for: %(d)s"
-msgstr "DKIM signing enabled for: %(d)s"
+msgstr "DKIM-allekirjoituksen käytössä: %(d)s"
 
 #: baruwa/lib/audit/msgs/settings.py:37
 #, python-format
 msgid "DKIM signing disabled for: %(d)s"
-msgstr "DKIM signing disabled for: %(d)s"
+msgstr "DKIM-allekirjoituksen käytöstä: %(d)s"
 
 #: baruwa/lib/audit/msgs/status.py:24
 #, python-format
 msgid "Queued Message-ID: %(m)s released to %(a)s"
-msgstr "Queued Message-ID: %(m)s released to %(a)s"
+msgstr "Jonossa olevan Message-ID: %(m)s luovutettu %(a)s"
 
 #: baruwa/lib/audit/msgs/status.py:25
 #, python-format
 msgid "Queued Message-ID: %(m)s deleted from %(q)s queue"
-msgstr "Queued Message-ID: %(m)s deleted from %(q)s queue"
+msgstr "Jonossa olevan Message-ID: %(m)s poistetaan %(q)s jono"
 
 #: baruwa/lib/audit/msgs/status.py:26
 #, python-format
 msgid "Queued Message-ID: %(m)s preview"
-msgstr "Queued Message-ID: %(m)s preview"
+msgstr "Jonossa olevan Message-ID: %(m)s Esikatselu"
 
 #: baruwa/lib/audit/msgs/status.py:27
 #, python-format
 msgid "Queued Message-ID: %(m)s downloaded attachment %(a)s"
-msgstr "Queued Message-ID: %(m)s downloaded attachment %(a)s"
+msgstr "Jonossa olevan Message-ID: %(m)s ladata liitetiedoston %(a)s"
 
 #: baruwa/lib/audit/msgs/status.py:28
 #, python-format
 msgid "Node status for: %(n)s viewed"
-msgstr "Node status for: %(n)s viewed"
+msgstr "Solmun tila: %(n)s ovat katsoneet"
 
 #: baruwa/lib/audit/msgs/status.py:29
 #, python-format
 msgid "Node lint status for: %(n)s viewed"
-msgstr "Node lint status for: %(n)s viewed"
+msgstr "Solmun nukkaa tila: %(n)s ovat katsoneet"
 
 #: baruwa/lib/audit/msgs/status.py:30
 #, python-format
 msgid "Node bayes stats for: %(n)s viewed"
-msgstr "Node bayes stats for: %(n)s viewed"
+msgstr "Solmun bayes tilastot: %(n)s ovat katsoneet"
 
 #: baruwa/lib/audit/msgs/status.py:31
 msgid "Audit log exported"
-msgstr "Audit log exported"
+msgstr "Valvontalokin viedään"
 
 #: baruwa/lib/auth/predicates.py:37
 msgid "Only System Administrators can access this page"
-msgstr "Only System Administrators can access this page"
+msgstr "Vain järjestelmänvalvojat voivat käyttää tätä sivua"
 
 #: baruwa/lib/auth/predicates.py:49
 msgid "Only Administrators can access this page"
-msgstr "Only Administrators can access this page"
+msgstr "Vain järjestelmänvalvojat voivat käyttää tätä sivua"
 
 #: baruwa/lib/auth/predicates.py:72
 msgid "Only Administrators or owners can view domain details"
-msgstr "Only Administrators or owners can view domain details"
+msgstr "Vain järjestelmänvalvojat- tai omistajat näkevät domain details"
 
 #: baruwa/lib/auth/predicates.py:107
 msgid "Only Administrators or owners can view account details"
-msgstr "Only Administrators or owners can view account details"
+msgstr "Vain järjestelmänvalvojat tai omistajat tarkastella tilitietoja"
 
 #: baruwa/lib/templates/helpers.py:70
 msgid "unknown"
-msgstr "unknown"
+msgstr "Tuntematon"
 
 #: baruwa/lib/templates/helpers.py:145
 msgid "IPv6 Link local address"
-msgstr "IPv6 Link local address"
+msgstr "IPv6-linkin paikallinen osoite"
 
 #: baruwa/lib/templates/helpers.py:148
 msgid "RFC1918 Private address"
-msgstr "RFC1918 Private address"
+msgstr "RFC1918 yksityinen osoite"
 
 #: baruwa/lib/templates/helpers.py:150
 msgid "Reverse lookup failed"
-msgstr "Reverse lookup failed"
+msgstr "Käänteinen haku epäonnistui"
 
 #: baruwa/lib/templates/helpers.py:171 baruwa/lib/templates/helpers.py:178
 #: baruwa/lib/templates/helpers.py:221
@@ -2917,7 +2938,7 @@ msgstr "N"
 
 #: baruwa/lib/templates/helpers.py:175 baruwa/lib/templates/helpers.py:220
 msgid "Y"
-msgstr "Y"
+msgstr "JA"
 
 #: baruwa/model/messages.py:141 baruwa/templates/messages/functions.html:33
 msgid "BS"
@@ -2925,15 +2946,15 @@ msgstr "BS"
 
 #: baruwa/model/messages.py:152 baruwa/templates/messages/functions.html:44
 msgid "AS"
-msgstr "AS"
+msgstr "KUTEN"
 
 #: baruwa/tasks/status.py:290
 msgid "Audit Log exported report"
-msgstr "Audit Log exported report"
+msgstr "Valvontalokin viedä raportin"
 
 #: baruwa/tasks/status.py:295 baruwa/templates/base.html:87
 msgid "Audit Logs"
-msgstr "Audit Logs"
+msgstr "Valvontalokien"
 
 #: baruwa/tasks/status.py:296 baruwa/templates/email/quarantine.html:63
 #: baruwa/templates/email/quarantine.html:92
@@ -2946,7 +2967,7 @@ msgstr "Audit Logs"
 #: baruwa/templates/messages/searchresults.html:20
 #: baruwa/templates/status/audit.html:26
 msgid "Date/Time"
-msgstr "Date/Time"
+msgstr "Päivämäärä ja kellonaika"
 
 #: baruwa/tasks/status.py:298 baruwa/templates/status/audit.html:28
 msgid "Info"
@@ -2954,28 +2975,28 @@ msgstr "Info"
 
 #: baruwa/tasks/status.py:300 baruwa/templates/status/audit.html:30
 msgid "Remote IP"
-msgstr "Remote IP"
+msgstr "Etä-IP"
 
 #: baruwa/tasks/status.py:301 baruwa/templates/lists/index.html:29
 #: baruwa/templates/status/detail.html:68
 msgid "Action"
-msgstr "Action"
+msgstr "Toiminta"
 
 #: baruwa/tasks/status.py:314
 msgid "Baruwa Audit log export"
-msgstr "Baruwa Audit log export"
+msgstr "Baruwa Audit log vienti"
 
 #: baruwa/templates/base.html:33 baruwa/templates/status/index.html:83
 msgid "OK"
-msgstr "OK"
+msgstr "Okei"
 
 #: baruwa/templates/base.html:33 baruwa/templates/status/index.html:83
 msgid "FAULTY"
-msgstr "FAULTY"
+msgstr "VIALLINEN"
 
 #: baruwa/templates/base.html:40
 msgid "Total "
-msgstr "Total "
+msgstr "Yhteensä "
 
 #: baruwa/templates/base.html:40
 msgid "Spam "
@@ -2987,59 +3008,59 @@ msgstr "Virus "
 
 #: baruwa/templates/base.html:43
 msgid "Msgs: "
-msgstr "Msgs: "
+msgstr "Sisältö: "
 
 #: baruwa/templates/base.html:45
 msgid "In: "
-msgstr "In: "
+msgstr "Kohteessa: "
 
 #: baruwa/templates/base.html:47
 msgid "Out: "
-msgstr "Out: "
+msgstr "Ulos: "
 
 #: baruwa/templates/base.html:52
 msgid "Signed in as "
-msgstr "Signed in as "
+msgstr "Allekirjoitettiin vuonna "
 
 #: baruwa/templates/base.html:53
 msgid "Logout"
-msgstr "Logout"
+msgstr "Kirjaudu ulos"
 
 #: baruwa/templates/base.html:55
 msgid "Not logged in :: "
-msgstr "Not logged in :: "
+msgstr "Ole kirjautunut sisään:: "
 
 #: baruwa/templates/base.html:55 baruwa/templates/accounts/login.html:11
 #: baruwa/templates/accounts/login.html:34
 #: baruwa/templates/accounts/login.html:60
 msgid "Login"
-msgstr "Login"
+msgstr "Kirjautuminen"
 
 #: baruwa/templates/base.html:65
 msgid "Messages"
-msgstr "Messages"
+msgstr "Viestit"
 
 #: baruwa/templates/base.html:67 baruwa/templates/reports/index.html:30
 msgid "Full message list"
-msgstr "Full message list"
+msgstr "Viestiluettelossa"
 
 #: baruwa/templates/base.html:69
 msgid "Archive"
-msgstr "Archive"
+msgstr "Arkisto"
 
 #: baruwa/templates/base.html:73
 msgid "Lists"
-msgstr "Lists"
+msgstr "Luettelot"
 
 #: baruwa/templates/base.html:77
 msgid "Add to List"
-msgstr "Add to List"
+msgstr "Lisää luetteloon"
 
 #: baruwa/templates/base.html:80 baruwa/templates/reports/index.html:8
 #: baruwa/templates/reports/index.html:120
 #: baruwa/templates/reports/index.html:121
 msgid "Reports"
-msgstr "Reports"
+msgstr "Raportit"
 
 #: baruwa/templates/base.html:83
 #: baruwa/templates/accounts/confirmbulkdel.html:11
@@ -3058,75 +3079,75 @@ msgstr "Reports"
 #: baruwa/templates/messages/taskstatus.html:18
 #: baruwa/templates/organizations/importstatus.html:6
 msgid "Status"
-msgstr "Status"
+msgstr "Tila"
 
 #: baruwa/templates/base.html:85
 msgid "Mail Queues"
-msgstr "Mail Queues"
+msgstr "Postin jonot"
 
 #: baruwa/templates/base.html:95
 msgid "Add a domain"
-msgstr "Add a domain"
+msgstr "Lisääminen toimialueeseen"
 
 #: baruwa/templates/base.html:100
 #: baruwa/templates/domains/confirmbulkdel.html:9
 #: baruwa/templates/domains/index.html:30
 #: baruwa/templates/domains/searchresults.html:27
 msgid "Accounts"
-msgstr "Accounts"
+msgstr "Tilit"
 
 #: baruwa/templates/base.html:102
 msgid "Add account"
-msgstr "Add account"
+msgstr "Lisää tili"
 
 #: baruwa/templates/base.html:107 baruwa/templates/domains/detail.html:237
 #: baruwa/templates/domains/detail.html:239
 #: baruwa/templates/settings/index.html:32
 msgid "Settings"
-msgstr "Settings"
+msgstr "Asetukset"
 
 #: baruwa/templates/base.html:109
 msgid "Add scanning node"
-msgstr "Add scanning node"
+msgstr "Lisää skannaus solmu"
 
 #: baruwa/templates/base.html:110
 msgid "MailScanner settings"
-msgstr "MailScanner settings"
+msgstr "MailScanner asetukset"
 
 #: baruwa/templates/base.html:116 baruwa/templates/organizations/add.html:11
 msgid "Add organization"
-msgstr "Add organization"
+msgstr "Lisää organisaatio"
 
 #: baruwa/templates/base.html:121
 msgid "Account"
-msgstr "Account"
+msgstr "Tili"
 
 #: baruwa/templates/base.html:141
 msgid "Language: "
-msgstr "Language: "
+msgstr "Kieli: "
 
 #: baruwa/templates/accounts/account.html:5
 msgid "Domain Administrator"
-msgstr "Domain Administrator"
+msgstr "Toimialueen järjestelmänvalvoja"
 
 #: baruwa/templates/accounts/account.html:12
 msgid "Add signatures"
-msgstr "Add signatures"
+msgstr "Lisää allekirjoitukset"
 
 #: baruwa/templates/accounts/account.html:15
 msgid "Add alias address"
-msgstr "Add alias address"
+msgstr "Lisää alias-osoite"
 
 #: baruwa/templates/accounts/account.html:16
 #: baruwa/templates/accounts/account.html:27
 #: baruwa/templates/accounts/edit.html:17
 msgid "Update account"
-msgstr "Update account"
+msgstr "Päivitä tili"
 
 #: baruwa/templates/accounts/account.html:17
 #: baruwa/templates/accounts/delete.html:17
 msgid "Delete account"
-msgstr "Delete account"
+msgstr "Poista tili"
 
 #: baruwa/templates/accounts/account.html:19
 #: baruwa/templates/accounts/account.html:23
@@ -3134,55 +3155,55 @@ msgstr "Delete account"
 #: baruwa/templates/accounts/pwchange.html:10
 #: baruwa/templates/accounts/pwchange.html:18
 msgid "Change password"
-msgstr "Change password"
+msgstr "Vaihda salasana"
 
 #: baruwa/templates/accounts/account.html:34
 #, python-format
 msgid "Showing: %(a)s account details"
-msgstr "Showing: %(a)s account details"
+msgstr "Vaikutus: %(a)s tilitietoja"
 
 #: baruwa/templates/accounts/account.html:46
 #: baruwa/templates/accounts/confirmbulkdel.html:9
 #: baruwa/templates/accounts/index.html:35
 #: baruwa/templates/accounts/searchresults.html:25
 msgid "Full names"
-msgstr "Full names"
+msgstr "Täydelliset nimet"
 
 #: baruwa/templates/accounts/account.html:62
 msgid "Account status"
-msgstr "Account status"
+msgstr "Tilin tila"
 
 #: baruwa/templates/accounts/account.html:78
 msgid "Last login"
-msgstr "Last login"
+msgstr "Viimeinen kirjautuminen"
 
 #: baruwa/templates/accounts/account.html:86
 msgid "Account created on"
-msgstr "Account created on"
+msgstr "Luotua"
 
 #: baruwa/templates/accounts/account.html:97
 msgid "Local account"
-msgstr "Local account"
+msgstr "Paikallinen tili"
 
 #: baruwa/templates/accounts/account.html:97
 msgid "External account"
-msgstr "External account"
+msgstr "Ulkoisen tilin"
 
 #: baruwa/templates/accounts/account.html:132
 msgid "Perform Spam checks"
-msgstr "Perform Spam checks"
+msgstr "Spam tarkistamisen"
 
 #: baruwa/templates/accounts/account.html:148
 msgid "Spam Low Score"
-msgstr "Spam Low Score"
+msgstr "Spam alhaiset pisteet"
 
 #: baruwa/templates/accounts/account.html:156
 msgid "Spam High Score"
-msgstr "Spam High Score"
+msgstr "Spam ennätyksen"
 
 #: baruwa/templates/accounts/account.html:163
 msgid "Alias Addresses"
-msgstr "Alias Addresses"
+msgstr "Alias osoitteita"
 
 #: baruwa/templates/accounts/account.html:176
 #: baruwa/templates/accounts/account.html:178
@@ -3200,24 +3221,24 @@ msgstr "Alias Addresses"
 #: baruwa/templates/settings/domain_sigs.html:29
 #: baruwa/templates/settings/index.html:33
 msgid "Edit"
-msgstr "Edit"
+msgstr "Muokkaa"
 
 #: baruwa/templates/accounts/account.html:192
 msgid "No alias addresses configured"
-msgstr "No alias addresses configured"
+msgstr "Alias osoitteita ei määritetty"
 
 #: baruwa/templates/accounts/account.html:196
 msgid "Email Signatures"
-msgstr "Email Signatures"
+msgstr "Email allekirjoitus"
 
 #: baruwa/templates/accounts/account.html:217
 msgid "No Email Signatures configured"
-msgstr "No Email Signatures configured"
+msgstr "Ei Email allekirjoitus määritetty"
 
 #: baruwa/templates/accounts/account.html:225
 #, python-format
 msgid "Accounts :: Account details :: %(a)s"
-msgstr "Accounts :: Account details :: %(a)s"
+msgstr "Tilien:: Tilitietoja:: %(a)s"
 
 #: baruwa/templates/accounts/addaddress.html:4
 #: baruwa/templates/accounts/delete.html:4
@@ -3226,11 +3247,11 @@ msgstr "Accounts :: Account details :: %(a)s"
 #: baruwa/templates/accounts/editaddress.html:4
 #: baruwa/templates/accounts/pwchange.html:4
 msgid "Return to account"
-msgstr "Return to account"
+msgstr "Palauttaa tilille"
 
 #: baruwa/templates/accounts/addaddress.html:10
 msgid "Create alias address"
-msgstr "Create alias address"
+msgstr "Alias-osoite luodaan"
 
 #: baruwa/templates/accounts/addaddress.html:17
 #: baruwa/templates/accounts/editaddress.html:17
@@ -3246,16 +3267,16 @@ msgstr "Create alias address"
 #: baruwa/templates/organizations/editrelay.html:16
 #: baruwa/templates/settings/addserver.html:10
 msgid "Reset"
-msgstr "Reset"
+msgstr "Palauta"
 
 #: baruwa/templates/accounts/addaddress.html:18
 msgid "Create"
-msgstr "Create"
+msgstr "Luo"
 
 #: baruwa/templates/accounts/addaddress.html:25
 #: baruwa/templates/accounts/addaddress.html:29
 msgid "Accounts :: Create alias address"
-msgstr "Accounts :: Create alias address"
+msgstr "Tilit:: Alias-osoite luodaan"
 
 #: baruwa/templates/accounts/confirmbulkdel.html:12
 #: baruwa/templates/accounts/index.html:38
@@ -3265,31 +3286,31 @@ msgstr "Accounts :: Create alias address"
 #: baruwa/templates/domains/searchresults.html:29
 #: baruwa/templates/settings/index.html:18
 msgid "Actions"
-msgstr "Actions"
+msgstr "Toimet"
 
 #: baruwa/templates/accounts/confirmbulkdel.html:37
 #: baruwa/templates/accounts/index.html:64
 msgid "No accounts found"
-msgstr "No accounts found"
+msgstr "Tilejä ei löytynyt"
 
 #: baruwa/templates/accounts/confirmbulkdel.html:46
 #: baruwa/templates/domains/confirmbulkdel.html:46
 msgid "Yes Delete"
-msgstr "Yes Delete"
+msgstr "Kyllä Poista"
 
 #: baruwa/templates/accounts/confirmbulkdel.html:53
 #: baruwa/templates/accounts/confirmbulkdel.html:57
 msgid "Accounts :: Confirm bulk account deletion"
-msgstr "Accounts :: Confirm bulk account deletion"
+msgstr "Tilien:: Vahvista huomioon joukkopoisto"
 
 #: baruwa/templates/accounts/delete.html:10
 msgid "Delete User account"
-msgstr "Delete User account"
+msgstr "Poista käyttäjätili"
 
 #: baruwa/templates/accounts/delete.html:27
 #: baruwa/templates/accounts/delete.html:31
 msgid "Accounts :: Delete account"
-msgstr "Accounts :: Delete account"
+msgstr "Tilien:: Poista tili"
 
 #: baruwa/templates/accounts/delete.html:36
 #: baruwa/templates/accounts/deleteaddress.html:34
@@ -3299,73 +3320,73 @@ msgstr "Accounts :: Delete account"
 #: baruwa/templates/settings/account_deletesig.html:4
 #: baruwa/templates/settings/account_editsig.html:4
 msgid "Account details"
-msgstr "Account details"
+msgstr "Tilitietoja"
 
 #: baruwa/templates/accounts/deleteaddress.html:10
 msgid "Delete alias address"
-msgstr "Delete alias address"
+msgstr "Poista tunnus Osoite"
 
 #: baruwa/templates/accounts/deleteaddress.html:24
 #: baruwa/templates/accounts/deleteaddress.html:28
 msgid "Accounts :: Delete alias address"
-msgstr "Accounts :: Delete alias address"
+msgstr "Tilien:: Poistaa alias osoite"
 
 #: baruwa/templates/accounts/edit.html:10
 msgid "Update User account"
-msgstr "Update User account"
+msgstr "Päivitys-käyttäjätili"
 
 #: baruwa/templates/accounts/edit.html:26
 #: baruwa/templates/accounts/edit.html:30
 msgid "Accounts :: Edit account"
-msgstr "Accounts :: Edit account"
+msgstr "Tilien:: Muokkaa tili"
 
 #: baruwa/templates/accounts/editaddress.html:10
 msgid "Edit alias address"
-msgstr "Edit alias address"
+msgstr "Muokkaa aliasta osoite"
 
 #: baruwa/templates/accounts/editaddress.html:18
 #: baruwa/templates/domains/editalias.html:16
 #: baruwa/templates/domains/editauth.html:16
 msgid "Update"
-msgstr "Update"
+msgstr "Päivitys"
 
 #: baruwa/templates/accounts/editaddress.html:25
 #: baruwa/templates/accounts/editaddress.html:29
 msgid "Accounts :: Update alias address"
-msgstr "Accounts :: Update alias address"
+msgstr "Tilien:: Päivitys tunnus Osoite"
 
 #: baruwa/templates/accounts/exportstatus.html:3
 msgid "Accounts Export Status"
-msgstr "Accounts Export Status"
+msgstr "Vienti tila"
 
 #: baruwa/templates/accounts/exportstatus.html:11
 #: baruwa/templates/domains/exportstatus.html:11
 #: baruwa/templates/status/auditexportstatus.html:11
 msgid "The export has been processed, "
-msgstr "The export has been processed, "
+msgstr "Vienti on käsitelty, "
 
 #: baruwa/templates/accounts/exportstatus.html:11
 #: baruwa/templates/domains/exportstatus.html:11
 msgid "Download the csv file"
-msgstr "Download the csv file"
+msgstr "Lataa csv-tiedosto"
 
 #: baruwa/templates/accounts/exportstatus.html:13
 #: baruwa/templates/domains/exportstatus.html:13
 #, python-format
 msgid "The CSV export failed: %s"
-msgstr "The CSV export failed: %s"
+msgstr "CSV-vienti epäonnistui: %s"
 
 #: baruwa/templates/accounts/exportstatus.html:24
 #: baruwa/templates/accounts/importstatus.html:44
 #: baruwa/templates/organizations/importstatus.html:44
 #, python-format
 msgid "The request is being processed. %d%%"
-msgstr "The request is being processed. %d%%"
+msgstr "Pyyntö käsitellään. % d %%"
 
 #: baruwa/templates/accounts/exportstatus.html:37
 #: baruwa/templates/accounts/exportstatus.html:40
 msgid "Accounts :: User export status"
-msgstr "Accounts :: User export status"
+msgstr ":: Käyttäjän vienti tila"
 
 #: baruwa/templates/accounts/importaccounts.html:3
 #: baruwa/templates/domains/addalias.html:3
@@ -3380,7 +3401,7 @@ msgstr "Accounts :: User export status"
 #: baruwa/templates/settings/domain_editsig.html:4
 #: baruwa/templates/settings/domain_sigs.html:4
 msgid "Domain Settings"
-msgstr "Domain Settings"
+msgstr "Toimialueasetukset"
 
 #: baruwa/templates/accounts/importaccounts.html:4
 #: baruwa/templates/domains/addalias.html:4
@@ -3404,50 +3425,50 @@ msgstr "Domain Settings"
 #: baruwa/templates/settings/domain_settings.html:4
 #: baruwa/templates/settings/domain_sigs.html:5
 msgid "Domain details"
-msgstr "Domain details"
+msgstr "Toimialueen tiedot"
 
 #: baruwa/templates/accounts/importaccounts.html:9
 msgid "Import accounts"
-msgstr "Import accounts"
+msgstr "Tuonnin osuus"
 
 #: baruwa/templates/accounts/importaccounts.html:16
 #: baruwa/templates/organizations/importdomains.html:16
 msgid "Import"
-msgstr "Import"
+msgstr "Tuonti"
 
 #: baruwa/templates/accounts/importaccounts.html:23
 #: baruwa/templates/accounts/importaccounts.html:27
 #, python-format
 msgid "Accounts :: %(dom)s :: Import accounts"
-msgstr "Accounts :: %(dom)s :: Import accounts"
+msgstr "Tilien:: %(dom)s :: Tuoda tilit"
 
 #: baruwa/templates/accounts/importstatus.html:7
 #: baruwa/templates/messages/taskstatus.html:19
 #: baruwa/templates/organizations/importstatus.html:7
 msgid "Errors"
-msgstr "Errors"
+msgstr "Virheet"
 
 #: baruwa/templates/accounts/importstatus.html:31
 #: baruwa/templates/organizations/importstatus.html:31
 #, python-format
 msgid "The CSV import failed: %s"
-msgstr "The CSV import failed: %s"
+msgstr "CSV-tuonti epäonnistui: %s"
 
 #: baruwa/templates/accounts/importstatus.html:59
 #: baruwa/templates/accounts/importstatus.html:62
 msgid "Accounts :: User import status"
-msgstr "Accounts :: User import status"
+msgstr ":: Käyttäjien tuonnin tila"
 
 #: baruwa/templates/accounts/index.html:4
 #: baruwa/templates/settings/domain_settings.html:18
 msgid "Import Accounts"
-msgstr "Import Accounts"
+msgstr "Tuonnin osuus"
 
 #: baruwa/templates/accounts/index.html:5
 #: baruwa/templates/accounts/index.html:7
 #: baruwa/templates/settings/domain_settings.html:19
 msgid "Export Accounts"
-msgstr "Export Accounts"
+msgstr "Viennin osuus"
 
 #: baruwa/templates/accounts/index.html:24
 #: baruwa/templates/accounts/searchresults.html:14
@@ -3456,12 +3477,12 @@ msgstr "Export Accounts"
 #: baruwa/templates/messages/includes/enabledform.html:8
 #: baruwa/templates/settings/domain_dkim_enable.html:20
 msgid "Submit"
-msgstr "Submit"
+msgstr "Lähetä"
 
 #: baruwa/templates/accounts/index.html:76
 #: baruwa/templates/accounts/index.html:83
 msgid "Accounts "
-msgstr "Accounts "
+msgstr "Tilit "
 
 #: baruwa/templates/accounts/index.html:78
 #: baruwa/templates/accounts/index.html:85
@@ -3469,8 +3490,8 @@ msgstr "Accounts "
 #, python-format
 msgid ":: Showing page %(n)d of %(c)d page."
 msgid_plural ":: Showing page %(n)d of %(c)d pages."
-msgstr[0] ":: Showing page %(n)d of %(c)d page."
-msgstr[1] ":: Showing page %(n)d of %(c)d pages."
+msgstr[0] ":: Näyttäminen sivulla %(n)d sekä %(c)d sivun."
+msgstr[1] ":: Näyttäminen sivulla %(n)d sekä %(c)d sivut."
 
 #: baruwa/templates/accounts/index.html:94
 #: baruwa/templates/domains/index.html:93
@@ -3482,7 +3503,7 @@ msgstr[1] ":: Showing page %(n)d of %(c)d pages."
 #: baruwa/templates/status/audit.html:84 baruwa/templates/status/mailq.html:70
 #, python-format
 msgid "Showing items %(i)d to %(l)d of %(count)d"
-msgstr "Showing items %(i)d to %(l)d of %(count)d"
+msgstr "Kohteet näytetään %(i)d jotta %(l)d sekä %(count)d"
 
 #: baruwa/templates/accounts/index.html:96
 #: baruwa/templates/domains/index.html:95
@@ -3493,7 +3514,7 @@ msgstr "Showing items %(i)d to %(l)d of %(count)d"
 #: baruwa/templates/settings/index.html:50
 #: baruwa/templates/status/audit.html:86 baruwa/templates/status/mailq.html:72
 msgid "Show items:"
-msgstr "Show items:"
+msgstr "Näytä kohteet:"
 
 #: baruwa/templates/accounts/index.html:98
 #: baruwa/templates/domains/index.html:97
@@ -3504,7 +3525,7 @@ msgstr "Show items:"
 #: baruwa/templates/settings/index.html:52
 #: baruwa/templates/status/audit.html:88 baruwa/templates/status/mailq.html:74
 msgid "per page"
-msgstr "per page"
+msgstr "per sivu"
 
 #: baruwa/templates/accounts/index.html:105
 #: baruwa/templates/domains/index.html:104
@@ -3517,160 +3538,162 @@ msgstr "per page"
 #: baruwa/templates/reports/relays.html:45
 #: baruwa/templates/status/audit.html:95 baruwa/templates/status/mailq.html:55
 msgid "No items found"
-msgstr "No items found"
+msgstr "Kohteita ei löydy"
 
 #: baruwa/templates/accounts/login.html:11
 #: baruwa/templates/accounts/login.html:77
 msgid "Reset my password"
-msgstr "Reset my password"
+msgstr "Palauttaa salasanani"
 
 #: baruwa/templates/accounts/login.html:36
 msgid "The username or password you entered is incorrect."
-msgstr "The username or password you entered is incorrect."
+msgstr "Käyttäjätunnus tai salasana on virheellinen."
 
 #: baruwa/templates/accounts/login.html:50
 msgid "Password"
-msgstr "Password"
+msgstr "Salasana"
 
 #: baruwa/templates/accounts/login.html:62
 msgid "Forgotten password ?"
-msgstr "Forgotten password ?"
+msgstr "Unohtanut salasanan?"
 
 #: baruwa/templates/accounts/login.html:68
 msgid ""
 "Forgotten your password? Enter your e-mail address below, and we'll e-mail "
 "instructions on setting a new one."
-msgstr "Forgotten your password? Enter your e-mail address below, and we'll e-mail instructions on setting a new one."
+msgstr ""
+"Salasana unohtunut? Kirjoita sähköpostiosoitteesi alla ja sähköpostitse "
+"ohjeita uuden."
 
 #: baruwa/templates/accounts/login.html:76
 msgid "Cancel"
-msgstr "Cancel"
+msgstr "Peruuta"
 
 #: baruwa/templates/accounts/new.html:3
 msgid "Create User account"
-msgstr "Create User account"
+msgstr "Luo käyttäjätili"
 
 #: baruwa/templates/accounts/new.html:11
 msgid "Create account"
-msgstr "Create account"
+msgstr "Luo tili"
 
 #: baruwa/templates/accounts/new.html:20 baruwa/templates/accounts/new.html:24
 msgid "Accounts :: Create account"
-msgstr "Accounts :: Create account"
+msgstr "Tilien:: Luo tili"
 
 #: baruwa/templates/accounts/pwchange.html:26
 #: baruwa/templates/accounts/pwchange.html:30
 #, python-format
 msgid "Accounts :: %(name)s :: Change password"
-msgstr "Accounts :: %(name)s :: Change password"
+msgstr "Tilien:: %(name)s :: Vaihda salasana"
 
 #: baruwa/templates/accounts/searchresults.html:53
 #, python-format
 msgid "No accounts found matching: %s"
-msgstr "No accounts found matching: %s"
+msgstr "Vastaavia tilejä ei löytynyt: %s"
 
 #: baruwa/templates/accounts/searchresults.html:65
 #: baruwa/templates/accounts/searchresults.html:69
 #, python-format
 msgid "Accounts :: Search results :: Showing page %(n)d of %(c)d pages."
-msgstr "Accounts :: Search results :: Showing page %(n)d of %(c)d pages."
+msgstr "Tilien:: Hakutulokset:: näyttäminen sivulla %(n)d sekä %(c)d sivut."
 
 #: baruwa/templates/accounts/searchresults.html:65
 #: baruwa/templates/accounts/searchresults.html:69
 msgid "Accounts :: Search results"
-msgstr "Accounts :: Search results"
+msgstr "Tilien:: Hakutulokset"
 
 #: baruwa/templates/accounts/searchresults.html:82
 #: baruwa/templates/domains/searchresults.html:88
 #, python-format
 msgid "Showing results %(i)d to %(l)d of %(count)d"
-msgstr "Showing results %(i)d to %(l)d of %(count)d"
+msgstr "Tuloksia %(i)d jotta %(l)d sekä %(count)d"
 
 #: baruwa/templates/accounts/searchresults.html:84
 #: baruwa/templates/domains/searchresults.html:90
 #: baruwa/templates/messages/index.html:8
 msgid "Show:"
-msgstr "Show:"
+msgstr "Näytä:"
 
 #: baruwa/templates/accounts/searchresults.html:86
 #: baruwa/templates/domains/searchresults.html:92
 msgid "results per page"
-msgstr "results per page"
+msgstr "Tulosta / sivu"
 
 #: baruwa/templates/accounts/searchresults.html:93
 #, python-format
 msgid "No items found matching: %s"
-msgstr "No items found matching: %s"
+msgstr "Ei erä perustaa vastaavia: %s"
 
 #: baruwa/templates/domains/addalias.html:11
 msgid "Add Domain Alias"
-msgstr "Add Domain Alias"
+msgstr "Lisää verkkotunnuksen Alias"
 
 #: baruwa/templates/domains/addalias.html:17
 #: baruwa/templates/domains/addauth.html:17
 msgid "Clear"
-msgstr "Clear"
+msgstr "Selkeä"
 
 #: baruwa/templates/domains/addalias.html:26
 #: baruwa/templates/domains/addalias.html:30
 #, python-format
 msgid "Domains :: %(name)s :: Add Domain Alias"
-msgstr "Domains :: %(name)s :: Add Domain Alias"
+msgstr "Verkkotunnukset:: %(name)s :: Lisää verkkotunnuksen Alias"
 
 #: baruwa/templates/domains/addauth.html:11
 msgid "Add Authentication server"
-msgstr "Add Authentication server"
+msgstr "Lisää autentikointipalvelin"
 
 #: baruwa/templates/domains/addauth.html:26
 #: baruwa/templates/domains/addauth.html:30
 #, python-format
 msgid "Domains :: %(name)s :: Add authentication settings"
-msgstr "Domains :: %(name)s :: Add authentication settings"
+msgstr "Verkkotunnukset:: %(name)s :: Lisää todennusasetukset"
 
 #: baruwa/templates/domains/adddestination.html:10
 msgid "Add a Destination server"
-msgstr "Add a Destination server"
+msgstr "Lisää kohdepalvelin"
 
 #: baruwa/templates/domains/adddestination.html:18
 msgid "Add server"
-msgstr "Add server"
+msgstr "Lisää palvelin"
 
 #: baruwa/templates/domains/adddestination.html:26
 #: baruwa/templates/domains/adddestination.html:30
 msgid "Domains :: Add a Destination server"
-msgstr "Domains :: Add a Destination server"
+msgstr "Verkkotunnukset:: Lisää kohdepalvelin"
 
 #: baruwa/templates/domains/authsettings.html:13
 msgid "Add Auth Settings"
-msgstr "Add Auth Settings"
+msgstr "Lisää Auth-asetukset"
 
 #: baruwa/templates/domains/authsettings.html:19
 #: baruwa/templates/settings/section.html:27
 msgid "Save settings"
-msgstr "Save settings"
+msgstr "Tallenna asetukset"
 
 #: baruwa/templates/domains/authsettings.html:27
 #: baruwa/templates/domains/authsettings.html:31
 #, python-format
 msgid "Domains :: %(name)s :: Authentication settings"
-msgstr "Domains :: %(name)s :: Authentication settings"
+msgstr "Verkkotunnukset:: %(name)s :: Todennusasetukset"
 
 #: baruwa/templates/domains/confirmbulkdel.html:7
 #: baruwa/templates/domains/index.html:28
 #: baruwa/templates/domains/searchresults.html:25
 msgid "Domain Name"
-msgstr "Domain Name"
+msgstr "Verkkotunnus"
 
 #: baruwa/templates/domains/confirmbulkdel.html:8
 #: baruwa/templates/domains/index.html:29
 #: baruwa/templates/domains/searchresults.html:26
 msgid "Organization"
-msgstr "Organization"
+msgstr "Organisaatio"
 
 #: baruwa/templates/domains/confirmbulkdel.html:16
 #: baruwa/templates/domains/index.html:37
 msgid "No domains found"
-msgstr "No domains found"
+msgstr "Ei löydy verkkotunnukset"
 
 #: baruwa/templates/domains/confirmbulkdel.html:33
 #: baruwa/templates/domains/index.html:55
@@ -3678,236 +3701,236 @@ msgstr "No domains found"
 #: baruwa/templates/organizations/index.html:13
 #: baruwa/templates/organizations/index.html:28
 msgid "List accounts"
-msgstr "List accounts"
+msgstr "Luettelon tilit"
 
 #: baruwa/templates/domains/confirmbulkdel.html:54
 #: baruwa/templates/domains/confirmbulkdel.html:58
 msgid "Domains :: Confirm bulk domain deletion"
-msgstr "Domains :: Confirm bulk domain deletion"
+msgstr "Verkkotunnukset:: Vahvista toimialueen joukkopoisto"
 
 #: baruwa/templates/domains/delete.html:9
 msgid "Delete Domain"
-msgstr "Delete Domain"
+msgstr "Poistaa toimialueen"
 
 #: baruwa/templates/domains/delete.html:16
 #: baruwa/templates/domains/detail.html:9
 msgid "Delete domain"
-msgstr "Delete domain"
+msgstr "Poistaa toimialueen"
 
 #: baruwa/templates/domains/delete.html:26
 #: baruwa/templates/domains/delete.html:30
 msgid "Domains :: Delete Domain"
-msgstr "Domains :: Delete Domain"
+msgstr "Verkkotunnukset:: Poistaa toimialueen"
 
 #: baruwa/templates/domains/deletealias.html:10
 msgid "Delete Domain Alias"
-msgstr "Delete Domain Alias"
+msgstr "Poista verkkotunnusaliaksesta"
 
 #: baruwa/templates/domains/deletealias.html:24
 #: baruwa/templates/domains/deletealias.html:28
 #, python-format
 msgid "Domains :: %(name)s :: Delete Domain Alias"
-msgstr "Domains :: %(name)s :: Delete Domain Alias"
+msgstr "Verkkotunnukset:: %(name)s :: Poistaa verkkotunnusaliaksesta"
 
 #: baruwa/templates/domains/deleteauth.html:10
 msgid "Delete Authentication server"
-msgstr "Delete Authentication server"
+msgstr "Poista autentikointipalvelin"
 
 #: baruwa/templates/domains/deleteauth.html:24
 #: baruwa/templates/domains/deleteauth.html:28
 #, python-format
 msgid "Domains :: %(name)s :: Delete authentication settings"
-msgstr "Domains :: %(name)s :: Delete authentication settings"
+msgstr "Verkkotunnukset:: %(name)s :: Poistaa todennusasetukset"
 
 #: baruwa/templates/domains/deletedestination.html:9
 msgid "Delete Destination server"
-msgstr "Delete Destination server"
+msgstr "Poista kohdepalvelin"
 
 #: baruwa/templates/domains/deletedestination.html:16
 msgid "Delete server"
-msgstr "Delete server"
+msgstr "Poista palvelin"
 
 #: baruwa/templates/domains/deletedestination.html:24
 #: baruwa/templates/domains/deletedestination.html:28
 msgid "Domains :: Delete Destination server"
-msgstr "Domains :: Delete Destination server"
+msgstr "Verkkotunnukset:: Poistaa kohdepalvelimen"
 
 #: baruwa/templates/domains/detail.html:8
 msgid "Edit domain"
-msgstr "Edit domain"
+msgstr "Muokkaa toimialueen"
 
 #: baruwa/templates/domains/detail.html:16
 msgid "Domain information"
-msgstr "Domain information"
+msgstr "Toimialuetiedot"
 
 #: baruwa/templates/domains/detail.html:37
 msgid "Owners"
-msgstr "Owners"
+msgstr "Omistajat"
 
 #: baruwa/templates/domains/detail.html:60
 msgid "What to do with Spam"
-msgstr "What to do with Spam"
+msgstr "Mitä roskapostia"
 
 #: baruwa/templates/domains/detail.html:68
 msgid "What to do with High Spam"
-msgstr "What to do with High Spam"
+msgstr "Mitä korkea roskapostia"
 
 #: baruwa/templates/domains/detail.html:76
 msgid "SMTP recipient checks"
-msgstr "SMTP recipient checks"
+msgstr "Vastaanottajan SMTP-tarkastukset"
 
 #: baruwa/templates/domains/detail.html:84
 msgid "LDAP recipient checks"
-msgstr "LDAP recipient checks"
+msgstr "LDAP-vastaanottaja tarkastukset"
 
 #: baruwa/templates/domains/detail.html:92
 msgid "Spam Checks"
-msgstr "Spam Checks"
+msgstr "Spam tarkastukset"
 
 #: baruwa/templates/domains/detail.html:100
 msgid "Virus Checks"
-msgstr "Virus Checks"
+msgstr "Virustarkastus"
 
 #: baruwa/templates/domains/detail.html:156
 msgid "Send summary reports"
-msgstr "Send summary reports"
+msgstr "Lähetä yhteenvetoraportit"
 
 #: baruwa/templates/domains/detail.html:164
 msgid "Domain Aliases"
-msgstr "Domain Aliases"
+msgstr "Verkkotunnuksen aliakset"
 
 #: baruwa/templates/domains/detail.html:188
 msgid "No domain aliases configured"
-msgstr "No domain aliases configured"
+msgstr "Määritetty toimialueen peitenimet"
 
 #: baruwa/templates/domains/detail.html:193
 msgid "Delivery Servers"
-msgstr "Delivery Servers"
+msgstr "Toimitus palvelimet"
 
 #: baruwa/templates/domains/detail.html:205
 msgid "Test"
-msgstr "Test"
+msgstr "Testi"
 
 #: baruwa/templates/domains/detail.html:217
 msgid "No delivery servers configured"
-msgstr "No delivery servers configured"
+msgstr "Ei toimitus-palvelinten"
 
 #: baruwa/templates/domains/detail.html:222
 msgid "Authentication Servers"
-msgstr "Authentication Servers"
+msgstr "Todennuspalvelimia"
 
 #: baruwa/templates/domains/detail.html:252
 msgid "No authentication servers configured"
-msgstr "No authentication servers configured"
+msgstr "Ei ole määritetty todennuspalvelimia"
 
 #: baruwa/templates/domains/detail.html:260
 #: baruwa/templates/domains/detail.html:264
 #, python-format
 msgid "Domains :: %s"
-msgstr "Domains :: %s"
+msgstr "Toimialueet: %s"
 
 #: baruwa/templates/domains/edit.html:9
 msgid "Edit Domain"
-msgstr "Edit Domain"
+msgstr "Muokkaa toimialueen"
 
 #: baruwa/templates/domains/edit.html:16
 msgid "Update domain"
-msgstr "Update domain"
+msgstr "Päivitä toimialueen"
 
 #: baruwa/templates/domains/edit.html:26 baruwa/templates/domains/edit.html:30
 msgid "Domains :: Edit Domain"
-msgstr "Domains :: Edit Domain"
+msgstr "Verkkotunnukset:: Muokkaa toimialueen"
 
 #: baruwa/templates/domains/editalias.html:10
 msgid "Edit Domain Alias"
-msgstr "Edit Domain Alias"
+msgstr "Toimialueen aliaksen muokkaaminen"
 
 #: baruwa/templates/domains/editalias.html:24
 #: baruwa/templates/domains/editalias.html:28
 #, python-format
 msgid "Domains :: %(name)s :: Edit Domain Alias"
-msgstr "Domains :: %(name)s :: Edit Domain Alias"
+msgstr "Verkkotunnukset:: %(name)s :: Toimialueelle aliaksen muokkaaminen"
 
 #: baruwa/templates/domains/editauth.html:10
 msgid "Update Authentication server"
-msgstr "Update Authentication server"
+msgstr "Päivityspalvelin-todennus"
 
 #: baruwa/templates/domains/editauth.html:24
 #: baruwa/templates/domains/editauth.html:28
 #, python-format
 msgid "Domains :: %(name)s :: Update authentication settings"
-msgstr "Domains :: %(name)s :: Update authentication settings"
+msgstr "Verkkotunnukset:: %(name)s :: Päivittää todennusasetukset"
 
 #: baruwa/templates/domains/editdestination.html:9
 msgid "Edit Destination server"
-msgstr "Edit Destination server"
+msgstr "Muokkaa kohdepalvelimen"
 
 #: baruwa/templates/domains/editdestination.html:16
 #: baruwa/templates/settings/scanner.html:37
 msgid "Update server"
-msgstr "Update server"
+msgstr "Päivityspalvelimeen"
 
 #: baruwa/templates/domains/editdestination.html:24
 #: baruwa/templates/domains/editdestination.html:28
 msgid "Domains :: Edit Destination server"
-msgstr "Domains :: Edit Destination server"
+msgstr "Verkkotunnukset:: Muokkaa kohdepalvelimen"
 
 #: baruwa/templates/domains/exportstatus.html:3
 msgid "Domains Export Status"
-msgstr "Domains Export Status"
+msgstr "Verkkotunnuksia vientiluvan"
 
 #: baruwa/templates/domains/exportstatus.html:18
 msgid "The request is being processed."
-msgstr "The request is being processed."
+msgstr "Pyyntö käsitellään."
 
 #: baruwa/templates/domains/exportstatus.html:31
 #: baruwa/templates/domains/exportstatus.html:34
 msgid "Domains :: export status"
-msgstr "Domains :: export status"
+msgstr "Verkkotunnukset:: vientiluvan"
 
 #: baruwa/templates/domains/index.html:3
 msgid "Export Domains"
-msgstr "Export Domains"
+msgstr "Vienti verkkotunnukset"
 
 #: baruwa/templates/domains/index.html:57
 msgid "settings"
-msgstr "settings"
+msgstr "asetukset"
 
 #: baruwa/templates/domains/index.html:74
 #: baruwa/templates/domains/index.html:82
 #, python-format
 msgid "Domains :: Showing page %(page)d of %(count)d page."
 msgid_plural "Domains :: Showing page %(page)d of %(count)d pages."
-msgstr[0] "Domains :: Showing page %(page)d of %(count)d page."
-msgstr[1] "Domains :: Showing page %(page)d of %(count)d pages."
+msgstr[0] "Verkkotunnukset:: Sivu näkyvissä %(page)d sekä %(count)d sivun."
+msgstr[1] "Verkkotunnukset:: Sivu näkyvissä %(page)d sekä %(count)d sivut."
 
 #: baruwa/templates/domains/index.html:76
 #: baruwa/templates/domains/index.html:84
 msgid "Domains ::"
-msgstr "Domains ::"
+msgstr "Verkkotunnukset::"
 
 #: baruwa/templates/domains/new.html:3
 msgid "Add a Domain"
-msgstr "Add a Domain"
+msgstr "Lisääminen toimialueeseen"
 
 #: baruwa/templates/domains/new.html:11
 msgid "Add Domain"
-msgstr "Add Domain"
+msgstr "Lisää toimialueen"
 
 #: baruwa/templates/domains/new.html:19 baruwa/templates/domains/new.html:23
 msgid "Domains :: Add a Domain"
-msgstr "Domains :: Add a Domain"
+msgstr "Verkkotunnukset:: Lisääminen toimialueeseen"
 
 #: baruwa/templates/domains/rulesets.html:2
 #: baruwa/templates/domains/rulesets.html:6
 #, python-format
 msgid "Domains :: %(name)s :: Rulesets"
-msgstr "Domains :: %(name)s :: Rulesets"
+msgstr "Verkkotunnukset:: %(name)s :: Sääntölista"
 
 #: baruwa/templates/domains/searchresults.html:34
 #, python-format
 msgid "No domains found matching: %s"
-msgstr "No domains found matching: %s"
+msgstr "Vastaavia löytynyt ei verkkotunnuksia: %s"
 
 #: baruwa/templates/domains/searchresults.html:71
 #: baruwa/templates/domains/searchresults.html:75
@@ -3915,81 +3938,85 @@ msgstr "No domains found matching: %s"
 msgid ""
 "Domains :: Search results :: %(q)s :: Showing page %(page)d of %(count)d "
 "pages."
-msgstr "Domains :: Search results :: %(q)s :: Showing page %(page)d of %(count)d pages."
+msgstr ""
+"Verkkotunnukset:: Hakutulokset:: %(q)s :: Näyttäminen sivulla %(page)d sekä "
+"%(count)d sivut."
 
 #: baruwa/templates/domains/searchresults.html:71
 #: baruwa/templates/domains/searchresults.html:75
 #, python-format
 msgid "Domains :: Search results :: %s"
-msgstr "Domains :: Search results :: %s"
+msgstr "Verkkotunnukset:: Hakutulokset: %s"
 
 #: baruwa/templates/domains/testdestination.html:4
 msgid "Testing Destination server connectivity"
-msgstr "Testing Destination server connectivity"
+msgstr "Testaus kohde palvelimen kanssa"
 
 #: baruwa/templates/domains/testdestination.html:16
 #: baruwa/templates/domains/testdestination.html:20
 #, python-format
 msgid "Settings :: Test Destination server :: %s"
-msgstr "Settings :: Test Destination server :: %s"
+msgstr "Asetukset:: Testi kohdepalvelimen:: %s"
 
 #: baruwa/templates/email/quarantine.html:59
 msgid "Spam Report"
-msgstr "Spam Report"
+msgstr "Roskaposti-ilmoitus"
 
 #: baruwa/templates/email/quarantine.html:88
 msgid "Policy Blocked Report"
-msgstr "Policy Blocked Report"
+msgstr "Politiikka estää raportin"
 
 #: baruwa/templates/email/quarantine.html:110
 msgid "Request release"
-msgstr "Request release"
+msgstr "Pyytää vapauttamaan"
 
 #: baruwa/templates/forms/ajaxformbase.html:3
 #: baruwa/templates/forms/base.html:3
 #: baruwa/templates/forms/disabled.base.html:3
 #, python-format
 msgid "Form validation failed due to: %s"
-msgstr "Form validation failed due to: %s"
+msgstr "Muodossa validointi ep├ñonnistui, koska: %s"
 
 #: baruwa/templates/general/error.html:10
 #, python-format
 msgid "Error Occured: %s"
-msgstr "Error Occured: %s"
+msgstr "Virhe: %s"
 
 #: baruwa/templates/general/error.html:25
 #, python-format
 msgid "ERROR: %s"
-msgstr "ERROR: %s"
+msgstr "Virhe: %s"
 
 #: baruwa/templates/general/error.html:28
 msgid ""
 "You do not have sufficient permissions to access this page. Please sign in "
 "using an account with sufficient permissions"
-msgstr "You do not have sufficient permissions to access this page. Please sign in using an account with sufficient permissions"
+msgstr ""
+"Sinulla ei ole riittäviä oikeuksia käyttää tätä sivua. Kirjaudu sisään "
+"käyttäen tiliä, jolla on tarvittavat oikeudet"
 
 #: baruwa/templates/general/error.html:30
 msgid ""
 "The system was unable to complete your request, the support team has been "
 "notified"
-msgstr "The system was unable to complete your request, the support team has been notified"
+msgstr "Järjestelmä ei voinut suorittaa pyyntöäsi, tukitiimi on ilmoitettu"
 
 #: baruwa/templates/includes/search.html:9 baruwa/templates/lists/index.html:6
 #: baruwa/templates/messages/functions.html:300
 #, python-format
 msgid "About %(n)s results (%(t)s seconds)"
-msgstr "About %(n)s results (%(t)s seconds)"
+msgstr "Noin %(n)s tulokset (%(t)s sekuntia)"
 
 #: baruwa/templates/includes/search.html:15
 #: baruwa/templates/messages/functions.html:306
 #: baruwa/templates/messages/search.html:7
 msgid "Search"
-msgstr "Search"
+msgstr "Etsi"
 
 #: baruwa/templates/invite/confirmemail.html:31
 #: baruwa/templates/invite/index.html:31
 msgid "Baruwa hosted Beta registration"
-msgstr "Baruwa hosted Beta registration"
+msgstr "Baruwa isännöi Beta rekisterihallitus"
 
 #: baruwa/templates/invite/confirmemail.html:37
 msgid ""
@@ -3997,86 +4024,95 @@ msgid ""
 " to point to the Baruwa hosted platform. Only proceed with registration if "
 "you intend on changing your MX records for mail to flow through the Baruwa "
 "hosted platform systems"
-msgstr "Please NOTE: you will not be able to login, until you change your MX records to point to the Baruwa hosted platform. Only proceed with registration if you intend on changing your MX records for mail to flow through the Baruwa hosted platform systems"
+msgstr ""
+"Huomaa: voit ei voi kirjautua, kunnes muutat MX-tietueet viittaavat isännöi "
+"Baruwa foorumi. Vain jatkaa rekisteröintiprosessia, jos aiotte muuttaa MX-"
+"tietueiden määritysohjeisiin postin läpi Baruwa isännöi platform "
+"järjestelmien"
 
 #: baruwa/templates/invite/confirmemail.html:45
 #: baruwa/templates/invite/index.html:38
 msgid "Registration"
-msgstr "Registration"
+msgstr "Rekisteröinti"
 
 #: baruwa/templates/invite/confirmemail.html:53
 msgid "Send confirmation email"
-msgstr "Send confirmation email"
+msgstr "Lähetä vahvistussähköposti"
 
 #: baruwa/templates/invite/index.html:46
 msgid "Register"
-msgstr "Register"
+msgstr "Rekisteröidy"
 
 #: baruwa/templates/invite/thankyou.html:25
 msgid "Thank you."
-msgstr "Thank you."
+msgstr "Kiitos."
 
 #: baruwa/templates/invite/thankyou.html:27
 msgid ""
 "Your registration has been processed. The systems are ready to process\n"
 "\t\t\t\t\tmessages for your domain. "
-msgstr "Your registration has been processed. The systems are ready to process\n\t\t\t\t\tmessages for your domain. "
+msgstr ""
+"Rekisteröitymisesi käsitellään. Järjestelmät ovat valmiita käsittelemään "
+"toimialueesi. "
 
 #: baruwa/templates/invite/thankyou.html:29
 msgid ""
 "You will however NOT be able to login until you\n"
 "\t\t\t\t\tcomplete the change of your domain's MX records."
-msgstr "You will however NOT be able to login until you\n\t\t\t\t\tcomplete the change of your domain's MX records."
+msgstr ""
+"Voit kuitenkin ei voi kirjautua toimialueen MX-tietueet muuta on suoritettu."
 
 #: baruwa/templates/invite/thankyou.html:31
 msgid ""
 "An email has been sent to the email address you used for registering\n"
 "\t\t\t\t\twith instructions on how to change your MX records"
-msgstr "An email has been sent to the email address you used for registering\n\t\t\t\t\twith instructions on how to change your MX records"
+msgstr ""
+"Sähköposti on lähetetty sähköpostitse osoitteeseen käytit rekisteröintiin "
+"ohjeet MX-tietueiden muuttamista"
 
 #: baruwa/templates/lists/add.html:4
 msgid "Add Sender to a list"
-msgstr "Add Sender to a list"
+msgstr "Lisää lähettäjä luetteloon"
 
 #: baruwa/templates/lists/add.html:12
 msgid "Use IP address"
-msgstr "Use IP address"
+msgstr "Käyttää IP-osoitetta"
 
 #: baruwa/templates/lists/add.html:13
 msgid "Use Domain"
-msgstr "Use Domain"
+msgstr "Käytä verkkotunnuksen"
 
 #: baruwa/templates/lists/add.html:15 baruwa/templates/lists/add.html:32
 msgid "Add to list"
-msgstr "Add to list"
+msgstr "Lisää luetteloon"
 
 #: baruwa/templates/lists/add.html:24
 msgid "Add sender to a list"
-msgstr "Add sender to a list"
+msgstr "Lisää lähettäjä luetteloon"
 
 #: baruwa/templates/lists/add.html:40
 msgid "Adding to list"
-msgstr "Adding to list"
+msgstr "Lisääminen luetteloon"
 
 #: baruwa/templates/lists/add.html:44
 msgid "Adding to Lists"
-msgstr "Adding to Lists"
+msgstr "Lisääminen luetteloihin"
 
 #: baruwa/templates/lists/delete.html:6
 msgid "Delete sender to a list"
-msgstr "Delete sender to a list"
+msgstr "Poistaa lähettäjän luetteloon"
 
 #: baruwa/templates/lists/delete.html:15
 msgid "Close"
-msgstr "Close"
+msgstr "Sulje"
 
 #: baruwa/templates/lists/delete.html:22 baruwa/templates/lists/delete.html:29
 msgid "Delete from list"
-msgstr "Delete from list"
+msgstr "Poistaminen luettelosta"
 
 #: baruwa/templates/lists/delete.html:33
 msgid "Delete from List"
-msgstr "Delete from List"
+msgstr "Poistaminen luettelosta"
 
 #: baruwa/templates/lists/index.html:26
 #: baruwa/templates/reports/piereport.html:24
@@ -4086,126 +4122,131 @@ msgstr "#"
 
 #: baruwa/templates/lists/index.html:80
 msgid "List management"
-msgstr "List management"
+msgstr "Luettelonhallinta"
 
 #: baruwa/templates/lists/index.html:85
 #, python-format
 msgid "Lists :: Approved senders :: Showing page %(page)d of %(count)d pages."
-msgstr "Lists :: Approved senders :: Showing page %(page)d of %(count)d pages."
+msgstr ""
+"Luettelot:: Hyväksytty lähettäjiltä:: näyttäminen sivulla %(page)d sekä "
+"%(count)d sivut."
 
 #: baruwa/templates/lists/index.html:87
 msgid "Lists :: Approved senders"
-msgstr "Lists :: Approved senders"
+msgstr "Luettelot:: Hyväksytyt lähettäjät"
 
 #: baruwa/templates/lists/index.html:91
 #, python-format
 msgid "Lists :: Banned senders :: Showing page %(page)d of %(count)d pages."
-msgstr "Lists :: Banned senders :: Showing page %(page)d of %(count)d pages."
+msgstr ""
+"Luettelot:: Kielletty lähettäjät:: näyttäminen sivulla %(page)d sekä "
+"%(count)d sivut."
 
 #: baruwa/templates/lists/index.html:93
 msgid "Lists :: Banned senders"
-msgstr "Lists :: Banned senders"
+msgstr "Luettelot:: Kielletty lähettäjät"
 
 #: baruwa/templates/messages/archive.html:3
 msgid "Apply filters"
-msgstr "Apply filters"
+msgstr "Suodattimien"
 
 #: baruwa/templates/messages/archive.html:4
 #: baruwa/templates/messages/listing.html:4
 #: baruwa/templates/messages/quarantine.html:6
 #: baruwa/templates/messages/searchresults.html:6
 msgid "Show applied filters"
-msgstr "Show applied filters"
+msgstr "Näytä käytetyt suodattimet"
 
 #: baruwa/templates/messages/archive.html:28
 #: baruwa/templates/messages/archive.html:39
 #, python-format
 msgid "Messages :: Archive :: Showing page %(page)d of %(count)d pages."
-msgstr "Messages :: Archive :: Showing page %(page)d of %(count)d pages."
+msgstr ""
+"Viestit:: Arkisto:: näyttäminen sivulla %(page)d sekä %(count)d sivut."
 
 #: baruwa/templates/messages/archive.html:30
 #: baruwa/templates/messages/listing.html:39
 #: baruwa/templates/messages/quarantine.html:62
 msgid "Filters"
-msgstr "Filters"
+msgstr "Suodattimet"
 
 #: baruwa/templates/messages/archive.html:30
 #: baruwa/templates/messages/listing.html:39
 #: baruwa/templates/messages/quarantine.html:62
 msgid "have been applied"
-msgstr "have been applied"
+msgstr "on sovellettu"
 
 #: baruwa/templates/messages/archive.html:33
 #: baruwa/templates/messages/archive.html:41
 msgid "Messages :: Archive"
-msgstr "Messages :: Archive"
+msgstr "Viestit:: Arkisto"
 
 #: baruwa/templates/messages/autorelease.html:11
 #: baruwa/templates/messages/autorelease.html:26
 msgid "Auto Quarantine release result:"
-msgstr "Auto Quarantine release result:"
+msgstr "Auto karanteeni julkaisu tulos:"
 
 #: baruwa/templates/messages/autorelease.html:29
 msgid "Passed"
-msgstr "Passed"
+msgstr "Kulunut"
 
 #: baruwa/templates/messages/autorelease.html:29
 msgid "Message released"
-msgstr "Message released"
+msgstr "Viesti julkaistiin"
 
 #: baruwa/templates/messages/autorelease.html:31
 msgid "Failed"
-msgstr "Failed"
+msgstr "Epäonnistui"
 
 #: baruwa/templates/messages/autorelease.html:31
 msgid "Message not released"
-msgstr "Message not released"
+msgstr "Viestiä ei julkaistu"
 
 #: baruwa/templates/messages/autorelease.html:39
 #, python-format
 msgid "Message with Message-ID: %s released from quarantine to: %s"
-msgstr "Message with Message-ID: %s released from quarantine to: %s"
+msgstr "Viesti Message-ID: %s vapauttaa karanteenista: %s"
 
 #: baruwa/templates/messages/detail.html:4
 msgid "Add sender to list"
-msgstr "Add sender to list"
+msgstr "Lisää lähettäjä luetteloon"
 
 #: baruwa/templates/messages/detail.html:6
 #: baruwa/templates/status/detail.html:6
 msgid "Preview message"
-msgstr "Preview message"
+msgstr "Näytä viesti"
 
 #: baruwa/templates/messages/detail.html:7
 #: baruwa/templates/messages/preview.html:4
 msgid "Release message"
-msgstr "Release message"
+msgstr "Julkaisu viesti"
 
 #: baruwa/templates/messages/detail.html:15
 #: baruwa/templates/status/detail.html:13
 msgid "Message Details"
-msgstr "Message Details"
+msgstr "Viestin tiedot"
 
 #: baruwa/templates/messages/detail.html:35
 #: baruwa/templates/status/detail.html:21
 msgid "Received on"
-msgstr "Received on"
+msgstr "Päivänä"
 
 #: baruwa/templates/messages/detail.html:39
 #: baruwa/templates/status/detail.html:45
 msgid "Received by"
-msgstr "Received by"
+msgstr "Saama"
 
 #: baruwa/templates/messages/detail.html:47
 msgid "Received via"
-msgstr "Received via"
+msgstr "Välityksellä"
 
 #: baruwa/templates/messages/detail.html:53
 msgid "Hide hosts"
-msgstr "Hide hosts"
+msgstr "Piilota isännät"
 
 #: baruwa/templates/messages/detail.html:53
 msgid "Show hosts"
-msgstr "Show hosts"
+msgstr "Juontajat"
 
 #: baruwa/templates/messages/detail.html:58
 #: baruwa/templates/messages/functions.html:156
@@ -4214,71 +4255,71 @@ msgstr "Show hosts"
 #: baruwa/templates/messages/searchresults.html:24
 #: baruwa/templates/status/detail.html:49
 msgid "Size"
-msgstr "Size"
+msgstr "Kokoa"
 
 #: baruwa/templates/messages/detail.html:62
 msgid "Message Headers"
-msgstr "Message Headers"
+msgstr "Viestien ylätunnisteet"
 
 #: baruwa/templates/messages/detail.html:68
 msgid "Hide headers"
-msgstr "Hide headers"
+msgstr "Piilota otsikot"
 
 #: baruwa/templates/messages/detail.html:68
 msgid "Show headers"
-msgstr "Show headers"
+msgstr "Näytä otsikot"
 
 #: baruwa/templates/messages/detail.html:73
 msgid "Quarantined"
-msgstr "Quarantined"
+msgstr "Karanteenissa olevat"
 
 #: baruwa/templates/messages/detail.html:81
 msgid "Prohibited File"
-msgstr "Prohibited File"
+msgstr "Kielletyt tiedosto"
 
 #: baruwa/templates/messages/detail.html:85
 msgid "Other infection"
-msgstr "Other infection"
+msgstr "Muut infektio"
 
 #: baruwa/templates/messages/detail.html:91
 msgid "Spam checks results"
-msgstr "Spam checks results"
+msgstr "Roskapostin tarkastusten tulokset"
 
 #: baruwa/templates/messages/detail.html:95
 msgid "Results"
-msgstr "Results"
+msgstr "Tulokset"
 
 #: baruwa/templates/messages/detail.html:98
 msgid "Message Score"
-msgstr "Message Score"
+msgstr "Viestin pisteet"
 
 #: baruwa/templates/messages/detail.html:102
 msgid "Identified as Spam"
-msgstr "Identified as Spam"
+msgstr "Roskapostiksi"
 
 #: baruwa/templates/messages/detail.html:106
 msgid "Definite Spam"
-msgstr "Definite Spam"
+msgstr "Selvä Spam"
 
 #: baruwa/templates/messages/detail.html:110
 msgid "Sender in RBL"
-msgstr "Sender in RBL"
+msgstr "Lähettäjä RBL"
 
 #: baruwa/templates/messages/detail.html:118
 msgid "Approved Sender"
-msgstr "Approved Sender"
+msgstr "Hyväksytyn lähettäjän"
 
 #: baruwa/templates/messages/detail.html:122
 msgid "Blocked Sender"
-msgstr "Blocked Sender"
+msgstr "Estettyihin Sender"
 
 #: baruwa/templates/messages/detail.html:126
 msgid "Bayesian Auto Learned"
-msgstr "Bayesian Auto Learned"
+msgstr "Bayes-Auto oppinut"
 
 #: baruwa/templates/messages/detail.html:131
 msgid "Rules matched"
-msgstr "Rules matched"
+msgstr "Säännöt hyväksytty"
 
 #: baruwa/templates/messages/detail.html:133
 #: baruwa/templates/messages/functions.html:117
@@ -4289,51 +4330,51 @@ msgstr "Rules matched"
 #: baruwa/templates/messages/searchresults.html:25
 #: baruwa/templates/reports/barreport.html:29
 msgid "Score"
-msgstr "Score"
+msgstr "Pisteet"
 
 #: baruwa/templates/messages/detail.html:134
 msgid "Rule name"
-msgstr "Rule name"
+msgstr "Säännön nimi"
 
 #: baruwa/templates/messages/detail.html:135
 msgid "Rule description"
-msgstr "Rule description"
+msgstr "Säännön kuvaus"
 
 #: baruwa/templates/messages/detail.html:171
 msgid "Delivery information"
-msgstr "Delivery information"
+msgstr "Toimitustiedot"
 
 #: baruwa/templates/messages/detail.html:177
 msgid "Message"
-msgstr "Message"
+msgstr "Viesti"
 
 #: baruwa/templates/messages/detail.html:184
 msgid "Message is quarantined"
-msgstr "Message is quarantined"
+msgstr "Viestin karanteeniin"
 
 #: baruwa/templates/messages/detail.html:186
 msgid "No delivery status information available"
-msgstr "No delivery status information available"
+msgstr "Toimituksen tilan tietoa ei ole käytettävissä"
 
 #: baruwa/templates/messages/detail.html:193
 msgid "Ok"
-msgstr "Ok"
+msgstr "Okei"
 
 #: baruwa/templates/messages/detail.html:193
 msgid "Fail"
-msgstr "Fail"
+msgstr "Epäonnistua"
 
 #: baruwa/templates/messages/detail.html:204
 #, python-format
 msgid "Showing message :: %(i)s"
-msgstr "Showing message :: %(i)s"
+msgstr "Näyttää sanoman:: %(i)s"
 
 #: baruwa/templates/messages/functions.html:76
 #: baruwa/templates/messages/index.html:32
 #: baruwa/templates/reports/index.html:45
 #: baruwa/templates/reports/index.html:51
 msgid "No messages found"
-msgstr "No messages found"
+msgstr "Löytyneiden viestien"
 
 #: baruwa/templates/messages/functions.html:96
 #: baruwa/templates/messages/functions.html:98
@@ -4342,7 +4383,7 @@ msgstr "No messages found"
 #: baruwa/templates/messages/index.html:21
 #: baruwa/templates/messages/searchresults.html:21
 msgid "From"
-msgstr "From"
+msgstr "Alkaen"
 
 #: baruwa/templates/messages/functions.html:103
 #: baruwa/templates/messages/functions.html:105
@@ -4351,17 +4392,17 @@ msgstr "From"
 #: baruwa/templates/messages/index.html:22
 #: baruwa/templates/messages/searchresults.html:22
 msgid "To"
-msgstr "To"
+msgstr "Jotta"
 
 #: baruwa/templates/messages/index.html:10
 msgid "items per page"
-msgstr "items per page"
+msgstr "kohteita sivulla"
 
 #: baruwa/templates/messages/index.html:96
 #: baruwa/templates/messages/index.html:100
 #, python-format
 msgid "Messages :: Showing the %s most recent messages"
-msgstr "Messages :: Showing the %s most recent messages"
+msgstr "Viestit:: Osoittaa %s viimeisimmät viestit"
 
 #: baruwa/templates/messages/listing.html:3
 #: baruwa/templates/messages/quarantine.html:5
@@ -4370,7 +4411,7 @@ msgstr "Messages :: Showing the %s most recent messages"
 #: baruwa/templates/reports/piereport.html:3
 #: baruwa/templates/reports/relays.html:3
 msgid "Apply Filters"
-msgstr "Apply Filters"
+msgstr "Suodattimien"
 
 #: baruwa/templates/messages/listing.html:34
 #: baruwa/templates/messages/listing.html:45
@@ -4378,77 +4419,80 @@ msgstr "Apply Filters"
 msgid ""
 "Messages :: Full message listing :: Showing page %(page)d of %(count)d "
 "pages."
-msgstr "Messages :: Full message listing :: Showing page %(page)d of %(count)d pages."
+msgstr ""
+"Viestit:: Täysi viestin listalle:: näyttäminen sivulla %(page)d sekä "
+"%(count)d sivut."
 
 #: baruwa/templates/messages/listing.html:36
 #: baruwa/templates/messages/listing.html:47
 msgid "Messages :: Full message listing"
-msgstr "Messages :: Full message listing"
+msgstr "Viestit:: Viestin listalle"
 
 #: baruwa/templates/messages/preview.html:5
 #: baruwa/templates/status/preview.html:6
 msgid "Return to message"
-msgstr "Return to message"
+msgstr "Palauttaa sanoman"
 
 #: baruwa/templates/messages/preview.html:13
 #: baruwa/templates/status/preview.html:14
 msgid "Message headers"
-msgstr "Message headers"
+msgstr "Viestien ylätunnisteet"
 
 #: baruwa/templates/messages/preview.html:24
 #: baruwa/templates/status/preview.html:25
 msgid "Attachments"
-msgstr "Attachments"
+msgstr "Liitteet"
 
 #: baruwa/templates/messages/preview.html:34
 #: baruwa/templates/status/preview.html:35
 msgid "Message content"
-msgstr "Message content"
+msgstr "Viestin sisältö"
 
 #: baruwa/templates/messages/preview.html:47
 #, python-format
 msgid "Message: %(msgid)s could not be previewed"
-msgstr "Message: %(msgid)s could not be previewed"
+msgstr "Viesti: %(msgid)s ei voi esikatsella"
 
 #: baruwa/templates/messages/preview.html:53
 #: baruwa/templates/messages/preview.html:57
 #, python-format
 msgid "Messages :: Previewing message : %(msgid)s"
-msgstr "Messages :: Previewing message : %(msgid)s"
+msgstr "Viestit:: Esikatselu viesti: %(msgid)s"
 
 #: baruwa/templates/messages/quarantine.html:4
 #: baruwa/templates/messages/taskstatus.html:5
 msgid "Not Spam"
-msgstr "Not Spam"
+msgstr "Ei roskapostia"
 
 #: baruwa/templates/messages/quarantine.html:27
 #: baruwa/templates/status/detail.html:69
 #: baruwa/templates/status/detail.html:75
 #: baruwa/templates/status/mailq.html:23
 msgid "Process"
-msgstr "Process"
+msgstr "Prosessi"
 
 #: baruwa/templates/messages/quarantine.html:57
 #: baruwa/templates/messages/quarantine.html:68
 #, python-format
 msgid "Messages :: Quarantine :: Showing page %(page)d of %(count)d pages."
-msgstr "Messages :: Quarantine :: Showing page %(page)d of %(count)d pages."
+msgstr ""
+"Viestit:: Karanteeniin:: näyttäminen sivulla %(page)d sekä %(count)d sivut."
 
 #: baruwa/templates/messages/quarantine.html:59
 #: baruwa/templates/messages/quarantine.html:70
 msgid "Messages :: Quarantine"
-msgstr "Messages :: Quarantine"
+msgstr "Viestit:: karanteeni"
 
 #: baruwa/templates/messages/searchresults.html:91
 #, python-format
 msgid "No messages found matching search query: %(q)s !"
-msgstr "No messages found matching search query: %(q)s !"
+msgstr "Ei ole löytänyt vastaavat hakulausekkeen: %(q)s!"
 
 #: baruwa/templates/messages/searchresults.html:157
 #: baruwa/templates/messages/searchresults.html:161
 #, python-format
 msgid "Messages :: Search results :: %(q)s"
-msgstr "Messages :: Search results :: %(q)s"
+msgstr "Viestit:: Hakutulokset:: %(q)s"
 
 #: baruwa/templates/messages/taskstatus.html:15
 msgid "Message-ID"
@@ -4456,53 +4500,55 @@ msgstr "Message-ID"
 
 #: baruwa/templates/messages/taskstatus.html:46
 msgid "The request is being processed. Current status: "
-msgstr "The request is being processed. Current status: "
+msgstr "Pyyntö käsitellään. Nykytilanne: "
 
 #: baruwa/templates/messages/taskstatus.html:67
 #: baruwa/templates/messages/taskstatus.html:70
 msgid "Messages :: Quarantine :: Bulk processing status"
-msgstr "Messages :: Quarantine :: Bulk processing status"
+msgstr "Viestit:: Karanteeniin:: Bulk käsittelytila"
 
 #: baruwa/templates/messages/includes/delete.html:2
 #, python-format
 msgid "The message id: %(id)s has been deleted from the quarantine"
-msgstr "The message id: %(id)s has been deleted from the quarantine"
+msgstr "Message-id: %(id)s on poistettu karanteeni"
 
 #: baruwa/templates/messages/includes/delete.html:4
 #, python-format
 msgid "The message id: %(id)s could not be deleted: %(error_msg)s"
-msgstr "The message id: %(id)s could not be deleted: %(error_msg)s"
+msgstr "Message-id: %(id)s ei onnistunut: %(error_msg)s"
 
 #: baruwa/templates/messages/includes/released.html:2
 #, python-format
 msgid "The message id: %(id)s has been released"
-msgstr "The message id: %(id)s has been released"
+msgstr "Message-id: %(id)s on julkaistu"
 
 #: baruwa/templates/messages/includes/released.html:4
 #, python-format
 msgid ""
 "The message id: %(id)s could not be released: %(error_msg)s, contact your "
 "email admin for assistance."
-msgstr "The message id: %(id)s could not be released: %(error_msg)s, contact your email admin for assistance."
+msgstr ""
+"Message-id: %(id)s ei voi vapauttaa: %(error_msg)s, sähköposti admin pyydä "
+"apua."
 
 #: baruwa/templates/messages/includes/salearn.html:2
 #, python-format
 msgid "The message id: %(id)s processed by the bayesian engine"
-msgstr "The message id: %(id)s processed by the bayesian engine"
+msgstr "Message-id: %(id)s käsitellään Bayes-moottori"
 
 #: baruwa/templates/messages/includes/salearn.html:4
 #, python-format
 msgid "The message id: %(id)s not learned: %(msg)s"
-msgstr "The message id: %(id)s not learned: %(msg)s"
+msgstr "Message-id: %(id)s ei oppinut: %(msg)s"
 
 #: baruwa/templates/organizations/add.html:3
 msgid "Add an organization"
-msgstr "Add an organization"
+msgstr "Lisää organisaation"
 
 #: baruwa/templates/organizations/add.html:18
 #: baruwa/templates/organizations/add.html:22
 msgid "Organizations :: Add an organization"
-msgstr "Organizations :: Add an organization"
+msgstr "Järjestöt:: Lisää organisaation"
 
 #: baruwa/templates/organizations/addrelay.html:3
 #: baruwa/templates/organizations/delete.html:3
@@ -4511,268 +4557,268 @@ msgstr "Organizations :: Add an organization"
 #: baruwa/templates/organizations/editrelay.html:3
 #: baruwa/templates/organizations/importdomains.html:3
 msgid "Organization details"
-msgstr "Organization details"
+msgstr "Organisaation tiedot"
 
 #: baruwa/templates/organizations/addrelay.html:9
 msgid "Add outbound settings"
-msgstr "Add outbound settings"
+msgstr "Lisää lähtevä asetukset"
 
 #: baruwa/templates/organizations/addrelay.html:17
 msgid "Add settings"
-msgstr "Add settings"
+msgstr "Lisää asetukset"
 
 #: baruwa/templates/organizations/addrelay.html:25
 #: baruwa/templates/organizations/addrelay.html:29
 #, python-format
 msgid "Organizations :: %(name)s :: Add outbound settings"
-msgstr "Organizations :: %(name)s :: Add outbound settings"
+msgstr "Järjestöt:: %(name)s :: Lisää lähtevä asetukset"
 
 #: baruwa/templates/organizations/delete.html:9
 #: baruwa/templates/organizations/delete.html:16
 msgid "Delete organization"
-msgstr "Delete organization"
+msgstr "Poista organisaatio"
 
 #: baruwa/templates/organizations/delete.html:24
 #: baruwa/templates/organizations/delete.html:28
 msgid "Settings :: Delete organization"
-msgstr "Settings :: Delete organization"
+msgstr "Asetukset:: Poistaa organisaation"
 
 #: baruwa/templates/organizations/deleterelay.html:9
 msgid "Delete outbound settings"
-msgstr "Delete outbound settings"
+msgstr "Lähtevä asetusten poistaminen"
 
 #: baruwa/templates/organizations/deleterelay.html:17
 msgid "Delete settings"
-msgstr "Delete settings"
+msgstr "Poista asetukset"
 
 #: baruwa/templates/organizations/deleterelay.html:25
 #: baruwa/templates/organizations/deleterelay.html:29
 #, python-format
 msgid "Organizations :: Delete outbound settings :: %(name)s"
-msgstr "Organizations :: Delete outbound settings :: %(name)s"
+msgstr "Järjestöt:: Poistaa lähtevän asetukset:: %(name)s"
 
 #: baruwa/templates/organizations/detail.html:3
 msgid "Export accounts"
-msgstr "Export accounts"
+msgstr "Viennin osuus"
 
 #: baruwa/templates/organizations/detail.html:4
 #: baruwa/templates/organizations/importdomains.html:9
 #: baruwa/templates/organizations/index.html:15
 msgid "Import domains"
-msgstr "Import domains"
+msgstr "Tuo verkkotunnukset"
 
 #: baruwa/templates/organizations/detail.html:5
 msgid "Add relay settings"
-msgstr "Add relay settings"
+msgstr "Lisää releen asetukset"
 
 #: baruwa/templates/organizations/detail.html:14
 msgid "Organization information"
-msgstr "Organization information"
+msgstr "Organisaatiotiedot"
 
 #: baruwa/templates/organizations/detail.html:27
 msgid "Number of Domains"
-msgstr "Number of Domains"
+msgstr "Useilla aloilla"
 
 #: baruwa/templates/organizations/detail.html:35
 msgid "List Domains"
-msgstr "List Domains"
+msgstr "Lista verkkotunnukset"
 
 #: baruwa/templates/organizations/detail.html:38
 msgid "Organization domains"
-msgstr "Organization domains"
+msgstr "Organisaation verkkotunnukset"
 
 #: baruwa/templates/organizations/detail.html:43
 msgid "Organization Admins"
-msgstr "Organization Admins"
+msgstr "Organisaation ylläpitäjät"
 
 #: baruwa/templates/organizations/detail.html:55
 msgid "Outbound relay settings"
-msgstr "Outbound relay settings"
+msgstr "Lähtevä releen asetukset"
 
 #: baruwa/templates/organizations/detail.html:61
 #, python-format
 msgid "Relay Host: %(name)s"
-msgstr "Relay Host: %(name)s"
+msgstr "Rele isäntä: %(name)s"
 
 #: baruwa/templates/organizations/detail.html:63
 #, python-format
 msgid "SMTP-AUTH: %(name)s"
-msgstr "SMTP-AUTH: %(name)s"
+msgstr "SMTP-TODENNUS: %(name)s"
 
 #: baruwa/templates/organizations/detail.html:79
 msgid "No outbound relay settings configured"
-msgstr "No outbound relay settings configured"
+msgstr "Ei ole määritetty lähtevä välitysasetuksia"
 
 #: baruwa/templates/organizations/detail.html:85
 #: baruwa/templates/organizations/detail.html:89
 msgid "Organizations :: "
-msgstr "Organizations :: "
+msgstr "Järjestöt:: "
 
 #: baruwa/templates/organizations/edit.html:9
 msgid "Edit organization"
-msgstr "Edit organization"
+msgstr "Muokkaa organisaation"
 
 #: baruwa/templates/organizations/edit.html:16
 msgid "Update organization"
-msgstr "Update organization"
+msgstr "Päivitä organisaation"
 
 #: baruwa/templates/organizations/edit.html:24
 #: baruwa/templates/organizations/edit.html:28
 msgid "Organizations :: Edit organization"
-msgstr "Organizations :: Edit organization"
+msgstr "Järjestöt:: Muokkaa organisaation"
 
 #: baruwa/templates/organizations/editrelay.html:9
 msgid "Edit outbound settings"
-msgstr "Edit outbound settings"
+msgstr "Muokkaa lähtevää asetukset"
 
 #: baruwa/templates/organizations/editrelay.html:17
 msgid "Update settings"
-msgstr "Update settings"
+msgstr "Päivitä asetukset"
 
 #: baruwa/templates/organizations/editrelay.html:25
 #: baruwa/templates/organizations/editrelay.html:29
 #, python-format
 msgid "Organizations :: Edit outbound settings :: %(name)s"
-msgstr "Organizations :: Edit outbound settings :: %(name)s"
+msgstr "Järjestöt:: Muokkaa lähtevää asetukset:: %(name)s"
 
 #: baruwa/templates/organizations/importdomains.html:23
 #: baruwa/templates/organizations/importdomains.html:27
 #, python-format
 msgid "Organizations :: %(org)s :: Import domains"
-msgstr "Organizations :: %(org)s :: Import domains"
+msgstr "Järjestöt:: %(org)s :: Tuoda verkkotunnukset"
 
 #: baruwa/templates/organizations/importstatus.html:59
 #: baruwa/templates/organizations/importstatus.html:62
 msgid "Organizations :: Domain import status"
-msgstr "Organizations :: Domain import status"
+msgstr "Järjestöt:: Toimialueelle tuomisen tila"
 
 #: baruwa/templates/organizations/index.html:12
 #: baruwa/templates/organizations/index.html:27
 msgid "List domains"
-msgstr "List domains"
+msgstr "Lista verkkotunnukset"
 
 #: baruwa/templates/organizations/index.html:14
 msgid "Add domain"
-msgstr "Add domain"
+msgstr "Lisää toimialueen"
 
 #: baruwa/templates/organizations/index.html:22
 msgid "No organizations found"
-msgstr "No organizations found"
+msgstr "Ei löydy järjestöt"
 
 #: baruwa/templates/organizations/index.html:29
 msgid "Add domains"
-msgstr "Add domains"
+msgstr "Lisää verkkotunnuksia"
 
 #: baruwa/templates/organizations/index.html:30
 msgid "import domains"
-msgstr "import domains"
+msgstr "tuo verkkotunnukset"
 
 #: baruwa/templates/organizations/index.html:101
 #: baruwa/templates/organizations/index.html:106
 #, python-format
 msgid "Organizations :: Showing page %(page)d of %(count)d pages."
-msgstr "Organizations :: Showing page %(page)d of %(count)d pages."
+msgstr "Järjestöt:: Sivu näkyvissä %(page)d sekä %(count)d sivut."
 
 #: baruwa/templates/organizations/index.html:108
 msgid "Organizations ::"
-msgstr "Organizations ::"
+msgstr "Järjestöt::"
 
 #: baruwa/templates/reports/barreport.html:4
 #: baruwa/templates/reports/listing.html:4
 #: baruwa/templates/reports/piereport.html:4
 #: baruwa/templates/reports/relays.html:4
 msgid "Download PDF"
-msgstr "Download PDF"
+msgstr "Lataa PDF"
 
 #: baruwa/templates/reports/barreport.html:5
 #: baruwa/templates/reports/listing.html:5
 #: baruwa/templates/reports/piereport.html:5
 #: baruwa/templates/reports/relays.html:5
 msgid "Download CSV"
-msgstr "Download CSV"
+msgstr "Lataa CSV"
 
 #: baruwa/templates/reports/barreport.html:22
 msgid "Enable javascript to view graphs"
-msgstr "Enable javascript to view graphs"
+msgstr "JavaScript nähdäksesi kaaviot"
 
 #: baruwa/templates/reports/barreport.html:48
 msgid "No items returned"
-msgstr "No items returned"
+msgstr "Palautettavien kohteiden"
 
 #: baruwa/templates/reports/barreport.html:61
 msgid "Download"
-msgstr "Download"
+msgstr "Imuroi"
 
 #: baruwa/templates/reports/barreport.html:64
 #: baruwa/templates/reports/barreport.html:65
 #: baruwa/templates/reports/piereport.html:58
 #: baruwa/templates/reports/piereport.html:59
 msgid "Reports :: "
-msgstr "Reports :: "
+msgstr "Raportit:: "
 
 #: baruwa/templates/reports/form.html:3
 msgid "Add Filter"
-msgstr "Add Filter"
+msgstr "Lisää suodatin"
 
 #: baruwa/templates/reports/form.html:19
 msgid "Add filter"
-msgstr "Add filter"
+msgstr "Lisää suodatin"
 
 #: baruwa/templates/reports/form.html:36
 msgid "Filters have been applied"
-msgstr "Filters have been applied"
+msgstr "Suodattimet on sovellettu"
 
 #: baruwa/templates/reports/index.html:17
 msgid "Spam Score Distribution"
-msgstr "Spam Score Distribution"
+msgstr "Spam pisteet jakelu"
 
 #: baruwa/templates/reports/index.html:18
 msgid "Top Mail hosts"
-msgstr "Top Mail hosts"
+msgstr "Alkuun Mail isännät"
 
 #: baruwa/templates/reports/index.html:35
 msgid "Statistics"
-msgstr "Statistics"
+msgstr "Tilastot"
 
 #: baruwa/templates/reports/index.html:39
 msgid "Message count"
-msgstr "Message count"
+msgstr "Viestien määrä"
 
 #: baruwa/templates/reports/index.html:43
 msgid "Oldest message"
-msgstr "Oldest message"
+msgstr "Vanhin viesti"
 
 #: baruwa/templates/reports/index.html:49
 msgid "Newest message"
-msgstr "Newest message"
+msgstr "Uusin viesti"
 
 #: baruwa/templates/reports/index.html:57
 msgid "Active Filter(s)"
-msgstr "Active Filter(s)"
+msgstr "Aktiivinen suodattimet"
 
 #: baruwa/templates/reports/index.html:79
 msgid "No active filters at the moment"
-msgstr "No active filters at the moment"
+msgstr "Tällä hetkellä suodattimia ei ole aktiivinen"
 
 #: baruwa/templates/reports/index.html:86
 msgid "Saved Filter(s)"
-msgstr "Saved Filter(s)"
+msgstr "Tallennetun suodattimet"
 
 #: baruwa/templates/reports/index.html:108
 msgid "No saved filters at the moment"
-msgstr "No saved filters at the moment"
+msgstr "Tällä hetkellä suodattimia ei ole tallennettu"
 
 #: baruwa/templates/reports/listing.html:24
 msgid "Enable Javascript to view graphs"
-msgstr "Enable Javascript to view graphs"
+msgstr "JavaScript nähdäksesi kaaviot"
 
 #: baruwa/templates/reports/listing.html:41
 msgid "Mail"
-msgstr "Mail"
+msgstr "Posti"
 
 #: baruwa/templates/reports/listing.html:44
 msgid "Virii"
-msgstr "Virii"
+msgstr "Elinvoimainen"
 
 #: baruwa/templates/reports/listing.html:47
 msgid "Virii %"
@@ -4784,36 +4830,36 @@ msgstr "Spam %"
 
 #: baruwa/templates/reports/listing.html:87
 msgid "No records found"
-msgstr "No records found"
+msgstr "Yhtään tietuetta ei löytynyt"
 
 #: baruwa/templates/reports/relays.html:25
 msgid "IP address"
-msgstr "IP address"
+msgstr "IP-osoite"
 
 #: baruwa/templates/reports/relays.html:27
 msgid "Country"
-msgstr "Country"
+msgstr "Maan"
 
 #: baruwa/templates/reports/relays.html:28
 msgid "Total"
-msgstr "Total"
+msgstr "Yhteensä"
 
 #: baruwa/templates/reports/relays.html:62
 #: baruwa/templates/reports/relays.html:63
 #, python-format
 msgid "Reports :: %(t)s"
-msgstr "Reports :: %(t)s"
+msgstr "Raportit:: %(t)s"
 
 #: baruwa/templates/settings/account_addsig.html:11
 #: baruwa/templates/settings/domain_addsig.html:12
 msgid "Add email signature"
-msgstr "Add email signature"
+msgstr "Lisää sähköpostin allekirjoitus"
 
 #: baruwa/templates/settings/account_addsig.html:34
 #: baruwa/templates/settings/domain_addsig.html:35
 #: baruwa/templates/settings/domain_sigs.html:7
 msgid "Add signature"
-msgstr "Add signature"
+msgstr "Lisää allekirjoitus"
 
 #: baruwa/templates/settings/account_addsig.html:42
 #: baruwa/templates/settings/account_addsig.html:46
@@ -4821,54 +4867,54 @@ msgstr "Add signature"
 #: baruwa/templates/settings/domain_addsig.html:47
 #, python-format
 msgid "Settings :: Add email signatures :: %s"
-msgstr "Settings :: Add email signatures :: %s"
+msgstr "Asetukset:: Lisää sähköpostin allekirjoitus: %s"
 
 #: baruwa/templates/settings/account_deletesig.html:11
 #: baruwa/templates/settings/domain_deletesig.html:12
 msgid "Delete email signature"
-msgstr "Delete email signature"
+msgstr "Poistaa sähköpostin allekirjoitus"
 
 #: baruwa/templates/settings/account_deletesig.html:29
 #: baruwa/templates/settings/domain_deletesig.html:30
 msgid "Delete signature"
-msgstr "Delete signature"
+msgstr "Poista allekirjoitus"
 
 #: baruwa/templates/settings/account_deletesig.html:37
 #: baruwa/templates/settings/account_deletesig.html:41
 #: baruwa/templates/settings/domain_deletesig.html:38
 #: baruwa/templates/settings/domain_deletesig.html:42
 msgid "Settings :: Delete email signatures"
-msgstr "Settings :: Delete email signatures"
+msgstr "Asetukset:: Deletoida email allekirjoitus"
 
 #: baruwa/templates/settings/account_editsig.html:11
 #: baruwa/templates/settings/domain_editsig.html:12
 msgid "Edit email signature"
-msgstr "Edit email signature"
+msgstr "Muokkaa sähköpostin allekirjoitus"
 
 #: baruwa/templates/settings/account_editsig.html:29
 #: baruwa/templates/settings/domain_editsig.html:30
 msgid "Update signature"
-msgstr "Update signature"
+msgstr "Update allekirjoitus"
 
 #: baruwa/templates/settings/account_editsig.html:37
 #: baruwa/templates/settings/account_editsig.html:41
 #: baruwa/templates/settings/domain_editsig.html:38
 #: baruwa/templates/settings/domain_editsig.html:42
 msgid "Settings :: Edit email signatures"
-msgstr "Settings :: Edit email signatures"
+msgstr "Asetukset:: Muokkaa sähköpostiallekirjoitukset"
 
 #: baruwa/templates/settings/addserver.html:3
 msgid "Add a scanning Node"
-msgstr "Add a scanning Node"
+msgstr "Lisää skannaus solmu"
 
 #: baruwa/templates/settings/addserver.html:11
 msgid "Add Node"
-msgstr "Add Node"
+msgstr "Lisää solmun"
 
 #: baruwa/templates/settings/addserver.html:18
 #: baruwa/templates/settings/addserver.html:22
 msgid "Settings :: Add a scanning Node"
-msgstr "Settings :: Add a scanning Node"
+msgstr "Asetukset:: Lisää skannaus solmu"
 
 #: baruwa/templates/settings/deleteserver.html:3
 #: baruwa/templates/settings/deleteserver.html:33
@@ -4877,99 +4923,99 @@ msgstr "Settings :: Add a scanning Node"
 #: baruwa/templates/status/bayes.html:3 baruwa/templates/status/mailq.html:6
 #: baruwa/templates/status/salint.html:3
 msgid "Node details"
-msgstr "Node details"
+msgstr "Solmun tiedot"
 
 #: baruwa/templates/settings/deleteserver.html:9
 msgid "Delete scanning Node"
-msgstr "Delete scanning Node"
+msgstr "Poista solmu skannaus"
 
 #: baruwa/templates/settings/deleteserver.html:16
 msgid "Delete Node"
-msgstr "Delete Node"
+msgstr "Poista solmu"
 
 #: baruwa/templates/settings/deleteserver.html:24
 #: baruwa/templates/settings/deleteserver.html:28
 msgid "Settings :: Delete scanning Node"
-msgstr "Settings :: Delete scanning Node"
+msgstr "Asetukset:: Poistaa skannaus solmu"
 
 #: baruwa/templates/settings/domain_dkim.html:7
 msgid "Regenerate DKIM keys"
-msgstr "Regenerate DKIM keys"
+msgstr "Uudistua DKIM-avaimet"
 
 #: baruwa/templates/settings/domain_dkim.html:8
 msgid "Enable/Disable DKIM signing"
-msgstr "Enable/Disable DKIM signing"
+msgstr "Päälle/pois DKIM-allekirjoituksen"
 
 #: baruwa/templates/settings/domain_dkim.html:16
 msgid "Domain DKIM settings"
-msgstr "Domain DKIM settings"
+msgstr "DKIM Toimialueasetukset"
 
 #: baruwa/templates/settings/domain_dkim.html:27
 #: baruwa/templates/settings/domain_dkim.html:38
 #, python-format
 msgid "Add the following DNS record to the %s DNS zone"
-msgstr "Add the following DNS record to the %s DNS zone"
+msgstr "DNS-tietueen lisääminen %s DNS-vyöhyke"
 
 #: baruwa/templates/settings/domain_dkim.html:30
 #: baruwa/templates/settings/domain_dkim.html:41
 msgid "DNS record"
-msgstr "DNS record"
+msgstr "DNS-tietue"
 
 #: baruwa/templates/settings/domain_dkim.html:49
 msgid "DKIM status"
-msgstr "DKIM status"
+msgstr "DKIM-tila"
 
 #: baruwa/templates/settings/domain_dkim.html:54
 msgid "DKIM keys not yet configured:  "
-msgstr "DKIM keys not yet configured:  "
+msgstr "DKIM avaimia ei ole vielä määritetty:  "
 
 #: baruwa/templates/settings/domain_dkim.html:54
 msgid "Generate DKIM keys"
-msgstr "Generate DKIM keys"
+msgstr "Luo DKIM-avaimet"
 
 #: baruwa/templates/settings/domain_dkim.html:61
 #: baruwa/templates/settings/domain_dkim.html:65
 #, python-format
 msgid "Settings :: Domain DKIM settings :: %s"
-msgstr "Settings :: Domain DKIM settings :: %s"
+msgstr "Asetukset:: Toimialueelle DKIM asetukset:: %s"
 
 #: baruwa/templates/settings/domain_dkim_enable.html:4
 msgid "Domain DKIM"
-msgstr "Domain DKIM"
+msgstr "Toimialueen DKIM"
 
 #: baruwa/templates/settings/domain_dkim_enable.html:13
 msgid "Enable DKIM signing"
-msgstr "Enable DKIM signing"
+msgstr "Ota DKIM-allekirjoituksen"
 
 #: baruwa/templates/settings/domain_dkim_enable.html:28
 #: baruwa/templates/settings/domain_dkim_enable.html:32
 #, python-format
 msgid "Settings :: Enable DKIM signing :: %s"
-msgstr "Settings :: Enable DKIM signing :: %s"
+msgstr "Asetukset:: Ota DKIM-allekirjoituksen:: %s"
 
 #: baruwa/templates/settings/domain_settings.html:11
 msgid "Domain settings"
-msgstr "Domain settings"
+msgstr "Toimialueasetukset"
 
 #: baruwa/templates/settings/domain_settings.html:16
 msgid "Signatures"
-msgstr "Signatures"
+msgstr "Allekirjoitukset"
 
 #: baruwa/templates/settings/domain_settings.html:17
 msgid "Rulesets"
-msgstr "Rulesets"
+msgstr "Sääntölista"
 
 #: baruwa/templates/settings/domain_settings.html:24
 msgid "Add delivery server"
-msgstr "Add delivery server"
+msgstr "Lisää toimitus-palvelin"
 
 #: baruwa/templates/settings/domain_settings.html:25
 msgid "Add authentication settings"
-msgstr "Add authentication settings"
+msgstr "Lisää todennusasetukset"
 
 #: baruwa/templates/settings/domain_settings.html:26
 msgid "Add Alias Domain"
-msgstr "Add Alias Domain"
+msgstr "Lisää verkkotunnuksen Alias"
 
 #: baruwa/templates/settings/domain_settings.html:27
 msgid "DKIM"
@@ -4979,297 +5025,298 @@ msgstr "DKIM"
 #: baruwa/templates/settings/domain_settings.html:39
 #, python-format
 msgid "Settings :: Domain settings :: %s"
-msgstr "Settings :: Domain settings :: %s"
+msgstr "Asetukset:: Toimialueelle asetukset:: %s"
 
 #: baruwa/templates/settings/domain_sigs.html:15
 msgid "Domain email signatures"
-msgstr "Domain email signatures"
+msgstr "Toimialueen sähköpostiallekirjoitukset"
 
 #: baruwa/templates/settings/domain_sigs.html:38
 msgid "No domain signatures configured"
-msgstr "No domain signatures configured"
+msgstr "Ei ala allekirjoitus määritetty"
 
 #: baruwa/templates/settings/domain_sigs.html:45
 #: baruwa/templates/settings/domain_sigs.html:49
 #, python-format
 msgid "Settings :: Domain email signatures :: %s"
-msgstr "Settings :: Domain email signatures :: %s"
+msgstr "Asetukset:: Toimialueelle sähköpostiallekirjoitukset: %s"
 
 #: baruwa/templates/settings/editserver.html:9
 msgid "Edit scanning Node"
-msgstr "Edit scanning Node"
+msgstr "Muokkaa solmun skannaus"
 
 #: baruwa/templates/settings/editserver.html:18
 msgid "Update Node"
-msgstr "Update Node"
+msgstr "Päivitä Node"
 
 #: baruwa/templates/settings/editserver.html:25
 #: baruwa/templates/settings/editserver.html:29
 msgid "Settings :: Edit scanning Node"
-msgstr "Settings :: Edit scanning Node"
+msgstr "Asetukset:: Muokkaa skannaus solmu"
 
 #: baruwa/templates/settings/index.html:3
 msgid "List Search"
-msgstr "List Search"
+msgstr "List Etsi"
 
 #: baruwa/templates/settings/index.html:23
 msgid "No scanning hosts found"
-msgstr "No scanning hosts found"
+msgstr "Ei löydy skannaus isännät"
 
 #: baruwa/templates/settings/index.html:100
 #: baruwa/templates/settings/index.html:104
 #, python-format
 msgid "Settings :: Nodes :: Showing page %(page)d of %(count)d pages."
-msgstr "Settings :: Nodes :: Showing page %(page)d of %(count)d pages."
+msgstr ""
+"Asetukset:: Solmut:: näyttäminen sivulla %(page)d sekä %(count)d sivut."
 
 #: baruwa/templates/settings/index.html:100
 #: baruwa/templates/settings/index.html:104
 msgid "Settings :: Nodes"
-msgstr "Settings :: Nodes"
+msgstr "Asetukset:: solmut"
 
 #: baruwa/templates/settings/scanner.html:3
 msgid "Configuration Settings"
-msgstr "Configuration Settings"
+msgstr "Kokoonpanoasetukset"
 
 #: baruwa/templates/settings/scanner.html:28
 #: baruwa/templates/settings/scanner.html:32
 #, python-format
 msgid "Settings :: scanning server :: %(name)s"
-msgstr "Settings :: scanning server :: %(name)s"
+msgstr "Asetukset:: kartoittava palvelin:: %(name)s"
 
 #: baruwa/templates/settings/section.html:4
 msgid "General"
-msgstr "General"
+msgstr "Yleiset"
 
 #: baruwa/templates/settings/section.html:5
 msgid "Message Processing"
-msgstr "Message Processing"
+msgstr "Viestin käsittely"
 
 #: baruwa/templates/settings/section.html:6
 msgid "Virus checks"
-msgstr "Virus checks"
+msgstr "Virustarkastus"
 
 #: baruwa/templates/settings/section.html:7
 msgid "Content checks"
-msgstr "Content checks"
+msgstr "Sisällön tarkastukset"
 
 #: baruwa/templates/settings/section.html:8
 msgid "Reporting"
-msgstr "Reporting"
+msgstr "Raportointi"
 
 #: baruwa/templates/settings/section.html:9
 msgid "Notice"
-msgstr "Notice"
+msgstr "Ilmoitus"
 
 #: baruwa/templates/settings/section.html:10
 msgid "Spam checks"
-msgstr "Spam checks"
+msgstr "Spam tarkastukset"
 
 #: baruwa/templates/settings/section.html:11
 msgid "Logging"
-msgstr "Logging"
+msgstr "Kirjaaminen"
 
 #: baruwa/templates/settings/section.html:37
 #: baruwa/templates/settings/section.html:41
 #, python-format
 msgid "Settings :: MailScanner :: %(section)s :: %(name)s"
-msgstr "Settings :: MailScanner :: %(section)s :: %(name)s"
+msgstr "Asetukset:: MailScanner:: %(section)s :: %(name)s"
 
 #: baruwa/templates/status/audit.html:4 baruwa/templates/status/audit.html:7
 msgid "Export to CSV"
-msgstr "Export to CSV"
+msgstr "Vieminen CSV"
 
 #: baruwa/templates/status/audit.html:5 baruwa/templates/status/audit.html:8
 msgid "Export to PDF"
-msgstr "Export to PDF"
+msgstr "Vieminen PDF"
 
 #: baruwa/templates/status/audit.html:31
 msgid "Category"
-msgstr "Category"
+msgstr "Luokka"
 
 #: baruwa/templates/status/audit.html:37
 msgid "No audit logs found"
-msgstr "No audit logs found"
+msgstr "Ei löydy valvontalokeja"
 
 #: baruwa/templates/status/audit.html:64 baruwa/templates/status/audit.html:71
 msgid "Status :: Audit log "
-msgstr "Status :: Audit log "
+msgstr "Tilan:: Valvontaloki "
 
 #: baruwa/templates/status/auditexportstatus.html:3
 msgid "Audit log Export Status"
-msgstr "Audit log Export Status"
+msgstr "Valvontalokin vieminen tila"
 
 #: baruwa/templates/status/auditexportstatus.html:11
 msgid "Download the file"
-msgstr "Download the file"
+msgstr "Lataa tiedosto"
 
 #: baruwa/templates/status/auditexportstatus.html:13
 #, python-format
 msgid "The Audit log export failed: %s"
-msgstr "The Audit log export failed: %s"
+msgstr "Audit log vienti epäonnistui: %s"
 
 #: baruwa/templates/status/auditexportstatus.html:18
 msgid "The Audit log export is being processed."
-msgstr "The Audit log export is being processed."
+msgstr "Audit log vienti valmisteltavana."
 
 #: baruwa/templates/status/auditexportstatus.html:31
 #: baruwa/templates/status/auditexportstatus.html:34
 msgid "Status :: Audit log :: export status"
-msgstr "Status :: Audit log :: export status"
+msgstr "Tilan:: Valvontalokin:: viedä tila"
 
 #: baruwa/templates/status/bayes.html:10
 msgid "Bayes Database Information"
-msgstr "Bayes Database Information"
+msgstr "Bayes-tietokantatiedot"
 
 #: baruwa/templates/status/bayes.html:14
 msgid "Bayes Version"
-msgstr "Bayes Version"
+msgstr "Bayes-versio"
 
 #: baruwa/templates/status/bayes.html:18
 msgid "Number of Spam messages"
-msgstr "Number of Spam messages"
+msgstr "Spam-viestien määrä"
 
 #: baruwa/templates/status/bayes.html:22
 msgid "Number of Ham messages"
-msgstr "Number of Ham messages"
+msgstr "Kinkku-viestien määrä"
 
 #: baruwa/templates/status/bayes.html:26
 msgid "Number of Tokens"
-msgstr "Number of Tokens"
+msgstr "Määrä rahakkeet"
 
 #: baruwa/templates/status/bayes.html:30
 msgid "Newest Token"
-msgstr "Newest Token"
+msgstr "Uusin tunnus"
 
 #: baruwa/templates/status/bayes.html:34
 msgid "Oldest Token"
-msgstr "Oldest Token"
+msgstr "Vanhin merkki"
 
 #: baruwa/templates/status/bayes.html:38
 msgid "Last Journal Sync"
-msgstr "Last Journal Sync"
+msgstr "Viime lehdessä Sync"
 
 #: baruwa/templates/status/bayes.html:42
 msgid "Last Expiry"
-msgstr "Last Expiry"
+msgstr "Viimeinen voimassaolon"
 
 #: baruwa/templates/status/bayes.html:46
 msgid "Last Expiry Reduction Count"
-msgstr "Last Expiry Reduction Count"
+msgstr "Voimassaolon vähentäminen talousarviossamme"
 
 #: baruwa/templates/status/bayes.html:52
 msgid "Bayes information could not be collected."
-msgstr "Bayes information could not be collected."
+msgstr "Bayes tietoja ei kerätä."
 
 #: baruwa/templates/status/bayes.html:59 baruwa/templates/status/bayes.html:63
 #, python-format
 msgid "Status :: Bayes info :: %(server)s"
-msgstr "Status :: Bayes info :: %(server)s"
+msgstr ":: Bayes tietonäkymä:: %(server)s"
 
 #: baruwa/templates/status/detail.html:4 baruwa/templates/status/index.html:7
 #: baruwa/templates/status/mailq.html:3 baruwa/templates/status/preview.html:4
 #: baruwa/templates/status/serverstatus.html:8
 msgid "Inbound Queue"
-msgstr "Inbound Queue"
+msgstr "Saapuvien jono"
 
 #: baruwa/templates/status/detail.html:5 baruwa/templates/status/index.html:8
 #: baruwa/templates/status/mailq.html:4 baruwa/templates/status/preview.html:5
 #: baruwa/templates/status/serverstatus.html:9
 msgid "Outbound Queue"
-msgstr "Outbound Queue"
+msgstr "Lähtevän jonon"
 
 #: baruwa/templates/status/detail.html:37
 msgid "From domain"
-msgstr "From domain"
+msgstr "Toimialueen"
 
 #: baruwa/templates/status/detail.html:41
 msgid "To domain"
-msgstr "To domain"
+msgstr "Toimialueelle"
 
 #: baruwa/templates/status/detail.html:53
 msgid "Number of delivery attempts"
-msgstr "Number of delivery attempts"
+msgstr "Määrä toimitusyritystä"
 
 #: baruwa/templates/status/detail.html:57
 msgid "Last delivery attempt at"
-msgstr "Last delivery attempt at"
+msgstr "Viimeinen toimitus yritys"
 
 #: baruwa/templates/status/detail.html:61
 msgid "Reason for queuing"
-msgstr "Reason for queuing"
+msgstr "Syynä queuing"
 
 #: baruwa/templates/status/detail.html:65
 msgid "Process message"
-msgstr "Process message"
+msgstr "Prosessi viesti"
 
 #: baruwa/templates/status/detail.html:85
 #, python-format
 msgid "Showing Mail queue message :: %(i)s"
-msgstr "Showing Mail queue message :: %(i)s"
+msgstr "Näyttää jonon sähköpostiviestin:: %(i)s"
 
 #: baruwa/templates/status/index.html:15
 #: baruwa/templates/status/serverstatus.html:17
 msgid "Todays stats"
-msgstr "Todays stats"
+msgstr "Nykypäivän tilastot"
 
 #: baruwa/templates/status/index.html:20
 #: baruwa/templates/status/serverstatus.html:22
 msgid "Processed"
-msgstr "Processed"
+msgstr "Käsitellään"
 
 #: baruwa/templates/status/index.html:50
 #: baruwa/templates/status/serverstatus.html:52
 msgid "Inbound queues"
-msgstr "Inbound queues"
+msgstr "Saapuvien jonojen"
 
 #: baruwa/templates/status/index.html:55
 #: baruwa/templates/status/serverstatus.html:57
 msgid "Outbound queues"
-msgstr "Outbound queues"
+msgstr "Lähtevät jonot"
 
 #: baruwa/templates/status/index.html:63
 msgid "Graph"
-msgstr "Graph"
+msgstr "Kuvaaja"
 
 #: baruwa/templates/status/index.html:68
 #: baruwa/templates/status/serverstatus.html:154
 msgid "Not enough data available to generate graph."
-msgstr "Not enough data available to generate graph."
+msgstr "Ei ole riittävästi tietoa saatavilla luoda kaavion."
 
 #: baruwa/templates/status/index.html:74
 msgid "Scanner node status"
-msgstr "Scanner node status"
+msgstr "Skanneri solmun tila"
 
 #: baruwa/templates/status/index.html:78
 msgid "No active scanning nodes found"
-msgstr "No active scanning nodes found"
+msgstr "Ei aktiivinen skannaus solmuja löytyy"
 
 #: baruwa/templates/status/index.html:90 baruwa/templates/status/index.html:94
 msgid "Status :: Global status"
-msgstr "Status :: Global status"
+msgstr "Tilan:: Maailmanlaajuisen aseman"
 
 #: baruwa/templates/status/mailq.html:142
 #: baruwa/templates/status/mailq.html:146
 #, python-format
 msgid "Status :: Mail queue :: %(queue)s :: %(s)s"
-msgstr "Status :: Mail queue :: %(queue)s :: %(s)s"
+msgstr "Tilan:: Postin jonossa:: %(queue)s :: %(s)s"
 
 #: baruwa/templates/status/mailq.html:142
 #: baruwa/templates/status/mailq.html:146
 #, python-format
 msgid "Status :: Mail queue :: %(queue)s"
-msgstr "Status :: Mail queue :: %(queue)s"
+msgstr "Tilan:: Postin jonossa:: %(queue)s"
 
 #: baruwa/templates/status/preview.html:48
 #, python-format
 msgid "Queued Message: %(msgid)s could not be previewed"
-msgstr "Queued Message: %(msgid)s could not be previewed"
+msgstr "Sanoman jonoon: %(msgid)s ei voi esikatsella"
 
 #: baruwa/templates/status/preview.html:54
 #: baruwa/templates/status/preview.html:58
 #, python-format
 msgid "Status :: Mail Queue :: Previewing Queued message : %(msgid)s"
-msgstr "Status :: Mail Queue :: Previewing Queued message : %(msgid)s"
+msgstr "Tilan:: Postin jonossa:: Esikatselu jonossa viesti: %(msgid)s"
 
 #: baruwa/templates/status/salint.html:10
 msgid "Spamassassin Lint"
@@ -5277,35 +5324,35 @@ msgstr "Spamassassin Lint"
 
 #: baruwa/templates/status/salint.html:21
 msgid "Backend did not return response, try again later"
-msgstr "Backend did not return response, try again later"
+msgstr "Backend ei palauttanut vastausta, yritä myöhemmin uudelleen"
 
 #: baruwa/templates/status/salint.html:28
 #: baruwa/templates/status/salint.html:32
 #, python-format
 msgid "Status :: Spamassassin lint :: %(server)s"
-msgstr "Status :: Spamassassin lint :: %(server)s"
+msgstr "Tila: Spamassassin nukkaa:: %(server)s"
 
 #: baruwa/templates/status/salint.html:36
 msgid "Server status"
-msgstr "Server status"
+msgstr "Palvelimen tila"
 
 #: baruwa/templates/status/salint.html:37
 #: baruwa/templates/status/serverstatus.html:6
 msgid "Bayes info"
-msgstr "Bayes info"
+msgstr "Bayes-info"
 
 #: baruwa/templates/status/salint.html:38
 #: baruwa/templates/status/serverstatus.html:10
 msgid "Graphs"
-msgstr "Graphs"
+msgstr "Kaaviot"
 
 #: baruwa/templates/status/serverstatus.html:7
 msgid "Spamassassin lint"
-msgstr "Spamassassin lint"
+msgstr "Spamassassin nukkaa"
 
 #: baruwa/templates/status/serverstatus.html:63
 msgid "Hardware status"
-msgstr "Hardware status"
+msgstr "Laitteiston tila"
 
 #: baruwa/templates/status/serverstatus.html:66
 msgid "CPU"
@@ -5313,80 +5360,80 @@ msgstr "CPU"
 
 #: baruwa/templates/status/serverstatus.html:73
 msgid "Error reading CPU status"
-msgstr "Error reading CPU status"
+msgstr "Virhe luettaessa CPU tila"
 
 #: baruwa/templates/status/serverstatus.html:78
 msgid "Memory"
-msgstr "Memory"
+msgstr "Muisti"
 
 #: baruwa/templates/status/serverstatus.html:86
 #: baruwa/templates/status/serverstatus.html:109
 #, python-format
 msgid "Total: %s"
-msgstr "Total: %s"
+msgstr "Koko: %s"
 
 #: baruwa/templates/status/serverstatus.html:87
 #: baruwa/templates/status/serverstatus.html:110
 #, python-format
 msgid "Used: %s"
-msgstr "Used: %s"
+msgstr "Käyttää: %s"
 
 #: baruwa/templates/status/serverstatus.html:88
 #: baruwa/templates/status/serverstatus.html:111
 #, python-format
 msgid "Free: %s"
-msgstr "Free: %s"
+msgstr "Ilmainen: %s"
 
 #: baruwa/templates/status/serverstatus.html:92
 msgid "Error reading memory status."
-msgstr "Error reading memory status."
+msgstr "Virhe luettaessa muistin tila."
 
 #: baruwa/templates/status/serverstatus.html:96
 msgid "Hard disks"
-msgstr "Hard disks"
+msgstr "Kiintolevyt"
 
 #: baruwa/templates/status/serverstatus.html:116
 msgid "Error reading disk information"
-msgstr "Error reading disk information"
+msgstr "Virhe luettaessa tietoja levystΣ"
 
 #: baruwa/templates/status/serverstatus.html:120
 msgid "Network"
-msgstr "Network"
+msgstr "Verkko"
 
 #: baruwa/templates/status/serverstatus.html:124
 msgid "Nic"
-msgstr "Nic"
+msgstr "Mitään"
 
 #: baruwa/templates/status/serverstatus.html:125
 msgid "Sent"
-msgstr "Sent"
+msgstr "Lähetti"
 
 #: baruwa/templates/status/serverstatus.html:126
 msgid "Received"
-msgstr "Received"
+msgstr "Sai"
 
 #: baruwa/templates/status/serverstatus.html:140
 msgid "Error reading network interface information"
-msgstr "Error reading network interface information"
+msgstr "Virhe luettaessa verkon liittymätiedot"
 
 #: baruwa/templates/status/serverstatus.html:147
 msgid "Mail Graph"
-msgstr "Mail Graph"
+msgstr "Postin kuvaaja"
 
 #: baruwa/templates/status/serverstatus.html:159
 msgid "System Status"
-msgstr "System Status"
+msgstr "Järjestelmän tila"
 
 #: baruwa/templates/status/serverstatus.html:163
 msgid "Scanners"
-msgstr "Scanners"
+msgstr "Skannerit"
 
 #: baruwa/templates/status/serverstatus.html:166
 #, python-format
 msgid "%(s)d process"
 msgid_plural "%(s)d processes"
-msgstr[0] "%(s)d process"
-msgstr[1] "%(s)d processes"
+msgstr[0] "%(s)d prosessi"
+msgstr[1] "%(s)d prosessien"
 
 #: baruwa/templates/status/serverstatus.html:170
 msgid "MTA"
@@ -5396,8 +5443,8 @@ msgstr "MTA"
 #, python-format
 msgid "%(mta)d process"
 msgid_plural "%(mta)d processes"
-msgstr[0] "%(mta)d process"
-msgstr[1] "%(mta)d processes"
+msgstr[0] "%(mta)d prosessi"
+msgstr[1] "%(mta)d prosessien"
 
 #: baruwa/templates/status/serverstatus.html:177
 msgid "Anti-Virus"
@@ -5407,23 +5454,23 @@ msgstr "Anti-Virus"
 #, python-format
 msgid "%(a)d process"
 msgid_plural "%(a)d processes"
-msgstr[0] "%(a)d process"
-msgstr[1] "%(a)d processes"
+msgstr[0] "%(a)d prosessi"
+msgstr[1] "%(a)d prosessien"
 
 #: baruwa/templates/status/serverstatus.html:184
 msgid "CPU Load (1 / 5 / 15 mins)"
-msgstr "CPU Load (1 / 5 / 15 mins)"
+msgstr "Suorittimen kuormituksen (1 / 5 / 15 min)"
 
 #: baruwa/templates/status/serverstatus.html:191
 msgid "System Uptime"
-msgstr "System Uptime"
+msgstr "Käyttövarmuuden"
 
 #: baruwa/templates/status/serverstatus.html:195
 msgid "System Time"
-msgstr "System Time"
+msgstr "Järjestelmäaika"
 
 #: baruwa/templates/status/serverstatus.html:205
 #: baruwa/templates/status/serverstatus.html:209
 #, python-format
 msgid "Status :: Node status :: %(server)s"
-msgstr "Status :: Node status :: %(server)s"
+msgstr "Tilan:: Solmun tilan:: %(server)s"
