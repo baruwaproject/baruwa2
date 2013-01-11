@@ -1,3 +1,5 @@
+.. _search_tips:
+
 =============================
 Baruwa Search Tips and Tricks
 =============================

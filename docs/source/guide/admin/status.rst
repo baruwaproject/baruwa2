@@ -64,3 +64,28 @@ Mail Queues
 Details on how to carry our the above actions can be found in the user
 guide's :ref:`managing_mailq` section.
 
+Audit logs
+==========
+
+Audit logs are provided for the interactions that users have with the
+system. The following information is recorded.
+
+* Date and Time
+* Username
+* Interaction information
+* Baruwa Node hostname or IP address
+* Users IP address
+* Category
+
+Interactions are classified under the following categories
+
+* Read
+* Create
+* Auth
+* Update
+
+The Audit logs can be exported in both PDF and CSV formats for offline
+usage.
+
+The Audit logs are searchable, all full text search options are supported.
+Tips on searching are available on the :ref:`search_tips` page.
