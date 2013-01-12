@@ -9,12 +9,14 @@ version 3 License. Development, issue tracking and support
 takes place on Github and the community mailing list.
 
 This version is available as a source download from the
-cheeseshop, crate.io and the topdog-software.com website.
+`cheeseshop <http://pypi.python.org/pypi/baruwa>`_ or
+`crate.io <https://crate.io/packages/baruwa/>`_ websites.
 The community edition always provides the bleeding edge
 features and is updated regularly.
 
 Professional services such as Support, Consulting and Custom
-Enhancements are available from the author and a range of
+Enhancements are available from the
+`Developer <http://www.topdog.za.net>`_ and a range of
 companies.
 
 .. _saas_edition:
