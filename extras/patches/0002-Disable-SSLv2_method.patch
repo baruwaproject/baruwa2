@@ -1,0 +1,29 @@
+From 939cdded84d39a3bfef7cb85dd19a1dc3860e767 Mon Sep 17 00:00:00 2001
+From: Charles Plessy <plessy@debian.org>
+Date: Tue, 16 Aug 2011 07:54:38 +0900
+Subject: [PATCH] Disable SSLv2_method when disabled in OpenSSL iself (Closes:
+ #637904).
+
+Thanks, Sebastian Ramacher <s.ramacher@gmx.at>.
+---
+ SWIG/_ssl.i |    2 ++
+ 1 files changed, 2 insertions(+), 0 deletions(-)
+
+diff --git a/SWIG/_ssl.i b/SWIG/_ssl.i
+index 2373ff2..2844da7 100644
+--- a/SWIG/_ssl.i
++++ b/SWIG/_ssl.i
+@@ -48,8 +48,10 @@ extern const char *SSL_alert_desc_string(int);
+ %rename(ssl_get_alert_desc_v) SSL_alert_desc_string_long;
+ extern const char *SSL_alert_desc_string_long(int);
+ 
++#ifndef OPENSSL_NO_SSL2
+ %rename(sslv2_method) SSLv2_method;
+ extern SSL_METHOD *SSLv2_method(void);
++#endif
+ %rename(sslv3_method) SSLv3_method;
+ extern SSL_METHOD *SSLv3_method(void);
+ %rename(sslv23_method) SSLv23_method;
+-- 
+1.7.5.4
+
