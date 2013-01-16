@@ -588,7 +588,7 @@ from Debian, then install M2Crypto manually.
 The patch is included in the Baruwa patches directory, download, apply,
 build and install::
 
-	curl -O https://raw.github.com/akissa/baruwa2/2.0.0/extras/patches/0002-Disable-SSLv2_method.patch
+	curl -O https://raw.github.com/akissa/baruwa2/master/extras/patches/0002-Disable-SSLv2_method.patch
 	curl -O http://pypi.python.org/packages/source/M/M2Crypto/M2Crypto-0.21.1.tar.gz
 	tar xzvf M2Crypto-0.21.1.tar.gz
 	cd M2Crypto-0.21.1/
