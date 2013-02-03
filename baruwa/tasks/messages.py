@@ -104,7 +104,7 @@ def process_message(job, logger):
                 result['errors'].append((action, str(exception)))
                 logger.info("Message: %(msgid)s %(task)s failed with "
                             "error: %(error)s", dict(msgid=job['message_id'],
-                            task=task, error=str(exception)))
+                            task=task.id, error=str(exception)))
         return result
     # finally:
     #     Session.close()
