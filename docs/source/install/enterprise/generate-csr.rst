@@ -41,7 +41,8 @@ Generate the Certificate Signing Request (CSR)
 ----------------------------------------------
 
 Use the private key you created above to generate the CSR make sure you
-enter the correct values to the prompts especially the ``Common Name``
+enter the correct values to the prompts especially the ``Common Name``.
+The ``Common Name`` MUST be set to the ``FQDN hostname`` of the server.
 
 For GnuTLS please choose yes for ``Will the certificate be used for encryption (RSA ciphersuites)? (y/N):``
 and ``Is this a TLS web client certificate? (y/N):``
