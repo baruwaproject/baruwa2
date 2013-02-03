@@ -40,6 +40,7 @@ The certificate needs to be installed to ``/etc/pki/baruwa-enterprise/client.pem
 Install the private key that you created in :ref:`enterprise_pk` and used to
 :ref:`enterprise_csr` to ``/etc/pki/baruwa-enterprise/client.key``
 
+Proceed to :ref:`auto_install_step2`
 
 Step 1b: Installation requirements for Debian/Ubuntu
 ----------------------------------------------------
@@ -76,3 +77,5 @@ to change ``host.example.com`` to your actual hostname::
 	host.example.com
 	EOF
 	hostname host.example.com
+
+Proceed to :ref:`auto_install_step2`

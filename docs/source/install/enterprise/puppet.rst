@@ -8,6 +8,8 @@ Automated Enterprise Edition installation
 
 .. include:: requirements.rst
 
+.. _auto_install_step2:
+
 Step 2: Installation
 --------------------
 
