@@ -5,8 +5,9 @@
 # Translators:
 # <andrew@topdog.za.net>, 2012.
 #   <andrew@topdog.za.net>, 2012.
+# Anis Jendoubi <anis.jendoubi@gmail.com>, 2013.
 # <simon@dedisoft.com>, 2012.
-#   <simon@dedisoft.com>, 2012.
+#   <simon@dedisoft.com>, 2012-2013.
 # <thepolux@gmail.com>, 2012.
 #   <thepolux@gmail.com>, 2012.
 msgid ""
@@ -14,8 +15,8 @@ msgstr ""
 "Project-Id-Version: baruwa\n"
 "Report-Msgid-Bugs-To: andrew@topdog.za.net\n"
 "POT-Creation-Date: 2013-01-09 12:14+0200\n"
-"PO-Revision-Date: 2013-01-09 10:50+0000\n"
-"Last-Translator: datopdog <andrew@topdog.za.net>\n"
+"PO-Revision-Date: 2013-02-05 14:27+0000\n"
+"Last-Translator: ajendoubi <anis.jendoubi@gmail.com>\n"
 "Language-Team: French (http://www.transifex.com/projects/p/baruwa/language/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -121,7 +122,7 @@ msgstr "Totaux"
 
 #: baruwa/commands/pdfreport.py:141 baruwa/controllers/reports.py:223
 msgid "Baruwa mail report"
-msgstr "Rapport mail moi"
+msgstr "Rapport mail"
 
 #: baruwa/commands/pdfreport.py:175 baruwa/controllers/reports.py:235
 #: baruwa/templates/reports/index.html:29
@@ -130,28 +131,28 @@ msgstr "Message totaux"
 
 #: baruwa/commands/pdfreport.py:182 baruwa/commands/quarantinereport.py:150
 msgid "Baruwa Reports"
-msgstr "Rapports ayachi"
+msgstr "Rapports"
 
 #: baruwa/commands/pdfreport.py:185
 msgid "Baruwa usage report"
-msgstr "Rapport d'utilisation ayachi"
+msgstr "Rapport d'utilisation"
 
 #: baruwa/commands/quarantinereport.py:153
 msgid "Baruwa quarantine report"
-msgstr "Rapport de quarantaine ayachi"
+msgstr "Rapport de quarantaine"
 
 #: baruwa/controllers/accounts.py:103
 msgid "You have been banned after several failed logins"
-msgstr "Vous avez été banni après que plusieurs ratées"
+msgstr "Vous avez été banni après plusieurs ratées"
 
 #: baruwa/controllers/accounts.py:157
 msgid "First time Login from external auth, your local account was created"
-msgstr "Première fois connexion d'authentification externe, votre compte local a été créé"
+msgstr "Première connexion d'authentification externe, votre compte local a été créé"
 
 #: baruwa/controllers/accounts.py:273
 #, python-format
 msgid "Login successful, Welcome back %(username)s !"
-msgstr "Connexion réussie, Bienvenue arrière  %(username)s  !"
+msgstr "Connexion réussie, Bienvenue %(username)s  !"
 
 #: baruwa/controllers/accounts.py:329 baruwa/controllers/accounts.py:366
 #: baruwa/controllers/invite.py:66 baruwa/controllers/invite.py:162
@@ -186,11 +187,11 @@ msgstr "Le jeton utilisé n'est pas valide ou n'existe pas"
 #: baruwa/controllers/accounts.py:392 baruwa/controllers/accounts.py:425
 #, python-format
 msgid "The account password for %(name)s has been reset"
-msgstr "Le passe de mot pour %(name)s a été remis à zéro"
+msgstr "Le mot de passe pour %(name)s a été réinitialisé"
 
 #: baruwa/controllers/accounts.py:400
 msgid "Admin accounts can not be modified via the web"
-msgstr ""
+msgstr "Les comptes Administrateur ne peuvent pas être modifiés depuis l'interface Web"
 
 #: baruwa/controllers/accounts.py:402 baruwa/controllers/accounts.py:432
 msgid "This is an external account, use external system to reset the password"
@@ -198,7 +199,7 @@ msgstr "Il s'agit d'un compte externe, utiliser le système externe pour réinit
 
 #: baruwa/controllers/accounts.py:438
 msgid "The old password supplied does not match our records"
-msgstr "L'ancien mot de passe fourni ne correspond pas à nos dossiers"
+msgstr "L'ancien mot de passe fourni ne correspond pas à nos registres"
 
 #: baruwa/controllers/accounts.py:614
 #, python-format
@@ -216,7 +217,7 @@ msgstr "Le compte a été mis à jour"
 #: baruwa/controllers/accounts.py:660
 #, python-format
 msgid "The account: %(acc)s could not be updated"
-msgstr "Le compte: %(acc)s pourrait mettre à jour"
+msgstr "Le compte: %(acc)s ne pouvait pas être mis à jour"
 
 #: baruwa/controllers/accounts.py:666
 msgid "No changes made to the account"

@@ -3,13 +3,14 @@
 # This file is distributed under the same license as the PROJECT project.
 # 
 # Translators:
+# Eugene Shcherban <shcherban.ev@gmail.com>, 2013.
 #   <shcherban.ev@gmail.com>, 2012.
 msgid ""
 msgstr ""
 "Project-Id-Version: baruwa\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2012-11-14 14:04+0200\n"
-"PO-Revision-Date: 2012-11-15 22:50+0000\n"
+"PO-Revision-Date: 2013-02-05 21:13+0000\n"
 "Last-Translator: eugene82 <shcherban.ev@gmail.com>\n"
 "Language-Team: Russian (http://www.transifex.com/projects/p/baruwa/language/ru/)\n"
 "MIME-Version: 1.0\n"
@@ -28,11 +29,11 @@ msgstr ""
 #: baruwa/public/js/baruwa/settings.js:1
 #: baruwa/public/js/baruwa/status.audit.js:1
 msgid "Showing items {{first_item}} to {{last_item}} of {{item_count}}."
-msgstr "Отображение элементов от {{first_item}} до {{last_item}} из {{item_count}}."
+msgstr "Отображение элементов с {{first_item}} по {{last_item}} из {{item_count}}."
 
 #: baruwa/public/js/baruwa/accounts.js:1
 msgid "Accounts :: Showing page {{page}} of {{page_count}} pages."
-msgstr "Счета:: Показ страницы {{page}} из {{page_count}} страниц."
+msgstr "Учетные записи:: Показ страницы {{page}} из {{page_count}} страниц."
 
 #: baruwa/public/js/baruwa/accounts.js:1 baruwa/public/js/baruwa/domains.js:1
 #: baruwa/public/js/baruwa/lists.js:1
@@ -51,7 +52,7 @@ msgstr "Не найдено"
 
 #: baruwa/public/js/baruwa/accounts.js:1
 msgid "Accounts"
-msgstr "Счета"
+msgstr "Учетные записи"
 
 #: baruwa/public/js/baruwa/common.js:1
 msgid "AJAX Error:"
@@ -224,7 +225,7 @@ msgstr "Совпадений поисковому запросу не найде
 
 #: baruwa/public/js/baruwa/messages.search.js:1
 msgid "Showing items {{first}} to {{last}} of {{total}}."
-msgstr "Отображение элементов от {{first}} до {{last}} из {{total}}."
+msgstr "Отображение элементов с {{first}} по {{last}} из {{total}}."
 
 #: baruwa/public/js/baruwa/messages.search.js:1
 msgid "About {{total_found}} results ({{search_time}} seconds)"

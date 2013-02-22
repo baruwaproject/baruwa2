@@ -6,14 +6,15 @@
 # Adrien Pujol <adrien.pujol@crashdump.fr>, 2012.
 # <andrew@topdog.za.net>, 2012.
 #   <andrew@topdog.za.net>, 2012.
+# Anis Jendoubi <anis.jendoubi@gmail.com>, 2013.
 #   <thepolux@gmail.com>, 2012.
 msgid ""
 msgstr ""
 "Project-Id-Version: baruwa\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2012-11-14 14:04+0200\n"
-"PO-Revision-Date: 2012-11-30 13:35+0000\n"
-"Last-Translator: crashdumpfr <thepolux@gmail.com>\n"
+"PO-Revision-Date: 2013-02-05 14:35+0000\n"
+"Last-Translator: ajendoubi <anis.jendoubi@gmail.com>\n"
 "Language-Team: French (http://www.transifex.com/projects/p/baruwa/language/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -231,11 +232,11 @@ msgstr "Affichage des éléments de {{first}} à {{last}} sur {{total}}."
 
 #: baruwa/public/js/baruwa/messages.search.js:1
 msgid "About {{total_found}} results ({{search_time}} seconds)"
-msgstr "Environ {{total_found}} résultats trouvés (en {{search_time}} secondes)"
+msgstr "Environ {{total_found}} résultats trouvés ({{search_time}} secondes)"
 
 #: baruwa/public/js/baruwa/messages.search.js:1
 msgid "0 Results found ({{search_time}} seconds)"
-msgstr "0 Résultats trouvés (en {{search_time}} secondes)"
+msgstr "0 Résultats trouvés ({{search_time}} secondes)"
 
 #: baruwa/public/js/baruwa/messages.search.js:1
 msgid "Messages :: Search results :: {{q}}"

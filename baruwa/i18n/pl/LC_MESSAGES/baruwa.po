@@ -3,13 +3,14 @@
 # This file is distributed under the same license as the baruwa project.
 # 
 # Translators:
+# Anis Jendoubi <anis.jendoubi@gmail.com>, 2013.
 msgid ""
 msgstr ""
 "Project-Id-Version: baruwa\n"
 "Report-Msgid-Bugs-To: andrew@topdog.za.net\n"
 "POT-Creation-Date: 2013-01-09 12:14+0200\n"
-"PO-Revision-Date: 2013-01-09 11:07+0000\n"
-"Last-Translator: datopdog <andrew@topdog.za.net>\n"
+"PO-Revision-Date: 2013-02-05 13:55+0000\n"
+"Last-Translator: ajendoubi <anis.jendoubi@gmail.com>\n"
 "Language-Team: Polish (http://www.transifex.com/projects/p/baruwa/language/pl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -184,7 +185,7 @@ msgstr "Hasło dla konta %(name)s została zresetowana"
 
 #: baruwa/controllers/accounts.py:400
 msgid "Admin accounts can not be modified via the web"
-msgstr ""
+msgstr "Konta Administratorów nie mogą być modyfikowane przez strone"
 
 #: baruwa/controllers/accounts.py:402 baruwa/controllers/accounts.py:432
 msgid "This is an external account, use external system to reset the password"

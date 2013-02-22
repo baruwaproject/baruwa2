@@ -3,6 +3,7 @@
 # This file is distributed under the same license as the baruwa project.
 # 
 # Translators:
+# Eugene Shcherban <shcherban.ev@gmail.com>, 2013.
 # <shcherban.ev@gmail.com>, 2012.
 #   <shcherban.ev@gmail.com>, 2012.
 msgid ""
@@ -10,8 +11,8 @@ msgstr ""
 "Project-Id-Version: baruwa\n"
 "Report-Msgid-Bugs-To: andrew@topdog.za.net\n"
 "POT-Creation-Date: 2013-01-09 12:14+0200\n"
-"PO-Revision-Date: 2013-01-09 10:58+0000\n"
-"Last-Translator: datopdog <andrew@topdog.za.net>\n"
+"PO-Revision-Date: 2013-02-06 01:42+0000\n"
+"Last-Translator: eugene82 <shcherban.ev@gmail.com>\n"
 "Language-Team: Russian (http://www.transifex.com/projects/p/baruwa/language/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -43,7 +44,7 @@ msgstr "Лучшие домены отправителей по объему"
 #: baruwa/commands/pdfreport.py:123 baruwa/controllers/reports.py:70
 #: baruwa/templates/reports/index.html:23
 msgid "Top Recipients by Quantity"
-msgstr "Топ получатели по количеству"
+msgstr "Топ получателей по количеству"
 
 #: baruwa/commands/pdfreport.py:125 baruwa/controllers/reports.py:72
 #: baruwa/templates/reports/index.html:24
@@ -66,7 +67,7 @@ msgstr "Распределение спама"
 
 #: baruwa/commands/pdfreport.py:133 baruwa/controllers/reports.py:80
 msgid "Top mail hosts by quantity"
-msgstr "Топ почтовые узлы по количеству"
+msgstr "Топ почтовых узлов по количеству"
 
 #: baruwa/commands/pdfreport.py:135 baruwa/controllers/reports.py:82
 msgid "Total messages [ After SMTP ]"
@@ -97,7 +98,7 @@ msgstr "Дата"
 
 #: baruwa/commands/pdfreport.py:138 baruwa/controllers/reports.py:230
 msgid "Mail totals"
-msgstr "Почта итогов"
+msgstr "Почта итого"
 
 #: baruwa/commands/pdfreport.py:139 baruwa/controllers/reports.py:231
 msgid "Spam totals"
@@ -105,7 +106,7 @@ msgstr "Спам составляет"
 
 #: baruwa/commands/pdfreport.py:139 baruwa/controllers/reports.py:232
 msgid "Virus totals"
-msgstr "Вирус итогов"
+msgstr "Вирусов итого"
 
 #: baruwa/commands/pdfreport.py:140 baruwa/controllers/reports.py:233
 msgid "Mail volume"
@@ -117,7 +118,7 @@ msgstr "Итоги"
 
 #: baruwa/commands/pdfreport.py:141 baruwa/controllers/reports.py:223
 msgid "Baruwa mail report"
-msgstr "Барува почты отчет"
+msgstr "Барува отчет почты "
 
 #: baruwa/commands/pdfreport.py:175 baruwa/controllers/reports.py:235
 #: baruwa/templates/reports/index.html:29
@@ -134,20 +135,20 @@ msgstr "Отчет об использовании Барува"
 
 #: baruwa/commands/quarantinereport.py:153
 msgid "Baruwa quarantine report"
-msgstr "Барува карантина отчет"
+msgstr "Барува отчет карантина "
 
 #: baruwa/controllers/accounts.py:103
 msgid "You have been banned after several failed logins"
-msgstr "Вы были запрещены после нескольких неудачных входов"
+msgstr "Вы были забанены после нескольких неудачных попыток входа"
 
 #: baruwa/controllers/accounts.py:157
 msgid "First time Login from external auth, your local account was created"
-msgstr "Первый раз логин от внешних auth, локальная учетная запись была создана"
+msgstr "Вы в первый раз заходите из внешнего источника, локальная учетная запись была создана"
 
 #: baruwa/controllers/accounts.py:273
 #, python-format
 msgid "Login successful, Welcome back %(username)s !"
-msgstr "Логин успешным, Добро пожаловать обратно %(username)s!"
+msgstr "Логин успешен, Добро пожаловать %(username)s!"
 
 #: baruwa/controllers/accounts.py:329 baruwa/controllers/accounts.py:366
 #: baruwa/controllers/invite.py:66 baruwa/controllers/invite.py:162
@@ -182,41 +183,41 @@ msgstr "Токен, используемый недопустим или не с
 #: baruwa/controllers/accounts.py:392 baruwa/controllers/accounts.py:425
 #, python-format
 msgid "The account password for %(name)s has been reset"
-msgstr "Пароль учетной записи для %(name)s выполнен сброс"
+msgstr "Пароль учетной записи для %(name)s сброшен"
 
 #: baruwa/controllers/accounts.py:400
 msgid "Admin accounts can not be modified via the web"
-msgstr ""
+msgstr "Учетная запись системного администратора не может быть модифицирована через сеть "
 
 #: baruwa/controllers/accounts.py:402 baruwa/controllers/accounts.py:432
 msgid "This is an external account, use external system to reset the password"
-msgstr "Это внешняя учетная запись, используйте внешней системы для сброса пароля"
+msgstr "Это внешняя учетная запись, используйте внешние системы для сброса пароля"
 
 #: baruwa/controllers/accounts.py:438
 msgid "The old password supplied does not match our records"
-msgstr "Старый пароль не соответствует наши записи"
+msgstr "Пароль не соответствует нашим записям"
 
 #: baruwa/controllers/accounts.py:614
 #, python-format
 msgid "The account: %(user)s was created successfully"
-msgstr "Учетная запись: %(user)s был успешно создан"
+msgstr "Учетная запись: %(user)s была успешно создана"
 
 #: baruwa/controllers/accounts.py:620
 msgid "Either the username or email address already exist"
-msgstr "Либо имя пользователя или адрес электронной почты уже существует"
+msgstr "Или имя пользователя, или адрес электронной почты уже существует"
 
 #: baruwa/controllers/accounts.py:651
 msgid "The account has been updated"
-msgstr "Обновление учетной записи"
+msgstr "Учетная запись была обновлена"
 
 #: baruwa/controllers/accounts.py:660
 #, python-format
 msgid "The account: %(acc)s could not be updated"
-msgstr "Учетная запись: %(acc)s не может быть обновлен"
+msgstr "Учетная запись: %(acc)s не может быть обновлена"
 
 #: baruwa/controllers/accounts.py:666
 msgid "No changes made to the account"
-msgstr "Не изменения, внесенные на счет"
+msgstr "Никакие изменения не внесенны в учетную запись"
 
 #: baruwa/controllers/accounts.py:688
 msgid "The account has been deleted"
@@ -227,7 +228,7 @@ msgstr "Учетная запись удалена"
 msgid ""
 "The account: %(a)s and all associated data will be deleted, This action is "
 "not reversible."
-msgstr "Учетная запись: %(a)s и все связанные данные будут удалены, это действие не является обратимым."
+msgstr "Учетная запись: %(a)s и все связанные данные с ней данные будут удалены, это действие является необратимым."
 
 #: baruwa/controllers/accounts.py:754
 msgid "The accounts have been deleted"
@@ -237,7 +238,7 @@ msgstr "Учетные записи были удалены"
 msgid ""
 "The following accounts are about to be deleted, this action is not "
 "reversible, Do you wish to continue ?"
-msgstr "Следующие учетные записи должны быть удалены, это действие не является обратимым, вы хотите продолжить?"
+msgstr "Следующие учетные записи должны быть удалены, это действие  является необратимым, вы хотите продолжить?"
 
 #: baruwa/controllers/accounts.py:766 baruwa/controllers/domains.py:385
 msgid "An error occured try again"
@@ -260,11 +261,11 @@ msgstr "Домен: %(d)s Вам не принадлежит"
 
 #: baruwa/controllers/accounts.py:849
 msgid "The alias address has been updated"
-msgstr "Псевдоним адрес был обновлен"
+msgstr "Псевдоним адреса был обновлен"
 
 #: baruwa/controllers/accounts.py:851
 msgid "No changes were made to the address"
-msgstr "Не были внесены изменения по адресу"
+msgstr "Адрес не был изменен"
 
 #: baruwa/controllers/accounts.py:885
 msgid "The address has been deleted"
@@ -274,12 +275,12 @@ msgstr "Адрес был удален"
 msgid ""
 "File uploaded, and is being processed, this page will automatically refresh "
 "to show the status"
-msgstr "Файл загружен и обрабатывается, эта страница будет автоматически обновлять Показать статус"
+msgstr "Файл загружен и обрабатывается, эта страница будет автоматически обновляться, чтобы показать текущий статус"
 
 #: baruwa/controllers/accounts.py:962 baruwa/controllers/organizations.py:365
 #, python-format
 msgid "The file: %s is not a CSV file"
-msgstr "Файл: %s не является CSV-файл"
+msgstr "Файл: %s не является CSV-файлом"
 
 #: baruwa/controllers/accounts.py:965 baruwa/controllers/organizations.py:368
 #, python-format
@@ -288,14 +289,14 @@ msgstr "Файл: %s уже существует и обрабатывается
 
 #: baruwa/controllers/accounts.py:969 baruwa/controllers/organizations.py:372
 msgid "No CSV was file uploaded, try again"
-msgstr "Не CSV был файл загружен, попробуйте еще раз"
+msgstr "Не CSV файл был загружен, попробуйте еще раз"
 
 #: baruwa/controllers/accounts.py:979 baruwa/controllers/accounts.py:1035
 #: baruwa/controllers/domains.py:868 baruwa/controllers/messages.py:660
 #: baruwa/controllers/messages.py:662 baruwa/controllers/organizations.py:381
 #: baruwa/controllers/status.py:497
 msgid "The task status requested has expired or does not exist"
-msgstr "Состояние задачи с предложено истек или не существует"
+msgstr "Запрос на состояние задачи истек или задача не существует"
 
 #: baruwa/controllers/accounts.py:987 baruwa/controllers/accounts.py:1043
 #: baruwa/controllers/domains.py:876 baruwa/controllers/organizations.py:389
@@ -308,19 +309,19 @@ msgstr "Ошибка при обработке %s"
 #: baruwa/controllers/domains.py:879 baruwa/controllers/organizations.py:392
 #: baruwa/controllers/status.py:508
 msgid "Backend error occured during processing."
-msgstr "Бэкэнд произошла ошибка во время обработки."
+msgstr "На удаленной стороне произошла ошибка во время обработки."
 
 #: baruwa/controllers/accounts.py:1007 baruwa/controllers/organizations.py:412
 msgid "The import could not be processed, try again later"
-msgstr "Импорт не могут быть обработаны, повторите попытку позже"
+msgstr "Импорт не может быть обработан, повторите попытку позже"
 
 #: baruwa/controllers/accounts.py:1027
 msgid "Accounts export is being processed"
-msgstr "Обработано счетов экспорта"
+msgstr "Экспорт учетных записей произведен"
 
 #: baruwa/controllers/accounts.py:1062 baruwa/controllers/domains.py:889
 msgid "The export could not be processed, try again later"
-msgstr "Экспорт не может быть обработан, повторите попытку позже"
+msgstr "Экспорт не может быть произведен, повторите попытку позже"
 
 #: baruwa/controllers/domains.py:239
 #, python-format
@@ -348,28 +349,28 @@ msgstr "Не были внесены изменения в домен"
 
 #: baruwa/controllers/domains.py:322
 msgid "The domain has been deleted"
-msgstr "Удалить домен"
+msgstr "Домен был удален"
 
 #: baruwa/controllers/domains.py:325
 #, python-format
 msgid ""
 "The domain: %(name)s and all associated data will be deleted, This action "
 "cannot be reversed."
-msgstr "Домен: %(name)s и все связанные данные будут удалены, это действие не может быть реверсирован."
+msgstr "Домен: %(name)s и все связанные с ним данные будут удалены, это действие не может быть реверсировано."
 
 #: baruwa/controllers/domains.py:373
 msgid "The domains have been deleted"
-msgstr "Удаленные домены"
+msgstr "Домены были удалены"
 
 #: baruwa/controllers/domains.py:376
 msgid ""
 "The following domains are about to be deleted, this action is not "
 "reversible, Do you wish to continue ?"
-msgstr "Следующие домены должны быть удалены, это действие не является обратимым, вы хотите продолжить?"
+msgstr "Следующие домены должны быть удалены, это действие является не обратимым, вы хотите продолжить?"
 
 #: baruwa/controllers/domains.py:411
 msgid "The destination server has been created"
-msgstr "Создано на конечный сервер"
+msgstr "Сервер назначения был создан"
 
 #: baruwa/controllers/domains.py:417
 #, python-format
@@ -378,7 +379,7 @@ msgstr "Сервер назначения %(dest)s уже существует "
 
 #: baruwa/controllers/domains.py:442
 msgid "The destination server has been updated"
-msgstr "Обновление на конечный сервер"
+msgstr "Сервер назначения был обновлен"
 
 #: baruwa/controllers/domains.py:453 baruwa/controllers/domains.py:817
 msgid "The update failed"

@@ -6,15 +6,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: baruwa\n"
-"Report-Msgid-Bugs-To: baruwa@lists.baruwa.org\n"
+"Report-Msgid-Bugs-To: andrew@topdog.za.net\n"
 "POT-Creation-Date: 2013-01-09 12:14+0200\n"
-"PO-Revision-Date: 2013-01-10 18:36+0200\n"
-"Last-Translator: Andrew Colin Kissa <andrew@topdog.za.net>\n"
-"Language-Team: Baruwa Project\n"
+"PO-Revision-Date: 2013-01-11 06:24+0000\n"
+"Last-Translator: datopdog <andrew@topdog.za.net>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: auto-translate.py 0.0.1\n"
+"Generated-By: Babel 0.9.6\n"
 "Language: fi\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
@@ -140,8 +140,7 @@ msgstr "Sinulla on kielletty kun monet epäonnistuneet kirjautumiset"
 
 #: baruwa/controllers/accounts.py:157
 msgid "First time Login from external auth, your local account was created"
-msgstr ""
-"Ensimmäistä kertaa johdonmukaisuus ulkoisten auth paikallinen tili luotiin"
+msgstr "Ensimmäistä kertaa johdonmukaisuus ulkoisten auth paikallinen tili luotiin"
 
 #: baruwa/controllers/accounts.py:273
 #, python-format
@@ -172,9 +171,7 @@ msgstr "[Baruwa] Salasanan palauttaminen"
 msgid ""
 "The password has been reset, check your email for the temporary password you"
 " should use to login."
-msgstr ""
-"Salasana on nollattu, tarkista sähköpostistasi väliaikaisen salasanan, käytä"
-" login."
+msgstr "Salasana on nollattu, tarkista sähköpostistasi väliaikaisen salasanan, käytä login."
 
 #: baruwa/controllers/accounts.py:376
 msgid "The token used is invalid or does not exist"
@@ -228,9 +225,7 @@ msgstr "Tili on poistettu"
 msgid ""
 "The account: %(a)s and all associated data will be deleted, This action is "
 "not reversible."
-msgstr ""
-"Tili: %(a)s ja kaikki siihen liittyvät tiedot poistetaan, tämä toiminto ei "
-"ole palautuva."
+msgstr "Tili: %(a)s ja kaikki siihen liittyvät tiedot poistetaan, tämä toiminto ei ole palautuva."
 
 #: baruwa/controllers/accounts.py:754
 msgid "The accounts have been deleted"
@@ -240,9 +235,7 @@ msgstr "Tilit on poistettu"
 msgid ""
 "The following accounts are about to be deleted, this action is not "
 "reversible, Do you wish to continue ?"
-msgstr ""
-"Seuraaville tileille on poistettava tämä toiminto ei ole palautuva, Haluatko"
-" jatkaa?"
+msgstr "Seuraaville tileille on poistettava tämä toiminto ei ole palautuva, Haluatko jatkaa?"
 
 #: baruwa/controllers/accounts.py:766 baruwa/controllers/domains.py:385
 msgid "An error occured try again"
@@ -279,8 +272,7 @@ msgstr "Osoite on poistettu"
 msgid ""
 "File uploaded, and is being processed, this page will automatically refresh "
 "to show the status"
-msgstr ""
-"Tiedosto ladataan ja käsitellään, tämä sivu päivittyy automaattisesti tila"
+msgstr "Tiedosto ladataan ja käsitellään, tämä sivu päivittyy automaattisesti tila"
 
 #: baruwa/controllers/accounts.py:962 baruwa/controllers/organizations.py:365
 #, python-format
@@ -361,9 +353,7 @@ msgstr "Toimialue on poistettu"
 msgid ""
 "The domain: %(name)s and all associated data will be deleted, This action "
 "cannot be reversed."
-msgstr ""
-"Toimialue: %(name)s ja kaikki siihen liittyvät tiedot poistetaan, toimintoa "
-"ei voi kumota."
+msgstr "Toimialue: %(name)s ja kaikki siihen liittyvät tiedot poistetaan, toimintoa ei voi kumota."
 
 #: baruwa/controllers/domains.py:373
 msgid "The domains have been deleted"
@@ -373,9 +363,7 @@ msgstr "Verkkotunnuksia on poistettu"
 msgid ""
 "The following domains are about to be deleted, this action is not "
 "reversible, Do you wish to continue ?"
-msgstr ""
-"Seuraavia toimialueita poistettavaksi, tämä toiminto ei ole palautuva, "
-"Haluatko jatkaa?"
+msgstr "Seuraavia toimialueita poistettavaksi, tämä toiminto ei ole palautuva, Haluatko jatkaa?"
 
 #: baruwa/controllers/domains.py:411
 msgid "The destination server has been created"
@@ -454,9 +442,7 @@ msgstr "Todennusasetukset poistettu"
 msgid ""
 "The authentication server: %(s)s will be deleted, This action is not "
 "reversible"
-msgstr ""
-"Laillisuustarkistuspalvelimen: %(s)s on poistettu, tämä toiminto ei ole "
-"palautuva"
+msgstr "Laillisuustarkistuspalvelimen: %(s)s on poistettu, tämä toiminto ei ole palautuva"
 
 #: baruwa/controllers/domains.py:672
 msgid "The protocol supplied does not use extra settings"
@@ -467,9 +453,7 @@ msgstr "Myy-protokolla ei käytä Lisäasetukset"
 msgid ""
 "Please add an authentication server for the %(proto)s protocol Before "
 "attempting to configure the %(proto)s settings"
-msgstr ""
-"Lisätkää Laillisuustarkistuspalvelinta varten %(proto)s ennen kuin yrität "
-"määrittää protokollan %(proto)s asetukset"
+msgstr "Lisätkää Laillisuustarkistuspalvelinta varten %(proto)s ennen kuin yrität määrittää protokollan %(proto)s asetukset"
 
 #: baruwa/controllers/domains.py:716
 #, python-format
@@ -489,9 +473,7 @@ msgstr "Auth-asetukset on jo olemassa, muokkaa niitä päivityksen avulla"
 msgid ""
 "The Radius secret is not be displayed in the form, To update type the new "
 "secret in \"Radius secret\" below."
-msgstr ""
-"Salaisuus on säde ei näytetä lomake päivittää tyyppi uuden salaisuus "
-"\"Radius salaa\" alla."
+msgstr "Salaisuus on säde ei näytetä lomake päivittää tyyppi uuden salaisuus \"Radius salaa\" alla."
 
 #: baruwa/controllers/domains.py:775
 #, python-format
@@ -558,9 +540,7 @@ msgstr "[Baruwa] Tarkista sähköpostisi: % s"
 msgid ""
 "An email has been sent to the address provided, please follow the "
 "instructions in that email to proceed with your registration."
-msgstr ""
-"On l├ñhetetty osoitteeseen, seuraa ohjeita sähköposti sinun "
-"rekisteröitäväksi."
+msgstr "On l├ñhetetty osoitteeseen, seuraa ohjeita sähköposti sinun rekisteröitäväksi."
 
 #: baruwa/controllers/invite.py:89
 msgid "The access token supplied is invalid"
@@ -1334,9 +1314,7 @@ msgstr "Kirjoita kelvollinen sähköpostiosoite"
 #: baruwa/forms/lists.py:46
 msgid ""
 "Provide either a valid IP, email, Domain address, or IP network or range"
-msgstr ""
-"Antaa joko kelvollinen IP, sähköposti, toimialuenimen tai IP verkko- tai "
-"alue"
+msgstr "Antaa joko kelvollinen IP, sähköposti, toimialuenimen tai IP verkko- tai alue"
 
 #: baruwa/forms/lists.py:63
 #, python-format
@@ -3561,9 +3539,7 @@ msgstr "Unohtanut salasanan?"
 msgid ""
 "Forgotten your password? Enter your e-mail address below, and we'll e-mail "
 "instructions on setting a new one."
-msgstr ""
-"Salasana unohtunut? Kirjoita sähköpostiosoitteesi alla ja sähköpostitse "
-"ohjeita uuden."
+msgstr "Salasana unohtunut? Kirjoita sähköpostiosoitteesi alla ja sähköpostitse ohjeita uuden."
 
 #: baruwa/templates/accounts/login.html:76
 msgid "Cancel"
@@ -3938,9 +3914,7 @@ msgstr "Vastaavia löytynyt ei verkkotunnuksia: %s"
 msgid ""
 "Domains :: Search results :: %(q)s :: Showing page %(page)d of %(count)d "
 "pages."
-msgstr ""
-"Verkkotunnukset:: Hakutulokset:: %(q)s :: Näyttäminen sivulla %(page)d sekä "
-"%(count)d sivut."
+msgstr "Verkkotunnukset:: Hakutulokset:: %(q)s :: Näyttäminen sivulla %(page)d sekä %(count)d sivut."
 
 #: baruwa/templates/domains/searchresults.html:71
 #: baruwa/templates/domains/searchresults.html:75
@@ -3991,9 +3965,7 @@ msgstr "Virhe: %s"
 msgid ""
 "You do not have sufficient permissions to access this page. Please sign in "
 "using an account with sufficient permissions"
-msgstr ""
-"Sinulla ei ole riittäviä oikeuksia käyttää tätä sivua. Kirjaudu sisään "
-"käyttäen tiliä, jolla on tarvittavat oikeudet"
+msgstr "Sinulla ei ole riittäviä oikeuksia käyttää tätä sivua. Kirjaudu sisään käyttäen tiliä, jolla on tarvittavat oikeudet"
 
 #: baruwa/templates/general/error.html:30
 msgid ""
@@ -4024,11 +3996,7 @@ msgid ""
 " to point to the Baruwa hosted platform. Only proceed with registration if "
 "you intend on changing your MX records for mail to flow through the Baruwa "
 "hosted platform systems"
-msgstr ""
-"Huomaa: voit ei voi kirjautua, kunnes muutat MX-tietueet viittaavat isännöi "
-"Baruwa foorumi. Vain jatkaa rekisteröintiprosessia, jos aiotte muuttaa MX-"
-"tietueiden määritysohjeisiin postin läpi Baruwa isännöi platform "
-"järjestelmien"
+msgstr "Huomaa: voit ei voi kirjautua, kunnes muutat MX-tietueet viittaavat isännöi Baruwa foorumi. Vain jatkaa rekisteröintiprosessia, jos aiotte muuttaa MX-tietueiden määritysohjeisiin postin läpi Baruwa isännöi platform järjestelmien"
 
 #: baruwa/templates/invite/confirmemail.html:45
 #: baruwa/templates/invite/index.html:38
@@ -4051,24 +4019,19 @@ msgstr "Kiitos."
 msgid ""
 "Your registration has been processed. The systems are ready to process\n"
 "\t\t\t\t\tmessages for your domain. "
-msgstr ""
-"Rekisteröitymisesi käsitellään. Järjestelmät ovat valmiita käsittelemään "
-"toimialueesi. "
+msgstr "Rekisteröitymisesi käsitellään. Järjestelmät ovat valmiita käsittelemään toimialueesi. "
 
 #: baruwa/templates/invite/thankyou.html:29
 msgid ""
 "You will however NOT be able to login until you\n"
 "\t\t\t\t\tcomplete the change of your domain's MX records."
-msgstr ""
-"Voit kuitenkin ei voi kirjautua toimialueen MX-tietueet muuta on suoritettu."
+msgstr "Voit kuitenkin ei voi kirjautua toimialueen MX-tietueet muuta on suoritettu."
 
 #: baruwa/templates/invite/thankyou.html:31
 msgid ""
 "An email has been sent to the email address you used for registering\n"
 "\t\t\t\t\twith instructions on how to change your MX records"
-msgstr ""
-"Sähköposti on lähetetty sähköpostitse osoitteeseen käytit rekisteröintiin "
-"ohjeet MX-tietueiden muuttamista"
+msgstr "Sähköposti on lähetetty sähköpostitse osoitteeseen käytit rekisteröintiin ohjeet MX-tietueiden muuttamista"
 
 #: baruwa/templates/lists/add.html:4
 msgid "Add Sender to a list"
@@ -4127,9 +4090,7 @@ msgstr "Luettelonhallinta"
 #: baruwa/templates/lists/index.html:85
 #, python-format
 msgid "Lists :: Approved senders :: Showing page %(page)d of %(count)d pages."
-msgstr ""
-"Luettelot:: Hyväksytty lähettäjiltä:: näyttäminen sivulla %(page)d sekä "
-"%(count)d sivut."
+msgstr "Luettelot:: Hyväksytty lähettäjiltä:: näyttäminen sivulla %(page)d sekä %(count)d sivut."
 
 #: baruwa/templates/lists/index.html:87
 msgid "Lists :: Approved senders"
@@ -4138,9 +4099,7 @@ msgstr "Luettelot:: Hyväksytyt lähettäjät"
 #: baruwa/templates/lists/index.html:91
 #, python-format
 msgid "Lists :: Banned senders :: Showing page %(page)d of %(count)d pages."
-msgstr ""
-"Luettelot:: Kielletty lähettäjät:: näyttäminen sivulla %(page)d sekä "
-"%(count)d sivut."
+msgstr "Luettelot:: Kielletty lähettäjät:: näyttäminen sivulla %(page)d sekä %(count)d sivut."
 
 #: baruwa/templates/lists/index.html:93
 msgid "Lists :: Banned senders"
@@ -4161,8 +4120,7 @@ msgstr "Näytä käytetyt suodattimet"
 #: baruwa/templates/messages/archive.html:39
 #, python-format
 msgid "Messages :: Archive :: Showing page %(page)d of %(count)d pages."
-msgstr ""
-"Viestit:: Arkisto:: näyttäminen sivulla %(page)d sekä %(count)d sivut."
+msgstr "Viestit:: Arkisto:: näyttäminen sivulla %(page)d sekä %(count)d sivut."
 
 #: baruwa/templates/messages/archive.html:30
 #: baruwa/templates/messages/listing.html:39
@@ -4419,9 +4377,7 @@ msgstr "Suodattimien"
 msgid ""
 "Messages :: Full message listing :: Showing page %(page)d of %(count)d "
 "pages."
-msgstr ""
-"Viestit:: Täysi viestin listalle:: näyttäminen sivulla %(page)d sekä "
-"%(count)d sivut."
+msgstr "Viestit:: Täysi viestin listalle:: näyttäminen sivulla %(page)d sekä %(count)d sivut."
 
 #: baruwa/templates/messages/listing.html:36
 #: baruwa/templates/messages/listing.html:47
@@ -4475,8 +4431,7 @@ msgstr "Prosessi"
 #: baruwa/templates/messages/quarantine.html:68
 #, python-format
 msgid "Messages :: Quarantine :: Showing page %(page)d of %(count)d pages."
-msgstr ""
-"Viestit:: Karanteeniin:: näyttäminen sivulla %(page)d sekä %(count)d sivut."
+msgstr "Viestit:: Karanteeniin:: näyttäminen sivulla %(page)d sekä %(count)d sivut."
 
 #: baruwa/templates/messages/quarantine.html:59
 #: baruwa/templates/messages/quarantine.html:70
@@ -4527,9 +4482,7 @@ msgstr "Message-id: %(id)s on julkaistu"
 msgid ""
 "The message id: %(id)s could not be released: %(error_msg)s, contact your "
 "email admin for assistance."
-msgstr ""
-"Message-id: %(id)s ei voi vapauttaa: %(error_msg)s, sähköposti admin pyydä "
-"apua."
+msgstr "Message-id: %(id)s ei voi vapauttaa: %(error_msg)s, sähköposti admin pyydä apua."
 
 #: baruwa/templates/messages/includes/salearn.html:2
 #, python-format
@@ -5066,8 +5019,7 @@ msgstr "Ei löydy skannaus isännät"
 #: baruwa/templates/settings/index.html:104
 #, python-format
 msgid "Settings :: Nodes :: Showing page %(page)d of %(count)d pages."
-msgstr ""
-"Asetukset:: Solmut:: näyttäminen sivulla %(page)d sekä %(count)d sivut."
+msgstr "Asetukset:: Solmut:: näyttäminen sivulla %(page)d sekä %(count)d sivut."
 
 #: baruwa/templates/settings/index.html:100
 #: baruwa/templates/settings/index.html:104
