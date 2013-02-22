@@ -79,6 +79,15 @@ CREATE VIEW mtasettings AS
     maildomains.id=domainalias.domain_id AND domainalias.status='t' AND destinations.enabled='t'
     AND maildomains.status='t';
 
+--ldapmaps
+DROP VIEW IF EXISTS ldapmaps;
+CREATE VIEW ldapmaps AS
+    SELECT name, name as parent FROM maildomains WHERE status='t'
+	UNION
+    SELECT domainalias.name AS name, maildomains.name AS parent FROM domainalias, maildomains WHERE
+    domainalias.domain_id = maildomains.id AND maildomains.status='t'
+    AND domainalias.status='t';
+
 -- Spam Actions = spamactions.customize
 DROP VIEW IF EXISTS spamactions CASCADE;
 CREATE VIEW spamactions AS
