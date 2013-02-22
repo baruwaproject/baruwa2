@@ -193,10 +193,10 @@ def make_map(config):
                 '/delauth/{authid:\d+}',
                 action='delete_auth')
         submap.connect('domains-auth-settings',
-                '/authsettings/{domainid:\d+}{.format}',
+                '/authsettings/{domainid:\d+}{sid:\d+}{.format}',
                 action='auth_settings')
         submap.connect('domains-auth-settings-with-protocol',
-                '/authsettings/{proto:\d+}/{domainid:\d+}{.format}',
+                '/authsettings/{proto:\d+}/{domainid:\d+}/{sid:\d+}{.format}',
                 action='auth_settings')
         submap.connect('domains-rulesets',
                 '/rulesets/{domainid:\d+}',

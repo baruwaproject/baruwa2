@@ -654,7 +654,7 @@ class DomainsController(BaseController):
         return render('/domains/deleteauth.html')
 
     @ActionProtector(OwnsDomain())
-    def auth_settings(self, domainid, proto=5):
+    def auth_settings(self, domainid, sid, proto=5):
         "Authentication settings"
         domain = self._get_domain(domainid)
         if not domain:
@@ -666,6 +666,7 @@ class DomainsController(BaseController):
                         '7': 'oauth'}
             protocol = protocols[proto]
             server = Session.query(AuthServer)\
+                    .filter(AuthServer.id == sid)\
                     .filter(AuthServer.domain_id == domainid)\
                     .filter(AuthServer.protocol == proto).one()
         except KeyError:
@@ -736,6 +737,7 @@ class DomainsController(BaseController):
                     '"Radius secret" below.'))
         c.domain = domain
         c.proto = proto
+        c.sid = sid
         return render('/domains/authsettings.html')
 
     @ActionProtector(OwnsDomain())

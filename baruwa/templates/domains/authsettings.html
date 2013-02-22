@@ -8,7 +8,7 @@
 </div>
 <div class="clear"></div>
 <div id="content">
-${h.form(url('domains-auth-settings-with-protocol', domainid=c.domain.id, proto=c.proto), method='post')}
+${h.form(url('domains-auth-settings-with-protocol', domainid=c.domain.id, proto=c.proto, sid=c.sid), method='post')}
 <div class="grid_16">
     <h3 class="head">${_("Add Auth Settings")}</h3>
 </div>

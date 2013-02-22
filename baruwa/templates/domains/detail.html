@@ -234,7 +234,7 @@ protocols = dict(AUTH_PROTOCOLS) %>
 	</div>
 	<div class="grid_1 omega">
 		% if server.protocol in [4, 5, 6, 7]:
-		 ${h.link_to(h.portable_img('imgs/server_edit.png', _('Settings'), title=_('Settings'), class_="positio"), url('domains-auth-settings-with-protocol', proto=server.protocol, domainid=c.domain.id))}
+		 ${h.link_to(h.portable_img('imgs/server_edit.png', _('Settings'), title=_('Settings'), class_="positio"), url('domains-auth-settings-with-protocol', proto=server.protocol, sid=server.id, domainid=c.domain.id))}
 		% else:
 		  ${h.portable_img('imgs/cog.png', _('Settings'), title=_('Settings'), class_="positio")}
 		% endif
