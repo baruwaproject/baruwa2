@@ -24,6 +24,8 @@ import urllib2
 import logging
 import hashlib
 
+import ldap
+
 from urllib import unquote
 from urlparse import urlparse
 from datetime import timedelta, datetime
@@ -193,20 +195,14 @@ class AccountsController(BaseController):
                     doms.extend([alias.name for alias in domains[0].aliases])
 
                     for attr in attrmap:
-                        if (attr == 'mail' and
-                            attr in ldapattributes and
-                            ldapattributes[attr][0] == user.email):
-                            # Dont update if user.email = directory.email
-                            continue
-                        if (attr == 'mail' and
-                            attr in ldapattributes and
-                            '@' in ldapattributes[attr][0]):
-                            # Update if email is hosted by us
-                            if ldapattributes[attr][0].split('@')[1] in doms:
-                                setattr(user,
-                                        attrmap[attr],
-                                        ldapattributes[attr][0])
-                                update_attrs = True
+                        if attr == 'mail':
+                            for mailattr in ldapattributes[attr]:
+                                if (mailattr != user.email and
+                                    '@' in mailattr and
+                                    mailattr.split('@')[1] in doms):
+                                    address = Address(mailattr)
+                                    address.user = user
+                                    addresses.append(address)
                             continue
                         if attr in ldapattributes:
                             setattr(user,
@@ -224,10 +220,11 @@ class AccountsController(BaseController):
                             try:
                                 if mailaddr.startswith('SMTP:'):
                                     continue
+                                clean_addr = PROXY_ADDR_RE.sub('', mailaddr)
                                 if (mailaddr.startswith('smtp:') and
-                                    mailaddr.strip('smtp:').lsplit('@')[1] in doms):
+                                    clean_addr.split('@')[1] in doms):
                                     # Only add domain if we host it
-                                    address = Address(PROXY_ADDR_RE.sub('', mailaddr))
+                                    address = Address(clean_addr)
                                     address.user = user
                                     addresses.append(address)
                             except IndexError:
@@ -244,12 +241,15 @@ class AccountsController(BaseController):
                                                 start_tls=lsettings.usetls
                                                 )
                             groupattributes()
+                            if 'proxyAddresses' not in groupattributes:
+                                continue
                             for mailaddr in groupattributes['proxyAddresses']:
                                 try:
                                     mailaddr = mailaddr.lower()
+                                    clean_addr = PROXY_ADDR_RE.sub('', mailaddr)
                                     if (mailaddr.startswith('smtp:') and
-                                        mailaddr.lstrip('smtp:').split('@')[1] in doms):
-                                        address = Address(PROXY_ADDR_RE.sub('', mailaddr))
+                                        clean_addr.split('@')[1] in doms):
+                                        address = Address(clean_addr)
                                         address.user = user
                                         addresses.append(address)
                                 except IndexError:
@@ -268,6 +268,8 @@ class AccountsController(BaseController):
             except IntegrityError:
                 Session.rollback()
                 redirect(url('/logout'))
+            except ldap.LDAPError:
+                pass
         else:
             msg = _('Login successful, Welcome back %(username)s !' %
                     dict(username=userid))
