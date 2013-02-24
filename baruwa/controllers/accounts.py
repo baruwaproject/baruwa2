@@ -197,6 +197,7 @@ class AccountsController(BaseController):
                     for attr in attrmap:
                         if attr == 'mail':
                             for mailattr in ldapattributes[attr]:
+                                mailattr = mailattr.lower()
                                 if (mailattr != user.email and
                                     '@' in mailattr and
                                     mailattr.split('@')[1] in doms):
@@ -221,6 +222,7 @@ class AccountsController(BaseController):
                                 if mailaddr.startswith('SMTP:'):
                                     continue
                                 clean_addr = PROXY_ADDR_RE.sub('', mailaddr)
+                                clean_addr = clean_addr.lower()
                                 if (mailaddr.startswith('smtp:') and
                                     clean_addr.split('@')[1] in doms):
                                     # Only add domain if we host it
