@@ -22,11 +22,10 @@ import sys
 import fcntl
 import warnings
 
-from eventlet.green import subprocess
-
 from baruwa.model.meta import Session
 from baruwa.commands import BaseCommand
 from baruwa.lib.mail.queue import Mailq
+from baruwa.lib.net import system_hostname
 from baruwa.lib.misc import get_config_option
 from baruwa.model.status import MailQueueItem
 
@@ -144,16 +143,11 @@ class QueueStats(BaseCommand):
         "run command"
         self.init()
         try:
-            lockfile = os.path.join(self.conf['baruwa.locks.dir'], 'queuestats.lock')
+            lockfile = os.path.join(self.conf['baruwa.locks.dir'],
+                                    'queuestats.lock')
             with open(lockfile, 'w+') as lock:
                 fcntl.lockf(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
-                pipe = subprocess.Popen(['/bin/hostname'],
-                                    stdout=subprocess.PIPE,
-                                    stderr=subprocess.PIPE)
-                # hostname = pipe.stdout.read().strip()
-                hostname = pipe.communicate()[0]
-                pipe.wait(timeout=10)
-                hostname = hostname.strip()
+                hostname = system_hostname()
                 update_queue_stats(hostname)
         except IOError:
             warnings.warn("Queuestats already running !")

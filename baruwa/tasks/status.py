@@ -29,6 +29,7 @@ from reportlab.platypus import Paragraph, Image, Spacer, TableStyle
 
 from baruwa.model.meta import Session
 from baruwa.lib.graphs import PIE_TABLE
+from baruwa.lib.net import system_hostname
 from baruwa.lib.query import clean_sphinx_q
 from baruwa.lib.mail.queue.exim import EximQueue
 from baruwa.lib.mail.message import PreviewMessage
@@ -232,12 +233,7 @@ def process_queued_msgs(msgids, action, direction, *args):
         if queue.errors:
             for errmsg in queue.errors:
                 logger.info("STDERR: %s" % errmsg)
-        pipe = subprocess.Popen(['/bin/hostname'],
-                            stdout=subprocess.PIPE,
-                            stderr=subprocess.PIPE)
-        hostname = pipe.communicate()[0]
-        pipe.wait(timeout=10)
-        hostname = hostname.strip()
+        hostname = system_hostname()
         update_queue_stats(hostname)
     except TypeError, error:
         logger.info("Invalid input: %s" % error)
