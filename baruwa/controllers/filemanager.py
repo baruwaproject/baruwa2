@@ -191,5 +191,5 @@ class FilemanagerController(BaseController):
         if not img:
             abort(404)
 
-        response.headers['Content-Type'] = img.content_type
+        response.headers['Content-Type'] = str(img.content_type)
         return base64.decodestring(img.image)
