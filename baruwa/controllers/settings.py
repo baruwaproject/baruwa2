@@ -480,22 +480,21 @@ class SettingsController(BaseController):
             basedir = config.get('ms.signatures.base',
                         '/etc/MailScanner/signatures')
             if sign.signature_type == 1:
-                domain = self._get_domain(domain_id)
-                if domain:
-                    sigfile = os.path.join(basedir,
-                                            'domains',
-                                            domain.name,
-                                            'sig.txt')
-                    files.append(sigfile)
+                sigfile = os.path.join(basedir,
+                                        'domains',
+                                        domain_name,
+                                        'sig.txt')
+                files.append(sigfile)
             else:
                 if sign.image:
-                    imgfile = os.path.join(basedir,
+                    for imgobj in sign.image:
+                        imgfile = os.path.join(basedir,
                                             'domains',
-                                            domain.name,
-                                            sign.image.name)
-                    files.append(imgfile)
+                                            domain_name,
+                                            imgobj.name)
+                        files.append(imgfile)
                 sigfile = os.path.join(basedir, 'domains',
-                                        domain.name,
+                                        domain_name,
                                         'sig.html')
                 files.append(sigfile)
             Session.delete(sign)
@@ -592,22 +591,21 @@ class SettingsController(BaseController):
             basedir = config.get('ms.signatures.base',
                                 '/etc/MailScanner/signatures')
             if sign.signature_type == 1:
-                user = self._get_user(user_id)
-                if user:
-                    sigfile = os.path.join(basedir,
-                                            'users',
-                                            user.username,
-                                            'sig.txt')
-                    files.append(sigfile)
+                sigfile = os.path.join(basedir,
+                                        'users',
+                                        user_name,
+                                        'sig.txt')
+                files.append(sigfile)
             else:
                 if sign.image:
-                    imgfile = os.path.join(basedir,
-                                            'users',
-                                            user.username,
-                                            sign.image.name)
-                    files.append(imgfile)
+                    for imgobj in sign.image:
+                        imgfile = os.path.join(basedir,
+                                                'users',
+                                                user_name,
+                                                imgobj.name)
+                        files.append(imgfile)
                 sigfile = os.path.join(basedir, 'users',
-                                        user.username,
+                                        user_name,
                                         'sig.html')
                 files.append(sigfile)
             Session.delete(sign)
