@@ -103,6 +103,7 @@ setup(
     celerybeat = baruwa.lib.mq.commands:CeleryBeatCommand
     celeryev = baruwa.lib.mq.commands:CeleryEventCommand
     send-pdf-reports = baruwa.commands.pdfreport:SendPdfReports
+    send-pdf-reports-ng = baruwa.commands.pdfreportsng:SendPdfReports
     send-quarantine-reports = baruwa.commands.quarantinereport:QuarantineReports
     prune-database = baruwa.commands.dbclean:DBCleanCommand
     prune-quarantine = baruwa.commands.cleanquarantine:CleanQuarantineCommand
