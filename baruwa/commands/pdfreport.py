@@ -31,6 +31,7 @@ from sqlalchemy.sql.expression import case, and_
 from marrow.mailer import Message as Msg, Mailer
 from marrow.mailer.exc import TransportFailedException, MessageFailedException
 
+from baruwa.lib.dates import now
 from baruwa.lib.query import UserFilter
 from baruwa.model.meta import Session
 from baruwa.model.domains import Domain
@@ -147,7 +148,7 @@ class SendPdfReports(BaseCommand):
                     query = ReportQuery(user, reportid)
                     if int(self.options.days) > 0:
                         a_day = datetime.timedelta(days=self.options.days)
-                        startdate = datetime.date.today() - a_day
+                        startdate = now().date() - a_day
                         query = query.get().filter(Message.timestamp >
                                 str(startdate))
                         data = query[:10]
