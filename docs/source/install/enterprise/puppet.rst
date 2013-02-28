@@ -41,6 +41,8 @@ installing.
 
 Make sure you change the following options
 
+.. note::
+	Don't use the ``@`` and ``:`` characters in the passwords or usernames
 
 +--------------------------------+------------------------------+
 | Option                         | Description                  |
@@ -72,6 +74,16 @@ Make sure you change the following options
 | **$baruwa_mail_host**          | Mail server hostname         |
 +--------------------------------+------------------------------+
 | **$baruwa_bayes_pgsql_pass**   | Bayes Postgresql password    |
++--------------------------------+------------------------------+
+| **$baruwa_cluster_peers**      | Hostnames of other nodes that|
+|                                | are in the cluster.          |
+|                                | *Must be hostnames not IP*   |
+|                                | *Addresses*                  |
++--------------------------------+------------------------------+
+| **$baruwa_cluster_peer_ips**   | IP addresses of other nodes  |
+|                                | that are in the cluster      |
+|                                | *Must be IP addresses not*   |
+|                                | *hostnames*                  |
 +--------------------------------+------------------------------+
 | **$openssl_country_code**      | SSL Certificate country code |
 +--------------------------------+------------------------------+

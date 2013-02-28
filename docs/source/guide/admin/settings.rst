@@ -14,7 +14,7 @@ scanning nodes.
 
 1. Mouse over ``Settings``
 2. Click ``Add scanning node``
-3. Enter the Hostname or IP address in the ``Hostname`` field
+3. Enter the Hostname in the ``Hostname`` field
 4. Ensure the ``Enabled`` checkbox is checked
 5. Click the ``Add node`` button
 

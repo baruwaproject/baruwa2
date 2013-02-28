@@ -333,6 +333,9 @@ Check the configuration file and ensure that the ``baruwa.timezone`` option matc
 the timezone configured on your server. Take time to review the other options to
 ensure that they are correct for your setup.
 
+.. note::
+	Don't use the ``@`` and ``:`` characters in the passwords or usernames
+
 Step 4b: Populate the database
 ------------------------------
 
