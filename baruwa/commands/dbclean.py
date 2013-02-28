@@ -80,6 +80,22 @@ def prune_archive(last_date):
             print >> sys.stderr, stderr
 
 
+def prune_autorelease(last_date):
+    "prune the auto release uuids"
+    params = dict(date=last_date)
+    sql = text("""DELETE FROM releases WHERE timestamp < :date;""")
+    Session.execute(sql, params=params)
+    Session.commit()
+
+
+def prune_messagestatus(last_date):
+    "prune the Message delivery status records"
+    params = dict(date=last_date)
+    sql = text("""DELETE FROM messagestatus WHERE timestamp < :date;""")
+    Session.execute(sql, params=params)
+    Session.commit()
+
+
 class DBCleanCommand(BaseCommand):
     "DB clean command"
     BaseCommand.parser.add_option('-d', '--days',
@@ -110,9 +126,14 @@ class DBCleanCommand(BaseCommand):
         archive_interval = datetime.timedelta(days=adays)
         msgs_date = now() - interval
         last_achive_date = now() - archive_interval
+        releases_date = now() - datetime.timedelta(days=2)
         # process messages table
         process_messages(msgs_date)
         # process archive table
         prune_archive(last_achive_date)
+        # process message status table
+        prune_messagestatus(last_achive_date)
+        # process releases table
+        prune_autorelease(releases_date)
         
         
