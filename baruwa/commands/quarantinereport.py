@@ -31,9 +31,9 @@ from pylons.error import handle_mako_error
 from sqlalchemy.sql.expression import case, and_, or_
 from marrow.mailer import Message as Msg, Mailer
 
+from baruwa.lib.dates import now
 from baruwa.model.meta import Session
 from baruwa.model.accounts import User
-from baruwa.lib.dates import now
 from baruwa.lib.query import UserFilter
 from baruwa.model.messages import Message, Release
 from baruwa.commands import BaseCommand, set_lang, get_conf_options
@@ -118,7 +118,7 @@ class QuarantineReports(BaseCommand):
             messages = query.filter()
             if int(self.options.days) > 0:
                 a_day = datetime.timedelta(days=self.options.days)
-                startdate = datetime.date.today() - a_day
+                startdate = now().date() - a_day
                 messages = messages.filter(Message.timestamp > str(startdate))
             messages = messages.filter(~Message.id.in_(previous_records)) 
             messages = messages[:25]
@@ -139,7 +139,9 @@ class QuarantineReports(BaseCommand):
                     uuid = gen_uuid(user)
                     spam.uuid = uuid
                     return Release(uuid=uuid, messageid=spam.id)
-                torelease = [make_release_records(spam) for spam in messages]
+                if user.is_peleb:
+                    torelease = [make_release_records(spam)
+                                for spam in messages]
                 template = mako_lookup.get_template('/email/quarantine.html')
                 html = template.render(messages=messages,
                                 host_urls=host_urls, url=url_for,

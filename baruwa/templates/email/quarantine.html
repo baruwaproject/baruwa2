@@ -75,10 +75,18 @@ Want to access the full quarantine ?<br /><a href="${default_url}" target="_blan
 	host = str(host.split('://')[1])
 %>
 <tr class="message_row">
-<td>${item.timestamp}</td>
-<td>${item.from_address}</td>
-<td>${item.subject}</td>
-<td><a style="text-decoration:none;color:#336699;" href="${url('message-autorelease', uuid=item.uuid, host=host, protocol=protocol)}">${_('Release')}</a></td>
+<td><div>${item.timestamp}</div></td>
+<td><div>${item.from_address}</div></td>
+<td><div>${item.subject}</div></td>
+<td>
+<div>
+% if hasattr(item, 'uuid'):
+<a style="text-decoration:none;color:#336699;" href="${url('message-autorelease', uuid=item.uuid, host=host, protocol=protocol)}">${_('Release')}</a>
+% else:
+<a style="text-decoration:none;color:#336699;" href="${url(controller='messages', action='detail', id=item.id, host=host, protocol=protocol)}">${_('Release')}</a>
+% endif
+</div>
+</td>
 </tr>
 	% endfor
 % endif
@@ -107,7 +115,14 @@ Want to access the full quarantine ?<br /><a href="${default_url}" target="_blan
 <td><div>${item.timestamp}</div></td>
 <td><div>${item.from_address}</div></td>
 <td><div>${item.subject}</div></td>
-<td><div><a style="text-decoration:none;color:#336699;" href="${url('message-autorelease', uuid=item.uuid, host=host, protocol=protocol)}">${_('Request release')}</a></div></td>
+<td><div>
+% if hasattr(item, 'uuid'):
+<a style="text-decoration:none;color:#336699;" href="${url('message-autorelease', uuid=item.uuid, host=host, protocol=protocol)}">${_('Request release')}</a>
+% else:
+<a style="text-decoration:none;color:#336699;" href="${url(controller='messages', action='detail', id=item.id, host=host, protocol=protocol)}">${_('Request release')}</a>
+% endif
+</div>
+</td>
 </tr>
 	% endfor
 % endif
