@@ -12,7 +12,7 @@ Spam Report
 Date/Time   From                     Subject          
 ==================================================================================================	
 % for item in spam_items:
-+ ${str(item.timestamp) + '\t' + item.from_address + '\t' + item.subject}              
++ ${str(item.timestamp) + '\t' + item.from_address or '' + '\t' + item.subject or ''}              
 % endfor
 % endif
 % if policy_items:
@@ -22,7 +22,7 @@ Policy Blocked Report
 Date/Time   From                     Subject             
 =================================================================================================
 % for item in policy_items:
-+ ${str(item.timestamp) + '\t' + item.from_address + '\t' +item.subject}              
++ ${str(item.timestamp) + '\t' + item.from_address or '' + '\t' +item.subject or ''}              
 % endfor
 % endif
 
