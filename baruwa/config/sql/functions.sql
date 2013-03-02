@@ -1,18 +1,18 @@
 -- FUNCTIONS
 -- timestamp no params
-CREATE OR REPLACE FUNCTION unix_timestamp() RETURNS BIGINT AS '
+CREATE OR REPLACE FUNCTION unix_timestamp() RETURNS BIGINT AS $$
 	SELECT EXTRACT(EPOCH FROM CURRENT_TIMESTAMP(0))::bigint AS result;
-' LANGUAGE 'SQL';
+$$ LANGUAGE 'SQL';
  
 -- timestamp without time zone (i.e. 1973-11-29 21:33:09)
-CREATE OR REPLACE FUNCTION unix_timestamp(TIMESTAMP) RETURNS BIGINT AS '
+CREATE OR REPLACE FUNCTION unix_timestamp(TIMESTAMP) RETURNS BIGINT AS $$
 	SELECT EXTRACT(EPOCH FROM $1)::bigint AS result;
-' LANGUAGE 'SQL';
+$$ LANGUAGE 'SQL';
  
 -- timestamp with time zone (i.e. 1973-11-29 21:33:09+01)
-CREATE OR REPLACE FUNCTION unix_timestamp(TIMESTAMP WITH TIME zone) RETURNS BIGINT AS '
+CREATE OR REPLACE FUNCTION unix_timestamp(TIMESTAMP WITH TIME zone) RETURNS BIGINT AS $$
 	SELECT EXTRACT(EPOCH FROM $1)::bigint AS result;
-' LANGUAGE 'SQL';
+$$ LANGUAGE 'SQL';
 
 -- Counting
 CREATE OR REPLACE FUNCTION mktotals() RETURNS trigger AS $$
@@ -116,61 +116,6 @@ BEGIN
     RETURN NULL;
 END;
 $$ LANGUAGE plpgsql;
-
-    
-
--- Counting
--- CREATE OR REPLACE FUNCTION mktotals() RETURNS trigger AS $$
--- DECLARE
---     runval numeric;
--- BEGIN
---     IF (TG_OP = 'INSERT') THEN
---         --from domain
---         runval = 0.5;
---         UPDATE srcmsgtotals SET total=total + 1, volume=volume + NEW.size,
---             spam=spam + NEW.spam, virii=virii + NEW.virusinfected,
---             infected=infected + NEW.nameinfected,
---             otherinfected=otherinfected + NEW.otherinfected,
---             runtotal=runtotal + runval
---             WHERE id=NEW.from_domain;
---         IF NOT FOUND THEN
---             --insert new record
---             INSERT INTO srcmsgtotals VALUES(NEW.from_domain, 1, NEW.size, NEW.spam,
---                 NEW.virusinfected, NEW.nameinfected, NEW.otherinfected, runval);
---         END IF;
---         --to domain
---         UPDATE dstmsgtotals SET total=total + 1, volume=volume + NEW.size,
---             spam=spam + NEW.spam, virii=virii + NEW.virusinfected,
---             infected=infected + NEW.nameinfected,
---             otherinfected=otherinfected + NEW.otherinfected,
---             runtotal=runtotal + runval
---             WHERE id=NEW.to_domain;
---         IF NOT FOUND THEN
---             --insert new record
---             INSERT INTO dstmsgtotals VALUES(NEW.to_domain, 1, NEW.size, NEW.spam,
---                 NEW.virusinfected, NEW.nameinfected, NEW.otherinfected, runval);
---         END IF;
---     ELSIF (TG_OP = 'DELETE') THEN
---         -- from domain
---         PERFORM id FROM maildomains WHERE name=OLD.to_domain;
---         UPDATE srcmsgtotals SET total=total - 1, volume=volume - OLD.size,
---             spam=spam - OLD.spam, virii=virii - OLD.virusinfected,
---             infected=infected - OLD.nameinfected,
---             otherinfected=otherinfected - OLD.otherinfected,
---             runtotal=runtotal - 0.5
---             WHERE id=OLD.from_domain;
---         -- to domain
---         PERFORM id FROM maildomains WHERE name=OLD.from_domain;
---         UPDATE dstmsgtotals SET total=total - 1, volume=volume - OLD.size,
---             spam=spam - OLD.spam, virii=virii - OLD.virusinfected,
---             infected=infected - OLD.nameinfected,
---             otherinfected=otherinfected - OLD.otherinfected,
---             runtotal=runtotal - 0.5
---             WHERE id=OLD.to_domain;
---     END IF;
---     RETURN NULL;
--- END;
--- $$ LANGUAGE plpgsql;
 
 -- Add to messages
 CREATE TRIGGER update_totals AFTER INSERT OR DELETE ON messages FOR EACH ROW EXECUTE PROCEDURE mktotals();

@@ -23,6 +23,7 @@ import signal
 import logging
 import getpass
 
+import sqlparse
 import cracklib
 import pylons.test
 
@@ -63,12 +64,13 @@ def setup_app(command, conf, variables):
     if os.path.exists(sqlfile):
         with open(sqlfile, 'r') as handle:
             sql = handle.read()
-            try:
-                conn = Session.connection()
-                conn.execute(text(sql))
-                Session.commit()
-            except ProgrammingError:
-                Session.rollback()
+        for sqlcmd in sqlparse.split(sql):
+            if sqlcmd.strip():
+                try:
+                    Session.execute(text(sqlcmd.strip()))
+                    Session.commit()
+                except ProgrammingError:
+                    Session.rollback()
     defaultserver = Session.query(Server)\
                     .filter(Server.hostname == 'default')\
                     .all()
@@ -83,11 +85,10 @@ def setup_app(command, conf, variables):
     if os.path.exists(sqlfile):
         with open(sqlfile, 'r') as handle:
             sql = handle.read()
-        for sqlcmd in sql.split(';'):
-            if sqlcmd:
+        for sqlcmd in sqlparse.split(sql):
+            if sqlcmd.strip():
                 try:
-                    sqlcmd = "%s;" % sqlcmd
-                    Session.execute(text(sqlcmd))
+                    Session.execute(text(sqlcmd.strip()))
                     Session.commit()
                 except ProgrammingError:
                     Session.rollback()

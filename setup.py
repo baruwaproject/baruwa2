@@ -50,6 +50,7 @@ required_packages = [
         "eventlet",
         "pylibmc",
         "M2Crypto",
+        "sqlparse",
         "marrow.mailer",
         "repoze.what",
         "repoze.what-pylons",

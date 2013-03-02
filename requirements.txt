@@ -36,6 +36,7 @@ marrow.interface
 marrow.mailer
 marrow.util
 futures
+sqlparse
 psutil
 psycopg2
 mysql-python
