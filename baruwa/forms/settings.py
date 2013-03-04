@@ -95,7 +95,7 @@ SPAM_LISTS = (
     ('spamhaus-ZEN', 'zen.spamhaus.org.'),
     #('SBL+XBL', 'sbl-xbl.spamhaus.org.'),
     ('spamcop.net', 'bl.spamcop.net.'),
-    ('NJABL', 'dnsbl.njabl.org.'),
+    #('NJABL', 'dnsbl.njabl.org.'),
     #('MAPS-RBL', 'blackholes.mail-abuse.org.'),
     #('MAPS-DUL', 'dialups.mail-abuse.org.'),
     #('MAPS-RSS', 'relays.mail-abuse.org.'),
