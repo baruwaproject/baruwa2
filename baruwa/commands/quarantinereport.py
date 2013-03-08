@@ -161,7 +161,7 @@ class QuarantineReports(BaseCommand):
                             subtype='png',
                             inline=True)
                 mailer.send(email)
-                if 'torelease' in locals()
+                if 'torelease' in locals():
                     Session.add_all(torelease)
                     Session.commit()
         mailer.stop()
