@@ -6,7 +6,8 @@ Clustering
 Functionality available
 =======================
 
-Baruwa is capable of running in a cluster
+Baruwa is capable of running in a cluster. Full clustering support is only available
+in the Enterprise edition.
 
 Full Baruwa functionality is available from any member within a Baruwa cluster
 and all cluster members have equal status. This allows your to provide round
