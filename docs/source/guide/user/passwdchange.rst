@@ -2,7 +2,7 @@
 Changing Your Password
 ======================
 
-You can change your password if your account is not setup to use
+You can change your password if your account is setup to use
 local (internal) authentication.
 
 If your account uses external authentication then use the system
