@@ -363,14 +363,14 @@ The initial sphinx search indexes need to be created by running the command::
 
 	indexer --all --rotate
 
-Step 4e: Start the celery daemon
+Step 4d: Start the celery daemon
 --------------------------------
 
 Start the celeryd daemon::
 
 	service baruwa start
 
-Step 4f: Link uwsgi configuration
+Step 4e: Link uwsgi configuration
 ---------------------------------
 
 Link the Baruwa configuration to the uwsgi configuration directory::
