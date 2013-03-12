@@ -370,6 +370,14 @@ Start the celeryd daemon::
 
 	service baruwa start
 
+Step 4f: Link uwsgi configuration
+---------------------------------
+
+Link the Baruwa configuration to the uwsgi configuration directory::
+
+	ln -s /etc/baruwa/production.ini /etc/uwsgi
+	service uwsgi restart
+
 Step 5: Finalize configuration
 ------------------------------
 
