@@ -43,7 +43,7 @@ START_END = (('start', _('Start')),
             ('end', _('End')),
             ('yes', _('Yes')),
             ('no', _('No')))
-CONVERT = (('convert', _('Disarm')),
+CONVERT = (('disarm', _('Disarm')),
             ('yes', _('Yes')),
             ('no', _('No')))
 MTAS = (('exim', 'Exim'),
