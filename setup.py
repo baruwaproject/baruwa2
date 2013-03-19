@@ -32,7 +32,7 @@ required_packages = [
         "wtforms",
         "reportlab",
         "python-dateutil<2.0",
-        "pyparsing",
+        "pyparsing<2.0",
         "IPy",
         "pytz",
         "Pillow",
