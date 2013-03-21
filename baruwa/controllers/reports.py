@@ -395,7 +395,7 @@ class ReportsController(BaseController):
                 data = [[item.address.strip(),
                         get_hostname(item.address.strip()),
                         country_flag(item.address.strip()),
-                        item.count, format_byte_size(item.size)]
+                        item.count, item.size]
                         for item in data]
             template = '/reports/relays.html'
         if reportid == '11':
