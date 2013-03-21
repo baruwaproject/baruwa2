@@ -633,12 +633,19 @@ class AccountsController(BaseController):
 
         c.form = EditUserForm(request.POST, user, csrf_context=session)
         c.form.domains.query = Session.query(Domain)
+        if c.user.is_domain_admin:
+            c.form.domains.query = Session.query(Domain).join(dom_owns,
+                                    (oas, dom_owns.c.organization_id ==
+                                    oas.c.organization_id))\
+                                    .filter(oas.c.user_id == c.user.id)
+
         if user.account_type != 3 or c.user.is_peleb:
             del c.form.domains
         if c.user.is_peleb:
             del c.form.username
             del c.form.email
             del c.form.active
+
         if request.POST and c.form.validate():
             update = False
             kwd = dict(userid=userid)
@@ -683,7 +690,8 @@ class AccountsController(BaseController):
             abort(404)
 
         c.form = EditUserForm(request.POST, user, csrf_context=session)
-        c.form.domains.query = Session.query(Domain)
+        del c.form.domains
+
         if request.POST and c.form.validate():
             username = user.username
             Session.delete(user)
