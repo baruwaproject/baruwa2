@@ -501,6 +501,9 @@ class AccountsController(BaseController):
                             domain_users.c.domain_id == dom_owns.c.domain_id,
                             dom_owns.c.organization_id == orgid,))
 
+        users = users.distinct(User.id)
+        usrcount = usrcount.distinct(User.id)
+
         pages = paginate.Page(users, page=int(page),
                                 items_per_page=num_items,
                                 item_count=usrcount.count())
