@@ -697,6 +697,7 @@ class AccountsController(BaseController):
 
         if request.POST and c.form.validate():
             username = user.username
+            user_id = unicode(user.id)
             Session.delete(user)
             Session.commit()
             update_serial.delay()
@@ -705,7 +706,7 @@ class AccountsController(BaseController):
             audit_log(c.user.username,
                     4, unicode(info), request.host,
                     request.remote_addr, now())
-            if userid == c.user.id:
+            if userid == user_id:
                 redirect(url('/logout'))
             redirect(url(controller='accounts', action='index'))
         else:
