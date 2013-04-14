@@ -110,6 +110,8 @@ class CanAccessAccount(Predicate):
         "Evaluate"
         identity = environ.get('repoze.who.identity')
         user = identity['user']
+        if not user:
+            self.unmet()
         if not user.is_superadmin:
             try:
                 varbs = self.parse_variables(environ)
