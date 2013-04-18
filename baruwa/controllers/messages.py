@@ -737,7 +737,7 @@ class MessagesController(BaseController):
             #pprint.pprint(results)
             ids = [hit['id'] for hit in results['matches']]
             filters = session.get('filter_by', None)
-            if index == 'archive':
+            if action == 'archive':
                 messages = self._get_archived().filter(
                             Archive.id.in_(ids))
                 query = UserFilter(Session, c.user, messages, True)
