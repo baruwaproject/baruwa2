@@ -4,11 +4,6 @@
 Baruwa Enterprise FAQ's
 =======================
 
-Certificates
-============
-
-	 :ref:`generate_csr`
-
 Supported Operating systems
 ===========================
 

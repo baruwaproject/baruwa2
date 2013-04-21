@@ -9,21 +9,17 @@ Contents:
 .. toctree::
    introduction
    requirements
-   install/source/requirements
-   install/source/install
-   install/enterprise/install
-   install/enterprise/puppet
-   enterprise
+   community/index
+   enterprise/index
    commands
    authentication
    mta/index
-   clustering
    guide/user/index
    guide/admin/index
    faq
    contributing
    cla
-   :maxdepth: 3
+   :maxdepth: 2
 
 
 

@@ -1,9 +1,9 @@
 .. _source_requirements:
 
-================================
-Source installation requirements
-================================
-.. include:: ../../includes/source-note.rst
+===========================================
+Community Edition installation requirements
+===========================================
+.. include:: ../includes/source-note.rst
 
 The following preliminary packages are required to install Baruwa from source
 

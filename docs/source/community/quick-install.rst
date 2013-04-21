@@ -1,8 +1,8 @@
 .. _install_overview:
 
-===========================
-Quick Installation Overview
-===========================
+=============================================
+Community Edition Quick Installation Overview
+=============================================
 
 If you're already familiar with installing Pylons apps, here's a
 ten-step run-down of how to install Baruwa.

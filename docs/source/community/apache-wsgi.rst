@@ -161,4 +161,4 @@ FreeBSD::
 
 	TODO
 
-.. include:: ../../includes/finalize.rst
+.. include:: ../includes/finalize.rst

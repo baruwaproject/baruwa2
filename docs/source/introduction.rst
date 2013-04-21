@@ -39,6 +39,7 @@ Features
 	* Ultra fast full text search
 	* Reporting with AJAX enabled query builder
 	* I18n support, allows use of multiple languages
+	* Themes/Skins for rebranding
 	* Signature management / Branding
 	* Mail queue management and reporting
 	* Message delivery/relay information

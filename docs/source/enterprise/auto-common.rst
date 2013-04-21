@@ -1,30 +1,3 @@
-.. _auto_install:
-
-=========================================
-Automated Enterprise Edition installation
-=========================================
-
-.. include:: overview.rst
-
-.. include:: requirements.rst
-
-.. _auto_install_step2:
-
-Step 2: Installation
---------------------
-
-**CentOS/RHEL/SL**
-
-Install puppet::
-
-	yum install puppet -y
-
-**Debian/Ubuntu**
-
-Install puppet::
-
-	apt-get install puppet -y
-
 Download and install the puppet toaster from the baruwa.com website::
 
 	curl -O https://www.baruwa.com/downloads/puppet-toaster-latest.tar.bz2
@@ -85,6 +58,17 @@ Make sure you change the following options
 |                                | *Must be IP addresses not*   |
 |                                | *hostnames*                  |
 +--------------------------------+------------------------------+
+| **baruwa_cluster_id**          | The cluster ID of this node  |
+|                                | *Must be an integer*         |
++--------------------------------+------------------------------+
+| **baruwa_quarantine_shared**   | Enables and disables shared  |
+|                                | quarantine features          |
++--------------------------------+------------------------------+
+| **baruwa_custom_name**         | Sets the custom product name |
+|                                | for rebranding               |
++--------------------------------+------------------------------+
+| **baruwa_custom_url**          | Sets the url for the product |
++--------------------------------+------------------------------+
 | **$openssl_country_code**      | SSL Certificate country code |
 +--------------------------------+------------------------------+
 | **$openssl_ca_name**           | SSL CA name                  |
@@ -119,7 +103,7 @@ have a fully working Baruwa installation::
 	If any of the tasks fails, rerun the above command.
 
 Step 3: Finalize configuration
-------------------------------
+==============================
 
 Now that the installation and setup are complete, you need to finalize the
 setup by :ref:`add_scanning_node`, :ref:`add_organization`,
@@ -128,6 +112,15 @@ setup by :ref:`add_scanning_node`, :ref:`add_organization`,
 Review the :ref:`admin_guide` for other configuration and setup options
 available.
 
-Step 4: Getting help
---------------------
+Step 4: Advanced options
+========================
+
+Baruwa Enterprise Edition supports clustering as well as customization using
+themes. If you intend on using these features read the following topics
+
+* :ref:`clustering`
+* :ref:`themes`
+
+Step 5: Getting help
+====================
 .. include:: help.rst

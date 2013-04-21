@@ -1,4 +1,4 @@
-.. _community_edition:
+.. _community_version:
 
 Baruwa Community Edition
 ------------------------
@@ -39,7 +39,7 @@ Baruwa Enterprise Editions. You can `try it`_ for free for
 `Baruwa.net`_ is managed by the developer of Baruwa.
 
 
-.. _enterprise_edition:
+.. _enterprise_version:
 
 Baruwa Enterprise Edition
 -------------------------

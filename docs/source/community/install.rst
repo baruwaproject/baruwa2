@@ -1,9 +1,9 @@
 .. _source_install:
 
-===================
-Source installation
-===================
-.. include:: ../../includes/source-note.rst
+==============================
+Community Edition installation
+==============================
+.. include:: ../includes/source-note.rst
 
 This is a full walkthrough of how to get Baruwa up and running.
 
@@ -166,9 +166,12 @@ CentOS/RHEL/SL::
 	host    all         all         ::1/128               md5
 	EOF
 
+Configure the server to use the ``UTC`` timezone as the default timezone::
+
 	sed -e "s/^#timezone = \(.*\)$/timezone = 'UTC'/" -i /var/lib/pgsql/data/postgresql.conf
 	
-	# restart the service
+Restart the service for the configuration changes to take effect::
+
 	service postgresql restart
 
 Debian/Ubuntu::
@@ -180,9 +183,12 @@ Debian/Ubuntu::
 	host    all         all         ::1/128               md5
 	EOF
 
+Configure the server to use the ``UTC`` timezone as the default timezone::
+
 	sed -e "s/^#timezone = \(.*\)$/timezone = 'UTC'/" -i /etc/postgresql/9.1/main/postgresql.conf
 
-	# restart the service
+Restart the service for the configuration changes to take effect::
+
 	sudo service postgresql restart
 
 FreeBSD::
@@ -560,19 +566,19 @@ Create the cron file ``/etc/cron.d/baruwa`` with the following contents
 					>/dev/null 2>&1
 	0 0 * * * baruwa /home/baruwa/px/bin/paster send-quarantine-reports \
 					/etc/baruwa/production.ini >/dev/null 2>&1
-	0 1 * * * baruwa /home/baruwa/px/bin/paster prunedb \
+	0 1 * * * baruwa /home/baruwa/px/bin/paster prune-database \
 					/etc/baruwa/production.ini >/dev/null 2>&1
 	9 1 * * * root /home/baruwa/px/bin/paster update-delta-index \
 					--index archive /etc/baruwa/production.ini \
 					>/dev/null 2>&1
-	0 2 * * * baruwa /home/baruwa/px/bin/paster prunequarantine \
+	0 2 * * * baruwa /home/baruwa/px/bin/paster prune-quarantine \
 					/etc/baruwa/production.ini >/dev/null 2>&1
 	0 6 1 * * baruwa /home/baruwa/px/bin/paster send-pdf-reports \
 					/etc/baruwa/production.ini >/dev/null 2>&1
 
 Step 7: Getting help
 ====================
-.. include:: ../../includes/help.rst
+.. include:: ../includes/help.rst
 
 Known Issues
 ============

@@ -6,6 +6,16 @@ FAQ's
 
 Answers to many common questions.
 
+I think I've found a security problem! What should I do?
+---------------------------------------------------------
+
+**Answer:** ``Email security@baruwa.com``
+
+If you think you've found a security vulnerability with Baruwa, 
+please send a message to security@baruwa.com. Do NOT post a bug
+report to our issue tracking system or disclose the issue on our
+mailing lists.
+
 Can a user have multiple email addresses on a single account ?
 --------------------------------------------------------------
 
@@ -43,5 +53,15 @@ Why do i get RPM's or DEB packages for Baruwa 2.0
 RPM and DEB packages are only available to subscribers of Baruwa
 Enterprise Edition.
 
+What are the differences between the Community and Enterprise Editions
+----------------------------------------------------------------------
 
+**Answer** ``Enterprise Edition contains advanced features not in the
+Community Edition``
+
+Baruwa Enterprise Edition contains advanced features which include:
+
+* Clustering support
+* Theming / Customization support
+* Operating system packages
 
