@@ -476,6 +476,8 @@ class DomainsController(BaseController):
                                     server.id,
                                     3])
             taskid = task.task_id
+            if not 'taskids' in session:
+                session['taskids'] = []
             session['taskids'].append(taskid)
             session['testdest-count'] = 1
             session.save()
