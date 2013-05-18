@@ -109,6 +109,7 @@ class BaruwaPOPAuthPlugin(object):
             else:
                 conn.user(login)
                 conn.pass_(password)
+            identity['login'] = identity['login'].lower()
             return identity['login']
         except (KeyError, IndexError, NoResultFound, poplib.error_proto,
                 socket.error, SSLError):

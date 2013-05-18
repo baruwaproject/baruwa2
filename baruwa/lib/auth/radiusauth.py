@@ -117,6 +117,7 @@ class BaruwaRadiusAuthPlugin(object):
             request["User-Password"] = request.PwCrypt(password)
             reply = radclient.SendPacket(request)
             if reply.code == packet.AccessAccept:
+                identity['login'] = identity['login'].lower()
                 return identity['login']
         except (KeyError, IndexError, NoResultFound, Timeout):
             return None

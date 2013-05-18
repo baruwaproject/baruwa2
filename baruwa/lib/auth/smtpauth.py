@@ -107,6 +107,7 @@ class BaruwaSMTPAuthPlugin(object):
                 conn.starttls()
                 conn.ehlo()
             conn.login(login, password)
+            identity['login'] = identity['login'].lower()
             return identity['login']
         except (KeyError, IndexError, NoResultFound, smtplib.SMTPException,
                 socket.error, SSLError):

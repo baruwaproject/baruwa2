@@ -105,6 +105,7 @@ class BaruwaIMAPAuthPlugin(object):
                 conn = imaplib.IMAP4(address, port)
 
             conn.login(login, password)
+            identity['login'] = identity['login'].lower()
             return identity['login']
         except (KeyError, IndexError, NoResultFound, imaplib.IMAP4.error,
                 socket.error, SSLError):
