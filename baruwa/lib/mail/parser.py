@@ -38,7 +38,11 @@ def get_header(header_text, default="ascii"):
     if not header_text:
         return header_text
 
-    sections = decode_header(header_text)
+    try:
+        sections = decode_header(header_text)
+    except email.errors.HeaderParseError:
+        return u''
+
     parts = []
     for section, encoding in sections:
         try:
@@ -46,8 +50,6 @@ def get_header(header_text, default="ascii"):
         except LookupError:
             parts.append(section.decode(default, 'replace'))
     return u' '.join(parts)
-    # return u' '.join(section.decode(enc or default, 'replace')
-    #                 for section, enc in sections)
 
 
 def return_text_part(part):
