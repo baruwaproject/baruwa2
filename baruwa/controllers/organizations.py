@@ -316,7 +316,7 @@ class OrganizationsController(BaseController):
         c.relayid = relay.id
         c.orgid = relay.org_id
         if request.POST and c.form.validate():
-            orgid = relay.organization_id
+            orgid = relay.org_id
             try:
                 Session.delete(relay)
                 Session.commit()
