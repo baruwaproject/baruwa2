@@ -258,9 +258,11 @@ def convert_acct_to_json(pages, orgid):
             user_icon = 'imgs/user_dadmin.png'
         else:
             user_icon = 'imgs/user.png'
+        firstname = item.firstname if item.firstname else ''
+        lastname = item.lastname if item.lastname else ''
         return dict(id=item.id,
                 username=item.username,
-                fullname=item.firstname + ' ' + item.lastname,
+                fullname=firstname + ' ' + lastname,
                 email=item.email,
                 statusimg='imgs/tick.png' if item.active else 'imgs/minus.png',
                 userimg=user_icon,
