@@ -67,7 +67,8 @@ def get_processes(process_name):
             if (process.name == process_name or
                 process.name.startswith(process_name)):
                 count += 1
-        except psutil.error.AccessDenied:
+        #except psutil.error.AccessDenied:
+        except Exception:
             pass
     return count
 
