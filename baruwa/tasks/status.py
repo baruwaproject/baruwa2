@@ -82,7 +82,9 @@ def systemstatus():
     stats['time'] = pipe.communicate()[0]
     pipe.wait(timeout=2)
     stats['uptime'] = "%s %s" % (upt[2], upt[3].rstrip(','))
-    stats['mem'] = _obj2dict(psutil.phymem_usage())
+    stats['mem'] = _obj2dict(psutil.virtual_memory())
+    stats['mem']['percent'] = ((stats['mem']['used']
+                            / float(stats['mem']['total'])) * 100)
     stats['cpu'] = psutil.cpu_percent()
     stats['load'] = os.getloadavg()
     net = psutil.network_io_counters(True)
