@@ -166,6 +166,8 @@ SQL_URL_RE = re.compile(r'''
         '''
         , re.X)
 
+URL_PREFIX_RE = re.compile(r'^http(s:?)\:\/\/')
+
 def clean_regex(rule):
     """
     Formats a regex for parsing MailScanner

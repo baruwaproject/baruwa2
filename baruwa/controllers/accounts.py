@@ -58,8 +58,8 @@ from baruwa.lib.caching_query import FromCache
 from baruwa.tasks.settings import update_serial
 from baruwa.lib.dates import now
 from baruwa.lib.audit import audit_log
-from baruwa.lib.regex import PROXY_ADDR_RE
 from baruwa.commands import get_conf_options
+from baruwa.lib.regex import PROXY_ADDR_RE, URL_PREFIX_RE
 from baruwa.tasks.accounts import importaccounts, exportaccounts
 from baruwa.lib.query import clean_sphinx_q, restore_sphinx_q
 from baruwa.lib.helpers import flash, flash_info, flash_alert
@@ -314,6 +314,13 @@ class AccountsController(BaseController):
             user = Session.query(User)\
                             .filter(User.email == c.form.email.data)\
                             .one()
+            if not user.local:
+                flash(_('The account %s is an external account, use your'
+                        ' External systems to change the password. '
+                        'Contact your system adminstrator if you do not '
+                        'know which external systems you authenticate to')
+                        % user.email)
+                redirect(url('/accounts/login'))
             rtoken = Session\
                     .query(ResetToken.used)\
                     .filter(ResetToken.used == False)\
@@ -323,7 +330,7 @@ class AccountsController(BaseController):
                 rtoken = ResetToken(token, user.id)
                 Session.add(rtoken)
                 Session.commit()
-                host = request.host_url.lstrip('http://').lstrip('https://')
+                host = URL_PREFIX_RE.sub('', request.host_url)
                 c.username = user.username
                 c.firstname = user.firstname or user.username
                 c.reset_url = url('accounts-pw-token-reset',
