@@ -119,8 +119,11 @@ def check_email(form, field):
     "check the email address"
     try:
         domain = field.data.split('@')[-1]
-        Session.query(Domain).filter(Domain.name == domain).one()
-        raise ValidationError(
+        result = Session.query(Domain).filter(Domain.name == domain).one()
+        if result:
+            raise ValidationError(
                 _('Email from a domain that is already registered'))
+        Session.query(User).filter(User.username == field.data).one()
+        raise ValidationError(_('The email address is already in use'))
     except NoResultFound:
         pass
