@@ -20,6 +20,8 @@
 
 import os
 import shutil
+import socket
+import struct
 import logging
 
 from urlparse import urlparse
@@ -104,7 +106,10 @@ class OrganizationsController(BaseController):
                 offset = (page - 1) * num_items
                 conn.SetLimits(offset, num_items, 500)
             q = clean_sphinx_q(q)
-            results = conn.Query(q, 'organizations, organizations_rt')
+            try:
+                results = conn.Query(q, 'organizations, organizations_rt')
+            except (socket.timeout, struct.error):
+                redirect(request.path_qs)
             q = restore_sphinx_q(q)
             if results and results['matches']:
                 ids = [hit['id'] for hit in results['matches']]

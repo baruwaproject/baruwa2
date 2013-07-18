@@ -20,6 +20,8 @@
 
 import os
 import shutil
+import socket
+import struct
 import urllib2
 import logging
 import hashlib
@@ -547,7 +549,10 @@ class AccountsController(BaseController):
                         .filter(oas.c.user_id == c.user.id)
             conn.SetFilter('domains', [domain[0] for domain in domains])
         q = clean_sphinx_q(q)
-        results = conn.Query(q, 'accounts, accounts_rt')
+        try:
+            results = conn.Query(q, 'accounts, accounts_rt')
+        except (socket.timeout, struct.error):
+            redirect(request.path_qs)
         q = restore_sphinx_q(q)
         if results and results['matches']:
             ids = [hit['id'] for hit in results['matches']]

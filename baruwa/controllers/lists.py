@@ -18,6 +18,8 @@
 #
 "Lists controller"
 
+import socket
+import struct
 import logging
 
 from urlparse import urlparse
@@ -130,7 +132,12 @@ class ListsController(BaseController):
                 page = int(page)
                 offset = (page - 1) * num_items
                 conn.SetLimits(offset, num_items, 500)
-            results = conn.Query(q, 'lists, lists-rt')
+
+            try:
+                results = conn.Query(q, 'lists, lists-rt')
+            except (socket.timeout, struct.error):
+                redirect(request.path_qs)
+
             if results and results['matches']:
                 ids = [hit['id'] for hit in results['matches']]
                 total_found = results['total_found']

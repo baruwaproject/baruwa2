@@ -17,6 +17,8 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 
+import socket
+import struct
 import logging
 
 from urlparse import urlparse
@@ -193,7 +195,10 @@ class DomainsController(BaseController):
             crcs = get_dom_crcs(Session, c.user)
             conn.SetFilter('domain_name', crcs)
         q = clean_sphinx_q(q)
-        results = conn.Query(q, 'domains, domains_rt')
+        try:
+            results = conn.Query(q, 'domains, domains_rt')
+        except (socket.timeout, struct.error):
+            redirect(request.path_qs)
         q = restore_sphinx_q(q)
         if results and results['matches']:
             ids = [hit['id'] for hit in results['matches']]
