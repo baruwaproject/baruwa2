@@ -19,6 +19,7 @@
 "Updates the Spamassassin rule descriptions"
 import os
 import sys
+import codecs
 
 from sqlalchemy.orm.exc import NoResultFound
 
@@ -60,8 +61,7 @@ class UpdateSaRules(BaseCommand):
                         Session.add(rule)
                         Session.commit()
                 else:
-                    if (str(oldrule.description) !=
-                        str(matchdict['description'])):
+                    if oldrule.description != matchdict['description']:
                         oldrule.description = matchdict['description']
                         Session.add(oldrule)
                         Session.commit()
@@ -74,7 +74,7 @@ class UpdateSaRules(BaseCommand):
 
         def updatescores(thefile):
             """Update the rule scores in the database"""
-            with open(thefile, 'r') as rulefile:
+            with codecs.open(thefile, 'r', 'utf-8', 'replace') as rulefile:
                 for line in rulefile.readlines():
                     match = SARULE_SCORE_RE.match(line)
                     if match:
