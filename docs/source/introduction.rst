@@ -68,5 +68,6 @@ Features
 Baruwa Versions
 ===============
 
-  .. toctree::
-    versions
+* :ref:`community_version`
+* :ref:`saas_edition`
+* :ref:`enterprise_version`

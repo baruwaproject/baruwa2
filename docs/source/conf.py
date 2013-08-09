@@ -41,7 +41,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'Baruwa'
-copyright = u'2012, Andrew Colin Kissa'
+copyright = u'2013, Andrew Colin Kissa'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -184,7 +184,7 @@ latex_elements = {
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
-  ('index', 'Baruwa20.tex', u'Baruwa 2.0 Documentation',
+  ('index', 'baruwa.tex', u'Baruwa 2.0 Documentation',
    u'Andrew Colin Kissa', 'manual'),
 ]
 
@@ -214,7 +214,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'baruwa20', u'Baruwa 2.0 Documentation',
+    ('index', 'baruwa', u'Baruwa 2.0 Documentation',
      [u'Andrew Colin Kissa'], 1)
 ]
 
@@ -228,8 +228,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-  ('index', 'Baruwa20', u'Baruwa 2.0 Documentation',
-   u'Andrew Colin Kissa', 'Baruwa20', 'One line description of project.',
+  ('index', 'baruwa', u'Baruwa 2.0 Documentation',
+   u'Andrew Colin Kissa', 'baruwa', 'One line description of project.',
    'Miscellaneous'),
 ]
 
@@ -287,7 +287,7 @@ epub_basename = u'baruwa'
 #epub_tocdup = True
 
 # Pdf
-pdf_documents = [ 
+pdf_documents = [
         ('index', u'baruwa', u'Baruwa documentation', u'Andrew Colin Kissa'),
 ]
 # A comma-separated list of custom stylesheets. Example:
@@ -320,7 +320,7 @@ pdf_fit_mode = "shrink"
 # or just use 'any'
 #pdf_breakside = 'any'
 
-# Insert footnotes where they are defined instead of 
+# Insert footnotes where they are defined instead of
 # at the end.
 #pdf_inline_footnotes = True
 
@@ -339,7 +339,7 @@ pdf_fit_mode = "shrink"
 # Name of the cover page template to use
 #pdf_cover_template = 'sphinxcover.tmpl'
 
-# Documents to append as an appendix to all manuals.    
+# Documents to append as an appendix to all manuals.
 #pdf_appendices = []
 
 # Enable experimental feature to split table cells. Use it

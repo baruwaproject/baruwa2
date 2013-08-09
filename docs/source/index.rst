@@ -8,9 +8,9 @@ Contents:
 
 .. toctree::
    introduction
+   versions
    requirements
    community/index
-   enterprise/index
    commands
    authentication
    mta/index

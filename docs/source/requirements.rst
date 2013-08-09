@@ -37,3 +37,11 @@ MailScanner Requirements
 	+ DBD-MySQL
 	+ DBD-SQLite
 
+System Requirements
+===================
+
++ Intel/AMD 2.0 GHZ+ 64-bit CPU
++ Minimum - 2 GB RAM
++ 10 GB free disk space for software and logs (SATA or SCSI for performance, and RAID/Mirroring for redundancy)
++ Additional disk space for mail storage
+

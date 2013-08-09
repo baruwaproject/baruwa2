@@ -12,7 +12,7 @@ Command options and help
 These commands may take options to get details on the supported options run::
 
 	paster baruwa
-	paster COMMAND_NAME -h
+	paster COMMAND_NAME -h or paster help COMMAND_NAME
 
 Quarantine management
 ---------------------
@@ -106,3 +106,4 @@ Change user password
 
 Changes an accounts password, This is the only way to change an administrator account's
 password as it cannot be changed via the web interface.
+

@@ -1,3 +1,6 @@
+Baruwa Versions
+===============
+
 .. _community_version:
 
 Baruwa Community Edition

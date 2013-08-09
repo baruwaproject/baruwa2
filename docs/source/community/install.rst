@@ -75,7 +75,7 @@ Set this environment variable to allow ``m2crypto`` to build on Linux::
 	
 Download the requirements file::
 
-	curl -O https://raw.github.com/akissa/baruwa2/2.0.0/requirements.txt
+	curl -O https://raw.github.com/akissa/baruwa2/2.0.1/requirements.txt
 	
 Install the required packages using pip::
 
@@ -93,8 +93,8 @@ Apply required patches
 
 Download the required patches and apply them to the virtualenv::
 
-	curl -O https://raw.github.com/akissa/baruwa2/2.0.0/extras/patches/repoze.who-friendly-form.patch
-	curl -O https://raw.github.com/akissa/baruwa2/master/extras/patches/repoze-who-fix-auth_tkt-tokens.patch
+	curl -O https://raw.github.com/akissa/baruwa2/2.0.1/extras/patches/repoze.who-friendly-form.patch
+	curl -O https://raw.github.com/akissa/baruwa2/2.0.1/extras/patches/repoze-who-fix-auth_tkt-tokens.patch
 	cd px/lib/python2.6/site-packages/repoze/who/plugins/
 	patch -p3 -i /home/baruwa/repoze.who-friendly-form.patch
 	patch -p4 -i /home/baruwa/repoze-who-fix-auth_tkt-tokens.patch
