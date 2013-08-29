@@ -161,7 +161,7 @@ class User(Base):
     @property
     def is_peleb(self):
         "Check if user is just an ordinary joe"
-        return self.account_type == 3 and self.active
+        return self.account_type == 3
 
 
 class Group(Base):

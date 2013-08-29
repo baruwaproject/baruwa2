@@ -40,7 +40,7 @@ class OnlySuperUsers(Predicate):
         "Evaluate"
         identity = environ.get('repoze.who.identity')
         user = identity['user']
-        if not user or not user.is_superadmin:
+        if not user or not user.is_superadmin or not user.active:
             self.unmet()
 
 
@@ -51,7 +51,7 @@ class OnlyAdminUsers(Predicate):
     def evaluate(self, environ, credentials):
         identity = environ.get('repoze.who.identity')
         user = identity['user']
-        if not user or not user.is_admin:
+        if not user or not user.is_admin or not user.active:
             self.unmet()
 
 def check_domain_ownership(user_id, domain_id):
@@ -75,7 +75,7 @@ class OwnsDomain(Predicate):
         "Evaluate"
         identity = environ.get('repoze.who.identity')
         user = identity['user']
-        if not user.is_superadmin:
+        if not user.is_superadmin or not user.active:
             try:
                 varbs = self.parse_variables(environ)
                 if 'domainid' in varbs['named_args']:
@@ -110,7 +110,7 @@ class CanAccessAccount(Predicate):
         "Evaluate"
         identity = environ.get('repoze.who.identity')
         user = identity['user']
-        if not user:
+        if not user or not user.active:
             self.unmet()
         if not user.is_superadmin:
             try:

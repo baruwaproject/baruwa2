@@ -78,7 +78,7 @@ class FilemanagerController(BaseController):
             requesturl = url('fm-users', userid=userid)
             model = UserSigImg
             user = self._get_user(userid)
-            if not user:
+            if not user or not user.active:
                 abort(404)
             if c.user.is_peleb and c.user.id != user.id:
                 abort(403)

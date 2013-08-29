@@ -275,6 +275,8 @@ class AccountsController(BaseController):
             except ldap.LDAPError:
                 pass
         else:
+            if not user.active:
+                redirect(url('/logout'))
             msg = _('Login successful, Welcome back %(username)s !' %
                     dict(username=userid))
         user.last_login = now()
