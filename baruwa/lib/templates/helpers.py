@@ -172,8 +172,12 @@ def sa_learned(value):
 
     match = LEARN_RE.search(value)
     if match:
-        return (HTML.span(_('Y'), class_='positive') +
-            literal('&nbsp;') + '(%s)' % escape(match.group(1)))
+        if match.groups()[0] == 'disabled':
+            return (HTML.span(_('N'), class_='negative') +
+                literal('&nbsp;') + '(%s)' % escape(match.group(1)))
+        else:
+            return (HTML.span(_('Y'), class_='positive') +
+                literal('&nbsp;') + '(%s)' % escape(match.group(1)))
     else:
         return HTML.span(_('N'), class_='negative')
 
