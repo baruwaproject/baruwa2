@@ -111,12 +111,12 @@ class DBCleanCommand(BaseCommand):
         "command"
         self.init()
         
-        if (self.conf.get('baruwa.messages.keep.days', 30) !=
+        if (self.conf.get('baruwa.messages.keep.days', 30) ==
             self.options.days):
             days = self.options.days
         else:
             days = self.conf.get('baruwa.messages.keep.days', 30)
-        if (self.conf.get('baruwa.archive.keep.days', 90) !=
+        if (self.conf.get('baruwa.archive.keep.days', 90) ==
             self.options.adays):
             adays = self.options.adays
         else:
