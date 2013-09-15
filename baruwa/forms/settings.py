@@ -272,30 +272,31 @@ class ProcessingSettings(Form):
     unzipmimetype = TextField(_('Unzip MimeType'),
                             default='text/plain')
     mailheader = TextField(_('Mail Header'),
-                            default='X-Baruwa:')
+                            default='X-%org-name%-BaruwaFW:')
     infoheader = TextField(_('Information Header'),
-                            default='X-Baruwa-Information:')
+                            default='X-%org-name%-BaruwaFW-Information:')
     addenvfrom = SelectField(_('Add Envelope From Header'),
                             choices=YES_NO,
                             default='yes')
     addenvto = SelectField(_('Add Envelope To Header'),
                             choices=YES_NO,
                             default='no')
-    envfromheader = TextField(_('Envelope From Header'),
-                            default='X-Baruwa-Envelope-From:')
+    # envfromheader = TextField(_('Envelope From Header'),
+    #                         default='X-%org-name%-Envelope-From:')
     envtoheader = TextField(_('Envelope To Header'),
-                            default='X-Baruwa-Envelope-To:')
+                            default='X-%org-name%-BaruwaFW-Envelope-To:')
     idheader = TextField(_('ID Header'),
-                            default='X-Baruwa-ID:')
+                            default='X-%org-name%-BaruwaFW-ID:')
     ipverheader = TextField(_('IP Protocol Version Header'),
-                            default='X-Baruwa-IP-Protocol:')
+                            default='X-%org-name%-BaruwaFW-IP-Protocol:')
     cleanheader = TextField(_('Clean Header Value'),
                             default='Found to be clean')
     dirtyheader = TextField(_('Infected Header Value'),
                             default='Found to be infected')
     disinfectedheader = TextField(_('Disinfected Header Value'),
                             default='Disinfected')
-    infoPlease = TextField(_('Information Header Value'))
+    infovalue = TextField(_('Information Header Value'),
+                            default='Please contact %org-long-name% for more information')
     multipleheaders = SelectField(_('Multiple Headers'),
                             choices=list(HEADER_ACTIONS),
                             default='add')
@@ -318,7 +319,7 @@ class ProcessingSettings(Form):
                             choices=YES_NO,
                             default='yes')
     unscannedheader = TextField(_('Unscanned Header Value'),
-                            default='Not scanned: please contact your Internet E-Mail Service Provider for details')
+                            default='Not scanned: please contact your %org-long-name% for details')
     removeheaders = TextField(_('Remove These Headers'),
                             default='X-Mozilla-Status: X-Mozilla-Status2:')
     delivercleanedmessages = SelectField(_('Deliver Cleaned Messages'),
@@ -368,7 +369,7 @@ class ProcessingSettings(Form):
                             choices=START_END,
                             default='no')
     highspamsubjecttext = TextField(_('High Scoring Spam Subject Text'),
-                            default='{Definate Spam?}')
+                            default='{Definete Spam?}')
     warningisattachment = SelectField(_('Warning Is Attachment'),
                             choices=YES_NO,
                             default='yes')
@@ -394,7 +395,7 @@ class VirusSettings(Form):
                             default='yes')
     nonforgingviruses = TextField(_('Non-Forging Viruses'))
     spamvirusheader = TextField(_('Spam-Virus Header'),
-                            default='X-Baruwa-SpamVirus-Report:')
+                            default='X-%org-name%-BaruwaFW-SpamVirus-Report:')
     spaminfected = TextField(_('Virus Names Which Are Spam'),
                             default='Sane*UNOFFICIAL HTML/* *Phish*')
     blockencrypted = SelectField(_('Block Encrypted Messages'),
@@ -605,9 +606,9 @@ class SpamSettings(Form):
                             choices=YES_NO,
                             default='no')
     spamheader = TextField(_('Spam Header'),
-                            default='X-Baruwa-SpamCheck:')
+                            default='X-%org-name%-BaruwaFW-SpamCheck:')
     spamstarsheader = TextField(_('Spam Score Header'),
-                            default='X-Baruwa-SpamScore:')
+                            default='X-%org-name%-BaruwaFW-SpamScore:')
     scoreformat = TextField(_('Spam Score Number Format'),
                             default='%d')
     spamstarscharacter = TextField(_('Spam Score Character'),
@@ -637,7 +638,7 @@ class SpamSettings(Form):
     mshmacvalid = IntegerField(_('Watermark Lifetime'),
                             default=604800)
     mshmacheader = TextField(_('Watermark Header'),
-                            default='X-%org-name%-Baruwa-Watermark:')
+                            default='X-%org-name%-BaruwaFW-Watermark:')
 
 
 class LoggingSettings(Form):
