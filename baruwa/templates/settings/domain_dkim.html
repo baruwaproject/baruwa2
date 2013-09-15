@@ -29,7 +29,7 @@
 	<div class="grid_16 drow">
 		<div class="grid_6">${_('DNS record')}</div>
 		<div class="grid_9">
-			baruwa._domainkey.${c.domain.name}. IN TXT ("v=DKIM1; g=*; k=rsa;
+			${config.get('baruwa.dkim.selector', 'baruwa')}._domainkey.${c.domain.name}. IN TXT ("v=DKIM1; g=*; k=rsa;
 			p=${h.linebreaksbr(dkim_key)})
 		</div>
 	</div>
@@ -40,7 +40,7 @@
 	<div class="grid_16 drow">
 		<div class="grid_6">${_('DNS record')}</div>
 		<div class="grid_9">
-			baruwa._domainkey.${alias.name}. IN TXT ("v=DKIM1; g=*; k=rsa;
+			${config.get('baruwa.dkim.selector', 'baruwa')}._domainkey.${alias.name}. IN TXT ("v=DKIM1; g=*; k=rsa;
 			p=${h.linebreaksbr(dkim_key)})
 		</div>
 	</div>

@@ -108,6 +108,7 @@ baruwa.default.url = http://localhost
 baruwa.ipv6db = /usr/share/GeoIP/GeoIPv6.dat
 baruwa.reports.sender = baruwa@ms.home.topdog-software.com
 baruwa.locks.dir = /var/lock/baruwa
+baruwa.dkim.selector = baruwa
 baruwa.dkim.dir = /etc/MailScanner/baruwa/dkim
 baruwa.timezone = Africa/Johannesburg
 baruwa.messages.keep.days = 30
