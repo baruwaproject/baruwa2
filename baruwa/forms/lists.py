@@ -24,8 +24,8 @@ from pylons.i18n.translation import lazy_ugettext as _
 
 from baruwa.forms import Form, REQ_MSG
 from baruwa.model.meta import Session
-from baruwa.model.domains import Domain
 from baruwa.lib.misc import ipaddr_is_valid
+from baruwa.model.domains import Domain, DomainAlias
 from baruwa.lib.regex import EMAIL_RE, DOM_RE, IPV4_RE
 from baruwa.lib.regex import IPV4_NET_OR_RANGE_RE, LOCAL_PART_RE
 
@@ -57,7 +57,12 @@ def admin_toaddr_check(form, field):
             else:
                 domain = field.data
             try:
-                Session.query(Domain.name).filter(Domain.name == domain).one()
+                qry1 = Session.query(DomainAlias.name)\
+                            .filter(DomainAlias.name == domain)
+                Session.query(Domain.name)\
+                            .filter(Domain.name == domain)\
+                            .union(qry1)\
+                            .one()
             except NoResultFound:
                 raise validators.ValidationError(
                 _('The domain %(dom)s is not local') % dict(dom=domain))
