@@ -37,7 +37,7 @@ marrow.mailer
 marrow.util
 futures
 sqlparse
-psutil
+psutil==1.0.1
 psycopg2
 mysql-python
 py-bcrypt
