@@ -185,7 +185,7 @@ class SendPdfReports(BaseCommand):
                                 to=[(displayname, user.email)],
                                 subject=_('Baruwa usage report'))
                 email.plain = text
-                pdf_file = base64.b64encode(pdfcreator.build())
+                pdf_file = pdfcreator.build()
                 email.attach('baruwa-reports.pdf',
                             data=pdf_file,
                             maintype='application',
