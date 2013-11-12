@@ -33,7 +33,7 @@ class Sendmail(object):
         self.server = server
         self.debug = debug
         self.errors = []
-        self.conn = smtplib.SMTP(self.server)
+        self.conn = smtplib.SMTP(self.server, timeout=30)
         if self.debug:
             self.conn.set_debuglevel(5)
 
