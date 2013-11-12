@@ -167,6 +167,7 @@ class AccountsController(BaseController):
                                     AuthServer.port, LDAPSettings.binddn,
                                     LDAPSettings.bindpw,
                                     LDAPSettings.usetls)\
+                                    .join(LDAPSettings)\
                                     .join(Domain)\
                                     .filter(AuthServer.enabled == True)\
                                     .filter(Domain.name == domain)\
