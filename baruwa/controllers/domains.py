@@ -709,8 +709,13 @@ class DomainsController(BaseController):
                 if field.name == 'csrf_token':
                     continue
                 if authobj:
+                    if field.name == 'bindpw' and field.data == '':
+                        continue
                     if getattr(settings, field.name) != field.data:
-                        setattr(settings, field.name, field.data)
+                        if field.name == 'bindpw' and field.data == 'None':
+                            setattr(settings, field.name, '')
+                        else:
+                            setattr(settings, field.name, field.data)
                         updated = True
                 else:
                     setattr(settings, field.name, field.data)
