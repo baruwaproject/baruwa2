@@ -58,7 +58,7 @@ def make_map(config):
                     '/{controller}{.format}',
                     action='index')
     urlmap.connect('jsi18n',
-                    '/jsi18n.js',
+                    '/js/jsi18n.js',
                     controller='utils',
                     action='js_localization')
     urlmap.connect('home',

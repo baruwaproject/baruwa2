@@ -62,7 +62,7 @@ class BaseController(WSGIController):
             if ('format' in environ['pylons.routes_dict'] and
                 environ['pylons.routes_dict']['format'] in ['csv', 'pdf']):
                 return False
-            if environ['PATH_INFO'] == '/jsi18n.js':
+            if environ['PATH_INFO'] == '/js/jsi18n.js':
                 return False
             return True
 
