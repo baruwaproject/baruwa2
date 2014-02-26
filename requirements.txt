@@ -46,7 +46,7 @@ pyparsing<2.0
 pyrad
 python-ldap
 -e git://github.com/ahupp/python-magic.git@d033eb46a8ace66cf795c54168a197228e47ce9e#egg=python_magic-dev
-reportlab
+reportlab==2.7
 repoze.lru
 repoze.what==1.0.9
 repoze.what-pylons==1.0
