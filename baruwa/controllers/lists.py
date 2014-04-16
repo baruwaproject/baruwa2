@@ -134,7 +134,7 @@ class ListsController(BaseController):
                 conn.SetLimits(offset, num_items, 500)
 
             try:
-                results = conn.Query(q, 'lists, lists-rt')
+                results = conn.Query(q, 'lists, lists_rt')
             except (socket.timeout, struct.error):
                 redirect(request.path_qs)
 
