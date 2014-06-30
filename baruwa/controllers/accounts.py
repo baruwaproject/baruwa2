@@ -761,7 +761,7 @@ class AccountsController(BaseController):
                         oas.c.organization_id))\
                         .filter(oas.c.user_id == c.user.id)
 
-        if request.POST:
+        if request.method == 'POST':
             tasks = []
             # try:
             for account in users.all():
