@@ -24,8 +24,12 @@
     <div class="grid_7">${_('Attachments')}:</div>
     <div class="grid_8">
     	% 	for index, name in enumerate(c.message['attachments']):
-		<% counter = index + 1 %>
-			${h.link_to(h.portable_img('imgs/dl.png', alt="dl") + h.literal('&nbsp;') + name['filename'], url('messages-archived-attach-dw', id=c.id, attachment=counter) if c.archived else url('messages-attach-dw', id=c.id, attachment=counter))}&nbsp;
+			% if c.isdangerous:
+			${h.literal('<i class="icon-download"></i>') + h.literal('&nbsp;') + name['filename']}&nbsp;
+			% else:
+			<% counter = index + 1 %>
+			${h.link_to(h.literal('<i class="icon-download"></i>') + h.literal('&nbsp;') + name['filename'], url('messages-archived-attach-dw', msgid=c.msgid, attachment=counter) if c.archived else url('messages-attach-dw', msgid=c.msgid, attachment=counter))}&nbsp;
+			% endif
 		%	endfor
     </div>
 </div>

@@ -544,6 +544,8 @@ class MessagesController(BaseController):
             task.wait(30)
             if task.result:
                 if img:
+                    if message.isdangerous and c.user.is_peleb:
+                        abort(404)
                     response.content_type = task.result['content_type']
                     if task.result and 'img' in task.result:
                         info = MSGDOWNLOAD_MSG % dict(m=message.id,
@@ -554,6 +556,8 @@ class MessagesController(BaseController):
                         return base64.decodestring(task.result['img'])
                     abort(404)
                 if attachment:
+                    if message.isdangerous and c.user.is_peleb:
+                        raise ValueError
                     info = MSGDOWNLOAD_MSG % dict(m=message.id,
                                             a=task.result['name'])
                     audit_log(c.user.username,
@@ -596,9 +600,16 @@ class MessagesController(BaseController):
             flash_alert(_('The message could not be previewed, try again later'))
             whereto = url('message-archive', id=id) if archive else url('message-detail', id=id)
             redirect(whereto)
+        except ValueError:
+            flash_alert(_('The attachment is either prohibited or dangerous.'
+            ' Contact your system admin for assistance'))
+            whereto = url('message-archive', msgid=msgid) if archive \
+                        else url('message-detail', msgid=msgid)
+            redirect(whereto)
         c.messageid = message.messageid
         c.id = message.id
         c.archived = archive
+        c.isdangerous = message.isdangerous
         return render('/messages/preview.html')
 
     def autorelease(self, uuid):

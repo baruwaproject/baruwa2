@@ -80,6 +80,13 @@ class Message(Base):
     __mapper_args__ = {'order_by':timestamp}
 
     @property
+    def isdangerous(self):
+        "Check if the message is dangerous"
+        if self.virusinfected or self.otherinfected or self.nameinfected:
+            return True
+        return False
+
+    @property
     def tojson(self):
         "Serialize to json"
         return dict(
@@ -207,6 +214,13 @@ class Archive(Base):
         self.messageid = messageid
 
     __mapper_args__ = {'order_by':timestamp}
+
+    @property
+    def isdangerous(self):
+        "Check if the message is dangerous"
+        if self.virusinfected or self.otherinfected or self.nameinfected:
+            return True
+        return False
 
 
 class SARule(Base):
