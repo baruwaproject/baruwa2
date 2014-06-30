@@ -252,6 +252,7 @@ class OrganizationsController(BaseController):
                 outbound.address = c.form.address.data
                 outbound.username = c.form.username.data
                 outbound.enabled = c.form.enabled.data
+                outbound.description = c.form.description.data
                 outbound.org = org
                 if c.form.password1.data:
                     outbound.set_password(c.form.password1.data)

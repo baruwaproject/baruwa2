@@ -213,6 +213,7 @@ class Relay(Base):
     username = Column(Unicode(255))
     __password = Column('password', Unicode(255))
     enabled = Column(Boolean, default=True)
+    description = Column(Unicode(255))
     org_id = Column(Integer, ForeignKey('organizations.id'))
     org = relationship('Group', backref=backref('relaysettings', order_by=id))
 

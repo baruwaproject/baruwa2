@@ -65,6 +65,7 @@ class RelayForm(Form):
     password1 = PasswordField(_('SMTP-AUTH password'))
     password2 = PasswordField(_('Retype Password'),
     [validators.EqualTo('password1', message=_('Passwords must match'))])
+    description = TextField(_('Description'), allow_blank=True,)
 
     def validate_address(self, field):
         if self.username.data == '' and field.data == '':
