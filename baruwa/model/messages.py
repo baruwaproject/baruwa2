@@ -265,7 +265,7 @@ class MessageStatus(Base):
     hostname = Column(UnicodeText)
     ipaddress = Column(Unicode(128))
     port = Column(Integer)
-    confirmation = Column(Unicode(255))
+    confirmation = Column(UnicodeText)
     errorno = Column(Integer, server_default='0')
     errorstr = Column(UnicodeText, server_default=u'')
     timestamp = Column(TIMESTAMP(timezone=True),
