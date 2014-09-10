@@ -7,12 +7,12 @@
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation, either version 3 of the License, or
 # (at your option) any later version.
-# 
+#
 # This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License for more details.
-# 
+#
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
@@ -23,11 +23,11 @@ Provides the BaseController class for subclassing.
 
 from pytz import timezone
 from babel.util import UTC
-from pylons import request, session
 from pylons import tmpl_context as c
+from pylons import request, session, config
 from pylons.i18n.translation import set_lang
 from pylons.controllers import WSGIController
-from pylons.templating import render_mako as render
+from pylons.templating import render_mako as render  # noqa
 from sqlalchemy.orm.exc import NoResultFound
 from sqlalchemy.orm import joinedload_all, joinedload
 
@@ -52,7 +52,11 @@ class BaseController(WSGIController):
                         if check_language(lang.split('-')[0])]
                 set_lang(languages)
             except AttributeError:
-                set_lang(['en'])
+                default_lang = config.get('baruwa.default.language', 'en')
+                if check_language(default_lang):
+                    set_lang([default_lang])
+                else:
+                    set_lang(['en'])
         self.invalidate = request.GET.get('uc', None)
         self.langchange = request.GET.get('lc', None)
 
@@ -98,7 +102,7 @@ class BaseController(WSGIController):
         "utility to return domain"
         try:
             cachekey = 'domain-%s' % domainid
-            q = Session.query(Domain).filter(Domain.id==domainid)\
+            q = Session.query(Domain).filter(Domain.id == domainid)\
                     .options(joinedload_all(Domain.servers),
                             joinedload_all(Domain.aliases),
                             joinedload_all(Domain.authservers))\

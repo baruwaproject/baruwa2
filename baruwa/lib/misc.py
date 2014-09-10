@@ -40,7 +40,7 @@ from eventlet.green import subprocess
 from webhelpers.number import format_byte_size
 from webhelpers.text import wrap_paragraphs, truncate
 
-from baruwa.lib.regex import USTRING_RE
+from baruwa.lib.regex import USTRING_RE, LANGS_RE
 
 REPORTS = {
             '1': {'address': 'from_address', 'sort': 'count'},
@@ -100,9 +100,21 @@ def ipaddr_is_valid(ip):
     except ValueError:
         return False
 
+
+def extract_languages():
+    "Extract configured languages"
+    langs = config.get('baruwa.languages', None)
+    if langs is not None:
+        return [lang for lang in LANGS_RE.split(langs) if len(lang) == 2]
+    return []
+
+
 def check_language(lang_code):
     "Check existance of language files"
     if gettext.find('baruwa', I18NPATH, [lang_code]) is not None:
+        lang_list = extract_languages()
+        if lang_list and lang_code not in lang_list:
+            return False
         return True
     return False
 

@@ -114,6 +114,9 @@ baruwa.timezone = Africa/Johannesburg
 baruwa.messages.keep.days = 30
 baruwa.archive.keep.days = 90
 baruwa.mail.user = exim
+# Enable this if you want to limit languages to the listed ones
+#baruwa.languages = en,fr,de
+baruwa.default.language = en
 
 # celery settings
 broker.host = 127.0.0.1
