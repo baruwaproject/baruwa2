@@ -40,7 +40,7 @@ class Message(Base):
     __tablename__ = 'messages'
 
     id = Column(BigInteger, primary_key=True)
-    messageid = Column(Unicode(255), index=True, unique=True)
+    messageid = Column(Unicode(255), index=True)
     actions = Column(Unicode(128))
     clientip = Column(Unicode(128))
     date = Column(Date(timezone=True), index=True)
