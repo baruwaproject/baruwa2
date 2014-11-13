@@ -98,33 +98,26 @@ sub restore_from_backup {
         return;
     }
 
-    my @ids;
     while ( my $message = $st->fetchrow_hashref ) {
         eval {
             insert_record($message);
             MailScanner::Log::InfoLog("BaruwaSQL: $$message{messageid}: restored from backup");
             print STDERR "BaruwaSQL: $$message{messageid}: restored from backup\n";
-            push @ids, $$message{messageid};
         };
         if ($@) {
             MailScanner::Log::InfoLog("BaruwaSQL: Backup DB insert Fail");
             print STDERR "BaruwaSQL: Backup DB insert Fail: $@\n";
-        }
-    }
-
-    # delete messages that have been logged
-    while (@ids) {
-        my @tmp_ids = splice( @ids, 0, 50 );
-        my $del_ids = join q{,}, map { '?' } @tmp_ids;
+        } else {
         eval {
-            $bconn->do( "DELETE FROM tm WHERE messageid IN ($del_ids)", undef, @tmp_ids );
+                my @bind_values = ($$message{messageid}, $$message{to_address});
+                $bconn->do("DELETE FROM tm WHERE messageid=? AND to_address=?", undef, @bind_values)
         };
         if ($@) {
             MailScanner::Log::WarnLog("BaruwaSQL: Backup DB clean temp Fail");
             print STDERR "BaruwaSQL: Backup DB clean temp Fail: $@\n";
         }
     }
-    undef @ids;
+    }
 }
 
 sub create_backupdb_tables {
@@ -162,7 +155,6 @@ sub create_backupdb_tables {
                 scaned INT NOT NULL
             )"
         );
-        $bconn->do("CREATE UNIQUE INDEX id_uniq ON tm(messageid)");
     };
 }
 
@@ -251,6 +243,7 @@ sub connect2db {
                     pg_enable_utf8       => 1
                 }
             ) unless $conn && $conn->ping;
+
             #$conn->do("SET NAMES 'utf8'");
             $sth = $conn->prepare(
                 "INSERT INTO messages (
@@ -288,6 +281,7 @@ sub connect2sphinxql {
                     RaiseError           => 1
                 }
             ) unless $sphinx && $sphinx->ping;
+
             #$sphinx->do("SET NAMES 'utf8'");
             $spth = $sphinx->prepare(
                 "INSERT INTO messages_rt (
@@ -310,7 +304,6 @@ sub ExitBS {
     $conn->disconnect unless (!$conn);
     $sphinx->disconnect unless (!$sphinx);
     $shutdown->send;
-    #undef($server) if defined $server;
 }
 
 sub client_connection {
@@ -320,12 +313,6 @@ sub client_connection {
         Timeout  => 10,
         Blocking => 0,
     );
-    # my $client = IO::Socket::INET->new(
-    #     PeerAddr => $host,
-    #     PeerPort => $port,
-    #     Proto => "tcp",
-    #     Type => SOCK_STREAM,
-    # );
     return $client;
 }
 
@@ -365,7 +352,9 @@ sub handle_conn {
         on_error => $errorhandle,
         on_eof => $cleanup,
     );
-    $handle->push_read(line => 'END', sub {
+    $handle->push_read(
+        line => 'END',
+        sub {
         my $line = $_[1];
         if ($line =~ /^EXIT$/) {
             print STDERR "\nShutdown requested, shutting down\n";
@@ -380,34 +369,42 @@ sub handle_conn {
         connect2db() unless $conn && $conn->ping;
         connect2sphinxql() unless $sphinx && $sphinx->ping;
 
+            my @addrs = split( ',', $$message{to_address} );
+            foreach (@addrs) {
+                $$message{to_address} = $_;
         eval {
             my $id = insert_record($message);
-            MailScanner::Log::InfoLog("BaruwaSQL: $$message{messageid}: Logged");
-            print STDERR "BaruwaSQL: $$message{messageid}: Logged\n";
+                    MailScanner::Log::InfoLog("BaruwaSQL: $$message{messageid}: to: $_ Logged");
+                    print STDERR "BaruwaSQL: $$message{messageid}: to: $_ Logged\n";
             $$message{id} = $id;
             index_record($message);
+                    $$message{id} = undef;
         };
         if ($@) {
             # log to sqlite
             log2backup($message);
-        } else {
+                }
+                else {
             # success recover from sqlite
             restore_from_backup();
         }
+            }
         $message = undef;
         return $cleanup->();
-    });
+        }
+    );
     return;
 }
-
 
 sub InitBaruwaLog {
     ($WantLintOnly) = @_;
     my $pid = fork();
     if ($pid) {
+
         #mailscanner child / bs parent
         waitpid $pid, 0;
     } else {
+
         # BS process
         POSIX::setsid();
         if (!fork()) {
@@ -441,9 +438,7 @@ sub InitBaruwaLog {
             openbackupdb();
             connect2db();
             connect2sphinxql();
-            eval {
-                $server = tcp_server 'unix/', $socket, \&handle_conn;
-            };
+            eval { $server = tcp_server 'unix/', $socket, \&handle_conn; };
             if ($@) {
                 MailScanner::Log::WarnLog("BaruwaSQL: server error: $@");
             }
@@ -454,7 +449,6 @@ sub InitBaruwaLog {
     }
 }
 
-
 sub EndBaruwaLog {
     if ( $WantLintOnly ) {
         MailScanner::Log::InfoLog("BaruwaSQL: Shutdown lint process");
@@ -464,7 +458,6 @@ sub EndBaruwaLog {
     MailScanner::Log::InfoLog("BaruwaSQL: shutdown requested by child: $$");
     print STDERR "BaruwaSQL: shutdown requested by child: $$\n";
 }
-
 
 sub BaruwaLog {
     my ($message) = @_;
@@ -493,8 +486,13 @@ sub BaruwaLog {
         $archived = 1;
     }
 
-    my ( $sec, $min, $hour, $mday, $mon, $year, $wday, $yday, $isdst ) = gmtime();
-    my ($timestamp) = sprintf("%d-%02d-%02d %02d:%02d:%02d", $year + 1900, $mon + 1, $mday, $hour, $min, $sec);
+    my ( $sec, $min, $hour, $mday, $mon, $year, $wday, $yday, $isdst ) =
+      gmtime();
+    my ($timestamp) = sprintf(
+        "%d-%02d-%02d %02d:%02d:%02d",
+        $year + 1900,
+        $mon + 1, $mday, $hour, $min, $sec
+    );
 
     my $sphinxts = timegm($sec, $min, $hour, $mday, $mon, $year); 
     
@@ -559,7 +557,7 @@ sub BaruwaLog {
     }
 
     unless ( defined($$message{from}) and $$message{from} ){
-        $$message{from} = '<>'
+        $$message{from} = '<>';
     }
 
     my %msg;
