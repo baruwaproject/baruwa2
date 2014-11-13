@@ -24,9 +24,14 @@ import sys
 import shutil
 import datetime
 
+import pytz
+
+from sqlalchemy.sql.expression import and_
+
 from baruwa.commands import BaseCommand
 from baruwa.model.meta import Session
 from baruwa.lib.regex import QDIR
+from baruwa.lib.dates import make_tz
 from baruwa.model.messages import Message
 from baruwa.lib.misc import get_config_option
 
@@ -70,6 +75,7 @@ class CleanQuarantineCommand(BaseCommand):
             quarantine_dir.startswith('/lib') or
             quarantine_dir.startswith('/home') or
             quarantine_dir.startswith('/bin') or
+            quarantine_dir.startswith('/sbin') or
             quarantine_dir.startswith('..')):
             return False
 
@@ -95,9 +101,19 @@ class CleanQuarantineCommand(BaseCommand):
             for ignore_dir in ignore_dirs:
                 process_dir(ids, process_path, ignore_dir)
 
-            sql = Message.__table__.update()\
-                .where(Message.messageid.in_(ids))\
-                .values(isquarantined=0)
+            year, month, day = direc[:4], direc[4:-2], direc[6:]
+            startdate = datetime.datetime(year, month, day, 00, 00, 00)
+            enddate = datetime.datetime(year, month, day, 23, 59, 59)
+            localzone = make_tz(self.conf['baruwa.timezone'])
+            startdate = localzone.localize(startdate)
+            enddate = localzone.localize(enddate)
+            startdate = pytz.utc.normalize(startdate.astimezone(pytz.utc))
+            enddate = pytz.utc.normalize(enddate.astimezone(pytz.utc))
+            
+            sql = Message.__table__.update().where(and_(
+                        Message.messageid.in_(ids),
+                        Message.timestamp.between(startdate, enddate)
+                    )).values(isquarantined=0)
             Session.bind.execute(sql)
             if (os.path.isabs(process_path) and
                 (not os.path.islink(process_path))):

@@ -180,7 +180,7 @@ class Archive(Base):
     messageid = Column(Unicode(255), index=True)
     actions = Column(Unicode(255))
     clientip = Column(Unicode(128))
-    date = Column(Date(timezone=True), index=True)
+    date = Column(Date, index=True)
     from_address = Column(Unicode(255), index=True)
     from_domain = Column(Unicode(255), index=True)
     headers = Column(UnicodeText)
