@@ -51,6 +51,21 @@ CREATE VIEW routedata AS
     FROM destinations, maildomains, domainalias
     WHERE maildomains.id=destinations.domain_id AND
     maildomains.id=domainalias.domain_id;
+    
+--alldomains
+DROP VIEW IF EXISTS alldomains CASCADE;
+CREATE VIEW alldomains AS
+    SELECT maildomains.id, name, site_url, status, delivery_mode, spam_actions,
+    highspam_actions, smtp_callout, ldap_callout, spam_checks,
+    virus_checks, low_score, high_score, message_size, virus_checks_at_smtp,
+    language, timezone, report_every FROM maildomains WHERE status='t'
+	UNION
+    SELECT maildomains.id, domainalias.name AS name, site_url, maildomains.status, delivery_mode,
+    spam_actions, highspam_actions, smtp_callout, ldap_callout, spam_checks,
+    virus_checks, low_score, high_score, message_size, virus_checks_at_smtp,
+    language, timezone, report_every FROM domainalias, maildomains WHERE
+    domainalias.domain_id = maildomains.id AND maildomains.status='t'
+    AND domainalias.status='t';
 
 --relaydomains
 DROP VIEW IF EXISTS relaydomains;
@@ -91,41 +106,41 @@ CREATE VIEW ldapmaps AS
 -- Spam Actions = spamactions.customize
 DROP VIEW IF EXISTS spamactions CASCADE;
 CREATE VIEW spamactions AS
-SELECT row_number, oldtable.*, character(50) 'spamactions' AS name FROM
-	(SELECT ARRAY_TO_STRING(ARRAY['To: ', name, ' ',
+    SELECT row_number, oldtable.*, character(50) 'spamactions' AS name FROM
+	(SELECT ARRAY_TO_STRING(ARRAY['To:', ' ', '*@', name, ' ',
 	    CASE WHEN spam_actions=1 THEN 'deliver'
-	    WHEN spam_actions=3 THEN 'delete' END], ' ') ruleset from maildomains WHERE status='t' AND spam_actions != 2
+	    WHEN spam_actions=3 THEN 'delete' END], '') ruleset from alldomains WHERE status='t' AND spam_actions != 2
 	UNION ALL
-	SELECT ARRAY_TO_STRING(ARRAY['FromOrTo:', 'default', 'store'], ' ')) AS oldtable
+	SELECT ARRAY_TO_STRING(ARRAY['FromOrTo:', ' ', 'default', ' ', 'store'], '')) AS oldtable
 	CROSS JOIN
-	(SELECT ARRAY(SELECT ARRAY_TO_STRING(ARRAY['To:', name, ' ',
+	(SELECT ARRAY(SELECT ARRAY_TO_STRING(ARRAY['To:', ' ', '*@', name, ' ',
 	    CASE WHEN spam_actions=1 THEN 'deliver'
-	    WHEN spam_actions=3 THEN 'delete' END], ' ') ruleset from maildomains WHERE status='t' AND spam_actions != 2
+	    WHEN spam_actions=3 THEN 'delete' END], '') ruleset from alldomains WHERE status='t' AND spam_actions != 2
 	UNION ALL
-	SELECT ARRAY_TO_STRING(ARRAY['FromOrTo:', 'default', 'store'], ' ')) AS id) AS oldids
+	SELECT ARRAY_TO_STRING(ARRAY['FromOrTo:', ' ', 'default', ' ', 'store'], '')) AS id) AS oldids
 	CROSS JOIN
 	generate_series(1, (SELECT COUNT(*) FROM 
-	(SELECT id FROM maildomains WHERE status='t' AND spam_actions != 2 UNION ALL SELECT 1) AS td)) AS row_number
+	(SELECT id FROM alldomains WHERE status='t' AND spam_actions != 2 UNION ALL SELECT 1) AS td)) AS row_number
 	WHERE oldids.id[row_number] = oldtable.ruleset ORDER BY row_number;
 
 --highspamactions.customize
 DROP VIEW IF EXISTS highspamactions CASCADE;
 CREATE VIEW highspamactions AS
 	SELECT row_number, oldtable.*, character(50) 'highspamactions' AS name FROM
-	(SELECT ARRAY_TO_STRING(ARRAY['To:', name, ' ',
+	(SELECT ARRAY_TO_STRING(ARRAY['To:', ' ', '*@', name, ' ',
 	    CASE WHEN highspam_actions=1 THEN 'deliver'
-	    WHEN highspam_actions=3 THEN 'delete' END], ' ') ruleset from maildomains WHERE status='t' AND highspam_actions != 2
+	    WHEN highspam_actions=3 THEN 'delete' END], '') ruleset from alldomains WHERE status='t' AND highspam_actions != 2
 	UNION ALL
-	SELECT ARRAY_TO_STRING(ARRAY['FromOrTo:', 'default', 'store'], ' ')) AS oldtable
+	SELECT ARRAY_TO_STRING(ARRAY['FromOrTo:', ' ', 'default', ' ', 'store'], '')) AS oldtable
 	CROSS JOIN
-	(SELECT ARRAY(SELECT ARRAY_TO_STRING(ARRAY['To:', name, ' ',
+	(SELECT ARRAY(SELECT ARRAY_TO_STRING(ARRAY['To:', ' ', '*@', name, ' ',
 	    CASE WHEN highspam_actions=1 THEN 'deliver'
-	    WHEN highspam_actions=3 THEN 'delete' END], ' ') ruleset from maildomains WHERE status='t' AND highspam_actions != 2
+	    WHEN highspam_actions=3 THEN 'delete' END], '') ruleset from alldomains WHERE status='t' AND highspam_actions != 2
 	UNION ALL
-	SELECT ARRAY_TO_STRING(ARRAY['FromOrTo:', 'default', 'store'], ' ')) AS id) AS oldids
+	SELECT ARRAY_TO_STRING(ARRAY['FromOrTo:', ' ', 'default', ' ', 'store'], '')) AS id) AS oldids
 	CROSS JOIN
 	generate_series(1, (SELECT COUNT(*) FROM 
-	(SELECT id FROM maildomains WHERE status='t' AND highspam_actions != 2 UNION ALL SELECT 1) AS td)) AS row_number
+	(SELECT id FROM alldomains WHERE status='t' AND highspam_actions != 2 UNION ALL SELECT 1) AS td)) AS row_number
 	WHERE oldids.id[row_number] = oldtable.ruleset ORDER BY row_number;
 
 --spamchecks.customize
@@ -242,12 +257,12 @@ CREATE VIEW virusscan AS
 DROP VIEW IF EXISTS innerhighspamscore CASCADE;
 CREATE VIEW innerhighspamscore AS
 	SELECT address, high_score, 1 num FROM addresses, users WHERE
-	addresses.user_id=users.id AND users.active='t' AND addresses.enabled='t'
+	addresses.user_id=users.id AND users.active='t' AND addresses.enabled='t' AND high_score > 0
 	UNION
 	SELECT email, high_score, 2 num FROM users WHERE high_score > 0
 	UNION
-	SELECT '*@' || name, high_score, 3 num FROM maildomains WHERE
-	maildomains.status='t' AND maildomains.high_score > 0;
+	SELECT '*@' || name, high_score, 3 num FROM alldomains WHERE
+	status='t' AND high_score > 0;
 
 --highspamscore.customize
 DROP VIEW IF EXISTS highspamscore CASCADE;
@@ -271,7 +286,7 @@ CREATE VIEW innerspamscore AS
 	SELECT address, low_score, 1 num FROM addresses, users WHERE
 	addresses.user_id=users.id AND users.active='t' AND addresses.enabled='t' AND low_score > 0
 	UNION SELECT email, low_score, 2 num FROM users WHERE low_score > 0
-	UNION SELECT '*@' || name, low_score, 3 num FROM maildomains WHERE maildomains.status='t' AND maildomains.low_score > 0;
+	UNION SELECT '*@' || name, low_score, 3 num FROM alldomains WHERE status='t' AND low_score > 0;
 
 --spamscore.customize
 DROP VIEW IF EXISTS spamscore CASCADE;
