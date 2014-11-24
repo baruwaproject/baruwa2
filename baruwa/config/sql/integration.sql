@@ -262,7 +262,7 @@ CREATE VIEW innerhighspamscore AS
 	SELECT email, high_score, 2 num FROM users WHERE high_score > 0
 	UNION
 	SELECT '*@' || name, high_score, 3 num FROM alldomains WHERE
-	status='t' AND high_score > 0;
+	status='t' AND high_score > 0 ORDER BY num ASC;
 
 --highspamscore.customize
 DROP VIEW IF EXISTS highspamscore CASCADE;
@@ -286,7 +286,7 @@ CREATE VIEW innerspamscore AS
 	SELECT address, low_score, 1 num FROM addresses, users WHERE
 	addresses.user_id=users.id AND users.active='t' AND addresses.enabled='t' AND low_score > 0
 	UNION SELECT email, low_score, 2 num FROM users WHERE low_score > 0
-	UNION SELECT '*@' || name, low_score, 3 num FROM alldomains WHERE status='t' AND low_score > 0;
+	UNION SELECT '*@' || name, low_score, 3 num FROM alldomains WHERE status='t' AND low_score > 0 ORDER BY num ASC;
 
 --spamscore.customize
 DROP VIEW IF EXISTS spamscore CASCADE;
