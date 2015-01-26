@@ -308,14 +308,14 @@ CREATE VIEW spamscore AS
 DROP VIEW IF EXISTS messagesize CASCADE;
 CREATE VIEW messagesize AS
 	SELECT row_number, oldtable.*, character(50) 'messagesize' AS name FROM
-	(SELECT ARRAY_TO_STRING(ARRAY['To:', '*@', name, ' ', TEXT(message_size)], ' ') ruleset from maildomains WHERE status='t' AND message_size != '0'
+	(SELECT ARRAY_TO_STRING(ARRAY['To:', '*@', name, ' ', TEXT(message_size)], '') ruleset from maildomains WHERE status='t' AND message_size != '0'
 	UNION ALL
-	SELECT ARRAY_TO_STRING(ARRAY['FromOrTo:', 'default', '0'], ' ')) AS oldtable
+	SELECT ARRAY_TO_STRING(ARRAY['FromOrTo:', 'default', '0'], '')) AS oldtable
 	CROSS JOIN
-	(SELECT ARRAY(SELECT ARRAY_TO_STRING(ARRAY['To:', '*@', name, ' ', TEXT(message_size)], ' ')
+	(SELECT ARRAY(SELECT ARRAY_TO_STRING(ARRAY['To:', '*@', name, ' ', TEXT(message_size)], '')
 	 ruleset from maildomains WHERE status='t' AND message_size !='0'
 	UNION ALL
-	SELECT ARRAY_TO_STRING(ARRAY['FromOrTo:', 'default', '0'], ' ')) AS id) AS oldids
+	SELECT ARRAY_TO_STRING(ARRAY['FromOrTo:', 'default', '0'], '')) AS id) AS oldids
 	CROSS JOIN
 	generate_series(1, (SELECT COUNT(*) FROM 
 	(SELECT id FROM maildomains WHERE status='t' AND message_size != '0' UNION ALL SELECT 1) AS td)) AS row_number
