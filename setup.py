@@ -85,7 +85,6 @@ setup(
     packages=find_packages(exclude=['ez_setup']),
     include_package_data=True,
     scripts=['bin/import-mbox.py',
-            'bin/archive-download.py',
             'bin/eximqf2mbox.py',
             'bin/test-smtpauth.py',
             'bin/recon-mbox.py'],
