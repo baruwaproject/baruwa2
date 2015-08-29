@@ -26,8 +26,6 @@ except ImportError:
     use_setuptools()
     from setuptools import setup, find_packages, Extension
 
-from Cython.Build import cythonize
-
 required_packages = [
         "Pylons>=1.0",
         "SQLAlchemy>=0.7,<0.8",
