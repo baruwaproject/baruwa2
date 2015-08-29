@@ -106,5 +106,5 @@ You can get free and friendly support from the `list <http://lists.baruwa.org>`_
 Commercial support
 ------------------
 
-Should your require commercial support, you should purchase the
-`Enterprise Edition <https://www.baruwa.com>`_
+Should your require commercial support, you should purchase an
+`Enterprise Edition <https://www.baruwa.com>`_ subscription.
