@@ -1,351 +1,518 @@
-# Translations template for PROJECT.
-# Copyright (C) 2012 ORGANIZATION
-# This file is distributed under the same license as the PROJECT project.
-# 
+# Danish translations for .
+# Copyright (C) 2014 Andrew Colin Kissa
+# This file is distributed under the same license as the  project.
+#
 # Translators:
-# datopdog  <andrew@topdog.za.net>, 2012.
+# Andrew Colin Kissa <andrew@topdog.za.net>, 2012
 msgid ""
 msgstr ""
-"Project-Id-Version: baruwa\n"
-"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2012-11-14 14:04+0200\n"
-"PO-Revision-Date: 2012-11-14 11:53+0000\n"
-"Last-Translator: datopdog <andrew@topdog.za.net>\n"
-"Language-Team: Danish (http://www.transifex.com/projects/p/baruwa/language/da/)\n"
+"Project-Id-Version:  baruwa\n"
+"Report-Msgid-Bugs-To: baruwa@lists.baruwa.org\n"
+"POT-Creation-Date: 2015-08-29 11:41+0200\n"
+"PO-Revision-Date: 2015-01-20 18:21+0200\n"
+"Last-Translator: Andrew Colin Kissa <andrew@topdog.za.net>\n"
+"Language-Team: Baruwa Project\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 0.9.6\n"
-"Language: da\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: baruwa/public/js/baruwa/accounts.js:1 baruwa/public/js/baruwa/domains.js:1
-#: baruwa/public/js/baruwa/lists.js:1
+#: baruwa/public/js/baruwa/accounts.js:1
+#: baruwa/public/js/baruwa/accounts.min.js:27
+#: baruwa/public/js/baruwa/domains.js:1
+#: baruwa/public/js/baruwa/domains.min.js:29 baruwa/public/js/baruwa/lists.js:1
+#: baruwa/public/js/baruwa/lists.min.js:21
 #: baruwa/public/js/baruwa/messages.archive.js:1
+#: baruwa/public/js/baruwa/messages.archive.min.js:11
 #: baruwa/public/js/baruwa/messages.js:1
+#: baruwa/public/js/baruwa/messages.min.js:11
 #: baruwa/public/js/baruwa/messages.quarantine.js:1
+#: baruwa/public/js/baruwa/messages.quarantine.min.js:31
 #: baruwa/public/js/baruwa/organizations.js:1
+#: baruwa/public/js/baruwa/organizations.min.js:21
 #: baruwa/public/js/baruwa/settings.js:1
+#: baruwa/public/js/baruwa/settings.min.js:21
 #: baruwa/public/js/baruwa/status.audit.js:1
+#: baruwa/public/js/baruwa/status.audit.min.js:26
 msgid "Showing items {{first_item}} to {{last_item}} of {{item_count}}."
 msgstr "Viser elementer {{first_item}} at {{last_item}} af {{item_count}}."
 
 #: baruwa/public/js/baruwa/accounts.js:1
+#: baruwa/public/js/baruwa/accounts.min.js:28
 msgid "Accounts :: Showing page {{page}} of {{page_count}} pages."
 msgstr "Konti:: Viser side {{page}} af {{page_count}} sider."
 
-#: baruwa/public/js/baruwa/accounts.js:1 baruwa/public/js/baruwa/domains.js:1
-#: baruwa/public/js/baruwa/lists.js:1
+#: baruwa/public/js/baruwa/accounts.js:1
+#: baruwa/public/js/baruwa/accounts.min.js:29
+#: baruwa/public/js/baruwa/domains.js:1
+#: baruwa/public/js/baruwa/domains.min.js:31 baruwa/public/js/baruwa/lists.js:1
+#: baruwa/public/js/baruwa/lists.min.js:20
+#: baruwa/public/js/baruwa/lists.min.js:23
 #: baruwa/public/js/baruwa/messages.archive.js:1
+#: baruwa/public/js/baruwa/messages.archive.min.js:13
 #: baruwa/public/js/baruwa/messages.js:1
+#: baruwa/public/js/baruwa/messages.min.js:13
 #: baruwa/public/js/baruwa/messages.quarantine.js:1
+#: baruwa/public/js/baruwa/messages.quarantine.min.js:33
 #: baruwa/public/js/baruwa/messages.search.js:1
+#: baruwa/public/js/baruwa/messages.search.min.js:24
 #: baruwa/public/js/baruwa/organizations.js:1
+#: baruwa/public/js/baruwa/organizations.min.js:23
 #: baruwa/public/js/baruwa/reports.pie.js:1
+#: baruwa/public/js/baruwa/reports.pie.min.js:21
 #: baruwa/public/js/baruwa/reports.relays.js:1
+#: baruwa/public/js/baruwa/reports.relays.min.js:20
 #: baruwa/public/js/baruwa/reports.spam.js:1
+#: baruwa/public/js/baruwa/reports.spam.min.js:16
 #: baruwa/public/js/baruwa/settings.js:1
+#: baruwa/public/js/baruwa/settings.min.js:23
 #: baruwa/public/js/baruwa/status.audit.js:1
+#: baruwa/public/js/baruwa/status.audit.min.js:28
 msgid "No items found"
 msgstr "Ingen emner fundet"
 
 #: baruwa/public/js/baruwa/accounts.js:1
+#: baruwa/public/js/baruwa/accounts.min.js:29
 msgid "Accounts"
 msgstr "Regnskaber"
 
-#: baruwa/public/js/baruwa/common.js:1
+#: baruwa/public/js/baruwa/common.js:1 baruwa/public/js/baruwa/common.min.js:10
 msgid "AJAX Error:"
 msgstr "AJAX fejl:"
 
-#: baruwa/public/js/baruwa/common.js:1
+#: baruwa/public/js/baruwa/common.js:1 baruwa/public/js/baruwa/common.min.js:11
 msgid "Error Occured:"
 msgstr "Opstod:"
 
-#: baruwa/public/js/baruwa/common.js:1
+#: baruwa/public/js/baruwa/common.js:1 baruwa/public/js/baruwa/common.min.js:12
 #: baruwa/public/js/baruwa/messages.filters.js:1
+#: baruwa/public/js/baruwa/messages.filters.min.js:18
 #: baruwa/public/js/baruwa/reports.common.js:1
+#: baruwa/public/js/baruwa/reports.common.min.js:12
 #: baruwa/public/js/baruwa/reports.js:1
 #: baruwa/public/js/baruwa/reports.listings.js:1
+#: baruwa/public/js/baruwa/reports.listings.min.js:34
+#: baruwa/public/js/baruwa/reports.min.js:26
+#: baruwa/public/js/baruwa/reports.min.js:36
 #: baruwa/public/js/baruwa/reports.pie.js:1
+#: baruwa/public/js/baruwa/reports.pie.min.js:30
 #: baruwa/public/js/baruwa/reports.relays.js:1
+#: baruwa/public/js/baruwa/reports.relays.min.js:29
 #: baruwa/public/js/baruwa/reports.spam.js:1
+#: baruwa/public/js/baruwa/reports.spam.min.js:25
 msgid "Loading"
 msgstr "Indlæsning af"
 
-#: baruwa/public/js/baruwa/common.js:1
+#: baruwa/public/js/baruwa/common.js:1 baruwa/public/js/baruwa/common.min.js:15
+#: baruwa/public/js/baruwa/common.min.js:20
+#: baruwa/public/js/baruwa/common.min.js:23
+#: baruwa/public/js/baruwa/common.min.js:26
 msgid "Unknown error occured !"
 msgstr "Ukendt fejl opstod!"
 
 #: baruwa/public/js/baruwa/domains.js:1
+#: baruwa/public/js/baruwa/domains.min.js:28
 msgid "No domains found"
 msgstr "Ingen fundet domæner"
 
 #: baruwa/public/js/baruwa/domains.js:1
+#: baruwa/public/js/baruwa/domains.min.js:30
 msgid "Domains :: Showing page {{page}} of {{page_count}} pages."
 msgstr "Domæner:: Viser side {{page}} af {{page_count}} sider."
 
 #: baruwa/public/js/baruwa/domains.js:1
+#: baruwa/public/js/baruwa/domains.min.js:31
 msgid "Domains"
 msgstr "Domæner"
 
-#: baruwa/public/js/baruwa/lists.js:1
+#: baruwa/public/js/baruwa/lists.js:1 baruwa/public/js/baruwa/lists.min.js:22
 msgid "Lists :: {{listname}} Showing page {{page}} of {{page_count}} pages."
 msgstr "Lister:: {{listname}} Viser side {{page}} af {{page_count}} sider."
 
-#: baruwa/public/js/baruwa/lists.js:1
+#: baruwa/public/js/baruwa/lists.js:1 baruwa/public/js/baruwa/lists.min.js:23
 msgid "Lists"
 msgstr "Lister"
 
-#: baruwa/public/js/baruwa/login.js:1
+#: baruwa/public/js/baruwa/login.js:1 baruwa/public/js/baruwa/login.min.js:11
 msgid "Login"
 msgstr "Login"
 
-#: baruwa/public/js/baruwa/login.js:1
+#: baruwa/public/js/baruwa/login.js:1 baruwa/public/js/baruwa/login.min.js:13
 msgid "Reset my password"
 msgstr "Nulstille min adgangskode"
 
 #: baruwa/public/js/baruwa/messages.archive.js:1
+#: baruwa/public/js/baruwa/messages.archive.min.js:12
 msgid "Messages :: Archive :: Showing page {{page}} of {{page_count}} pages."
 msgstr "Meddelelser:: Arkiv:: viser side {{page}} af {{page_count}} sider."
 
 #: baruwa/public/js/baruwa/messages.archive.js:1
+#: baruwa/public/js/baruwa/messages.archive.min.js:13
 msgid "Messages :: Archive"
 msgstr "Meddelelser:: arkiv"
 
 #: baruwa/public/js/baruwa/messages.archive.js:1
+#: baruwa/public/js/baruwa/messages.archive.min.js:16
 #: baruwa/public/js/baruwa/messages.js:1
+#: baruwa/public/js/baruwa/messages.min.js:16
 #: baruwa/public/js/baruwa/messages.quarantine.js:1
+#: baruwa/public/js/baruwa/messages.quarantine.min.js:36
 msgid "Date/Time"
 msgstr "Dato og klokkeslæt"
 
 #: baruwa/public/js/baruwa/messages.archive.js:1
+#: baruwa/public/js/baruwa/messages.archive.min.js:16
 #: baruwa/public/js/baruwa/messages.js:1
+#: baruwa/public/js/baruwa/messages.min.js:16
 #: baruwa/public/js/baruwa/messages.quarantine.js:1
+#: baruwa/public/js/baruwa/messages.quarantine.min.js:36
 msgid "From"
 msgstr "Fra"
 
 #: baruwa/public/js/baruwa/messages.archive.js:1
+#: baruwa/public/js/baruwa/messages.archive.min.js:16
 #: baruwa/public/js/baruwa/messages.js:1
+#: baruwa/public/js/baruwa/messages.min.js:16
 #: baruwa/public/js/baruwa/messages.quarantine.js:1
+#: baruwa/public/js/baruwa/messages.quarantine.min.js:36
 msgid "To"
 msgstr "Til"
 
 #: baruwa/public/js/baruwa/messages.archive.js:1
+#: baruwa/public/js/baruwa/messages.archive.min.js:16
 #: baruwa/public/js/baruwa/messages.js:1
+#: baruwa/public/js/baruwa/messages.min.js:16
 #: baruwa/public/js/baruwa/messages.quarantine.js:1
+#: baruwa/public/js/baruwa/messages.quarantine.min.js:36
 msgid "Subject"
 msgstr "Emne"
 
 #: baruwa/public/js/baruwa/messages.archive.js:1
+#: baruwa/public/js/baruwa/messages.archive.min.js:16
 #: baruwa/public/js/baruwa/messages.js:1
+#: baruwa/public/js/baruwa/messages.min.js:16
 msgid "Size"
 msgstr "Størrelse"
 
 #: baruwa/public/js/baruwa/messages.archive.js:1
+#: baruwa/public/js/baruwa/messages.archive.min.js:16
 #: baruwa/public/js/baruwa/messages.js:1
+#: baruwa/public/js/baruwa/messages.min.js:16
 #: baruwa/public/js/baruwa/messages.quarantine.js:1
+#: baruwa/public/js/baruwa/messages.quarantine.min.js:36
 msgid "Score"
 msgstr "Score"
 
 #: baruwa/public/js/baruwa/messages.common.js:1
+#: baruwa/public/js/baruwa/messages.common.min.js:24
 #: baruwa/public/js/baruwa/messages.quarantine.js:1
+#: baruwa/public/js/baruwa/messages.quarantine.min.js:29
 msgid "No messages found"
 msgstr "Ingen meddelelser, der er fundet"
 
 #: baruwa/public/js/baruwa/messages.detail.js:1
+#: baruwa/public/js/baruwa/messages.detail.min.js:11
 msgid "Show hosts"
 msgstr "Vis værter"
 
 #: baruwa/public/js/baruwa/messages.detail.js:1
+#: baruwa/public/js/baruwa/messages.detail.min.js:13
+#: baruwa/public/js/baruwa/messages.detail.min.js:17
 msgid "Hide hosts"
 msgstr "Skjule værter"
 
 #: baruwa/public/js/baruwa/messages.detail.js:1
+#: baruwa/public/js/baruwa/messages.detail.min.js:30
 msgid "Processing......"
 msgstr "Behandler..."
 
 #: baruwa/public/js/baruwa/messages.detail.js:1
+#: baruwa/public/js/baruwa/messages.detail.min.js:47
 msgid "Show headers"
 msgstr "Vis overskrifter"
 
 #: baruwa/public/js/baruwa/messages.detail.js:1
+#: baruwa/public/js/baruwa/messages.detail.min.js:49
 msgid "Hide headers"
 msgstr "Skjule sidehoveder"
 
 #: baruwa/public/js/baruwa/messages.filters.js:1
+#: baruwa/public/js/baruwa/messages.filters.min.js:19
 #: baruwa/public/js/baruwa/reports.js:1
 #: baruwa/public/js/baruwa/reports.listings.js:1
+#: baruwa/public/js/baruwa/reports.listings.min.js:34
+#: baruwa/public/js/baruwa/reports.min.js:37
 #: baruwa/public/js/baruwa/reports.pie.js:1
+#: baruwa/public/js/baruwa/reports.pie.min.js:30
 #: baruwa/public/js/baruwa/reports.relays.js:1
+#: baruwa/public/js/baruwa/reports.relays.min.js:29
 #: baruwa/public/js/baruwa/reports.spam.js:1
+#: baruwa/public/js/baruwa/reports.spam.min.js:25
 msgid "Processing request............."
 msgstr "Behandler anmodningen..."
 
 #: baruwa/public/js/baruwa/messages.filters.js:1
+#: baruwa/public/js/baruwa/messages.filters.min.js:22
 #: baruwa/public/js/baruwa/reports.js:1
 #: baruwa/public/js/baruwa/reports.listings.js:1
+#: baruwa/public/js/baruwa/reports.listings.min.js:27
+#: baruwa/public/js/baruwa/reports.listings.min.js:29
+#: baruwa/public/js/baruwa/reports.min.js:25
+#: baruwa/public/js/baruwa/reports.min.js:34
 #: baruwa/public/js/baruwa/reports.pie.js:1
+#: baruwa/public/js/baruwa/reports.pie.min.js:22
+#: baruwa/public/js/baruwa/reports.pie.min.js:23
 #: baruwa/public/js/baruwa/reports.relays.js:1
+#: baruwa/public/js/baruwa/reports.relays.min.js:22
+#: baruwa/public/js/baruwa/reports.relays.min.js:23
 #: baruwa/public/js/baruwa/reports.spam.js:1
+#: baruwa/public/js/baruwa/reports.spam.min.js:18
+#: baruwa/public/js/baruwa/reports.spam.min.js:19
 msgid "Add Filter"
 msgstr "Tilføje filteret"
 
 #: baruwa/public/js/baruwa/messages.filters.js:1
+#, fuzzy
 msgid "Non applied at the moment"
-msgstr "Ikke anvendes i øjeblikket"
+msgstr "Ingen anvendes i øjeblikket"
+
+#: baruwa/public/js/baruwa/messages.filters.min.js:27
+msgid "None applied at the moment"
+msgstr "Ingen anvendes i øjeblikket"
 
 #: baruwa/public/js/baruwa/messages.js:1
+#: baruwa/public/js/baruwa/messages.min.js:12
 #: baruwa/public/js/baruwa/messages.quarantine.js:1
 msgid ""
-"Messages :: Full message listing :: Showing page {{page}} of {{page_count}} "
-"pages."
-msgstr "Meddelelser:: Fuld meddelelseslisten:: viser side {{page}} af {{page_count}} sider."
+"Messages :: Full message listing :: Showing page {{page}} of "
+"{{page_count}} pages."
+msgstr ""
+"Meddelelser:: Fuld meddelelseslisten:: viser side {{page}} af "
+"{{page_count}} sider."
 
 #: baruwa/public/js/baruwa/messages.js:1
+#: baruwa/public/js/baruwa/messages.min.js:13
 #: baruwa/public/js/baruwa/messages.quarantine.js:1
 msgid "Messages :: Full message listing"
 msgstr "Meddelelser:: Fuld meddelelseslisten"
 
+#: baruwa/public/js/baruwa/messages.preview.min.js:10
+#: baruwa/public/js/baruwa/status.preview.min.js:10
+msgid " This message contains external images, which have been blocked."
+msgstr " Denne meddelelse indeholder eksterne billeder, som har været blokeret."
+
+#: baruwa/public/js/baruwa/messages.preview.min.js:10
+#: baruwa/public/js/baruwa/status.preview.min.js:10
+msgid "Display images"
+msgstr "Få vist billeder"
+
+#: baruwa/public/js/baruwa/messages.preview.min.js:11
+#: baruwa/public/js/baruwa/status.preview.min.js:11
+msgid "HTML Alternative"
+msgstr "HTML-alternativ"
+
+#: baruwa/public/js/baruwa/messages.preview.min.js:13
+#: baruwa/public/js/baruwa/status.preview.min.js:13
+msgid "Text Alternative"
+msgstr "Tekst alternativ"
+
+#: baruwa/public/js/baruwa/messages.quarantine.min.js:32
+msgid "Messages :: Quarantine :: Showing page {{page}} of {{page_count}} pages."
+msgstr "Meddelelser:: Karantæne:: viser side {{page}} af {{page_count}} sider."
+
+#: baruwa/public/js/baruwa/messages.quarantine.min.js:33
+msgid "Messages :: Quarantine"
+msgstr "Meddelelser:: karantæne"
+
 #: baruwa/public/js/baruwa/messages.recent.js:1
+#: baruwa/public/js/baruwa/messages.recent.min.js:15
 msgid "network connection failure, reconnecting in 60 seconds"
 msgstr "Network connection failure, gentilslutning i 60 sekunder"
 
 #: baruwa/public/js/baruwa/messages.recent.js:1
+#: baruwa/public/js/baruwa/messages.recent.min.js:25
 msgid "OK"
 msgstr "Ok"
 
 #: baruwa/public/js/baruwa/messages.recent.js:1
 msgid "FAULTY"
-msgstr "DEFEKT"
+msgstr ""
+
+#: baruwa/public/js/baruwa/messages.recent.min.js:11
+msgid "Refreshing page, please wait"
+msgstr "Forfriskende side, vent"
+
+#: baruwa/public/js/baruwa/messages.recent.min.js:26
+msgid "ERROR"
+msgstr "FEJL"
 
 #: baruwa/public/js/baruwa/messages.search.js:1
+#: baruwa/public/js/baruwa/messages.search.min.js:21
 msgid "No messages found matching search query:"
 msgstr "Ingen meddelelser fundet matchende søgestreng:"
 
 #: baruwa/public/js/baruwa/messages.search.js:1
+#: baruwa/public/js/baruwa/messages.search.min.js:22
 msgid "Showing items {{first}} to {{last}} of {{total}}."
 msgstr "Viser elementer {{first}} at {{last}} af {{total}}."
 
 #: baruwa/public/js/baruwa/messages.search.js:1
+#: baruwa/public/js/baruwa/messages.search.min.js:23
 msgid "About {{total_found}} results ({{search_time}} seconds)"
 msgstr "Om {{total_found}} resultater ({{search_time}} sekunder)"
 
 #: baruwa/public/js/baruwa/messages.search.js:1
+#: baruwa/public/js/baruwa/messages.search.min.js:24
 msgid "0 Results found ({{search_time}} seconds)"
 msgstr "Fundet 0 resultater ({{search_time}} sekunder)"
 
 #: baruwa/public/js/baruwa/messages.search.js:1
+#: baruwa/public/js/baruwa/messages.search.min.js:25
 msgid "Messages :: Search results :: {{q}}"
 msgstr "Meddelelser:: Søgeresultater:: {{q}}"
 
 #: baruwa/public/js/baruwa/messages.taskstatus.js:1
+#: baruwa/public/js/baruwa/messages.taskstatus.min.js:12
 msgid "An unknown error occured"
 msgstr "Der opstod en ukendt fejl"
 
 #: baruwa/public/js/baruwa/messages.taskstatus.js:1
 msgid "FAILED"
-msgstr "MISLYKKEDES"
+msgstr ""
 
 #: baruwa/public/js/baruwa/messages.taskstatus.js:1
 msgid "PASSED"
-msgstr "BESTÅET"
+msgstr ""
 
 #: baruwa/public/js/baruwa/organizations.js:1
+#: baruwa/public/js/baruwa/organizations.min.js:20
 msgid "No organizations found"
 msgstr "Ingen fundet organisationer"
 
 #: baruwa/public/js/baruwa/organizations.js:1
+#: baruwa/public/js/baruwa/organizations.min.js:22
 msgid "Organizations :: Showing page {{page}} of {{page_count}} pages."
 msgstr "Organisationer:: Viser side {{page}} af {{page_count}} sider."
 
 #: baruwa/public/js/baruwa/organizations.js:1
+#: baruwa/public/js/baruwa/organizations.min.js:23
 msgid "Organizations"
 msgstr "Organisationer"
 
 #: baruwa/public/js/baruwa/reports.common.js:1
+#: baruwa/public/js/baruwa/reports.common.min.js:16
+#: baruwa/public/js/baruwa/reports.common.min.js:17
+#: baruwa/public/js/baruwa/reports.common.min.js:18
 msgid "is equal to"
 msgstr "er lig med"
 
 #: baruwa/public/js/baruwa/reports.common.js:1
+#: baruwa/public/js/baruwa/reports.common.min.js:16
+#: baruwa/public/js/baruwa/reports.common.min.js:17
+#: baruwa/public/js/baruwa/reports.common.min.js:18
 msgid "is not equal to"
 msgstr "er ikke lig med"
 
 #: baruwa/public/js/baruwa/reports.common.js:1
+#: baruwa/public/js/baruwa/reports.common.min.js:16
+#: baruwa/public/js/baruwa/reports.common.min.js:18
 msgid "is greater than"
 msgstr "er større end"
 
 #: baruwa/public/js/baruwa/reports.common.js:1
+#: baruwa/public/js/baruwa/reports.common.min.js:16
+#: baruwa/public/js/baruwa/reports.common.min.js:18
 msgid "is less than"
 msgstr "er mindre end"
 
 #: baruwa/public/js/baruwa/reports.common.js:1
+#: baruwa/public/js/baruwa/reports.common.min.js:17
 msgid "is null"
 msgstr "er null"
 
 #: baruwa/public/js/baruwa/reports.common.js:1
+#: baruwa/public/js/baruwa/reports.common.min.js:17
 msgid "is not null"
 msgstr "er ikke null"
 
 #: baruwa/public/js/baruwa/reports.common.js:1
+#: baruwa/public/js/baruwa/reports.common.min.js:17
 msgid "contains"
 msgstr "indeholder"
 
 #: baruwa/public/js/baruwa/reports.common.js:1
+#: baruwa/public/js/baruwa/reports.common.min.js:17
 msgid "does not contain"
 msgstr "indeholder ikke"
 
 #: baruwa/public/js/baruwa/reports.common.js:1
+#: baruwa/public/js/baruwa/reports.common.min.js:17
 msgid "matches regex"
 msgstr "kampe regex"
 
 #: baruwa/public/js/baruwa/reports.common.js:1
+#: baruwa/public/js/baruwa/reports.common.min.js:17
 msgid "does not match regex"
 msgstr "svarer ikke til regex"
 
 #: baruwa/public/js/baruwa/reports.common.js:1
+#: baruwa/public/js/baruwa/reports.common.min.js:19
 msgid "is true"
 msgstr "er sandt"
 
 #: baruwa/public/js/baruwa/reports.common.js:1
+#: baruwa/public/js/baruwa/reports.common.min.js:19
 msgid "is false"
 msgstr "er falsk"
 
 #: baruwa/public/js/baruwa/reports.common.js:1
+#: baruwa/public/js/baruwa/reports.common.min.js:19
 msgid "Please select"
 msgstr "Vælg venligst"
 
 #: baruwa/public/js/baruwa/reports.js:1
+#: baruwa/public/js/baruwa/reports.min.js:12
 msgid "No active filters at the moment"
 msgstr "Ingen aktive filtre i øjeblikket"
 
 #: baruwa/public/js/baruwa/reports.js:1
+#: baruwa/public/js/baruwa/reports.min.js:12
 msgid "No saved filters at the moment"
 msgstr "Ingen gemte filtre i øjeblikket"
 
 #: baruwa/public/js/baruwa/reports.listings.js:1
+#: baruwa/public/js/baruwa/reports.listings.min.js:25
 msgid "No records found"
 msgstr "Ingen poster fundet"
 
 #: baruwa/public/js/baruwa/settings.js:1
+#: baruwa/public/js/baruwa/settings.min.js:20
 msgid "No scanning hosts found"
 msgstr "Ingen scanning værter fundet"
 
 #: baruwa/public/js/baruwa/settings.js:1
+#: baruwa/public/js/baruwa/settings.min.js:22
 msgid "Settings :: Nodes :: Showing page {{page}} of {{page_count}} pages."
 msgstr "Indstillinger:: Noder:: viser side {{page}} af {{page_count}} sider."
 
 #: baruwa/public/js/baruwa/settings.js:1
+#: baruwa/public/js/baruwa/settings.min.js:23
 msgid "Settings :: Nodes"
 msgstr "Indstillinger:: noder"
 
 #: baruwa/public/js/baruwa/status.audit.js:1
+#: baruwa/public/js/baruwa/status.audit.min.js:18
 msgid "No audit logs found"
 msgstr "Ingen revision logs blev fundet"
 
 #: baruwa/public/js/baruwa/status.audit.js:1
+#: baruwa/public/js/baruwa/status.audit.min.js:27
 msgid "Status :: Audit log :: Showing page {{page}} of {{page_count}} pages."
 msgstr "Status:: Overvågningsloggen:: viser side {{page}} af {{page_count}} sider."
 
 #: baruwa/public/js/baruwa/status.audit.js:1
+#: baruwa/public/js/baruwa/status.audit.min.js:28
 msgid "Status :: Audit log"
 msgstr "Status:: Overvågningsloggen"
+

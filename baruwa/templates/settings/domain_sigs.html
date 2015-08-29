@@ -1,5 +1,6 @@
-<div class="alpos">
-	<div class="grid_16">
+<div class="row-fluid">
+	<div class="span1 hidden-phone"></div>
+	<div class="span10">
 		<ul id="msgops">
 			<li>${h.link_to(_('Domain Settings'), url('domain-settings', domainid=c.domain.id))}</li>
 			<li>${h.link_to(_('Domain details'), url(controller='domains', action='detail', domainid=c.domain.id))}</li>
@@ -8,36 +9,45 @@
 			% endif
 		</ul>
 	</div>
+	<div class="span1 hidden-phone"></div>
 </div>
-<div class="clear"></div>
-<div id="content">
-	<div class="grid_16">
-		<h3 class="head">${_('Domain email signatures')}</h3>
+<div class="space-6"></div>
+<div class="row-fluid">
+	<div class="span1 hidden-phone"></div>
+	<div class="span10">
+		<h3 class="head smaller lighter blue">${_('Domain email signatures')}</h3>
 	</div>
-	% for signature in c.domain.signatures:
-	<div class="grid_16 drow">
-		<div class="grid_12">
-			${_('Text signature') if signature.signature_type == 1 else _('HTML Signature')}
+	<div class="span1 hidden-phone"></div>
+</div>
+<div class="row-fluid">
+	<div class="span1 hidden-phone"></div>
+	<div class="span10">
+		% for signature in c.domain.signatures:
+		<div class="row-fluid">
+			<div class="span8">
+				${_('Text signature') if signature.signature_type == 1 else _('HTML Signature')}
+			</div>
+			<div class="span1">
+				${functions.item_status(signature.enabled)}
+			</div>
+			<div class="span1">
+				&nbsp;
+			</div>
+			<div class="span1">
+				${h.link_to(h.literal('<i class="icon-edit"></i>'), url('domain-sigs-edit', sigid=signature.id))}
+			</div>
+			<div class="span1">
+				${h.link_to(h.literal('<i class="icon-remove red"></i>'), url('domain-sigs-delete', sigid=signature.id))}
+			</div>
 		</div>
-		<div class="grid_1 omega">
-			${h.enabled_or_not(signature.enabled)}
+		% endfor
+		% if not c.domain.signatures:
+		<div class="row-fluid">
+			<div class="span12">${_('No domain signatures configured')}</div>
 		</div>
-		<div class="grid_1 omega">
-			&nbsp;
-		</div>
-		<div class="grid_1 omega">
-			${h.link_to(h.portable_img('imgs/edit.png', _('Edit'), title=_('Edit'), class_="positio"), url('domain-sigs-edit', sigid=signature.id))}
-		</div>
-		<div class="grid_1 omega">
-			${h.link_to(h.portable_img('imgs/action_delete.png', _('Delete'), title=_('Delete'), class_="positio"), url('domain-sigs-delete', sigid=signature.id))}
-		</div>
+		% endif
 	</div>
-	% endfor
-	% if not c.domain.signatures:
-	<div class="grid_16 drow">
-		<div class="grid_15">${_('No domain signatures configured')}</div>
-	</div>
-	% endif
+	<div class="span1 hidden-phone"></div>
 </div>
 
 
@@ -51,7 +61,8 @@ ${_('Settings :: Domain email signatures :: %s') % c.domain.name}
 
 <%def name="headers()">
 </%def>
+<%def name="submenu()"></%def>
 <%def name="localscripts()">
 </%def>
-
-<%inherit file="/base.html"/>
+<%namespace name="functions" file="../includes/functions.html"/>
+<%inherit file="../base.html"/>

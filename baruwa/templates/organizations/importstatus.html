@@ -1,53 +1,57 @@
-<div id="content">
-<table class="taskstatus">
-	<thead>
-		<tr class="grid">
-			<th class="date_heading">${_('Domain name')}</th>
-			<th>${_('Status')}</th>
-			<th class="status_heading">${_('Errors')}</th>
-		</tr>
-	</thead>
-	<tbody>
-		% if c.finished:
-			% if c.results and 'rows' in c.results:
-				% for result in c.results['rows']:
+<div class="row-fluid">
+	<div class="span1 hidden-phone"></div>
+	<div class="span10">
+		<table class="table table-bordered table-condensed table-hover table-striped">
+			<thead>
 				<tr>
-					<td>${h.link_to(result['name'], url('domain-detail', domainid=result['id'])) if result['id'] else result['name']}</td>
-					<td>
-						% if result['imported']:
-						${h.portable_img('imgs/passed.png', alt="OK")}
-						% else:
-						${h.portable_img('imgs/failed.png', alt="FAILED")}
-						% endif
-					</td>
-					<td class="eimportstatus">
-						${h.wrap_paragraphs(result['error'], 50) if result['error'] else 'None'}
-					</td>
+					<th>${_('Domain name')}</th>
+					<th>${_('Status')}</th>
+					<th>${_('Errors')}</th>
 				</tr>
-				% endfor
-			% else:
+			</thead>
+			<tbody>
+				% if c.finished:
+					% if c.results and 'rows' in c.results:
+						% for result in c.results['rows']:
+						<tr>
+							<td>${h.link_to(result['name'], url('domain-detail', domainid=result['id'])) if result['id'] else result['name']}</td>
+							<td>
+								${functions.item_status(result['imported'])}
+							</td>
+							<td class="eimportstatus">
+								${h.wrap_paragraphs(result['error'], 50) if result['error'] else 'None'}
+							</td>
+						</tr>
+						% endfor
+					% else:
+						<tr>
+							<td colspan="3">
+							${_('The CSV import failed: %s') % c.results['global_error']}
+							</td>
+						</tr>
+					% endif
+				% else:
 				<tr>
 					<td colspan="3">
-					${_('The CSV import failed: %s') % c.results['global_error']}
+						<%
+						count = session['dimport-counter']
+						if count > 10:
+							count = 10
+						percent = h.percent_of(count, 10)
+						%>
+					${h.portable_img('imgs/ajax-pager.gif', alt="")} ${_('The request is being processed. %d%%' % percent)}
+					<div class="progress" data-percent="${"%d%%" % percent}">
+						<div class="bar" style="width: ${"%d%%" % percent};"></div>
+					</div>
 					</td>
 				</tr>
-			% endif
-		% else:
-		<tr>
-			<td colspan="3">
-				<%
-				count = session['dimport-counter']
-				if count > 10:
-					count = 10
-				percent = h.percent_of(count, 10)
-				%>
-			${h.portable_img('imgs/ajax-pager.gif', alt="")} ${_('The request is being processed. %d%%' % percent)}
-			</td>
-		</tr>
-		% endif
-	</tbody>
-</table>
+				% endif
+			</tbody>
+		</table>
+	</div>
+	<div class="span1 hidden-phone"></div>
 </div>
+
 
 
 <%def name="headers()">\
@@ -61,7 +65,8 @@ ${_('Organizations :: Domain import status')}
 <%def name="heading()">\
 ${_('Organizations :: Domain import status')}
 </%def>
-
+<%def name="submenu()"></%def>
 <%def name="localscripts()">\
 </%def>
-<%inherit file="/base.html"/>
+<%namespace name="functions" file="../includes/functions.html"/>
+<%inherit file="../base.html"/>

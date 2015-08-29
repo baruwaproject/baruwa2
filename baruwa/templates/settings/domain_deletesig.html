@@ -1,36 +1,50 @@
-<div class="alpos">
-	<div class="grid_16">
+<div class="row-fluid">
+	<div class="span1 hidden-phone"></div>
+	<div class="span10">
 		<ul id="msgops">
 			<li>${h.link_to(_('Domain Settings'), url('domain-settings', domainid=c.sign.domain_id))}</li>
 			<li>${h.link_to(_('Domain details'), url(controller='domains', action='detail', domainid=c.sign.domain_id))}</li>
 		</ul>
 	</div>
+	<div class="span1 hidden-phone"></div>
 </div>
-<div class="clear"></div>
-<div id="content">
-	<div class="grid_16">
-		<h3 class="head">${_('Delete email signature')}</h3>
+<div class="row-fluid">
+	<div class="span1 hidden-phone"></div>
+	<div class="span10">
+		<h3 class="head smaller lighter blue">${_('Delete email signature')}</h3>
 	</div>
-	${h.form(url('domain-sigs-delete', sigid=c.sign.id), method='post')}
-	${h.HTML.div(c.form.csrf_token, style="display: none;")}
-	% if c.form.signature_content.errors:
-	<div class="grid_16 drow"><div class="formerror">${u', '.join([unicode(e) for e in c.form.signature_content.errors])}</div></div>
-	% endif
-	<div class="grid_16 drow">
-	    ${c.form.signature_content(readonly='readonly')}
+	<div class="span1 hidden-phone"></div>
+</div>
+<div class="row-fluid">
+	<div class="span1 hidden-phone"></div>
+	<div class="span10">
+		${h.form(url('domain-sigs-delete', sigid=c.sign.id), method='post')}
+		${h.HTML.div(c.form.csrf_token, style="display: none;")}
+		<div class="row-fluid">
+			<div class="control-group${' error' if c.form.signature_content.errors else ''}">
+				<div class="controls span12">
+				    ${c.form.signature_content(class_="span12")}
+					% if c.form.signature_content.errors:
+					<span class="help-inline">${u', '.join([unicode(ferr) for ferr in c.form.signature_content.errors])}</span>
+					% endif
+				</div>
+			</div>
+			<div class="control-group">
+				${c.form.enabled.label(class_="control-label span4")}
+				<div class="controls span8">
+					${c.form.enabled}
+					% if c.form.enabled.errors:
+					<span class="help-inline">${u', '.join([unicode(ferr) for ferr in c.form.enabled.errors])}</span>
+					% endif
+				</div>
+			</div>
+		</div>
+		<div class="form-actions">
+			<button id="submit-button" class="btn btn-small btn-success"><i class="icon-plus"></i> ${_('Delete signature')}</button>
+		</div>
+		${h.end_form()}\
 	</div>
-	<div class="grid_16 drow">
-	    <div class="grid_5">${c.form.enabled.label}</div>
-	    <div class="grid_5">${c.form.enabled}</div>
-		<div class="grid_5"></div>
-	</div>
-	<div class="grid_16 drow">
-	    <div class="grid_7">&nbsp;</div>
-	    <div class="grid_8">
-			${h.submit('submit', _('Delete signature'))}
-	    </div>
-	</div>
-	${h.end_form()}\
+	<div class="span1 hidden-phone"></div>
 </div>
 
 
@@ -44,7 +58,8 @@ ${_('Settings :: Delete email signatures')}
 
 <%def name="headers()">
 </%def>
+<%def name="submenu()"></%def>
 <%def name="localscripts()">
 </%def>
 
-<%inherit file="/base.html"/>
+<%inherit file="../base.html"/>

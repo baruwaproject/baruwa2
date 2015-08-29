@@ -1,18 +1,18 @@
 # -*- coding: utf-8 -*-
 # vim: ai ts=4 sts=4 et sw=4
 # Baruwa - Web 2.0 MailScanner front-end.
-# Copyright (C) 2010-2012  Andrew Colin Kissa <andrew@topdog.za.net>
+# Copyright (C) 2010-2015  Andrew Colin Kissa <andrew@topdog.za.net>
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation, either version 3 of the License, or
 # (at your option) any later version.
-# 
+#
 # This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License for more details.
-# 
+#
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
@@ -31,14 +31,17 @@ from sqlalchemy.sql import text
 from sqlalchemy.exc import ProgrammingError
 
 from baruwa.model.accounts import User
-from baruwa.model.settings import Server, ConfigSettings
-from baruwa.lib.regex import ADDRESS_RE
+from baruwa.model.settings import Server, ConfigSettings, PolicySettings
+from baruwa.lib.regex import EMAIL_RE
 from baruwa.model.meta import Session, Base
 from baruwa.config.environment import load_environment
+from baruwa.lib.api import get_policy_setting
 
 log = logging.getLogger(__name__)
 
-class TimeoutException(Exception): 
+
+class TimeoutException(Exception):
+    "Timeout exception"
     pass
 
 
@@ -92,6 +95,18 @@ def setup_app(command, conf, variables):
                     Session.commit()
                 except ProgrammingError:
                     Session.rollback()
+    policy = get_policy_setting()
+    if not policy:
+        print '-' * 100
+        log.info("Creating the policy settings")
+        policy = PolicySettings()
+        policy.archive_filename = 0
+        policy.archive_filetype = 0
+        policy.filename = 0
+        policy.filetype = 0
+        Session.add(policy)
+        Session.commit()
+        log.info("Policy settings created !")
     if not defaultserver:
         log.info("Creating the default settings node")
         dfls = Server('default', True)
@@ -104,12 +119,13 @@ def setup_app(command, conf, variables):
         Session.add(confserial)
         Session.commit()
         log.info("Default settings node created !")
-    admin = Session.query(User).filter(User.account_type==1).all()
+    admin = Session.query(User).filter(User.account_type == 1).all()
     if not admin:
         def timeout_handler(signum, frame):
+            "Timeout exception"
             raise TimeoutException()
 
-        old_handler = signal.signal(signal.SIGALRM, timeout_handler) 
+        old_handler = signal.signal(signal.SIGALRM, timeout_handler)
         signal.alarm(30)
         try:
             create_user = raw_input('Do you want to configure '
@@ -138,10 +154,10 @@ def setup_app(command, conf, variables):
                     if not required:
                         break
                     if required and value.strip() != "":
-                        if not field in ['email', 'password1', 'password2']:
+                        if field not in ['email', 'password1', 'password2']:
                             break
                         if field == 'email':
-                            if not ADDRESS_RE.match(value):
+                            if not EMAIL_RE.match(value):
                                 print "Please provide a valid email address."
                             else:
                                 break

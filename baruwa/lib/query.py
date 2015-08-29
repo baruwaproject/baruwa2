@@ -1,18 +1,18 @@
 # -*- coding: utf-8 -*-
 # vim: ai ts=4 sts=4 et sw=4
 # Baruwa - Web 2.0 MailScanner front-end.
-# Copyright (C) 2010-2012  Andrew Colin Kissa <andrew@topdog.za.net>
+# Copyright (C) 2010-2015  Andrew Colin Kissa <andrew@topdog.za.net>
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation, either version 3 of the License, or
 # (at your option) any later version.
-# 
+#
 # This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License for more details.
-# 
+#
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
@@ -22,10 +22,12 @@
 import MySQLdb
 
 from sqlalchemy import func, desc
+from pylibmc import Error as PylibmcError
+from sqlalchemy.sql.expression import true
 from sqlalchemy.sql import and_, or_, case
 
 from baruwa.model.meta import Session
-from baruwa.lib.dates import now
+from baruwa.lib.dates import ustartday, uendday
 from baruwa.model.messages import Message, Archive
 from baruwa.model.domains import Domain
 from baruwa.model.status import MailQueueItem
@@ -35,7 +37,7 @@ from baruwa.model.accounts import organizations_admins as oa
 from baruwa.model.reports import MessageTotals, SrcMessageTotals
 from baruwa.model.reports import DstMessageTotals
 from baruwa.lib.misc import REPORTS, crc32
-from baruwa.lib.regex import CLEANQRE, EXIM_MSGID_RE, SQL_URL_RE
+from baruwa.lib.regex import CLEANQRE, EXIM_MSGID_RE, SQL_URL_RE, TAGGED_RE
 
 
 class DynaQuery(object):
@@ -53,7 +55,7 @@ class DynaQuery(object):
     def _load_keys(self, key, expr):
         "load keys"
         if key in self.kwargs:
-            if not key in self.orclauses:
+            if key not in self.orclauses:
                 self.orclauses[key] = []
             self.orclauses[key].append(expr)
             self.orclauses[key].append(self.kwargs[key])
@@ -61,7 +63,7 @@ class DynaQuery(object):
             del self.kwargs[key]
         else:
             if key in self.lkwargs:
-                if not key in self.orclauses:
+                if key not in self.orclauses:
                     self.orclauses[key] = []
                 self.orclauses[key].append(expr)
             else:
@@ -122,16 +124,16 @@ class DynaQuery(object):
         self.addclauses.extend(self.kwargs.values())
         if self.addclauses or self.orclauses:
             if self.addclauses and self.orclauses:
-                orlist = [or_(*self.orclauses[key])
-                        for key in self.orclauses]
+                orlist = [or_(*self.orclauses[mikey])
+                        for mikey in self.orclauses]
                 query = self.query.filter(
-                and_(and_(*self.addclauses), *orlist))
+                        and_(and_(*self.addclauses), *orlist))
             else:
                 if self.addclauses:
                     query = self.query.filter(and_(*self.addclauses))
                 if self.orclauses:
-                    orlist = [or_(*self.orclauses[key])
-                            for key in self.orclauses]
+                    orlist = [or_(*self.orclauses[okey])
+                            for okey in self.orclauses]
                     query = self.query.filter(and_(*orlist))
             return query
         return self.query
@@ -156,6 +158,58 @@ class UserFilter(object):
         "Set filters"
         return self.filter()
 
+    def _build_user_filter(self):
+        "Build user filter"
+        addrs = [addr.address for addr in self.user.addresses
+                if '+*' not in addr.address and '-*' not in addr.address]
+        addrs.append(self.user.email)
+        tagged_addrs = [addr.address for addr in self.user.addresses
+                if '+*' in addr.address or '-*' in addr.address]
+        if self.direction and self.direction == 'in':
+            if tagged_addrs:
+                tagged_opts = func._(or_(*[self.model.to_address
+                                    .like(TAGGED_RE.sub(r'\g<one>%', taddr))
+                                for taddr in tagged_addrs]))
+                self.query = self.query\
+                        .filter(
+                            func._(
+                                or_(tagged_opts,
+                                    self.model.to_address.in_(addrs))))
+            else:
+                self.query = self.query\
+                        .filter(self.model.to_address.in_(addrs))
+        elif self.direction and self.direction == 'out':
+            if tagged_addrs:
+                tagged_opts = func._(or_(*[self.model.from_address
+                                    .like(TAGGED_RE.sub(r'\g<one>%', taddr))
+                                for taddr in tagged_addrs]))
+                self.query = self.query\
+                        .filter(
+                            func._(
+                                or_(tagged_opts,
+                                    self.model.from_address.in_(addrs))))
+            else:
+                self.query = self.query\
+                        .filter(self.model.from_address.in_(addrs))
+        else:
+            if tagged_addrs:
+                tagged_to = func._(or_(*[self.model.to_address
+                                    .like(TAGGED_RE.sub(r'\g<one>%', taddr))
+                                for taddr in tagged_addrs]))
+                tagged_from = func._(or_(*[self.model.from_address
+                                    .like(TAGGED_RE.sub(r'\g<one>%', taddr))
+                                for taddr in tagged_addrs]))
+                self.query = self.query\
+                        .filter(func._(
+                            or_(tagged_to, tagged_from,
+                            self.model.to_address.in_(addrs),
+                            self.model.from_address.in_(addrs))))
+            else:
+                self.query = self.query\
+                        .filter(func._(
+                            or_(self.model.to_address.in_(addrs),
+                            self.model.from_address.in_(addrs))))
+
     def setdirection(self, direction):
         "set direction"
         self.direction = direction
@@ -163,11 +217,16 @@ class UserFilter(object):
     def filter(self):
         "Set filters"
         if self.user.is_domain_admin:
-            dquery = self.dbsession.query(Domain.name).join(downs,
+            dquery = self.dbsession.query(Domain).join(downs,
                     (oa, downs.c.organization_id == oa.c.organization_id))\
-                    .filter(Domain.status == True)\
+                    .filter(Domain.status == true())\
                     .filter(oa.c.user_id == self.user.id).all()
-            domains = [domain.name for domain in dquery]
+            domains = []
+            for domain in dquery:
+                domains.append(domain.name)
+                for domain_alias in domain.aliases:
+                    if domain_alias.status:
+                        domains.append(domain_alias.name)
             if not domains:
                 domains.append('xx')
             if self.direction and self.direction == 'in':
@@ -181,45 +240,59 @@ class UserFilter(object):
                             func._(or_(self.model.to_domain.in_(domains),
                             self.model.from_domain.in_(domains))))
         if self.user.is_peleb:
-            addrs = [addr.address for addr in self.user.addresses]
-            addrs.append(self.user.email)
-            if self.direction and self.direction == 'in':
-                self.query = self.query\
-                            .filter(self.model.to_address.in_(addrs))
-            elif self.direction and self.direction == 'out':
-                self.query = self.query\
-                            .filter(self.model.from_address.in_(addrs))
-            else:
-                self.query = self.query\
-                            .filter(func._(
-                                or_(self.model.to_address.in_(addrs),
-                                self.model.from_address.in_(addrs))))
+            self._build_user_filter()
         return self.query
 
 
 class MailQueue(object):
+    "Return mail queue contents"
     def __init__(self, dbsession, user):
         "init"
         self.dbsession = dbsession
         self.user = user
         self.query = self.dbsession.query(func.count(MailQueueItem.id))
         if self.user.is_domain_admin:
-            dquery = self.dbsession.query(Domain.name).join(downs,
+            dquery = self.dbsession.query(Domain).join(downs,
                     (oa, downs.c.organization_id == oa.c.organization_id))\
-                    .filter(Domain.status == True)\
+                    .filter(Domain.status == true())\
                     .filter(oa.c.user_id == self.user.id).all()
-            domains = [domain.name for domain in dquery]
+            # domains = [domain.name for domain in dquery]
+            domains = []
+            for domain in dquery:
+                domains.append(domain.name)
+                for domain_alias in domain.aliases:
+                    if domain_alias.status:
+                        domains.append(domain_alias.name)
             if not domains:
                 domains.append('xx')
             self.query = self.query.filter(
                             func._(or_(MailQueueItem.to_domain.in_(domains),
                             MailQueueItem.from_domain.in_(domains))))
         if self.user.is_peleb:
-            addrs = [addr.address for addr in self.user.addresses]
+            addrs = [addr.address for addr in self.user.addresses
+                    if '+*' not in addr.address and '-*' not in addr.address]
             addrs.append(self.user.email)
-            self.query = self.query\
+            tagged_addrs = [addr.address for addr in self.user.addresses
+                    if '+*' in addr.address or '-*' in addr.address]
+            if tagged_addrs:
+                tagged_to = func._(or_(*[MailQueueItem.to_address
+                                    .like(TAGGED_RE.sub(r'\g<one>%', taddr))
+                                for taddr in tagged_addrs]))
+                tagged_from = func._(or_(*[MailQueueItem.from_address
+                                .like(TAGGED_RE.sub(r'\g<one>%', taddr))
+                                for taddr in tagged_addrs]))
+                self.query = self.query\
+                                    .filter(func._(
+                                        or_(tagged_to,
+                                        tagged_from,
+                                        MailQueueItem.to_address.in_(addrs),
+                                        MailQueueItem.from_address.in_(addrs))
+                                    )
+                                    )
+            else:
+                self.query = self.query\
                         .filter(func._(
-                        or_(MailQueueItem.to_address.in_(addrs),
+                            or_(MailQueueItem.to_address.in_(addrs),
                         MailQueueItem.from_address.in_(addrs))))
 
     def get(self, direction=1, hostname=None):
@@ -234,12 +307,13 @@ class MailQueue(object):
         query = query.filter(MailQueueItem.direction == direction)
         try:
             query = query.options(FromCache('sql_cache_short', cachekey))
-        except ValueError:
+        except (ValueError, PylibmcError):
             pass
         return query.one()
 
 
 class DailyTotals(object):
+    "Generate the daily message totals"
     def __init__(self, dbsession, user):
         self.dbsession = dbsession
         self.user = user
@@ -267,33 +341,62 @@ class DailyTotals(object):
                 Message.otherinfected == 0, Message.nameinfected == 0,
                 Message.highspam > 0), 1)],
                 else_=0)).label('highspam'))\
-                .filter(Message.date == now().date())
+                .filter(Message.timestamp.between(
+                        ustartday(self.user.timezone),
+                        uendday(self.user.timezone)))
 
     def get(self, hostname=None):
-        if not hostname is None:
+        "Return the query object"
+        if hostname is not None:
             self.query = self.query.filter(Message.hostname == hostname)
         if self.user.is_domain_admin:
-            dquery = self.dbsession.query(Domain.name).join(downs,
+            domainquery = self.dbsession.query(Domain).join(downs,
                     (oa, downs.c.organization_id == oa.c.organization_id))\
-                    .filter(Domain.status == True)\
+                    .filter(Domain.status == true())\
                     .filter(oa.c.user_id == self.user.id).all()
+            dquery = []
+            for domain in domainquery:
+                dquery.append(domain.name)
+                if domain.aliases:
+                    for domain_alias in domain.aliases:
+                        dquery.append(domain_alias.name)
             if not dquery:
                 dquery.append('xx')
             self.query = self.query.filter(func._(
                         or_(Message.to_domain.in_(dquery),
                         Message.from_domain.in_(dquery))))
         if self.user.is_peleb:
-            addrs = [addr.address for addr in self.user.addresses]
+            addrs = [addr.address for addr in self.user.addresses
+                    if '+*' not in addr.address and '-*' not in addr.address]
             addrs.append(self.user.email)
-            self.query = self.query.filter(
+            tagged_addrs = [addr.address for addr in self.user.addresses
+                    if '+*' in addr.address or '-*' in addr.address]
+            if tagged_addrs:
+                tagged_to = func._(or_(*[Message.to_address
+                                    .like(TAGGED_RE.sub(r'\g<one>%', taddr))
+                                for taddr in tagged_addrs]))
+                tagged_from = func._(or_(*[Message.from_address
+                                    .like(TAGGED_RE.sub(r'\g<one>%', taddr))
+                                for taddr in tagged_addrs]))
+                self.query = self.query.filter(
+                                            func._(or_(tagged_to, tagged_from,
+                                            Message.to_address.in_(addrs),
+                                            Message.from_address.in_(addrs))))
+            else:
+                self.query = self.query.filter(
                         func._(or_(Message.to_address.in_(addrs),
                         Message.from_address.in_(addrs))))
         cachekey = 'dailytotals-%s-%s' % (self.user.username, hostname)
-        self.query = self.query.options(FromCache('sql_cache_short', cachekey))
+        try:
+            self.query = self.query.\
+                                options(FromCache('sql_cache_short', cachekey))
+        except PylibmcError:
+            pass
         return self.query.one()
 
 
 class ReportQuery(object):
+    "Generate reports based on various attributes"
     def __init__(self, user, reportid, filters=None):
         "Init"
         self.dbsession = Session
@@ -311,7 +414,7 @@ class ReportQuery(object):
             # domains
             self.isaggr = True
             if self.reportid in ['3', '4']:
-                #src
+                # src
                 self.model = SrcMessageTotals
                 self.query = self.dbsession\
                             .query(SrcMessageTotals.id.label('address'),
@@ -319,7 +422,7 @@ class ReportQuery(object):
                             SrcMessageTotals.volume.label('size'))\
                             .order_by(desc(orderby))
             else:
-                #dst
+                # dst
                 self.model = DstMessageTotals
                 self.query = self.dbsession\
                             .query(DstMessageTotals.id.label('address'),
@@ -343,7 +446,7 @@ class ReportQuery(object):
             uquery = UserFilter(self.dbsession,
                                 self.user,
                                 self.query)
-        if not self.reportid in ['5', '6', '7', '8']:
+        if self.reportid not in ['5', '6', '7', '8']:
             self.query = uquery()
         if self.reportid in ['5', '6', '7', '8']:
             if not self.user.is_superadmin:
@@ -351,9 +454,9 @@ class ReportQuery(object):
                 self.query = uquery()
             else:
                 flf = self.model.id if self.isaggr else Message.to_domain
-                self.query = self.query.filter(flf\
-                            .in_(self.dbsession.query(Domain.name)\
-                            .filter(Domain.status == True)))
+                self.query = self.query.filter(flf
+                            .in_(self.dbsession.query(Domain.name)
+                            .filter(Domain.status == true())))
 
     def __call__(self):
         "Return report query"
@@ -386,11 +489,11 @@ class MsgCount(object):
         self.user = user
         if not self.user.is_peleb:
             self.query = self.dbsession\
-                        .query(func.sum(MessageTotals.runtotal)\
+                        .query(func.sum(MessageTotals.runtotal)
                         .label('total'))
         else:
             self.query = self.dbsession\
-                        .query(func.count(Message.id)\
+                        .query(func.count(Message.id)
                         .label('total'))
 
     def __call__(self):
@@ -400,17 +503,38 @@ class MsgCount(object):
     def count(self):
         "Get the count"
         if self.user.is_domain_admin:
-            dquery = self.dbsession.query(Domain.name).join(downs,
+            dquery = self.dbsession.query(Domain).join(downs,
                     (oa, downs.c.organization_id == oa.c.organization_id))\
-                    .filter(Domain.status == True)\
+                    .filter(Domain.status == true())\
                     .filter(oa.c.user_id == self.user.id).all()
-            domains = [domain.name for domain in dquery]
+            # domains = [domain.name for domain in dquery]
+            domains = []
+            for domain in dquery:
+                domains.append(domain.name)
+                for domain_alias in domain.aliases:
+                    if domain_alias.status:
+                        domains.append(domain_alias.name)
             self.query = self.query.filter(MessageTotals.id.in_(domains))
         elif self.user.is_peleb:
-            addrs = [addr.address for addr in self.user.addresses]
+            addrs = [addr.address for addr in self.user.addresses
+            if '+*' not in addr.address and '-*' not in addr.address]
+            tagged_addrs = [addr.address for addr in self.user.addresses
+                    if '+*' in addr.address or '-*' in addr.address]
             addrs.append(self.user.email)
-            self.query = self.query.filter(func._(or_(Message\
-                                .to_address.in_(addrs),
+            if tagged_addrs:
+                tagged_to = func._(or_(*[Message.to_address
+                                    .like(TAGGED_RE.sub(r'\g<one>%', taddr))
+                                for taddr in tagged_addrs]))
+                tagged_from = func._(or_(*[Message.from_address
+                                    .like(TAGGED_RE.sub(r'\g<one>%', taddr))
+                                for taddr in tagged_addrs]))
+                self.query = self.query.filter(func._(or_(
+                                            tagged_to, tagged_from,
+                                            Message.to_address.in_(addrs),
+                                            Message.from_address.in_(addrs))))
+            else:
+                self.query = self.query.filter(func._(
+                                or_(Message.to_address.in_(addrs),
                                 Message.from_address.in_(addrs))))
         value = self.query.one()
         return int(value.total or 0)
@@ -424,25 +548,25 @@ def sa_scores(dbsession, user):
             .filter(Message.whitelisted != 1)\
             .group_by('score').order_by('score')
 
-    #cachekey = u'sascores-%s' % user.username
     uquery = UserFilter(dbsession, user, query)
     query = uquery.filter()
-    #query = query.options(FromCache('sql_cache_short', cachekey))
     return query
 
 
 def message_totals(dbsession, user):
     "Message totals query"
-    query = dbsession.query(Message.date,
-                            func.count(Message.date).label('mail_total'),
-                            func.sum(case([(Message.virusinfected > 0, 1)],
-                                else_=0)).label('virus_total'),
-                            func.sum(case([(and_(Message.virusinfected == 0,
-                                Message.spam > 0), 1)],
-                                else_=0)).label('spam_total'),
-                            func.sum(Message.size).label('total_size')
-                                ).group_by(Message.date).order_by(
-                                desc(Message.date))
+    query = dbsession.query(
+            func.date(func.timezone(user.timezone, Message.timestamp))
+                .label('ldate'),
+            func.count('ldate').label('mail_total'),
+            func.sum(case([(Message.virusinfected > 0, 1)], else_=0))
+                .label('virus_total'),
+            func.sum(case([(and_(Message.virusinfected == 0,
+                    Message.spam > 0), 1)],
+                    else_=0)).label('spam_total'),
+            func.sum(Message.size).label('total_size'))\
+            .group_by('ldate')\
+            .order_by(desc('ldate'))
     uquery = UserFilter(dbsession, user, query)
     query = uquery.filter()
     return query
@@ -450,10 +574,15 @@ def message_totals(dbsession, user):
 
 def get_dom_crcs(dbsession, user):
     "Calc CRC32 for domains"
-    domains = dbsession.query(Domain.name).join(downs,
+    domains = dbsession.query(Domain).join(downs,
                 (oa, downs.c.organization_id == oa.c.organization_id))\
                 .filter(oa.c.user_id == user.id)
-    crcs = [crc32(domain[0]) for domain in domains]
+    crcs = []
+    for domain in domains:
+        crcs.append(crc32(domain.name))
+        for domain_alias in domain.aliases:
+            if domain_alias.status:
+                crcs.append(crc32(domain_alias.name))
     return crcs
 
 
@@ -468,8 +597,9 @@ def filter_sphinx(dbsession, user, conn):
         conn.SetSelect(str(select))
         conn.SetFilter('cond2', [1])
     if user.is_peleb:
-        crcs = [str(crc32(address.address)) for address in user.addresses]
-        crcs.append(str(crc32(user.email)))
+        # crcs = [str(crc32(address.address)) for address in user.addresses]
+        # crcs.append(str(crc32(user.email)))
+        crcs = get_tagged_addrs(user)
         addrs = ', '.join(crcs)
         select = 'IN(from_addr,%s) OR IN(to_addr,%s) AS cond1' % (addrs, addrs)
         conn.SetSelect(str(select))
@@ -479,15 +609,15 @@ def filter_sphinx(dbsession, user, conn):
 def clean_sphinx_q(query):
     "reformat special chars"
     if '@' in query and not CLEANQRE.match(query):
-        query = query.replace('@', '\@')
+        query = query.replace(r'@', r'\@')
     if EXIM_MSGID_RE.match(query):
-        query = query.replace('-', '\-')
+        query = query.replace(r'-', r'\-')
     return query
 
 
 def restore_sphinx_q(query):
     "restore for display"
-    return query.replace('\@', '@').replace('\-', '-')
+    return query.replace(r'\@', r'@').replace(r'\-', r'-')
 
 
 def make_conn_dict(url):
@@ -519,4 +649,33 @@ def sphinx_connection(url):
     conn = MySQLdb.connect(**make_conn_dict(url))
     return conn
 
-    
+
+def get_tagged_addrs(user):
+    """Generate a list of tagged addresses for a user"""
+    query1 = Session.query(Message.to_address)
+    query2 = Session.query(Message.from_address)
+    addrs = [addr.address for addr in user.addresses
+            if '+*' not in addr.address and '-*' not in addr.address]
+    addrs.append(user.email)
+    tagged_addrs = [addr.address for addr in user.addresses
+            if '+*' in addr.address or '-*' in addr.address]
+    if tagged_addrs:
+        tagged_opts1 = func._(or_(*[Message.to_address
+                            .like(TAGGED_RE.sub(r'\g<one>%', taddr))
+                        for taddr in tagged_addrs]))
+        tagged_opts2 = func._(or_(*[Message.from_address
+                            .like(TAGGED_RE.sub(r'\g<one>%', taddr))
+                        for taddr in tagged_addrs]))
+        query1 = query1.filter(func._(
+                        or_(tagged_opts1, Message.to_address.in_(addrs))))
+        query2 = query2.filter(func._(
+                        or_(tagged_opts2, Message.from_address.in_(addrs))))
+    else:
+        query1 = query1.filter(Message.to_address.in_(addrs))
+        query2 = query2.filter(Message.from_address.in_(addrs))
+    query1 = query1.distinct()
+    query2 = query2.distinct()
+    to_addrs = [val.to_address for val in query1]
+    from_addrs = [val.from_address for val in query2]
+    all_addrs = set(to_addrs + from_addrs)
+    return [str(crc32(val)) for val in all_addrs]

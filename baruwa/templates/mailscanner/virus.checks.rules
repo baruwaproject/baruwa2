@@ -1,0 +1,10 @@
+% for domain in domains:
+FromOrTo:	*@${domain.name}	yes
+% for alias in domain.aliases:
+% if alias.status:
+FromOrTo:	*@${alias.name}	yes
+% endif
+% endfor
+% endfor
+# Default rule
+FromOrTo:	default	no

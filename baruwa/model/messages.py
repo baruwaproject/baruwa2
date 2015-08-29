@@ -1,32 +1,32 @@
 # -*- coding: utf-8 -*-
 # vim: ai ts=4 sts=4 et sw=4
 # Baruwa - Web 2.0 MailScanner front-end.
-# Copyright (C) 2010-2012  Andrew Colin Kissa <andrew@topdog.za.net>
+# Copyright (C) 2010-2015  Andrew Colin Kissa <andrew@topdog.za.net>
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation, either version 3 of the License, or
 # (at your option) any later version.
-# 
+#
 # This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License for more details.
-# 
+#
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 """Messages SQLAlchemy models
 """
 
-#from datetime import datetime
+# from datetime import datetime
 
 from pylons.i18n.translation import _
 from webhelpers.html import escape
 from webhelpers.number import format_byte_size
 from webhelpers.text import wrap_paragraphs, truncate
 from sqlalchemy import Column
-#from sqlalchemy.sql.expression import text
+# from sqlalchemy.sql.expression import text
 from sqlalchemy.types import Integer, Unicode, String
 from sqlalchemy.types import SmallInteger, Boolean, Date, BigInteger
 from sqlalchemy.types import UnicodeText, Float, Time, TIMESTAMP
@@ -43,7 +43,7 @@ class Message(Base):
     messageid = Column(Unicode(255), index=True)
     actions = Column(Unicode(128))
     clientip = Column(Unicode(128))
-    date = Column(Date(timezone=True), index=True)
+    date = Column(Date, index=True)
     from_address = Column(Unicode(255), index=True)
     from_domain = Column(Unicode(255), index=True)
     headers = Column(UnicodeText)
@@ -72,12 +72,13 @@ class Message(Base):
     virusinfected = Column(SmallInteger, default=0)
     ts = Column(TIMESTAMP(timezone=True),
                 server_default=utcnow())
+    msgfiles = Column(UnicodeText)
 
     def __init__(self, messageid):
         "init"
         self.messageid = messageid
 
-    __mapper_args__ = {'order_by':timestamp}
+    __mapper_args__ = {'order_by': timestamp}
 
     @property
     def isdangerous(self):
@@ -126,7 +127,7 @@ class Message(Base):
         "recent messages json"
         value = 'white'
         if (self.spam and not self.highspam and not self.blacklisted
-            and not self.nameinfected and not self.otherinfected 
+            and not self.nameinfected and not self.otherinfected
             and not self.virusinfected):
             value = 'spam'
         if self.highspam and (not self.blacklisted):
@@ -139,20 +140,20 @@ class Message(Base):
             value = 'infected'
         if not self.scaned:
             value = 'gray'
-        if (self.spam and (not self.blacklisted) 
-            and (not self.virusinfected) 
-            and (not self.nameinfected) 
+        if (self.spam and (not self.blacklisted)
+            and (not self.virusinfected)
+            and (not self.nameinfected)
             and (not self.otherinfected)):
             status = _('Spam')
         if self.blacklisted:
             status = _('BS')
-        if (self.virusinfected or 
-               self.nameinfected or 
+        if (self.virusinfected or
+               self.nameinfected or
                self.otherinfected):
             status = _('Infected')
-        if ((not self.spam) and (not self.virusinfected) 
-               and (not self.nameinfected) 
-               and (not self.otherinfected) 
+        if ((not self.spam) and (not self.virusinfected)
+               and (not self.nameinfected)
+               and (not self.otherinfected)
                and (not self.whitelisted)):
             status = _('Clean')
         if self.whitelisted:
@@ -161,12 +162,16 @@ class Message(Base):
             status = _('NS')
         return dict(
                     id=self.id,
-                    timestamp=self.timestamp.strftime('%A, %d %b %Y %H:%M:%S %Z'),
+                    timestamp=self.timestamp.strftime('%Y-%m-%d %H:%M:%S %Z'),
                     sascore=self.sascore,
                     size=format_byte_size(self.size),
-                    subject=escape(truncate((self.subject and self.subject.strip()) or '---', 50)),
-                    from_address=escape(wrap_paragraphs(self.from_address, 32)),
-                    to_address=escape(wrap_paragraphs(self.to_address or '---', 32)),
+                    subject=escape(truncate((self.subject and
+                                            self.subject.strip())
+                                            or '---', 50)),
+                    from_address=escape(
+                        wrap_paragraphs(self.from_address, 32)),
+                    to_address=escape(wrap_paragraphs(self.to_address
+                                                        or '---', 32)),
                     style=value,
                     status=status,
                 )
@@ -208,12 +213,13 @@ class Archive(Base):
     to_domain = Column(Unicode(255), index=True)
     virusinfected = Column(SmallInteger, default=0)
     ts = Column(TIMESTAMP(timezone=True), server_default=utcnow())
+    msgfiles = Column(UnicodeText)
 
     def __init__(self, messageid):
         "init"
         self.messageid = messageid
 
-    __mapper_args__ = {'order_by':timestamp}
+    __mapper_args__ = {'order_by': timestamp}
 
     @property
     def isdangerous(self):
@@ -230,6 +236,7 @@ class SARule(Base):
     id = Column(Unicode(255), primary_key=True)
     description = Column(UnicodeText)
     score = Column(Float, default=0)
+    local_score = Column(Float, server_default='0')
 
     def __init__(self, ruleid, description):
         "init"
@@ -248,7 +255,7 @@ class Release(Base):
                         server_default=utcnow())
     released = Column(Boolean(), default=False)
 
-    __mapper_args__ = {'order_by':id}
+    __mapper_args__ = {'order_by': id}
 
     def __init__(self, messageid, uuid):
         "init"
@@ -271,7 +278,7 @@ class MessageStatus(Base):
     timestamp = Column(TIMESTAMP(timezone=True),
                         server_default=utcnow())
 
-    __mapper_args__ = {'order_by':timestamp}
+    __mapper_args__ = {'order_by': timestamp}
 
     # def __init__(self, messageid, destination, status, info):
     #     "init"

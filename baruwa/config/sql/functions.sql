@@ -247,5 +247,5 @@ END;
 $$ LANGUAGE plpgsql;
 
 CREATE OR REPLACE FUNCTION dbvalue(TEXT) RETURNS TEXT AS $$
-    SELECT regexp_replace(regexp_replace($1, '[{}]', '', 'g'), ',', ' ') AS result;
+    SELECT regexp_replace(regexp_replace($1, '[{}]', '', 'g'), ',', ' ', 'g') AS result;
 $$ LANGUAGE 'SQL';

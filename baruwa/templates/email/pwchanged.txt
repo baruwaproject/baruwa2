@@ -9,5 +9,5 @@ temporary password ${c.passwd}
 
 Regards,
 
-Baruwa Bot
-www.baruwa.net
+${config.get('baruwa.custom.name', 'Baruwa')} Bot
+${config.get('baruwa.custom.url', '')}

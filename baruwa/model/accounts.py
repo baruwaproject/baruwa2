@@ -1,18 +1,18 @@
 # -*- coding: utf-8 -*-
 # vim: ai ts=4 sts=4 et sw=4
 # Baruwa - Web 2.0 MailScanner front-end.
-# Copyright (C) 2010-2012  Andrew Colin Kissa <andrew@topdog.za.net>
+# Copyright (C) 2010-2015  Andrew Colin Kissa <andrew@topdog.za.net>
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation, either version 3 of the License, or
 # (at your option) any later version.
-# 
+#
 # This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License for more details.
-# 
+#
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
@@ -21,6 +21,7 @@
 
 import bcrypt
 # import hashlib
+import datetime
 
 from sqlalchemy import Column, ForeignKey, Table
 from sqlalchemy.orm import relationship, backref
@@ -86,7 +87,7 @@ class User(Base):
     signatures = relationship('UserSignature', backref='user',
                         cascade='delete, delete-orphan')
 
-    __mapper_args__ = {'order_by':id}
+    __mapper_args__ = {'order_by': id}
 
     def __init__(self, username, email):
         "init"
@@ -103,6 +104,7 @@ class User(Base):
             password = password.encode('utf-8')
         return (self.active and
                 self.local and
+                password and
                 (bcrypt.hashpw(password, self.__password) == self.__password))
 
     def to_csv(self):
@@ -140,8 +142,46 @@ class User(Base):
                         fullname=self.firstname + ' ' + self.lastname,
                         email=self.email,
                         userimg=user_icon,
-                        statusimg='imgs/tick.png' if self.active else 'imgs/minus.png'
+                        statusimg='imgs/tick.png' if self.active
+                        else 'imgs/minus.png'
                     )
+
+    def apijson(self):
+        "Return JSON for the API"
+        mdict = {}
+        for attr in ["id",
+                    "username",
+                    "firstname",
+                    "lastname",
+                    "email",
+                    "timezone",
+                    "account_type",
+                    "created_on",
+                    "last_login",
+                    "active",
+                    "local",
+                    "send_report",
+                    "spam_checks",
+                    "low_score",
+                    "high_score"]:
+            if isinstance(getattr(self, attr), datetime.datetime):
+                mdict[attr] = getattr(self, attr)\
+                                    .strftime('%Y:%m:%d:%H:%M:%S')
+            else:
+                mdict[attr] = getattr(self, attr)
+        mdict['addresses'] = [
+                                dict(id=addr.id, address=addr.address)
+                                for addr in self.addresses
+                                if addr.enabled
+                            ]
+        mdict['domains'] = [
+                                dict(id=dom.id, name=dom.name)
+                                for dom in self.domains
+                                if dom.status
+                            ]
+        mdict['organizations'] = [dict(id=org.id, name=org.name)
+                                    for org in self.organizations]
+        return mdict
 
     @property
     def is_superadmin(self):
@@ -163,6 +203,14 @@ class User(Base):
         "Check if user is just an ordinary joe"
         return self.account_type == 3
 
+    @property
+    def orgs(self):
+        """Return the orgs the user belongs to"""
+        if self.account_type == 2:
+            return [org.id for org in self.organizations]
+        else:
+            return []
+
 
 class Group(Base):
     """Group model"""
@@ -173,11 +221,22 @@ class Group(Base):
     domains = relationship('Domain', secondary=domain_owners,
                             backref='organizations')
 
-    __mapper_args__ = {'order_by':id}
+    __mapper_args__ = {'order_by': id}
 
-    # def __init__(self, name):
-    #     "init"
-    #     self.name = name
+    def from_form(self, form):
+        "Update the module from form"
+        for field in form:
+            if field.name == 'csrf_token':
+                continue
+            setattr(self, field.name, field.data)
+
+    def apijson(self):
+        "Return JSON suitable for the API"
+        mdict = dict(id=self.id, name=self.name)
+        mdict['domains'] = [dict(id=dom.id, name=dom.name)
+                            for dom in self.domains
+                            if dom.status]
+        return mdict
 
 
 class Address(Base):
@@ -190,7 +249,7 @@ class Address(Base):
     enabled = Column(Boolean, default=True)
     user_id = Column(Integer, ForeignKey('users.id'))
 
-    __mapper_args__ = {'order_by':id}
+    __mapper_args__ = {'order_by': id}
 
     def __init__(self, address):
         "init"
@@ -198,15 +257,21 @@ class Address(Base):
 
     def to_csv(self):
         "Return CSV"
-        # values = [self.address, self.enabled]
-        #         return [str(value) for value in values]
         return dict(address=self.address,
                     enabled='True' if self.enabled else 'False')
+
+    def apijson(self):
+        """Return JSON for the API"""
+        mdict = {}
+        for attr in ['id', 'address', 'enabled']:
+            mdict[attr] = getattr(self, attr)
+        return mdict
 
 
 class Relay(Base):
     "Relay settings"
     __tablename__ = 'relaysettings'
+    __table_args__ = (UniqueConstraint('username', 'address'), {})
 
     id = Column(Integer, primary_key=True)
     address = Column(Unicode(255), index=True)
@@ -214,18 +279,28 @@ class Relay(Base):
     __password = Column('password', Unicode(255))
     enabled = Column(Boolean, default=True)
     description = Column(Unicode(255))
+    low_score = Column(Float(), default=0.0)
+    high_score = Column(Float(), default=0.0)
+    spam_actions = Column(SmallInteger, default=2)
+    highspam_actions = Column(SmallInteger, default=2)
+    ratelimit = Column(SmallInteger, default=250, server_default='250')
     org_id = Column(Integer, ForeignKey('organizations.id'))
     org = relationship('Group', backref=backref('relaysettings', order_by=id))
 
-    __mapper_args__ = {'order_by':id}
+    __mapper_args__ = {'order_by': id}
 
     def set_password(self, password):
         "sets the password to a hash"
         self.__password = bcrypt.hashpw(password, bcrypt.gensalt())
 
-    # def _hash_password(self, raw_pass):
-    #     "return hashed password"
-    #     return bcrypt.hashpw(raw_pass, bcrypt.gensalt())
+    def apijson(self):
+        """Return JSON for the API"""
+        mdict = {}
+        for attr in ['id', 'address', 'username', 'enabled', 'description',
+                    'low_score', 'high_score', 'spam_actions',
+                    'highspam_actions']:
+            mdict[attr] = getattr(self, attr)
+        return mdict
 
 
 class ResetToken(Base):

@@ -1,3 +1,11 @@
+###!
+ * Baruwa Enterprise Edition
+ * http://www.baruwa.com
+ *
+ * Copyright (c) 2013-2015 Andrew Colin Kissa
+ *
+ *
+###
 $ = jQuery
 exports = this
 exports.setitems_url = setitems_url
@@ -13,10 +21,10 @@ ajaxrequest = (url) ->
         $('#wrap').after exports.loading
     else
         $('#shield').show()
-    $.ajax url, 
+    $.ajax url,
         type:'GET',
         cache:false,
-        dataType:'json' 
+        dataType:'json'
         success:buildpage,
         beforeSend: (XHR)->
             exports.inprogress = true
@@ -26,8 +34,8 @@ ajaxrequest = (url) ->
             exports.inprogress = false
             $('#shield').hide()
             if $(window).scrollTop()
-                $('html,body').animate 
-                    scrollTop: $("#header-bar").offset().top, 1500
+                $('html,body').animate
+                    scrollTop: $("#wrap").offset().top, 1500
             1
 
 ajaxify = (e, url)->
@@ -38,13 +46,13 @@ ajaxify = (e, url)->
     1
 
 buildrows = (items)->
-    row = '<tr class="white_row">
-    	<td class="audit_date_td">{{timestamp}}</td>
-    	<td class="audit_user_td">{{username}}</td>
-    	<td class="audit_info_td">{{info}}</td>
-    	<td class="audit_host_td">{{hostname}}</td>
-    	<td class="audit_remote_td">{{remoteip}}</td>
-    	<td class="audit_cat_td">{{category}}</td>
+    row = '<tr>
+    	<td class="hidden-phone">{{timestamp}}</td>
+    	<td>{{username}}</td>
+    	<td>{{info}}</td>
+    	<td class="hidden-phone">{{hostname}}</td>
+    	<td class="hidden-phone">{{remoteip}}</td>
+    	<td class="hidden-phone">{{category}}</td>
         </tr>'
     if items.length
         rows = []
@@ -53,7 +61,7 @@ buildrows = (items)->
             rows.push html
         replacement = rows.join ''
     else
-        replacement = '<tr><td colspan="6" class="spanrow">'+gettext('No audit logs found')+'</td></td>'
+        replacement = '<tr><td colspan="6">'+gettext('No audit logs found')+'</td></td>'
     $('tbody').empty().append replacement
     1
 
@@ -66,18 +74,18 @@ pagination = (data)->
         else
             data['params'] = ".json"
         if data.next_page != data.first_page and data.page != data.first_page
-            rows.push '<span><a href="{{baseurl}}/{{first_page}}{{{params}}}"><img src="{{media_url}}/imgs/first_pager.png" alt="first" title="first" /></a></span><span>...</span>'
+            rows.push '<span><a href="{{baseurl}}/{{first_page}}{{{params}}}"><i class="icon-double-angle-left"></i></a></span><span>...</span>'
         if data.previous_page
-          rows.push '<span><a href="{{baseurl}}/{{previous_page}}{{{params}}}"><img src="{{media_url}}/imgs/previous_pager.png" alt="prev" title="prev" /></a></span>'
+          rows.push '<span><a href="{{baseurl}}/{{previous_page}}{{{params}}}"><i class="icon-angle-left"></i></a></span>'
         for linkpage in data.page_nums
             if linkpage == data.page
                 rows.push '<span class="curpage">{{page}}</span>'
             else
                 rows.push '<span><a href="{{baseurl}}/'+linkpage+'{{{params}}}">'+linkpage+'</a></span>'
         if data.next_page
-            rows.push '<span><a href="{{baseurl}}/{{next_page}}{{{params}}}"><img src="{{media_url}}/imgs/next_pager.png" alt="next" title="next" /></a></span>'
+            rows.push '<span><a href="{{baseurl}}/{{next_page}}{{{params}}}"><i class="icon-angle-right"></i></a></span>'
         if data.next_page != data.page_count and data.page != data.page_count and data.page_count != 0
-            rows.push '<span>...</span><span><a href="{{baseurl}}/{{last_page}}{{{params}}}"><img src="{{media_url}}/imgs/last_pager.png" alt="last" title="last" /></a></span>'
+            rows.push '<span>...</span><span><a href="{{baseurl}}/{{last_page}}{{{params}}}"><i class="icon-double-angle-right"></i></a></span>'
         tmpl = rows.join '\n'
         html = $.mustache tmpl, data
     else
@@ -99,7 +107,7 @@ buildpage = (data)->
         $('div.limiter').hide()
     $('div.toolbar p').html pages_html
     $('#title').html title_html
-    $.address.title '.:. Baruwa :: ' + title_html
+    $.address.title '.:. ' + exports.baruwa_custom_name + ' :: ' + title_html
     $('div.pages a').click((e)->
         url = $(this).attr('href')
         # if '.json' not in url
@@ -131,10 +139,6 @@ $(document).ready ->
                 url = url + '.json'
         ajaxify(e, url)
     )
-    # $('thead a').click((e)->
-    #     url = $(this).attr('href') + '.json'
-    #     ajaxify(e, url)
-    # )
     $('a').click disable_links
     $.address.externalChange((e)->
         if e.path == '/'
@@ -154,3 +158,7 @@ $(document).ready ->
         n = $(this).val()
         location.href = "#{exports.setitems_url}?n=#{n}&amp;ac=auditlog"
     )
+    1
+
+
+

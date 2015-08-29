@@ -1,7 +1,9 @@
-<div class="alpos">
-	<div class="toolbar">
+<div class="row-fluid">
+	<div class="span1 hidden-phone"></div>
+	<div class="span10 toolbar">
 		${self.paging(h.do_pagination(c.page))}\
 	</div>
+	<div class="span1 hidden-phone"></div>
 </div>
 
 <%def name="paging(page_nums, fieldname)">

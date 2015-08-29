@@ -1,352 +1,523 @@
-# Translations template for PROJECT.
-# Copyright (C) 2012 ORGANIZATION
-# This file is distributed under the same license as the PROJECT project.
-# 
+# Russian translations for .
+# Copyright (C) 2014 Andrew Colin Kissa
+# This file is distributed under the same license as the  project.
+#
 # Translators:
-# Eugene Shcherban <shcherban.ev@gmail.com>, 2013.
-#   <shcherban.ev@gmail.com>, 2012.
+# Eugene Shcherban <shcherban.ev@gmail.com>, 2013
+# Eugene Shcherban <shcherban.ev@gmail.com>, 2012
 msgid ""
 msgstr ""
-"Project-Id-Version: baruwa\n"
-"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2012-11-14 14:04+0200\n"
-"PO-Revision-Date: 2013-02-05 21:13+0000\n"
-"Last-Translator: eugene82 <shcherban.ev@gmail.com>\n"
-"Language-Team: Russian (http://www.transifex.com/projects/p/baruwa/language/ru/)\n"
+"Project-Id-Version:  baruwa\n"
+"Report-Msgid-Bugs-To: andrew@topdog.za.net\n"
+"POT-Creation-Date: 2015-08-29 11:41+0200\n"
+"PO-Revision-Date: 2014-10-06 10:16+0000\n"
+"Last-Translator: Andrew Colin Kissa <andrew@topdog.za.net>\n"
+"Language-Team: Russian "
+"(http://www.transifex.com/projects/p/baruwa/language/ru/)\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 0.9.6\n"
-"Language: ru\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: baruwa/public/js/baruwa/accounts.js:1 baruwa/public/js/baruwa/domains.js:1
-#: baruwa/public/js/baruwa/lists.js:1
+#: baruwa/public/js/baruwa/accounts.js:1
+#: baruwa/public/js/baruwa/accounts.min.js:27
+#: baruwa/public/js/baruwa/domains.js:1
+#: baruwa/public/js/baruwa/domains.min.js:29 baruwa/public/js/baruwa/lists.js:1
+#: baruwa/public/js/baruwa/lists.min.js:21
 #: baruwa/public/js/baruwa/messages.archive.js:1
+#: baruwa/public/js/baruwa/messages.archive.min.js:11
 #: baruwa/public/js/baruwa/messages.js:1
+#: baruwa/public/js/baruwa/messages.min.js:11
 #: baruwa/public/js/baruwa/messages.quarantine.js:1
+#: baruwa/public/js/baruwa/messages.quarantine.min.js:31
 #: baruwa/public/js/baruwa/organizations.js:1
+#: baruwa/public/js/baruwa/organizations.min.js:21
 #: baruwa/public/js/baruwa/settings.js:1
+#: baruwa/public/js/baruwa/settings.min.js:21
 #: baruwa/public/js/baruwa/status.audit.js:1
+#: baruwa/public/js/baruwa/status.audit.min.js:26
 msgid "Showing items {{first_item}} to {{last_item}} of {{item_count}}."
 msgstr "Отображение элементов с {{first_item}} по {{last_item}} из {{item_count}}."
 
 #: baruwa/public/js/baruwa/accounts.js:1
+#: baruwa/public/js/baruwa/accounts.min.js:28
 msgid "Accounts :: Showing page {{page}} of {{page_count}} pages."
 msgstr "Учетные записи:: Показ страницы {{page}} из {{page_count}} страниц."
 
-#: baruwa/public/js/baruwa/accounts.js:1 baruwa/public/js/baruwa/domains.js:1
-#: baruwa/public/js/baruwa/lists.js:1
+#: baruwa/public/js/baruwa/accounts.js:1
+#: baruwa/public/js/baruwa/accounts.min.js:29
+#: baruwa/public/js/baruwa/domains.js:1
+#: baruwa/public/js/baruwa/domains.min.js:31 baruwa/public/js/baruwa/lists.js:1
+#: baruwa/public/js/baruwa/lists.min.js:20
+#: baruwa/public/js/baruwa/lists.min.js:23
 #: baruwa/public/js/baruwa/messages.archive.js:1
+#: baruwa/public/js/baruwa/messages.archive.min.js:13
 #: baruwa/public/js/baruwa/messages.js:1
+#: baruwa/public/js/baruwa/messages.min.js:13
 #: baruwa/public/js/baruwa/messages.quarantine.js:1
+#: baruwa/public/js/baruwa/messages.quarantine.min.js:33
 #: baruwa/public/js/baruwa/messages.search.js:1
+#: baruwa/public/js/baruwa/messages.search.min.js:24
 #: baruwa/public/js/baruwa/organizations.js:1
+#: baruwa/public/js/baruwa/organizations.min.js:23
 #: baruwa/public/js/baruwa/reports.pie.js:1
+#: baruwa/public/js/baruwa/reports.pie.min.js:21
 #: baruwa/public/js/baruwa/reports.relays.js:1
+#: baruwa/public/js/baruwa/reports.relays.min.js:20
 #: baruwa/public/js/baruwa/reports.spam.js:1
+#: baruwa/public/js/baruwa/reports.spam.min.js:16
 #: baruwa/public/js/baruwa/settings.js:1
+#: baruwa/public/js/baruwa/settings.min.js:23
 #: baruwa/public/js/baruwa/status.audit.js:1
+#: baruwa/public/js/baruwa/status.audit.min.js:28
 msgid "No items found"
 msgstr "Не найдено"
 
 #: baruwa/public/js/baruwa/accounts.js:1
+#: baruwa/public/js/baruwa/accounts.min.js:29
 msgid "Accounts"
 msgstr "Учетные записи"
 
-#: baruwa/public/js/baruwa/common.js:1
+#: baruwa/public/js/baruwa/common.js:1 baruwa/public/js/baruwa/common.min.js:10
 msgid "AJAX Error:"
 msgstr "AJAX ошибка:"
 
-#: baruwa/public/js/baruwa/common.js:1
+#: baruwa/public/js/baruwa/common.js:1 baruwa/public/js/baruwa/common.min.js:11
 msgid "Error Occured:"
 msgstr "Ошибка:"
 
-#: baruwa/public/js/baruwa/common.js:1
+#: baruwa/public/js/baruwa/common.js:1 baruwa/public/js/baruwa/common.min.js:12
 #: baruwa/public/js/baruwa/messages.filters.js:1
+#: baruwa/public/js/baruwa/messages.filters.min.js:18
 #: baruwa/public/js/baruwa/reports.common.js:1
+#: baruwa/public/js/baruwa/reports.common.min.js:12
 #: baruwa/public/js/baruwa/reports.js:1
 #: baruwa/public/js/baruwa/reports.listings.js:1
+#: baruwa/public/js/baruwa/reports.listings.min.js:34
+#: baruwa/public/js/baruwa/reports.min.js:26
+#: baruwa/public/js/baruwa/reports.min.js:36
 #: baruwa/public/js/baruwa/reports.pie.js:1
+#: baruwa/public/js/baruwa/reports.pie.min.js:30
 #: baruwa/public/js/baruwa/reports.relays.js:1
+#: baruwa/public/js/baruwa/reports.relays.min.js:29
 #: baruwa/public/js/baruwa/reports.spam.js:1
+#: baruwa/public/js/baruwa/reports.spam.min.js:25
 msgid "Loading"
 msgstr "Загрузка"
 
-#: baruwa/public/js/baruwa/common.js:1
+#: baruwa/public/js/baruwa/common.js:1 baruwa/public/js/baruwa/common.min.js:15
+#: baruwa/public/js/baruwa/common.min.js:20
+#: baruwa/public/js/baruwa/common.min.js:23
+#: baruwa/public/js/baruwa/common.min.js:26
 msgid "Unknown error occured !"
 msgstr "Неизвестная ошибка!"
 
 #: baruwa/public/js/baruwa/domains.js:1
+#: baruwa/public/js/baruwa/domains.min.js:28
 msgid "No domains found"
 msgstr "Домены не найдены"
 
 #: baruwa/public/js/baruwa/domains.js:1
+#: baruwa/public/js/baruwa/domains.min.js:30
 msgid "Domains :: Showing page {{page}} of {{page_count}} pages."
 msgstr "Домены:: Показ страницы {{page}} из {{page_count}} страниц."
 
 #: baruwa/public/js/baruwa/domains.js:1
+#: baruwa/public/js/baruwa/domains.min.js:31
 msgid "Domains"
 msgstr "Домены"
 
-#: baruwa/public/js/baruwa/lists.js:1
+#: baruwa/public/js/baruwa/lists.js:1 baruwa/public/js/baruwa/lists.min.js:22
 msgid "Lists :: {{listname}} Showing page {{page}} of {{page_count}} pages."
 msgstr "Списки:: {{listname}} Показ страницы {{page}} из {{page_count}} страниц."
 
-#: baruwa/public/js/baruwa/lists.js:1
+#: baruwa/public/js/baruwa/lists.js:1 baruwa/public/js/baruwa/lists.min.js:23
 msgid "Lists"
 msgstr "Списки"
 
-#: baruwa/public/js/baruwa/login.js:1
+#: baruwa/public/js/baruwa/login.js:1 baruwa/public/js/baruwa/login.min.js:11
 msgid "Login"
 msgstr "Вход"
 
-#: baruwa/public/js/baruwa/login.js:1
+#: baruwa/public/js/baruwa/login.js:1 baruwa/public/js/baruwa/login.min.js:13
 msgid "Reset my password"
 msgstr "Сброс пароля"
 
 #: baruwa/public/js/baruwa/messages.archive.js:1
+#: baruwa/public/js/baruwa/messages.archive.min.js:12
 msgid "Messages :: Archive :: Showing page {{page}} of {{page_count}} pages."
 msgstr "Сообщения:: Архив:: Показ страницы {{page}} из {{page_count}} страниц."
 
 #: baruwa/public/js/baruwa/messages.archive.js:1
+#: baruwa/public/js/baruwa/messages.archive.min.js:13
 msgid "Messages :: Archive"
 msgstr "Сообщения:: Архив"
 
 #: baruwa/public/js/baruwa/messages.archive.js:1
+#: baruwa/public/js/baruwa/messages.archive.min.js:16
 #: baruwa/public/js/baruwa/messages.js:1
+#: baruwa/public/js/baruwa/messages.min.js:16
 #: baruwa/public/js/baruwa/messages.quarantine.js:1
+#: baruwa/public/js/baruwa/messages.quarantine.min.js:36
 msgid "Date/Time"
 msgstr "Дата и время"
 
 #: baruwa/public/js/baruwa/messages.archive.js:1
+#: baruwa/public/js/baruwa/messages.archive.min.js:16
 #: baruwa/public/js/baruwa/messages.js:1
+#: baruwa/public/js/baruwa/messages.min.js:16
 #: baruwa/public/js/baruwa/messages.quarantine.js:1
+#: baruwa/public/js/baruwa/messages.quarantine.min.js:36
 msgid "From"
 msgstr "От"
 
 #: baruwa/public/js/baruwa/messages.archive.js:1
+#: baruwa/public/js/baruwa/messages.archive.min.js:16
 #: baruwa/public/js/baruwa/messages.js:1
+#: baruwa/public/js/baruwa/messages.min.js:16
 #: baruwa/public/js/baruwa/messages.quarantine.js:1
+#: baruwa/public/js/baruwa/messages.quarantine.min.js:36
 msgid "To"
 msgstr "Кому"
 
 #: baruwa/public/js/baruwa/messages.archive.js:1
+#: baruwa/public/js/baruwa/messages.archive.min.js:16
 #: baruwa/public/js/baruwa/messages.js:1
+#: baruwa/public/js/baruwa/messages.min.js:16
 #: baruwa/public/js/baruwa/messages.quarantine.js:1
+#: baruwa/public/js/baruwa/messages.quarantine.min.js:36
 msgid "Subject"
 msgstr "Тема"
 
 #: baruwa/public/js/baruwa/messages.archive.js:1
+#: baruwa/public/js/baruwa/messages.archive.min.js:16
 #: baruwa/public/js/baruwa/messages.js:1
+#: baruwa/public/js/baruwa/messages.min.js:16
 msgid "Size"
 msgstr "Размер"
 
 #: baruwa/public/js/baruwa/messages.archive.js:1
+#: baruwa/public/js/baruwa/messages.archive.min.js:16
 #: baruwa/public/js/baruwa/messages.js:1
+#: baruwa/public/js/baruwa/messages.min.js:16
 #: baruwa/public/js/baruwa/messages.quarantine.js:1
+#: baruwa/public/js/baruwa/messages.quarantine.min.js:36
 msgid "Score"
 msgstr "Оценка"
 
 #: baruwa/public/js/baruwa/messages.common.js:1
+#: baruwa/public/js/baruwa/messages.common.min.js:24
 #: baruwa/public/js/baruwa/messages.quarantine.js:1
+#: baruwa/public/js/baruwa/messages.quarantine.min.js:29
 msgid "No messages found"
 msgstr "Сообщений не найдено"
 
 #: baruwa/public/js/baruwa/messages.detail.js:1
+#: baruwa/public/js/baruwa/messages.detail.min.js:11
 msgid "Show hosts"
 msgstr "Показать хосты"
 
 #: baruwa/public/js/baruwa/messages.detail.js:1
+#: baruwa/public/js/baruwa/messages.detail.min.js:13
+#: baruwa/public/js/baruwa/messages.detail.min.js:17
 msgid "Hide hosts"
 msgstr "Скрыть хосты"
 
 #: baruwa/public/js/baruwa/messages.detail.js:1
+#: baruwa/public/js/baruwa/messages.detail.min.js:30
 msgid "Processing......"
 msgstr "Обработка..."
 
 #: baruwa/public/js/baruwa/messages.detail.js:1
+#: baruwa/public/js/baruwa/messages.detail.min.js:47
 msgid "Show headers"
 msgstr "Показать заголовки"
 
 #: baruwa/public/js/baruwa/messages.detail.js:1
+#: baruwa/public/js/baruwa/messages.detail.min.js:49
 msgid "Hide headers"
 msgstr "Скрыть заголовки"
 
 #: baruwa/public/js/baruwa/messages.filters.js:1
+#: baruwa/public/js/baruwa/messages.filters.min.js:19
 #: baruwa/public/js/baruwa/reports.js:1
 #: baruwa/public/js/baruwa/reports.listings.js:1
+#: baruwa/public/js/baruwa/reports.listings.min.js:34
+#: baruwa/public/js/baruwa/reports.min.js:37
 #: baruwa/public/js/baruwa/reports.pie.js:1
+#: baruwa/public/js/baruwa/reports.pie.min.js:30
 #: baruwa/public/js/baruwa/reports.relays.js:1
+#: baruwa/public/js/baruwa/reports.relays.min.js:29
 #: baruwa/public/js/baruwa/reports.spam.js:1
+#: baruwa/public/js/baruwa/reports.spam.min.js:25
 msgid "Processing request............."
 msgstr "Обработка запроса..."
 
 #: baruwa/public/js/baruwa/messages.filters.js:1
+#: baruwa/public/js/baruwa/messages.filters.min.js:22
 #: baruwa/public/js/baruwa/reports.js:1
 #: baruwa/public/js/baruwa/reports.listings.js:1
+#: baruwa/public/js/baruwa/reports.listings.min.js:27
+#: baruwa/public/js/baruwa/reports.listings.min.js:29
+#: baruwa/public/js/baruwa/reports.min.js:25
+#: baruwa/public/js/baruwa/reports.min.js:34
 #: baruwa/public/js/baruwa/reports.pie.js:1
+#: baruwa/public/js/baruwa/reports.pie.min.js:22
+#: baruwa/public/js/baruwa/reports.pie.min.js:23
 #: baruwa/public/js/baruwa/reports.relays.js:1
+#: baruwa/public/js/baruwa/reports.relays.min.js:22
+#: baruwa/public/js/baruwa/reports.relays.min.js:23
 #: baruwa/public/js/baruwa/reports.spam.js:1
+#: baruwa/public/js/baruwa/reports.spam.min.js:18
+#: baruwa/public/js/baruwa/reports.spam.min.js:19
 msgid "Add Filter"
 msgstr "Добавить фильтр"
 
 #: baruwa/public/js/baruwa/messages.filters.js:1
+#, fuzzy
 msgid "Non applied at the moment"
-msgstr "Не применено"
+msgstr "Нет сохраненных фильтров на данный момент"
+
+#: baruwa/public/js/baruwa/messages.filters.min.js:27
+msgid "None applied at the moment"
+msgstr ""
 
 #: baruwa/public/js/baruwa/messages.js:1
+#: baruwa/public/js/baruwa/messages.min.js:12
 #: baruwa/public/js/baruwa/messages.quarantine.js:1
 msgid ""
-"Messages :: Full message listing :: Showing page {{page}} of {{page_count}} "
-"pages."
-msgstr "Сообщения:: Полный список сообщений:: Показ страницы {{page}} из {{page_count}} страниц."
+"Messages :: Full message listing :: Showing page {{page}} of "
+"{{page_count}} pages."
+msgstr ""
+"Сообщения:: Полный список сообщений:: Показ страницы {{page}} из "
+"{{page_count}} страниц."
 
 #: baruwa/public/js/baruwa/messages.js:1
+#: baruwa/public/js/baruwa/messages.min.js:13
 #: baruwa/public/js/baruwa/messages.quarantine.js:1
 msgid "Messages :: Full message listing"
 msgstr "Сообщения:: Полный список сообщений"
 
+#: baruwa/public/js/baruwa/messages.preview.min.js:10
+#: baruwa/public/js/baruwa/status.preview.min.js:10
+msgid " This message contains external images, which have been blocked."
+msgstr ""
+
+#: baruwa/public/js/baruwa/messages.preview.min.js:10
+#: baruwa/public/js/baruwa/status.preview.min.js:10
+msgid "Display images"
+msgstr "Отобразить изображения"
+
+#: baruwa/public/js/baruwa/messages.preview.min.js:11
+#: baruwa/public/js/baruwa/status.preview.min.js:11
+msgid "HTML Alternative"
+msgstr ""
+
+#: baruwa/public/js/baruwa/messages.preview.min.js:13
+#: baruwa/public/js/baruwa/status.preview.min.js:13
+msgid "Text Alternative"
+msgstr ""
+
+#: baruwa/public/js/baruwa/messages.quarantine.min.js:32
+msgid "Messages :: Quarantine :: Showing page {{page}} of {{page_count}} pages."
+msgstr ""
+
+#: baruwa/public/js/baruwa/messages.quarantine.min.js:33
+msgid "Messages :: Quarantine"
+msgstr "Сообщения:: карантина"
+
 #: baruwa/public/js/baruwa/messages.recent.js:1
+#: baruwa/public/js/baruwa/messages.recent.min.js:15
 msgid "network connection failure, reconnecting in 60 seconds"
 msgstr "Ошибка сетевого подключения, переподключение через 60 секунд"
 
 #: baruwa/public/js/baruwa/messages.recent.js:1
+#: baruwa/public/js/baruwa/messages.recent.min.js:25
 msgid "OK"
 msgstr "Ок"
 
 #: baruwa/public/js/baruwa/messages.recent.js:1
 msgid "FAULTY"
-msgstr "НЕИСПРАВНОСТЬ"
+msgstr ""
+
+#: baruwa/public/js/baruwa/messages.recent.min.js:11
+msgid "Refreshing page, please wait"
+msgstr ""
+
+#: baruwa/public/js/baruwa/messages.recent.min.js:26
+msgid "ERROR"
+msgstr ""
 
 #: baruwa/public/js/baruwa/messages.search.js:1
+#: baruwa/public/js/baruwa/messages.search.min.js:21
 msgid "No messages found matching search query:"
 msgstr "Совпадений поисковому запросу не найдено:"
 
 #: baruwa/public/js/baruwa/messages.search.js:1
+#: baruwa/public/js/baruwa/messages.search.min.js:22
 msgid "Showing items {{first}} to {{last}} of {{total}}."
 msgstr "Отображение элементов с {{first}} по {{last}} из {{total}}."
 
 #: baruwa/public/js/baruwa/messages.search.js:1
+#: baruwa/public/js/baruwa/messages.search.min.js:23
 msgid "About {{total_found}} results ({{search_time}} seconds)"
 msgstr "Около {{total_found}} результатов за ({{search_time}} секунд)"
 
 #: baruwa/public/js/baruwa/messages.search.js:1
+#: baruwa/public/js/baruwa/messages.search.min.js:24
 msgid "0 Results found ({{search_time}} seconds)"
 msgstr "Найдено 0 результатов за ({{search_time}} секунд)"
 
 #: baruwa/public/js/baruwa/messages.search.js:1
+#: baruwa/public/js/baruwa/messages.search.min.js:25
 msgid "Messages :: Search results :: {{q}}"
 msgstr "Сообщения:: Результаты поиска:: {{q}}"
 
 #: baruwa/public/js/baruwa/messages.taskstatus.js:1
+#: baruwa/public/js/baruwa/messages.taskstatus.min.js:12
 msgid "An unknown error occured"
 msgstr "Произошла неизвестная ошибка"
 
 #: baruwa/public/js/baruwa/messages.taskstatus.js:1
 msgid "FAILED"
-msgstr "НЕ УДАЛОСЬ"
+msgstr ""
 
 #: baruwa/public/js/baruwa/messages.taskstatus.js:1
 msgid "PASSED"
-msgstr "ПРОШЛО"
+msgstr ""
 
 #: baruwa/public/js/baruwa/organizations.js:1
+#: baruwa/public/js/baruwa/organizations.min.js:20
 msgid "No organizations found"
 msgstr "Организаций не найдено"
 
 #: baruwa/public/js/baruwa/organizations.js:1
+#: baruwa/public/js/baruwa/organizations.min.js:22
 msgid "Organizations :: Showing page {{page}} of {{page_count}} pages."
 msgstr "Организации:: Показ страницы {{page}} из {{page_count}} страниц."
 
 #: baruwa/public/js/baruwa/organizations.js:1
+#: baruwa/public/js/baruwa/organizations.min.js:23
 msgid "Organizations"
 msgstr "Организации"
 
 #: baruwa/public/js/baruwa/reports.common.js:1
+#: baruwa/public/js/baruwa/reports.common.min.js:16
+#: baruwa/public/js/baruwa/reports.common.min.js:17
+#: baruwa/public/js/baruwa/reports.common.min.js:18
 msgid "is equal to"
 msgstr "равен"
 
 #: baruwa/public/js/baruwa/reports.common.js:1
+#: baruwa/public/js/baruwa/reports.common.min.js:16
+#: baruwa/public/js/baruwa/reports.common.min.js:17
+#: baruwa/public/js/baruwa/reports.common.min.js:18
 msgid "is not equal to"
 msgstr "не равен"
 
 #: baruwa/public/js/baruwa/reports.common.js:1
+#: baruwa/public/js/baruwa/reports.common.min.js:16
+#: baruwa/public/js/baruwa/reports.common.min.js:18
 msgid "is greater than"
 msgstr "больше, чем"
 
 #: baruwa/public/js/baruwa/reports.common.js:1
+#: baruwa/public/js/baruwa/reports.common.min.js:16
+#: baruwa/public/js/baruwa/reports.common.min.js:18
 msgid "is less than"
 msgstr "меньше, чем"
 
 #: baruwa/public/js/baruwa/reports.common.js:1
+#: baruwa/public/js/baruwa/reports.common.min.js:17
 msgid "is null"
 msgstr "имеет значение null"
 
 #: baruwa/public/js/baruwa/reports.common.js:1
+#: baruwa/public/js/baruwa/reports.common.min.js:17
 msgid "is not null"
 msgstr "не null"
 
 #: baruwa/public/js/baruwa/reports.common.js:1
+#: baruwa/public/js/baruwa/reports.common.min.js:17
 msgid "contains"
 msgstr "содержит"
 
 #: baruwa/public/js/baruwa/reports.common.js:1
+#: baruwa/public/js/baruwa/reports.common.min.js:17
 msgid "does not contain"
 msgstr "не содержит"
 
 #: baruwa/public/js/baruwa/reports.common.js:1
+#: baruwa/public/js/baruwa/reports.common.min.js:17
 msgid "matches regex"
 msgstr "соответствует регулярному выражению"
 
 #: baruwa/public/js/baruwa/reports.common.js:1
+#: baruwa/public/js/baruwa/reports.common.min.js:17
 msgid "does not match regex"
 msgstr "не соответствует регулярному выражению"
 
 #: baruwa/public/js/baruwa/reports.common.js:1
+#: baruwa/public/js/baruwa/reports.common.min.js:19
 msgid "is true"
 msgstr "верно"
 
 #: baruwa/public/js/baruwa/reports.common.js:1
+#: baruwa/public/js/baruwa/reports.common.min.js:19
 msgid "is false"
 msgstr "не верно"
 
 #: baruwa/public/js/baruwa/reports.common.js:1
+#: baruwa/public/js/baruwa/reports.common.min.js:19
 msgid "Please select"
 msgstr "Пожалуйста, выберите"
 
 #: baruwa/public/js/baruwa/reports.js:1
+#: baruwa/public/js/baruwa/reports.min.js:12
 msgid "No active filters at the moment"
 msgstr "Нет активных фильтров на данный момент"
 
 #: baruwa/public/js/baruwa/reports.js:1
+#: baruwa/public/js/baruwa/reports.min.js:12
 msgid "No saved filters at the moment"
 msgstr "Нет сохраненных фильтров на данный момент"
 
 #: baruwa/public/js/baruwa/reports.listings.js:1
+#: baruwa/public/js/baruwa/reports.listings.min.js:25
 msgid "No records found"
 msgstr "Записей не найдено"
 
 #: baruwa/public/js/baruwa/settings.js:1
+#: baruwa/public/js/baruwa/settings.min.js:20
 msgid "No scanning hosts found"
 msgstr "Сканирующих хостов найдено"
 
 #: baruwa/public/js/baruwa/settings.js:1
+#: baruwa/public/js/baruwa/settings.min.js:22
 msgid "Settings :: Nodes :: Showing page {{page}} of {{page_count}} pages."
 msgstr "Настройки :: Узлы :: Показ страницы {{page}} из {{page_count}} страниц."
 
 #: baruwa/public/js/baruwa/settings.js:1
+#: baruwa/public/js/baruwa/settings.min.js:23
 msgid "Settings :: Nodes"
 msgstr "Настройки:: узлы"
 
 #: baruwa/public/js/baruwa/status.audit.js:1
+#: baruwa/public/js/baruwa/status.audit.min.js:18
 msgid "No audit logs found"
 msgstr "Журналы аудита, не найдены"
 
 #: baruwa/public/js/baruwa/status.audit.js:1
+#: baruwa/public/js/baruwa/status.audit.min.js:27
 msgid "Status :: Audit log :: Showing page {{page}} of {{page_count}} pages."
-msgstr "Статус:: Журнал аудита:: Показ страницы {{page}} из {{page_count}} страниц."
+msgstr ""
+"Статус:: Журнал аудита:: Показ страницы {{page}} из {{page_count}} "
+"страниц."
 
 #: baruwa/public/js/baruwa/status.audit.js:1
+#: baruwa/public/js/baruwa/status.audit.min.js:28
 msgid "Status :: Audit log"
 msgstr "Статус:: Журнал аудита"
+

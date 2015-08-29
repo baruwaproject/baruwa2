@@ -1,18 +1,18 @@
 # -*- coding: utf-8 -*-
 # vim: ai ts=4 sts=4 et sw=4
 # Baruwa - Web 2.0 MailScanner front-end.
-# Copyright (C) 2010-2012  Andrew Colin Kissa <andrew@topdog.za.net>
+# Copyright (C) 2010-2015  Andrew Colin Kissa <andrew@topdog.za.net>
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation, either version 3 of the License, or
 # (at your option) any later version.
-# 
+#
 # This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License for more details.
-# 
+#
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
@@ -22,6 +22,8 @@ import os
 import json
 import logging
 import threading
+
+import arrow
 
 from cStringIO import StringIO
 
@@ -37,8 +39,7 @@ from reportlab.lib import colors
 from reportlab.graphics import renderPM
 from webhelpers.number import format_byte_size
 
-from baruwa.lib.dates import now
-from baruwa.lib.base import BaseController, render
+from baruwa.lib.base import BaseController
 from baruwa.lib.helpers import flash, flash_alert
 from baruwa.lib.outputformats import CSVWriter
 from baruwa.lib.query import DynaQuery, UserFilter, ReportQuery
@@ -49,6 +50,7 @@ from baruwa.model.meta import Session
 from baruwa.model.messages import Message
 from baruwa.model.reports import SavedFilter
 from baruwa.lib.caching_query import FromCache
+from baruwa.lib.auth.predicates import CanAccessReport
 from baruwa.lib.graphs import PieChart, PDFReport, build_barchart
 from baruwa.lib.templates.helpers import country_flag, get_hostname
 from baruwa.forms.reports import FilterForm, FILTER_BY, FILTER_ITEMS
@@ -80,7 +82,7 @@ REPORTS = {
                 'title': _('Top mail hosts by quantity')},
             '11': {'address': '', 'sort': '',
                 'title': _('Total messages [ After SMTP ]')}
-            }
+        }
 
 
 JSON_HEADER = 'application/json; charset=utf-8'
@@ -88,6 +90,7 @@ PDF_HEADER = 'application/pdf; charset=utf-8'
 
 
 def processfilters(filt, filters):
+    "Process filters"
     loaded = False
     for thefilter in filters:
         if (int(thefilter['filter']) == filt.option and
@@ -102,6 +105,7 @@ lock = threading.RLock()
 
 
 class ReportsController(BaseController):
+    "Reports Controller"
     @ActionProtector(not_anonymous())
     def __before__(self):
         "set context"
@@ -121,11 +125,12 @@ class ReportsController(BaseController):
         "utility to return filter object"
         try:
             cachekey = u'filter-%s' % filterid
-            q = Session.query(SavedFilter).filter(SavedFilter.id==filterid)\
+            qry = Session.query(SavedFilter)\
+                .filter(SavedFilter.id == filterid)\
                 .options(FromCache('sql_cache_short', cachekey))
             if self.invalidate:
-                q.invalidate()
-            savedfilter = q.one()
+                qry.invalidate()
+            savedfilter = qry.one()
         except NoResultFound:
             savedfilter = None
         return savedfilter
@@ -137,7 +142,7 @@ class ReportsController(BaseController):
             session['filter_by'].append(filt)
             session.save()
         else:
-            if not filt in session['filter_by']:
+            if filt not in session['filter_by']:
                 session['filter_by'].append(filt)
                 session.save()
 
@@ -216,11 +221,16 @@ class ReportsController(BaseController):
 
     def _generate_pdf(self, data, reportid):
         "Generate PDF's on the fly"
-        logo = os.path.join(config['pylons.paths']['static_files'],
+        if self.theme:
+            logo = os.path.join(config['baruwa.themes.base'], 'assets',
+                    self.theme, 'imgs', 'logo.png')
+        else:
+            logo = os.path.join(config['pylons.paths']['static_files'],
                             'imgs', 'logo.png')
         lock.acquire()
         try:
-            pdfcreator = PDFReport(logo, _('Baruwa mail report'))
+            pname = dict(name=config.get('baruwa.custom.name', 'Baruwa'))
+            pdfcreator = PDFReport(logo, _('%(name)s Report') % pname)
             sortby = REPORTS[reportid]['sort']
             if reportid in ['1', '2', '3', '4', '5', '6', '7', '8', '10']:
                 pieheadings = ('', _('Address'), _('Count'), _('Volume'), '')
@@ -243,11 +253,6 @@ class ReportsController(BaseController):
         finally:
             lock.release()
         return pdfdata
-
-    # def _get_count(self):
-    #     "Get message count"
-    #     countq = MsgCount(Session, c.user)
-    #     return countq()
 
     def _get_data(self, format=None, success=None, errors=None):
         "Get report data"
@@ -290,10 +295,11 @@ class ReportsController(BaseController):
                 data = data[0]
                 filterdict = dict(FILTER_ITEMS)
                 filterbydict = dict(FILTER_BY)
-                active_filters = [dict(filter_field=unicode(filterdict[filt['field']]),
-                                    filter_by=unicode(filterbydict[filt['filter']]),
-                                    filter_value=unicode(filt['value']))
-                                    for filt in filters]
+                active_filters = [dict(
+                            filter_field=unicode(filterdict[filt['field']]),
+                            filter_by=unicode(filterbydict[filt['filter']]),
+                            filter_value=unicode(filt['value']))
+                            for filt in filters]
                 try:
                     newest = data.newest.strftime("%Y-%m-%d %H:%M")
                     oldest = data.oldest.strftime("%Y-%m-%d %H:%M")
@@ -311,15 +317,15 @@ class ReportsController(BaseController):
         c.form = FilterForm(request.POST, csrf_context=session)
         errors = ''
         success = True
-        if request.POST and c.form.validate():
+        if request.method == 'POST' and c.form.validate():
             fitem = dict(field=c.form.filtered_field.data,
                         filter=c.form.filtered_by.data,
                         value=c.form.filtered_value.data)
             self._save_filter(fitem)
-        elif request.POST and not c.form.validate():
+        elif request.method == 'POST' and not c.form.validate():
             success = False
             key = c.form.errors.keys()
-            msgs = [unicode(gkey) for gkey in c.form.errors[key[0]]] 
+            msgs = [unicode(gkey) for gkey in c.form.errors[key[0]]]
             errors = dict(field=key[0], msg=', '.join(msgs))
         if success:
             self.invalidate = True
@@ -334,8 +340,9 @@ class ReportsController(BaseController):
         c.saved_filters = saved_filters
         c.FILTER_BY = FILTER_BY
         c.FILTER_ITEMS = FILTER_ITEMS
-        return render('/reports/index.html')
+        return self.render('/reports/index.html')
 
+    @ActionProtector(CanAccessReport())
     def display(self, reportid, format=None):
         "Display a report"
         try:
@@ -356,7 +363,7 @@ class ReportsController(BaseController):
                 info = REPORTDL_MSG % dict(r=c.report_title, f='csv')
                 audit_log(c.user.username,
                         1, unicode(info), request.host,
-                        request.remote_addr, now())
+                        request.remote_addr, arrow.utcnow().datetime)
                 return self._generate_csv(data, reportid)
             jsondata = [dict(tooltip=getattr(item, 'address'),
                         y=getattr(item, REPORTS[reportid]['sort']),
@@ -415,7 +422,7 @@ class ReportsController(BaseController):
                 size_total = []
                 virus_total = []
                 for row in data:
-                    dates.append(str(row.date))
+                    dates.append(str(row.ldate))
                     mail_total.append(int(row.mail_total))
                     spam_total.append(int(row.spam_total))
                     virus_total.append(int(row.virus_total))
@@ -448,7 +455,7 @@ class ReportsController(BaseController):
                     spct = "0.0"
                 jsondata['vpct'] = vpct
                 jsondata['spct'] = spct
-                data = [dict(date=str(row.date),
+                data = [dict(date=str(row.ldate),
                         mail_total=row.mail_total,
                         spam_total=row.spam_total,
                         virus_total=row.virus_total,
@@ -461,7 +468,7 @@ class ReportsController(BaseController):
                 info = REPORTDL_MSG % dict(r=c.report_title, f='csv')
                 audit_log(c.user.username,
                         1, unicode(info), request.host,
-                        request.remote_addr, now())
+                        request.remote_addr, arrow.utcnow().datetime)
                 return self._generate_csv(data, reportid)
             else:
                 jsondata = dict(mail=[],
@@ -474,7 +481,7 @@ class ReportsController(BaseController):
                     jsondata['mail'].append(item.mail_total)
                     jsondata['virus'].append(item.virus_total)
                     jsondata['volume'].append(item.total_size)
-                    jsondata['labels'].append(dict(text=str(item.date),
+                    jsondata['labels'].append(dict(text=str(item.ldate),
                                             value=index))
                 template = '/reports/listing.html'
         if format == 'json':
@@ -484,7 +491,7 @@ class ReportsController(BaseController):
             info = REPORTDL_MSG % dict(r=c.report_title, f='pdf')
             audit_log(c.user.username,
                     1, unicode(info), request.host,
-                    request.remote_addr, now())
+                    request.remote_addr, arrow.utcnow().datetime)
             return self._generate_pdf(data, reportid)
         c.reportid = reportid
         c.chart_data = json.dumps(jsondata)
@@ -497,8 +504,8 @@ class ReportsController(BaseController):
         info = REPORTVIEW_MSG % dict(r=c.report_title)
         audit_log(c.user.username,
                 1, unicode(info), request.host,
-                request.remote_addr, now())
-        return render(template)
+                request.remote_addr, arrow.utcnow().datetime)
+        return self.render(template)
 
     def delete(self, filterid, format=None):
         "Delete a temp filter"
@@ -513,12 +520,15 @@ class ReportsController(BaseController):
                 flash_alert(msg)
             errors = dict(msg=msg)
             success = False
+            log.info(msg)
         if format == 'json':
             response.headers['Content-Type'] = JSON_HEADER
             if not errors:
                 self.invalidate = True
             return json.dumps(self._get_data(format, success, errors))
-        flash(_("The filter has been removed"))
+        msg = _("The filter has been removed")
+        flash(msg)
+        log.info(msg)
         redirect(url(controller='reports'))
 
     def save(self, filterid, format=None):
@@ -558,6 +568,7 @@ class ReportsController(BaseController):
             flash(_("The filter has been saved"))
         else:
             flash(error_msg)
+            log.info(error_msg)
         redirect(url('toplevel', controller='reports'))
 
     def load(self, filterid, format=None):
@@ -588,7 +599,9 @@ class ReportsController(BaseController):
             response.headers['Content-Type'] = JSON_HEADER
             self.invalidate = True
             return json.dumps(self._get_data(format, True, {}))
-        flash(_("The filter has been deleted"))
+        msg = _("The filter has been deleted")
+        flash(msg)
+        log.info(msg)
         redirect(url('toplevel', controller='reports'))
 
     def show_filters(self):
@@ -597,9 +610,9 @@ class ReportsController(BaseController):
         c.active_filters = filters
         c.FILTER_BY = FILTER_BY
         c.FILTER_ITEMS = FILTER_ITEMS
-        return render('/reports/show_filters.html')
+        return self.render('/reports/show_filters.html')
 
     def add_filters(self):
         "Show form"
         c.form = FilterForm(request.POST, csrf_context=session)
-        return render('/reports/add_filters.html')
+        return self.render('/reports/add_filters.html')

@@ -2,18 +2,18 @@
 # -*- coding: utf-8 -*-
 # vim: ai ts=4 sts=4 et sw=4
 # Baruwa - Web 2.0 MailScanner front-end.
-# Copyright (C) 2010-2012  Andrew Colin Kissa <andrew@topdog.za.net>
+# Copyright (C) 2010-2015  Andrew Colin Kissa <andrew@topdog.za.net>
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation, either version 3 of the License, or
 # (at your option) any later version.
-# 
+#
 # This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License for more details.
-# 
+#
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
@@ -30,6 +30,23 @@ from baruwa.model.accounts import User, domain_owners
 from baruwa.model.settings import DomSignature, UserSignature
 from baruwa.model.accounts import organizations_admins, Address
 from baruwa.model.domains import Domain, DeliveryServer, AuthServer
+
+
+class CanAccessReport(Predicate):
+    """Check if user can access a report"""
+    message = _('Only Administrators can access this page')
+
+    def evaluate(self, environ, credentials):
+        "Check"
+        identity = environ.get('repoze.who.identity')
+        user = identity['user']
+        if not user or not user.active:
+            self.unmet()
+        if not user.is_admin:
+            varbs = self.parse_variables(environ)
+            reportid = varbs['named_args'].get('reportid')
+            if int(reportid) in [7, 8]:
+                self.unmet()
 
 
 class OnlySuperUsers(Predicate):
@@ -49,16 +66,18 @@ class OnlyAdminUsers(Predicate):
     message = _('Only Administrators can access this page')
 
     def evaluate(self, environ, credentials):
+        "Check"
         identity = environ.get('repoze.who.identity')
         user = identity['user']
         if not user or not user.is_admin or not user.active:
             self.unmet()
 
+
 def check_domain_ownership(user_id, domain_id):
     "Check domain ownership"
     domain = Session.query(Domain.name)\
             .join(domain_owners, (organizations_admins,
-            domain_owners.c.organization_id == \
+            domain_owners.c.organization_id ==
             organizations_admins.c.organization_id))\
             .filter(organizations_admins.c.user_id == user_id)\
             .filter(domain_owners.c.domain_id == domain_id).all()

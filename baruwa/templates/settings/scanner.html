@@ -1,27 +1,35 @@
-<div id="content">
-	<div class="grid_16">
-	    <h3 class="head">${_('Configuration Settings')}</h3>
+<div class="row-fluid">
+	<div class="span1 hidden-phone"></div>
+	<div class="span10">
+    	<h3 class="head smaller lighter blue">${_('Configuration Settings')}</h3>
 	</div>
-	<div class="grid_16 drow">
-	    <div class="grid_7">
-	        <ul class="reports">
-				% for i, section in enumerate(c.sections):
-				%  if not i % 2:
-				<li>${h.link_to(c.sections[section], url('scanner-section', serverid=c.scanner.id, sectionid=section))}</li>
-				%  endif	
-				% endfor
-	        </ul>
-	    </div>
-	    <div class="grid_7">
-	        <ul class="reports">
-				% for i, section in enumerate(c.sections):
-				%  if i % 2:
-				<li>${h.link_to(c.sections[section], url('scanner-section', serverid=c.scanner.id, sectionid=section))}</li>
-				%  endif	
-				% endfor
-	        </ul>
-	    </div>
+	<div class="span1 hidden-phone"></div>
+</div>
+<div class="row-fluid">
+	<div class="span1 hidden-phone"></div>
+	<div class="span10">
+		<div class="row-fluid">
+		    <div class="span6">
+		        <ul class="reports">
+					% for i, section in enumerate(c.sections):
+					%  if not i % 2:
+					<li><i class="icon-star blue"></i> ${h.link_to(c.sections[section], url('scanner-section', serverid=c.scanner.id, sectionid=section))}</li>
+					%  endif	
+					% endfor
+		        </ul>
+		    </div>
+		    <div class="span6">
+		        <ul class="reports">
+					% for i, section in enumerate(c.sections):
+					%  if i % 2:
+					<li><i class="icon-star blue"></i> ${h.link_to(c.sections[section], url('scanner-section', serverid=c.scanner.id, sectionid=section))}</li>
+					%  endif	
+					% endfor
+		        </ul>
+		    </div>
+		</div>
 	</div>
+	<div class="span1 hidden-phone"></div>
 </div>
 
 <%def name="title()">
@@ -32,15 +40,11 @@ ${_('Settings :: scanning server :: %(name)s') % dict(name=c.scanner.hostname)}
 ${_('Settings :: scanning server :: %(name)s') % dict(name=c.scanner.hostname)}
 </%def>
 
-<%def name="submenu()">
-<ul>
-  <li>${h.link_to(_('Update server'), url('scanner-edit', serverid=c.scanner.id))}</li>
-</ul>
-</%def>
+<%def name="submenu()"></%def>
 
 <%def name="headers()">
 </%def>
 <%def name="localscripts()">
 </%def>
 
-<%inherit file="/base.html"/>
+<%inherit file="../base.html"/>

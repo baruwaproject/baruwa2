@@ -1,25 +1,30 @@
-<div class="alpos">
-	<div class="grid_16">
+<div class="row-fluid">
+	<div class="span1 hidden-phone"></div>
+	<div class="span10">
 		<ul id="msgops">
 		  <li>${h.link_to(_('Return to account'), url('account-detail', userid=c.id))}</li>
 		</ul>
 	</div>
+	<div class="span1 hidden-phone"></div>
 </div>
-<div id="content">
-<div class="grid_16">
-    <h3 class="head">${_('Delete User account')}</h3>
+<div class="row-fluid">
+	<div class="span1 hidden-phone"></div>
+	<div class="span10">
+    	<h3 class="head smaller lighter blue">${_('Delete User account')}</h3>
+	</div>
+	<div class="span1 hidden-phone"></div>
 </div>
-${h.form(url(controller='accounts', action='delete', userid=c.id), method='post')}
-<%include file="/forms/disabled.base.html"/>
-    <div class="grid_16 drow">
-        <div class="grid_7">&nbsp;</div>
-        <div class="grid_8">
-            ${h.submit('submit', _('Delete account'))}
-        </div>
-    </div>
-${h.end_form()}
-<div class="clear"></div>
-<div class="sp20"></div>
+<div class="row-fluid">
+	<div class="span1 hidden-phone"></div>
+	<div class="span10">
+		${h.form(url(controller='accounts', action='delete', userid=c.id), method='post', class_="form-horizontal")}
+		<%include file="../forms/disabled.base.html"/>
+	    <div class="form-actions">
+				<button id="submit-button" class="btn btn-small btn-success"><i class="icon-ok"></i> ${_('Delete account')}</button>
+	    </div>
+		${h.end_form()}
+	</div>
+	<div class="span1 hidden-phone"></div>
 </div>
 
 
@@ -31,14 +36,15 @@ ${_('Accounts :: Delete account')}
 ${_('Accounts :: Delete account')} 
 </%def>
 
-<%def name="submenu()">
-<ul>
-  <li>${h.link_to(_('Account details'), url('account-detail', userid=c.id))}</li>
-</ul>
-</%def>
+<%def name="submenu()"></%def>
 
 <%def name="headers()">
 </%def>
 <%def name="localscripts()">\
+<script type="text/javascript">
+$(function() {
+	$('.settings-popover').popover();
+});
+</script>
 </%def>
-<%inherit file="/base.html"/>
+<%inherit file="../base.html"/>

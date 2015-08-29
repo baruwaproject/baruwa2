@@ -85,6 +85,7 @@ what_log_file = /var/log/baruwa/what-who.log
 ms.config = /etc/MailScanner/MailScanner.conf
 ms.quickpeek = /usr/sbin/Quick.Peek
 ms.quarantine.days_to_keep = 30
+ms.quarantine.shared = false
 ms.saprefs = /etc/MailScanner/spam.assassin.prefs.conf
 ms.signatures.base = /etc/MailScanner/baruwa/signatures
 
@@ -103,6 +104,7 @@ mail.transport.password =
 mail.transport.max_messages_per_connection = 10
 
 # baruwa settings
+baruwa.hostname =
 baruwa.media.url = /
 baruwa.default.url = http://localhost
 baruwa.ipv6db = /usr/share/GeoIP/GeoIPv6.dat
@@ -114,15 +116,20 @@ baruwa.timezone = Africa/Johannesburg
 baruwa.messages.keep.days = 30
 baruwa.archive.keep.days = 90
 baruwa.mail.user = exim
+baruwa.themes.base = /usr/share/baruwa/themes
+baruwa.custom.name = Baruwa Hosted
+baruwa.custom.url = http://www.baruwa.net
+baruwa.memcached.host = 127.0.0.1
 # Enable this if you want to limit languages to the listed ones
 #baruwa.languages = en,fr,de
 baruwa.default.language = en
+baruwa.send.reports.at = 07
 
 # celery settings
 broker.host = 127.0.0.1
 broker.port = 5672
 broker.user = baruwa
-broker.password = 
+broker.password =
 broker.vhost = baruwa
 broker.pool.limit = 10
 celeryd.pool = eventlet
@@ -140,12 +147,13 @@ celery.result.engine.options = {"echo": False}
 celery.result.exchange = celeryresults2
 celery.imports = baruwa.tasks
 celery.disable.rate.limits = True
-#celery.queues = {"snowy.local":{"exchange": "host", "exchange_type": "direct","binding_key":"snowy.local",},"msbackend":{"exchange":"ms", "exchange_type":"fanout","binding_key":"mstasks"},"default": {"exchange": "default","binding_key": "default"}}
-celery.default.queue = default
-celery.default.exchange = default
+celery.queues = {"d":{"exchange": "d"},"snowy.local":{"exchange": "d", "routing_key": "snowy.local"},"f.snowy.local":{"exchange":"ms", "exchange_type":"fanout"}}
+celery.default.queue = d
+celery.default.exchange = d
 celery.default.exchange_type = direct
-celery.default.routing_key = default
+celery.default.routing_key = d
 celery.create.missing.queues = False
+celery.cache.backend = pylibmc://127.0.0.1:11211/
 
 
 # Logging configuration
@@ -187,43 +195,6 @@ user_class = baruwa.model.accounts:User
 dbsession = baruwa.model:Session
 user_name_translation = username
 
-[plugin:baruwa_ldap_auth]
-use = baruwa.lib.auth.ldapauth:make_ldap_authenticator
-dbsession = baruwa.model:Session
-lsm = baruwa.model.auth:LDAPSettings
-dommodel = baruwa.model.domains:Domain
-dam = baruwa.model.domains:DomainAlias
-asm = baruwa.model.domains:AuthServer
-
-[plugin:baruwa_radius_auth]
-use = baruwa.lib.auth.radiusauth:make_rad_authenticator
-dbsession = baruwa.model:Session
-rsm = baruwa.model.auth:RadiusSettings
-dommodel = baruwa.model.domains:Domain
-dam = baruwa.model.domains:DomainAlias
-asm = baruwa.model.domains:AuthServer
-
-[plugin:baruwa_smtp_auth]
-use = baruwa.lib.auth.smtpauth:make_smtp_authenticator
-dbsession = baruwa.model:Session
-dommodel = baruwa.model.domains:Domain
-dam = baruwa.model.domains:DomainAlias
-asm = baruwa.model.domains:AuthServer
-
-[plugin:baruwa_pop3_auth]
-use = baruwa.lib.auth.pop3auth:make_pop3_authenticator
-dbsession = baruwa.model:Session
-dommodel = baruwa.model.domains:Domain
-dam = baruwa.model.domains:DomainAlias
-asm = baruwa.model.domains:AuthServer
-
-[plugin:baruwa_imap_auth]
-use = baruwa.lib.auth.imapauth:make_imap_authenticator
-dbsession = baruwa.model:Session
-dommodel = baruwa.model.domains:Domain
-dam = baruwa.model.domains:DomainAlias
-asm = baruwa.model.domains:AuthServer
-
 [plugin:sa_md]
 use = repoze.who.plugins.sa:make_sa_user_mdprovider
 user_class = baruwa.model.accounts:User
@@ -242,7 +213,7 @@ include_ip = False
 
 [general]
 request_classifier = repoze.who.classifiers:default_request_classifier
-challenge_decider = repoze.who.classifiers:default_challenge_decider
+challenge_decider = baruwa.lib.auth.middleware:baruwa_challenge_decider
 remote_user_key = REMOTE_USER
 
 [identifiers]
@@ -253,11 +224,6 @@ plugins =
 [authenticators]
 plugins =
       sa_auth
-      baruwa_pop3_auth
-      baruwa_imap_auth
-      baruwa_smtp_auth
-      baruwa_ldap_auth
-      baruwa_radius_auth
 
 [challengers]
 plugins =

@@ -1,49 +1,49 @@
 # -*- coding: utf-8 -*-
 # vim: ai ts=4 sts=4 et sw=4
 # Baruwa - Web 2.0 MailScanner front-end.
-# Copyright (C) 2010-2012  Andrew Colin Kissa <andrew@topdog.za.net>
+# Copyright (C) 2010-2015  Andrew Colin Kissa <andrew@topdog.za.net>
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation, either version 3 of the License, or
 # (at your option) any later version.
-# 
+#
 # This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License for more details.
-# 
+#
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
+"Status controller"
 
 import json
 import base64
 import logging
 
+import arrow
+
 from urlparse import urlparse
 from cStringIO import StringIO
 
-from pylons import response, request, session, tmpl_context as c, url
+from pylons import response, request, session, tmpl_context as c, url, config
 from pylons.controllers.util import abort, redirect
 from pylons.i18n.translation import _
+from sqlalchemy.sql.expression import true
 from repoze.what.predicates import All, not_anonymous
 from repoze.what.plugins.pylonshq import ActionProtector
 from repoze.what.plugins.pylonshq import ControllerProtector
 from webhelpers import paginate
 from reportlab.lib import colors
 from sqlalchemy import desc
-from webhelpers.html import literal
 from celery.result import AsyncResult
-from webhelpers.html.tags import link_to
 from reportlab.graphics import renderPM
 from sqlalchemy.orm.exc import NoResultFound
-from lxml.html import fromstring, tostring, iterlinks
 from sphinxapi import SphinxClient, SPH_MATCH_EXTENDED2
 from celery.exceptions import TimeoutError, QueueNotFound
 
-from baruwa.lib.dates import now
-from baruwa.lib.base import BaseController, render
+from baruwa.lib.base import BaseController
 from baruwa.model.meta import Session
 from baruwa.lib.helpers import flash, flash_alert
 from baruwa.lib.graphs import PieChart
@@ -52,9 +52,9 @@ from baruwa.lib.audit import audit_log
 from baruwa.model.settings import Server
 from baruwa.model.status import MailQueueItem, AuditLog
 from baruwa.lib.graphs import PIE_CHART_COLORS
-from baruwa.lib.misc import check_num_param
+from baruwa.lib.misc import check_num_param, extract_sphinx_opts
 from baruwa.lib.misc import convert_settings_to_json
-from baruwa.lib.templates.helpers import media_url
+from baruwa.lib.templates.html import img_fixups
 from baruwa.lib.query import DailyTotals, MailQueue
 from baruwa.lib.query import clean_sphinx_q, restore_sphinx_q
 from baruwa.tasks.status import export_auditlog
@@ -68,9 +68,21 @@ from baruwa.lib.audit.msgs.status import HOSTBAYES_MSG, AUDITLOGEXPORT_MSG
 
 log = logging.getLogger(__name__)
 
+LABELS = dict(clean=_('Clean'),
+        highspam=_('High scoring spam'),
+        lowspam=_('Low scoring spam'),
+        virii=_('Virus infected'),
+        infected=_('Policy blocked'))
+PIE_COLORS = dict(clean='#006400',
+        highspam='#FF0000',
+        lowspam='#ffa07a',
+        virii='#000000',
+        infected='#d2691e')
+
 
 @ControllerProtector(All(not_anonymous()))
 class StatusController(BaseController):
+    "status controller"
     def __before__(self):
         "set context"
         BaseController.__before__(self)
@@ -91,26 +103,17 @@ class StatusController(BaseController):
     @ActionProtector(OnlyAdminUsers())
     def index(self):
         "System status"
-        c.servers = Session.query(Server).filter(
-                    Server.hostname != 'default').all()
-        labels = dict(clean=_('Clean'),
-                    highspam=_('High scoring spam'),
-                    lowspam=_('Low scoring spam'),
-                    virii=_('Virus infected'),
-                    infected=_('Policy blocked'))
-        pie_colors = dict(clean='#006400',
-                    highspam='#FF0000',
-                    lowspam='#ffa07a',
-                    virii='#000000',
-                    infected='#d2691e')
-        jsondata = [dict(tooltip=labels[attr],
+        c.servers = Session.query(Server)\
+                    .filter(Server.hostname != 'default')\
+                    .filter(Server.enabled == true()).all()
+        jsondata = [dict(tooltip=LABELS[attr],
                     y=getattr(c.baruwa_totals, attr),
                     stroke='black',
-                    color=pie_colors[attr])
+                    color=PIE_COLORS[attr])
                     for attr in ['clean', 'highspam', 'lowspam', 'virii',
                     'infected'] if getattr(c.baruwa_totals, attr)]
         c.chart_data = json.dumps(jsondata)
-        return render('/status/index.html')
+        return self.render('/status/index.html')
 
     def graph(self, nodeid=None):
         "Generate graphical system status"
@@ -159,10 +162,10 @@ class StatusController(BaseController):
         return self.imgfile.getvalue()
 
     def mailq(self, serverid=None, queue='inbound', page=1, direction='dsc',
-        order_by='timestamp'):
+            order_by='timestamp'):
         "Display mailqueue"
         server = None
-        if not serverid is None:
+        if serverid is not None:
             server = self._get_server(serverid)
             if not server:
                 abort(404)
@@ -195,7 +198,7 @@ class StatusController(BaseController):
 
         c.page = paginate.Page(query, page=int(page),
                                 items_per_page=num_items)
-        return render('/status/mailq.html')
+        return self.render('/status/mailq.html')
 
     def process_mailq(self):
         "Process mailq"
@@ -204,7 +207,7 @@ class StatusController(BaseController):
         form = MailQueueProcessForm(request.POST, csrf_context=session)
         form.id.choices = choices
 
-        if request.POST and form.validate() and choices:
+        if request.method == 'POST' and form.validate() and choices:
             queueids = form.id.data
             if form.queue_action.data != '0':
                 hosts = {}
@@ -213,7 +216,7 @@ class StatusController(BaseController):
                             .filter(MailQueueItem.id.in_(queueids))\
                             .all()
                 for item in queueitems:
-                    if not item.hostname in hosts:
+                    if item.hostname not in hosts:
                         hosts[item.hostname] = []
                     if not direction:
                         direction = item.direction
@@ -222,7 +225,7 @@ class StatusController(BaseController):
                     process_queued_msgs.apply_async(args=[hosts[hostname],
                                                     form.queue_action.data,
                                                     direction],
-                                                    queue=hostname)
+                                                    routing_key=hostname)
                 flash(_('The request has been queued for processing'))
             session['queue_choices'] = []
             session.save()
@@ -241,17 +244,18 @@ class StatusController(BaseController):
         try:
             mailqitem = query.filter(MailQueueItem.id == queueid).one()
         except NoResultFound:
-            #abort(404)
+            # abort(404)
             flash_alert(_('The requested queued message was not found.'))
             redirect(url('mailq-status'))
 
         c.mailqitem = mailqitem
         c.form = MailQueueProcessForm(request.POST, csrf_context=session)
-        session['queue_choices'] = [(queueid, queueid),]
+        session['queue_choices'] = [(queueid, queueid), ]
         session.save()
-        return render('/status/detail.html')
+        return self.render('/status/detail.html')
 
-    def mailq_preview(self, queueid, attachid=None, imgid=None, allowimgs=None):
+    def mailq_preview(self, queueid, attachid=None, imgid=None,
+                    allowimgs=None, richformat=None):
         "preview a queued message"
         query = Session.query(MailQueueItem)
         uquery = UserFilter(Session, c.user, query, model=MailQueueItem)
@@ -266,7 +270,7 @@ class StatusController(BaseController):
         try:
             task = preview_queued_msg.apply_async(args=[mailqitem.messageid,
                     mailqitem.direction, attachid, imgid],
-                    queue=mailqitem.hostname)
+                    routing_key=mailqitem.hostname)
             task.wait(30)
             if task.result:
                 if imgid:
@@ -276,7 +280,7 @@ class StatusController(BaseController):
                                                         a=task.result['name'])
                         audit_log(c.user.username,
                                 1, unicode(info), request.host,
-                                request.remote_addr, now())
+                                request.remote_addr, arrow.utcnow().datetime)
                         return base64.decodestring(task.result['img'])
                     abort(404)
                 if attachid:
@@ -284,7 +288,7 @@ class StatusController(BaseController):
                                                     a=task.result['name'])
                     audit_log(c.user.username,
                             1, unicode(info), request.host,
-                            request.remote_addr, now())
+                            request.remote_addr, arrow.utcnow().datetime)
                     response.content_type = task.result['mimetype']
                     dispos = 'attachment; filename="%s"' % task.result['name']
                     response.headers['Content-Disposition'] = str(dispos)
@@ -294,35 +298,29 @@ class StatusController(BaseController):
                     response.headers['Cache-Control'] = 'max-age=0'
                     return base64.decodestring(task.result['attachment'])
                 for part in task.result['parts']:
-                    if part['type'] == 'html':
-                        html = fromstring(part['content'])
-                        for element, attribute, link, pos in iterlinks(html):
-                            if not link.startswith('cid:'):
-                                if not allowimgs and attribute == 'src':
-                                    element.attrib['src'] = '%simgs/blocked.gif' % media_url()
-                                    element.attrib['title'] = link
-                                    flash(_('This message contains external images, which have been blocked. ') +
-                                    literal(link_to(_('Display images'),
-                                    url('queue-preview-with-imgs', queueid=queueid), class_='uline')))
-                            else:
-                                imgname = link.replace('cid:', '')
-                                element.attrib['src'] = url('queue-preview-img',
-                                                        imgid=imgname.replace('/', '__xoxo__'),
-                                                        queueid=queueid)
-                        part['content'] = tostring(html)
+                    if part['type'] == 'text/html':
+                        local_rf = (not task.result['is_multipart']
+                                    or richformat)
+                        part['content'] = img_fixups(part['content'],
+                                                    queueid, allowimgs,
+                                                    local_rf)
                 c.message = task.result
                 info = QUEUEPREVIEW_MSG % dict(m=mailqitem.messageid)
                 audit_log(c.user.username,
                         1, unicode(info), request.host,
-                        request.remote_addr, now())
+                        request.remote_addr, arrow.utcnow().datetime)
             else:
                 raise TimeoutError
-        except (TimeoutError, QueueNotFound):
-            flash_alert(_('The message could not be processed'))
+        except (TimeoutError, QueueNotFound), error:
+            msg = _('The message could not be processed')
+            flash_alert(msg)
+            msg = _('The message could not be processed: %s') % error
+            log.info(msg)
             redirect(url('mailq-status'))
         c.queueid = queueid
         c.messageid = mailqitem.messageid
-        return render('/status/preview.html')
+        c.richformat = richformat
+        return self.render('/status/preview.html')
 
     @ActionProtector(OnlySuperUsers())
     def server_status(self, serverid):
@@ -357,20 +355,27 @@ class StatusController(BaseController):
                         net={},
                         cpu=0)
         try:
-            task = systemstatus.apply_async(queue=server.hostname)
+            task = systemstatus.apply_async(routing_key=server.hostname)
             task.wait(30)
             hoststatus = task.result
             statusdict.update(hoststatus)
             info = HOSTSTATUS_MSG % dict(n=server.hostname)
             audit_log(c.user.username,
                     1, unicode(info), request.host,
-                    request.remote_addr, now())
+                    request.remote_addr, arrow.utcnow().datetime)
         except (TimeoutError, QueueNotFound):
             pass
 
+        jsondata = [dict(tooltip=LABELS[attr],
+                    y=getattr(totals, attr),
+                    stroke='black',
+                    color=PIE_COLORS[attr])
+                    for attr in ['clean', 'highspam', 'lowspam', 'virii',
+                    'infected'] if getattr(totals, attr)]
+        c.chart_data = json.dumps(jsondata)
         c.server = server
         c.status = statusdict
-        return render('/status/serverstatus.html')
+        return self.render('/status/serverstatus.html')
 
     @ActionProtector(OnlySuperUsers())
     def server_bayes_status(self, serverid):
@@ -380,18 +385,18 @@ class StatusController(BaseController):
             abort(404)
 
         try:
-            task = bayesinfo.apply_async(queue=server.hostname)
+            task = bayesinfo.apply_async(routing_key=server.hostname)
             task.wait(30)
             result = task.result
             info = HOSTBAYES_MSG % dict(n=server.hostname)
             audit_log(c.user.username,
                     1, unicode(info), request.host,
-                    request.remote_addr, now())
+                    request.remote_addr, arrow.utcnow().datetime)
         except (TimeoutError, QueueNotFound, OSError):
             result = {}
         c.server = server
         c.data = result
-        return render('/status/bayes.html')
+        return self.render('/status/bayes.html')
 
     @ActionProtector(OnlySuperUsers())
     def server_salint_stat(self, serverid):
@@ -401,18 +406,18 @@ class StatusController(BaseController):
             abort(404)
 
         try:
-            task = salint.apply_async(queue=server.hostname)
+            task = salint.apply_async(routing_key=server.hostname)
             task.wait(30)
             result = task.result
             info = HOSTSALINT_MSG % dict(n=server.hostname)
             audit_log(c.user.username,
                     1, unicode(info), request.host,
-                    request.remote_addr, now())
+                    request.remote_addr, arrow.utcnow().datetime)
         except (TimeoutError, QueueNotFound, OSError):
             result = []
         c.server = server
         c.data = result
-        return render('/status/salint.html')
+        return self.render('/status/salint.html')
 
     @ActionProtector(OnlySuperUsers())
     def audit(self, page=1, format=None):
@@ -420,10 +425,12 @@ class StatusController(BaseController):
         total_found = 0
         search_time = 0
         num_items = session.get('auditlog_num_items', 50)
-        q = request.GET.get('q', None)
+        qry = request.GET.get('q', None)
         kwds = {}
-        if q:
+        if qry:
             conn = SphinxClient()
+            sphinxopts = extract_sphinx_opts(config['sphinx.url'])
+            conn.SetServer(sphinxopts.get('host', '127.0.0.1'))
             conn.SetMatchMode(SPH_MATCH_EXTENDED2)
             if page == 1:
                 conn.SetLimits(0, num_items, 500)
@@ -431,9 +438,9 @@ class StatusController(BaseController):
                 page = int(page)
                 offset = (page - 1) * num_items
                 conn.SetLimits(offset, num_items, 500)
-            q = clean_sphinx_q(q)
-            results = conn.Query(q, 'auditlog, auditlog_rt')
-            q = restore_sphinx_q(q)
+            qry = clean_sphinx_q(qry)
+            results = conn.Query(qry, 'auditlog, auditlog_rt')
+            qry = restore_sphinx_q(qry)
             if results and results['matches']:
                 ids = [hit['id'] for hit in results['matches']]
                 query = Session.query(AuditLog)\
@@ -453,7 +460,7 @@ class StatusController(BaseController):
                     .order_by(desc('timestamp'))
             lcount = Session.query(AuditLog)\
                     .order_by(desc('timestamp'))
-        if not 'logcount' in locals():
+        if 'logcount' not in locals():
             logcount = lcount.count()
         items = paginate.Page(query, page=int(page),
                             items_per_page=num_items,
@@ -461,28 +468,30 @@ class StatusController(BaseController):
         if format == 'json':
             response.headers['Content-Type'] = 'application/json'
             jdict = convert_settings_to_json(items)
-            if q:
+            if qry:
                 encoded = json.loads(jdict)
-                encoded['q'] = q
+                encoded['q'] = qry
                 jdict = json.dumps(encoded)
             return jdict
 
         c.page = items
-        c.q = q
+        c.q = qry
         c.total_found = total_found
         c.search_time = search_time
-        return render('/status/audit.html')
+        return self.render('/status/audit.html')
 
     @ActionProtector(OnlySuperUsers())
     def audit_export(self, isquery=None, format=None):
         "Export audit logs"
         query = request.GET.get('q', None)
         if isquery and query is None:
-            flash_alert(_('No query specified for audit log export'))
+            msg = _('No query specified for audit log export')
+            flash_alert(msg)
+            log.info(msg)
             redirect(url('status-audit-logs'))
 
         task = export_auditlog.apply_async(args=[format, query])
-        if not 'taskids' in session:
+        if 'taskids' not in session:
             session['taskids'] = []
         session['taskids'].append(task.task_id)
         session['exportauditlog-counter'] = 1
@@ -494,18 +503,22 @@ class StatusController(BaseController):
         "Audit log export status"
         result = AsyncResult(taskid)
         if result is None or taskid not in session['taskids']:
-            flash(_('The task status requested has expired or does not exist'))
+            msg = _('The task status requested has expired or does not exist')
+            flash(msg)
+            log.info(msg)
             redirect(url('status-audit-logs'))
 
         if result.ready():
             finished = True
             flash.pop_messages()
             if isinstance(result.result, Exception):
+                msg = _('Error occured in processing %s') % result.result
                 if c.user.is_superadmin:
-                    flash_alert(_('Error occured in processing %s') %
-                                result.result)
+                    flash_alert(msg)
+                    log.info(msg)
                 else:
                     flash_alert(_('Backend error occured during processing.'))
+                    log.info(msg)
                 redirect(url('status-audit-logs'))
         else:
             session['exportauditlog-counter'] += 1
@@ -522,11 +535,11 @@ class StatusController(BaseController):
         c.finished = finished
         c.results = result.result
         c.success = result.successful()
-        d = request.GET.get('d', None)
-        if finished and (d and d == 'y'):
+        dwn = request.GET.get('d', None)
+        if finished and (dwn and dwn == 'y'):
             audit_log(c.user.username,
                     5, unicode(AUDITLOGEXPORT_MSG), request.host,
-                    request.remote_addr, now())
+                    request.remote_addr, arrow.utcnow().datetime)
             response.content_type = result.result['content_type']
             response.headers['Cache-Control'] = 'max-age=0'
             respdata = result.result['f']
@@ -534,8 +547,9 @@ class StatusController(BaseController):
             response.headers['Content-Disposition'] = str(disposition)
             response.headers['Content-Length'] = len(respdata)
             return respdata
-        return render('/status/auditexportstatus.html')
+        return self.render('/status/auditexportstatus.html')
 
+    # pylint: disable-msg=R0201
     def setnum(self, format=None):
         "Set number of items to return for auditlog/mailq"
         app = request.GET.get('ac', 'mailq')

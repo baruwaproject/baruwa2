@@ -1,0 +1,16 @@
+% for host in hosts:
+From:	${host.address}	${host.low_score}
+% endfor
+% for user in users:
+To: ${user.email} ${user.low_score}
+% for addr in user.addresses:
+To: ${addr.address}	${user.low_score}
+% endfor
+% endfor
+% for domain in domains:
+To: *@${domain.name} ${domain.low_score}
+% for alias in domain.aliases:
+To: *@${alias.name}	${domain.low_score}
+% endfor
+% endfor
+FromOrTo: default 5

@@ -1,0 +1,7 @@
+<%def name="item_status(state)">
+% if state:
+<i class="icon-ok green" title="${_("Enabled")}"></i>
+% else:
+<i class="icon-minus red" title="${_("Disabled")}"></i>
+% endif
+</%def>

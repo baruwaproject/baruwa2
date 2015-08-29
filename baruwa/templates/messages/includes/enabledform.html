@@ -1,11 +1,11 @@
-<div class="grid_16 alpha drow">
-    ${h.form(url('message-detail', id=c.msg.id), id='qform', method='post')}
-    <div class="grid_2 omega">${h.highlight_errors(c.form.release)}</div>
-    <div class="grid_2 omega">${h.highlight_errors(c.form.delete)}</div>
-    <div class="grid_2 omega">${h.highlight_errors(c.form.learn)}&nbsp;${h.highlight_errors(c.form.learnas)}</div>
-    <div class="grid_2 omega">${h.highlight_errors(c.form.usealt)}</div>
-    <div class="grid_6 omega">${h.highlight_errors(c.form.altrecipients, size=50)}</div>
-    <div class="grid_2 omega">${h.submit('submit_q_request', _('Submit'), 'submit_q_request')}</div>
+<div class="row-fluid">
+    ${h.form(url('message-detail', msgid=c.msg.id), id='qform', method='post')}
+    <div class="span1">${h.highlight_errors(c.form.release)}${c.form.release.label}</div>
+    <div class="span1">${h.highlight_errors(c.form.delete)}${c.form.delete.label}</div>
+    <div class="span3">${h.highlight_errors(c.form.learn)}${c.form.learn.label}&nbsp;${h.highlight_errors(c.form.learnas)}</div>
+    <div class="span2">${h.highlight_errors(c.form.usealt)}${c.form.usealt.label}</div>
+    <div class="span3">${h.highlight_errors(c.form.altrecipients, class_="input-block-level", placeholder='Alternative recipients')}</div>
+    <div class="span2"><button id="submit_q_request" class="btn btn-small btn-success"><i class="icon-cog"></i> ${_('Submit')}</button></div>
 	${c.form.csrf_token}
     ${h.end_form()}
 </div>

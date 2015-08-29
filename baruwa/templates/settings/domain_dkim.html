@@ -1,5 +1,6 @@
-<div class="alpos">
-	<div class="grid_16">
+<div class="row-fluid">
+	<div class="span1 hidden-phone"></div>
+	<div class="span10">
 		<ul id="msgops">
 			<li>${h.link_to(_('Domain Settings'), url('domain-settings', domainid=c.domain.id))}</li>
 			<li>${h.link_to(_('Domain details'), url(controller='domains', action='detail', domainid=c.domain.id))}</li>
@@ -9,51 +10,60 @@
 			% endif
 		</ul>
 	</div>
+	<div class="span1 hidden-phone"></div>
 </div>
-<div class="clear"></div>
-<div id="content">
-	<div class="grid_16">
-		<h3 class="head">${_('Domain DKIM settings')}</h3>
+<div class="space-6"></div>
+<div class="row-fluid">
+	<div class="span1 hidden-phone"></div>
+	<div class="span10">
+		<h3 class="head smaller lighter blue">${_('Domain DKIM settings')}</h3>
 	</div>
+	<div class="span1 hidden-phone"></div>
+</div>
+<div class="row-fluid">
+	<div class="span1 hidden-phone"></div>
+	<div class="span10">
 	% if c.domain.dkimkeys:
 	<%
-	from baruwa.lib.ssl import remove_pub_pem_headers
+	from baruwa.lib.crypto import remove_pub_pem_headers
 	tmpslt = remove_pub_pem_headers(c.domain.dkimkeys[0].pub_key)
 	tmpslt = tmpslt.split('\n')
 	tmpslt = ["\"%s\"" % chunk for chunk in tmpslt]
 	dkim_key = "\n".join(tmpslt)
 	%>
-	<div class="grid_16 drow">
-		<div class="grid_15">${_('Add the following DNS record to the %s DNS zone') % c.domain.name}</div>
-	</div>
-	<div class="grid_16 drow">
-		<div class="grid_6">${_('DNS record')}</div>
-		<div class="grid_9">
-			${config.get('baruwa.dkim.selector', 'baruwa')}._domainkey.${c.domain.name}. IN TXT ("v=DKIM1; g=*; k=rsa;
-			p=${h.linebreaksbr(dkim_key)})
+		<div class="row-fluid">
+			<div class="span12">${_('Add the following DNS record to the %s DNS zone') % c.domain.name}</div>
 		</div>
-	</div>
-	% for alias in c.domain.aliases:
-	<div class="grid_16 drow">
-		<div class="grid_15">${_('Add the following DNS record to the %s DNS zone') % alias.name}</div>
-	</div>
-	<div class="grid_16 drow">
-		<div class="grid_6">${_('DNS record')}</div>
-		<div class="grid_9">
-			${config.get('baruwa.dkim.selector', 'baruwa')}._domainkey.${alias.name}. IN TXT ("v=DKIM1; g=*; k=rsa;
-			p=${h.linebreaksbr(dkim_key)})
+		<div class="row-fluid">
+			<div class="span6">${_('DNS record')}</div>
+			<div class="span6">
+				${config.get('baruwa.dkim.selector', 'baruwa')}._domainkey.${c.domain.name}. IN TXT ("v=DKIM1; g=*; k=rsa; p="
+				${h.linebreaksbr(dkim_key)})
+			</div>
 		</div>
+		% for alias in c.domain.aliases:
+		<div class="row-fluid">
+			<div class="span12">${_('Add the following DNS record to the %s DNS zone') % alias.name}</div>
+		</div>
+		<div class="row-fluid">
+			<div class="span6">${_('DNS record')}</div>
+			<div class="span6">
+				${config.get('baruwa.dkim.selector', 'baruwa')}._domainkey.${alias.name}. IN TXT ("v=DKIM1; g=*; k=rsa; p="
+				${h.linebreaksbr(dkim_key)})
+			</div>
+		</div>
+		% endfor
+		<div class="row-fluid">
+			<div class="span6">${_('DKIM status')}</div>
+			<div class="span6">${functions.item_status(c.domain.dkimkeys[0].enabled)}</div>
+		</div>
+		% else:
+		<div class="row-fluid">
+			<div class="span12">${_('DKIM keys not yet configured:  ')}&nbsp;${h.link_to(_('Generate DKIM keys'), url('domain-dkim-generate', domainid=c.domain.id))} </div>
+		</div>
+		% endif
 	</div>
-	% endfor
-	<div class="grid_16 drow">
-		<div class="grid_7">${_('DKIM status')}</div>
-		<div class="grid_8">${h.enabled_or_not(c.domain.dkimkeys[0].enabled)}</div>
-	</div>
-	% else:
-	<div class="grid_16 drow">
-		<div class="grid_15">${_('DKIM keys not yet configured:  ')}&nbsp;${h.link_to(_('Generate DKIM keys'), url('domain-dkim-generate', domainid=c.domain.id))} </div>
-	</div>
-	% endif
+	<div class="span1 hidden-phone"></div>
 </div>
 
 
@@ -67,7 +77,8 @@ ${_('Settings :: Domain DKIM settings :: %s') % c.domain.name}
 
 <%def name="headers()">
 </%def>
+<%def name="submenu()"></%def>
 <%def name="localscripts()">
 </%def>
-
-<%inherit file="/base.html"/>
+<%namespace name="functions" file="../includes/functions.html"/>
+<%inherit file="../base.html"/>

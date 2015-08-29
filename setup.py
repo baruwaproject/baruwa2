@@ -1,18 +1,18 @@
 # -*- coding: utf-8 -*-
 # vim: ai ts=4 sts=4 et sw=4
 # Baruwa - Web 2.0 MailScanner front-end.
-# Copyright (C) 2010-2012  Andrew Colin Kissa <andrew@topdog.za.net>
+# Copyright (C) 2010-2015  Andrew Colin Kissa <andrew@topdog.za.net>
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation, either version 3 of the License, or
 # (at your option) any later version.
-# 
+#
 # This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License for more details.
-# 
+#
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
@@ -20,11 +20,13 @@
 import os
 
 try:
-    from setuptools import setup, find_packages
+    from setuptools import setup, find_packages, Extension
 except ImportError:
     from ez_setup import use_setuptools
     use_setuptools()
-    from setuptools import setup, find_packages
+    from setuptools import setup, find_packages, Extension
+
+from Cython.Build import cythonize
 
 required_packages = [
         "Pylons>=1.0",
@@ -39,11 +41,15 @@ required_packages = [
         "Mako",
         "Babel",
         "lxml",
+        "pyzmail",
+        "cssutils",
         "celery",
         "py-bcrypt",
         "cracklib",
         "psutil",
         "pyrad",
+        "arrow",
+        "python-cdb",
         "python-ldap",
         "psycopg2",
         "mysql-python",
@@ -51,6 +57,8 @@ required_packages = [
         "pylibmc",
         "M2Crypto",
         "sqlparse",
+        "tinycss",
+        "oauthlib",
         "marrow.mailer",
         "repoze.what",
         "repoze.what-pylons",
@@ -60,25 +68,29 @@ required_packages = [
         "repoze.who.plugins.sa",
         "repoze.who.plugins.ldap",
         "repoze.who-friendlyform",
-    ]
+]
+
 
 def read(fname):
     return open(os.path.join(os.path.dirname(__file__), fname)).read()
 
-
 setup(
     name='baruwa',
-    version='2.0.1',
+    version='2.0.9',
     description='Ajax enabled MailScanner web frontend',
     long_description=read('README.rst'),
     author='Andrew Colin Kissa',
     author_email='andrew@topdog.za.net',
-    url='http://www.baruwa.org',
+    url='http://www.baruwa.com',
     install_requires=required_packages,
     setup_requires=["PasteScript>=1.6.3"],
     packages=find_packages(exclude=['ez_setup']),
     include_package_data=True,
-    scripts=['bin/import-mbox.py', 'bin/eximqf2mbox.py', 'bin/test-smtpauth.py'],
+    scripts=['bin/import-mbox.py',
+            'bin/archive-download.py',
+            'bin/eximqf2mbox.py',
+            'bin/test-smtpauth.py',
+            'bin/recon-mbox.py'],
     test_suite='nose.collector',
     package_data={'baruwa': ['i18n/*/LC_MESSAGES/*.mo']},
     message_extractors={'baruwa': [
@@ -103,14 +115,21 @@ setup(
     camqadm = baruwa.lib.mq.commands:CAMQPAdminCommand
     celerybeat = baruwa.lib.mq.commands:CeleryBeatCommand
     celeryev = baruwa.lib.mq.commands:CeleryEventCommand
-    send-pdf-reports = baruwa.commands.pdfreport:SendPdfReports
+    send-pdf-reports = baruwa.commands.pdfreportsng:SendPdfReports
     send-pdf-reports-ng = baruwa.commands.pdfreportsng:SendPdfReports
-    send-quarantine-reports = baruwa.commands.quarantinereport:QuarantineReports
+    send-quarantine-reports = baruwa.commands.quarantinereportsng:QuarantineReports
+    send-quarantine-reports-ng = baruwa.commands.quarantinereportsng:QuarantineReports
     prune-database = baruwa.commands.dbclean:DBCleanCommand
     prune-quarantine = baruwa.commands.cleanquarantine:CleanQuarantineCommand
     update-delta-index = baruwa.commands.updatedelta:UpdateDeltaIndex
     create-admin-user = baruwa.commands.createadmin:CreateAdminUser
     change-user-password = baruwa.commands.changepassword:ChangePassword
+    check-user-password = baruwa.commands.checkpassword:CheckPassword
+    send-top-spammer-list = baruwa.commands.topspammers:TopSpammersCommand
+    send-whitelist-data = baruwa.commands.buildwhitelist:BuildWhiteList
+    update-rulesets = baruwa.commands.updaterulesets:UpdateRulesetsCommand
+    update-mta-lookup = baruwa.commands.createcdb:CreateCDBCommand
+    dump-mta-lookup-file = baruwa.commands.cdbdump:DumpCDBFileCommand
     routes = pylons.commands:RoutesCommand
     shell = pylons.commands:ShellCommand
     """,

@@ -1,0 +1,10 @@
+% for domain in domains:
+FromOrTo:	*@${domain.name}	%reports-base%/${domain.language}/sender.virus.report.txt
+% for alias in domain.aliases:
+% if alias.status:
+FromOrTo:	*@${alias.name}	%reports-base%/${domain.language}/sender.virus.report.txt
+% endif
+% endfor
+% endfor
+# Default rule
+FromOrTo:  default  %report-dir%/sender.virus.report.txt

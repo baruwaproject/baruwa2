@@ -2,90 +2,92 @@
 from baruwa.lib.filters import totals
 from baruwa.lib.cluster import host_status
 %>
-<div class="alpos">
-	<ul id="msgops">
-		<li>${h.link_to(_('Inbound Queue'), url('mailq-status-directed', queue='inbound'))}</li>
-	    <li>${h.link_to(_('Outbound Queue'), url('mailq-status-directed', queue='outbound'))}</li>
-	</ul>
+<div class="row-fluid">
+	<div class="span1 hidden-phone"></div>
+	<div class="span10">
+		<ul id="msgops">
+			<li>${h.link_to(_('Inbound Queue'), url('mailq-status-directed', queue='inbound'))}</li>
+		    <li>${h.link_to(_('Outbound Queue'), url('mailq-status-directed', queue='outbound'))}</li>
+		</ul>
+	</div>
+	<div class="span1 hidden-phone"></div>
 </div>
-<div class="clear"></div>
-<div class="sp10"></div>
-<div id="content">
-<div class="grid_10">
-    <h3 class="head">${_("Todays stats")}</h3>
-	<table class="sysstatus">
-	<tbody>
-	<tr>
-		<td class="status_color_col">&nbsp;</td>
-		<td class="status_name_col">${_("Processed")}</td>
-		<td class="status_value_col">${c.baruwa_totals.total|totals}</td>
-	</tr>
-	<tr>
-		<td class="status_color_col"><div class="pie_6 pie"></div></td>
-		<td class="status_name_col">${_("Clean")}</td>
-		<td class="status_value_col">${c.baruwa_totals.clean|totals}</td>
-	</tr>
-	<tr>
-		<td class="status_color_col"><div class="pie_1 pie"></div></td>
-		<td class="status_name_col">${_("High scoring spam")}</td>
-		<td class="status_value_col">${c.baruwa_totals.highspam|totals}</td>
-	</tr>
-	<tr>
-		<td class="status_color_col"><div class="pie_2 pie"></div></td>
-		<td class="status_name_col">${_("Low scoring spam")}</td>
-		<td class="status_value_col">${c.baruwa_totals.lowspam|totals}</td>
-	</tr>
-	<tr>
-		<td class="status_color_col"><div class="pie_10 pie"></div></td>
-		<td class="status_name_col">${_("Virus infected")}</td>
-		<td class="status_value_col">${c.baruwa_totals.virii|totals}</td>
-	</tr>
-	<tr>
-		<td class="status_color_col"><div class="pie_4 pie"></div></td>
-		<td class="status_name_col">${_("Policy blocked")}</td>
-		<td class="status_value_col">${c.baruwa_totals.infected|totals}</td>
-	</tr>
-	<tr>
-		<td class="status_color_col">&nbsp;</td>
-		<td class="status_name_col">${_("Inbound queues")}</td>
-		<td class="status_value_col">${h.link_to(c.baruwa_inbound, url('mailq-status-directed', queue='inbound'))}</td>
-	</tr>
-	<tr>
-		<td class="status_color_col">&nbsp;</td>
-		<td class="status_name_col">${_("Outbound queues")}</td>
-		<td class="status_value_col">${h.link_to(c.baruwa_outbound, url('mailq-status-directed', queue='outbound'))}</td>
-	</tr>
-	</tbody>
-	</table>
-</div>
-<div class="grid_6">
-	<div class="grid_6">
-		<h3 class="head">${_('Graph')}</h3>
-		<div id="chart" style="width: 340px; height: 264px;">
-		% if c.baruwa_totals.total:
-            <img src="${url('status-graph')}" alt="graph" />
-		% else:
-		<div class="grid_6 alpha omega drow">${_('Not enough data available to generate graph.')}</div>
-		% endif
+<div class="space-6"></div>
+<div class="row-fluid">
+	<div class="span1 hidden-phone"></div>
+	<div class="span6">
+		<h3 class="head smaller blue">${_("Todays stats")}</h3>
+		<table class="table table-bordered table-condensed table-hover table-striped">
+		<tbody>
+		<tr>
+			<td class="status_name_col">${_("Processed")}</td>
+			<td class="status_value_col"><span class="badge badge-info">${c.baruwa_totals.total|totals}</span></td>
+		</tr>
+		<tr>
+			<td class="status_name_col">${_("Clean")}</td>
+			<td class="status_value_col"><span class="badge badge-success">${c.baruwa_totals.clean|totals}</span></td>
+		</tr>
+		<tr>
+			<td class="status_name_col">${_("High scoring spam")}</td>
+			<td class="status_value_col"><span class="badge badge-highspam">${c.baruwa_totals.highspam|totals}</span></td>
+		</tr>
+		<tr>
+			<td class="status_name_col">${_("Low scoring spam")}</td>
+			<td class="status_value_col"><span class="badge badge-spam">${c.baruwa_totals.lowspam|totals}</span></td>
+		</tr>
+		<tr>
+			<td class="status_name_col">${_("Virus infected")}</td>
+			<td class="status_value_col"><span class="badge badge-virii">${c.baruwa_totals.virii|totals}</span></td>
+		</tr>
+		<tr>
+			<td class="status_name_col">${_("Policy blocked")}</td>
+			<td class="status_value_col"><span class="badge badge-infected">${c.baruwa_totals.infected|totals}</span></td>
+		</tr>
+		<tr>
+			<td class="status_name_col">${_("Inbound queues")}</td>
+			<td class="status_value_col"><span class="badge badge-info">${h.link_to(c.baruwa_inbound, url('mailq-status-directed', queue='inbound'))}</span></td>
+		</tr>
+		<tr>
+			<td class="status_name_col">${_("Outbound queues")}</td>
+			<td class="status_value_col"><span class="badge badge-info">${h.link_to(c.baruwa_outbound, url('mailq-status-directed', queue='outbound'))}</span></td>
+		</tr>
+		</tbody>
+		</table>
+	</div>
+	<div class="span4">
+		<div class="row-fluid">
+			<h3 class="head smaller lighter blue">${_('Graph')}</h3>
+			<div class="span12">
+				<div id="chart">
+				% if c.baruwa_totals.total:
+					<noscript>
+						<img src="${url('status-graph')}" alt="graph" />
+					</noscript>
+				% else:
+				${_('Not enough data available to generate graph.')}
+				% endif
+				</div>
+			</div>
 		</div>
+		% if c.user.is_superadmin:
+		<div class="row-fluid">
+			<h3 class="head smaller lighter blue">${_('Scanner node status')}</h3>
+			% if not c.servers:
+			<div class="span12">
+				${_('No active scanning nodes found')}
+			</div>
+			% endif:
+			% for server in c.servers:
+			<div class="span12">
+				${h.literal('<i class="icon-ok green"></i>') if host_status(server.hostname) else h.literal('<i class="icon-remove red"></i>')} ${h.link_to(server.hostname, url('server-status', serverid=server.id))}
+			</div>
+			% endfor
+		</div>
+		% endif
 	</div>
-	% if c.user.is_superadmin:
-	<div class="grid_6">
-	    <h3 class="head">${_('Scanner node status')}</h3>
-	</div>
-	% if not c.servers:
-	<div class="grid_6 drow">
-		${_('No active scanning nodes found')}
-	</div>
-	% endif:
-	% for server in c.servers:
-	<div class="grid_6 drow">
-		${h.portable_img('imgs/active.png', _('OK'), title=_('OK')) + h.literal('&nbsp;') + h.link_to(server.hostname, url('server-status', serverid=server.id)) if host_status(server.hostname) else h.portable_img('imgs/inactive.png', _('FAULTY'), title=_('FAULTY')) + h.literal('&nbsp;') + h.link_to(server.hostname, url('server-status', serverid=server.id))}
-	</div>
-	% endfor
-	% endif
+	<div class="span1 hidden-phone"></div>
 </div>
-</div>
+
 <%def name="title()">\
 ${_('Status :: Global status')}
 </%def>
@@ -94,7 +96,30 @@ ${_('Status :: Global status')}
 ${_('Status :: Global status')}
 </%def>
 <%def name="headers()">\
+<script type="text/javascript">
+var rdata = ${c.chart_data|n};
+</script>
 </%def>
+
+<%def name="submenu()">
+<div class="navbar navbar-static-top">
+    <div class="navbar-inner">
+        <div class="nav-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li class="nav_item"><a href="${url('mailq-status')}">${_("Mail Queues")}</a></li>
+				% if c.user.is_superadmin:
+				<li class="nav_item"><a href="${url('status-audit-logs')}">${_("Audit Logs")}</a></li>
+				% endif
+            </ul>
+        </div>
+    </div>
+</div>
+</%def>
+
 <%def name="localscripts()">\
+${h.javascript_link(h.media_url() + 'js/vendor/jquery.flot.min.js',
+h.media_url() + 'js/vendor/jquery.flot.pie.min.js',
+h.media_url() + 'js/vendor/jquery.flot.resize.min.js',
+h.media_url() + 'js/baruwa/status.min.js')}
 </%def>
-<%inherit file="/base.html"/>
+<%inherit file="../base.html"/>

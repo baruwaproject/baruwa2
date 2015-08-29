@@ -1,3 +1,11 @@
+###!
+ * Baruwa Enterprise Edition
+ * http://www.baruwa.com
+ *
+ * Copyright (c) 2013-2015 Andrew Colin Kissa
+ *
+ *
+###
 $ = jQuery
 exports = this
 exports.list_add_url = list_add_url
@@ -14,16 +22,16 @@ relayed_via = (e)->
     if $('#relayedhosts').length
         if $("#relayedhosts").css("display") == 'block'
             text = gettext('Show hosts')
-            html = "<img src=\"#{exports.media_url}imgs/maximize.png\" alt=\"^\">&nbsp;#{text}"
+            html = "<i class=\"icon-arrow-down\"></i>&nbsp;#{text}"
             $('#rvtoggle a').html html
             $("#relayedhosts").css({display:'none'})
         else
             text = gettext('Hide hosts')
-            html = "<img src=\"#{exports.media_url}imgs/minimize.png\" alt=\".\">&nbsp;#{text}"
+            html = "<i class=\"icon-arrow-up\"></i>&nbsp;#{text}"
             $('#rvtoggle a').html html
             $("#relayedhosts").css({display:'block'})
     else
-        $.ajax exports.relayedvia_url, 
+        $.ajax exports.relayedvia_url,
             type:'GET',
             cache:true,
             dataType:'html',
@@ -35,7 +43,7 @@ relayed_via = (e)->
                 if not $('#rvtoggle').siblings().length
                     $('#rvtoggle').before(data)
                     text = gettext('Hide hosts')
-                    html = "<img src=\"#{exports.media_url}imgs/minimize.png\" alt=\".\">&nbsp;#{text}"
+                    html = "<i class=\"icon-arrow-up\"></i>&nbsp;#{text}"
                     $('#rvtoggle a').html html
                     1
             error: display_ajax_error,
@@ -80,14 +88,14 @@ inserthtml = (data)->
     $('#to_address').val(to_addr).attr {readonly: 'readonly'}
     if $('#ajaxform select').length == 2
         $("#to_address option[value!='"+to_addr+"']").remove()
-    $('#ajaxformheading a').click((e)->
+    $('#ajaxformheading .close').click((e)->
         e.preventDefault()
         $('#shield').remove()
     )
     $('a').click disable_links
     $('#list-form').submit (e)->
         $('#ajaxsubmit').attr {disabled: 'disabled'}
-        saved_text = $('#ajaxformheading .grid_9').text()
+        saved_text = $('#ajaxformheading .span11').text()
         e.preventDefault()
         form_data = {
             from_address: $('#from_address').val(),
@@ -103,14 +111,14 @@ inserthtml = (data)->
             dataType:'html',
             beforeSend: (XHR)->
                 exports.inprogress = true
-                $('#ajaxformheading .grid_9').text(gettext('Processing......'))
+                $('#ajaxformheading .span11').text(gettext('Processing......'))
                 1
             success:inserthtml,
             error: display_ajax_error,
             complete:(XHR, textStatus) ->
                 exports.inprogress = false
                 $('#ajaxsubmit').removeAttr 'disabled'
-                $('#ajaxformheading .grid_9').text(saved_text)
+                $('#ajaxformheading .span11').text(saved_text)
                 1
 
 handle_post = (e)->
@@ -140,27 +148,32 @@ handle_post = (e)->
         beforeSend: (XHR)->
             exports.inprogress = true
         success:(data, textStatus, jqXHR)->
-            tmpl = '<div class="alpos" id="qmresult"><div class="notice"><a class="closeflash" href="#" title="Close">x</a>{{{result}}}</div></div>'
+            tmpl = '<div class="row-fluid" id="qmresult"><div class="span1 hidden-phone"></div><div class="span10">' +
+                    '<div class="alert alert-notice"><button class="close" data-dismiss="alert" type="button">' +
+                    '<i class="icon-remove"></i></button><strong><i class="icon-ok"></i></strong> ' +
+                    '{{{result}}}</div></div><div class="span1 hidden-phone"></div></div>'
             html = $.mustache tmpl, data
             if $('#alertmsg').length
                 $('#alertmsg').empty()
                 $('#alertmsg').remove()
-            if $('.notice').length
-                $('.notice').remove()
+            if $('#qmresult').length
+                $('#qmresult').remove()
             $('#heading').after html
-            $('.notice .closeflash').click (e)->
+            $('.close').click (e)->
                 e.preventDefault()
                 $('#qmresult').remove()
             $('#qform :checkbox').attr {checked: false}
             $('#altrecipients').val('')
+            if request_data['delete'] == 1
+                $('#msgops li:gt(0)').remove()
             1
         error: display_ajax_error,
         complete:(XHR, textStatus) ->
             $('#shield').hide()
             exports.inprogress = false
             if $(window).scrollTop()
-                $('html,body').animate 
-                    scrollTop: $("#header-bar").offset().top, 1500
+                $('html,body').animate
+                    scrollTop: $("#wrap").offset().top, 1500
             1
     1
 
@@ -172,7 +185,7 @@ $(document).ready ->
             $('#wrap').after exports.loading
         else
             $('#shield').show()
-        $.ajax exports.list_add_url, 
+        $.ajax exports.list_add_url,
             type:'GET',
             cache:false,
             dataType:'html',
@@ -182,7 +195,7 @@ $(document).ready ->
             error: display_ajax_error,
             complete:(XHR, textStatus) ->
                 exports.inprogress = false
-    $('div.error .closeflash').click((e)->
+    $('#alertmsg .close').click((e)->
         e.preventDefault()
         $('#alertmsg').empty()
         $('#alertmsg').remove()
@@ -193,11 +206,13 @@ $(document).ready ->
         e.preventDefault()
         if $("#mail-headers").css("display") == 'block'
             $("#mail-headers").css({display:'none'})
-            $(this).blur().html('<img src="'+exports.media_url+'imgs/maximize.png" alt="&darr;">&nbsp;'+gettext('Show headers'));
+            $(this).blur().html('<i class="icon-arrow-down"></i>&nbsp;'+gettext('Show headers'));
             if $(window).scrollTop()
-                $('html,body').animate 
-                    scrollTop: $("#header-bar").offset().top, 1400
+                $('html,body').animate
+                    scrollTop: $("#wrap").offset().top, 1400
         else
             $("#mail-headers").css({display:'block'})
-            $(this).blur().html('<img src="'+exports.media_url+'imgs/minimize.png" alt="&uarr;">&nbsp;'+gettext('Hide headers'));
+            $(this).blur().html('<i class="icon-arrow-up"></i>&nbsp;'+gettext('Hide headers'));
     1
+
+

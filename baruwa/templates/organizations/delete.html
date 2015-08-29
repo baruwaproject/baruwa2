@@ -1,24 +1,37 @@
-<div class="alpos">
-	<ul id="msgops">
-		<li>${h.link_to(_('Organization details'), url('org-detail', orgid=c.id))}</li>
-	</ul>
+<div class="row-fluid">
+	<div class="span1 hidden-phone"></div>
+	<div class="span10">
+		<ul id="msgops">
+			<li>${h.link_to(_('Organization details'), url('org-detail', orgid=c.id))}</li>
+		</ul>
+	</div>
+	<div class="span1 hidden-phone"></div>
 </div>
-<div class="clear"></div>
-<div id="content">
-<div class="grid_16">
-    <h3 class="head">${_('Delete organization')}</h3>
+<div class="space-6"></div>
+<div class="row-fluid">
+	<div class="span1 hidden-phone"></div>
+	<div class="span10">
+		<div class="row-fluid">
+		    <h3 class="head smaller lighter blue">${_('Delete organization')}</h3>
+		</div>
+	</div>
+	<div class="span1 hidden-phone"></div>
 </div>
-${h.form(url('orgs-delete', orgid=c.id), method='post')}
-<%include file="/forms/disabled.base.html"/>
-<div class="grid_16 drow">
-    <div class="grid_7">&nbsp;</div>
-    <div class="grid_8">
-		${h.submit('submit', _('Delete organization'))}
-    </div>
-    
+<div class="row-fluid">
+	<div class="span1 hidden-phone"></div>
+	<div class="span10">
+		<div class="row-fluid">
+		    ${h.form(url('orgs-delete', orgid=c.id), method='post', class_="form-horizontal")}
+			<%include file="../forms/disabled.base.html"/>
+			<div class="form-actions">
+				<button id="submit-button" class="btn btn-small btn-success"><i class="icon-plus"></i> ${_('Delete organization')}</button>
+			</div>
+			${h.end_form()}\
+		</div>
+	</div>
+	<div class="span1 hidden-phone"></div>
 </div>
-${h.end_form()}\
-</div>
+
 
 <%def name="title()">
 ${_('Settings :: Delete organization')}
@@ -32,7 +45,12 @@ ${_('Settings :: Delete organization')}
 </%def>
 <%def name="headers()">
 </%def>
-<%def name="localscripts()">
+<%def name="localscripts()">\
+<script type="text/javascript">
+$(function() {
+	$('.settings-popover').popover();
+});
+</script>
 </%def>
 
-<%inherit file="/base.html"/>
+<%inherit file="../base.html"/>

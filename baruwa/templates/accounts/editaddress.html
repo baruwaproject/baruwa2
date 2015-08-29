@@ -1,24 +1,31 @@
-<div class="alpos">
-	<div class="grid_16">
+<div class="row-fluid">
+	<div class="span1 hidden-phone"></div>
+	<div class="span10">
 		<ul id="msgops">
 		  <li>${h.link_to(_('Return to account'), url('account-detail', userid=c.userid))}</li>
 		</ul>
 	</div>
+	<div class="span1 hidden-phone"></div>
 </div>
-<div id="content">
-<div class="grid_16">
-    <h3 class="head">${_('Edit alias address')}</h3>
+<div class="row-fluid">
+	<div class="span1 hidden-phone"></div>
+	<div class="span10">
+    	<h3 class="head smaller lighter blue">${_('Edit alias address')}</h3>
+	</div>
+	<div class="span1 hidden-phone"></div>
 </div>
-${h.form(url(controller='accounts', action='editaddress', addressid=c.id), method='post')}
-<%include file="/forms/base.html"/>
-    <div class="grid_16 drow">
-        <div class="grid_7">&nbsp;</div>
-        <div class="grid_8">
-            <input id="cancel-button" type="reset" value="${_('Reset')}" />&nbsp;
-            ${h.submit('submit', _('Update'))}
-        </div>
-    </div>
-${h.end_form()}
+<div class="row-fluid">
+	<div class="span1 hidden-phone"></div>
+	<div class="span10">
+    	${h.form(url(controller='accounts', action='editaddress', addressid=c.id), method='post', class_="form-horizontal")}
+		<%include file="../forms/base.html"/>
+	    <div class="form-actions">
+			<button id="reset-button" class="btn btn-small btn-success" type="reset"><i class="icon-undo"></i> ${_("Reset")}</button>
+			<button id="submit-button" class="btn btn-small btn-success"><i class="icon-ok"></i> ${_('Update')}</button>
+	    </div>
+		${h.end_form()}
+	</div>
+	<div class="span1 hidden-phone"></div>
 </div>
 
 <%def name="title()">
@@ -29,14 +36,15 @@ ${_('Accounts :: Update alias address')}
 ${_('Accounts :: Update alias address')} 
 </%def>
 
-<%def name="submenu()">
-<ul>
-  <li>${h.link_to(_('Account details'), url('account-detail', userid=c.userid))}</li>
-</ul>
-</%def>
+<%def name="submenu()"></%def>
 
 <%def name="headers()">
 </%def>
 <%def name="localscripts()">\
+<script type="text/javascript">
+$(function() {
+	$('.settings-popover').popover();
+});
+</script>
 </%def>
-<%inherit file="/base.html"/>
+<%inherit file="../base.html"/>

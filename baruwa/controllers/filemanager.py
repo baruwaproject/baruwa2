@@ -1,21 +1,22 @@
 # -*- coding: utf-8 -*-
 # vim: ai ts=4 sts=4 et sw=4
 # Baruwa - Web 2.0 MailScanner front-end.
-# Copyright (C) 2010-2012  Andrew Colin Kissa <andrew@topdog.za.net>
+# Copyright (C) 2010-2015  Andrew Colin Kissa <andrew@topdog.za.net>
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation, either version 3 of the License, or
 # (at your option) any later version.
-# 
+#
 # This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License for more details.
-# 
+#
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
+"Filemanager controller"
 
 import os
 import json
@@ -28,11 +29,13 @@ import magic
 from pylons import request, response, session, config, tmpl_context as c, url
 from pylons.controllers.util import abort
 from pylons.i18n.translation import _
-from repoze.what.predicates import not_anonymous
+from repoze.what.predicates import not_anonymous  # pylint: disable-msg=E0611
+# pylint: disable-msg=E0611
 from repoze.what.plugins.pylonshq import ControllerProtector
 
 from baruwa.lib.base import BaseController
 from baruwa.model.meta import Session
+from baruwa.lib.mq import FANOUT_XCHG
 from baruwa.model.settings import DomSigImg, UserSigImg
 from baruwa.forms.misc import Fmgr
 from baruwa.tasks.settings import delete_sig
@@ -43,6 +46,7 @@ log = logging.getLogger(__name__)
 
 @ControllerProtector(not_anonymous())
 class FilemanagerController(BaseController):
+    "FM controller"
     def __before__(self):
         "set context"
         BaseController.__before__(self)
@@ -51,17 +55,20 @@ class FilemanagerController(BaseController):
         else:
             c.user = None
 
+    # pylint: disable-msg=R0912,R0915,R0914,W0142,W0622
     def index(self, domainid=None, userid=None):
         "Index"
         action = request.GET.get('action', None)
         if not action:
+            msg = _("Action not supported")
+            log.info(msg)
             body = dict(success=False,
-                        error=_("Action not supported"),
+                        error=msg,
                         errorno=255)
             response.headers['Content-Type'] = 'application/json'
             return json.dumps(body)
 
-        kw = {}
+        kwd = {}
         if domainid:
             requesturl = url('fm-domains', domainid=domainid)
             model = DomSigImg
@@ -72,7 +79,7 @@ class FilemanagerController(BaseController):
                 check_domain_ownership(c.user.id, domainid)):
                 abort(404)
             ownerattr = 'domain_id'
-            kw[ownerattr] = domainid
+            kwd[ownerattr] = domainid
             ownerid = domainid
         else:
             requesturl = url('fm-users', userid=userid)
@@ -88,7 +95,7 @@ class FilemanagerController(BaseController):
                 if not check_dom_access(orgs, doms):
                     abort(403)
             ownerattr = 'user_id'
-            kw[ownerattr] = userid
+            kwd[ownerattr] = userid
             ownerid = userid
         if action == 'auth':
             body = dict(success=True,
@@ -107,9 +114,11 @@ class FilemanagerController(BaseController):
                             baseUrl='')
                         )
         elif action == 'list':
-            imgq = Session.query(model).filter_by(**kw).all()
+            imgq = Session.query(model).filter_by(**kwd).all()
             imgs = {}
+
             def builddict(img):
+                "create a dict"
                 sigtype = 'domains' if domainid else 'users'
                 format = img.name.split('.')[-1] or 'png'
                 imgs[img.name] = url('fm-view-img',
@@ -124,19 +133,21 @@ class FilemanagerController(BaseController):
                         )
         elif action == 'upload':
             form = Fmgr(request.POST, csrf_context=session)
-            if request.POST and form.validate():
+            if request.method == 'POST' and form.validate():
                 try:
-                    count = Session.query(model).filter_by(**kw).count()
+                    count = Session.query(model).filter_by(**kwd).count()
                     if count > 0:
-                        raise ValueError(_('Only one image is permitted per signature'))
+                        raise ValueError(
+                            _('Only one image is permitted per signature'))
                     imgdata = request.POST['handle']
                     mime = magic.Magic(mime=True)
                     content_type = mime.from_buffer(imgdata.file.read(1024))
                     imgdata.file.seek(0)
                     chunk = imgdata.file.read()
                     ext = imghdr.what('./xxx', chunk)
-                    if not ext in ['gif', 'jpg', 'png', 'jpeg']:
-                        raise ValueError(_('The uploaded file is not acceptable'))
+                    if ext not in ['gif', 'jpg', 'png', 'jpeg']:
+                        raise ValueError(
+                            _('The uploaded file is not acceptable'))
                     name = form.newName.data or 'sigimage.%s' % ext
                     name = os.path.basename(name)
                     dbimg = model()
@@ -149,16 +160,19 @@ class FilemanagerController(BaseController):
                     Session.commit()
                     respond = _('File has been uploaded')
                 except ValueError, msg:
+                    log.info(msg)
                     if 'imgdata' in locals() and hasattr(imgdata, 'file'):
                         imgdata.file.close()
                     respond = msg
             else:
                 respond = _('Invalid upload request')
+                log.info(respond)
             return respond
         elif action == 'remove':
             fname = request.GET.get('file', None)
             imgs = Session.query(model).filter(model.name == fname).all()
-            basedir = config.get('ms.signatures.base', '/etc/MailScanner/signatures')
+            basedir = config.get('ms.signatures.base',
+                                '/etc/MailScanner/signatures')
             files = []
             for img in imgs:
                 if userid:
@@ -171,15 +185,19 @@ class FilemanagerController(BaseController):
                 Session.delete(img)
             Session.commit()
             respond = _('The file has been deleted')
+            log.info(respond)
             body = dict(success=True, data=respond)
-            delete_sig.apply_async(args=[files])
+            delete_sig.apply_async(args=[files], exchange=FANOUT_XCHG)
         else:
+            msg = _("Action not supported")
+            log.info(msg)
             body = dict(success=False,
-                        error=_("Action not supported"),
+                        error=msg,
                         errorno=255)
         response.headers['Content-Type'] = 'application/json'
         return json.dumps(body)
 
+    # pylint: disable-msg=R0201
     def view_img(self, imgid, sigtype):
         "Display a signature image"
         if sigtype == 'domains':

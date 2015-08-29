@@ -1,39 +1,47 @@
 # -*- coding: utf-8 -*-
 # vim: ai ts=4 sts=4 et sw=4
 # Baruwa - Web 2.0 MailScanner front-end.
-# Copyright (C) 2010-2012  Andrew Colin Kissa <andrew@topdog.za.net>
+# Copyright (C) 2010-2015  Andrew Colin Kissa <andrew@topdog.za.net>
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation, either version 3 of the License, or
 # (at your option) any later version.
-# 
+#
 # This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License for more details.
-# 
+#
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
+# pylint: disable=F0401
 """Baruwa authentication middleware overrides"""
 
 import os
 import sys
 import logging
 
+import zope.interface
+
 from repoze.who.config import WhoConfig
 from paste.deploy.converters import asbool
-from repoze.who.interfaces import IAuthenticator
 from repoze.what.plugins.config import WhatConfig, _LEVELS
 from repoze.what.middleware import AuthorizationMetadata
 from repoze.who.classifiers import default_challenge_decider
 from repoze.who.classifiers import default_request_classifier
 from repoze.who.middleware import match_classification
+from repoze.who.interfaces import IAuthenticator, IChallengeDecider
 from repoze.who.middleware import PluggableAuthenticationMiddleware
-# from repoze.who.middleware import Identity, _ENDED, _STARTED, wrap_generator
-# from repoze.who.middleware import match_classification, StartResponseWrapper
 from repoze.who.plugins.testutil import AuthenticationForgerMiddleware
+
+
+def baruwa_challenge_decider(environ, status, headers):
+    """Baruwa Challenge Decider"""
+    return status.startswith('401 ') and not \
+            environ.get('REQUEST_URI', '').startswith('/api')
+zope.interface.directlyProvides(baruwa_challenge_decider, IChallengeDecider)
 
 
 class BaruwaPAM(PluggableAuthenticationMiddleware):
@@ -47,10 +55,9 @@ class BaruwaPAM(PluggableAuthenticationMiddleware):
                 mdproviders,
                 classifier,
                 challenge_decider,
-                log_stream = None,
-                log_level = logging.INFO,
-                remote_user_key = 'REMOTE_USER',
-                ):
+                log_stream=None,
+                log_level=logging.INFO,
+                remote_user_key='REMOTE_USER'):
         PluggableAuthenticationMiddleware.__init__(self,
                 app,
                 identifiers,
@@ -62,85 +69,6 @@ class BaruwaPAM(PluggableAuthenticationMiddleware):
                 log_stream,
                 log_level,
                 remote_user_key)
-
-    # def __call__(self, environ, start_response):
-    #     if self.remote_user_key in environ:
-    #         return self.app(environ, start_response)
-    # 
-    #     path_info = environ.get('PATH_INFO', None)
-    # 
-    #     environ['repoze.who.plugins'] = self.name_registry
-    #     environ['repoze.who.logger'] = self.logger
-    #     environ['repoze.who.application'] = self.app
-    # 
-    #     self.log(_STARTED % path_info, 'info')
-    #     classification = self.classifier(environ)
-    #     self.log('request classification: %s' % classification, 'info')
-    #     userid = None
-    #     identity = None
-    #     identifier = None
-    # 
-    #     ids = self.identify(environ, classification)
-    # 
-    #     if ids:
-    #         auth_ids = self.authenticate(environ, classification, ids)
-    # 
-    #         if auth_ids:
-    #             auth_ids.sort()
-    #             best = auth_ids[0]
-    #             rank, authenticator, identifier, identity, userid = best
-    #             identity = Identity(identity)
-    # 
-    #             self.add_metadata(environ, classification, identity)
-    # 
-    #             environ['repoze.who.identity'] = identity
-    #             environ[self.remote_user_key] = userid
-    #             self.log(identity)
-    #     else:
-    #         self.log('no identities found, not authenticating', 'info')
-    # 
-    #     app = environ.pop('repoze.who.application')
-    #     if  app is not self.app:
-    #         self.log('static downstream application replaced with %s' % app,
-    #                 'info')
-    # 
-    #     wrapper = StartResponseWrapper(start_response)
-    #     app_iter = app(environ, wrapper.wrap_start_response)
-    # 
-    #     if not wrapper.called:
-    #         app_iter = wrap_generator(app_iter)
-    # 
-    #     if self.challenge_decider(environ, wrapper.status, wrapper.headers):
-    #         self.log('challenge required', 'info')
-    # 
-    #         challenge_app = self.challenge(
-    #             environ,
-    #             classification,
-    #             wrapper.status,
-    #             wrapper.headers,
-    #             identifier,
-    #             identity
-    #             )
-    #         if challenge_app is not None:
-    #             self.log('executing challenge app', 'info')
-    #             if app_iter:
-    #                 list(app_iter)
-    #             app_iter = challenge_app(environ, start_response)
-    #         else:
-    #             self.log('configuration error: no challengers', 'info')
-    #             raise RuntimeError('no challengers found')
-    #     else:
-    #         self.log('no challenge required', 'info')
-    #         remember_headers = []
-    #         if identifier:
-    #             remember_headers = identifier.remember(environ, identity)
-    #             if remember_headers:
-    #                 self.log('remembering via headers from %s: %s'
-    #                         % (identifier, remember_headers), 'info')
-    #         wrapper.finish_response(remember_headers)
-    # 
-    #     self.log(_ENDED % path_info, 'info')
-    #     return app_iter
 
     def authenticate(self, environ, classification, identities):
         """Override authenticate to return as soon as
@@ -193,8 +121,7 @@ class BaruwaPAM(PluggableAuthenticationMiddleware):
                     identity['tokens'] = [plugin_name, user_dn]
                     rank = (auth_rank, identifier_rank)
                     results.append(
-                        (rank, plugin, identifier, identity, userid)
-                        )
+                        (rank, plugin, identifier, identity, userid))
                 else:
                     self.log('no userid returned from %s: (%s)' %
                         (plugin, userid))
@@ -210,6 +137,7 @@ class BaruwaPAM(PluggableAuthenticationMiddleware):
             logger = getattr(self.logger, priority)
             logger(msg)
 
+
 def make_middleware(skip_authentication=False, *args, **kwargs):
     """Overide repoze.who.plugins.testutil:make_middleware
     """
@@ -224,22 +152,22 @@ def setup_auth(app, group_adapters=None, permission_adapters=None, **who_args):
     """
     authorization = AuthorizationMetadata(group_adapters,
                                           permission_adapters)
-    
+
     if 'mdproviders' not in who_args:
         who_args['mdproviders'] = []
-    
+
     who_args['mdproviders'].append(('authorization_md', authorization))
-    
+
     if 'classifier' not in who_args:
         who_args['classifier'] = default_request_classifier
-    
+
     if 'challenge_decider' not in who_args:
         who_args['challenge_decider'] = default_challenge_decider
-    
+
     auth_log = os.environ.get('AUTH_LOG', '') == '1'
     if auth_log:
         who_args['log_stream'] = sys.stdout
-    
+
     skip_authn = who_args.pop('skip_authentication', False)
     middleware = make_middleware(skip_authn, app, **who_args)
     return middleware
@@ -281,8 +209,6 @@ def make_middleware_with_config(app, global_conf, log_file=None):
                       mdproviders=who_parser.mdproviders,
                       classifier=who_parser.request_classifier,
                       challenge_decider=who_parser.challenge_decider,
-                      log_stream = log_stream,
-                      log_level = log_level,
-                      remote_user_key = who_parser.remote_user_key,
-                     )
-
+                      log_stream=log_stream,
+                      log_level=log_level,
+                      remote_user_key=who_parser.remote_user_key)

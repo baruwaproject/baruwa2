@@ -1,0 +1,139 @@
+<div class="row-fluid">
+	<div class="span1 hidden-phone"></div>
+	<div class="span10">
+		<ul id="msgops">
+			<li>${h.link_to(_('Add Setting'), url('mta-settings-add', setting_type=c.setting_type))}</li>
+		</ul>
+	</div>
+	<div class="span1 hidden-phone"></div>
+</div>
+<div class="space-6"></div>
+<div class="row-fluid">
+	<div class="span1 hidden-phone"></div>
+	<div class="span10 toolbar">${self.paging(h.do_pagination(c.page), 'settingsnumitemstop')}</div>
+	<div class="span1 hidden-phone"></div>
+</div>
+<div class="space-6"></div>
+<div class="row-fluid">
+	<div class="span1 hidden-phone"></div>
+	<div class="span10">
+		<table class="table table-bordered">
+		<thead>
+		<tr>
+			<th>${_('Subject') if c.setting_type in [2, '2'] else _('Address')}</th>
+			<th class="hidden-phone">${_('Enabled')}</th>
+			<th colspan="2">${_('Actions')}</th>
+		</tr>
+		</thead>
+		<tbody>
+		% if not c.page.items:
+		<tr><td colspan="4">${_('No %(s)s settings found') % dict(s=c.setting_name)}</td></tr>
+		% endif
+		% for addr in c.page.items:
+		<tr>
+			<td>${h.literal('<em>') if not addr.enabled else ''}${addr.address}${h.literal('</em>') if not addr.enabled else ''}</td>
+			<td class="hidden-phone">
+				${functions.item_status(addr.enabled)}
+			</td>
+			<td>${h.link_to(h.literal('<i class="icon-edit blue"></i>'), url('mta-settings-edit', setting_id=addr.id), title=_("Edit Item"))}</td>
+			<td>${h.link_to(h.literal('<i class="icon-remove red"></i>'), url('mta-settings-delete', setting_id=addr.id), title=_("Delete Item"))}</td>
+		</tr>
+		% endfor
+		</tbody>
+		</table>
+	</div>
+	<div class="span1 hidden-phone"></div>
+</div>
+<div class="row-fluid">
+	<div class="span1 hidden-phone"></div>
+	<div class="span10 toolbar">${self.paging(h.do_pagination(c.page), 'settingsnumitemsbottom')}</div>
+	<div class="span1 hidden-phone"></div>
+</div>
+<div class="space-6"></div>
+
+<%def name="paging(page_nums, fieldname)">
+% if c.page.page_count != 0:
+<p>${_('Showing items %(i)d to %(l)d of %(count)d') % dict(i=c.page.first_item, l=c.page.last_item, count=c.page.item_count)}.</p>
+<div class="limiter">
+${_('Show items:')}
+${h.pager_select(fieldname, str(c.page.items_per_page))}
+${_('per page')}
+</div>
+<div class="pages">
+% if c.page.page_count == 1:
+-
+% endif
+% else:
+<p>No items found</p>
+% endif
+% if c.page.next_page != c.page.first_page and c.page.page != c.page.first_page:
+<span>
+	${h.link_to(h.literal('<i class="icon-double-angle-left"></i>'), url('mta-setting-pg', setting_type=c.setting_type, page=c.page.first_page))}
+</span>
+<span>...</span>
+% endif
+% if c.page.previous_page:
+<span>
+	${h.link_to(h.literal('<i class="icon-angle-left"></i>'), url('mta-setting-pg', setting_type=c.setting_type, page=c.page.previous_page))}
+</span>
+% endif
+% for linkpage in page_nums:
+% 	if linkpage == c.page.page:
+<span><b>${linkpage}</b></span>
+% 	else:
+<span>
+	${h.link_to(h.literal(linkpage), url('mta-setting-pg', setting_type=c.setting_type, page=linkpage))}
+</span>
+% 	endif
+% endfor
+% if c.page.next_page:
+<span>
+	${h.link_to(h.literal('<i class="icon-angle-right"></i>'), url('mta-setting-pg', setting_type=c.setting_type, page=c.page.next_page))}
+</span>
+% endif
+% if c.page.next_page != c.page.page_count and c.page.page != c.page.page_count and c.page.page_count != 0:
+<span>...</span>
+<span>
+	${h.link_to(h.literal('<i class="icon-double-angle-right"></i>'), url('mta-setting-pg', setting_type=c.setting_type, page=c.page.page_count))}
+</span>
+% endif
+% if c.page.page_count != 0:
+</div>
+% else:
+<div class="pages">-</div>
+% endif
+</%def>
+
+<%def name="title()">
+${_('Settings :: MTA Settings :: %(s)s :: Showing page %(page)d of %(count)d pages.') % dict(page=c.page.page, count=c.page.page_count, s=c.setting_name) if c.page.page_count != 0 else _('Settings :: MTA Settings :: %(s)s') % dict(s=c.setting_name)}
+</%def>
+
+<%def name="heading()">
+${_('Settings :: MTA Settings :: %(s)s :: Showing page %(page)d of %(count)d pages.') % dict(page=c.page.page, count=c.page.page_count, s=c.setting_name) if c.page.page_count != 0 else _('Settings :: MTA Settings :: %(s)s') % dict(s=c.setting_name)}
+</%def>
+
+<%def name="headers()">
+</%def>
+
+<%def name="submenu()">
+<div class="navbar navbar-static-top">
+    <div class="navbar-inner">
+        <div class="nav-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li class="nav_item">${h.link_to(_('MTA Settings'), url(controller='settings', action='mta'))}</li>
+            </ul>
+        </div>
+    </div>
+</div>
+</%def>
+
+<%def name="localscripts()">
+<script type="text/javascript">
+var setitems_url = "${url(controller='settings', action='setnum')}";
+</script>
+${h.javascript_link(h.media_url() + 'js/baruwa/settings.show.items.min.js')}
+</%def>
+<%namespace name="functions" file="../includes/functions.html"/>
+<%inherit file="../base.html"/>
+
+

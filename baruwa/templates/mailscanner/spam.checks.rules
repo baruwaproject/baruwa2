@@ -1,0 +1,18 @@
+% for user in users:
+To:	${user.email}	no
+% for addr in user.addresses:
+% if addr.enabled:
+To:	${addr.address}	no
+% endif
+% endfor
+% endfor
+% for domain in domains:
+FromOrTo:	*@${domain.name}	no
+% for alias in domain.aliases:
+% if alias.status:
+FromOrTo:	*@${alias.name}	no
+% endif
+% endfor
+% endfor
+# Default rule
+FromOrTo:	default	yes

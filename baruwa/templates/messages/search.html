@@ -1,11 +1,13 @@
-<div class="alpos">
-	<div class="toolbar">
+<div class="row-fluid">
+	<div class="span1 hidden-phone"></div>
+	<div class="span10 toolbar">
 		<form action="/messages/search" method="get" id="msgsearch">
-		<div class="grid_16 alpha omega">
-			<div class="grid_4">&nbsp;</div>
-			<div class="grid_8"><div class="toright"><input type="text" size="65" name="q" id="q" /></div></div>
-			<div class="grid_3">${h.submit('searchbtn', _('Search'), 'searchbtn')}</div>
+		<div class="row-fluid">
+			<div class="span4">&nbsp;</div>
+			<div class="span6"><div class="toright"><input type="text" size="65" name="q" id="q" placeholder="Search messages" /></div></div>
+			<div class="span2">${h.submit('searchbtn', _('Search'), 'searchbtn')}</div>
 		</div>
 		</form>
 	</div>
+	<div class="span1 hidden-phone"></div>
 </div>

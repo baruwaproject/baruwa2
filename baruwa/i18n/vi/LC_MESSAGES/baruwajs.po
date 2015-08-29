@@ -1,350 +1,522 @@
-# Translations template for PROJECT.
-# Copyright (C) 2012 ORGANIZATION
-# This file is distributed under the same license as the PROJECT project.
-# 
+# Vietnamese translations for .
+# Copyright (C) 2014 Andrew Colin Kissa
+# This file is distributed under the same license as the  project.
+#
 # Translators:
 msgid ""
 msgstr ""
-"Project-Id-Version: baruwa\n"
-"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2012-11-14 14:04+0200\n"
-"PO-Revision-Date: 2012-11-24 08:25+0000\n"
-"Last-Translator: datopdog <andrew@topdog.za.net>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Project-Id-Version:  baruwa\n"
+"Report-Msgid-Bugs-To: andrew@topdog.za.net\n"
+"POT-Creation-Date: 2015-08-29 11:41+0200\n"
+"PO-Revision-Date: 2014-10-06 10:16+0000\n"
+"Last-Translator: Andrew Colin Kissa <andrew@topdog.za.net>\n"
+"Language-Team: Vietnamese "
+"(http://www.transifex.com/projects/p/baruwa/language/vi/)\n"
+"Plural-Forms: nplurals=1; plural=0\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 0.9.6\n"
-"Language: vi\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
 
-#: baruwa/public/js/baruwa/accounts.js:1 baruwa/public/js/baruwa/domains.js:1
-#: baruwa/public/js/baruwa/lists.js:1
+#: baruwa/public/js/baruwa/accounts.js:1
+#: baruwa/public/js/baruwa/accounts.min.js:27
+#: baruwa/public/js/baruwa/domains.js:1
+#: baruwa/public/js/baruwa/domains.min.js:29 baruwa/public/js/baruwa/lists.js:1
+#: baruwa/public/js/baruwa/lists.min.js:21
 #: baruwa/public/js/baruwa/messages.archive.js:1
+#: baruwa/public/js/baruwa/messages.archive.min.js:11
 #: baruwa/public/js/baruwa/messages.js:1
+#: baruwa/public/js/baruwa/messages.min.js:11
 #: baruwa/public/js/baruwa/messages.quarantine.js:1
+#: baruwa/public/js/baruwa/messages.quarantine.min.js:31
 #: baruwa/public/js/baruwa/organizations.js:1
+#: baruwa/public/js/baruwa/organizations.min.js:21
 #: baruwa/public/js/baruwa/settings.js:1
+#: baruwa/public/js/baruwa/settings.min.js:21
 #: baruwa/public/js/baruwa/status.audit.js:1
+#: baruwa/public/js/baruwa/status.audit.min.js:26
 msgid "Showing items {{first_item}} to {{last_item}} of {{item_count}}."
 msgstr "Đang hiển thị mục {{first_item}} để {{last_item}} của {{item_count}}."
 
 #: baruwa/public/js/baruwa/accounts.js:1
+#: baruwa/public/js/baruwa/accounts.min.js:28
 msgid "Accounts :: Showing page {{page}} of {{page_count}} pages."
 msgstr "Tài khoản:: Hiển thị trang {{page}} của {{page_count}} Trang."
 
-#: baruwa/public/js/baruwa/accounts.js:1 baruwa/public/js/baruwa/domains.js:1
-#: baruwa/public/js/baruwa/lists.js:1
+#: baruwa/public/js/baruwa/accounts.js:1
+#: baruwa/public/js/baruwa/accounts.min.js:29
+#: baruwa/public/js/baruwa/domains.js:1
+#: baruwa/public/js/baruwa/domains.min.js:31 baruwa/public/js/baruwa/lists.js:1
+#: baruwa/public/js/baruwa/lists.min.js:20
+#: baruwa/public/js/baruwa/lists.min.js:23
 #: baruwa/public/js/baruwa/messages.archive.js:1
+#: baruwa/public/js/baruwa/messages.archive.min.js:13
 #: baruwa/public/js/baruwa/messages.js:1
+#: baruwa/public/js/baruwa/messages.min.js:13
 #: baruwa/public/js/baruwa/messages.quarantine.js:1
+#: baruwa/public/js/baruwa/messages.quarantine.min.js:33
 #: baruwa/public/js/baruwa/messages.search.js:1
+#: baruwa/public/js/baruwa/messages.search.min.js:24
 #: baruwa/public/js/baruwa/organizations.js:1
+#: baruwa/public/js/baruwa/organizations.min.js:23
 #: baruwa/public/js/baruwa/reports.pie.js:1
+#: baruwa/public/js/baruwa/reports.pie.min.js:21
 #: baruwa/public/js/baruwa/reports.relays.js:1
+#: baruwa/public/js/baruwa/reports.relays.min.js:20
 #: baruwa/public/js/baruwa/reports.spam.js:1
+#: baruwa/public/js/baruwa/reports.spam.min.js:16
 #: baruwa/public/js/baruwa/settings.js:1
+#: baruwa/public/js/baruwa/settings.min.js:23
 #: baruwa/public/js/baruwa/status.audit.js:1
+#: baruwa/public/js/baruwa/status.audit.min.js:28
 msgid "No items found"
 msgstr "Không tìm thấy khoản mục"
 
 #: baruwa/public/js/baruwa/accounts.js:1
+#: baruwa/public/js/baruwa/accounts.min.js:29
 msgid "Accounts"
 msgstr "Tài khoản"
 
-#: baruwa/public/js/baruwa/common.js:1
+#: baruwa/public/js/baruwa/common.js:1 baruwa/public/js/baruwa/common.min.js:10
 msgid "AJAX Error:"
 msgstr "AJAX lỗi:"
 
-#: baruwa/public/js/baruwa/common.js:1
+#: baruwa/public/js/baruwa/common.js:1 baruwa/public/js/baruwa/common.min.js:11
 msgid "Error Occured:"
 msgstr "Lỗi xảy ra:"
 
-#: baruwa/public/js/baruwa/common.js:1
+#: baruwa/public/js/baruwa/common.js:1 baruwa/public/js/baruwa/common.min.js:12
 #: baruwa/public/js/baruwa/messages.filters.js:1
+#: baruwa/public/js/baruwa/messages.filters.min.js:18
 #: baruwa/public/js/baruwa/reports.common.js:1
+#: baruwa/public/js/baruwa/reports.common.min.js:12
 #: baruwa/public/js/baruwa/reports.js:1
 #: baruwa/public/js/baruwa/reports.listings.js:1
+#: baruwa/public/js/baruwa/reports.listings.min.js:34
+#: baruwa/public/js/baruwa/reports.min.js:26
+#: baruwa/public/js/baruwa/reports.min.js:36
 #: baruwa/public/js/baruwa/reports.pie.js:1
+#: baruwa/public/js/baruwa/reports.pie.min.js:30
 #: baruwa/public/js/baruwa/reports.relays.js:1
+#: baruwa/public/js/baruwa/reports.relays.min.js:29
 #: baruwa/public/js/baruwa/reports.spam.js:1
+#: baruwa/public/js/baruwa/reports.spam.min.js:25
 msgid "Loading"
 msgstr "Tải"
 
-#: baruwa/public/js/baruwa/common.js:1
+#: baruwa/public/js/baruwa/common.js:1 baruwa/public/js/baruwa/common.min.js:15
+#: baruwa/public/js/baruwa/common.min.js:20
+#: baruwa/public/js/baruwa/common.min.js:23
+#: baruwa/public/js/baruwa/common.min.js:26
 msgid "Unknown error occured !"
 msgstr "Lỗi không xác định xảy ra!"
 
 #: baruwa/public/js/baruwa/domains.js:1
+#: baruwa/public/js/baruwa/domains.min.js:28
 msgid "No domains found"
 msgstr "Tên miền không tìm thấy"
 
 #: baruwa/public/js/baruwa/domains.js:1
+#: baruwa/public/js/baruwa/domains.min.js:30
 msgid "Domains :: Showing page {{page}} of {{page_count}} pages."
 msgstr "Tên miền:: Hiển thị trang {{page}} của {{page_count}} Trang."
 
 #: baruwa/public/js/baruwa/domains.js:1
+#: baruwa/public/js/baruwa/domains.min.js:31
 msgid "Domains"
 msgstr "Tên miền"
 
-#: baruwa/public/js/baruwa/lists.js:1
+#: baruwa/public/js/baruwa/lists.js:1 baruwa/public/js/baruwa/lists.min.js:22
 msgid "Lists :: {{listname}} Showing page {{page}} of {{page_count}} pages."
-msgstr "Danh sách:: {{listname}} Đang hiện trang {{page}} của {{page_count}} Trang."
+msgstr ""
+"Danh sách:: {{listname}} Đang hiện trang {{page}} của {{page_count}} "
+"Trang."
 
-#: baruwa/public/js/baruwa/lists.js:1
+#: baruwa/public/js/baruwa/lists.js:1 baruwa/public/js/baruwa/lists.min.js:23
 msgid "Lists"
 msgstr "Danh sách"
 
-#: baruwa/public/js/baruwa/login.js:1
+#: baruwa/public/js/baruwa/login.js:1 baruwa/public/js/baruwa/login.min.js:11
 msgid "Login"
 msgstr "Đăng nhập"
 
-#: baruwa/public/js/baruwa/login.js:1
+#: baruwa/public/js/baruwa/login.js:1 baruwa/public/js/baruwa/login.min.js:13
 msgid "Reset my password"
 msgstr "Đặt lại mật khẩu của tôi"
 
 #: baruwa/public/js/baruwa/messages.archive.js:1
+#: baruwa/public/js/baruwa/messages.archive.min.js:12
 msgid "Messages :: Archive :: Showing page {{page}} of {{page_count}} pages."
 msgstr "Tin nhắn:: Lưu trữ:: Đang hiện trang {{page}} của {{page_count}} Trang."
 
 #: baruwa/public/js/baruwa/messages.archive.js:1
+#: baruwa/public/js/baruwa/messages.archive.min.js:13
 msgid "Messages :: Archive"
 msgstr "Tin nhắn:: lưu trữ"
 
 #: baruwa/public/js/baruwa/messages.archive.js:1
+#: baruwa/public/js/baruwa/messages.archive.min.js:16
 #: baruwa/public/js/baruwa/messages.js:1
+#: baruwa/public/js/baruwa/messages.min.js:16
 #: baruwa/public/js/baruwa/messages.quarantine.js:1
+#: baruwa/public/js/baruwa/messages.quarantine.min.js:36
 msgid "Date/Time"
 msgstr "Ngày/thời gian"
 
 #: baruwa/public/js/baruwa/messages.archive.js:1
+#: baruwa/public/js/baruwa/messages.archive.min.js:16
 #: baruwa/public/js/baruwa/messages.js:1
+#: baruwa/public/js/baruwa/messages.min.js:16
 #: baruwa/public/js/baruwa/messages.quarantine.js:1
+#: baruwa/public/js/baruwa/messages.quarantine.min.js:36
 msgid "From"
 msgstr "Từ"
 
 #: baruwa/public/js/baruwa/messages.archive.js:1
+#: baruwa/public/js/baruwa/messages.archive.min.js:16
 #: baruwa/public/js/baruwa/messages.js:1
+#: baruwa/public/js/baruwa/messages.min.js:16
 #: baruwa/public/js/baruwa/messages.quarantine.js:1
+#: baruwa/public/js/baruwa/messages.quarantine.min.js:36
 msgid "To"
 msgstr "Để"
 
 #: baruwa/public/js/baruwa/messages.archive.js:1
+#: baruwa/public/js/baruwa/messages.archive.min.js:16
 #: baruwa/public/js/baruwa/messages.js:1
+#: baruwa/public/js/baruwa/messages.min.js:16
 #: baruwa/public/js/baruwa/messages.quarantine.js:1
+#: baruwa/public/js/baruwa/messages.quarantine.min.js:36
 msgid "Subject"
 msgstr "Chủ đề"
 
 #: baruwa/public/js/baruwa/messages.archive.js:1
+#: baruwa/public/js/baruwa/messages.archive.min.js:16
 #: baruwa/public/js/baruwa/messages.js:1
+#: baruwa/public/js/baruwa/messages.min.js:16
 msgid "Size"
 msgstr "Kích thước"
 
 #: baruwa/public/js/baruwa/messages.archive.js:1
+#: baruwa/public/js/baruwa/messages.archive.min.js:16
 #: baruwa/public/js/baruwa/messages.js:1
+#: baruwa/public/js/baruwa/messages.min.js:16
 #: baruwa/public/js/baruwa/messages.quarantine.js:1
+#: baruwa/public/js/baruwa/messages.quarantine.min.js:36
 msgid "Score"
 msgstr "Điểm"
 
 #: baruwa/public/js/baruwa/messages.common.js:1
+#: baruwa/public/js/baruwa/messages.common.min.js:24
 #: baruwa/public/js/baruwa/messages.quarantine.js:1
+#: baruwa/public/js/baruwa/messages.quarantine.min.js:29
 msgid "No messages found"
 msgstr "Không có thư được tìm thấy"
 
 #: baruwa/public/js/baruwa/messages.detail.js:1
+#: baruwa/public/js/baruwa/messages.detail.min.js:11
 msgid "Show hosts"
 msgstr "Hiển thị chủ"
 
 #: baruwa/public/js/baruwa/messages.detail.js:1
+#: baruwa/public/js/baruwa/messages.detail.min.js:13
+#: baruwa/public/js/baruwa/messages.detail.min.js:17
 msgid "Hide hosts"
 msgstr "Ẩn máy chủ"
 
 #: baruwa/public/js/baruwa/messages.detail.js:1
+#: baruwa/public/js/baruwa/messages.detail.min.js:30
 msgid "Processing......"
 msgstr "Xử lý..."
 
 #: baruwa/public/js/baruwa/messages.detail.js:1
+#: baruwa/public/js/baruwa/messages.detail.min.js:47
 msgid "Show headers"
 msgstr "Hiển thị tiêu đề"
 
 #: baruwa/public/js/baruwa/messages.detail.js:1
+#: baruwa/public/js/baruwa/messages.detail.min.js:49
 msgid "Hide headers"
 msgstr "Ẩn tiêu đề"
 
 #: baruwa/public/js/baruwa/messages.filters.js:1
+#: baruwa/public/js/baruwa/messages.filters.min.js:19
 #: baruwa/public/js/baruwa/reports.js:1
 #: baruwa/public/js/baruwa/reports.listings.js:1
+#: baruwa/public/js/baruwa/reports.listings.min.js:34
+#: baruwa/public/js/baruwa/reports.min.js:37
 #: baruwa/public/js/baruwa/reports.pie.js:1
+#: baruwa/public/js/baruwa/reports.pie.min.js:30
 #: baruwa/public/js/baruwa/reports.relays.js:1
+#: baruwa/public/js/baruwa/reports.relays.min.js:29
 #: baruwa/public/js/baruwa/reports.spam.js:1
+#: baruwa/public/js/baruwa/reports.spam.min.js:25
 msgid "Processing request............."
 msgstr "Xử lý yêu cầu..."
 
 #: baruwa/public/js/baruwa/messages.filters.js:1
+#: baruwa/public/js/baruwa/messages.filters.min.js:22
 #: baruwa/public/js/baruwa/reports.js:1
 #: baruwa/public/js/baruwa/reports.listings.js:1
+#: baruwa/public/js/baruwa/reports.listings.min.js:27
+#: baruwa/public/js/baruwa/reports.listings.min.js:29
+#: baruwa/public/js/baruwa/reports.min.js:25
+#: baruwa/public/js/baruwa/reports.min.js:34
 #: baruwa/public/js/baruwa/reports.pie.js:1
+#: baruwa/public/js/baruwa/reports.pie.min.js:22
+#: baruwa/public/js/baruwa/reports.pie.min.js:23
 #: baruwa/public/js/baruwa/reports.relays.js:1
+#: baruwa/public/js/baruwa/reports.relays.min.js:22
+#: baruwa/public/js/baruwa/reports.relays.min.js:23
 #: baruwa/public/js/baruwa/reports.spam.js:1
+#: baruwa/public/js/baruwa/reports.spam.min.js:18
+#: baruwa/public/js/baruwa/reports.spam.min.js:19
 msgid "Add Filter"
 msgstr "Thêm bộ lọc"
 
 #: baruwa/public/js/baruwa/messages.filters.js:1
+#, fuzzy
 msgid "Non applied at the moment"
-msgstr "Không áp dụng tại thời điểm này"
+msgstr "Không có bộ lọc đã lưu ở thời điểm này"
+
+#: baruwa/public/js/baruwa/messages.filters.min.js:27
+msgid "None applied at the moment"
+msgstr ""
 
 #: baruwa/public/js/baruwa/messages.js:1
+#: baruwa/public/js/baruwa/messages.min.js:12
 #: baruwa/public/js/baruwa/messages.quarantine.js:1
 msgid ""
-"Messages :: Full message listing :: Showing page {{page}} of {{page_count}} "
-"pages."
-msgstr "Tin nhắn:: Đầy đủ danh sách thông báo:: Đang hiện trang {{page}} của {{page_count}} Trang."
+"Messages :: Full message listing :: Showing page {{page}} of "
+"{{page_count}} pages."
+msgstr ""
+"Tin nhắn:: Đầy đủ danh sách thông báo:: Đang hiện trang {{page}} của "
+"{{page_count}} Trang."
 
 #: baruwa/public/js/baruwa/messages.js:1
+#: baruwa/public/js/baruwa/messages.min.js:13
 #: baruwa/public/js/baruwa/messages.quarantine.js:1
 msgid "Messages :: Full message listing"
 msgstr "Tin nhắn:: Thông báo đầy đủ danh sách"
 
+#: baruwa/public/js/baruwa/messages.preview.min.js:10
+#: baruwa/public/js/baruwa/status.preview.min.js:10
+msgid " This message contains external images, which have been blocked."
+msgstr " Thư này chứa những hình ảnh bên ngoài, mà đã bị chặn."
+
+#: baruwa/public/js/baruwa/messages.preview.min.js:10
+#: baruwa/public/js/baruwa/status.preview.min.js:10
+msgid "Display images"
+msgstr "Hiển thị hình ảnh"
+
+#: baruwa/public/js/baruwa/messages.preview.min.js:11
+#: baruwa/public/js/baruwa/status.preview.min.js:11
+msgid "HTML Alternative"
+msgstr "HTML thay thế"
+
+#: baruwa/public/js/baruwa/messages.preview.min.js:13
+#: baruwa/public/js/baruwa/status.preview.min.js:13
+msgid "Text Alternative"
+msgstr "Thay thế văn bản"
+
+#: baruwa/public/js/baruwa/messages.quarantine.min.js:32
+msgid "Messages :: Quarantine :: Showing page {{page}} of {{page_count}} pages."
+msgstr "Tin nhắn:: Cách ly:: Đang hiện trang {{page}} của {{page_count}} Trang."
+
+#: baruwa/public/js/baruwa/messages.quarantine.min.js:33
+msgid "Messages :: Quarantine"
+msgstr "Tin nhắn:: cách ly"
+
 #: baruwa/public/js/baruwa/messages.recent.js:1
+#: baruwa/public/js/baruwa/messages.recent.min.js:15
 msgid "network connection failure, reconnecting in 60 seconds"
 msgstr "mạng kết nối thất bại, kết nối lại trong vòng 60 giây"
 
 #: baruwa/public/js/baruwa/messages.recent.js:1
+#: baruwa/public/js/baruwa/messages.recent.min.js:25
 msgid "OK"
 msgstr "Ok"
 
 #: baruwa/public/js/baruwa/messages.recent.js:1
 msgid "FAULTY"
-msgstr "BỊ LỖI"
+msgstr ""
+
+#: baruwa/public/js/baruwa/messages.recent.min.js:11
+msgid "Refreshing page, please wait"
+msgstr "Làm mới trang, xin vui lòng chờ đợi"
+
+#: baruwa/public/js/baruwa/messages.recent.min.js:26
+msgid "ERROR"
+msgstr "LỖI"
 
 #: baruwa/public/js/baruwa/messages.search.js:1
+#: baruwa/public/js/baruwa/messages.search.min.js:21
 msgid "No messages found matching search query:"
 msgstr "Không có thư tìm thấy phù hợp với truy vấn tìm kiếm:"
 
 #: baruwa/public/js/baruwa/messages.search.js:1
+#: baruwa/public/js/baruwa/messages.search.min.js:22
 msgid "Showing items {{first}} to {{last}} of {{total}}."
 msgstr "Đang hiển thị mục {{first}} để {{last}} của {{total}}."
 
 #: baruwa/public/js/baruwa/messages.search.js:1
+#: baruwa/public/js/baruwa/messages.search.min.js:23
 msgid "About {{total_found}} results ({{search_time}} seconds)"
 msgstr "Về {{total_found}} kết quả ({{search_time}} giây)"
 
 #: baruwa/public/js/baruwa/messages.search.js:1
+#: baruwa/public/js/baruwa/messages.search.min.js:24
 msgid "0 Results found ({{search_time}} seconds)"
 msgstr "0 Kết quả tìm thấy ({{search_time}} giây)"
 
 #: baruwa/public/js/baruwa/messages.search.js:1
+#: baruwa/public/js/baruwa/messages.search.min.js:25
 msgid "Messages :: Search results :: {{q}}"
 msgstr "Thư:: Kết quả tìm kiếm:: {{q}}"
 
 #: baruwa/public/js/baruwa/messages.taskstatus.js:1
+#: baruwa/public/js/baruwa/messages.taskstatus.min.js:12
 msgid "An unknown error occured"
 msgstr "Một lỗi không xác định xảy ra"
 
 #: baruwa/public/js/baruwa/messages.taskstatus.js:1
 msgid "FAILED"
-msgstr "THẤT BẠI"
+msgstr ""
 
 #: baruwa/public/js/baruwa/messages.taskstatus.js:1
 msgid "PASSED"
-msgstr "THÔNG QUA"
+msgstr ""
 
 #: baruwa/public/js/baruwa/organizations.js:1
+#: baruwa/public/js/baruwa/organizations.min.js:20
 msgid "No organizations found"
 msgstr "Tổ chức không tìm thấy"
 
 #: baruwa/public/js/baruwa/organizations.js:1
+#: baruwa/public/js/baruwa/organizations.min.js:22
 msgid "Organizations :: Showing page {{page}} of {{page_count}} pages."
 msgstr "Tổ chức:: Hiển thị trang {{page}} của {{page_count}} Trang."
 
 #: baruwa/public/js/baruwa/organizations.js:1
+#: baruwa/public/js/baruwa/organizations.min.js:23
 msgid "Organizations"
 msgstr "Tổ chức"
 
 #: baruwa/public/js/baruwa/reports.common.js:1
+#: baruwa/public/js/baruwa/reports.common.min.js:16
+#: baruwa/public/js/baruwa/reports.common.min.js:17
+#: baruwa/public/js/baruwa/reports.common.min.js:18
 msgid "is equal to"
 msgstr "tương đương với"
 
 #: baruwa/public/js/baruwa/reports.common.js:1
+#: baruwa/public/js/baruwa/reports.common.min.js:16
+#: baruwa/public/js/baruwa/reports.common.min.js:17
+#: baruwa/public/js/baruwa/reports.common.min.js:18
 msgid "is not equal to"
 msgstr "không phải là tương đương với"
 
 #: baruwa/public/js/baruwa/reports.common.js:1
+#: baruwa/public/js/baruwa/reports.common.min.js:16
+#: baruwa/public/js/baruwa/reports.common.min.js:18
 msgid "is greater than"
 msgstr "lớn hơn"
 
 #: baruwa/public/js/baruwa/reports.common.js:1
+#: baruwa/public/js/baruwa/reports.common.min.js:16
+#: baruwa/public/js/baruwa/reports.common.min.js:18
 msgid "is less than"
 msgstr "là ít hơn"
 
 #: baruwa/public/js/baruwa/reports.common.js:1
+#: baruwa/public/js/baruwa/reports.common.min.js:17
 msgid "is null"
 msgstr "là không"
 
 #: baruwa/public/js/baruwa/reports.common.js:1
+#: baruwa/public/js/baruwa/reports.common.min.js:17
 msgid "is not null"
 msgstr "không phải là vô"
 
 #: baruwa/public/js/baruwa/reports.common.js:1
+#: baruwa/public/js/baruwa/reports.common.min.js:17
 msgid "contains"
 msgstr "có chứa"
 
 #: baruwa/public/js/baruwa/reports.common.js:1
+#: baruwa/public/js/baruwa/reports.common.min.js:17
 msgid "does not contain"
 msgstr "không chứa"
 
 #: baruwa/public/js/baruwa/reports.common.js:1
+#: baruwa/public/js/baruwa/reports.common.min.js:17
 msgid "matches regex"
 msgstr "phù hợp với regex"
 
 #: baruwa/public/js/baruwa/reports.common.js:1
+#: baruwa/public/js/baruwa/reports.common.min.js:17
 msgid "does not match regex"
 msgstr "không phù hợp với regex"
 
 #: baruwa/public/js/baruwa/reports.common.js:1
+#: baruwa/public/js/baruwa/reports.common.min.js:19
 msgid "is true"
 msgstr "là đúng sự thật"
 
 #: baruwa/public/js/baruwa/reports.common.js:1
+#: baruwa/public/js/baruwa/reports.common.min.js:19
 msgid "is false"
 msgstr "là sai"
 
 #: baruwa/public/js/baruwa/reports.common.js:1
+#: baruwa/public/js/baruwa/reports.common.min.js:19
 msgid "Please select"
 msgstr "Vui lòng chọn"
 
 #: baruwa/public/js/baruwa/reports.js:1
+#: baruwa/public/js/baruwa/reports.min.js:12
 msgid "No active filters at the moment"
 msgstr "Không có bộ lọc hoạt động ở thời điểm này"
 
 #: baruwa/public/js/baruwa/reports.js:1
+#: baruwa/public/js/baruwa/reports.min.js:12
 msgid "No saved filters at the moment"
 msgstr "Không có bộ lọc đã lưu ở thời điểm này"
 
 #: baruwa/public/js/baruwa/reports.listings.js:1
+#: baruwa/public/js/baruwa/reports.listings.min.js:25
 msgid "No records found"
 msgstr "Không có hồ sơ tìm thấy"
 
 #: baruwa/public/js/baruwa/settings.js:1
+#: baruwa/public/js/baruwa/settings.min.js:20
 msgid "No scanning hosts found"
 msgstr "Không có máy quét được tìm thấy"
 
 #: baruwa/public/js/baruwa/settings.js:1
+#: baruwa/public/js/baruwa/settings.min.js:22
 msgid "Settings :: Nodes :: Showing page {{page}} of {{page_count}} pages."
 msgstr "Cài đặt:: Các nút:: Đang hiện trang {{page}} của {{page_count}} Trang."
 
 #: baruwa/public/js/baruwa/settings.js:1
+#: baruwa/public/js/baruwa/settings.min.js:23
 msgid "Settings :: Nodes"
 msgstr "Cài đặt:: nút"
 
 #: baruwa/public/js/baruwa/status.audit.js:1
+#: baruwa/public/js/baruwa/status.audit.min.js:18
 msgid "No audit logs found"
 msgstr "Không có Nhật ký kiểm tra được tìm thấy"
 
 #: baruwa/public/js/baruwa/status.audit.js:1
+#: baruwa/public/js/baruwa/status.audit.min.js:27
 msgid "Status :: Audit log :: Showing page {{page}} of {{page_count}} pages."
-msgstr "Tình trạng:: Nhật ký kiểm tra:: Đang hiện trang {{page}} của {{page_count}} Trang."
+msgstr ""
+"Tình trạng:: Nhật ký kiểm tra:: Đang hiện trang {{page}} của "
+"{{page_count}} Trang."
 
 #: baruwa/public/js/baruwa/status.audit.js:1
+#: baruwa/public/js/baruwa/status.audit.min.js:28
 msgid "Status :: Audit log"
 msgstr "Tình trạng:: Nhật ký kiểm tra"
+

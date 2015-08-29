@@ -8,12 +8,12 @@
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation, either version 3 of the License, or
 # (at your option) any later version.
-# 
+#
 # This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License for more details.
-# 
+#
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
@@ -22,6 +22,7 @@ import os
 import re
 import sys
 import time
+import email
 import shutil
 import mailbox
 import binascii
@@ -32,6 +33,7 @@ import MySQLdb
 
 from email.utils import parseaddr
 from optparse import OptionParser
+from email.Header import decode_header
 from ConfigParser import SafeConfigParser
 
 from dateutil.parser import parse
@@ -43,7 +45,6 @@ from sqlalchemy.engine.url import _parse_rfc1738_args
 
 from baruwa.model.messages import Message, SARule, Archive
 from baruwa.lib.spamd import SpamdConnection, SYMBOLS
-from baruwa.lib.mail.parser import get_header
 from baruwa.lib.misc import get_config_option
 
 FROM_RE = re.compile(r'^From\s+.+$', re.IGNORECASE | re.MULTILINE)
@@ -54,6 +55,25 @@ FIND_IPS_RE = re.compile(
 
 
 CACHE = {}
+
+
+def get_header(header_text, default="ascii"):
+    "Decode and return the header"
+    if not header_text:
+        return header_text
+
+    try:
+        sections = decode_header(header_text)
+    except email.errors.HeaderParseError:
+        return u''
+
+    parts = []
+    for section, encoding in sections:
+        try:
+            parts.append(section.decode(encoding or default, 'replace'))
+        except LookupError:
+            parts.append(section.decode(default, 'replace'))
+    return u' '.join(parts)
 
 
 def hostname():
@@ -114,7 +134,7 @@ def update_index(surl, msgs):
     MySQLdb.paramstyle = 'pyformat'
     dbconn = MySQLdb.connect(**connparams)
     cursor = dbconn.cursor()
-    c = 0
+    count = 0
     for mesg in msgs:
         if not mesg.id:
             print "Missing id, skipping"
@@ -129,7 +149,7 @@ def update_index(surl, msgs):
         params['from_dom'] = crc32(getattr(mesg, 'from_domain'))
         params['to_dom'] = crc32(getattr(mesg, 'to_domain'))
         params['isquarantined'] = int(params['isquarantined'])
-        params['timestamp'] = int(time.mktime(params['timestamp']\
+        params['timestamp'] = int(time.mktime(params['timestamp']
                                 .timetuple()))
         sql = """INSERT INTO messages_rt (id, messageid,
                     subject, headers, hostname, from_addr,
@@ -141,10 +161,10 @@ def update_index(surl, msgs):
                     %(isquarantined)s)"""
         try:
             cursor.execute(sql, params)
-            c += 1
-            print_(" Indexed: %d" % c)
+            count += 1
+            print_(" Indexed: %d" % count)
         except MySQLdb.MySQLError:
-            #print err
+            # print err
             pass
     dbconn.close()
     msgs[:] = []
@@ -158,7 +178,7 @@ def save2db(sess, msgs, surl):
         update_index(surl, msgs)
 
 
-def generate_sareport(status, score, hits):
+def generate_sareport(status, score, hits, session):
     "Generate sareport, similar to mailscanner"
     rules = []
     if status:
@@ -170,7 +190,7 @@ def generate_sareport(status, score, hits):
     rules.append(begin)
     for ruleid in hits.split(','):
         try:
-            if not ruleid in CACHE:
+            if ruleid not in CACHE:
                 sarule = session.query(SARule).get(ruleid)
                 if sarule:
                     tmp = u"%s %#.3f," % (sarule.id, sarule.score)
@@ -190,26 +210,26 @@ def generate_sareport(status, score, hits):
 
 def flush2db(sess, msgs, archs, processed, sxurl):
     "save messages to DB"
-    #print_ '*' * 100
-    #print_ "Flushing to DB"
+    # print_ '*' * 100
+    # print_ "Flushing to DB"
     try:
         save2db(sess, msgs, sxurl)
         save2db(sess, archs, sxurl)
         print_(" Processed: %(c)d" % dict(c=processed))
-        #sys.stdout.write("\n\tProcessed: %d" % processed)
+        # sys.stdout.write("\n\tProcessed: %d" % processed)
     except IntegrityError:
         print_("Integrity error proceeding")
     msgs[:] = []
     archs[:] = []
 
 
-if __name__ == '__main__':
-    # run the thing
+def main(argv):
+    "main function"
     try:
-        conn = SpamdConnection()
+        conn = SpamdConnection(socket='/var/run/spamassassin/spamd.sock')
         usage = """
         usage: %prog [options]
-        
+
             options:
             -c --config     "configuration file"
             -i --inputdir   "mbox input directory"
@@ -223,7 +243,7 @@ if __name__ == '__main__':
                         help="Mbox directory")
         parser.add_option('-o', '--outputdir', dest="outputdir",
                         help="Output directory")
-        options, args = parser.parse_args()
+        options, _ = parser.parse_args(argv)
         if not options.mboxdir:
             print usage
             print "Please specify the directory with the mbox files"
@@ -234,6 +254,10 @@ if __name__ == '__main__':
             sys.exit(2)
         basepath = os.path.dirname(os.path.dirname(__file__))
         configfile = os.path.join(basepath, options.settingsfile)
+        if not os.path.exists(configfile):
+            print parser.print_help()
+            print "The config file %s does not exist" % configfile
+            sys.exit(2)
         config = load_config(configfile)
         sqlalchemyurl = config.get('app:main', 'sqlalchemy.url',
                                     vars=dict(here=basepath))
@@ -246,15 +270,15 @@ if __name__ == '__main__':
         session = Session()
         # sphinxsession = SphinxSession()
         mboxdir = options.mboxdir
-        #count = 0
+        # count = 0
         messages = []
         archived = []
         servername = hostname()
         msquarantine = get_config_option('QuarantineDir')
         cutoff = parse('01-01-05')
         qdirs = ["spam", "nonspam"]
-        for (dirname, dirs, files) in os.walk(mboxdir):
-            #print_ '*' * 100
+        for (dirname, _, files) in os.walk(mboxdir):
+            # print_ '*' * 100
             print 'Processing: %(d)s' % dict(d=dirname)
             for mail in files:
                 if mail.startswith('.'):
@@ -265,9 +289,8 @@ if __name__ == '__main__':
                 for message in mailbox.mbox(filename):
                     try:
                         msgdatetime = parse(message['date'], ignoretz=True)
-                        msgtimestamp = msgdatetime.strftime("%Y-%m-%d %H:%M:%S")
                         msgdate = msgdatetime.strftime("%Y-%m-%d")
-                        msgtime = msgdatetime.strftime("%H:%M:%S")
+                        # msgtime = msgdatetime.strftime("%H:%M:%S")
                         dirdate = msgdate.replace('-', '')
                         # quarantinedir = os.path.join(basepath, 'data',
                         #                         'quarantine', dirdate)
@@ -278,7 +301,7 @@ if __name__ == '__main__':
                             os.mkdir(os.path.join(quarantinedir, 'nonspam'))
                         messageid = parseaddr(message['message-id'])[1]
                         messageid = messageid.replace('/', '.')
-                        #messagepath = os.path.join(quarantinedir, messageid)
+                        # messagepath = os.path.join(quarantinedir, messageid)
                         exists = False
                         for message_kind in qdirs:
                             messagepath = os.path.join(quarantinedir,
@@ -288,7 +311,7 @@ if __name__ == '__main__':
                                 exists = True
                                 break
                         if exists:
-                            #print_ "Skipping message with id: %s" % messageid
+                            # print_ "Skipping message with id: %s" % messageid
                             continue
                         count += 1
                         message_kind = 'nonspam'
@@ -303,33 +326,34 @@ if __name__ == '__main__':
                             msg = Archive(messageid=messageid)
                         else:
                             msg = Message(messageid=messageid)
-                        msg.actions         = "deliver"
-                        msg.clientip        = fromip
-                        msg.from_address    = fromaddr.lower()
-                        msg.from_domain     = fromdomain.lower()
-                        msg.to_address      = toaddr.lower()
-                        msg.to_domain       = todomain.lower()
-                        msg.hostname        = servername
-                        msg.timestamp       = msgdatetime
-                        msg.date            = msgdatetime.date()
-                        msg.time            = msgdatetime.time()
-                        msg.subject         = get_header(message['subject'])
-                        msg.headers         = msgheaders
+                        msg.actions = "deliver"
+                        msg.clientip = fromip
+                        msg.from_address = fromaddr.lower()
+                        msg.from_domain = fromdomain.lower()
+                        msg.to_address = toaddr.lower()
+                        msg.to_domain = todomain.lower()
+                        msg.hostname = servername
+                        msg.timestamp = msgdatetime
+                        msg.date = msgdatetime.date()
+                        msg.time = msgdatetime.time()
+                        msg.subject = get_header(message['subject'])
+                        msg.headers = msgheaders
                         conn.addheader('User', 'andrew')
                         conn.check(SYMBOLS, message.as_string())
                         isspam, msg.sascore = conn.getspamstatus()
-                        msg.spam            = int(isspam)
-                        msg.spamreport      = generate_sareport(msg.spam,
+                        msg.spam = int(isspam)
+                        msg.spamreport = generate_sareport(msg.spam,
                                                     msg.sascore,
-                                                    conn.response_message)
-                        msg.size            = len(message.as_string())
-                        msg.isquarantined   = 1
+                                                    conn.response_message,
+                                                    session)
+                        msg.size = len(message.as_string())
+                        msg.isquarantined = 1
                         if msg.spam:
-                            msg.actions         = "store"
-                            message_kind        = 'spam'
-                        msg.scaned          = 1
+                            msg.actions = "store"
+                            message_kind = 'spam'
+                        msg.scaned = 1
                         if msg.sascore > 10:
-                            msg.highspam    = 1
+                            msg.highspam = 1
                         if msgdatetime.date() < cutoff.date():
                             messages.append(msg)
                         else:
@@ -340,15 +364,13 @@ if __name__ == '__main__':
                         msghandle = open(messagepath, 'w')
                         msghandle.write(message.as_string())
                         msghandle.close()
-                        #print_ "Processed: %s" % messageid
+                        # print_ "Processed: %s" % messageid
                         if (count % 100) == 0:
-                        #if count == 100:
                             flush2db(session,
                                     messages,
                                     archived,
                                     count,
                                     sphinxurl)
-                            #raise KeyboardInterrupt
                         else:
                             print_(" Processed: %(c)d" % dict(c=count))
                     except (IndexError, ValueError, AttributeError, IOError):
@@ -360,3 +382,8 @@ if __name__ == '__main__':
         if 'session' in locals() and (messages or archived):
             flush2db(session, messages, archived, count, sphinxurl)
         print "\nExiting..."
+
+
+if __name__ == '__main__':
+    # run the thing
+    main(sys.argv)

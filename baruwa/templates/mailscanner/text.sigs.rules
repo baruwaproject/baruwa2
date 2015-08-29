@@ -1,0 +1,11 @@
+% for user in users:
+% if user.email and not user.address:
+From: ${user.email}  %signature-dir%/users/${user.username}/sig.txt
+% else:
+From: ${user.address}  %signature-dir%/users/${user.username}/sig.txt
+% endif
+% endfor
+% for domain in domains:
+From: *@${domain.name} %signature-dir%/domains/${domain.name}/sig.txt
+% endfor
+FromOrTo: default  %report-dir%/inline.sig.txt

@@ -8,12 +8,12 @@
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation, either version 3 of the License, or
 # (at your option) any later version.
-# 
+#
 # This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License for more details.
-# 
+#
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
@@ -23,6 +23,7 @@ in the sql database for use by the baruwa web front end.
 """
 
 import os
+import sys
 import time
 import datetime
 
@@ -124,7 +125,7 @@ class Logger(DatagramProtocol):
 
     def datagramReceived(self, data, (host, port)):
         "process data"
-        #print "connection from: %s" % host
+        # print "connection from: %s" % host
         try:
             fields = self.parser.parseString(data[4:])
             mta = fields[2]
@@ -133,14 +134,20 @@ class Logger(DatagramProtocol):
         except ParseException:
             pass
 
-if __name__ == "__main__":
+
+def main(argv):
+    "main function"
     parser = OptionParser()
     parser.add_option('-c', '--config', dest="settingsfile",
                     help="Baruwa configuration file",
                     default='development.ini')
-    options, args = parser.parse_args()
+    options, args = parser.parse_args(argv)
     basepath = os.path.dirname(os.path.dirname(__file__))
     configfile = os.path.join(basepath, options.settingsfile)
+    if not os.path.exists(configfile):
+        print parser.print_help()
+        print "The config file %s does not exist" % configfile
+        sys.exit(2)
     config = load_config(configfile)
     dburl = config.get('app:main', 'sqlalchemy.url',
                         vars=dict(here=basepath))
@@ -148,3 +155,7 @@ if __name__ == "__main__":
     dbconnection = adbapi.ConnectionPool(DB_DRIVER, **db_args)
     reactor.listenUDP(10514, Logger(dbconnection))
     reactor.run()
+
+
+if __name__ == "__main__":
+    main(sys.argv)

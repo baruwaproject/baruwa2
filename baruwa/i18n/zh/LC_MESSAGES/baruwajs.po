@@ -1,350 +1,516 @@
-# Translations template for PROJECT.
-# Copyright (C) 2012 ORGANIZATION
-# This file is distributed under the same license as the PROJECT project.
-# 
+# Chinese translations for .
+# Copyright (C) 2014 Andrew Colin Kissa
+# This file is distributed under the same license as the  project.
+#
 # Translators:
 msgid ""
 msgstr ""
-"Project-Id-Version: baruwa\n"
-"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2012-11-14 14:04+0200\n"
-"PO-Revision-Date: 2012-11-14 23:42+0000\n"
-"Last-Translator: datopdog <andrew@topdog.za.net>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Project-Id-Version:  baruwa\n"
+"Report-Msgid-Bugs-To: andrew@topdog.za.net\n"
+"POT-Creation-Date: 2015-08-29 11:41+0200\n"
+"PO-Revision-Date: 2014-10-06 10:16+0000\n"
+"Last-Translator: Andrew Colin Kissa <andrew@topdog.za.net>\n"
+"Language-Team: Chinese "
+"(http://www.transifex.com/projects/p/baruwa/language/zh/)\n"
+"Plural-Forms: nplurals=1; plural=0\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 0.9.6\n"
-"Language: zh\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
 
-#: baruwa/public/js/baruwa/accounts.js:1 baruwa/public/js/baruwa/domains.js:1
-#: baruwa/public/js/baruwa/lists.js:1
+#: baruwa/public/js/baruwa/accounts.js:1
+#: baruwa/public/js/baruwa/accounts.min.js:27
+#: baruwa/public/js/baruwa/domains.js:1
+#: baruwa/public/js/baruwa/domains.min.js:29 baruwa/public/js/baruwa/lists.js:1
+#: baruwa/public/js/baruwa/lists.min.js:21
 #: baruwa/public/js/baruwa/messages.archive.js:1
+#: baruwa/public/js/baruwa/messages.archive.min.js:11
 #: baruwa/public/js/baruwa/messages.js:1
+#: baruwa/public/js/baruwa/messages.min.js:11
 #: baruwa/public/js/baruwa/messages.quarantine.js:1
+#: baruwa/public/js/baruwa/messages.quarantine.min.js:31
 #: baruwa/public/js/baruwa/organizations.js:1
+#: baruwa/public/js/baruwa/organizations.min.js:21
 #: baruwa/public/js/baruwa/settings.js:1
+#: baruwa/public/js/baruwa/settings.min.js:21
 #: baruwa/public/js/baruwa/status.audit.js:1
+#: baruwa/public/js/baruwa/status.audit.min.js:26
 msgid "Showing items {{first_item}} to {{last_item}} of {{item_count}}."
 msgstr "显示项目 {{first_item}}到 {{last_item}}{{item_count}}。"
 
 #: baruwa/public/js/baruwa/accounts.js:1
+#: baruwa/public/js/baruwa/accounts.min.js:28
 msgid "Accounts :: Showing page {{page}} of {{page_count}} pages."
 msgstr "帐户:: 显示页面 {{page}}{{page_count}}页。"
 
-#: baruwa/public/js/baruwa/accounts.js:1 baruwa/public/js/baruwa/domains.js:1
-#: baruwa/public/js/baruwa/lists.js:1
+#: baruwa/public/js/baruwa/accounts.js:1
+#: baruwa/public/js/baruwa/accounts.min.js:29
+#: baruwa/public/js/baruwa/domains.js:1
+#: baruwa/public/js/baruwa/domains.min.js:31 baruwa/public/js/baruwa/lists.js:1
+#: baruwa/public/js/baruwa/lists.min.js:20
+#: baruwa/public/js/baruwa/lists.min.js:23
 #: baruwa/public/js/baruwa/messages.archive.js:1
+#: baruwa/public/js/baruwa/messages.archive.min.js:13
 #: baruwa/public/js/baruwa/messages.js:1
+#: baruwa/public/js/baruwa/messages.min.js:13
 #: baruwa/public/js/baruwa/messages.quarantine.js:1
+#: baruwa/public/js/baruwa/messages.quarantine.min.js:33
 #: baruwa/public/js/baruwa/messages.search.js:1
+#: baruwa/public/js/baruwa/messages.search.min.js:24
 #: baruwa/public/js/baruwa/organizations.js:1
+#: baruwa/public/js/baruwa/organizations.min.js:23
 #: baruwa/public/js/baruwa/reports.pie.js:1
+#: baruwa/public/js/baruwa/reports.pie.min.js:21
 #: baruwa/public/js/baruwa/reports.relays.js:1
+#: baruwa/public/js/baruwa/reports.relays.min.js:20
 #: baruwa/public/js/baruwa/reports.spam.js:1
+#: baruwa/public/js/baruwa/reports.spam.min.js:16
 #: baruwa/public/js/baruwa/settings.js:1
+#: baruwa/public/js/baruwa/settings.min.js:23
 #: baruwa/public/js/baruwa/status.audit.js:1
+#: baruwa/public/js/baruwa/status.audit.min.js:28
 msgid "No items found"
 msgstr "未找到任何项目"
 
 #: baruwa/public/js/baruwa/accounts.js:1
+#: baruwa/public/js/baruwa/accounts.min.js:29
 msgid "Accounts"
 msgstr "帐户"
 
-#: baruwa/public/js/baruwa/common.js:1
+#: baruwa/public/js/baruwa/common.js:1 baruwa/public/js/baruwa/common.min.js:10
 msgid "AJAX Error:"
 msgstr "AJAX 错误："
 
-#: baruwa/public/js/baruwa/common.js:1
+#: baruwa/public/js/baruwa/common.js:1 baruwa/public/js/baruwa/common.min.js:11
 msgid "Error Occured:"
 msgstr "出现错误："
 
-#: baruwa/public/js/baruwa/common.js:1
+#: baruwa/public/js/baruwa/common.js:1 baruwa/public/js/baruwa/common.min.js:12
 #: baruwa/public/js/baruwa/messages.filters.js:1
+#: baruwa/public/js/baruwa/messages.filters.min.js:18
 #: baruwa/public/js/baruwa/reports.common.js:1
+#: baruwa/public/js/baruwa/reports.common.min.js:12
 #: baruwa/public/js/baruwa/reports.js:1
 #: baruwa/public/js/baruwa/reports.listings.js:1
+#: baruwa/public/js/baruwa/reports.listings.min.js:34
+#: baruwa/public/js/baruwa/reports.min.js:26
+#: baruwa/public/js/baruwa/reports.min.js:36
 #: baruwa/public/js/baruwa/reports.pie.js:1
+#: baruwa/public/js/baruwa/reports.pie.min.js:30
 #: baruwa/public/js/baruwa/reports.relays.js:1
+#: baruwa/public/js/baruwa/reports.relays.min.js:29
 #: baruwa/public/js/baruwa/reports.spam.js:1
+#: baruwa/public/js/baruwa/reports.spam.min.js:25
 msgid "Loading"
 msgstr "正在加载"
 
-#: baruwa/public/js/baruwa/common.js:1
+#: baruwa/public/js/baruwa/common.js:1 baruwa/public/js/baruwa/common.min.js:15
+#: baruwa/public/js/baruwa/common.min.js:20
+#: baruwa/public/js/baruwa/common.min.js:23
+#: baruwa/public/js/baruwa/common.min.js:26
 msgid "Unknown error occured !"
 msgstr "出现了未知的错误 ！"
 
 #: baruwa/public/js/baruwa/domains.js:1
+#: baruwa/public/js/baruwa/domains.min.js:28
 msgid "No domains found"
 msgstr "未找到域"
 
 #: baruwa/public/js/baruwa/domains.js:1
+#: baruwa/public/js/baruwa/domains.min.js:30
 msgid "Domains :: Showing page {{page}} of {{page_count}} pages."
 msgstr "域:: 显示页面 {{page}}{{page_count}}页。"
 
 #: baruwa/public/js/baruwa/domains.js:1
+#: baruwa/public/js/baruwa/domains.min.js:31
 msgid "Domains"
 msgstr "域"
 
-#: baruwa/public/js/baruwa/lists.js:1
+#: baruwa/public/js/baruwa/lists.js:1 baruwa/public/js/baruwa/lists.min.js:22
 msgid "Lists :: {{listname}} Showing page {{page}} of {{page_count}} pages."
 msgstr "列表:: {{listname}}显示页面 {{page}}{{page_count}}页。"
 
-#: baruwa/public/js/baruwa/lists.js:1
+#: baruwa/public/js/baruwa/lists.js:1 baruwa/public/js/baruwa/lists.min.js:23
 msgid "Lists"
 msgstr "列表"
 
-#: baruwa/public/js/baruwa/login.js:1
+#: baruwa/public/js/baruwa/login.js:1 baruwa/public/js/baruwa/login.min.js:11
 msgid "Login"
 msgstr "登录"
 
-#: baruwa/public/js/baruwa/login.js:1
+#: baruwa/public/js/baruwa/login.js:1 baruwa/public/js/baruwa/login.min.js:13
 msgid "Reset my password"
 msgstr "我的密码重置"
 
 #: baruwa/public/js/baruwa/messages.archive.js:1
+#: baruwa/public/js/baruwa/messages.archive.min.js:12
 msgid "Messages :: Archive :: Showing page {{page}} of {{page_count}} pages."
 msgstr "邮件:: 存档:: 显示页面 {{page}}{{page_count}}页。"
 
 #: baruwa/public/js/baruwa/messages.archive.js:1
+#: baruwa/public/js/baruwa/messages.archive.min.js:13
 msgid "Messages :: Archive"
 msgstr "邮件:: 存档"
 
 #: baruwa/public/js/baruwa/messages.archive.js:1
+#: baruwa/public/js/baruwa/messages.archive.min.js:16
 #: baruwa/public/js/baruwa/messages.js:1
+#: baruwa/public/js/baruwa/messages.min.js:16
 #: baruwa/public/js/baruwa/messages.quarantine.js:1
+#: baruwa/public/js/baruwa/messages.quarantine.min.js:36
 msgid "Date/Time"
 msgstr "日期/时间"
 
 #: baruwa/public/js/baruwa/messages.archive.js:1
+#: baruwa/public/js/baruwa/messages.archive.min.js:16
 #: baruwa/public/js/baruwa/messages.js:1
+#: baruwa/public/js/baruwa/messages.min.js:16
 #: baruwa/public/js/baruwa/messages.quarantine.js:1
+#: baruwa/public/js/baruwa/messages.quarantine.min.js:36
 msgid "From"
 msgstr "从"
 
 #: baruwa/public/js/baruwa/messages.archive.js:1
+#: baruwa/public/js/baruwa/messages.archive.min.js:16
 #: baruwa/public/js/baruwa/messages.js:1
+#: baruwa/public/js/baruwa/messages.min.js:16
 #: baruwa/public/js/baruwa/messages.quarantine.js:1
+#: baruwa/public/js/baruwa/messages.quarantine.min.js:36
 msgid "To"
 msgstr "自"
 
 #: baruwa/public/js/baruwa/messages.archive.js:1
+#: baruwa/public/js/baruwa/messages.archive.min.js:16
 #: baruwa/public/js/baruwa/messages.js:1
+#: baruwa/public/js/baruwa/messages.min.js:16
 #: baruwa/public/js/baruwa/messages.quarantine.js:1
+#: baruwa/public/js/baruwa/messages.quarantine.min.js:36
 msgid "Subject"
 msgstr "主题"
 
 #: baruwa/public/js/baruwa/messages.archive.js:1
+#: baruwa/public/js/baruwa/messages.archive.min.js:16
 #: baruwa/public/js/baruwa/messages.js:1
+#: baruwa/public/js/baruwa/messages.min.js:16
 msgid "Size"
 msgstr "大小"
 
 #: baruwa/public/js/baruwa/messages.archive.js:1
+#: baruwa/public/js/baruwa/messages.archive.min.js:16
 #: baruwa/public/js/baruwa/messages.js:1
+#: baruwa/public/js/baruwa/messages.min.js:16
 #: baruwa/public/js/baruwa/messages.quarantine.js:1
+#: baruwa/public/js/baruwa/messages.quarantine.min.js:36
 msgid "Score"
 msgstr "得分"
 
 #: baruwa/public/js/baruwa/messages.common.js:1
+#: baruwa/public/js/baruwa/messages.common.min.js:24
 #: baruwa/public/js/baruwa/messages.quarantine.js:1
+#: baruwa/public/js/baruwa/messages.quarantine.min.js:29
 msgid "No messages found"
 msgstr "没有找到消息"
 
 #: baruwa/public/js/baruwa/messages.detail.js:1
+#: baruwa/public/js/baruwa/messages.detail.min.js:11
 msgid "Show hosts"
 msgstr "显示主机"
 
 #: baruwa/public/js/baruwa/messages.detail.js:1
+#: baruwa/public/js/baruwa/messages.detail.min.js:13
+#: baruwa/public/js/baruwa/messages.detail.min.js:17
 msgid "Hide hosts"
 msgstr "隐藏的主机"
 
 #: baruwa/public/js/baruwa/messages.detail.js:1
+#: baruwa/public/js/baruwa/messages.detail.min.js:30
 msgid "Processing......"
 msgstr "正在处理..."
 
 #: baruwa/public/js/baruwa/messages.detail.js:1
+#: baruwa/public/js/baruwa/messages.detail.min.js:47
 msgid "Show headers"
 msgstr "显示标题"
 
 #: baruwa/public/js/baruwa/messages.detail.js:1
+#: baruwa/public/js/baruwa/messages.detail.min.js:49
 msgid "Hide headers"
 msgstr "隐藏标题"
 
 #: baruwa/public/js/baruwa/messages.filters.js:1
+#: baruwa/public/js/baruwa/messages.filters.min.js:19
 #: baruwa/public/js/baruwa/reports.js:1
 #: baruwa/public/js/baruwa/reports.listings.js:1
+#: baruwa/public/js/baruwa/reports.listings.min.js:34
+#: baruwa/public/js/baruwa/reports.min.js:37
 #: baruwa/public/js/baruwa/reports.pie.js:1
+#: baruwa/public/js/baruwa/reports.pie.min.js:30
 #: baruwa/public/js/baruwa/reports.relays.js:1
+#: baruwa/public/js/baruwa/reports.relays.min.js:29
 #: baruwa/public/js/baruwa/reports.spam.js:1
+#: baruwa/public/js/baruwa/reports.spam.min.js:25
 msgid "Processing request............."
 msgstr "正在处理的请求..."
 
 #: baruwa/public/js/baruwa/messages.filters.js:1
+#: baruwa/public/js/baruwa/messages.filters.min.js:22
 #: baruwa/public/js/baruwa/reports.js:1
 #: baruwa/public/js/baruwa/reports.listings.js:1
+#: baruwa/public/js/baruwa/reports.listings.min.js:27
+#: baruwa/public/js/baruwa/reports.listings.min.js:29
+#: baruwa/public/js/baruwa/reports.min.js:25
+#: baruwa/public/js/baruwa/reports.min.js:34
 #: baruwa/public/js/baruwa/reports.pie.js:1
+#: baruwa/public/js/baruwa/reports.pie.min.js:22
+#: baruwa/public/js/baruwa/reports.pie.min.js:23
 #: baruwa/public/js/baruwa/reports.relays.js:1
+#: baruwa/public/js/baruwa/reports.relays.min.js:22
+#: baruwa/public/js/baruwa/reports.relays.min.js:23
 #: baruwa/public/js/baruwa/reports.spam.js:1
+#: baruwa/public/js/baruwa/reports.spam.min.js:18
+#: baruwa/public/js/baruwa/reports.spam.min.js:19
 msgid "Add Filter"
 msgstr "添加筛选器"
 
 #: baruwa/public/js/baruwa/messages.filters.js:1
+#, fuzzy
 msgid "Non applied at the moment"
-msgstr "目前应用的非"
+msgstr "目前没有已保存的筛选"
+
+#: baruwa/public/js/baruwa/messages.filters.min.js:27
+msgid "None applied at the moment"
+msgstr ""
 
 #: baruwa/public/js/baruwa/messages.js:1
+#: baruwa/public/js/baruwa/messages.min.js:12
 #: baruwa/public/js/baruwa/messages.quarantine.js:1
 msgid ""
-"Messages :: Full message listing :: Showing page {{page}} of {{page_count}} "
-"pages."
+"Messages :: Full message listing :: Showing page {{page}} of "
+"{{page_count}} pages."
 msgstr "消息:: 完整消息上市的:: 显示页面 {{page}}{{page_count}}页。"
 
 #: baruwa/public/js/baruwa/messages.js:1
+#: baruwa/public/js/baruwa/messages.min.js:13
 #: baruwa/public/js/baruwa/messages.quarantine.js:1
 msgid "Messages :: Full message listing"
 msgstr "邮件:: 完整消息上市"
 
+#: baruwa/public/js/baruwa/messages.preview.min.js:10
+#: baruwa/public/js/baruwa/status.preview.min.js:10
+msgid " This message contains external images, which have been blocked."
+msgstr "此消息包含外部图像，已被阻止。"
+
+#: baruwa/public/js/baruwa/messages.preview.min.js:10
+#: baruwa/public/js/baruwa/status.preview.min.js:10
+msgid "Display images"
+msgstr "显示图像"
+
+#: baruwa/public/js/baruwa/messages.preview.min.js:11
+#: baruwa/public/js/baruwa/status.preview.min.js:11
+msgid "HTML Alternative"
+msgstr "HTML 的替代"
+
+#: baruwa/public/js/baruwa/messages.preview.min.js:13
+#: baruwa/public/js/baruwa/status.preview.min.js:13
+msgid "Text Alternative"
+msgstr "可选文本"
+
+#: baruwa/public/js/baruwa/messages.quarantine.min.js:32
+msgid "Messages :: Quarantine :: Showing page {{page}} of {{page_count}} pages."
+msgstr "邮件:: 隔离:: 显示页面 {{page}}{{page_count}}页面。"
+
+#: baruwa/public/js/baruwa/messages.quarantine.min.js:33
+msgid "Messages :: Quarantine"
+msgstr "邮件:: 检疫"
+
 #: baruwa/public/js/baruwa/messages.recent.js:1
+#: baruwa/public/js/baruwa/messages.recent.min.js:15
 msgid "network connection failure, reconnecting in 60 seconds"
 msgstr "网络连接失败，在 60 秒内重新连接"
 
 #: baruwa/public/js/baruwa/messages.recent.js:1
+#: baruwa/public/js/baruwa/messages.recent.min.js:25
 msgid "OK"
 msgstr "还行"
 
 #: baruwa/public/js/baruwa/messages.recent.js:1
 msgid "FAULTY"
-msgstr "有故障"
+msgstr ""
+
+#: baruwa/public/js/baruwa/messages.recent.min.js:11
+msgid "Refreshing page, please wait"
+msgstr "刷新页面，请稍候"
+
+#: baruwa/public/js/baruwa/messages.recent.min.js:26
+msgid "ERROR"
+msgstr "错误"
 
 #: baruwa/public/js/baruwa/messages.search.js:1
+#: baruwa/public/js/baruwa/messages.search.min.js:21
 msgid "No messages found matching search query:"
 msgstr "没有消息找到匹配搜索查询："
 
 #: baruwa/public/js/baruwa/messages.search.js:1
+#: baruwa/public/js/baruwa/messages.search.min.js:22
 msgid "Showing items {{first}} to {{last}} of {{total}}."
 msgstr "显示项目 {{first}}到 {{last}}{{total}}。"
 
 #: baruwa/public/js/baruwa/messages.search.js:1
+#: baruwa/public/js/baruwa/messages.search.min.js:23
 msgid "About {{total_found}} results ({{search_time}} seconds)"
 msgstr "关于 {{total_found}}结果 ({{search_time}} 秒）"
 
 #: baruwa/public/js/baruwa/messages.search.js:1
+#: baruwa/public/js/baruwa/messages.search.min.js:24
 msgid "0 Results found ({{search_time}} seconds)"
 msgstr "0 结果发现 ({{search_time}} 秒）"
 
 #: baruwa/public/js/baruwa/messages.search.js:1
+#: baruwa/public/js/baruwa/messages.search.min.js:25
 msgid "Messages :: Search results :: {{q}}"
 msgstr "邮件:: 搜索结果:: {{q}}"
 
 #: baruwa/public/js/baruwa/messages.taskstatus.js:1
+#: baruwa/public/js/baruwa/messages.taskstatus.min.js:12
 msgid "An unknown error occured"
 msgstr "出现未知的错误"
 
 #: baruwa/public/js/baruwa/messages.taskstatus.js:1
 msgid "FAILED"
-msgstr "失败"
+msgstr ""
 
 #: baruwa/public/js/baruwa/messages.taskstatus.js:1
 msgid "PASSED"
-msgstr "传递"
+msgstr ""
 
 #: baruwa/public/js/baruwa/organizations.js:1
+#: baruwa/public/js/baruwa/organizations.min.js:20
 msgid "No organizations found"
 msgstr "发现没有组织"
 
 #: baruwa/public/js/baruwa/organizations.js:1
+#: baruwa/public/js/baruwa/organizations.min.js:22
 msgid "Organizations :: Showing page {{page}} of {{page_count}} pages."
 msgstr "组织:: 显示页面 {{page}}{{page_count}}页。"
 
 #: baruwa/public/js/baruwa/organizations.js:1
+#: baruwa/public/js/baruwa/organizations.min.js:23
 msgid "Organizations"
 msgstr "组织"
 
 #: baruwa/public/js/baruwa/reports.common.js:1
+#: baruwa/public/js/baruwa/reports.common.min.js:16
+#: baruwa/public/js/baruwa/reports.common.min.js:17
+#: baruwa/public/js/baruwa/reports.common.min.js:18
 msgid "is equal to"
 msgstr "等于"
 
 #: baruwa/public/js/baruwa/reports.common.js:1
+#: baruwa/public/js/baruwa/reports.common.min.js:16
+#: baruwa/public/js/baruwa/reports.common.min.js:17
+#: baruwa/public/js/baruwa/reports.common.min.js:18
 msgid "is not equal to"
 msgstr "不等于"
 
 #: baruwa/public/js/baruwa/reports.common.js:1
+#: baruwa/public/js/baruwa/reports.common.min.js:16
+#: baruwa/public/js/baruwa/reports.common.min.js:18
 msgid "is greater than"
 msgstr "大于"
 
 #: baruwa/public/js/baruwa/reports.common.js:1
+#: baruwa/public/js/baruwa/reports.common.min.js:16
+#: baruwa/public/js/baruwa/reports.common.min.js:18
 msgid "is less than"
 msgstr "是少于"
 
 #: baruwa/public/js/baruwa/reports.common.js:1
+#: baruwa/public/js/baruwa/reports.common.min.js:17
 msgid "is null"
 msgstr "为空"
 
 #: baruwa/public/js/baruwa/reports.common.js:1
+#: baruwa/public/js/baruwa/reports.common.min.js:17
 msgid "is not null"
 msgstr "不为空"
 
 #: baruwa/public/js/baruwa/reports.common.js:1
+#: baruwa/public/js/baruwa/reports.common.min.js:17
 msgid "contains"
 msgstr "包含"
 
 #: baruwa/public/js/baruwa/reports.common.js:1
+#: baruwa/public/js/baruwa/reports.common.min.js:17
 msgid "does not contain"
 msgstr "不包含"
 
 #: baruwa/public/js/baruwa/reports.common.js:1
+#: baruwa/public/js/baruwa/reports.common.min.js:17
 msgid "matches regex"
 msgstr "匹配正则表达式"
 
 #: baruwa/public/js/baruwa/reports.common.js:1
+#: baruwa/public/js/baruwa/reports.common.min.js:17
 msgid "does not match regex"
 msgstr "与正则表达式不匹配"
 
 #: baruwa/public/js/baruwa/reports.common.js:1
+#: baruwa/public/js/baruwa/reports.common.min.js:19
 msgid "is true"
 msgstr "是真的"
 
 #: baruwa/public/js/baruwa/reports.common.js:1
+#: baruwa/public/js/baruwa/reports.common.min.js:19
 msgid "is false"
 msgstr "是虚假"
 
 #: baruwa/public/js/baruwa/reports.common.js:1
+#: baruwa/public/js/baruwa/reports.common.min.js:19
 msgid "Please select"
 msgstr "请选择"
 
 #: baruwa/public/js/baruwa/reports.js:1
+#: baruwa/public/js/baruwa/reports.min.js:12
 msgid "No active filters at the moment"
 msgstr "目前没有积极筛选器"
 
 #: baruwa/public/js/baruwa/reports.js:1
+#: baruwa/public/js/baruwa/reports.min.js:12
 msgid "No saved filters at the moment"
 msgstr "目前没有已保存的筛选"
 
 #: baruwa/public/js/baruwa/reports.listings.js:1
+#: baruwa/public/js/baruwa/reports.listings.min.js:25
 msgid "No records found"
 msgstr "找不到记录"
 
 #: baruwa/public/js/baruwa/settings.js:1
+#: baruwa/public/js/baruwa/settings.min.js:20
 msgid "No scanning hosts found"
 msgstr "找不到扫描主机"
 
 #: baruwa/public/js/baruwa/settings.js:1
+#: baruwa/public/js/baruwa/settings.min.js:22
 msgid "Settings :: Nodes :: Showing page {{page}} of {{page_count}} pages."
 msgstr "设置:: 节点:: 显示页面 {{page}}{{page_count}}页。"
 
 #: baruwa/public/js/baruwa/settings.js:1
+#: baruwa/public/js/baruwa/settings.min.js:23
 msgid "Settings :: Nodes"
 msgstr "设置:: 节点"
 
 #: baruwa/public/js/baruwa/status.audit.js:1
+#: baruwa/public/js/baruwa/status.audit.min.js:18
 msgid "No audit logs found"
 msgstr "发现没有审核日志"
 
 #: baruwa/public/js/baruwa/status.audit.js:1
+#: baruwa/public/js/baruwa/status.audit.min.js:27
 msgid "Status :: Audit log :: Showing page {{page}} of {{page_count}} pages."
 msgstr "状态:: 审核日志:: 显示页面 {{page}}{{page_count}}页。"
 
 #: baruwa/public/js/baruwa/status.audit.js:1
+#: baruwa/public/js/baruwa/status.audit.min.js:28
 msgid "Status :: Audit log"
 msgstr "状态:: 审计日志"
+

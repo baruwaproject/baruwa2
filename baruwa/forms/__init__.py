@@ -1,18 +1,18 @@
 # -*- coding: utf-8 -*-
 # vim: ai ts=4 sts=4 et sw=4
 # Baruwa - Web 2.0 MailScanner front-end.
-# Copyright (C) 2010-2012  Andrew Colin Kissa <andrew@topdog.za.net>
+# Copyright (C) 2010-2015  Andrew Colin Kissa <andrew@topdog.za.net>
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation, either version 3 of the License, or
 # (at your option) any later version.
-# 
+#
 # This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License for more details.
-# 
+#
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
@@ -22,7 +22,8 @@ import pytz
 
 from datetime import timedelta
 
-from pylons import config
+from pylons import config, url
+from webob.multidict import MultiDict
 from sqlalchemy.orm.exc import NoResultFound
 from wtforms.validators import ValidationError
 from pylons.i18n.translation import lazy_ugettext as _
@@ -35,8 +36,19 @@ from baruwa.lib.mail.freemail import FREE_DOMAINS
 from baruwa.model.domains import Domain, DomainAlias
 
 TIMEZONE_TUPLES = [(timz, timz) for timz in pytz.common_timezones]
+
 REQ_MSG = _(u'This field is required.')
+
 EMAIL_MSG = _(u'Invalid email address.')
+
+STATUS_DESC = _("""Enable or disable this entry""")
+
+LOWSPAM_DESC = _("""The score at which an email is
+considered to be suspected spam.""")
+
+HIGHSPAM_DESC = _("""The score at which an email is
+considered to be definitely spam.""")
+
 DISALLOWED_USERNAMES = ['mailer-daemon', 'postmaster', 'bin', 'daemon',
                         'adm', 'lp', 'sync', 'shutdown', 'halt', 'mail',
                         'news', 'uucp', 'operator', 'games', 'gopher',
@@ -59,7 +71,7 @@ DISALLOWED_USERNAMES = ['mailer-daemon', 'postmaster', 'bin', 'daemon',
 #     def gettext(self, string):
 #         "overide gettext"
 #         return ugettext(string)
-# 
+#
 #     def ngettext(self, singular, plural, n):
 #         "overide ngettext"
 #         return ungettext(singular, plural, n)
@@ -74,6 +86,7 @@ class Form(SessionSecureForm):
     # def _get_translations(self):
     #     "Use the baruwa translator"
     #     return BaruwaTranslator()
+
 
 def is_freemail(domain):
     "check if domain is a freemail domain"
@@ -119,11 +132,24 @@ def check_email(form, field):
     "check the email address"
     try:
         domain = field.data.split('@')[-1]
-        result = Session.query(Domain).filter(Domain.name == domain).one()
-        if result:
-            raise ValidationError(
-                _('Email from a domain that is already registered'))
-        Session.query(User).filter(User.username == field.data).one()
+        Session.query(Domain).filter(Domain.name == domain).one()
+        raise ValidationError(
+            _('Email from a domain that is already registered'))
+    except NoResultFound:
+        pass
+    try:
+        Session.query(User).filter(User.email == field.data).one()
         raise ValidationError(_('The email address is already in use'))
     except NoResultFound:
         pass
+
+
+def make_csrf(session):
+    "Make a CSRF token"
+    form = Form(MultiDict(), csrf_context=session)
+    return form.csrf_token.current_token
+
+
+def myhostname():
+    "Return the host url"
+    return url('home', qualified=True).rstrip('/')

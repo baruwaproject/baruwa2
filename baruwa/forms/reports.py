@@ -1,18 +1,18 @@
 # -*- coding: utf-8 -*-
 # vim: ai ts=4 sts=4 et sw=4
 # Baruwa - Web 2.0 MailScanner front-end.
-# Copyright (C) 2010-2012  Andrew Colin Kissa <andrew@topdog.za.net>
+# Copyright (C) 2010-2015  Andrew Colin Kissa <andrew@topdog.za.net>
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation, either version 3 of the License, or
 # (at your option) any later version.
-# 
+#
 # This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License for more details.
-# 
+#
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
@@ -27,7 +27,7 @@ from webhelpers.html import escape
 from pylons.i18n.translation import lazy_ugettext as _
 
 from baruwa.forms import Form
-from baruwa.lib.regex import ADDRESS_RE, DOM_RE, IPV4_RE
+from baruwa.lib.regex import EMAIL_RE, DOM_RE, IPV4_RE
 
 
 FILTER_ITEMS = (
@@ -39,11 +39,9 @@ FILTER_ITEMS = (
     ('to_domain', _('To Domain')),
     ('subject', _('Subject')),
     ('clientip', _('Received from')),
-#    ('archive','Is Archived'),
     ('scaned', _('Was scanned')),
     ('spam', _('Is Spam')),
     ('highspam', _('Is Definite spam')),
-#    ('saspam', _('Is SA spam')),
     ('rblspam', _('Is RBL listed')),
     ('whitelisted', _('Is approved sender')),
     ('blacklisted', _('Is banned sender')),
@@ -110,9 +108,9 @@ def check_form(form, field):
         not in TIME_FILTER) or (field.data in NUM_FIELDS and
         int(form.filtered_by.data) not in NUM_FILTER)):
         raise validators.ValidationError(
-        _('%(field)s does not support the "%(filt)s" filter') %
-        dict(field=filteritems[field.data],
-        filt=filteredby[form.filtered_by.data]))
+            _('%(field)s does not support the "%(filt)s" filter') %
+            dict(field=filteritems[field.data],
+            filt=filteredby[form.filtered_by.data]))
     # time
     if ((field.data in TEXT_FIELDS or field.data in TIME_FIELDS
         or field.data in NUM_FIELDS) and form.filtered_value.data in
@@ -124,17 +122,17 @@ def check_form(form, field):
     # emails
     if (field.data in TEXT_FIELDS and int(form.filtered_by.data) in [1, 2]
         and field.data in EMAIL_FIELDS):
-        if not ADDRESS_RE.match(form.filtered_value.data):
+        if not EMAIL_RE.match(form.filtered_value.data):
             raise validators.ValidationError(
-            _('%(email)s is not a valid e-mail address.') %
-            dict(email=escape(form.filtered_value.data)))
+                _('%(email)s is not a valid e-mail address.') %
+                dict(email=escape(form.filtered_value.data)))
     # domains
     if (field.data in TEXT_FIELDS and int(form.filtered_by.data) in [1, 2]
         and field.data in DOMAIN_FIELDS):
         if not DOM_RE.match(form.filtered_value.data):
             raise validators.ValidationError(
-            _('%(dom)s is not a valid domain address.') %
-            dict(dom=escape(form.filtered_value.data)))
+                _('%(dom)s is not a valid domain address.') %
+                dict(dom=escape(form.filtered_value.data)))
     # regex on text fields
     if field.data in TEXT_FIELDS and int(form.filtered_by.data) in [7, 8]:
         try:
@@ -146,25 +144,25 @@ def check_form(form, field):
         if field.data == 'clientip':
             if not IPV4_RE.match(form.filtered_value.data):
                 raise validators.ValidationError(
-                _('Please provide a valid ipv4 address'))
+                    _('Please provide a valid ipv4 address'))
         # hostname
         if field.data == 'hostname':
             if (not IPV4_RE.match(form.filtered_value.data) and
                 not DOM_RE.match(form.filtered_value.data)):
                 raise validators.ValidationError(
-                _("Please provide a valid hostname or ipv4 address"))
+                    _("Please provide a valid hostname or ipv4 address"))
     if field.data in TIME_FIELDS:
         if field.data == 'date':
             try:
                 datetime.date(
-                *time.strptime(form.filtered_value.data, '%Y-%m-%d')[:3])
+                    *time.strptime(form.filtered_value.data, '%Y-%m-%d')[:3])
             except ValueError:
                 raise validators.ValidationError(
                     _('Please provide a valid date in YYYY-MM-DD format'))
         if field.data == 'time':
             try:
                 datetime.time(
-                *time.strptime(form.filtered_value.data, '%H:%M')[3:6])
+                    *time.strptime(form.filtered_value.data, '%H:%M')[3:6])
             except ValueError:
                 raise validators.ValidationError(
                     _('Please provide valid time in HH:MM format'))

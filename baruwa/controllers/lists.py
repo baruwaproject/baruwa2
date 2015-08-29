@@ -1,18 +1,18 @@
 # -*- coding: utf-8 -*-
 # vim: ai ts=4 sts=4 et sw=4
 # Baruwa - Web 2.0 MailScanner front-end.
-# Copyright (C) 2010-2012  Andrew Colin Kissa <andrew@topdog.za.net>
+# Copyright (C) 2010-2015  Andrew Colin Kissa <andrew@topdog.za.net>
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation, either version 3 of the License, or
 # (at your option) any later version.
-# 
+#
 # This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License for more details.
-# 
+#
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
@@ -22,35 +22,34 @@ import socket
 import struct
 import logging
 
+import arrow
+
 from urlparse import urlparse
 
-from pylons import request, response, session, tmpl_context as c, url
+from pylons import request, response, session, tmpl_context as c, url, config
 from pylons.controllers.util import abort, redirect
 from webhelpers import paginate
 from pylons.i18n.translation import _
 from sqlalchemy import desc
 from sqlalchemy.exc import IntegrityError
-from sqlalchemy.orm.exc import NoResultFound
 from repoze.what.predicates import not_anonymous
 from sphinxapi import SphinxClient, SPH_MATCH_EXTENDED2
-#from repoze.what.plugins.pylonshq import ActionProtector
 from repoze.what.plugins.pylonshq import ControllerProtector
 
-from baruwa.lib.dates import now
-from baruwa.lib.base import BaseController, render
-from baruwa.lib.helpers import flash, flash_alert
-from baruwa.model.meta import Session
 from baruwa.model.lists import List
+from baruwa.model.meta import Session
 from baruwa.lib.audit import audit_log
 from baruwa.model.domains import Domain
-from baruwa.lib.misc import check_num_param
-from baruwa.lib.misc import ipaddr_is_valid, convert_list_to_json
+from baruwa.lib.api import get_listitem
 from baruwa.forms.lists import list_forms
-from baruwa.tasks.settings import update_serial
-#from baruwa.lib.auth.predicates import CanAccessAccount
+from baruwa.lib.base import BaseController
+from baruwa.lib.misc import convert_list_to_json
+from baruwa.lib.helpers import flash, flash_alert
+from baruwa.lib.backend import update_lists_backend
+from baruwa.lib.audit.msgs import lists as auditmsgs
 from baruwa.model.accounts import User, Address, domain_owners
-from baruwa.lib.regex import EMAIL_RE, IPV4_NET_OR_RANGE_RE, DOM_RE
-from baruwa.lib.audit.msgs.lists import *
+from baruwa.lib.misc import check_num_param, extract_sphinx_opts
+from baruwa.lib.regex import EMAIL_RE, IPV4_NET_OR_RANGE_RE, DOM_RE, IPV4_RE
 
 log = logging.getLogger(__name__)
 
@@ -75,13 +74,14 @@ def _set_type(obj):
     if IPV4_NET_OR_RANGE_RE.match(obj.from_address):
         obj.from_addr_type = 3
         return
-    if ipaddr_is_valid(obj.from_address):
+    if IPV4_RE.match(obj.from_address):
         obj.from_addr_type = 4
         return
 
 
 @ControllerProtector(not_anonymous())
 class ListsController(BaseController):
+    "Lists Controller"
     def __before__(self):
         "set context"
         BaseController.__before__(self)
@@ -101,14 +101,7 @@ class ListsController(BaseController):
                 .filter_by(enabled=True, user_id=userid)
         return query1.union(query2)
 
-    def _get_listitem(self, itemid):
-        "Get a list item"
-        try:
-            item = Session.query(List).get(itemid)
-        except NoResultFound:
-            item = None
-        return item
-
+    # pylint: disable-msg=W0622,R0913,R0914,R0915
     def index(self, list_type=1, direction='dsc', order_by='id',
             page=1, format=None):
         "Page through lists"
@@ -119,13 +112,17 @@ class ListsController(BaseController):
             sort = desc(order_by)
         else:
             sort = order_by
-        q = request.GET.get('q', None)
+        qry = request.GET.get('q', None)
         kwds = {}
-        if q:
+        if qry:
             kwds['presliced_list'] = True
             conn = SphinxClient()
+            sphinxopts = extract_sphinx_opts(config['sphinx.url'])
+            conn.SetServer(sphinxopts.get('host', '127.0.0.1'))
             conn.SetMatchMode(SPH_MATCH_EXTENDED2)
-            conn.SetFilter('list_type', [int(list_type),])
+            conn.SetFilter('list_type', [int(list_type), ])
+            if not c.user.is_superadmin:
+                conn.SetFilter('user_id', [c.user.id, ])
             if page == 1:
                 conn.SetLimits(0, num_items, 500)
             else:
@@ -134,7 +131,7 @@ class ListsController(BaseController):
                 conn.SetLimits(offset, num_items, 500)
 
             try:
-                results = conn.Query(q, 'lists, lists_rt')
+                results = conn.Query(qry, 'lists, lists_rt')
             except (socket.timeout, struct.error):
                 redirect(request.path_qs)
 
@@ -158,11 +155,12 @@ class ListsController(BaseController):
                     .order_by(sort)
             itemcount = Session.query(List.id)\
                     .filter(List.list_type == list_type)
-        if c.user.account_type != 1 and itemcount:
-            items = items.filter(List.user_id == c.user.id)
-            itemcount = itemcount.filter(List.user_id == c.user.id)
-        if not 'listcount' in locals():
+            if not c.user.is_superadmin:
+                items = items.filter(List.user_id == c.user.id)
+                itemcount = itemcount.filter(List.user_id == c.user.id)
             listcount = itemcount.count()
+
+        # pylint: disable-msg=W0142
         records = paginate.Page(items,
                                 page=int(page),
                                 items_per_page=num_items,
@@ -177,11 +175,12 @@ class ListsController(BaseController):
         c.page = records
         c.direction = direction
         c.order_by = order_by
-        c.q = q
+        c.q = qry
         c.total_found = total_found
         c.search_time = search_time
-        return render('/lists/index.html')
+        return self.render('/lists/index.html')
 
+    # pylint: disable-msg=R0912
     def new(self):
         "Add a new list item"
         c.form = list_forms[c.user.account_type](request.POST,
@@ -191,16 +190,13 @@ class ListsController(BaseController):
             query = Session.query(Domain.name).join(domain_owners)\
                     .filter(domain_owners.c.organization_id.in_(orgs))
             options = [(domain.name, domain.name) for domain in query]
+            # options.insert(0, ('any', _('All domains')))
             c.form.to_domain.choices = options
         if c.user.is_peleb:
             query = self._user_addresses()
             options = [(item.email, item.email) for item in query]
             c.form.to_address.choices = options
-        if request.POST and c.form.validate():
-            # item = List()
-            # item.user = c.user
-            # item.list_type = c.form.list_type.data
-            # item.from_address = c.form.from_address.data
+        if request.method == 'POST' and c.form.validate():
             item = make_item(c.form)
             _set_type(item)
             aliases = []
@@ -237,7 +233,7 @@ class ListsController(BaseController):
                             newitem = make_item(c.form)
                             _set_type(newitem)
                             newitem.to_address = "%s@%s" % \
-                                                (c.form.to_address.data, dom[0])
+                                        (c.form.to_address.data, dom[0])
                             if newitem.to_address == item.to_address:
                                 continue
                             aliases.append(newitem)
@@ -250,15 +246,16 @@ class ListsController(BaseController):
                         Session.commit()
                     except IntegrityError:
                         pass
-                update_serial.delay()
+                update_lists_backend(item.list_type)
                 if item.list_type == 1:
                     listname = _('Approved senders')
                 else:
                     listname = _('Banned senders')
-                info = LISTADD_MSG % dict(s=item.from_address, l=listname)
+                info = auditmsgs.LISTADD_MSG % dict(s=item.from_address,
+                                                    l=listname)
                 audit_log(c.user.username,
                         3, unicode(info), request.host,
-                        request.remote_addr, now())
+                        request.remote_addr, arrow.utcnow().datetime)
                 flash(_('The item has been added to the list'))
                 if not request.is_xhr:
                     redirect(url('lists-index',
@@ -266,11 +263,11 @@ class ListsController(BaseController):
             except IntegrityError:
                 Session.rollback()
                 flash_alert(_('The list item already exists'))
-        return render('/lists/add.html')
+        return self.render('/lists/add.html')
 
     def list_delete(self, listid):
         "Delete a list item"
-        item = self._get_listitem(listid)
+        item = get_listitem(listid)
         if not item:
             abort(404)
 
@@ -287,32 +284,35 @@ class ListsController(BaseController):
             query = Session.query(Domain.name).join(domain_owners)\
                     .filter(domain_owners.c.organization_id.in_(orgs))
             options = [(domain.name, domain.name) for domain in query]
+            # options.insert(0, ('any', _('All domains')))
             c.form.to_domain.choices = options
         if c.user.is_peleb:
             query = self._user_addresses()
             options = [(addr.email, addr.email) for addr in query]
             c.form.to_address.choices = options
         c.id = item.id
-        if request.POST and c.form.validate():
+        if request.method == 'POST' and c.form.validate():
             if item.list_type == 1:
                 listname = _('Approved senders')
             else:
                 listname = _('Banned senders')
             name = item.from_address
+            list_type = item.list_type
             Session.delete(item)
             Session.commit()
-            update_serial.delay()
-            info = LISTDEL_MSG % dict(s=name, l=listname)
+            update_lists_backend(list_type)
+            info = auditmsgs.LISTDEL_MSG % dict(s=name, l=listname)
             audit_log(c.user.username,
                     4, unicode(info), request.host,
-                    request.remote_addr, now())
+                    request.remote_addr, arrow.utcnow().datetime)
             flash(_('The item has been deleted'))
             if not request.is_xhr:
                 redirect(url(controller='lists'))
             else:
                 c.delflag = True
-        return render('/lists/delete.html')
+        return self.render('/lists/delete.html')
 
+    # pylint: disable-msg=W0613,R0201,W0622
     def setnum(self, format=None):
         "Set number of items returned"
         num = check_num_param(request)

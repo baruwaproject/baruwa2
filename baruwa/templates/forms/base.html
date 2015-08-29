@@ -1,32 +1,42 @@
 % if 'csrf_token' in c.form.errors:
-<div class="grid_16 drow">
-	<div class="grid_15 formglobalerror">${_('Form validation failed due to: %s') % c.form.errors.pop('csrf_token')[0]}</div>
+<div class="row-fluid">
+	<div class="span12">
+		<div class="alert alert-error">
+			${_('Form validation failed due to: %s') % c.form.errors.pop('csrf_token')[0]}
+		</div>
+	</div>
 </div>
 % endif
+<div class="row-fluid">
 % for field in c.form:
 % if field.type == 'HiddenField' or field.type == 'CSRFTokenField':
 	${h.HTML.div(field, style="display: none;")}
 % else:
-<div class="grid_16 drow">
-    <div class="grid_5">${field.label}</div>
-    <div class="grid_5">\
-	% if (field.type == 'TextField' and field.name != 'message_size' and field.name != 'port') or field.type == 'PasswordField':
-		${h.highlight_errors(field, size=50)}\
-	% elif field.type == 'IntegerField' or field.name == 'message_size' or field.name == 'port':
-		${h.highlight_errors(field, size=10)}\
-	% elif field.type == 'FileField':
-		${h.highlight_errors(field, size=30)}\
-	% elif field.type == 'TextAreaField':
-	    ${h.highlight_errors(field, style='height: 53px; width: 326px;')}\
-	% else:
-		${h.highlight_errors(field)}\
-	% endif
-	</div>
-	<div class="grid_5">
+<div class="control-group${' error' if field.errors else ''}">
+	${field.label(class_="control-label span4")}
+	<div class="controls span8">
+		% if (field.type == 'TextField' and field.name != 'message_size' and field.name != 'port') or field.type == 'PasswordField':
+			${field(class_="span6")}\
+		% elif field.type == 'IntegerField' or field.name == 'message_size' or field.name == 'port':
+			${field(class_="span4")}\
+		% elif field.type == 'FileField':
+			${field(class_="span6")}\
+		% elif field.type == 'TextAreaField':
+		    ${field(class_="span6")}\
+		% else:
+			${field}\
+		% endif
+		% if field.description:
+		<span title="" data-content="${field.description}" data-placement="bottom" data-trigger="hover" class="help-button settings-popover" data-original-title="Help">?</span>
+		% endif
 		% if field.errors:
-		<div class="formerror">${u', '.join([unicode(ferr) for ferr in field.errors])}</div>
+		<span class="help-inline">
+			${u', '.join([unicode(ferr) for ferr in field.errors])}
+		</span>
 		% endif
 	</div>
-</div>
+</div>	
 % endif
 % endfor
+</div>
+

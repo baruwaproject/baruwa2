@@ -1,67 +1,75 @@
-<div class="alpos">
-	<ul id="msgops">
-		% if c.q:
-		<li>${h.link_to(_('Export to CSV'), url('status-audit-search-export', format='csv', q=c.q))}</li>
-		<li>${h.link_to(_('Export to PDF'), url('status-audit-search-export', format='pdf', q=c.q))}</li>
-		% else:
-		<li>${h.link_to(_('Export to CSV'), url('status-audit-export', format='csv'))}</li>
-		<li>${h.link_to(_('Export to PDF'), url('status-audit-export', format='pdf'))}</li>
-		% endif
-	</ul>
+<div class="row-fluid">
+	<div class="span1 hidden-phone"></div>
+	<div class="span10">
+		<ul id="msgops">
+			% if c.q:
+			<li>${h.link_to(_('Export to CSV'), url('status-audit-search-export', format='csv', q=c.q))}</li>
+			<li>${h.link_to(_('Export to PDF'), url('status-audit-search-export', format='pdf', q=c.q))}</li>
+			% else:
+			<li>${h.link_to(_('Export to CSV'), url('status-audit-export', format='csv'))}</li>
+			<li>${h.link_to(_('Export to PDF'), url('status-audit-export', format='pdf'))}</li>
+			% endif
+		</ul>
+	</div>
+	<div class="span1 hidden-phone"></div>
 </div>
-<div class="clear"></div>
-<div class="sp10"></div>
+<div class="space-6"></div>
 ${s.searchbox(url('status-audit-logs'))}
-<div class="clear"></div>
-<div class="sp10"></div>
-<div class="alpos">
-	<div class="toolbar">${self.paging(h.do_pagination(c.page), 'auditlogtop')}</div>
+<div class="space-6"></div>
+<div class="row-fluid">
+	<div class="span1 hidden-phone"></div>
+	<div class="span10 toolbar">${self.paging(h.do_pagination(c.page), 'auditlogtop')}</div>
+	<div class="span1 hidden-phone"></div>
 </div>
-<div class="clear"></div>
-<div class="sp10"></div>
-<div id="content">
-<table class="messages">
-<thead>
-<tr class="grid">
-	<th class="audit_date_th">${_('Date/Time')}</th>
-	<th class="audit_user_th">${_('Username')}</th>
-	<th class="audit_info_th">${_('Info')}</th>
-	<th class="audit_host_th">${_('Hostname')}</th>
-	<th class="audit_remote_th">${_('Remote IP')}</th>
-	<th class="audit_cat_th">${_('Category')}</th>
-</tr>
-</thead>
-<tbody>
-% if not c.page.items:
-<tr>
-<td colspan="6" class="spanrow">${_('No audit logs found')}</td>
-</td>
-% endif
-<%
-from baruwa.model.status import CATEGORY_MAP
-value = 'white'
-%>
-% for item in c.page.items:
-<tr class="${value}_row">
-	<td class="audit_date_td">${h.datetimeformat(h.format_date(item.timestamp, c.tzinfo), '%Y-%m-%d %H:%M:%S')}</td>
-	<td class="audit_user_td">${item.username}</td>
-	<td class="audit_info_td">${item.info}</td>
-	<td class="audit_host_td">${item.hostname}</td>
-	<td class="audit_remote_td">${item.remoteip}</td>
-	<td class="audit_cat_td">${CATEGORY_MAP[item.category]}</td>                        
-</tr>
-% endfor
-</tbody>
-</table>
+<div class="space-6"></div>
+<div class="row-fluid">
+	<div class="span1 hidden-phone"></div>
+	<div class="span10">
+		<table class="table table-bordered table-condensed table-hover table-striped">
+		<thead>
+		<tr class="grid">
+			<th class="hidden-phone">${_('Date/Time')}</th>
+			<th>${_('Username')}</th>
+			<th>${_('Info')}</th>
+			<th class="hidden-phone">${_('Hostname')}</th>
+			<th class="hidden-phone">${_('Remote IP')}</th>
+			<th class="hidden-phone">${_('Category')}</th>
+		</tr>
+		</thead>
+		<tbody>
+		% if not c.page.items:
+		<tr>
+		<td colspan="6">${_('No audit logs found')}</td>
+		</td>
+		% endif
+		<%
+		from baruwa.model.status import CATEGORY_MAP
+		value = 'white'
+		%>
+		% for item in c.page.items:
+		<tr>
+			<td class="hidden-phone">${h.datetimeformat(h.format_date(item.timestamp, c.tzinfo), '%Y-%m-%d %H:%M:%S')}</td>
+			<td>${item.username}</td>
+			<td>${item.info}</td>
+			<td class="hidden-phone">${item.hostname}</td>
+			<td class="hidden-phone">${item.remoteip}</td>
+			<td class="hidden-phone">${CATEGORY_MAP[item.category]}</td>
+		</tr>
+		% endfor
+		</tbody>
+		</table>
+	</div>
+	<div class="span1 hidden-phone"></div>
 </div>
-<div class="alpos">
-	<div class="toolbar">${self.paging(h.do_pagination(c.page), 'auditlogbottom')}</div>
+<div class="row-fluid">
+	<div class="span1 hidden-phone"></div>
+	<div class="span10 toolbar">${self.paging(h.do_pagination(c.page), 'auditlogbottom')}</div>
+	<div class="span1 hidden-phone"></div>
 </div>
-<div class="clear"></div>
-<div class="sp10"></div>
+<div class="space-6"></div>
 
 <%def name="heading()">\
-${_('Status :: Audit log ')} 
+${_('Status :: Audit log ')}
 % if c.page.page_count != 0:
 ${ungettext(':: Showing page %(n)d of %(c)d page.', ':: Showing page %(n)d of %(c)d pages.', c.page.page_count) % dict(n=c.page.page, c=c.page.page_count)}
 % endif
@@ -96,13 +104,13 @@ ${_('per page')}
 % endif
 % if c.page.next_page != c.page.first_page and c.page.page != c.page.first_page:
 <span>
-	${h.link_to(h.pager_img('first'), url('status-audit-log-paged', page=1, **kwd))}
+	${h.link_to(h.literal('<i class="icon-double-angle-left"></i>'), url('status-audit-log-paged', page=1, **kwd))}
 </span>
 <span>...</span>
 % endif
 % if c.page.previous_page:
 <span>
-	${h.link_to(h.pager_img('previous'), url('status-audit-log-paged', page=c.page.previous_page, **kwd))}
+	${h.link_to(h.literal('<i class="icon-angle-left"></i>'), url('status-audit-log-paged', page=c.page.previous_page, **kwd))}
 </span>
 % endif
 % for linkpage in page_nums:
@@ -116,13 +124,13 @@ ${_('per page')}
 % endfor
 % if c.page.next_page:
 <span>
-	${h.link_to(h.pager_img('next'), url('status-audit-log-paged', page=c.page.next_page, **kwd))}
+	${h.link_to(h.literal('<i class="icon-angle-right"></i>'), url('status-audit-log-paged', page=c.page.next_page, **kwd))}
 </span>
 % endif
 % if c.page.next_page != c.page.page_count and c.page.page != c.page.page_count and c.page.page_count != 0:
 <span>...</span>
 <span>
-	${h.link_to(h.pager_img('last'), url('status-audit-log-paged', page=c.page.page_count, **kwd))}
+	${h.link_to(h.literal('<i class="icon-double-angle-right"></i>'), url('status-audit-log-paged', page=c.page.page_count, **kwd))}
 </span>
 % endif
 % if c.page.page_count != 0:
@@ -134,13 +142,32 @@ ${_('per page')}
 <%def name="headers()">\
 </%def>
 
+<%def name="submenu()">
+<div class="navbar navbar-static-top">
+    <div class="navbar-inner">
+        <div class="nav-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li class="nav_item"><a href="${url('mailq-status')}">${_("Mail Queues")}</a></li>
+				% if c.user.is_superadmin:
+				<li class="nav_item"><a href="${url('status-audit-logs')}">${_("Audit Logs")}</a></li>
+				% endif
+            </ul>
+        </div>
+    </div>
+</div>
+</%def>
+
 <%def name="localscripts()">\
 <script type="text/javascript">
 var setitems_url = "${url(controller='status', action='setnum')}";
 var base_url = "${url('status-audit-logs')}";
+var baruwa_custom_name = "${config.get('baruwa.custom.name', 'Baruwa')}";
 </script>
-${h.javascript_link(h.media_url() + 'js/jquery.address-1.4.min.js',
-h.media_url() + 'js/baruwa/status.audit.js')}
+${h.javascript_link(h.media_url() + 'js/vendor/jquery.address-1.4.min.js',
+h.media_url() + 'js/baruwa/status.audit.min.js')}
 </%def>
-<%namespace name="s" file="/includes/search.html"/>
-<%inherit file="/base.html"/>
+
+<%namespace name="s" file="../includes/search.html"/>
+<%inherit file="../base.html"/>
+
+

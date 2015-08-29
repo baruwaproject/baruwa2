@@ -1,18 +1,18 @@
 # -*- coding: utf-8 -*-
 # vim: ai ts=4 sts=4 et sw=4
 # Baruwa - Web 2.0 MailScanner front-end.
-# Copyright (C) 2010-2012  Andrew Colin Kissa <andrew@topdog.za.net>
+# Copyright (C) 2010-2015  Andrew Colin Kissa <andrew@topdog.za.net>
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation, either version 3 of the License, or
 # (at your option) any later version.
-# 
+#
 # This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License for more details.
-# 
+#
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
@@ -35,18 +35,28 @@ from baruwa.lib import mq
 from baruwa.config.routing import make_map
 from baruwa.model import init_model
 
+assert mq
+
+
 def load_environment(global_conf, app_conf):
     """Configure the Pylons environment via the ``pylons.config``
     object
     """
     config = PylonsConfig()
-    
+
     # Pylons paths
     root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    # setup themes
+    template_paths = [os.path.join(root, 'templates')]
+    themesbase = app_conf.get('baruwa.themes.base', None)
+    if themesbase and os.path.isabs(themesbase):
+        templatedir = os.path.join(themesbase, 'templates')
+        if os.path.isdir(templatedir):
+            template_paths.append(templatedir)
     paths = dict(root=root,
                  controllers=os.path.join(root, 'controllers'),
                  static_files=os.path.join(root, 'public'),
-                 templates=[os.path.join(root, 'templates')])
+                 templates=template_paths)
 
     # Initialize config with the basic options
     config.init_app(global_conf, app_conf, package='baruwa', paths=paths)
@@ -54,11 +64,10 @@ def load_environment(global_conf, app_conf):
     config['routes.map'] = make_map(config)
     config['pylons.app_globals'] = app_globals.Globals(config)
     config['pylons.h'] = baruwa.lib.helpers
-    
+
     # Setup cache object as early as possible
     import pylons
     pylons.cache._push_object(config['pylons.app_globals'].cache)
-    
 
     # Create the Mako TemplateLookup, with the default auto-escaping
     config['pylons.app_globals'].mako_lookup = TemplateLookup(
@@ -73,12 +82,13 @@ def load_environment(global_conf, app_conf):
     if surl.startswith('mysql'):
         conv = conversions.copy()
         conv[246] = float
-        engine = create_engine(surl, pool_recycle=1800, connect_args=dict(conv=conv))
+        engine = create_engine(surl, pool_recycle=1800,
+                    connect_args=dict(conv=conv))
     else:
         engine = engine_from_config(config, 'sqlalchemy.', poolclass=NullPool)
     init_model(engine)
 
     # CONFIGURATION OPTIONS HERE (note: all config options will override
     # any Pylons config options)
-    
+
     return config

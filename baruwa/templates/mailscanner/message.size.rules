@@ -1,0 +1,10 @@
+% for domain in domains:
+FromOrTo:	*@${domain.name}	${domain.message_size}
+% for alias in domain.aliases:
+% if alias.status:
+FromOrTo:	*@${alias.name}	${domain.message_size}
+% endif
+% endfor
+% endfor
+# Default rule
+FromOrTo:	default	0

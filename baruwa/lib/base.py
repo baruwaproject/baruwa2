@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # vim: ai ts=4 sts=4 et sw=4
 # Baruwa - Web 2.0 MailScanner front-end.
-# Copyright (C) 2010-2012  Andrew Colin Kissa <andrew@topdog.za.net>
+# Copyright (C) 2010-2015  Andrew Colin Kissa <andrew@topdog.za.net>
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -21,17 +21,19 @@
 Provides the BaseController class for subclassing.
 """
 
-from pytz import timezone
+import os
+
 from babel.util import UTC
-from pylons import tmpl_context as c
 from pylons import request, session, config
+from pylons import tmpl_context as c
 from pylons.i18n.translation import set_lang
 from pylons.controllers import WSGIController
-from pylons.templating import render_mako as render  # noqa
 from sqlalchemy.orm.exc import NoResultFound
+from pylons.templating import render_mako as render
 from sqlalchemy.orm import joinedload_all, joinedload
 
 from baruwa.model.meta import Session
+from baruwa.lib.dates import make_tz
 from baruwa.lib.misc import check_language
 from baruwa.lib.cluster import cluster_status
 from baruwa.lib.query import DailyTotals, MailQueue
@@ -41,9 +43,24 @@ from baruwa.model.accounts import User
 
 
 class BaseController(WSGIController):
-
+    "Parent for all the controllers"
     def __before__(self):
         "before"
+        if 'theme' not in session:
+            session['theme'] = ''
+            basedir = config.get('baruwa.themes.base', None)
+            if basedir:
+                # Default theme
+                defaultdir = os.path.join(basedir, 'templates', 'default')
+                if os.path.exists(defaultdir):
+                    session['theme'] = 'default'
+                # Host theme
+                themedir = os.path.join(basedir, 'templates',
+                            request.server_name)
+                if os.path.exists(themedir):
+                    session['theme'] = request.server_name
+            session.save()
+        self.theme = session.get('theme')
         if 'lang' in session:
             set_lang(session['lang'])
         else:
@@ -57,12 +74,14 @@ class BaseController(WSGIController):
                     set_lang([default_lang])
                 else:
                     set_lang(['en'])
+        # pylint: disable-msg=W0201
         self.invalidate = request.GET.get('uc', None)
         self.langchange = request.GET.get('lc', None)
 
     def __call__(self, environ, start_response):
         """Invoke the Controller"""
         def check_url():
+            "check if user should have totals calculated"
             if ('format' in environ['pylons.routes_dict'] and
                 environ['pylons.routes_dict']['format'] in ['csv', 'pdf']):
                 return False
@@ -71,11 +90,7 @@ class BaseController(WSGIController):
             return True
 
         self.identity = environ.get('repoze.who.identity')
-        # raise ValueError(self.identity)
-        # if 'baruwa.auth.plugin' in self.identity:
-        #     session['baruwa.auth.plugin'] = self.identity['baruwa.auth.plugin']
-        #     session.save()
-        if (not self.identity is None and 'user' in self.identity and
+        if (self.identity is not None and 'user' in self.identity and
             environ['pylons.routes_dict']['controller'] != 'error' and
             check_url()):
 
@@ -89,10 +104,7 @@ class BaseController(WSGIController):
                     c.baruwa_status = cluster_status()
 
                 tzinfo = self.identity['user'].timezone or UTC
-                if isinstance(tzinfo, basestring):
-                    tzinfo = timezone(tzinfo)
-
-                c.tzinfo = tzinfo
+                c.tzinfo = make_tz(tzinfo)
         try:
             return WSGIController.__call__(self, environ, start_response)
         finally:
@@ -102,14 +114,14 @@ class BaseController(WSGIController):
         "utility to return domain"
         try:
             cachekey = 'domain-%s' % domainid
-            q = Session.query(Domain).filter(Domain.id == domainid)\
+            qry = Session.query(Domain).filter(Domain.id == domainid)\
                     .options(joinedload_all(Domain.servers),
                             joinedload_all(Domain.aliases),
                             joinedload_all(Domain.authservers))\
                     .options(FromCache('sql_cache_med', cachekey))
             if self.invalidate:
-                q.invalidate()
-            domain = q.one()
+                qry.invalidate()
+            domain = qry.one()
         except NoResultFound:
             domain = None
         return domain
@@ -118,12 +130,16 @@ class BaseController(WSGIController):
         "utility to return user"
         try:
             cachekey = 'user-%s' % userid
-            q = Session.query(User).filter(User.id == userid)\
+            qry = Session.query(User).filter(User.id == userid)\
                     .options(joinedload('addresses'))\
                     .options(FromCache('sql_cache_med', cachekey))
             if self.invalidate:
-                q.invalidate()
-            user = q.one()
+                qry.invalidate()
+            user = qry.one()
         except NoResultFound:
             user = None
         return user
+
+    def render(self, template, **kwargs):
+        "utility to render pages with theme support"
+        return render(template, self.theme, **kwargs)

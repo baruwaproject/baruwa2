@@ -8,7 +8,7 @@
 <%
 value = 'white'
 if (msg.spam and not msg.highspam and not msg.blacklisted
-	and not msg.nameinfected and not msg.otherinfected 
+	and not msg.nameinfected and not msg.otherinfected
 	and not msg.virusinfected):
 	value = 'spam'
 if msg.highspam and (not msg.blacklisted):
@@ -20,24 +20,23 @@ if msg.blacklisted:
 if msg.nameinfected or msg.virusinfected or msg.otherinfected:
     value = 'infected'
 if not msg.scaned:
-       value = 'gray'
-view_url = url(route, id=msg.id)
-#view_url = url(controller='messages', action='detail', id=msg.id)
+       value = 'notscanned'
+view_url = url(route, msgid=msg.id)
 
-if (msg.spam and (not msg.blacklisted) 
-	and (not msg.virusinfected) 
-	and (not msg.nameinfected) 
+if (msg.spam and (not msg.blacklisted)
+	and (not msg.virusinfected)
+	and (not msg.nameinfected)
 	and (not msg.otherinfected)):
        status = _('Spam')
 if msg.blacklisted:
        status = _('BS')
-if (msg.virusinfected or 
-       msg.nameinfected or 
+if (msg.virusinfected or
+       msg.nameinfected or
        msg.otherinfected):
        status = _('Infected')
-if ((not msg.spam) and (not msg.virusinfected) 
-       and (not msg.nameinfected) 
-       and (not msg.otherinfected) 
+if ((not msg.spam) and (not msg.virusinfected)
+       and (not msg.nameinfected)
+       and (not msg.otherinfected)
        and (not msg.whitelisted)):
        status = _('Clean')
 if msg.whitelisted:
@@ -50,24 +49,26 @@ else:
 	from_addr =  msg.from_address
 %>
 % if isqtne:
-<tr class="${value}_row">
+% if index < len(ids):
+<tr class="${value}">
 	<td class="select_row">${ids[index]}</td>
-	<td class="date_td">${h.link_to(h.datetimeformat(h.format_date(msg.timestamp, c.tzinfo), format='%Y-%m-%d %H:%M:%S'), view_url)}</td>
-	<td class="from_row">${h.link_to(h.wrap_paragraphs(from_addr,32), view_url)}</td>
-	<td class="to_row">${h.link_to(h.wrap_paragraphs(msg.to_address or '---', 32), view_url)}</td>
+	<td class="date_td hidden-phone">${h.link_to(h.datetimeformat(h.format_date(msg.timestamp, c.tzinfo), format='%Y-%m-%d %H:%M:%S'), view_url)}</td>
+	<td class="from_row hidden-phone">${h.link_to(h.wrap_paragraphs(from_addr, 25), view_url)}</td>
+	<td class="to_row hidden-phone hidden-tablet">${h.link_to(h.wrap_paragraphs(msg.to_address or '---', 25), view_url)}</td>
 	<td class="subject_row">${h.link_to(h.truncate((msg.subject and msg.subject.strip()) or '---', 50), view_url)}</td>
-	<td class="score_row">${h.link_to(msg.sascore, view_url)}</td>
-	<td class="status_row">${h.link_to(status, view_url)}</td>                        
+	<td class="score_row hidden-phone">${h.link_to(msg.sascore, view_url)}</td>
+	<td class="status_row hidden-phone">${h.link_to(status, view_url)}</td>
 </tr>
+% endif
 % else:
-<tr class="${value}_row">
-	<td class="date_td">${h.link_to(h.datetimeformat(h.format_date(msg.timestamp, c.tzinfo), format='%Y-%m-%d %H:%M:%S'), view_url)}</td>
-	<td class="from_td">${h.link_to(h.wrap_paragraphs(from_addr,32), view_url)}</td>
-	<td class="to_td">${h.link_to(h.wrap_paragraphs(msg.to_address or '---', 32), view_url)}</td>
+<tr class="${value}">
+	<td class="date_td hidden-phone">${h.link_to(h.datetimeformat(h.format_date(msg.timestamp, c.tzinfo), format='%Y-%m-%d %H:%M:%S'), view_url)}</td>
+	<td class="from_td hidden-phone">${h.link_to(h.wrap_paragraphs(from_addr, 25), view_url)}</td>
+	<td class="to_td hidden-phone hidden-tablet">${h.link_to(h.wrap_paragraphs(msg.to_address or '---', 25), view_url)}</td>
 	<td class="subject_td">${h.link_to(h.truncate((msg.subject and msg.subject.strip()) or '---', 50), view_url)}</td>
-	<td class="size_td">${h.link_to(h.format_byte_size(msg.size), view_url)}</td>
-	<td class="score_td">${h.link_to(msg.sascore, view_url)}</td>
-	<td class="status_td">${h.link_to(status, view_url)}</td>                        
+	<td class="size_td hidden-phone">${h.link_to(h.format_byte_size(msg.size), view_url)}</td>
+	<td class="score_td hidden-phone">${h.link_to(msg.sascore, view_url)}</td>
+	<td class="status_td hidden-phone">${h.link_to(status, view_url)}</td>
 </tr>
 % endif
 % endfor
@@ -81,24 +82,24 @@ else:
 
 <%def name="grid_heading(action, isqtne=None)">
 <thead>
-<tr class="grid">
+<tr>
 % if isqtne:
     <th class="selector_heading"><input type="checkbox" name="selector" id="allchecker" /></th>
-	<th class="qdate_heading">
+	<th class="qdate_heading hidden-phone">
 %	if c.order_by == 'timestamp':
 		${_('Date/Time')}&nbsp;${self.sorter(action)}
 %	else:
 		${self.heading_links(_('Date/Time'), 'timestamp', action)}\
 %	endif
 	</th>
-	<th class="from_heading">
+	<th class="from_heading hidden-phone">
 %	if c.order_by == 'from_address':
 		${_('From')}&nbsp;${self.sorter(action)}
 %	else:
 		${self.heading_links(_('From'), 'from_address', action)}
 %	endif
 	</th>
-	<th class="to_heading">
+	<th class="to_heading hidden-phone hidden-tablet">
 %	if c.order_by == 'to_address':
 		${_('To')}&nbsp;${self.sorter(action)}
 %	else:
@@ -112,32 +113,32 @@ else:
 		${self.heading_links(_('Subject'), 'subject', action)}
 %	endif
 	</th>
-	<th class="score_heading">
+	<th class="score_heading hidden-phone">
 %	if c.order_by == 'sascore':
 		${_('Score')}&nbsp;${self.sorter(action)}
 %	else:
 		${self.heading_links(_('Score'), 'sascore', action)}
 %	endif
 	</th>
-	<th class="status_heading">
+	<th class="status_heading hidden-phone">
 		${_('Status')}
 	</th>
 % else:
-	<th class="date_heading">
+	<th class="date_heading hidden-phone">
 %	if c.order_by == 'timestamp':
 		${_('Date/Time')}&nbsp;${self.sorter(action)}
 %	else:
 		${self.heading_links(_('Date/Time'), 'timestamp', action)}
 %	endif
 	</th>
-	<th class="from_heading">
+	<th class="from_heading hidden-phone">
 %	if c.order_by == 'from_address':
 		${_('From')}&nbsp;${self.sorter(action)}
 %	else:
 		${self.heading_links(_('From'), 'from_address', action)}
 %	endif
 	</th>
-	<th class="to_heading">
+	<th class="to_heading hidden-phone hidden-tablet">
 %	if c.order_by == 'to_address':
 		${_('To')}&nbsp;${self.sorter(action)}
 %	else:
@@ -151,21 +152,21 @@ else:
 		${self.heading_links(_('Subject'), 'subject', action)}
 %	endif
 	</th>
-	<th class="size_heading">
+	<th class="size_heading hidden-phone">
 %	if c.order_by == 'size':
 		${_('Size')}&nbsp;${self.sorter(action)}
 %	else:
 		${self.heading_links(_('Size'), 'size', action)}
 %	endif
 	</th>
-	<th class="score_heading">
+	<th class="score_heading hidden-phone">
 %	if c.order_by == 'sascore':
 		${_('Score')}&nbsp;${self.sorter(action)}
 %	else:
 		${self.heading_links(_('Score'), 'sascore', action)}
 %	endif
 	</th>
-	<th class="status_heading">
+	<th class="status_heading hidden-phone">
 		${_('Status')}
 	</th>
 % endif
@@ -176,18 +177,18 @@ else:
 <%def name="sorter(action)">\
 % if c.direction == 'dsc':
   % if hasattr(c, 'section') and c.section:
-      ${h.link_to(h.literal('&uarr;'), url('messages-qtn-paging', action=action, 
+      ${h.link_to(h.literal('&uarr;'), url('messages-qtn-paging', action=action,
       page=c.page.page, direction='asc', order_by=c.order_by, section=c.section))}
   % else:
-      ${h.link_to(h.literal('&uarr;'), url('messages-paging', action=action, 
+      ${h.link_to(h.literal('&uarr;'), url('messages-paging', action=action,
       page=c.page.page, direction='asc', order_by=c.order_by))}
   % endif
 % else:
   % if hasattr(c, 'section') and c.section:
-      ${h.link_to(h.literal('&darr;'), url('messages-qtn-paging', action=action, 
+      ${h.link_to(h.literal('&darr;'), url('messages-qtn-paging', action=action,
       page=c.page.page, direction='dsc', order_by=c.order_by, section=c.section))}
   % else:
-      ${h.link_to(h.literal('&darr;'), url('messages-paging', action=action, 
+      ${h.link_to(h.literal('&darr;'), url('messages-paging', action=action,
       page=c.page.page, direction='dsc', order_by=c.order_by))}
   % endif
 % endif
@@ -221,11 +222,11 @@ ${_('per page')}
 % if c.page.next_page != c.page.first_page and c.page.page != c.page.first_page:
 <span>
 % if hasattr(c, 'section') and c.section:
-  ${h.link_to(h.pager_img('first'), 
+  ${h.link_to(h.literal('<i class="icon-double-angle-left"></i>'),
   url('messages-qtn-paging', action=action, page=c.page.first_page, direction=c.direction,
   order_by=c.order_by, section=c.section))}
 % else:
-  ${h.link_to(h.pager_img('first'), 
+  ${h.link_to(h.literal('<i class="icon-double-angle-left"></i>'),
   url('messages-paging', action=action, page=c.page.first_page, direction=c.direction,
   order_by=c.order_by))}
 % endif
@@ -235,12 +236,12 @@ ${_('per page')}
 % if c.page.previous_page:
 <span>
 % if hasattr(c, 'section') and c.section:
-  ${h.link_to(h.pager_img('previous'), 
+  ${h.link_to(h.literal('<i class="icon-angle-left"></i>'),
   url('messages-qtn-paging', action=action, page=c.page.previous_page, direction=c.direction,
   order_by=c.order_by, section=c.section))}
 % else:
-  ${h.link_to(h.pager_img('previous'), 
-  url('messages-paging', action=action, page=c.page.previous_page, 
+  ${h.link_to(h.literal('<i class="icon-angle-left"></i>'),
+  url('messages-paging', action=action, page=c.page.previous_page,
   direction=c.direction, order_by=c.order_by))}
 % endif
 </span>
@@ -254,7 +255,7 @@ ${_('per page')}
   ${h.link_to(h.literal(linkpage), url('messages-qtn-paging', action=action, page=linkpage,
   direction=c.direction, order_by=c.order_by, section=c.section))}
 % else:
-  ${h.link_to(h.literal(linkpage), url('messages-paging', action=action, 
+  ${h.link_to(h.literal(linkpage), url('messages-paging', action=action,
   page=linkpage, direction=c.direction, order_by=c.order_by))}
 % endif
 </span>
@@ -263,12 +264,12 @@ ${_('per page')}
 % if c.page.next_page:
 <span>
 % if hasattr(c, 'section') and c.section:
-  ${h.link_to(h.pager_img('next'), 
+  ${h.link_to(h.literal('<i class="icon-angle-right"></i>'),
   url('messages-qtn-paging', action=action, page=c.page.next_page, direction=c.direction,
   order_by=c.order_by, section=c.section))}
 % else:
-  ${h.link_to(h.pager_img('next'), 
-  url('messages-paging', action=action, page=c.page.next_page, 
+  ${h.link_to(h.literal('<i class="icon-angle-right"></i>'),
+  url('messages-paging', action=action, page=c.page.next_page,
   direction=c.direction, order_by=c.order_by))}
 % endif
 </span>
@@ -277,10 +278,10 @@ ${_('per page')}
 <span>...</span>
 <span>
 % if hasattr(c, 'section') and c.section:
-  ${h.link_to(h.pager_img('last'), url('messages-qtn-paging', action=action,
+  ${h.link_to(h.literal('<i class="icon-double-angle-right"></i>'), url('messages-qtn-paging', action=action,
   page=c.page.page_count, direction=c.direction, order_by=c.order_by, section=c.section))}
 % else:
-  ${h.link_to(h.pager_img('last'), url('messages-paging', action=action,
+  ${h.link_to(h.literal('<i class="icon-double-angle-right"></i>'), url('messages-paging', action=action,
   page=c.page.page_count, direction=c.direction, order_by=c.order_by))}
 % endif
 </span>
@@ -292,21 +293,38 @@ ${_('per page')}
 % endif
 </%def>
 <%def name="search(action, q=None)">
-<div class="alpos">
-	<div class="toolbar">
+<div class="row-fluid">
+	<div class="span1 hidden-phone"></div>
+	<div class="span10 toolbar">
 		${h.form(url(controller='messages', action='search'), method='get', id='msgsearch')}
-		<div class="grid_16 alpha omega">
+		<div class="row-fluid">
 			% if q:
-			<div class="grid_4" id="searchinfo">${_('About %(n)s results (%(t)s seconds)') % dict(n=c.total_found, t=c.search_time)}</div>
-			<div class="grid_8"><div class="toright"><input type="text" size="65" name="q" id="q" value="${c.page['q']}" /></div></div>
+			<div class="span3" id="searchinfo">${_('About %(n)s results (%(t)s seconds)') % dict(n=c.total_found, t=c.search_time)}</div>
+			<div class="span6"><div class="toright"><input type="text" class="input-block-level" name="q" id="q" value="${c.page['q']}" /></div></div>
 			% else:
-			<div class="grid_4" id="searchinfo">&nbsp;</div>
-			<div class="grid_8"><div class="toright"><input type="text" size="65" name="q" id="q" /></div></div>
+			<div class="span3 hidden-phone" id="searchinfo">&nbsp;</div>
+			<div class="span6"><div class="toright"><input type="text" class="input-block-level" name="q" id="q" placeholder="Search messages" /></div></div>
 			% endif
-			<div class="grid_3"><input type="submit" value="${_('Search')}" /></div>
+			<div class="span3 hidden-phone"><button class="btn btn-small btn-success"><i class="icon-search"></i> ${_('Search')}</button></div>
 		</div>
 		<div style="display: none;"><input type="hidden" id="a" name="a" value="${action}" /></div>
 		${h.end_form()}
 	</div>
+	<div class="span1 hidden-phone"></div>
 </div>
 </%def>
+<%def name="yes_no(state)">
+% if state:
+<span class="label label-important">Y</span>
+% else:
+<span class="label label-success">N</span>
+% endif
+</%def>
+<%def name="spam_actions(msg, spam_type)">
+% if spam_type == 1:
+${yes_no(msg.spam)}
+% else:
+${yes_no(msg.highspam)}
+% endif
+</%def>
+

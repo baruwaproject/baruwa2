@@ -1,18 +1,18 @@
 # -*- coding: utf-8 -*-
 # vim: ai ts=4 sts=4 et sw=4
 # Baruwa - Web 2.0 MailScanner front-end.
-# Copyright (C) 2010-2012  Andrew Colin Kissa <andrew@topdog.za.net>
+# Copyright (C) 2010-2015  Andrew Colin Kissa <andrew@topdog.za.net>
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation, either version 3 of the License, or
 # (at your option) any later version.
-# 
+#
 # This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License for more details.
-# 
+#
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
@@ -65,8 +65,7 @@ class BasePasterCommand(Command):
         Checks for a config file argument and loads it.
         """
         if len(args) < self.min_args:
-            raise BadCommand(
-               self.min_args_error % {'min_args': self.min_args,
+            raise BadCommand(self.min_args_error % {'min_args': self.min_args,
                                       'actual_args': len(args)})
 
         # Decrement because we're going to lob off the first argument.
@@ -74,7 +73,8 @@ class BasePasterCommand(Command):
         self.min_args -= 1
         self.bootstrap_config(args[0])
         self.update_parser()
-        return super(BasePasterCommand, self).run(args[1:])
+        return Command.run(self, args[1:])
+        # return super(BasePasterCommand, self).run(args[1:])
 
     def update_parser(self):
         """
@@ -118,6 +118,7 @@ class CeleryCommand(BasePasterCommand):
         cmd = self.celery_command(app_or_default())
         return cmd.run(**vars(self.options))
 
+
 class CeleryDaemonCommand(CeleryCommand):
     """Start the celery worker
 
@@ -157,6 +158,7 @@ class CAMQPAdminCommand(CeleryCommand):
 
     parser = Command.standard_parser(quiet=True)
     celery_command = camqadm.AMQPAdminCommand
+
 
 class CeleryEventCommand(CeleryCommand):
     """Celery event command.

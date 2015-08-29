@@ -1,3 +1,12 @@
+###!
+ * Baruwa Enterprise Edition
+ * http://www.baruwa.com
+ *
+ * Copyright (c) 2013-2015 Andrew Colin Kissa
+ *
+ *
+###
+
 $ = jQuery
 exports = this
 exports.setitems_url = setitems_url
@@ -13,14 +22,14 @@ pagination = (data) ->
         #data['action'] = action
         if data.next_page != data.first_page and data.page != data.first_page
             if data.orgid
-                rows.push '<span><a href="/accounts/byorg/{{orgid}}/{{first_page}}"><img src="{{media_url}}/imgs/first_pager.png" alt="first" title="first" /></a></span><span>...</span>'
+                rows.push '<span><a href="/accounts/byorg/{{orgid}}/{{first_page}}"><i class="icon-double-angle-left"></i></a></span><span>...</span>'
             else
-                rows.push '<span><a href="/accounts/{{first_page}}"><img src="{{media_url}}/imgs/first_pager.png" alt="first" title="first" /></a></span><span>...</span>'
+                rows.push '<span><a href="/accounts/{{first_page}}"><i class="icon-double-angle-left"></i></a></span><span>...</span>'
         if data.previous_page
             if data.orgid
-                rows.push '<span><a href="/accounts/byorg/{{orgid}}/{{previous_page}}"><img src="{{media_url}}/imgs/previous_pager.png" alt="prev" title="prev" /></a></span>'
+                rows.push '<span><a href="/accounts/byorg/{{orgid}}/{{previous_page}}"><i class="icon-angle-left"></i></a></span>'
             else
-                rows.push '<span><a href="/accounts/{{previous_page}}"><img src="{{media_url}}/imgs/previous_pager.png" alt="prev" title="prev" /></a></span>'
+                rows.push '<span><a href="/accounts/{{previous_page}}"><i class="icon-angle-left"></i></a></span>'
         for linkpage in data.page_nums
             if linkpage == data.page
                 rows.push '<span class="curpage">{{page}}</span>'
@@ -31,14 +40,14 @@ pagination = (data) ->
                     rows.push '<span><a href="/accounts/'+linkpage+'">'+linkpage+'</a></span>'
         if data.next_page
             if data.orgid
-                rows.push '<span><a href="/accounts/byorg/{{orgid}}/{{next_page}}"><img src="{{media_url}}/imgs/next_pager.png" alt="next" title="next" /></a></span>'
+                rows.push '<span><a href="/accounts/byorg/{{orgid}}/{{next_page}}"><i class="icon-angle-right"></i></a></span>'
             else
-                rows.push '<span><a href="/accounts/{{next_page}}"><img src="{{media_url}}/imgs/next_pager.png" alt="next" title="next" /></a></span>'
+                rows.push '<span><a href="/accounts/{{next_page}}"><i class="icon-angle-right"></i></a></span>'
         if data.next_page != data.page_count and data.page != data.page_count and data.page_count != 0
             if data.orgid
-                rows.push '<span>...</span><span><a href="/accounts/byorg/{{orgid}}/{{last_page}}"><img src="{{media_url}}/imgs/last_pager.png" alt="last" title="last" /></a></span>'
+                rows.push '<span>...</span><span><a href="/accounts/byorg/{{orgid}}/{{last_page}}"><i class="icon-double-angle-right"></i></a></span>'
             else
-                rows.push '<span>...</span><span><a href="/accounts/{{last_page}}"><img src="{{media_url}}/imgs/last_pager.png" alt="last" title="last" /></a></span>'
+                rows.push '<span>...</span><span><a href="/accounts/{{last_page}}"><i class="icon-double-angle-right"></i></a></span>'
         tmpl = rows.join '\n'
         html = $.mustache tmpl, data
     else
@@ -54,18 +63,33 @@ ajaxify = (e, url) ->
 
 
 buildpage = (data) ->
-    row = '<tr id="account-id-{{id}}"><td class="domains_check"><input type="checkbox" name="accountid" value="{{id}}" class="selector" /></td>' +
-        '<td class="users_hash"><a href="/accounts/detail/{{id}}"><img src="{{media_url}}{{userimg}}" alt="view" /></a></td>' +
-        '<td class="users_username"><a href="/accounts/detail/{{id}}">{{username}}</a></td>' +
-        '<td class="users_fullname"><a href="/accounts/detail/{{id}}">{{fullname}}</a></td>' +
-        '<td class="users_email"><a href="/accounts/detail/{{id}}">{{email}}</a></td>' +
-        '<td class="users_status"><img src="{{media_url}}{{statusimg}}" alt="" /></td><td class="users_settings"><img src="{{media_url}}imgs/cog.png" alt="Settings"></td>' +
-        '<td class="users_edit"><a href="/accounts/edit/{{id}}"><img src="{{media_url}}imgs/edit.png" alt="Edit"></a></td>' +
-        '<td class="users_delete"><a href="/accounts/delete/{{id}}"><img src="{{media_url}}imgs/action_delete.png" alt="Delete"></a></td></tr>'
+    row = '<tr id="account-id-{{id}}"><td><input type="checkbox" name="accountid" value="{{id}}" class="selector" /></td>' +
+        '<td><a href="/accounts/detail/{{id}}"><i class="icon-user {{color}}"></i></a></td>' +
+        '<td><a href="/accounts/detail/{{id}}">{{username}}</a></td>' +
+        '<td class="hidden-phone"><a href="/accounts/detail/{{id}}">{{fullname}}</a></td>' +
+        '<td class="hidden-phone"><a href="/accounts/detail/{{id}}">{{email}}</a></td>' +
+        '<td class="hidden-phone"><i class="icon-{{status}} {{statuscolor}}"></i></td>' +
+        '<td><a href="/accounts/edit/{{id}}"><i class="icon-cog blue"></i></a></td>' +
+        '<td><a href="/accounts/delete/{{id}}"><i class="icon-remove red"></i></a></td></tr>'
     if data.items
         rows = []
         $.each data.items, (i,n) ->
             n['media_url'] = exports.media_url
+            if n['userimg'] == 'imgs/user_admin.png'
+                icon = 'red'
+            if n['userimg'] == 'imgs/user_dadmin.png'
+                icon = 'green'
+            if n['userimg'] == 'imgs/user.png'
+                icon = 'blue'
+            n['color'] = icon
+            if n['statusimg'] == 'imgs/tick.png'
+                status = 'ok'
+                statuscolor = 'green'
+            if n['statusimg'] == 'imgs/minus.png'
+                status = 'minus'
+                statuscolor = 'red'
+            n['status'] = status
+            n['statuscolor'] = statuscolor
             html = $.mustache row, n
             rows.push html
         replacement = rows.join ''
@@ -85,7 +109,7 @@ buildpage = (data) ->
         $('div.limiter').hide()
     $('div.toolbar p').html pages_html
     $('#title').html title_html
-    $.address.title '.:. Baruwa :: ' + title_html
+    $.address.title '.:. ' + exports.baruwa_custom_name + ' :: ' + title_html
     $('div.pages a').click((e)->
         url = $(this).attr('href') + '.json'
         ajaxify(e, url)
@@ -126,8 +150,8 @@ $(document).ready ->
         exports.inprogress = false
         $('#shield').hide()
         if $(window).scrollTop()
-            $('html,body').animate 
-                scrollTop: $("#header-bar").offset().top, 1500
+            $('html,body').animate
+                scrollTop: $("#wrap").offset().top, 1500
     ).ajaxSuccess(->
         if $('#alertmsg').length
             $('#alertmsg').empty()
@@ -146,3 +170,5 @@ $(document).ready ->
         location.href = "#{exports.setitems_url}?n=#{n}"
     )
     1
+
+

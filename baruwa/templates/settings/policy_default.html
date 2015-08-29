@@ -1,0 +1,62 @@
+<div class="row-fluid">
+	<div class="span1 hidden-phone"></div>
+	<div class="span10">
+		<table class="table table-bordered">
+		<thead>
+		<tr>
+			<th>${_('Rule Pattern')}</th>
+			<th>${_('Rule Description')}</th>
+			<th>${_('Rule Action')}</th>
+			<th>${_('Rule Options')}</th>
+			<th class="hidden-phone">${_('Enabled')}</th>
+		</tr>
+		</thead>
+		<tbody>
+		% if not c.rules:
+		<tr><td colspan="5" class="text-center">${_('The policy does not have any rules yet.')}</td></tr>
+		% endif
+		% for rule in c.rules:
+		<tr>
+			<td>${rule['expression']}</td>
+			<td>${rule['logtext']}</td>
+			<td>${rule['action']}</td>
+			<td>${rule['options']}</td>
+			<td class="hidden-phone">
+				<i class="icon-ok green" title="${_("Enabled")}"></i>
+			</td>
+		</tr>
+		% endfor
+		</tbody>
+		</table>
+	</div>
+	<div class="span1 hidden-phone"></div>
+</div>
+
+<%def name="title()">
+${_('Settings :: Content Protection :: %(policy)s :: Default') % dict(policy=c.policy_name)}
+</%def>
+
+<%def name="heading()">
+${_('Settings :: Content Protection :: %(policy)s :: Default') % dict(policy=c.policy_name)}
+</%def>
+
+<%def name="headers()">
+</%def>
+
+<%def name="submenu()">
+<div class="navbar navbar-static-top">
+    <div class="navbar-inner">
+        <div class="nav-collapse collapse">
+            <ul class="nav navbar-nav">
+				<li class="nav_item">${h.link_to(_('Content Protection'), url('settings-rulesets'))}</li>
+                <li class="nav_item">${h.link_to(c.policy_name, url(c.POLICY_URL_MAP[str(c.policy_type)]))}</li>
+            </ul>
+        </div>
+    </div>
+</div>
+</%def>
+
+<%def name="localscripts()">
+</%def>
+<%namespace name="functions" file="../includes/functions.html"/>
+<%inherit file="../base.html"/>

@@ -1,13 +1,19 @@
 <%
+from urlparse import urlparse
+from webhelpers.text import wrap_paragraphs
 from baruwa.lib.misc import _
+from baruwa.lib.templates.helpers import datetimeformat, format_date
+from baruwa import __version__ as baruwaversion
 spam = [item for item in messages if item.spam]
 policy = [item for item in messages if not item.spam]
+hosturl = config.get('baruwa.default.url', 'http://localhost')
+host_parts = urlparse(str(hosturl))
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Baruwa Quarantine report</title>
+<title>${config.get('baruwa.custom.name', 'Baruwa')} Quarantine report</title>
 <style type="text/css">
 #outlook a{padding:0}body{width:100% !important}.ReadMsgBody,.ExternalClass{width:100%}body{-webkit-text-size-adjust:none;margin:0;padding:0}img{border:0;height:auto;line-height:100%;outline:none;text-decoration:none}table td{border-collapse:collapse}#backgroundTable{height:100% !important;margin:0;padding:0;width:100% !important}body,#backgroundTable{background-color:#E5E5E5}#templateContainer{border:0}h1,.h1{color:#4188D2;display:block;font-family:Arial;font-size:30px;font-weight:bold;line-height:100%;margin-top:2%;margin-right:0;margin-bottom:1%;margin-left:0;text-align:left}h2,.h2{color:#404040;display:block;font-family:Arial;font-size:18px;font-weight:bold;line-height:100%;margin-top:2%;margin-right:0;margin-bottom:1%;margin-left:0;text-align:left}h3,.h3{color:#606060;display:block;font-family:Arial;font-size:16px;font-weight:bold;line-height:100%;margin-top:2%;margin-right:0;margin-bottom:1%;margin-left:0;text-align:left}h4,.h4{color:#808080;display:block;font-family:Arial;font-size:14px;font-weight:bold;line-height:100%;margin-top:2%;margin-right:0;margin-bottom:1%;margin-left:0;text-align:left}#templatePreheader{background-color:#FAFAFA}.preheaderContent div{color:#707070;font-family:Arial;font-size:10px;line-height:100%;text-align:left}.preheaderContent div a:link,.preheaderContent div a:visited,.preheaderContent div a .yshortcuts{color:#336699;font-weight:normal;text-decoration:underline}#social div{text-align:right}#templateHeader{background-color:#FFFFFF;border-bottom:5px solid #505050}.headerContent{color:#202020;font-family:Arial;font-size:34px;font-weight:bold;line-height:100%;padding:10px;text-align:right;vertical-align:middle}.headerContent a:link,.headerContent a:visited,.headerContent a .yshortcuts{color:#336699;font-weight:normal;text-decoration:underline}#headerImage{height:auto;max-width:600px !important}#templateContainer{background-color:#FDFDFD}.bodyContent{background-color:#FDFDFD}.bodyContent div{color:#505050;font-family:Arial;font-size:12px;line-height:150%;text-align:justify}.bodyContent div a:link,.bodyContent div a:visited,.bodyContent div a .yshortcuts{color:#336699;font-weight:normal;text-decoration:underline}.bodyContent img{display:inline;height:auto}.message_row{border-bottom:1px dashed #000000}#templateFooter{background-color:#FAFAFA;border-top:3px solid #909090}.footerContent div{color:#707070;font-family:Arial;font-size:11px;line-height:125%;text-align:left}.footerContent div a:link,.footerContent div a:visited,.footerContent div a .yshortcuts{color:#336699;font-weight:normal;text-decoration:underline}.footerContent img{display:inline}#social{background-color:#FFFFFF;border:0}#social div{text-align:left}#utility{background-color:#FAFAFA;border-top:0}#utility div{text-align:left}#monkeyRewards img{max-width:170px !important}
 </style>
@@ -23,11 +29,11 @@ policy = [item for item in messages if not item.spam]
 <table border="0" cellpadding="10" cellspacing="0" width="100%">
 <tr>
 <td valign="top">
-<div>Baruwa Quarantine report</div>
+<div>${config.get('baruwa.custom.name', 'Baruwa')} Quarantine report</div>
 </td>
 <td valign="top" width="170">
 <div>
-Want to access the full quarantine ?<br /><a href="${default_url}" target="_blank">View it online</a>.
+Want to access the full quarantine ?<br /><a href="${config.get('baruwa.default.url', 'http://localhost')}" target="_blank">View it online</a>.
 </div>
 </td>
 </tr>
@@ -44,7 +50,7 @@ Want to access the full quarantine ?<br /><a href="${default_url}" target="_blan
 <div><h1>Quarantine Report</h1></div>
 </td>
 <td class="headerContent">
-<img src="cid:logo.png" style="max-width:180px;" id="baruwa-logo" alt="Baruwa" />
+<img src="cid:logo.png" style="max-width:180px;" id="baruwa-logo" alt="${config.get('baruwa.custom.name', 'Baruwa')}" />
 </td>
 </tr>
 </table>
@@ -70,20 +76,19 @@ Want to access the full quarantine ?<br /><a href="${default_url}" target="_blan
 	if item.to_domain in host_urls:
 		host = host_urls[item.to_domain]
 	else:
-		host = default_url
-	protocol = str(host.split('://')[0])
-	host = str(host.split('://')[1])
+		host = config.get('baruwa.default.url', 'http://localhost')
+	hurl = urlparse(str(host))
 %>
 <tr class="message_row">
-<td><div>${item.timestamp}</div></td>
-<td><div>${item.from_address}</div></td>
-<td><div>${item.subject}</div></td>
+<td><div>${datetimeformat(format_date(item.timestamp, tzinfo), format='%Y-%m-%d %H:%M:%S')}</div></td>
+<td><div>${'' if item.from_address is None else wrap_paragraphs(item.from_address, 25)}</div></td>
+<td><div>${'' if item.subject is None else wrap_paragraphs(item.subject, 35)}</div></td>
 <td>
 <div>
 % if hasattr(item, 'uuid'):
-<a style="text-decoration:none;color:#336699;" href="${url('message-autorelease', uuid=item.uuid, host=host, protocol=protocol)}">${_('Release')}</a>
+<a style="text-decoration:none;color:#336699;" href="${url('message-autorelease', uuid=item.uuid, host=hurl.netloc, protocol=hurl.scheme)}">${_('Release')}</a>
 % else:
-<a style="text-decoration:none;color:#336699;" href="${url(controller='messages', action='detail', id=item.id, host=host, protocol=protocol)}">${_('Release')}</a>
+<a style="text-decoration:none;color:#336699;" href="${url(controller='messages', action='detail', id=item.id, host=hurl.netloc, protocol=hurl.scheme)}">${_('Release')}</a>
 % endif
 </div>
 </td>
@@ -107,19 +112,18 @@ Want to access the full quarantine ?<br /><a href="${default_url}" target="_blan
 	if item.to_domain in host_urls:
 		host = host_urls[item.to_domain]
 	else:
-		host = default_url
-	protocol = str(host.split('://')[0])
-	host = str(host.split('://')[1])
+		host = config.get('baruwa.default.url', 'http://localhost')
+	hurl = urlparse(str(host))
 %>
 <tr class="message_row">
-<td><div>${item.timestamp}</div></td>
-<td><div>${item.from_address}</div></td>
-<td><div>${item.subject}</div></td>
+<td><div>${datetimeformat(format_date(item.timestamp, tzinfo), format='%Y-%m-%d %H:%M:%S')}</div></td>
+<td><div>${'' if item.from_address is None else wrap_paragraphs(item.from_address, 25)}</div></td>
+<td><div>${'' if item.subject is None else wrap_paragraphs(item.subject, 35)}</div></td>
 <td><div>
 % if hasattr(item, 'uuid'):
-<a style="text-decoration:none;color:#336699;" href="${url('message-autorelease', uuid=item.uuid, host=host, protocol=protocol)}">${_('Request release')}</a>
+<a style="text-decoration:none;color:#336699;" href="${url('message-autorelease', uuid=item.uuid, host=hurl.netloc, protocol=hurl.scheme)}">${_('Request release')}</a>
 % else:
-<a style="text-decoration:none;color:#336699;" href="${url(controller='messages', action='detail', id=item.id, host=host, protocol=protocol)}">${_('Request release')}</a>
+<a style="text-decoration:none;color:#336699;" href="${url(controller='messages', action='detail', id=item.id, host=hurl.netloc, protocol=hurl.scheme)}">${_('Request release')}</a>
 % endif
 </div>
 </td>
@@ -141,14 +145,14 @@ Want to access the full quarantine ?<br /><a href="${default_url}" target="_blan
 </tr>
 <tr>
 <td valign="top" width="350">
-<div><em>Powered By Baruwa &copy; 2010-2012</em></div>
+<div><em>${config.get('baruwa.custom.name', 'Baruwa')} : Powered by Baruwa [${baruwaversion}]</em></div>
 </td>
 <td valign="top" width="190" id="monkeyRewards">
 </td>
 </tr>
 <tr>
 <td colspan="2" valign="middle" id="utility">
-<div>&nbsp;<a href="${default_url}/accounts">Change report settings</a> | <a href="${default_url}/messages/quarantine">Full quarantine</a>&nbsp;</div>
+<div>&nbsp;<a href="${url('account-detail', userid=userid, host=host_parts.netloc, protocol=host_parts.scheme)}">Change report settings</a> | <a href="${url(controller='messages', action='quarantine', host=host_parts.netloc, protocol=host_parts.scheme)}">Full quarantine</a>&nbsp;</div>
 </td>
 </tr>
 </table>

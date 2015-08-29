@@ -1,18 +1,18 @@
 # -*- coding: utf-8 -*-
 # vim: ai ts=4 sts=4 et sw=4
 # Baruwa - Web 2.0 MailScanner front-end.
-# Copyright (C) 2010-2012  Andrew Colin Kissa <andrew@topdog.za.net>
+# Copyright (C) 2010-2015  Andrew Colin Kissa <andrew@topdog.za.net>
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation, either version 3 of the License, or
 # (at your option) any later version.
-# 
+#
 # This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License for more details.
-# 
+#
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
@@ -56,7 +56,7 @@ class MailQueueItem(Base):
     reason = Column(UnicodeText)
     flag = Column(SmallInteger, default=0)
 
-    __mapper_args__ = {'order_by':timestamp}
+    __mapper_args__ = {'order_by': timestamp}
 
     def __init__(self, messageid):
         self.messageid = messageid
@@ -75,7 +75,7 @@ class AuditLog(Base):
     timestamp = Column(TIMESTAMP(timezone=True),
                     server_default=utcnow())
 
-    __mapper_args__ = {'order_by':timestamp}
+    __mapper_args__ = {'order_by': timestamp}
 
     def __init__(self, username, category, info, hostname,
                 remoteip, timestamp=None):
@@ -88,7 +88,7 @@ class AuditLog(Base):
         if timestamp:
             self.timestamp = timestamp
 
-    #@property
+    # @property
     def tojson(self):
         "JSON friendly format"
         return dict(username=self.username,

@@ -1,72 +1,78 @@
-<div class="alpos">
-	<ul id="msgops">
-		<li id="addfilter">${h.link_to(_('Apply Filters'), url(controller='reports', action='index', anchor='form-area'))}</li>
-		<li>${h.link_to(_('Download PDF'), url(controller='reports', action='display', reportid=c.reportid) + '.pdf')}</li>
-		<li><a href="#">${_('Download CSV')}</a></li>
-	</ul>
+<div class="row-fluid">
+	<div class="span1 hidden-phone"></div>
+	<div class="span10">
+		<ul id="msgops">
+			<li id="addfilter">${h.link_to(_('Apply Filters'), url(controller='reports', action='index', anchor='form-area'))}</li>
+			<li>${h.link_to(_('Download PDF'), url(controller='reports', action='display', reportid=c.reportid) + '.pdf')}</li>
+			<li><a href="#">${_('Download CSV')}</a></li>
+		</ul>
+	</div>
+	<div class="span1 hidden-phone"></div>
 </div>
-<div class="clear"></div>
-<div class="sp10"></div>
-<div id="content">
-	<div id="form-area">
-		${forms.form()}
+<div class="space-6"></div>
+${forms.form()}
+<div class="space-6"></div>
+${forms.select_filter('reports')}\
+<div class="space-6"></div>
+<div class="row-fluid">
+	<div class="span1 hidden-phone"></div>
+	<div class="span10">
+		<table class="table table-bordered table-condensed table-hover table-striped">
+			<thead>
+				<tr>
+					<td colspan="2">
+						<div id="chart">
+						% if c.top_items:
+							<noscript>
+								<img src="${url(controller='reports', action='display', reportid=request.environ['pylons.routes_dict']['reportid'])}.png" alt="graph" />
+							</noscript>
+						% endif
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<th>${_('Score')}</th>
+					<th>${_('Count')}</th>
+				</tr>
+			</thead>
+			<tbody>
+				% for i, item in enumerate(c.top_items):
+				<tr>
+					<td>${item.score}</td>
+					<td>${item.count}</td>
+				</tr>
+				% endfor
+				% if not c.top_items:
+					<tr>
+						<td colspan="2">${_('No items returned')}</td>
+					</tr>
+				% endif
+			</tbody>
+		</table>
 	</div>
-	<div class="clear"></div>
-	<div class="sp20"></div>
-	${forms.select_filter()}\
-	<div class="clear"></div>
-	<div class="sp20"></div>
-	<div class="grid_16">
-		<div id="chart" style="width: 940px; height: 250px;">
-% if c.top_items:
-			<!--<noscript>${_('Enable javascript to view graphs')}</noscript>-->
-			<img src="${url(controller='reports', action='display', reportid=request.environ['pylons.routes_dict']['reportid'])}.png" alt="graph" />
-% endif
-		</div>
-	</div>
-	<div class="grid_16 omega drow">
-		<div class="grid_7">
-			${_('Score')}
-		</div>
-		<div class="grid_8">
-			${_('Count')}
-		</div>
-	</div>
-	<div id="graphrows">
-	% for i, item in enumerate(c.top_items):
-		<div class="grid_16 omega drow">
-			<div class="grid_7">
-				${item.score}
-			</div>
-			<div class="grid_8">
-				${item.count}
-			</div>
-		</div>	
-	% endfor
-	% if not c.top_items:
-		<div class="grid_16 alpha omega drow">
-			${_('No items returned')}
-		</div>
-	% endif
-	</div>
-	<div class="clear"></div>
-	<div class="sp10"></div>
+	<div class="span1 hidden-phone"></div>
 </div>
 
 <%def name="headers()">\
+<script type="text/javascript">
+var rdata = ${c.chart_data|n};
+</script>
 </%def>
 
 <%def name="submenu()">
-<ul>
-  <li>${h.link_to(_('Download'), url('reports-download', reportid=c.reportid))}</li>
-</ul>
 </%def>
+
 <%def name="title()">${_('Reports :: ')}${_(c.report_title)}</%def>
 <%def name="heading()">${_('Reports :: ')}${_(c.report_title)}</%def>
 <%def name="localscripts()">\
-${h.javascript_link(h.media_url() + 'js/jquery.clearform.min.js',
-h.media_url() + 'js/baruwa/reports.common.js',
-h.media_url() + 'js/baruwa/reports.spam.js')}
+${h.stylesheet_link(h.media_url() + 'css/vendor/datepicker.css')}
+${h.javascript_link(h.media_url() + 'js/vendor/jquery.clearform.min.js',
+h.media_url() + 'js/vendor/jquery.maskedinput.min.js',
+h.media_url() + 'js/vendor/bootstrap-datepicker.min.js',
+h.media_url() + 'js/vendor/jquery.flot.min.js',
+h.media_url() + 'js/vendor/jquery.flot.resize.min.js',
+h.media_url() + 'js/baruwa/reports.common.min.js',
+h.media_url() + 'js/baruwa/reports.spam.min.js')}
 </%def>
-<%namespace name="forms" file="/reports/form.html"/>
-<%inherit file="/base.html"/>
+<%namespace name="forms" file="../reports/form.html"/>
+<%inherit file="../base.html"/>

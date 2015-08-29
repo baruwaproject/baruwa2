@@ -8,25 +8,28 @@
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation, either version 3 of the License, or
 # (at your option) any later version.
-# 
+#
 # This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License for more details.
-# 
+#
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
+"Exim queue file to mbox file"
+import sys
 
 from optparse import OptionParser
 
 from baruwa.lib.mail.queue.convert import Exim2Mbox
 
-if __name__ == '__main__':
-    # run it
+
+def main(argv):
+    "main function"
     usage = "usage: %prog filename"
     parser = OptionParser(usage)
-    options, args = parser.parse_args()
+    _, args = parser.parse_args(argv)
     if len(args) != 1:
         parser.error("incorrect number of arguments")
     filename = args[0]
@@ -37,3 +40,8 @@ if __name__ == '__main__':
         print mbox
     except AssertionError, error:
         print error
+
+
+if __name__ == '__main__':
+    # run it
+    main(sys.argv)

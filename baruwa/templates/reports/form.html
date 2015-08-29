@@ -1,27 +1,39 @@
 <%def name="form()">
-<div id="afform" class="grid_16 drow">
-    <div><a class="closeflash" title="Close" href="#">x</a>${_('Add Filter')}</div>
+<div class="row-fluid form_area">
+	<div class="span1 hidden-phone"></div>
+	<div class="span10" id="afform">
+		% if c.form.errors:
+		<div id="filter-error" class="row-fluid">
+			<div class="span12 alert alert-error">
+				<button class="close" data-dismiss="alert" type="button">
+					<i class="icon-remove"></i>
+				</button>
+				<%
+				allerrors = []
+				[allerrors.extend(l) for l in c.form.errors.values()]
+				%>
+				<i class="icon-remove"></i> <strong>${u', '.join(allerrors)}</strong>
+			</div>
+		</div>
+		% endif
+		<div class="row-fluid">
+			<button class="close" type="button">
+				<i class="icon-remove"></i>
+			</button>
+			${h.form(url(controller='reports'), id='filter-form', method='post')}
+			<div class="span3">${c.form.filtered_field}</div>
+		    <div class="span3">${c.form.filtered_by}</div>
+		    <div class="span3">${c.form.filtered_value(size=30, class_="input-block-level")}</div>
+		    <div class="span2"><button class="btn btn-small btn-success" id="filter_form_submit"><i class="icon-plus"></i> ${ _('Add filter')}</button></div>
+			${h.HTML.div(c.form.csrf_token, style="display: none;")}
+		    ${h.end_form()}
+		</div>\
+	</div>
+	<div class="span1 hidden-phone"></div>
 </div>
-% if c.form.errors:
-<div id="filter-error" class="grid_16 drow formerror">
-<% 
-allerrors = []
-[allerrors.extend(l) for l in c.form.errors.values()]
-%>
-    ${u', '.join(allerrors)}
-</div>
-% endif
-<div class="grid_16 alpha drowlast">
-	${h.form(url(controller='reports'), id='filter-form', method='post')}
-    <div class="grid_4">${c.form.filtered_field}</div>
-    <div class="grid_4 alpha">${c.form.filtered_by}</div>
-    <div class="grid_4 alpha">${c.form.filtered_value(size=30)}</div>
-    <div class="grid_4 alpha">${h.submit('filter_form_submit', _('Add filter'), 'filter_form_submit')}</div>
-	${h.HTML.div(c.form.csrf_token, style="display: none;")}
-    ${h.end_form()}
-</div>\
+<!-- Powered by Baruwa © 2011-2015 Andrew Colin Kissa -->
 </%def>
-<%def name="select_filter()">
+<%def name="select_filter(app)">
 <%
 if not c.active_filters:
   filter_class = ' hide'
@@ -30,16 +42,27 @@ else:
 filterdict = dict(c.FILTER_ITEMS)
 filterbydict = dict(c.FILTER_BY)
 %>
-<div class="mkbox${filter_class}">
-<div id="filterrow" class="grid_16 drowlast">
-    <div class="grid_3 alpha">
-        ${_('Filters have been applied')} :
-     </div>
-     <div id="fhl" class="grid_13 alpha">
-            % for i, f in enumerate(c.active_filters):
-            	&nbsp;${h.link_to(h.image(url(h.media_url() + 'imgs/sm-del.png'), alt='x', title='Remove'), url('delete-filter', filterid=i)) + u' '+ unicode(filterdict[f['field']])} ${filterbydict[f['filter']]} ${f['value']}
-            % endfor
-    </div>
+<div class="row-fluid${filter_class}" id="${'mailfilter' if app == 'messages' else 'reportfilter'}">
+	<div class="span1 hidden-phone"></div>
+	<div class="span10 mkbox">
+		<div id="filterrow" class="row-fluid">
+			% if app == 'messages':
+			<button class="close" data-dismiss="${'mailfilter' if app == 'messages' else 'reportfilter'}" type="button" id="apfb">
+				<i class="icon-remove"></i>
+			</button>
+			% endif
+		    <div class="span2">
+		        ${_('Filters have been applied')} :
+		     </div>
+		     <div id="fhl" class="span9">
+		            % for i, f in enumerate(c.active_filters):
+		            	&nbsp;${h.link_to(h.literal('<i class="icon-remove red"></i>'), url('delete-filter', filterid=i)) + u' '+ unicode(filterdict[f['field']])} ${filterbydict[f['filter']]} ${f['value']}
+		            % endfor
+		    </div>
+		</div>
+	</div>
+	<div class="span1 hidden-phone"></div>
 </div>
-</div>
+<!-- Powered by Baruwa © 2011-2015 Andrew Colin Kissa -->
 </%def>
+

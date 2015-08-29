@@ -1,18 +1,18 @@
 # -*- coding: utf-8 -*-
 # vim: ai ts=4 sts=4 et sw=4
 # Baruwa - Web 2.0 MailScanner front-end.
-# Copyright (C) 2010-2012  Andrew Colin Kissa <andrew@topdog.za.net>
+# Copyright (C) 2010-2015  Andrew Colin Kissa <andrew@topdog.za.net>
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation, either version 3 of the License, or
 # (at your option) any later version.
-# 
+#
 # This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License for more details.
-# 
+#
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
@@ -29,6 +29,7 @@ from baruwa.lib.net import system_hostname
 from baruwa.lib.misc import get_config_option
 from baruwa.model.status import MailQueueItem
 
+
 def runquery(queue, direction, ids):
     "run querys"
     for item in queue:
@@ -36,7 +37,7 @@ def runquery(queue, direction, ids):
         if len(item['to_address']) == 1:
             if item['messageid'] in ids:
                 mqitems = Session.query(MailQueueItem)\
-                        .filter(MailQueueItem.messageid \
+                        .filter(MailQueueItem.messageid
                         == item['messageid']).all()
                 for mqitem in mqitems:
                     for key in ['attempts', 'lastattempt', 'direction']:
@@ -59,15 +60,16 @@ def runquery(queue, direction, ids):
                 item['to_address'] = addr
                 if item['messageid'] in ids:
                     mqitem = Session.query(MailQueueItem)\
-                            .filter(MailQueueItem.messageid\
+                            .filter(MailQueueItem.messageid
                             == item['messageid'])\
-                            .filter(MailQueueItem.to_address\
+                            .filter(MailQueueItem.to_address
                             == item['to_address']).one()
                     for key in ['attempts', 'lastattempt', 'direction']:
                         setattr(mqitem, key, item[key])
                 else:
                     if '@' in item['from_address']:
-                        item['from_domain'] = item['from_address'].split('@')[1]
+                        item['from_domain'] = item['from_address']\
+                            .split('@')[1]
                     item['to_domain'] = addr.split('@')[1]
                     mqitem = MailQueueItem(item['messageid'])
                     for key in item:
@@ -116,11 +118,11 @@ def update_queue_stats(hostname):
     allids.extend(tmpids)
 
     dbids = [item.messageid
-            for item in Session.query(MailQueueItem.messageid)\
-                                .filter(MailQueueItem.hostname == hostname)\
-                                .all()]
-    remids = [item for item in dbids if not item in allids]
-    preids = [item for item in dbids if not item in remids]
+            for item in Session.query(MailQueueItem.messageid)
+                        .filter(MailQueueItem.hostname ==
+                        hostname.decode('utf-8')).all()]
+    remids = [item for item in dbids if item not in allids]
+    preids = [item for item in dbids if item not in remids]
 
     if remids:
         print >> sys.stderr, ("== Deleting %(items)d queue "
@@ -152,3 +154,5 @@ class QueueStats(BaseCommand):
         except IOError:
             warnings.warn("Queuestats already running !")
             sys.exit(2)
+        finally:
+            Session.close()

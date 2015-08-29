@@ -1,0 +1,11 @@
+% for user in users:
+% if user.email and not user.address:
+From: ${user.email} %signature-dir%/users/${user.username}/${user.img}
+% else:
+From: ${user.address} %signature-dir%/users/${user.username}/${user.img}
+% endif
+% endfor
+% for domain in domains:
+From: *@${domain.name} %signature-dir%/domains/${domain.name}/${domain.img}
+% endfor
+FromOrTo: default no

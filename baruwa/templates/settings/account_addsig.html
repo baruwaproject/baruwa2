@@ -1,40 +1,61 @@
-<div class="alpos">
-	<div class="grid_16">
+<div class="row-fluid">
+	<div class="span1 hidden-phone"></div>
+	<div class="span10">
 		<ul id="msgops">
 			<li>${h.link_to(_('Account details'), url(controller='accounts', action='detail', userid=c.account.id))}</li>
 		</ul>
 	</div>
+	<div class="span1 hidden-phone"></div>
 </div>
-<div class="clear"></div>
-<div id="content">
-	<div class="grid_16">
-		<h3 class="head">${_('Add email signature')}</h3>
+<div class="space-6"></div>
+<div class="row-fluid">
+	<div class="span1 hidden-phone"></div>
+	<div class="span10">
+		<div class="row-fluid">
+			<h3 class="head smaller lighter blue">${_('Add email signature')}</h3>
+		</div>
 	</div>
-	${h.form(url('account-sigs-add', userid=c.account.id), method='post')}
-	${h.HTML.div(c.form.csrf_token, style="display: none;")}
-	<div class="grid_16 drow">
-	    <div class="grid_5">${c.form.signature_type.label}</div>
-	    <div class="grid_5">${c.form.signature_type}</div>
-		<div class="grid_5"></div>
+	<div class="span1 hidden-phone"></div>
+</div>
+<div class="row-fluid">
+	<div class="span1 hidden-phone"></div>
+	<div class="span10">
+		${h.form(url('account-sigs-add', userid=c.account.id), method='post')}
+		${h.HTML.div(c.form.csrf_token, style="display: none;")}
+		<div class="row-fluid">
+			<div class="control-group">
+				${c.form.signature_type.label(class_="control-label span4")}
+				<div class="controls span8">
+					${c.form.signature_type(class_='span6')}
+					% if c.form.signature_type.errors:
+					<span class="help-inline">${u', '.join([unicode(ferr) for ferr in c.form.signature_type.errors])}</span>
+					% endif
+				</div>
+			</div>
+			<div class="control-group${' error' if c.form.signature_content.errors else ''}">
+				<div class="controls span12">
+				    ${c.form.signature_content(class_="span12")}
+					% if c.form.signature_content.errors:
+					<span class="help-inline">${u', '.join([unicode(ferr) for ferr in c.form.signature_content.errors])}</span>
+					% endif
+				</div>
+			</div>
+			<div class="control-group">
+				${c.form.enabled.label(class_="control-label span4")}
+				<div class="controls span8">
+					${c.form.enabled}
+					% if c.form.enabled.errors:
+					<span class="help-inline">${u', '.join([unicode(ferr) for ferr in c.form.enabled.errors])}</span>
+					% endif
+				</div>
+			</div>
+		</div>
+		<div class="form-actions">
+			<button id="submit-button" class="btn btn-small btn-success"><i class="icon-plus"></i> ${_('Add signature')}</button>
+		</div>
+		${h.end_form()}\
 	</div>
-	% if c.form.signature_content.errors:
-	<div class="grid_16 drow"><div class="formerror">${u', '.join([unicode(e) for e in c.form.signature_content.errors])}</div></div>
-	% endif
-	<div class="grid_16 drow">
-	    ${h.highlight_errors(c.form.signature_content)}
-	</div>
-	<div class="grid_16 drow">
-	    <div class="grid_5">${c.form.enabled.label}</div>
-	    <div class="grid_5">${c.form.enabled}</div>
-		<div class="grid_5"></div>
-	</div>
-	<div class="grid_16 drow">
-	    <div class="grid_7">&nbsp;</div>
-	    <div class="grid_8">
-			${h.submit('submit', _('Add signature'))}
-	    </div>
-	</div>
-	${h.end_form()}\
+	<div class="span1 hidden-phone"></div>
 </div>
 
 
@@ -47,18 +68,21 @@ ${_('Settings :: Add email signatures :: %s') % c.account.username}
 </%def>
 
 <%def name="headers()">
-${h.stylesheet_link(h.media_url() + 'css/jquery.cleditor.css',
-h.media_url() + 'css/jquery.wysiwyg.css',
-h.media_url() + 'css/wysiwyg.fileManager.css')}
+${h.stylesheet_link(h.media_url() + 'css/vendor/jquery.cleditor.css',
+h.media_url() + 'css/vendor/jquery.wysiwyg.css',
+h.media_url() + 'css/vendor/wysiwyg.fileManager.css')}
 <script type="text/javascript">
 var fm_url = "${url('fm-users', userid=c.account.id)}";
 </script>
 </%def>
+
+<%def name="submenu()"></%def>
+
 <%def name="localscripts()">
-${h.javascript_link(h.media_url() + 'js/jquery.cleditor.min.js',
-h.media_url() + 'js/jquery.cleditor.imgs.js',
-h.media_url() + 'js/baruwa/signatures.js')}
-<%include file="/includes/signaturejs.html"/>
+${h.javascript_link(h.media_url() + 'js/vendor/jquery.cleditor.min.js',
+h.media_url() + 'js/vendor/jquery.cleditor.imgs.js',
+h.media_url() + 'js/baruwa/signatures.min.js')}
+<%include file="../includes/signaturejs.html"/>
 </%def>
 
-<%inherit file="/base.html"/>
+<%inherit file="../base.html"/>

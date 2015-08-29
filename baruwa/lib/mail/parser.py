@@ -1,215 +1,277 @@
 # -*- coding: utf-8 -*-
 # vim: ai ts=4 sts=4 et sw=4
 # Baruwa - Web 2.0 MailScanner front-end.
-# Copyright (C) 2010-2012  Andrew Colin Kissa <andrew@topdog.za.net>
+# Copyright (C) 2010-2015  Andrew Colin Kissa <andrew@topdog.za.net>
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation, either version 3 of the License, or
 # (at your option) any later version.
-# 
+#
 # This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License for more details.
-# 
+#
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 
 """Parse an email into a dictionary structure"""
 
-import email
-import base64
-import codecs
+import pyzmail
 
-from email.Header import decode_header
-from email.utils import parseaddr, formataddr
+from base64 import encodestring
+from email.utils import formataddr
+from htmlentitydefs import entitydefs
 
-from baruwa.lib.mail.html import CustomCleaner
-from baruwa.lib.regex import HTMLTITLE_RE, I18N_HEADER_MATCH
+# from lxml import etree
+from lxml.html.clean import Cleaner
+from lxml.etree import XMLSyntaxError
+from lxml.html import defs, tostring
+
+from baruwa.lib.crypto.hashing import md5
+from baruwa.lib.mail.html import get_style
+from baruwa.lib.mail import local_fromstring
+from baruwa.lib.regex import HTMLTITLE_RE, HTMLENTITY_RE
+from baruwa.lib.mail.css import sanitize_style, sanitize_css
+from baruwa.lib.regex import CSS_COMMENT_RE, UNICODE_ENTITY_RE, XSS_RE
 
 
 UNCLEANTAGS = ['html', 'title', 'head', 'link', 'a', 'body', 'base']
+ENCODINGS = ('utf8', 'latin1', 'windows-1252', 'ascii')
 
 
-def get_header(header_text, default="ascii"):
-    "Decode and return the header"
-    if not header_text:
-        return header_text
-
+def html_entity_decode_char(match):
+    "Decode HTML entity"
     try:
-        sections = decode_header(header_text)
-    except email.errors.HeaderParseError:
+        return unicode(entitydefs[match.group(1)], "Latin1")
+    except KeyError:
+        return match.group(0)
+
+
+def html_entity_decode(string):
+    "Decode HTML String"
+    return HTMLENTITY_RE.sub(html_entity_decode_char, string)
+
+
+def uni2char(match):
+    "Convert unicode entity to char"
+    try:
+        return chr(int(match.groups()[0], 16))
+    except ValueError:
         return u''
 
-    parts = []
-    for section, encoding in sections:
+
+def clean_payload(payload):
+    "Custom clean methods"
+    if not payload:
+        return ''
+    payload = html_entity_decode(html_entity_decode(payload))
+    try:
+        payload = UNICODE_ENTITY_RE.sub(uni2char, payload)
+    except UnicodeDecodeError:
+        payload = u''
+    payload = CSS_COMMENT_RE.sub('', payload)
+    return payload
+
+
+def set_body_class(payload, body_class):
+    "Set the body class attribute to the top tag"
+    if body_class:
+        payload = local_fromstring(payload)
+        payload.attrib['class'] = body_class
+        payload = tostring(payload)
+    return payload
+
+
+def get_body_style(payload, target='#email-html-part'):
+    "Get the style attribute of the body tag"
+    try:
+        html = local_fromstring(payload)
+        [body] = html.xpath('//body')
+        raw = sanitize_style(body.attrib.get('style', u''))
+        body_class = body.attrib.get('class', u'')
+        style = "%s {%s}" % (target, raw) if raw else u''
+        return style, body_class
+    except (ValueError, XMLSyntaxError):
+        return None, None
+
+
+def clean_styles(payload):
+    "Cleanup styles"
+    if not payload:
+        return ''
+
+    html = local_fromstring(payload)
+    walker = html.getiterator()
+    for tag in walker:
+        if 'style' in tag.keys():
+            newstyle = sanitize_style(tag.get('style'))
+            if newstyle:
+                tag.set('style', newstyle)
+                if XSS_RE.findall(tag.get('style')):
+                    tag.attrib.pop('style')
+            else:
+                tag.attrib.pop('style')
+        if tag.tag == 'style':
+            tag.drop_tree()
+    return tostring(html)
+
+
+def decode(strg, encodings=ENCODINGS, charset=None):
+    "Decode string"
+    if charset is not None:
         try:
-            parts.append(section.decode(encoding or default, 'replace'))
+            return strg.decode(charset, 'ignore')
         except LookupError:
-            parts.append(section.decode(default, 'replace'))
-    return u' '.join(parts)
+            pass
+
+    for encoding in encodings:
+        try:
+            return strg.decode(encoding)
+        except UnicodeDecodeError:
+            pass
+    return strg.decode('ascii', 'ignore')
 
 
-def return_text_part(part):
-    "Encodes the message as utf8"
-    body = part.get_payload(decode=True)
-    charset = part.get_content_charset('latin1')
+def sanitize_payload(payload):
+    "Sanitize HTML"
+    if not payload:
+        return '', ''
+    styles = []
+    payload = clean_payload(payload)
+    body_style, body_class = get_body_style(payload)
+    if body_style:
+        styles.append(body_style)
+    safe_attrs = set(defs.safe_attrs)
+    safe_attrs.add('style')
+    cleaner = Cleaner(remove_tags=UNCLEANTAGS,
+                    safe_attrs_only=True,
+                    safe_attrs=safe_attrs)
+    payload = HTMLTITLE_RE.sub('', payload)
     try:
-        codecs.lookup(charset)
-    except LookupError:
-        charset = 'ascii'
-    try:
-        text = body.decode(charset, 'replace')
-    except UnicodeError:
-        text = body.decode('ascii', 'replace')
-    return text
+        html = cleaner.clean_html(payload)
+    except ValueError:
+        payload = bytes(bytearray(payload, encoding='utf-8'))
+        html = cleaner.clean_html(payload)
+    except XMLSyntaxError:
+        html = ''
+    mainstyle = sanitize_css(get_style(html))
+    if mainstyle:
+        styles.append(decode(mainstyle))
+    style = u'\n'.join(styles)
+    html = clean_styles(CSS_COMMENT_RE.sub('', html))
+    html = set_body_class(html, body_class)
+    return html.strip(), style.strip()
 
-
-def parse_attached_msg(msg):
-    "Parse and attached message"
-    content_type = msg.get_content_type()
-    return dict(filename='rfc822.txt', content_type=content_type)
-
-def decode_email(raw_email):
-    "Decodes an email address"
-    if raw_email is None:
-        return u''
-
-    if I18N_HEADER_MATCH.match(raw_email):
-        name, email_addr = parseaddr(get_header(raw_email))
-    else:
-        name, email_addr = parseaddr(raw_email)
-        name = get_header(name)
-        email_addr = get_header(email_addr)
-    full_addr = formataddr((name, email_addr))
-    return full_addr
 
 class EmailParser(object):
     """Parses a email message"""
     def __init__(self, path):
-        if hasattr(path, 'readlines'):
-            self.msg = email.message_from_file(path)
-        else:
-            with open(path, 'r') as fip:
-                self.msg = email.message_from_file(fip)
+        if not hasattr(path, 'readlines'):
+            path = open(path, 'r')
+        self.msg = pyzmail.PyzMessage.factory(path)
         self.parts = []
         self.headers = {}
         self.attachments = []
 
-    def process_headers(self, msg):
-        "Populate the headers"
+    def get_headers(self):
+        "Get the message headers"
         for header in ['Subject', 'To', 'From', 'Date', 'Message-ID']:
             if header in ['To', 'From']:
-                self.headers[header.lower()] = decode_email(msg[header])
+                self.headers[header.lower()] = \
+                    formataddr(self.msg.get_address(header.lower()))
+            elif header == 'Subject':
+                self.headers[header.lower()] = \
+                    self.msg.get_subject()
             else:
-                self.headers[header.lower()] = get_header(msg[header])
+                self.headers[header.lower()] = \
+                    self.msg.get_decoded_header(header.lower(), '')
 
     def parse(self):
         "Parse a message and return a dict"
-        self.process_headers(self.msg)
-        self.process_msg(self.msg, self.parts, self.attachments)
+        has_text = False
+        has_html = False
+
+        self.get_headers()
+        for part in self.msg.mailparts:
+            style = None
+            if part.is_body:
+                try:
+                    payload, _ = pyzmail.parse.decode_text(part.get_payload(),
+                            part.charset, None)
+                except LookupError:
+                    payload, _ = pyzmail.parse.decode_text(part.get_payload(),
+                            None, None)
+                if part.type == 'text/html':
+                    payload, style = sanitize_payload(payload)
+                    has_html = True
+                else:
+                    has_text = True
+                msg = dict(type=part.type, content=payload,
+                            is_body=part.is_body,
+                            style=style)
+                self.parts.append(msg)
+            else:
+                viewable_parts = ('text/', 'image/', 'message/delivery-statu')
+                if (part.type.startswith(viewable_parts) and
+                    part.part.get_param('attachment', None,
+                    'Content-Disposition') is None):
+                    if part.type == 'text/html':
+                        payload, _ = pyzmail.parse\
+                                        .decode_text(part.get_payload(),
+                                        part.charset, None)
+                        payload, style = sanitize_payload(payload)
+                    elif part.type in ['text/plain',
+                                        'message/delivery-status']:
+                        payload, _ = pyzmail.parse\
+                                        .decode_text(part.get_payload(),
+                                        part.charset, None)
+                    else:
+                        payload = ''
+                    msg = dict(type=part.type,
+                                content=payload,
+                                is_body=part.is_body,
+                                style=style,
+                                filename=part.sanitized_filename)
+                    self.parts.append(msg)
+                else:
+                    msg = dict(type=part.type,
+                                content_type=part.type,
+                                filename=part.sanitized_filename)
+                    self.attachments.append(msg)
+        is_multipart = has_text and has_html
         return dict(headers=self.headers, parts=self.parts,
                     attachments=self.attachments,
-                    content_type='message/rfc822')
-
-    def process_msg(self, message, parts, attachments):
-        "Recursive message processing"
-
-        content_type = message.get_content_type()
-        attachment = message.get_param('attachment',
-                    None, 'Content-Disposition')
-        if content_type == 'message/rfc822':
-            [attachments.append(parse_attached_msg(msg))
-                for msg in message.get_payload()]
-            return True
-
-        if message.is_multipart():
-            if content_type == 'multipart/alternative':
-                for par in reversed(message.get_payload()):
-                    if self.process_msg(par, parts, attachments):
-                        return True
-            else:
-                [self.process_msg(par, parts, attachments)
-                    for par in message.get_payload()]
-            return True
-        success = False
-
-        if (content_type == 'text/html' and attachment is None):
-            parts.append(dict(type='html',
-                        content=self.return_html_part(message)))
-            success = True
-        elif (content_type.startswith('text/') and attachment is None):
-            parts.append(dict(type='text',
-                        content=return_text_part(message)))
-            success = True
-        elif (content_type.startswith('image/') and attachment is None):
-            parts.append(dict(type='image',
-                        content=message.get_payload(decode=True),
-                        name=message.get_param('name', None, 'Content-Type'),
-                        content_type=content_type))
-            success = True
-        filename = message.get_filename(None)
-        if filename and not attachment is None:
-            attachments.append(dict(filename=get_header(filename),
-                                content_type=content_type))
-            success = True
-        return success
-
-    def return_html_part(self, part):
-        "Sanitize the html and return utf8"
-        charset = part.get_content_charset('latin1')
-        try:
-            codecs.lookup(charset)
-        except LookupError:
-            charset = 'ascii'
-        #return self.sanitize_html(body.decode(charset, 'replace'))
-        body = part.get_payload(decode=True)
-        return self.sanitize_html(body.decode(charset, 'replace'))
+                    content_type='message/rfc822',
+                    has_text=has_text, has_html=has_html,
+                    is_multipart=is_multipart)
 
     def get_attachment(self, attach_id):
         "Get and return an attachment"
-        num = 0
-        attach_id = int(attach_id)
-
-        for part in self.msg.walk():
-            attachment = part.get_param('attachment',
-                        None, 'Content-Disposition')
-            if not attachment is None:
-                filename = part.get_filename(None)
-                if filename:
-                    num += 1
-                if attach_id == num:
-                    if part.is_multipart():
-                        data = part.as_string()
-                    else:
-                        data = part.get_payload(decode=True)
-                    filename = get_header(filename)
-                    return dict(attachment=base64.encodestring(data),
-                                name=filename,
-                                mimetype=part.get_content_type())
+        for part in self.msg.mailparts:
+            hasl = md5(part.sanitized_filename)
+            if part.is_body or (part.type.startswith('image/') and
+                            part.part.get_param('attachment', None,
+                            'Content-Disposition') is None):
+                continue
+            if hasl == attach_id:
+                return dict(attachment=encodestring(part.get_payload()),
+                            name=part.sanitized_filename,
+                            mimetype=part.type)
         return None
 
     def get_img(self, imgid):
         "Return an embedded image"
-        for part in self.msg.walk():
-            content_id = part.get('Content-Id', '').strip('<>')
-            filename = part.get_filename()
-            if imgid.replace('__xoxo__', '/') in (content_id, filename):
-                content = part.get_payload(decode=True)
-                return dict(content_type=part.get_content_type(),
-                            img=base64.encodestring(content),
-                            name=filename)
+        for part in self.msg.mailparts:
+            if part.is_body:
+                continue
+            if (imgid.replace('__xoxo__', '/') in
+                (part.content_id,
+                part.filename,
+                part.sanitized_filename)):
+                return dict(content_type=part.type,
+                            img=encodestring(part.get_payload()),
+                            name=part.sanitized_filename)
         return None
-
-    def sanitize_html(self, msg):
-        "Clean up html"
-        cleaner = CustomCleaner(style=True,
-                                remove_tags=UNCLEANTAGS,
-                                safe_attrs_only=True)
-        # workaround to bug in lxml which does not remove title
-        msg = HTMLTITLE_RE.sub('', msg)
-        html = cleaner.clean_html(msg)
-        return html
-

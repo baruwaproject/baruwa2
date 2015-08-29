@@ -1,7 +1,7 @@
 
 Forgot your password, ${c.firstname}?
 
-Baruwa received a request to reset the password for your Baruwa
+${config.get('baruwa.custom.name', 'Baruwa')} received a request to reset the password for your ${config.get('baruwa.custom.name', 'Baruwa')}
 Account: (${c.username}).
 
 If you want to reset your password, click on the link below
@@ -15,5 +15,5 @@ Your password will not be reset.
 
 Regards,
 
-Baruwa Bot
-www.baruwa.net
+${config.get('baruwa.custom.name', 'Baruwa')} Bot
+${config.get('baruwa.custom.url', '')}

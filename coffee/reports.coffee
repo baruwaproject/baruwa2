@@ -1,14 +1,20 @@
+###!
+ * Baruwa Enterprise Edition
+ * http://www.baruwa.com
+ *
+ * Copyright (c) 2013-2015 Andrew Colin Kissa
+ *
+ *
+###
 $ = jQuery
 exports = this
-exports.aftmpl = '<div class="grid_8 drow alpha"><div class="grid_1 omega"><a href="/reports/filters/delete/{{index}}">' +
-                 '<img src="{{media_url}}imgs/action_remove.png" alt="x" title="Remove" class="positio" /></a></div>' +
-                 '<div class="grid_1 omega"><a href="/reports/filters/save/{{index}}">' +
-                 '<img src="{{media_url}}imgs/save.png" alt="Save" title="Save" class="positio" /></a></div>' +
-                 '<div class="grid_6">{{filter_field}} {{filter_by}} {{filter_value}}</div></div>'
-exports.sftmpl = '<div class="grid_8 drow alpha"><div class="grid_1 omega"><a href="/reports/storedfilters/delete/{{id}}">' +
-                 '<img src="{{media_url}}imgs/action_delete.png" alt="x" title="Delete" class="positio" /></a></div>' +
-                 '<div class="grid_1 omega">{{{link_chunk}}}</div>' +
-                 '<div class="grid_6">{{name}}</div></div>'
+exports.aftmpl = '<div class="row-fluid afr"><div class="span1 half"><a href="/reports/filters/delete/{{index}}">' +
+                    '<i class="icon-remove red"></i></a></div><div class="span1 half">' +
+                    '<a href="/reports/filters/save/{{index}}"><i class="icon-save green"></i></a>' +
+                    '</div><div class="span10 half">{{filter_field}} {{filter_by}} {{filter_value}}</div></div>'
+exports.sftmpl = '<div class="row-fluid sfr"><div class="span1 half"><a href="/reports/storedfilters/delete/{{id}}">' +
+                    '<i class="icon-remove red"></i></a></div><div class="span1 half">{{{link_chunk}}}</div>' +
+                    '<div class="span10 half">{{name}}</div></div>'
 exports.aftext = gettext('No active filters at the moment')
 exports.sftext = gettext('No saved filters at the moment')
 
@@ -26,10 +32,12 @@ build_active = (active_filters)->
         html = $.mustache exports.aftmpl, f
         rows.push html
     if rows.length
-        $("#afilters").empty().append rows.join('')
+        $("#afilters").nextAll().remove()
+        $("#afilters").after rows.join('')
     else
-        $("#afilters").empty().append '<div class="grid_8 drow alpha"><div class="grid_6">'+exports.aftext+'</div></div>'
-    $("#afilters div a").bind 'click', ajaxify_active_filter_links
+        $("#afilters").nextAll().remove()
+        $("#afilters").after '<div class="row-fluid afr"><div class="span12">'+exports.aftext+'</div></div>'
+    $("div.afr a").bind 'click', ajaxify_active_filter_links
     1
 
 build_saved = (saved_filters)->
@@ -37,17 +45,19 @@ build_saved = (saved_filters)->
     $.each saved_filters, (itr, f)->
         f['media_url'] = exports.media_url
         if f.loaded
-            img = '<img src="{{media_url}}imgs/action_add.png" alt="Load" class="positio" />'
+            img = '<i class="icon-plus red"></i>'
         else
-            img = '<a href="/reports/storedfilters/load/{{id}}"><img src="{{media_url}}imgs/action_add.png" alt="Load" title="Load" class="positio" /></a>'
+            img = '<a href="/reports/storedfilters/load/{{id}}"><i class="icon-upload-alt blue"></i></a>'
         f['link_chunk'] = $.mustache img, f
         html = $.mustache exports.sftmpl, f
         rows.push html
     if rows.length
-        $("#sfilters").empty().append rows.join('')
+        $("#sfilters").nextAll().remove()
+        $("#sfilters").after rows.join('')
     else
-        $("#sfilters").empty().append '<div class="grid_8 drow alpha"><div class="grid_7">'+exports.sftext+'</div></div>'
-    $("#sfilters div a").bind 'click', ajaxify_active_filter_links
+        $("#sfilters").nextAll().remove()
+        $("#sfilters").after '<div class="row-fluid"><div class="span12">'+exports.sftext+'</div></div>'
+    $("div.sfr a").bind 'click', ajaxify_active_filter_links
     1
 
 build_page = (response)->
@@ -56,15 +66,13 @@ build_page = (response)->
         build_active response.active_filters
         build_saved response.saved_filters
     else
-        if $('#alertmsg').length
-            $('#alertmsg').empty()
-            $('#alertmsg').remove()
+        if $('.alert').length
+            $('.alert').parent().parent().remove()
         html = $.mustache exports.errmsgbox, {msg:response.errors.msg}
         $('#heading').after html
-        $('.closeflash').click((e)->
+        $('.close').click((e)->
             e.preventDefault()
-            $('#alertmsg').empty()
-            $('#alertmsg').remove()
+            $('.alert').parent().parent().remove()
         )
     $("#filter_form_submit").removeAttr('disabled').attr {value:gettext('Add Filter')}
     1
@@ -81,18 +89,21 @@ ajaxify_active_filter_links = (e)->
 
 build_elements = (response)->
     if response.success
-        if $('#alertmsg').length
-            $('#alertmsg').empty()
-            $('#alertmsg').remove()
+        if $('.alert').length
+            $('.alert').parent().parent().remove()
         if response.active_filters
             i = response.active_filters.length
+            # alert i
             i--
+            # alert i
             if i > 0
                 n = response.active_filters[i]
                 n['media_url'] = exports.media_url
                 n['index'] = i
                 row = $.mustache exports.aftmpl, n
-                $("#afilters").append row
+                # $("#afilters").nextAll().remove()
+                # $('.afr').remove()
+                $("#afilters").after row
                 $('form').clearForm()
             else
                 n = response.active_filters[0]
@@ -100,10 +111,12 @@ build_elements = (response)->
                     n['media_url'] = exports.media_url
                     n['index'] = i
                     row = $.mustache exports.aftmpl, n
-                    $("#afilters").empty().append row
+                    # $("#afilters").nextAll().remove()
+                    $('.afr').remove()
+                    $("#afilters").after row
                 else
-                    $("#afilters").append '<div class="grid_8 drow alpha"><div class="grid_6">'+exports.aftext+'</div></div>'
-            $("#afilters div a").bind 'click', ajaxify_active_filter_links
+                    $("#afilters").nextAll().after '<div class="row-fluid afr"><div class="span12">'+exports.aftext+'</div></div>'
+            $("div.afr a").bind 'click', ajaxify_active_filter_links
         if response.saved_filters
             build_saved response.saved_filters
         update_counters response.data
@@ -111,13 +124,15 @@ build_elements = (response)->
         display_ajax_response_error(response.errors.msg)
     $("#filter_form_submit").removeAttr('disabled').attr {value:gettext('Add Filter')}
     $("#filter-ajax").remove()
+    $("#filtered_value").unmask("999-99-99")
+    $("#filtered_value").unmask("99:99")
     1
 
 addFilter = (e)->
     e.preventDefault()
     $("#filter_form_submit").attr {disabled:'disabled', value:gettext('Loading')}
     text = gettext 'Processing request.............'
-    $('#afform').after '<div class="grid_16 drow" id="filter-ajax"><div class="grid_7">'+text+'</div></div>'
+    $('#afform .row-fluid').before '<div class="row-fluid" id="filter-ajax"><div class="span12">'+text+'</div></div>'
     request_data = {
         filtered_field: $("#filtered_field").val(),
         filtered_by: $("#filtered_by").val(),
@@ -129,7 +144,7 @@ addFilter = (e)->
 
 
 $(document).ready ->
-    $('#afform .closeflash').hide()
+    $('#afform .close').hide()
     init_form()
     $('#filter-form').submit addFilter
     $('#spinner').ajaxStart(->
@@ -139,6 +154,7 @@ $(document).ready ->
     ).ajaxError(
         ajax_global_error_redirect
     )
-    $("#afilters div a").bind 'click', ajaxify_active_filter_links
-    $("#sfilters div a").bind 'click', ajaxify_active_filter_links
+    $("div.afr a").bind 'click', ajaxify_active_filter_links
+    $("div.sfr a").bind 'click', ajaxify_active_filter_links
     1
+

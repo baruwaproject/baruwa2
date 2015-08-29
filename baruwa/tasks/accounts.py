@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # Baruwa - Web 2.0 MailScanner front-end.
-# Copyright (C) 2010-2012  Andrew Colin Kissa <andrew@topdog.za.net>
+# Copyright (C) 2010-2015  Andrew Colin Kissa <andrew@topdog.za.net>
 # vim: ai ts=4 sts=4 et sw=4
 
 "Accounts tasks"
@@ -21,6 +21,7 @@ from sqlalchemy.orm.exc import NoResultFound
 from pylons.i18n.translation import _get_translator
 from sqlalchemy.exc import IntegrityError, ProgrammingError
 
+from baruwa.forms import make_csrf
 from baruwa.model.meta import Session
 from baruwa.model.domains import Domain
 from baruwa.lib.outputformats import build_csv
@@ -36,8 +37,11 @@ ADDRESSFIELDS = ['address', 'enabled']
 BOOLEANFIELDS = ['active', 'send_report', 'spam_checks', 'enabled']
 
 if not Session.registry.has():
-    engine = engine_from_config(config, 'sqlalchemy.', poolclass=NullPool)
-    Session.configure(bind=engine)
+    try:
+        engine = engine_from_config(config, 'sqlalchemy.', poolclass=NullPool)
+        Session.configure(bind=engine)
+    except KeyError:
+        pass
 
 
 def dict2mdict(values):
@@ -46,7 +50,7 @@ def dict2mdict(values):
     for key in values:
         if (key in BOOLEANFIELDS and
             (values[key] == '' or values[key] == 'False'
-            or values[key] is None)):
+                or values[key] is None)):
             continue
         muld.add(key, values[key])
     return muld
@@ -68,10 +72,10 @@ def getkeys(row, form=None):
 def add_address(row, user, requester):
     "Add address"
     session_dict = {}
-    dummy = AddressForm(dict2mdict({}), csrf_context=session_dict)
+    token = make_csrf(session_dict)
     fields = getkeys(row, 'af')
     post_data = dict2mdict(fields)
-    post_data.add('csrf_token', dummy.csrf_token.current_token)
+    post_data.add('csrf_token', token)
     form = AddressForm(post_data, csrf_context=session_dict)
     if form.validate():
         try:
@@ -81,7 +85,7 @@ def add_address(row, user, requester):
                 Session.query(Domain).options(
                         joinedload('organizations')).join(
                         domain_owners,
-                        (oa, domain_owners.c.organization_id == \
+                        (oa, domain_owners.c.organization_id ==
                         oa.c.organization_id))\
                         .filter(oa.c.user_id == user.id)\
                         .filter(Domain.name == domainname).one()
@@ -124,24 +128,21 @@ def importaccounts(domid, filename, skipfirst, userid):
                                 error=None)
                     try:
                         session_dict = {}
-                        dummy = AddUserForm(dict2mdict({}),
-                                csrf_context=session_dict)
+                        token = make_csrf(session_dict)
                         fields = getkeys(row)
                         post_data = dict2mdict(fields)
                         post_data.add('password2', row['password1'])
                         post_data.add('domains', domid)
-                        post_data.add('csrf_token',
-                                    dummy.csrf_token.current_token)
+                        post_data.add('csrf_token', token)
                         form = AddUserForm(post_data,
                                 csrf_context=session_dict)
                         form.domains.query = query
                         if form.validate():
-                            #db insert
+                            # db insert
                             if domain.name != form.email.data.split('@')[1]:
                                 raise TypeError(
                                     'Cannot import: %s into domain: %s' %
-                                    (form.email.data, domain.name)
-                                    )
+                                    (form.email.data, domain.name))
                             user = User(form.username.data, form.email.data)
                             for attr in ['firstname', 'lastname', 'email',
                                 'active', 'account_type', 'send_report',
@@ -158,7 +159,7 @@ def importaccounts(domid, filename, skipfirst, userid):
                             result['imported'] = True
                             logger.info("Imported account: %s" %
                                         row['username'])
-                            #address add
+                            # address add
                             add_address(row, user, requester)
                         else:
                             logger.info("Import failed account: %s" %
@@ -193,8 +194,8 @@ def importaccounts(domid, filename, skipfirst, userid):
     except (csv.Error, IOError), err:
         results['global_error'] = str(err)
         logger.info("Error: %s, processing %s" % (str(err), filename))
-    # finally:
-    #     Session.close()
+    finally:
+        Session.close()
     try:
         os.unlink(filename)
     except OSError:
@@ -213,11 +214,11 @@ def exportaccounts(domainid, userid, orgid):
         user = Session.query(User).get(userid)
         if user.is_peleb:
             results['global_error'] = \
-            'You are not authorized to export accounts'
+                'You are not authorized to export accounts'
             return results
         if user.is_domain_admin and orgid:
             results['global_error'] = \
-            'You are not authorized to export organization accounts'
+                'You are not authorized to export organization accounts'
             return results
         users = Session.query(User)\
                 .options(joinedload('addresses'))\
@@ -228,14 +229,14 @@ def exportaccounts(domainid, userid, orgid):
                                 domain_owners.c.domain_id),
                                 (oa,
                                 domain_owners.c.organization_id ==
-                                oa.c.organization_id)
-                                ).filter(oa.c.user_id == user.id)
+                                oa.c.organization_id))\
+                                .filter(oa.c.user_id == user.id)
         if domainid:
             users = users.filter(and_(domain_users.c.domain_id == domainid,
                                 domain_users.c.user_id == User.id))
         if orgid:
             users = users.filter(and_(domain_users.c.user_id == User.id,
-                                domain_users.c.domain_id == \
+                                domain_users.c.domain_id ==
                                 domain_owners.c.domain_id,
                                 domain_owners.c.organization_id == orgid))
         rows = []
@@ -254,6 +255,6 @@ def exportaccounts(domainid, userid, orgid):
     except (NoResultFound, ProgrammingError):
         results['global_error'] = 'User account does not exist'
         logger.info('Export failed: %s' % results['global_error'])
-    # finally:
-    #     Session.close()
+    finally:
+        Session.close()
     return results

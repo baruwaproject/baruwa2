@@ -1,0 +1,9 @@
+% for rule in rules:
+% if rule.action == 'email-addresses':
+${rule.options}		${rule.expression}		${rule.description}		${rule.description}
+% elif rule.action == 'renameto':
+rename to ${rule.options}		${rule.expression}		${rule.description}		${rule.description}
+% else:
+${rule.action}		${rule.expression}		${rule.description}		${rule.description}
+% endif
+% endfor

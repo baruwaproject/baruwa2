@@ -1,0 +1,11 @@
+% for user in users:
+% if user.email and not user.address:
+From: ${user.email} ${user.img}
+% else:
+From: ${user.address} ${user.img}
+% endif
+% endfor
+% for domain in domains:
+From: *@${domain.name} ${domain.img}
+% endfor
+FromOrTo: default no

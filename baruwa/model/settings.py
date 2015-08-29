@@ -1,23 +1,24 @@
 # -*- coding: utf-8 -*-
 # vim: ai ts=4 sts=4 et sw=4
 # Baruwa - Web 2.0 MailScanner front-end.
-# Copyright (C) 2010-2012  Andrew Colin Kissa <andrew@topdog.za.net>
+# Copyright (C) 2010-2015  Andrew Colin Kissa <andrew@topdog.za.net>
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation, either version 3 of the License, or
 # (at your option) any later version.
-# 
+#
 # This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License for more details.
-# 
+#
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 
 "settings models"
+from sqlalchemy import desc
 from sqlalchemy import Column, ForeignKey
 from sqlalchemy.orm import relationship, backref
 from sqlalchemy.schema import UniqueConstraint
@@ -25,7 +26,7 @@ from sqlalchemy.types import Unicode, Integer, Boolean, UnicodeText
 from sqlalchemy.types import BigInteger, TIMESTAMP
 
 from baruwa.lib.custom_ddl import utcnow
-from baruwa.model.meta import Base
+from baruwa.model.meta import Base, Session
 
 
 class ConfigSettings(Base):
@@ -68,10 +69,9 @@ class Server(Base):
     def tojson(self):
         "Return JSON"
         return dict(
-                    id=self.id,
-                    hostname=self.hostname,
-                    statusimg='imgs/tick.png' if self.enabled else 'imgs/minus.png'
-                    )
+            id=self.id,
+            hostname=self.hostname,
+            statusimg='imgs/tick.png' if self.enabled else 'imgs/minus.png')
 
 
 class DomSignature(Base):
@@ -113,8 +113,8 @@ class DomSigImg(Base):
     __table_args__ = (UniqueConstraint('name', 'domain_id'), {})
 
     id = Column(BigInteger, primary_key=True)
-    content_type =  Column(Unicode(100))
-    name =  Column(Unicode(150))
+    content_type = Column(Unicode(100))
+    name = Column(Unicode(150))
     image = Column(UnicodeText)
     domain_id = Column(Integer, ForeignKey('maildomains.id'))
     sign_id = Column(Integer, ForeignKey('domain_signatures.id'))
@@ -128,8 +128,8 @@ class UserSigImg(Base):
     __table_args__ = (UniqueConstraint('name', 'user_id'), {})
 
     id = Column(BigInteger, primary_key=True)
-    content_type =  Column(Unicode(100))
-    name =  Column(Unicode(150))
+    content_type = Column(Unicode(100))
+    name = Column(Unicode(150))
     image = Column(UnicodeText)
     user_id = Column(Integer, ForeignKey('users.id'))
     sign_id = Column(Integer, ForeignKey('user_signatures.id'))
@@ -171,3 +171,122 @@ class DKIMKeys(Base):
     pub_key = Column(UnicodeText)
     enabled = Column(Boolean, default=False)
     domain_id = Column(Integer, ForeignKey('maildomains.id'))
+
+
+class MTASettings(Base):
+    """MTA Settings"""
+    __tablename__ = 'mta_settings'
+    __table_args__ = (UniqueConstraint('address', 'address_type'), {})
+
+    id = Column(BigInteger, primary_key=True)
+    address = Column(Unicode(255))
+    address_type = Column(Integer)
+    enabled = Column(Boolean, default=False)
+
+
+class PolicySettings(Base):
+    """Policy Settings"""
+    __tablename__ = 'policysettings'
+
+    id = Column(BigInteger, primary_key=True)
+    archive_filename = Column(Integer)
+    archive_filetype = Column(Integer)
+    filename = Column(Integer)
+    filetype = Column(Integer)
+
+
+class DomainPolicy(Base):
+    """Domain Policy Settings"""
+    __tablename__ = 'domainpolicysettings'
+
+    id = Column(BigInteger, primary_key=True)
+    archive_filename = Column(Integer)
+    archive_filetype = Column(Integer)
+    filename = Column(Integer)
+    filetype = Column(Integer)
+    domain_id = Column(Integer, ForeignKey('maildomains.id'))
+
+
+class Policy(Base):
+    """Policies"""
+    __tablename__ = 'policies'
+
+    id = Column(BigInteger, primary_key=True)
+    name = Column(Unicode(150), unique=True)
+    policy_type = Column(Integer)
+    enabled = Column(Boolean, default=False)
+    rules = relationship('Rule', backref='policy',
+                        cascade='delete, delete-orphan')
+
+
+class Rule(Base):
+    """Policy Rules"""
+    __tablename__ = 'rules'
+
+    id = Column(BigInteger, primary_key=True)
+    expression = Column(Unicode(255))
+    description = Column(UnicodeText)
+    action = Column(UnicodeText)
+    options = Column(UnicodeText)
+    enabled = Column(Boolean, default=False)
+    ordering = Column(Integer)
+    policy_id = Column(Integer, ForeignKey('policies.id'))
+
+    __mapper_args__ = {'order_by': desc(ordering)}
+
+    def is_first(self):
+        """Check if it is the first rule"""
+        return Session.query(Rule.ordering)\
+                    .filter(Rule.policy_id == self.policy_id)\
+                    .filter(Rule.ordering > self.ordering)\
+                    .count() == 0
+
+    def is_last(self):
+        """Check if it is the last rule"""
+        return Session.query(Rule.ordering)\
+                    .filter(Rule.policy_id == self.policy_id)\
+                    .filter(Rule.ordering < self.ordering)\
+                    .count() == 0
+
+    def move_up(self):
+        """Move up"""
+        try:
+            if self.is_first():
+                raise IndexError
+            next_rule = Session.query(Rule)\
+                                .filter(Rule.policy_id == self.policy_id)\
+                                .filter(Rule.ordering > self.ordering)\
+                                .order_by('ordering')\
+                                .all()[0]
+        except IndexError:
+            pass
+        else:
+            self.swap_order(next_rule)
+
+    def move_down(self):
+        """Move down"""
+        try:
+            if self.is_last():
+                raise IndexError
+            prev_rule = Session.query(Rule)\
+                                .filter(Rule.policy_id == self.policy_id)\
+                                .filter(Rule.ordering < self.ordering)\
+                                .order_by('ordering')\
+                                .all()[-1:][0]
+        except IndexError:
+            pass
+        else:
+            self.swap_order(prev_rule)
+
+    def swap_order(self, next_rule):
+        """Swap ordering"""
+        prev_order = self.ordering
+        self.ordering = next_rule.ordering
+        next_rule.ordering = prev_order
+        Session.add(self)
+        Session.commit()
+        Session.add(next_rule)
+        Session.commit()
+
+    first = property(is_first)
+    last = property(is_last)

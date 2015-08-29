@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # Baruwa - Web 2.0 MailScanner front-end.
-# Copyright (C) 2010-2012  Andrew Colin Kissa <andrew@topdog.za.net>
+# Copyright (C) 2010-2015  Andrew Colin Kissa <andrew@topdog.za.net>
 # vim: ai ts=4 sts=4 et sw=4
 
 "status tasks"
@@ -30,6 +30,7 @@ from reportlab.platypus import Paragraph, Image, Spacer, TableStyle
 from baruwa.model.meta import Session
 from baruwa.lib.graphs import PIE_TABLE
 from baruwa.lib.net import system_hostname
+from baruwa.lib.misc import extract_sphinx_opts
 from baruwa.lib.query import clean_sphinx_q
 from baruwa.lib.mail.queue.exim import EximQueue
 from baruwa.lib.mail.message import PreviewMessage
@@ -46,8 +47,11 @@ STYLES = getSampleStyleSheet()
 
 
 if not Session.registry.has():
-    engine = engine_from_config(config, 'sqlalchemy.', poolclass=NullPool)
-    Session.configure(bind=engine)
+    try:
+        engine = engine_from_config(config, 'sqlalchemy.', poolclass=NullPool)
+        Session.configure(bind=engine)
+    except KeyError:
+        pass
 
 
 @task(name="get-system-status")
@@ -66,6 +70,7 @@ def systemstatus():
                 uptime=None,
                 av=None,
                 partitions=[])
+
     def _obj2dict(obj):
         "convert object attribs to dict"
         val = {}
@@ -111,14 +116,10 @@ def salint():
     logger = salint.get_logger()
     logger.info("Running Spamassassin lint checks")
     lint = []
-    saprefs = config.get('ms.saprefs',
-            '/etc/MailScanner/spam.assassin.prefs.conf')
 
     pipe1 = subprocess.Popen(['spamassassin',
                             '-x',
                             '-D',
-                            '-p',
-                            saprefs,
                             '--lint'],
                             stdout=subprocess.PIPE,
                             stderr=subprocess.PIPE)
@@ -219,7 +220,7 @@ def process_queued_msgs(msgids, action, direction, *args):
     try:
         logger = process_queued_msgs.get_logger()
         eximcmd = get_config_option('Sendmail2') if direction == 2 else 'exim'
-        if not 'exim' in eximcmd:
+        if 'exim' not in eximcmd:
             logger.info("Invalid exim command: %s" % eximcmd)
             return
         if direction == 1 and action not in ['bounce', 'delete']:
@@ -241,7 +242,7 @@ def process_queued_msgs(msgids, action, direction, *args):
         logger.info("Invalid input: %s" % error)
     except AttributeError:
         logger.info("Invalid action: %s" % action)
-        
+
 
 @task(name='update-audit-log', ignore_result=True)
 def update_audit_log(username,
@@ -273,6 +274,8 @@ def update_audit_log(username,
                     remoteip,
                     timestamp,
                     err))
+    finally:
+        Session.close()
 
 
 def build_pdf(rows):
@@ -296,12 +299,11 @@ def build_pdf(rows):
             Paragraph(_('Info'), STYLES["Heading6"]),
             Paragraph(_('Hostname'), STYLES["Heading6"]),
             Paragraph(_('Remote IP'), STYLES["Heading6"]),
-            Paragraph(_('Action'), STYLES["Heading6"]),
-            ))
+            Paragraph(_('Action'), STYLES["Heading6"]), ))
     rows.insert(0, heading)
     table = Table(rows, [1.10 * inch, 1.23 * inch,
                         1.96 * inch, 1.69 * inch,
-                        0.95 * inch, 0.45 * inch,])
+                        0.95 * inch, 0.45 * inch, ])
     table.setStyle(TableStyle([
             ('FONTSIZE', (0, 0), (-1, -1), 8),
             ('FONT', (0, 0), (-1, -1), 'Helvetica'),
@@ -329,6 +331,8 @@ def export_auditlog(format, query):
         dbquery = Session.query(AuditLog)
         if query:
             conn = SphinxClient()
+            sphinxopts = extract_sphinx_opts(config['sphinx.url'])
+            conn.SetServer(sphinxopts.get('host', '127.0.0.1'))
             conn.SetMatchMode(SPH_MATCH_EXTENDED2)
             conn.SetLimits(0, 500, 500)
             query = clean_sphinx_q(query)
@@ -342,7 +346,7 @@ def export_auditlog(format, query):
             PS = ParagraphStyle('auditlogp',
                                     fontName='Helvetica',
                                     fontSize=8,
-                                    borderPadding =(2, 2, 2, 2))
+                                    borderPadding=(2, 2, 2, 2))
             rows = [(Paragraph(item.timestamp.strftime('%Y-%m-%d %H:%M'), PS),
                     Paragraph(wrap_string(item.username, 27), PS),
                     Paragraph(wrap_string(item.info, 33), PS),
@@ -367,4 +371,5 @@ def export_auditlog(format, query):
         results['errormsg'] = str(err)
         logger.info("Audit Log export FAILURE: %s" % str(err))
         return results
-        
+    finally:
+        Session.close()

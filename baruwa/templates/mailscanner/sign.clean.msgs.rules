@@ -1,0 +1,11 @@
+% for user in users:
+% if user.email and not user.address:
+From: ${user.email} yes
+% else:
+From: ${user.address} yes
+% endif
+% endfor
+% for domain in domains:
+From: *@${domain.name} yes
+% endfor
+FromOrTo: default  no

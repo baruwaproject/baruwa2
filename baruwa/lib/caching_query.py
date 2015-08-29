@@ -11,42 +11,44 @@ The three new concepts introduced here are:
    parameters on a Query
  * RelationshipCache - a variant of FromCache which is specific
    to a query invoked during a lazy load.
- * _params_from_query - extracts value parameters from 
+ * _params_from_query - extracts value parameters from
    a Query.
 
 The rest of what's here are standard SQLAlchemy and
 Beaker constructs.
 
 """
+from pylibmc import Error as PylibmcError
 from sqlalchemy.orm.interfaces import MapperOption
 from sqlalchemy.orm.query import Query
 from sqlalchemy.sql import visitors
 
+
 class CachingQuery(Query):
-    """A Query subclass which optionally loads full results from a Beaker 
+    """A Query subclass which optionally loads full results from a Beaker
     cache region.
 
     The CachingQuery stores additional state that allows it to consult
     a Beaker cache before accessing the database:
 
-    * A "region", which is a cache region argument passed to a 
+    * A "region", which is a cache region argument passed to a
       Beaker CacheManager, specifies a particular cache configuration
       (including backend implementation, expiration times, etc.)
     * A "namespace", which is a qualifying name that identifies a
-      group of keys within the cache.  A query that filters on a name 
-      might use the name "by_name", a query that filters on a date range 
+      group of keys within the cache.  A query that filters on a name
+      might use the name "by_name", a query that filters on a date range
       to a joined table might use the name "related_date_range".
 
     When the above state is present, a Beaker cache is retrieved.
 
-    The "namespace" name is first concatenated with 
-    a string composed of the individual entities and columns the Query 
+    The "namespace" name is first concatenated with
+    a string composed of the individual entities and columns the Query
     requests, i.e. such as ``Query(User.id, User.name)``.
 
     The Beaker cache is then loaded from the cache manager based
     on the region and composed namespace.  The key within the cache
     itself is then constructed against the bind parameters specified
-    by this query, which are usually literals defined in the 
+    by this query, which are usually literals defined in the
     WHERE clause.
 
     The FromCache and RelationshipCache mapper options below represent
@@ -72,7 +74,8 @@ class CachingQuery(Query):
 
         """
         if hasattr(self, '_cache_parameters'):
-            return self.get_value(createfunc=lambda: list(Query.__iter__(self)))
+            return self.get_value(createfunc=lambda:
+                    list(Query.__iter__(self)))
         else:
             return Query.__iter__(self)
 
@@ -89,9 +92,13 @@ class CachingQuery(Query):
         createfunc specified.
 
         """
-        cache, cache_key = _get_cache_parameters(self)
-        #cache_key = cache_key[:249]
-        ret = cache.get_value(str(cache_key), createfunc=createfunc)
+        try:
+            cache, cache_key = _get_cache_parameters(self)
+            # cache_key = cache_key[:249]
+            # ret = cache.get_value(str(cache_key), createfunc=createfunc)
+            ret = cache.get_value(str(cache_key))
+        except (PylibmcError, KeyError):
+            ret = createfunc()
         if merge:
             ret = self.merge_result(ret, load=False)
         return ret
@@ -102,10 +109,12 @@ class CachingQuery(Query):
         cache, cache_key = _get_cache_parameters(self)
         cache.put(cache_key, value)
 
+
 def query_callable(manager, query_cls=CachingQuery):
     def query(*arg, **kw):
         return query_cls(manager, *arg, **kw)
     return query
+
 
 def _get_cache_parameters(query):
     """For a query with cache_region and cache_namespace configured,
@@ -114,7 +123,8 @@ def _get_cache_parameters(query):
 
     """
     if not hasattr(query, '_cache_parameters'):
-        raise ValueError("This Query does not have caching parameters configured.")
+        raise ValueError("This Query does not have "
+                        "caching parameters configured.")
 
     region, namespace, cache_key = query._cache_parameters
 
@@ -122,7 +132,7 @@ def _get_cache_parameters(query):
 
     if cache_key is None:
         # cache key - the value arguments from this query's parameters.
-        #args = [str(x) for x in _params_from_query(query)]
+        # args = [str(x) for x in _params_from_query(query)]
         args = []
         for x in _params_from_query(query):
             try:
@@ -138,7 +148,7 @@ def _get_cache_parameters(query):
     cache_key = cache_key.replace(' ', '\302\267')
     if len(cache_key) > 148:
         cache_key = cache_key[:148]
-    #print "=" * 10, namespace, "=" * 10, cache_key
+    # print "=" * 10, namespace, "=" * 10, cache_key
     cache = query.cache_manager.get_cache_region(namespace, region)
 
     # optional - hash the cache_key too for consistent length
@@ -147,8 +157,9 @@ def _get_cache_parameters(query):
 
     return cache, cache_key
 
+
 def _namespace_from_query(namespace, query):
-    # cache namespace - the token handed in by the 
+    # cache namespace - the token handed in by the
     # option + class we're querying against
     namespace = " ".join([namespace] + [str(x) for x in query._entities])
 
@@ -158,15 +169,16 @@ def _namespace_from_query(namespace, query):
 
     return str(namespace)
 
+
 def _set_cache_parameters(query, region, namespace, cache_key):
 
     if hasattr(query, '_cache_parameters'):
         region, namespace, cache_key = query._cache_parameters
         raise ValueError("This query is already configured "
-                        "for region %r namespace %r" % 
-                        (region, namespace)
-                    )
+                        "for region %r namespace %r" %
+                        (region, namespace))
     query._cache_parameters = region, namespace, cache_key
+
 
 class FromCache(MapperOption):
     """Specifies that a Query should load results from a cache."""
@@ -183,10 +195,10 @@ class FromCache(MapperOption):
         be a name uniquely describing the target Query's
         lexical structure.
 
-        :param cache_key: optional.  A string cache key 
+        :param cache_key: optional.  A string cache key
         that will serve as the key to the query.   Use this
         if your query has a huge amount of parameters (such
-        as when using in_()) which correspond more simply to 
+        as when using in_()) which correspond more simply to
         some other identifier.
 
         """
@@ -197,10 +209,12 @@ class FromCache(MapperOption):
     def process_query(self, query):
         """Process a Query during normal loading operation."""
 
-        _set_cache_parameters(query, self.region, self.namespace, self.cache_key)
+        _set_cache_parameters(query, self.region, self.namespace,
+                                self.cache_key)
+
 
 class RelationshipCache(MapperOption):
-    """Specifies that a Query as called within a "lazy load" 
+    """Specifies that a Query as called within a "lazy load"
        should load results from a cache."""
 
     propagate_to_loaders = True
@@ -223,7 +237,7 @@ class RelationshipCache(MapperOption):
         self.region = region
         self.namespace = namespace
         self._relationship_options = {
-            ( attribute.property.parent.class_, attribute.property.key ) : self
+            (attribute.property.parent.class_, attribute.property.key): self
         }
 
     def process_query_conditionally(self, query):
@@ -238,11 +252,12 @@ class RelationshipCache(MapperOption):
 
             for cls in mapper.class_.__mro__:
                 if (cls, key) in self._relationship_options:
-                    relationship_option = self._relationship_options[(cls, key)]
+                    relationship_option = self._relationship_options[
+                                            (cls, key)]
                     _set_cache_parameters(
-                            query, 
-                            relationship_option.region, 
-                            relationship_option.namespace, 
+                            query,
+                            relationship_option.region,
+                            relationship_option.namespace,
                             None)
 
     def and_(self, option):
@@ -267,6 +282,7 @@ def _params_from_query(query):
 
     """
     v = []
+
     def visit_bindparam(bind):
 
         if bind.key in query._params:
@@ -281,7 +297,7 @@ def _params_from_query(query):
 
         v.append(value)
     if query._criterion is not None:
-        visitors.traverse(query._criterion, {}, {'bindparam':visit_bindparam})
+        visitors.traverse(query._criterion, {}, {'bindparam': visit_bindparam})
     for f in query._from_obj:
-        visitors.traverse(f, {}, {'bindparam':visit_bindparam})
+        visitors.traverse(f, {}, {'bindparam': visit_bindparam})
     return v

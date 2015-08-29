@@ -1,25 +1,37 @@
-<div class="alpos">
-	<ul id="msgops">
-		<li>${h.link_to(_('Organization details'), url('org-detail', orgid=c.orgid))}</li>
-	</ul>
+<div class="row-fluid">
+	<div class="span1 hidden-phone"></div>
+	<div class="span10">
+		<ul id="msgops">
+			<li>${h.link_to(_('Organization details'), url('org-detail', orgid=c.orgid))}</li>
+		</ul>
+	</div>
+	<div class="span1 hidden-phone"></div>
 </div>
-<div class="clear"></div>
-<div id="content">
-<div class="grid_16">
-    <h3 class="head">${_('Edit outbound settings')}</h3>
+<div class="space-6"></div>
+<div class="row-fluid">
+	<div class="span1 hidden-phone"></div>
+	<div class="span10">
+		<div class="row-fluid">
+		    <h3 class="head smaller lighter blue">${_('Edit outbound settings')}</h3>
+		</div>
+	</div>
+	<div class="span1 hidden-phone"></div>
 </div>
-${h.form(url('orgs-edit-relay', settingid=c.relayid), method='post')}
-<%include file="/forms/base.html"/>
-<div class="grid_16 drow">
-    <div class="grid_7">&nbsp;</div>
-    <div class="grid_8">
-        <input id="cancel-button" type="reset" value="${_('Reset')}" />&nbsp;
-		${h.submit('submit', _('Update settings'))}
-    </div>
-    
+<div class="row-fluid">
+	<div class="span1 hidden-phone"></div>
+	<div class="span10">
+		<div class="row-fluid">
+		    ${h.form(url('orgs-edit-relay', settingid=c.relayid), method='post', class_="form-horizontal")}
+			<%include file="../forms/base.html"/>
+			<div class="form-actions">
+				<button id="submit-button" class="btn btn-small btn-success"><i class="icon-plus"></i> ${_('Update settings')}</button>
+			</div>
+			${h.end_form()}\
+		</div>
+	</div>
+	<div class="span1 hidden-phone"></div>
 </div>
-${h.end_form()}\
-</div>
+
 
 <%def name="title()">
 ${_('Organizations :: Edit outbound settings :: %(name)s') % dict(name=c.relayname)}
@@ -31,7 +43,13 @@ ${_('Organizations :: Edit outbound settings :: %(name)s') % dict(name=c.relayna
 
 <%def name="headers()">
 </%def>
-<%def name="localscripts()">
+<%def name="submenu()"></%def>
+<%def name="localscripts()">\
+<script type="text/javascript">
+$(function() {
+	$('.settings-popover').popover();
+});
+</script>
 </%def>
 
-<%inherit file="/base.html"/>
+<%inherit file="../base.html"/>

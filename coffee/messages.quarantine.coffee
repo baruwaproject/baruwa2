@@ -1,10 +1,26 @@
+###!
+ * Baruwa Enterprise Edition
+ * http://www.baruwa.com
+ *
+ * Copyright (c) 2013-2015 Andrew Colin Kissa
+ *
+ *
+###
 $ = jQuery
 exports = this
 exports.setitems_url = setitems_url
+style_map = {gray: 'notscanned', whitelisted: 'whitelisted', blacklisted: 'blacklisted', highspam: 'highspam', spam: 'spam', infected: 'infected', white: ''}
+
+show_dialog = () ->
+    bootbox.dialog '<h3 class="head smaller lighter blue">Processing your request, please be patient</h3>',
+    [{'label': 'Dismiss', 'class': 'btn btn-small btn-success'}]
 
 disable_links = (e) ->
     if exports.inprogress
         e.preventDefault()
+        e.stopPropagation()
+        # bootbox.dialog '<h3 class="head smaller lighter blue">Processing your request, please be patient</h3>',
+        # [{'label': 'Dismiss', 'class': 'btn btn-small btn-success'}]
     1
 
 pagination = (data) ->
@@ -12,14 +28,14 @@ pagination = (data) ->
         rows = []
         if data.next_page != data.first_page and data.page != data.first_page
             if data.section
-                rows.push '<span><a href="/messages/quarantine/{{section}}/{{order_by}}/{{direction}}/{{first_page}}"><img src="{{media_url}}/imgs/first_pager.png" alt="first" title="first" /></a></span><span>...</span>'
+                rows.push '<span><a href="/messages/quarantine/{{section}}/{{order_by}}/{{direction}}/{{first_page}}"><i class="icon-double-angle-left"></i></a></span><span>...</span>'
             else
-                rows.push '<span><a href="/messages/quarantine/{{order_by}}/{{direction}}/{{first_page}}"><img src="{{media_url}}/imgs/first_pager.png" alt="first" title="first" /></a></span><span>...</span>'
+                rows.push '<span><a href="/messages/quarantine/{{order_by}}/{{direction}}/{{first_page}}"><i class="icon-double-angle-left"></i></a></span><span>...</span>'
         if data.previous_page
             if data.section
-                rows.push '<span><a href="/messages/quarantine/{{section}}/{{order_by}}/{{direction}}/{{previous_page}}"><img src="{{media_url}}/imgs/previous_pager.png" alt="prev" title="prev" /></a></span>'
+                rows.push '<span><a href="/messages/quarantine/{{section}}/{{order_by}}/{{direction}}/{{previous_page}}"><i class="icon-angle-left"></i></a></span>'
             else
-                rows.push '<span><a href="/messages/quarantine/{{order_by}}/{{direction}}/{{previous_page}}"><img src="{{media_url}}/imgs/previous_pager.png" alt="prev" title="prev" /></a></span>'
+                rows.push '<span><a href="/messages/quarantine/{{order_by}}/{{direction}}/{{previous_page}}"><i class="icon-angle-left"></i></a></span>'
         for linkpage in data.page_nums
             if linkpage == data.page
                 rows.push '<span class="curpage">{{page}}</span>'
@@ -30,14 +46,14 @@ pagination = (data) ->
                     rows.push '<span><a href="/messages/quarantine/{{order_by}}/{{direction}}/'+linkpage+'">'+linkpage+'</a></span>'
         if data.next_page
             if data.section
-                rows.push '<span><a href="/messages/quarantine/{{section}}/{{order_by}}/{{direction}}/{{next_page}}"><img src="{{media_url}}/imgs/next_pager.png" alt="next" title="next" /></a></span>'
+                rows.push '<span><a href="/messages/quarantine/{{section}}/{{order_by}}/{{direction}}/{{next_page}}"><i class="icon-angle-right"></i></a></span>'
             else
-                rows.push '<span><a href="/messages/quarantine/{{order_by}}/{{direction}}/{{next_page}}"><img src="{{media_url}}/imgs/next_pager.png" alt="next" title="next" /></a></span>'
+                rows.push '<span><a href="/messages/quarantine/{{order_by}}/{{direction}}/{{next_page}}"><i class="icon-angle-right"></i></a></span>'
         if data.next_page != data.page_count and data.page != data.page_count and data.page_count != 0
             if data.section
-                rows.push '<span>...</span><span><a href="/messages/quarantine/{{section}}/{{order_by}}/{{direction}}/{{last_page}}"><img src="{{media_url}}/imgs/last_pager.png" alt="last" title="last" /></a></span>'
+                rows.push '<span>...</span><span><a href="/messages/quarantine/{{section}}/{{order_by}}/{{direction}}/{{last_page}}"><i class="icon-double-angle-right"></i></a></span>'
             else
-                rows.push '<span>...</span><span><a href="/messages/quarantine/{{order_by}}/{{direction}}/{{last_page}}"><img src="{{media_url}}/imgs/last_pager.png" alt="last" title="last" /></a></span>'
+                rows.push '<span>...</span><span><a href="/messages/quarantine/{{order_by}}/{{direction}}/{{last_page}}"><i class="icon-double-angle-right"></i></a></span>'
         tmpl = rows.join '\n'
         html = $.mustache tmpl, data
     else
@@ -45,6 +61,9 @@ pagination = (data) ->
     html
 
 ajaxify = (e, url) ->
+    if exports.inprogress
+        show_dialog
+        return false
     e.preventDefault()
     $.address.value url.replace(/\.json/, '')
     $.address.history $.address.baseURL() + url
@@ -56,18 +75,19 @@ replacelink = (html, style)->
     1
 
 buildrows = (items) ->
-    row = '<tr class="{{style}}_row"><td class="select_row">' +
+    row = '<tr class="{{style}}"><td class="select_row">' +
             '<input type="checkbox" name="message_id" value="{{id}}" class="selector" /></td>' +
-            '<td class="date_td"><a href="/messages/detail/{{id}}">{{timestamp}}</a></td>' +
-            '<td class="from_row"><a href="/messages/detail/{{id}}">{{from_address}}</a></td>' +
-            '<td class="to_row"><a href="/messages/detail/{{id}}">{{to_address}}</a></td>' +
+            '<td class="date_td hidden-phone"><a href="/messages/detail/{{id}}">{{timestamp}}</a></td>' +
+            '<td class="from_row hidden-phone"><a href="/messages/detail/{{id}}">{{from_address}}</a></td>' +
+            '<td class="to_row hidden-phone"><a href="/messages/detail/{{id}}">{{to_address}}</a></td>' +
             '<td class="subject_row"><a href="/messages/detail/{{id}}">{{subject}}</a></td>' +
-            '<td class="score_row"><a href="/messages/detail/{{id}}">{{sascore}}</a></td>' +
-            '<td class="status_row"><a href="/messages/detail/{{id}}">{{status}}</a></td></tr>'
+            '<td class="score_row hidden-phone"><a href="/messages/detail/{{id}}">{{sascore}}</a></td>' +
+            '<td class="status_row hidden-phone"><a href="/messages/detail/{{id}}">{{status}}</a></td></tr>'
     if items.length
         rows = []
         $.each items, (i,n) ->
             n['timestamp'] = BaruwaDateString(n['timestamp'])
+            n['style'] = style_map[n['style']]
             html = $.mustache row, n
             rows.push html
         replacement = rows.join ''
@@ -82,16 +102,16 @@ buildpage = (data) ->
     if data.items.length
         pages_tmpl = gettext('Showing items {{first_item}} to {{last_item}} of {{item_count}}.')
         pages_html = $.mustache pages_tmpl, data
-        title_tmpl = gettext('Messages :: Full message listing :: Showing page {{page}} of {{page_count}} pages.')
+        title_tmpl = gettext('Messages :: Quarantine :: Showing page {{page}} of {{page_count}} pages.')
         title_html = $.mustache title_tmpl, data
         $('div.limiter').show()
     else
         pages_html = gettext('No items found')
-        title_html = gettext('Messages :: Full message listing')
+        title_html = gettext('Messages :: Quarantine')
         $('div.limiter').hide()
     $('div.toolbar p').html pages_html
     $('#title').html title_html
-    $.address.title '.:. Baruwa :: ' + title_html
+    $.address.title '.:. ' + exports.baruwa_custom_name + ' :: ' + title_html
     $('div.pages a').click((e)->
         url = $(this).attr('href') + '.json'
         ajaxify(e, url)
@@ -139,8 +159,8 @@ ajaxrequest = (url) ->
             exports.inprogress = false
             $('#shield').hide()
             if $(window).scrollTop()
-                $('html,body').animate 
-                    scrollTop: $("#header-bar").offset().top, 1500
+                $('html,body').animate
+                    scrollTop: $("#wrap").offset().top, 1500
             1
     1
 
@@ -171,12 +191,24 @@ $(document).ready ->
         n = $(this).val()
         location.href = "#{exports.setitems_url}?n=#{n}"
     )
+    $('.filter_add').unbind 'click'
     $('.filter_add').bind 'click', (e)->
         e.preventDefault()
+        e.stopPropagation()
+        if exports.inprogress
+            show_dialog()
+            return false
         add_filters()
         1
+    $('.filter_show').unbind 'click'
     $('.filter_show').bind 'click', (e)->
         e.preventDefault()
+        e.stopPropagation()
+        if exports.inprogress
+            show_dialog()
+            return false
         show_filters()
         1
     1
+
+

@@ -1,18 +1,18 @@
 # -*- coding: utf-8 -*-
 # vim: ai ts=4 sts=4 et sw=4
 # Baruwa - Web 2.0 MailScanner front-end.
-# Copyright (C) 2010-2012  Andrew Colin Kissa <andrew@topdog.za.net>
+# Copyright (C) 2010-2015  Andrew Colin Kissa <andrew@topdog.za.net>
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation, either version 3 of the License, or
 # (at your option) any later version.
-# 
+#
 # This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License for more details.
-# 
+#
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
@@ -48,12 +48,25 @@ def get_message_path(qdir, date, message_id):
     return None, None
 
 
-def search_quarantine(date, message_id):
+def search_quarantine(date, message_id, msgfiles):
     """search_quarantine"""
-    qdir = get_config_option('Quarantine Dir')
-    date = "%s" % date
-    date = date.replace('-', '')
-    return get_message_path(qdir, date, message_id)
+    if msgfiles:
+        if ':' in msgfiles:
+            filedir = msgfiles.split(':')[0]
+            file_path = os.path.join(filedir, 'message')
+            isdir = True
+        else:
+            file_path = msgfiles
+            isdir = False
+            if os.path.isdir(file_path):
+                file_path = os.path.join(file_path, 'message')
+                isdir = True
+        return file_path, isdir
+    else:
+        qdir = get_config_option('Quarantine Dir')
+        date = "%s" % date
+        date = date.replace('-', '')
+        return get_message_path(qdir, date, message_id)
 
 
 class ProcessQuarantinedMessage(object):
@@ -100,7 +113,7 @@ class ProcessQuarantinedMessage(object):
     def learn(self, learnas):
         "Bayesian learn the message"
         learnopts = ('spam', 'ham', 'forget')
-        if not learnas in learnopts:
+        if learnas not in learnopts:
             self.errors.append('Unsupported learn option supplied')
             return False
 
@@ -213,7 +226,7 @@ class TestDeliveryServers(object):
             dict(sender=exception.sender))
         except smtplib.SMTPRecipientsRefused, exception:
             self.errors.append('Some recipients: %(recpts)s were'
-            ' rejected with errors: %(errors)s' % 
+            ' rejected with errors: %(errors)s' %
             dict(recpts=str(exception.recipients), errors=str(exception)))
         except smtplib.SMTPConnectError:
             self.errors.append('Error occured while establishing'
@@ -239,8 +252,8 @@ class TestDeliveryServers(object):
         if DOM_RE.match(self.host):
             ipaddr = get_ipaddr(self.host)
         if (IPV4_RE.match(self.host) or 'ipaddr' in locals()
-            and IPV4_RE.match(ipaddr)):
-            if not 'ipaddr' in locals():
+            and ipaddr and IPV4_RE.match(ipaddr)):
+            if 'ipaddr' not in locals():
                 ipaddr = self.host
             ping_bin = 'ping'
         else:
@@ -251,7 +264,7 @@ class TestDeliveryServers(object):
             pipe = subprocess.Popen(ping_cmd,
                                     stdout=subprocess.PIPE,
                                     stderr=subprocess.PIPE)
-            stdout, stderr = pipe.communicate()
+            _, stderr = pipe.communicate()
             pipe.wait(timeout=10)
             if pipe.returncode == 0:
                 return True

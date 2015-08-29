@@ -1,18 +1,18 @@
 # -*- coding: utf-8 -*-
 # vim: ai ts=4 sts=4 et sw=4
 # Baruwa - Web 2.0 MailScanner front-end.
-# Copyright (C) 2010-2012  Andrew Colin Kissa <andrew@topdog.za.net>
+# Copyright (C) 2010-2015  Andrew Colin Kissa <andrew@topdog.za.net>
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation, either version 3 of the License, or
 # (at your option) any later version.
-# 
+#
 # This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License for more details.
-# 
+#
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
@@ -76,15 +76,15 @@ PIE_TABLE = TableStyle([
 STYLES = getSampleStyleSheet()
 
 CUSTOM_HEADING1 = ParagraphStyle(
-    name="custheading1", 
+    name="custheading1",
     fontName="Vera",
-    parent=STYLES['Heading1'], 
+    parent=STYLES['Heading1'],
 )
 
 CUSTOM_HEADING6 = ParagraphStyle(
-    name="custheading6", 
+    name="custheading6",
     fontName="VeraBd",
-    parent=STYLES['Heading6'], 
+    parent=STYLES['Heading6'],
 )
 
 
@@ -119,10 +119,10 @@ class PieChart(Drawing):
     def __init__(self, width=100, height=100, *args, **kwargs):
         Drawing.__init__(self, width, height, *args, **kwargs)
         self.add(Pie(), name='chart')
-        #transparent = colors.Color(255, 255, 255, alpha=0.5)
-        #print dir(transparent)
-        #print dir(self)
-        #self.setFillColor(transparent)
+        # transparent = colors.Color(255, 255, 255, alpha=0.5)
+        # print dir(transparent)
+        # print dir(self)
+        # self.setFillColor(transparent)
 
         for i in range(10):
             self.chart.slices[i].fillColor = PIE_CHART_COLORS[i]
@@ -145,8 +145,8 @@ class BarChart(Drawing):
         self.chart.height = 225
         self.chart.strokeColor = None
         self.chart.valueAxis.valueMin = 0
-        #self.chart.valueAxis.valueMax = 50
-        #self.chart.valueAxis.valueStep = 10
+        # self.chart.valueAxis.valueMax = 50
+        # self.chart.valueAxis.valueStep = 10
         self.chart.data = [(1, 2, 5), ]
         self.chart.categoryAxis.visible = 1
         self.chart.bars[0].fillColor = colors.green
@@ -158,8 +158,8 @@ class BarChart(Drawing):
         self.plot.width = 500
         self.plot.height = 225
         self.plot.valueAxis.visible = 0
-        #self.plot.valueAxis.valueMin = 0
-        #print dir(self.plot.valueAxis)
+        # self.plot.valueAxis.valueMin = 0
+        # print dir(self.plot.valueAxis)
         self.plot.lines[0].strokeColor = colors.blue
 
 
@@ -265,7 +265,7 @@ class PDFReport(object):
                 Table([[self._draw_square(colors.blue),
                     Paragraph(headers['volume'], CUSTOM_HEADING6)]],
                     [0.35 * inch, 1.13 * inch, ]),
-                ),]
+                ), ]
         if not data:
             return
         graph, rows = build_barchart(data,
@@ -327,13 +327,13 @@ def build_barchart(data, rows=None, header=None):
         if ind % 10:
             dates.append('')
         else:
-            dates.append(str(msg.date))
+            dates.append(str(msg.ldate))
         mail_total.append(int(msg.mail_total))
         spam_total.append(int(msg.spam_total))
         virus_total.append(int(msg.virus_total))
         mail_size.append(int(msg.total_size))
         if rows:
-            rows.append((str(msg.date),
+            rows.append((str(msg.ldate),
                         msg.mail_total,
                         msg.spam_total,
                         msg.virus_total,
@@ -366,4 +366,3 @@ def build_spam_chart(data):
     graph.chart.data = [tuple(counts)]
     graph.chart.categoryAxis.categoryNames = scores
     return graph
-    

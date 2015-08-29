@@ -1,21 +1,22 @@
 # -*- coding: utf-8 -*-
 # vim: ai ts=4 sts=4 et sw=4
 # Baruwa - Web 2.0 MailScanner front-end.
-# Copyright (C) 2010-2012  Andrew Colin Kissa <andrew@topdog.za.net>
+# Copyright (C) 2010-2015  Andrew Colin Kissa <andrew@topdog.za.net>
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation, either version 3 of the License, or
 # (at your option) any later version.
-# 
+#
 # This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License for more details.
-# 
+#
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
+"utility controller"
 
 import os
 import logging
@@ -68,7 +69,8 @@ function pgettext(context, msgid) {
 }
 
 function npgettext(context, singular, plural, count) {
-  var value = ngettext(context + '\x04' + singular, context + '\x04' + plural, count);
+  var value = ngettext(context + '\x04' + singular,
+                        context + '\x04' + plural, count);
   if (value.indexOf('\x04') != -1) {
     value = ngettext(singular, plural, count);
   }
@@ -83,7 +85,8 @@ function pluralidx(count) { return (count == 1) ? 0 : 1; }
 INTERPOLATE = r"""
 function interpolate(fmt, obj, named) {
   if (named) {
-    return fmt.replace(/%\(\w+\)s/g, function(match){return String(obj[match.slice(2,-2)])});
+    return fmt.replace(/%\(\w+\)s/g,
+            function(match){return String(obj[match.slice(2,-2)])});
   } else {
     return fmt.replace(/%s/g, function(match){return String(obj.shift())});
   }
@@ -103,10 +106,14 @@ function pluralidx(n) {
 
 
 class UtilsController(BaseController):
+    "utility controller"
 
     def js_localization(self):
         "return localized strings from cache or compute"
         locale = get_lang()[0]
+        response.headers['Pragma'] = 'public'
+        response.headers['Cache-Control'] = 'max-age=0'
+        response.headers['Content-Type'] = 'text/javascript;charset=utf-8'
         if self.langchange:
             region_invalidate(self._js_localization, None, 'baruwajs', locale)
         return self._js_localization(locale)
@@ -125,9 +132,9 @@ class UtilsController(BaseController):
         src = [LIBHEAD]
         plural = None
         if '' in locale_t:
-            for l in locale_t[''].split('\n'):
-                if l.startswith('Plural-Forms:'):
-                    plural = l.split(':', 1)[1].strip()
+            for loc in locale_t[''].split('\n'):
+                if loc.startswith('Plural-Forms:'):
+                    plural = loc.split(':', 1)[1].strip()
         if plural is not None:
             plural = [el.strip() for el in plural.split(';')
             if el.strip().startswith('plural=')][0].split('=', 1)[1]
@@ -136,30 +143,27 @@ class UtilsController(BaseController):
             src.append(SIMPLEPLURAL)
         csrc = []
         pdict = {}
-        for k, v in locale_t.items():
-            if k == '':
+        for key, val in locale_t.items():
+            if key == '':
                 continue
-            if isinstance(k, basestring):
-                csrc.append("catalog['%s'] = '%s';\n" % (quote_js(k),
-                quote_js(v)))
-            elif isinstance(k, tuple):
-                if k[0] not in pdict:
-                    pdict[k[0]] = k[1]
+            if isinstance(key, basestring):
+                csrc.append("catalog['%s'] = '%s';\n" % (quote_js(key),
+                quote_js(val)))
+            elif isinstance(key, tuple):
+                if key[0] not in pdict:
+                    pdict[key[0]] = key[1]
                 else:
-                    pdict[k[0]] = max(k[1], pdict[k[0]])
-                csrc.append("catalog['%s'][%d] = '%s';\n" % (quote_js(k[0]),
-                k[1], quote_js(v)))
+                    pdict[key[0]] = max(key[1], pdict[key[0]])
+                csrc.append("catalog['%s'][%d] = '%s';\n" % (quote_js(key[0]),
+                key[1], quote_js(val)))
             else:
-                raise TypeError(k)
+                raise TypeError(key)
         csrc.sort()
-        for k, v in pdict.items():
-            src.append("catalog['%s'] = [%s];\n" % (quote_js(k),
-            ','.join(["''"] * (v + 1))))
+        for key, val in pdict.items():
+            src.append("catalog['%s'] = [%s];\n" % (quote_js(key),
+            ','.join(["''"] * (val + 1))))
         src.extend(csrc)
         src.append(LIBFOOT)
         src.append(INTERPOLATE)
         src = ''.join(src)
-        response.headers['Pragma'] = 'public'
-        response.headers['Cache-Control'] = 'max-age=0'
-        response.headers['Content-Type'] = 'text/javascript;charset=utf-8'
         return src

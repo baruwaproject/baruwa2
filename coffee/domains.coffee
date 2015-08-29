@@ -1,3 +1,11 @@
+###!
+ * Baruwa Enterprise Edition
+ * http://www.baruwa.com
+ *
+ * Copyright (c) 2013-2015 Andrew Colin Kissa
+ *
+ *
+###
 $ = jQuery
 exports = this
 exports.setitems_url = setitems_url
@@ -12,14 +20,14 @@ pagination = (data) ->
         rows = []
         if data.next_page != data.first_page and data.page != data.first_page
             if data.orgid
-                rows.push '<span><a href="/domains/byorg/{{orgid}}/{{first_page}}"><img src="{{media_url}}/imgs/first_pager.png" alt="first" title="first" /></a></span><span>...</span>'
+                rows.push '<span><a href="/domains/byorg/{{orgid}}/{{first_page}}"><i class="icon-double-angle-left"></i></a></span><span>...</span>'
             else
-                rows.push '<span><a href="/domains/{{first_page}}"><img src="{{media_url}}/imgs/first_pager.png" alt="first" title="first" /></a></span><span>...</span>'
+                rows.push '<span><a href="/domains/{{first_page}}"><i class="icon-double-angle-left"></i></a></span><span>...</span>'
         if data.previous_page
             if data.orgid
-                rows.push '<span><a href="/domains/byorg/{{orgid}}/{{previous_page}}"><img src="{{media_url}}/imgs/previous_pager.png" alt="prev" title="prev" /></a></span>'
+                rows.push '<span><a href="/domains/byorg/{{orgid}}/{{previous_page}}"><i class="icon-angle-left"></i></a></span>'
             else
-                rows.push '<span><a href="/domains/{{previous_page}}"><img src="{{media_url}}/imgs/previous_pager.png" alt="prev" title="prev" /></a></span>'
+                rows.push '<span><a href="/domains/{{previous_page}}"><i class="icon-angle-left"></i></a></span>'
         for linkpage in data.page_nums
             if linkpage == data.page
                 rows.push '<span class="curpage">{{page}}</span>'
@@ -30,14 +38,14 @@ pagination = (data) ->
                     rows.push '<span><a href="/domains/'+linkpage+'">'+linkpage+'</a></span>'
         if data.next_page
             if data.orgid
-                rows.push '<span><a href="/domains/byorg/{{orgid}}/{{next_page}}"><img src="{{media_url}}/imgs/next_pager.png" alt="next" title="next" /></a></span>'
+                rows.push '<span><a href="/domains/byorg/{{orgid}}/{{next_page}}"><i class="icon-angle-right"></i></a></span>'
             else
-                rows.push '<span><a href="/domains/{{next_page}}"><img src="{{media_url}}/imgs/next_pager.png" alt="next" title="next" /></a></span>'
+                rows.push '<span><a href="/domains/{{next_page}}"><i class="icon-angle-right"></i></a></span>'
         if data.next_page != data.page_count and data.page != data.page_count and data.page_count != 0
             if data.orgid
-                rows.push '<span>...</span><span><a href="/domains/byorg/{{orgid}}/{{last_page}}"><img src="{{media_url}}/imgs/last_pager.png" alt="last" title="last" /></a></span>'
+                rows.push '<span>...</span><span><a href="/domains/byorg/{{orgid}}/{{last_page}}"><i class="icon-double-angle-right"></i></a></span>'
             else
-                rows.push '<span>...</span><span><a href="/domains/{{last_page}}"><img src="{{media_url}}/imgs/last_pager.png" alt="last" title="last" /></a></span>'
+                rows.push '<span>...</span><span><a href="/domains/{{last_page}}"><i class="icon-double-angle-right"></i></a></span>'
         tmpl = rows.join '\n'
         html = $.mustache tmpl, data
     else
@@ -53,17 +61,25 @@ ajaxify = (e, url) ->
 
 
 buildpage = (data) ->
-    top = '<tr><td class="domains_check"><input type="checkbox" name="domainid" value="{{id}}" class="selector" /></td>' +
-        '<td class="domains_name"><a href="/domains/detail/{{id}}">{{name}}</a></td>' +
-        '<td class="domains_owner inl">'
-    bottom = '</td><td class="domains_accounts"><a href="/accounts/domain/{{id}}"><img src="{{media_url}}imgs/user.png" alt="accounts" /></a></td>' +
-        '<td class="domains_status"><img src="{{media_url}}{{statusimg}}" alt="" /></td>' +
-        '<td class="domains_settings"><a href="/settings/domain/{{id}}"><img src="{{media_url}}imgs/cog.png" alt="settings" /></a></td>' +
-        '<td class="domains_edit"><a href="/domains/edit/{{id}}"><img src="{{media_url}}imgs/edit.png" alt="Edit" /></a></td>' +
-        '<td class="domains_delete"><a href="/domains/delete/{{id}}"><img src="{{media_url}}imgs/action_delete.png" alt="Delete" /></a></td></tr>'
+    top = '<tr><td><input type="checkbox" name="domainid" value="{{id}}" class="selector" /></td>' +
+        '<td><a href="/domains/detail/{{id}}">{{name}}</a></td>' +
+        '<td  class="hidden-phone">'
+    bottom = '</td><td  class="hidden-phone"><a href="/accounts/domain/{{id}}"><i class="icon-user blue"></i></a></td>' +
+        '<td class="hidden-phone"><i class="icon-{{status}} {{statuscolor}}"></i></td>' +
+        '<td><a href="/settings/domain/{{id}}"><i class="icon-cog blue"></i></a></td>' +
+        '<td><a href="/domains/edit/{{id}}"><i class="icon-edit blue"></i></a></td>' +
+        '<td><a href="/domains/delete/{{id}}"><i class="icon-remove red"></i></a></td></tr>'
     if data.items
         rows = []
         $.each data.items, (i,n) ->
+            if n['statusimg'] == 'imgs/tick.png'
+                status = 'ok'
+                statuscolor = 'green'
+            if n['statusimg'] == 'imgs/minus.png'
+                status = 'minus'
+                statuscolor = 'red'
+            n['status'] = status
+            n['statuscolor'] = statuscolor
             html = $.mustache top, n
             rows.push html
             for owner in n.organizations
@@ -91,7 +107,7 @@ buildpage = (data) ->
         $('div.limiter').hide()
     $('div.toolbar p').html pages_html
     $('#title').html title_html
-    $.address.title '.:. Baruwa :: ' + title_html
+    $.address.title '.:. ' + exports.baruwa_custom_name + ' :: ' + title_html
     $('div.pages a').click((e)->
         url = $(this).attr('href') + '.json'
         ajaxify(e, url)
@@ -131,8 +147,8 @@ $(document).ready ->
         exports.inprogress = false
         $('#shield').hide()
         if $(window).scrollTop()
-            $('html,body').animate 
-                scrollTop: $("#header-bar").offset().top, 1500
+            $('html,body').animate
+                scrollTop: $("#wrap").offset().top, 1500
     ).ajaxSuccess(->
         if $('#alertmsg').length
             $('#alertmsg').empty()
@@ -150,3 +166,5 @@ $(document).ready ->
         n = $(this).val()
         location.href = "#{exports.setitems_url}?n=#{n}"
     )
+
+

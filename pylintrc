@@ -1,0 +1,3 @@
+[TYPECHECK]
+generated-members=errors,unmet,PIPE,options,chart,plot,policy
+ignored-classes=Popen,CeleryCommand,ScopedSession,BaseCommand

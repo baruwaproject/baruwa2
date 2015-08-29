@@ -1,18 +1,18 @@
 # -*- coding: utf-8 -*-
 # vim: ai ts=4 sts=4 et sw=4
 # Baruwa - Web 2.0 MailScanner front-end.
-# Copyright (C) 2010-2012  Andrew Colin Kissa <andrew@topdog.za.net>
+# Copyright (C) 2010-2015  Andrew Colin Kissa <andrew@topdog.za.net>
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation, either version 3 of the License, or
 # (at your option) any later version.
-# 
+#
 # This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License for more details.
-# 
+#
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
@@ -33,14 +33,14 @@ from random import choice
 from textwrap import wrap
 
 from IPy import IP
-from pylons import config
+from pylons import config, url
 from babel.core import Locale
 from webhelpers.html import escape
 from eventlet.green import subprocess
 from webhelpers.number import format_byte_size
 from webhelpers.text import wrap_paragraphs, truncate
 
-from baruwa.lib.regex import USTRING_RE, LANGS_RE
+from baruwa.lib.regex import USTRING_RE, SQL_URL_RE, LANGS_RE
 
 REPORTS = {
             '1': {'address': 'from_address', 'sort': 'count'},
@@ -53,10 +53,19 @@ REPORTS = {
             '8': {'address': 'to_domain', 'sort': 'size'},
             '9': {'address': '', 'sort': ''},
             '10': {'address': 'clientip', 'sort': 'count'},
-            '11': {'address': '', 'sort': ''}
-            }
+            '11': {'address': '', 'sort': ''}}
 BASEPATH = os.path.dirname(os.path.dirname(__file__))
 I18NPATH = os.path.join(BASEPATH, 'i18n')
+MS_ACTIONS = {1: 'deliver', 2: 'store', 3: 'delete'}
+
+
+def gen_avail_mem():
+    """Get available mem"""
+    try:
+        mem = psutil.virtual_memory().available
+    except Exception:
+        mem = 0
+    return mem
 
 
 def get_processes(process_name):
@@ -67,7 +76,7 @@ def get_processes(process_name):
             if (process.name == process_name or
                 process.name.startswith(process_name)):
                 count += 1
-        #except psutil.error.AccessDenied:
+        # except psutil.error.AccessDenied:
         except Exception:
             pass
     return count
@@ -123,6 +132,7 @@ def get_languages():
     "return a list of supported languages"
     langs = (lang for lang in os.listdir(I18NPATH)
             if os.path.isdir(os.path.join(I18NPATH, lang)))
+
     def dictify(lang, name):
         "map function to make dict"
         retdict = {}
@@ -159,7 +169,7 @@ def jsonify_msg_list(element):
     """
     value = 'white'
     if (element.spam and not element.highspam and not element.blacklisted
-        and not element.nameinfected and not element.otherinfected 
+        and not element.nameinfected and not element.otherinfected
         and not element.virusinfected):
         value = 'spam'
     if element.highspam and (not element.blacklisted):
@@ -173,20 +183,20 @@ def jsonify_msg_list(element):
         value = 'infected'
     if not element.scaned:
         value = 'gray'
-    if (element.spam and (not element.blacklisted) 
-        and (not element.virusinfected) 
-        and (not element.nameinfected) 
+    if (element.spam and (not element.blacklisted)
+        and (not element.virusinfected)
+        and (not element.nameinfected)
         and (not element.otherinfected)):
         status = _('Spam')
     if element.blacklisted:
         status = _('BL')
-    if (element.virusinfected or 
-           element.nameinfected or 
+    if (element.virusinfected or
+           element.nameinfected or
            element.otherinfected):
         status = _('Infected')
-    if ((not element.spam) and (not element.virusinfected) 
-           and (not element.nameinfected) 
-           and (not element.otherinfected) 
+    if ((not element.spam) and (not element.virusinfected)
+           and (not element.nameinfected)
+           and (not element.otherinfected)
            and (not element.whitelisted)):
         status = _('Clean')
     if element.whitelisted:
@@ -194,16 +204,15 @@ def jsonify_msg_list(element):
     if not element.scaned:
         status = _('NS')
     return dict(
-                id=element.id,
-                timestamp=element.timestamp.strftime('%A, %d %b %Y %H:%M:%S %Z'),
-                sascore=element.sascore,
-                size=format_byte_size(element.size),
-                subject=truncate(escape(element.subject), 50),
-                from_address=wrap_paragraphs(escape(element.from_address), 32),
-                to_address=wrap_paragraphs(escape(element.to_address), 32),
-                style=value,
-                status=status,
-            )
+            id=element.id,
+            timestamp=element.timestamp.strftime('%Y-%m-%d %H:%M:%S %Z'),
+            sascore=element.sascore,
+            size=format_byte_size(element.size),
+            subject=truncate(escape(element.subject), 50),
+            from_address=wrap_paragraphs(escape(element.from_address), 32),
+            to_address=wrap_paragraphs(escape(element.to_address), 32),
+            style=value,
+            status=status)
     # return mydict
 
 
@@ -262,6 +271,7 @@ def convert_dom_to_json(pages, orgid):
 def convert_acct_to_json(pages, orgid):
     "convert accounts action response to json"
     value = paginator2json(pages)
+
     def mkdict(item):
         "Make it a dict"
         if item.account_type == 1:
@@ -277,8 +287,7 @@ def convert_acct_to_json(pages, orgid):
                 fullname=firstname + ' ' + lastname,
                 email=item.email,
                 statusimg='imgs/tick.png' if item.active else 'imgs/minus.png',
-                userimg=user_icon,
-            )
+                userimg=user_icon)
     value['items'] = map(mkdict, pages.items)
     value['orgid'] = orgid
     return json.dumps(value)
@@ -355,8 +364,43 @@ def get_ipaddr(value):
     return ipaddr
 
 
-def mkpasswd(length=15):
+def mkpasswd(length=15, include_chars=True):
     """Generate a random password"""
     chars = "!#$%()*+,-./:;=?@^_`{|}~"
-    return ''.join([choice(string.letters + string.digits + chars)
-            for i in range(length)])
+    if include_chars:
+        return ''.join([choice(string.letters + string.digits + chars)
+                        for i in range(length)])
+    else:
+        return ''.join([choice(string.letters + string.digits)
+                        for i in range(length)])
+
+
+def extract_sphinx_opts(dburl):
+    """Extract a dict of sphinx options from a DBI url"""
+    match = SQL_URL_RE.match(dburl)
+    if match:
+        return match.groupdict()
+    return {}
+
+
+def format_json_pages(pages, baseurl):
+    "convert paged object to json for the API"
+    value = {}
+    value['items'] = [item.apijson() for item in pages.items]
+    if pages.page_count > 1:
+        value['links'] = dict(
+                            pages=dict(
+                                first=url(baseurl,
+                                        page=pages.first_page,
+                                        qualified=1),
+                                prev=url(baseurl,
+                                        page=pages.previous_page,
+                                        qualified=1),
+                                next=url(baseurl,
+                                        page=pages.next_page,
+                                        qualified=1),
+                                last=url(baseurl,
+                                        page=pages.last_page,
+                                        qualified=1)))
+    value['meta'] = dict(total=pages.item_count)
+    return value

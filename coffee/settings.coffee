@@ -1,3 +1,11 @@
+###!
+ * Baruwa Enterprise Edition
+ * http://www.baruwa.com
+ *
+ * Copyright (c) 2013-2015 Andrew Colin Kissa
+ *
+ *
+###
 $ = jQuery
 exports = this
 exports.setitems_url = setitems_url
@@ -12,18 +20,18 @@ pagination = (data) ->
         rows = []
         #data['action'] = action
         if data.next_page != data.first_page and data.page != data.first_page
-            rows.push '<span><a href="/settings/{{first_page}}"><img src="{{media_url}}/imgs/first_pager.png" alt="first" title="first" /></a></span><span>...</span>'
+            rows.push '<span><a href="/settings/{{first_page}}"><i class="icon-double-angle-left"></i></a></span><span>...</span>'
         if data.previous_page
-            rows.push '<span><a href="/settings/{{previous_page}}"><img src="{{media_url}}/imgs/previous_pager.png" alt="prev" title="prev" /></a></span>'
+            rows.push '<span><a href="/settings/{{previous_page}}"><i class="icon-angle-left"></i></a></span>'
         for linkpage in data.page_nums
             if linkpage == data.page
                 rows.push '<span class="curpage">{{page}}</span>'
             else
                 rows.push '<span><a href="/settings/'+linkpage+'">'+linkpage+'</a></span>'
         if data.next_page
-            rows.push '<span><a href="/settings/{{next_page}}"><img src="{{media_url}}/imgs/next_pager.png" alt="next" title="next" /></a></span>'
+            rows.push '<span><a href="/settings/{{next_page}}"><i class="icon-angle-right"></i></a></span>'
         if data.next_page != data.page_count and data.page != data.page_count and data.page_count != 0
-            rows.push '<span>...</span><span><a href="/settings/{{last_page}}"><img src="{{media_url}}/imgs/last_pager.png" alt="last" title="last" /></a></span>'
+            rows.push '<span>...</span><span><a href="/settings/{{last_page}}"><i class="icon-double-angle-right"></i></a></span>'
         tmpl = rows.join '\n'
         html = $.mustache tmpl, data
     else
@@ -39,11 +47,11 @@ ajaxify = (e, url) ->
 
 
 buildpage = (data) ->
-    row = '<tr><td class="scanners_hash">&nbsp;</td><td class="scanners_name">{{hostname}}</td>' +
-        '<td class="scanners_status"><img src="{{media_url}}{{statusimg}}" alt="" /></td>' +
-        '<td class="scanners_action_settings"><a href="/settings/node/{{id}}/section/1"><img src="{{media_url}}imgs/cog.png" alt="Settings"></a></td>' +
-        '<td class="scanners_action_edit"><a href="/settings/node/edit/{{id}}"><img src="{{media_url}}imgs/edit.png" alt="Edit"></a></td>' +
-        '<td class="scanners_action_delete"><a href="/settings/node/delete/{{id}}"><img src="{{media_url}}imgs/action_delete.png" alt="Delete"></a></td></tr>'
+    row = '<tr><td>&nbsp;</td><td class="scanners_name">{{hostname}}</td>' +
+        '<td><img src="{{media_url}}{{statusimg}}" alt="" /></td>' +
+        '<td><a href="/settings/node/{{id}}/section/1"><i class="icon-cog blue"></i></a></td>' +
+        '<td><a href="/settings/node/edit/{{id}}"><i class="icon-edit blue"></i></a></td>' +
+        '<td><a href="/settings/node/delete/{{id}}"><i class="icon-remove red"></i></a></td></tr>'
 
     if data.items
         rows = []
@@ -66,7 +74,7 @@ buildpage = (data) ->
         title_html = gettext('Settings :: Nodes')
     $('div.toolbar p').html pages_html
     $('#title').html title_html
-    $.address.title '.:. Baruwa :: ' + title_html
+    $.address.title '.:. ' + exports.baruwa_custom_name + ' :: ' + title_html
     $('div.pages a').click((e)->
         url = $(this).attr('href') + '.json'
         ajaxify(e, url)
@@ -101,8 +109,8 @@ $(document).ready ->
         exports.inprogress = false
         $('#shield').hide()
         if $(window).scrollTop()
-            $('html,body').animate 
-                scrollTop: $("#header-bar").offset().top, 1500
+            $('html,body').animate
+                scrollTop: $("#wrap").offset().top, 1500
     ).ajaxSuccess(->
         if $('#alertmsg').length
             $('#alertmsg').empty()
@@ -120,3 +128,5 @@ $(document).ready ->
         n = $(this).val()
         location.href = "#{exports.setitems_url}?n=#{n}"
     )
+
+

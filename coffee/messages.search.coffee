@@ -1,7 +1,16 @@
+###!
+ * Baruwa Enterprise Edition
+ * http://www.baruwa.com
+ *
+ * Copyright (c) 2013-2015 Andrew Colin Kissa
+ *
+ *
+###
 $ = jQuery
 exports = this
 exports.search_url = search_url
 exports.setitems_url = setitems_url
+style_map = {gray: 'notscanned', whitelisted: 'whitelisted', blacklisted: 'blacklisted', highspam: 'highspam', spam: 'spam', infected: 'infected', white: ''}
 
 pagination = (data, action) ->
     if data.pages > 0
@@ -9,18 +18,18 @@ pagination = (data, action) ->
         data['action'] = action
         data['search_url'] = exports.search_url
         if data.next != data.first_page and data.page != data.first
-            rows.push '<span><a href="{{search_url}}?q={{q}}&amp;a={{action}}&amp;page={{first_page}}"><img src="{{media_url}}/imgs/first_pager.png" alt="first" title="first" /></a></span><span>...</span>'
+            rows.push '<span><a href="{{search_url}}?q={{q}}&amp;a={{action}}&amp;page={{first_page}}"><i class="icon-double-angle-left"></i></a></span><span>...</span>'
         if data.has_previous
-          rows.push '<span><a href="{{search_url}}?q={{q}}&amp;a={{action}}&amp;page={{previous}}"><img src="{{media_url}}/imgs/previous_pager.png" alt="prev" title="prev" /></a></span>'
+          rows.push '<span><a href="{{search_url}}?q={{q}}&amp;a={{action}}&amp;page={{previous}}"><i class="icon-angle-left"></i></a></span>'
         for linkpage in data.page_numbers
             if linkpage == data.page
                 rows.push '<span class="curpage">{{page}}</span>'
             else
                 rows.push '<span><a href="{{search_url}}?q={{q}}&amp;a={{action}}&amp;page='+linkpage+'">'+linkpage+'</a></span>'
         if data.has_next
-            rows.push '<span><a href="{{search_url}}?q={{q}}&amp;a={{action}}&amp;page={{next}}"><img src="{{media_url}}/imgs/next_pager.png" alt="next" title="next" /></a></span>'
+            rows.push '<span><a href="{{search_url}}?q={{q}}&amp;a={{action}}&amp;page={{next}}"><i class="icon-angle-right"></i></a></span>'
         if data.next != data.pages and data.page != data.pages and data.pages != 0
-            rows.push '<span>...</span><span><a href="{{search_url}}?q={{q}}&amp;a={{action}}&amp;page={{last_page}}"><img src="{{media_url}}/imgs/last_pager.png" alt="last" title="last" /></a></span>'
+            rows.push '<span>...</span><span><a href="{{search_url}}?q={{q}}&amp;a={{action}}&amp;page={{last_page}}"><i class="icon-double-angle-right"></i></a></span>'
         tmpl = rows.join '\n'
         html = $.mustache tmpl, data
     else
@@ -31,17 +40,18 @@ process_response = (data, textStatus, XHR)->
     a = $('#a').val()
     $('div.pages').html pagination(data.paginator, a)
     if data.items
-        row = '<tr class="{{style}}_row"><td class="date_td">' +
+        row = '<tr class="{{style}}"><td class="date_td hidden-phone">' +
                 '<a href="/messages/detail/{{id}}">{{timestamp}}</a></td>' +
-                '<td class="from_td"><a href="/messages/detail/{{id}}">{{from_address}}</a></td>' +
-                '<td class="to_td"><a href="/messages/detail/{{id}}">{{to_address}}</a></td>' +
+                '<td class="from_td hidden-phone"><a href="/messages/detail/{{id}}">{{from_address}}</a></td>' +
+                '<td class="to_td hidden-phone"><a href="/messages/detail/{{id}}">{{to_address}}</a></td>' +
                 '<td class="subject_td"><a href="/messages/detail/{{id}}">{{subject}}</a></td>' +
-                '<td class="size_td"><a href="/messages/detail/{{id}}">{{size}}</a></td>' +
-                '<td class="score_td"><a href="/messages/detail/{{id}}">{{sascore}}</a></td>' +
-                '<td class="status_td"><a href="/messages/detail/{{id}}">{{status}}</a></td></tr>'
+                '<td class="size_td hidden-phone"><a href="/messages/detail/{{id}}">{{size}}</a></td>' +
+                '<td class="score_td hidden-phone"><a href="/messages/detail/{{id}}">{{sascore}}</a></td>' +
+                '<td class="status_td hidden-phone"><a href="/messages/detail/{{id}}">{{status}}</a></td></tr>'
         rows = []
         $.each data.items, (i,n) ->
             n['timestamp'] = BaruwaDateString(n['timestamp'])
+            n['style'] = style_map[n['style']]
             html = $.mustache row, n
             rows.push html
         replacement = rows.join ''
@@ -74,15 +84,30 @@ process_response = (data, textStatus, XHR)->
     1
 
 ajax_request = (url)->
+    if not $('#shield').length
+        $('#wrap').after exports.loading
+    else
+        $('#shield').show()
     $.ajax url,
         type: 'GET'
         cache: false
         dataType: 'json'
         error: display_ajax_error,
-        success: process_response
+        success: process_response,
+        beforeSend: (XHR)->
+            exports.inprogress = true
+            1
+        complete:(XHR, textStatus) ->
+            exports.inprogress = false
+            $('#shield').hide()
+            if $(window).scrollTop()
+                $('html,body').animate
+                    scrollTop: $("#wrap").offset().top, 1500
+            1
     1
 
 $(document).ready ->
+    exports.inprogress = false
     $('#msgsearch').submit((e)->
         e.preventDefault()
         q = $('#q').val()
@@ -110,13 +135,13 @@ $(document).ready ->
         params = base.slice(index)
         ajax_request url + '.json' + params
         1
-    $('#spinner').ajaxStart(->
-        $(this).show()
-    ).ajaxStop(->
-        $(this).hide()
-    ).ajaxError(->
-        $(this).hide()
-    )
+    # $('#spinner').ajaxStart(->
+    #     $(this).show()
+    # ).ajaxStop(->
+    #     $(this).hide()
+    # ).ajaxError(->
+    #     $(this).hide()
+    # )
     $('#sresultstop, #sresultsbottom').change(->
         n = $(this).val()
         q = $('#q').val()
@@ -124,3 +149,4 @@ $(document).ready ->
         location.href = "#{exports.setitems_url}?n=#{n}&amp;q=#{q}&amp;a=#{a}"
     )
     1
+

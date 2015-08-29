@@ -1,0 +1,13 @@
+% for host in hosts:
+From:	${host.address}	${MS_ACTIONS[host.highspam_actions]}
+% endfor
+% for domain in domains:
+FromOrTo:	*@${domain.name}	${MS_ACTIONS[domain.highspam_actions]}
+% for alias in domain.aliases:
+% if alias.status:
+FromOrTo:	*@${alias.name}	${MS_ACTIONS[domain.highspam_actions]}
+% endif
+% endfor
+% endfor
+# Default rule
+FromOrTo:	default	store

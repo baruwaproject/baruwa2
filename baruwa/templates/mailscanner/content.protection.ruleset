@@ -1,0 +1,18 @@
+% for policy in dps:
+% if hasattr(policy, '%s-name' % policy_type):
+% if not hasattr(gps, '%s-name' % policy_type) or getattr(policy, '%s-name' % policy_type) != getattr(gps, '%s-name' % policy_type):
+FromOrTo:		*@${policy.domain_name}		/etc/MailScanner/baruwa/rules/${getattr(policy, '%s-name' % policy_type)}
+% for alias in policy.domain_aliases:
+% if alias.status == True:
+FromOrTo:		*@${alias.name}		/etc/MailScanner/baruwa/rules/${getattr(policy, '%s-name' % policy_type)}
+% endif
+% endfor
+% endif
+% endif
+% endfor
+From:		127.0.0.1		/etc/MailScanner/filetype.rules.allowall.conf
+% if hasattr(gps, '%s-name' % policy_type):
+FromOrTo:		default		/etc/MailScanner/baruwa/rules/${getattr(gps, '%s-name' % policy_type)}
+% else:
+FromOrTo:		default		/etc/MailScanner/${default}
+% endif

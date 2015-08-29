@@ -8,15 +8,16 @@
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation, either version 3 of the License, or
 # (at your option) any later version.
-# 
+#
 # This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License for more details.
-# 
+#
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
+"SMTP AUTH Testing script"
 
 import sys
 import base64
@@ -37,6 +38,7 @@ def get_value(field, required):
             break
     return value
 
+
 def startconn(vals):
     "start an smtp connection"
     con = smtplib.SMTP(vals['hostname'])
@@ -53,16 +55,16 @@ def startconn(vals):
     return con
 
 
-if __name__ == '__main__':
-    "ran da thing"
+def main():
+    "Main function"
     params = dict(hostname=True,
-                port=False,
-                usetls=False,
-                username=True,
-                password=True)
+                   port=False,
+                   usetls=False,
+                   username=True,
+                   password=True)
 
     values = dict([(param, get_value(param, params[param]))
-                for param in params])
+               for param in params])
 
     try:
         values['port'] = int(values['port']) if values['port'] else 25
@@ -83,3 +85,7 @@ if __name__ == '__main__':
         conn.close()
     except (socket.error, socket.gaierror) as err:
         print 'ERROR: %s' % str(err)
+
+
+if __name__ == '__main__':
+    main()

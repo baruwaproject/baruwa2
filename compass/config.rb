@@ -1,6 +1,5 @@
-require 'ninesixty'
 http_path = "/"
-css_dir = "../baruwa/public/css"
+css_dir = "stylesheets"
 sass_dir = "src"
 images_dir = "../baruwa/public/imgs"
 javascripts_dir = "../baruwa/public/js"

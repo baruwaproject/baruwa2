@@ -1,28 +1,42 @@
-<div class="alpos">
-	<ul id="msgops">
-		<li><a href="#">${_('Apply filters')}</a></li>
-		<li><a href="#">${_('Show applied filters')}</a></li>
-	</ul>
+<div class="row-fluid">
+	<div class="span1 hidden-phone"></div>
+	<div class="span10">
+		<ul id="msgops">
+			<li>${h.link_to(_('Apply Filters'), url(controller='reports', action='index', anchor='form-area'), class_='filter_add')}</li>
+			<li>${h.link_to(_('Show applied filters'), url(controller='reports', action='index', anchor='active_filters'), class_='filter_show')}</li>
+		</ul>
+	</div>
+	<div class="span1 hidden-phone"></div>
 </div>
-<div class="clear"></div>
-<div class="sp10"></div>
+<div class="space-6"></div>
 ${functions.search('archive')}
-<div class="clear"></div>
-<div class="sp10"></div>
-<div class="alpos">
-	<div class="toolbar">${self.paging(h.do_pagination(c.page), 'sarchivetop')}</div>
+<div class="space-6"></div>
+<div class="row-fluid">
+	<div class="span1 hidden-phone"></div>
+	<div class="span10 toolbar">
+		${self.paging(h.do_pagination(c.page), 'sarchivetop')}
+	</div>
+	<div class="span1 hidden-phone"></div>
 </div>
-<div id="content">
-<table class="messages">
-${functions.grid_heading('archive')}
-${functions.print_rows('message-archive')}
-</table>
+<div class="space-6"></div>
+<div class="row-fluid">
+	<div class="span1 hidden-phone"></div>
+	<div class="span10">
+		<table class="table table-bordered">
+		${functions.grid_heading('archive')}
+		${functions.print_rows('message-archive')}
+		</table>
+	</div>
+	<div class="span1 hidden-phone"></div>
 </div>
-<div class="alpos">
-	<div class="toolbar">${self.paging(h.do_pagination(c.page), 'sarchivebottom')}</div>
+<div class="row-fluid">
+	<div class="span1 hidden-phone"></div>
+	<div class="span10 toolbar">
+		${self.paging(h.do_pagination(c.page), 'sarchivebottom')}
+	</div>
+	<div class="span1 hidden-phone"></div>
 </div>
-<div class="clear"></div>
-<div class="sp10"></div>
+<div class="space-6"></div>
 <%def name="heading()">\
 % if c.page.page_count > 0:
 ${_('Messages :: Archive :: Showing page %(page)d of %(count)d pages.') % dict(page=c.page.page, count=c.page.page_count)}
@@ -42,11 +56,25 @@ ${_('Messages :: Archive')}
 % endif
 </%def>
 
+<%def name="submenu()">\
+<div class="navbar navbar-static-top">
+    <div class="navbar-inner">
+        <div class="nav-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li class="nav_item">${h.link_to(_('Full message list'), url(controller='messages', action='listing'))}</li>
+				<li class="nav_item">${h.link_to(_('Quarantine'), url(controller='messages', action='quarantine'))}</li>
+				<li class="nav_item">${h.link_to(_('Archive'), url(controller='messages', action='archive'))}</li>
+            </ul>
+        </div>
+    </div>
+</div>
+</%def>
+
 <%def name="status()">\
 </%def>
 
 <%def name="heading_links(link_text, order_by)">
-	${h.link_to(link_text, url('messages-paging', action='archive', 
+	${h.link_to(link_text, url('messages-paging', action='archive',
 	page=c.page.page, direction=c.direction, order_by=order_by))}
 </%def>
 
@@ -55,14 +83,20 @@ ${_('Messages :: Archive')}
 <%def name="localscripts()">\
 <script type="text/javascript">
 var setitems_url = "${url(controller='messages', action='setnum')}";
+var user_timezone = "${c.user.timezone}";
+var baruwa_custom_name = "${config.get('baruwa.custom.name', 'Baruwa')}";
 </script>
-${h.javascript_link(h.media_url() + 'js/jquery.address-1.4.min.js',
-h.media_url() + 'js/baruwa/dates.js',
-h.media_url() + 'js/baruwa/messages.common.js',
-h.media_url() + 'js/baruwa/messages.archive.js')}
+${h.javascript_link(h.media_url() + 'js/vendor/jquery.address-1.4.min.js',
+h.media_url() + 'js/vendor/bootbox.min.js',
+h.media_url() + 'js/vendor/moment.min.js',
+h.media_url() + 'js/vendor/moment-timezone-with-data.min.js',
+h.media_url() + 'js/baruwa/dates.min.js',
+h.media_url() + 'js/baruwa/messages.common.min.js',
+h.media_url() + 'js/baruwa/messages.archive.min.js')}
 </%def>
 <%def name="paging(page_nums, fieldname)">
 ${functions.paging(page_nums, 'archive', fieldname)}
 </%def>
 <%namespace name="functions" file="functions.html"/>
-<%inherit file="/base.html"/>
+<%inherit file="../base.html"/>
+

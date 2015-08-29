@@ -1,3 +1,11 @@
+###!
+ * Baruwa Enterprise Edition
+ * http://www.baruwa.com
+ *
+ * Copyright (c) 2013-2015 Andrew Colin Kissa
+ *
+ *
+###
 $ = jQuery
 exports = this
 exports.setitems_url = setitems_url
@@ -11,18 +19,18 @@ pagination = (data) ->
     if data.items.length
         rows = []
         if data.next_page != data.first_page and data.page != data.first_page
-            rows.push '<span><a href="/lists/{{list_type}}/{{first_page}}"><img src="{{media_url}}/imgs/first_pager.png" alt="first" title="first" /></a></span><span>...</span>'
+            rows.push '<span><a href="/lists/{{list_type}}/{{first_page}}"><i class="icon-double-angle-left"></i></a></span><span>...</span>'
         if data.previous_page
-            rows.push '<span><a href="/lists/{{list_type}}/{{previous_page}}"><img src="{{media_url}}/imgs/previous_pager.png" alt="prev" title="prev" /></a></span>'
+            rows.push '<span><a href="/lists/{{list_type}}/{{previous_page}}"><i class="icon-angle-left"></i></a></span>'
         for linkpage in data.page_nums
             if linkpage == data.page
                 rows.push '<span class="curpage">{{page}}</span>'
             else
                 rows.push '<span><a href="/lists/{{list_type}}/'+linkpage+'">'+linkpage+'</a></span>'
         if data.next_page
-            rows.push '<span><a href="/lists/{{list_type}}/{{next_page}}"><img src="{{media_url}}/imgs/next_pager.png" alt="next" title="next" /></a></span>'
+            rows.push '<span><a href="/lists/{{list_type}}/{{next_page}}"><i class="icon-angle-right"></i></a></span>'
         if data.next_page != data.page_count and data.page != data.page_count and data.page_count != 0
-            rows.push '<span>...</span><span><a href="/lists/{{list_type}}/{{last_page}}"><img src="{{media_url}}/imgs/last_pager.png" alt="last" title="last" /></a></span>'
+            rows.push '<span>...</span><span><a href="/lists/{{list_type}}/{{last_page}}"><i class="icon-double-angle-right"></i></a></span>'
         tmpl = rows.join '\n'
         html = $.mustache tmpl, data
     else
@@ -38,10 +46,10 @@ ajaxify = (e, url) ->
 
 
 buildpage = (data) ->
-    row = '<tr id="list-id-{{id}}"><td class="lists_hash">{{id}}</td>' +
-        '<td class="lists_from">{{from_address}}</td>' +
-        '<td class="lists_to">{{to_address}}</td>' +
-        '<td class="lists_action"><a href="/lists/delete/{{id}}"><img src="{{media_url}}imgs/action_delete.png" alt="Delete"></a></td></tr>'
+    row = '<tr id="list-id-{{id}}"><td class="hidden-phone">{{id}}</td>' +
+        '<td class="lists_from fat">{{from_address}}</td>' +
+        '<td class="hidden-phone">{{to_address}}</td>' +
+        '<td><a href="/lists/delete/{{id}}"><i class="icon-remove red"></i></a></td></tr>'
 
     if data.items
         rows = []
@@ -64,7 +72,10 @@ buildpage = (data) ->
         title_html = gettext('Lists')
     $('div.toolbar p').html pages_html
     $('#title').html title_html
-    $.address.title '.:. Baruwa :: ' + title_html
+    $.address.title '.:. ' + exports.baruwa_custom_name + ' :: ' + title_html
+    $('.fat').trunk8({
+      lines: 3
+    })
     $('div.pages a').click((e)->
         url = $(this).attr('href') + '.json'
         ajaxify(e, url)
@@ -84,6 +95,9 @@ ajaxrequest = (url) ->
 
 $(document).ready ->
     exports.inprogress = false
+    $('.fat').trunk8({
+      lines: 3
+    })
     $('div.pages a').click((e)->
         url = $(this).attr('href') + '.json'
         ajaxify(e, url)
@@ -100,8 +114,8 @@ $(document).ready ->
         exports.inprogress = false
         $('#shield').hide()
         if $(window).scrollTop()
-            $('html,body').animate 
-                scrollTop: $("#header-bar").offset().top, 1500
+            $('html,body').animate
+                scrollTop: $("#wrap").offset().top, 1500
     ).ajaxSuccess(->
         if $('#alertmsg').length
             $('#alertmsg').empty()
@@ -119,3 +133,5 @@ $(document).ready ->
         n = $(this).val()
         location.href = "#{exports.setitems_url}?n=#{n}"
     )
+
+

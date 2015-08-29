@@ -1,24 +1,35 @@
-<div class="alpos">
-	<ul id="msgops">
-		<li>${h.link_to(_('Domain details'), url(controller='domains', action='detail', domainid=c.domainid))}</li>
-	</ul>
+<div class="row-fluid">
+	<div class="span1 hidden-phone"></div>
+	<div class="span10">
+		<ul id="msgops">
+			<li>${h.link_to(_('Domain details'), url(controller='domains', action='detail', domainid=c.domainid))}</li>
+		</ul>
+	</div>
+	<div class="span1 hidden-phone"></div>
 </div>
-<div class="clear"></div>
-<div id="content">
-${h.form(url('domains-edit-alias', aliasid=c.aliasid), method='post')}
-<div class="grid_16">
-    <h3 class="head">${_("Edit Domain Alias")}</h3>
+<div class="space-6"></div>
+<div class="row-fluid">
+	<div class="span1 hidden-phone"></div>
+	<div class="span10">
+		<div class="row-fluid">
+		    <h3 class="head smaller lighter blue">${_("Edit Domain Alias")}</h3>
+		</div>
+	</div>
+	<div class="span1 hidden-phone"></div>
 </div>
-<%include file="/forms/base.html"/>
-<div class="grid_16 drow">
-    <div class="grid_7">&nbsp;</div>
-    <div class="grid_8">
-        <input id="submit-button" type="submit" value="${_("Update")}" />
-    </div>
-    
+<div class="row-fluid">
+	<div class="span1 hidden-phone"></div>
+	<div class="span10">
+		${h.form(url('domains-edit-alias', aliasid=c.aliasid), method='post', class_="form-horizontal")}
+		<%include file="../forms/base.html"/>
+		<div class="form-actions">
+			<button id="submit-button" class="btn btn-small btn-success"><i class="icon-ok"></i> ${_("Update")}</button>
+		</div>
+		${h.end_form()}\
+	</div>
+	<div class="span1 hidden-phone"></div>
 </div>
-${h.end_form()}\
-</div>
+
 
 <%def name="title()">
 ${_('Domains :: %(name)s :: Edit Domain Alias') % dict(name=c.domainname)}
@@ -30,6 +41,12 @@ ${_('Domains :: %(name)s :: Edit Domain Alias') % dict(name=c.domainname)}
 
 <%def name="headers()">
 </%def>
+<%def name="submenu()"></%def>
 <%def name="localscripts()">\
+<script type="text/javascript">
+$(function() {
+	$('.settings-popover').popover();
+});
+</script>
 </%def>
-<%inherit file="/base.html"/>
+<%inherit file="../base.html"/>

@@ -1,3 +1,11 @@
+###!
+ * Baruwa Enterprise Edition
+ * http://www.baruwa.com
+ *
+ * Copyright (c) 2013-2015 Andrew Colin Kissa
+ *
+ *
+###
 $ = jQuery
 exports = this
 
@@ -22,7 +30,7 @@ process_response = (data)->
             success: (data, textStatus, XHR) ->
                 d = `new Date()`
                 rows = []
-                tmpl = '<div class="grid_16 omega drow"><div class="grid_7">{{score}}</div><div class="grid_8">{{count}}</div></div>'
+                tmpl = '<tr><td>{{score}}</td><td>{{count}}</td></tr>'
                 if $('#alertmsg').length
                     $('#alertmsg').empty()
                     $('#alertmsg').remove()
@@ -35,11 +43,11 @@ process_response = (data)->
                     html = $.mustache tmpl, item
                     rows.push html
                     1
-                if rows
+                if rows.length
                     replacement = rows.join('')
                 else
                     text = gettext('No items found')
-                    replacement = '<div class="grid_16 alpha omega drow">'+text+'</div>'
+                    replacement = '<td colspan="2">'+text+'</td>'
                 $('#graphrows').empty().append(replacement)
                 $('#chart img').attr {src: url + '.png?' + d.getTime()}
                 1
@@ -49,21 +57,24 @@ process_response = (data)->
                 $("#filter-ajax").remove()
                 1
     else
-        display_ajax_response_error(response.errors.msg)
+        display_ajax_response_error(data.errors.msg)
+        $("#filter_form_submit").removeAttr('disabled').attr {value:gettext('Add Filter')}
+        $("#filter-ajax").remove()
     1
 
 
 $(document).ready ->
     init_form()
-    $('#form-area').hide()
+    $('.form_area').hide()
     $('#addfilter a').bind 'click', (e)->
         e.preventDefault()
-        $('#form-area').show()
+        $('.form_area').show()
         $('#addfilter').hide()
         1
-    $('#afform .closeflash').bind 'click', (e)->
+    $('.form_area .close').unbind()
+    $('.form_area .close').bind 'click', (e)->
         e.preventDefault()
-        $('#form-area').hide()
+        $('.form_area').hide()
         $('#addfilter').show()
         1
     $('#fhl a').bind 'click', (e)->
@@ -73,7 +84,7 @@ $(document).ready ->
         e.preventDefault()
         $("#filter_form_submit").attr {disabled:'disabled', value:gettext('Loading')}
         text = gettext 'Processing request.............'
-        $('#afform').after '<div class="grid_16 drow" id="filter-ajax"><div class="grid_7">'+text+'</div></div>'
+        $('#afform .row-fluid').before '<div class="row-fluid" id="filter-ajax"><div class="span12">'+text+'</div></div>'
         request_data = {
             filtered_field: $("#filtered_field").val(),
             filtered_by: $("#filtered_by").val(),
@@ -89,12 +100,29 @@ $(document).ready ->
             dataType: 'json',
             error: display_ajax_error
         1
-    $('#spinner').ajaxStart(->
-        $(this).show()
-        timg = exports.media_url + 'imgs/large-progress.gif'
-        $('#chart img').attr {src: timg}
-    ).ajaxStop(->
-        $(this).hide()
-    ).ajaxError(
-        ajax_global_error_redirect
-    )
+    data = []
+    $.each rdata.labels, (i, f)->
+        data.push [f.text, rdata.scores[i]]
+        1
+    placeholder = $('#chart')
+    $.plot(placeholder, [
+        {
+            data: data,
+            bars: {
+                show: true,
+                # barWidth: 12*24*60*60*300,
+                fill: true,
+                lineWidth: 1,
+                order: 1,
+                fillColor:  "#0000FF"
+            },
+            color: "#OOOOOO",
+            grid: {
+                hoverable: true,
+                clickable: true
+            },
+            tooltip: true,
+        }
+    ])
+    1
+

@@ -1,24 +1,26 @@
 # -*- coding: utf-8 -*-
 # vim: ai ts=4 sts=4 et sw=4
 # Baruwa - Web 2.0 MailScanner front-end.
-# Copyright (C) 2010-2012  Andrew Colin Kissa <andrew@topdog.za.net>
+# Copyright (C) 2010-2015  Andrew Colin Kissa <andrew@topdog.za.net>
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation, either version 3 of the License, or
 # (at your option) any later version.
-# 
+#
 # This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License for more details.
-# 
+#
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 "Update sphinx index"
 
+import os
 import sys
+import fcntl
 
 from MySQLdb import Error
 from sqlalchemy.sql import text
@@ -54,7 +56,7 @@ def update_rt_index(index_name, sphinxurl):
 
 def update_index(sphinx_url, index, has_rt):
     "Update Sphinx index"
-    sql_temp = """SELECT set_var('maxts', 
+    sql_temp = """SELECT set_var('maxts',
                 (SELECT maxts FROM indexer_counters
                 WHERE tablename='messages_delta'));
                 UPDATE indexer_counters
@@ -85,6 +87,7 @@ def update_index(sphinx_url, index, has_rt):
     else:
         print >> sys.stderr, stderr
 
+
 class UpdateDeltaIndex(BaseCommand):
     "Update sphinx delta indexes"
     BaseCommand.parser.add_option('-i', '--index',
@@ -111,9 +114,20 @@ class UpdateDeltaIndex(BaseCommand):
             print "\nProvide a valid index to update\n"
             print self.parser.print_help()
             sys.exit(2)
+        if not os.path.exists('/usr/bin/indexer'):
+            print "\nSphinx indexer is not installed\n"
+            sys.exit(2)
 
-        update_index(self.conf['sphinx.url'],
-                    self.options.index_name,
-                    self.options.index_has_rt)
-
-        
+        try:
+            lockfile = os.path.join(self.conf['baruwa.locks.dir'],
+                                    'updatedelta.lock')
+            with open(lockfile, 'w+') as lock:
+                fcntl.lockf(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
+                update_index(self.conf['sphinx.url'],
+                        self.options.index_name,
+                        self.options.index_has_rt)
+        except IOError:
+            print >> sys.stderr, "Another instance is running."
+            sys.exit(2)
+        finally:
+            Session.close()

@@ -1,8 +1,16 @@
+###!
+ * Baruwa Enterprise Edition
+ * http://www.baruwa.com
+ *
+ * Copyright (c) 2013-2015 Andrew Colin Kissa
+ *
+ *
+###
 $ = jQuery
 exports = this
 
 build_links = (filters)->
-    tmpl = '<a href="/reports/filters/delete/{{index}}"><img src="{{media_url}}imgs/sm-del.png" alt="[x]" /></a>' +
+    tmpl = '<a href="/reports/filters/delete/{{index}}"><i class="icon-remove red"></i>' +
             '&nbsp;{{filter_field}} {{filter_by}} {{filter_value}}&nbsp;'
     rows = []
     $.each filters, (i, f)->
@@ -32,7 +40,7 @@ init_form = ->
                     "isquarantined"]
     num_fields = ["size","sascore"]
     text_fields = ["messageid","from_address","from_domain","to_address","to_domain",
-                    "subject","clientip","spamreport","headers"]
+                    "subject","clientip","spamreport","headers", "hostname"]
     time_fields = ["date","time"]
     num_values = [{'value':1,'opt':gettext('is equal to')},{'value':2,'opt':gettext('is not equal to')},
                     {'value':3,'opt':gettext('is greater than')},{'value':4,'opt':gettext('is less than')}]
@@ -52,17 +60,26 @@ init_form = ->
     $("#filtered_field").bind 'change', ()->
         value_to_check = $(this).val()
         if $.inArray(value_to_check, bool_fields) != -1
+            fltdval.unmask("99:99")
+            fltdval.datepicker('remove')
+            # fltdval.unmask("9999-99-99")
             fltdby.empty()
             $.each bool_values, (i, n) ->
                 fltdby.append $('<option/>', {value:n.value, html:n.opt})
             fltdval.attr {disabled:'disabled', value:''}
         if $.inArray(value_to_check, num_fields) != -1
+            fltdval.unmask("99:99")
+            fltdval.datepicker('remove')
+            # fltdval.unmask("9999-99-99")
             fltdby.empty()
             $.each num_values, (i, n) ->
                 fltdby.append $('<option/>', {value:n.value, html:n.opt})
             fltdval.removeAttr 'disabled'
             fltdval.attr {value:''}
         if $.inArray(value_to_check, text_fields) != -1
+            fltdval.unmask("99:99")
+            fltdval.datepicker('remove')
+            # fltdval.unmask("9999-99-99")
             fltdby.empty()
             $.each text_values, (i, n) ->
                 fltdby.append $('<option/>', {value:n.value, html:n.opt})
@@ -74,7 +91,10 @@ init_form = ->
                 fltdby.append $('<option/>', {value:n.value, html:n.opt})
             fltdval.removeAttr 'disabled'
             if value_to_check == 'time'
-                fltdval.attr {value:'HH:MM'}
+                fltdval.datepicker('remove')
+                fltdval.mask "99:99"
             else
-                fltdval.attr {value:'YYYY-MM-DD'}
+                # fltdval.mask "9999-99-99"
+                fltdval.datepicker({'format': 'yyyy-mm-dd', 'autoclose': true, 'language': baruwalang})
     1
+

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # Baruwa - Web 2.0 MailScanner front-end.
-# Copyright (C) 2010-2012  Andrew Colin Kissa <andrew@topdog.za.net>
+# Copyright (C) 2010-2015  Andrew Colin Kissa <andrew@topdog.za.net>
 # vim: ai ts=4 sts=4 et sw=4
 
 "Domain tasks"
@@ -12,7 +12,7 @@ from celery.task import task
 from sqlalchemy.pool import NullPool
 from sqlalchemy import engine_from_config
 from sqlalchemy.orm.exc import NoResultFound
-#from pylons.i18n.translation import _
+# from pylons.i18n.translation import _
 
 from baruwa.model.meta import Session
 from baruwa.model.domains import Domain
@@ -25,8 +25,11 @@ from baruwa.tasks.organizations import DSFIELDS, ASFIELDS
 
 
 if not Session.registry.has():
-    engine = engine_from_config(config, 'sqlalchemy.', poolclass=NullPool)
-    Session.configure(bind=engine)
+    try:
+        engine = engine_from_config(config, 'sqlalchemy.', poolclass=NullPool)
+        Session.configure(bind=engine)
+    except KeyError:
+        pass
 
 
 @task(name='test-smtp-server')
@@ -65,11 +68,12 @@ def exportdomains(userid, orgid=None):
         logger.info('Starting export of domains for userid: %s' % userid)
         user = Session.query(User).get(userid)
         if user.is_peleb:
-            results['global_error'] = 'You are not authorized to export domains'
+            results['global_error'] = \
+                'You are not authorized to export domains'
             return results
         if user.is_domain_admin and orgid:
             results['global_error'] = \
-            'You are not authorized to export organization domains'
+                'You are not authorized to export organization domains'
             return results
 
         domains = Session.query(Domain)
@@ -78,7 +82,7 @@ def exportdomains(userid, orgid=None):
                         domain_owners.c.organization_id == orgid)
         if user.is_domain_admin:
             domains = domains.join(domain_owners,
-                        (oa, domain_owners.c.organization_id == \
+                        (oa, domain_owners.c.organization_id ==
                         oa.c.organization_id))\
                         .filter(oa.c.user_id == user.id)
         rows = []
@@ -104,6 +108,6 @@ def exportdomains(userid, orgid=None):
     except TypeError:
         results['global_error'] = 'Internal error occured'
         logger.info('Export failed: %s' % results['global_error'])
-    # finally:
-    #     Session.close()
+    finally:
+        Session.close()
     return results

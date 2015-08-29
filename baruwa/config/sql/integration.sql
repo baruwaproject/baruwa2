@@ -11,7 +11,7 @@ CREATE VIEW ldaplookup AS
     END
     || basedn || '?' || emailattribute || '?' ||
     CASE WHEN search_scope='subtree' THEN 'sub?' ELSE 'one?' END ||
-    REPLACE(REPLACE(emailsearchfilter, '%u', '${quote_ldap:$local_part}'), '%d', '$domain')
+    REPLACE(REPLACE(emailsearchfilter, '%u', '${quote_ldap:$local_part}'), '%d', '${quote_ldap:$domain}')
     AS url, name FROM ldapsettings, authservers, maildomains WHERE
     ldapsettings.auth_id = authservers.id AND
     authservers.domain_id = maildomains.id;
@@ -22,7 +22,7 @@ CREATE VIEW quickpeek AS
     SELECT value, hostname, external, internal,
     CASE WHEN hostname='default' THEN 2 ELSE 1 END AS rank
     FROM configurations, servers WHERE configurations.server_id = servers.id AND
-    enabled='t' ORDER BY rank ASC;
+    enabled='t' ORDER BY section, rank ASC;
 
 --routedata
 DROP VIEW IF EXISTS routedata;
@@ -51,7 +51,7 @@ CREATE VIEW routedata AS
     FROM destinations, maildomains, domainalias
     WHERE maildomains.id=destinations.domain_id AND
     maildomains.id=domainalias.domain_id;
-    
+
 --alldomains
 DROP VIEW IF EXISTS alldomains CASCADE;
 CREATE VIEW alldomains AS
@@ -147,16 +147,16 @@ CREATE VIEW highspamactions AS
 DROP VIEW IF EXISTS spamchecks CASCADE;
 CREATE VIEW spamchecks AS
 	SELECT row_number, oldtable.*, character(50) 'spamchecks' AS name FROM
-	(SELECT ARRAY_TO_STRING(ARRAY['To:', name, 'no'], ' ') ruleset from maildomains WHERE status='t' AND spam_checks='f'
+	(SELECT ARRAY_TO_STRING(ARRAY['To:', ' ', '*@', name, ' ', 'no'], '') ruleset from alldomains WHERE status='t' AND spam_checks='f'
 	UNION ALL
-	SELECT ARRAY_TO_STRING(ARRAY['FromOrTo:', 'default', 'yes'], ' ')) AS oldtable
+	SELECT ARRAY_TO_STRING(ARRAY['FromOrTo:', ' ', 'default', ' ', 'yes'], '')) AS oldtable
 	CROSS JOIN
-	(SELECT ARRAY(SELECT ARRAY_TO_STRING(ARRAY['To:', name, 'no'], ' ') ruleset from maildomains WHERE status='t' AND spam_checks='f'
+	(SELECT ARRAY(SELECT ARRAY_TO_STRING(ARRAY['To:', ' ', '*@', name, ' ', 'no'], '') ruleset from alldomains WHERE status='t' AND spam_checks='f'
 	UNION ALL
-	SELECT ARRAY_TO_STRING(ARRAY['FromOrTo:', 'default', 'yes'], ' ')) AS id) AS oldids
+	SELECT ARRAY_TO_STRING(ARRAY['FromOrTo:', ' ', 'default', ' ', 'yes'], '')) AS id) AS oldids
 	CROSS JOIN
 	generate_series(1, (SELECT COUNT(*) FROM 
-	(SELECT id FROM maildomains WHERE status='t' AND spam_checks='f' UNION ALL SELECT 1) AS td)) AS row_number
+	(SELECT id FROM alldomains WHERE status='t' AND spam_checks='f' UNION ALL SELECT 1) AS td)) AS row_number
 	WHERE oldids.id[row_number] = oldtable.ruleset ORDER BY row_number;
 
 --approvedlistinner
@@ -241,16 +241,16 @@ CREATE VIEW bannedlist AS
 DROP VIEW IF EXISTS virusscan CASCADE;
 CREATE VIEW virusscan AS
 	SELECT row_number, oldtable.*, character(50) 'viruschecks' AS name FROM
-	(SELECT ARRAY_TO_STRING(ARRAY['To:', name, 'no'], ' ') ruleset from maildomains WHERE status='t' AND virus_checks='f'
+	(SELECT ARRAY_TO_STRING(ARRAY['To:', ' ', '*@', name, ' ', 'no'], '') ruleset from alldomains WHERE status='t' AND virus_checks='f'
 	UNION ALL
-	SELECT ARRAY_TO_STRING(ARRAY['FromOrTo:', 'default', 'yes'], ' ')) AS oldtable
+	SELECT ARRAY_TO_STRING(ARRAY['FromOrTo:', ' ', 'default', ' ', 'yes'], '')) AS oldtable
 	CROSS JOIN
-	(SELECT ARRAY(SELECT ARRAY_TO_STRING(ARRAY['To:', name, 'no'], ' ') ruleset from maildomains WHERE status='t' AND virus_checks='f'
+	(SELECT ARRAY(SELECT ARRAY_TO_STRING(ARRAY['To:', ' ', '*@', name, ' ', 'no'], '') ruleset from alldomains WHERE status='t' AND virus_checks='f'
 	UNION ALL
-	SELECT ARRAY_TO_STRING(ARRAY['FromOrTo:', 'default', 'yes'], ' ')) AS id) AS oldids
+	SELECT ARRAY_TO_STRING(ARRAY['FromOrTo:', ' ', 'default', ' ', 'yes'], '')) AS id) AS oldids
 	CROSS JOIN
 	generate_series(1, (SELECT COUNT(*) FROM 
-	(SELECT id FROM maildomains WHERE status='t' AND virus_checks='f' UNION ALL SELECT 1) AS td)) AS row_number
+	(SELECT id FROM alldomains WHERE status='t' AND virus_checks='f' UNION ALL SELECT 1) AS td)) AS row_number
 	WHERE oldids.id[row_number] = oldtable.ruleset ORDER BY row_number;
 
 --innerhighspamscore
@@ -268,13 +268,13 @@ CREATE VIEW innerhighspamscore AS
 DROP VIEW IF EXISTS highspamscore CASCADE;
 CREATE VIEW highspamscore AS
 	SELECT row_number, oldtable.*, character(50) 'highspamscore' AS name FROM
-	(SELECT ARRAY_TO_STRING(ARRAY['To:', address, ' ', TEXT(high_score)], ' ') ruleset from innerhighspamscore where high_score != 10
+	(SELECT ARRAY_TO_STRING(ARRAY['To:', ' ', address, ' ', TEXT(high_score)], '') ruleset from innerhighspamscore where high_score != 10
 	UNION ALL
-	SELECT ARRAY_TO_STRING(ARRAY['FromOrTo:', 'default', '10'], ' ')) AS oldtable
+	SELECT ARRAY_TO_STRING(ARRAY['FromOrTo:', ' ', 'default', ' ', '10'], '')) AS oldtable
 	CROSS JOIN
-	(SELECT ARRAY(SELECT ARRAY_TO_STRING(ARRAY['To:', address, ' ', TEXT(high_score)], ' ') ruleset from innerhighspamscore where high_score != 10
+	(SELECT ARRAY(SELECT ARRAY_TO_STRING(ARRAY['To:', ' ', address, ' ', TEXT(high_score)], '') ruleset from innerhighspamscore where high_score != 10
 	UNION ALL
-	SELECT ARRAY_TO_STRING(ARRAY['FromOrTo:', 'default', '10'], ' ')) AS id) AS oldids
+	SELECT ARRAY_TO_STRING(ARRAY['FromOrTo:', ' ', 'default', ' ', '10'], '')) AS id) AS oldids
 	CROSS JOIN
 	generate_series(1, (SELECT COUNT(*) FROM 
 	(SELECT address FROM innerhighspamscore WHERE high_score != 10 UNION ALL SELECT '1') AS td)) AS row_number
@@ -292,13 +292,13 @@ CREATE VIEW innerspamscore AS
 DROP VIEW IF EXISTS spamscore CASCADE;
 CREATE VIEW spamscore AS
 	SELECT row_number, oldtable.*, character(50) 'spamscore' AS name FROM
-	(SELECT ARRAY_TO_STRING(ARRAY['To:', address, ' ', TEXT(low_score)], ' ') ruleset from innerspamscore where low_score != 5
+	(SELECT ARRAY_TO_STRING(ARRAY['To:', ' ', address, ' ', TEXT(low_score)], '') ruleset from innerspamscore where low_score != 5
 	UNION ALL
-	SELECT ARRAY_TO_STRING(ARRAY['FromOrTo:', 'default', '5'], ' ')) AS oldtable
+	SELECT ARRAY_TO_STRING(ARRAY['FromOrTo:', ' ', 'default', ' ', '5'], '')) AS oldtable
 	CROSS JOIN
-	(SELECT ARRAY(SELECT ARRAY_TO_STRING(ARRAY['To:', address, ' ', TEXT(low_score)], ' ') ruleset from innerspamscore  where low_score != 5
+	(SELECT ARRAY(SELECT ARRAY_TO_STRING(ARRAY['To:', ' ', address, ' ', TEXT(low_score)], '') ruleset from innerspamscore  where low_score != 5
 	UNION ALL
-	SELECT ARRAY_TO_STRING(ARRAY['FromOrTo:', 'default', '5'], ' ')) AS id) AS oldids
+	SELECT ARRAY_TO_STRING(ARRAY['FromOrTo:', ' ', 'default', ' ', '5'], '')) AS id) AS oldids
 	CROSS JOIN
 	generate_series(1, (SELECT COUNT(*) FROM 
 	(SELECT address FROM innerspamscore  WHERE low_score != 5 UNION ALL SELECT '1') AS td)) AS row_number
@@ -308,17 +308,17 @@ CREATE VIEW spamscore AS
 DROP VIEW IF EXISTS messagesize CASCADE;
 CREATE VIEW messagesize AS
 	SELECT row_number, oldtable.*, character(50) 'messagesize' AS name FROM
-	(SELECT ARRAY_TO_STRING(ARRAY['To:', '*@', name, ' ', TEXT(message_size)], '') ruleset from maildomains WHERE status='t' AND message_size != '0'
+	(SELECT ARRAY_TO_STRING(ARRAY['To:', ' ', '*@', name, ' ', TEXT(message_size)], '') ruleset from alldomains WHERE status='t' AND message_size != '0'
 	UNION ALL
-	SELECT ARRAY_TO_STRING(ARRAY['FromOrTo:', 'default', '0'], '')) AS oldtable
+	SELECT ARRAY_TO_STRING(ARRAY['FromOrTo:', ' ', 'default', ' ', '0'], '')) AS oldtable
 	CROSS JOIN
-	(SELECT ARRAY(SELECT ARRAY_TO_STRING(ARRAY['To:', '*@', name, ' ', TEXT(message_size)], '')
-	 ruleset from maildomains WHERE status='t' AND message_size !='0'
+	(SELECT ARRAY(SELECT ARRAY_TO_STRING(ARRAY['To:', ' ', '*@', name, ' ', TEXT(message_size)], '')
+	 ruleset from alldomains WHERE status='t' AND message_size !='0'
 	UNION ALL
-	SELECT ARRAY_TO_STRING(ARRAY['FromOrTo:', 'default', '0'], '')) AS id) AS oldids
+	SELECT ARRAY_TO_STRING(ARRAY['FromOrTo:', ' ', 'default', ' ', '0'], '')) AS id) AS oldids
 	CROSS JOIN
 	generate_series(1, (SELECT COUNT(*) FROM 
-	(SELECT id FROM maildomains WHERE status='t' AND message_size != '0' UNION ALL SELECT 1) AS td)) AS row_number
+	(SELECT id FROM alldomains WHERE status='t' AND message_size != '0' UNION ALL SELECT 1) AS td)) AS row_number
 	WHERE oldids.id[row_number] = oldtable.ruleset ORDER BY row_number;
 
 -- innersignmsgs
@@ -336,7 +336,7 @@ CREATE VIEW innersignmsgs AS
 	UNION
 	-- domains
 	SELECT ARRAY_TO_STRING(ARRAY['From: ', '*@', name, ' yes'], '') ruleset, 2 AS num FROM
-	maildomains, domain_signatures WHERE maildomains.id = domain_signatures.domain_id AND maildomains.status='t'
+	alldomains, domain_signatures WHERE alldomains.id = domain_signatures.domain_id AND alldomains.status='t'
 	AND domain_signatures.enabled='t' AND domain_signatures.signature_type = 1
 	UNION
 	-- default
@@ -369,7 +369,7 @@ CREATE VIEW innerhtmlsigs AS
 	UNION
 	-- domains
 	SELECT ARRAY_TO_STRING(ARRAY['From: ', '*@', name, ' %signature-dir%/domains/', name, '/sig.html'], '') ruleset, 2 AS num FROM
-	maildomains, domain_signatures WHERE maildomains.id = domain_signatures.domain_id AND maildomains.status='t'
+	alldomains, domain_signatures WHERE alldomains.id = domain_signatures.domain_id AND alldomains.status='t'
 	AND domain_signatures.enabled='t' AND domain_signatures.signature_type = 2
 	UNION
 	-- default
@@ -402,7 +402,7 @@ CREATE VIEW innertextsigs AS
 	UNION
 	-- domains
 	SELECT ARRAY_TO_STRING(ARRAY['From: ', '*@', name, ' %signature-dir%/domains/', name, '/sig.txt'], '') ruleset, 2 AS num FROM
-	maildomains, domain_signatures WHERE maildomains.id = domain_signatures.domain_id AND maildomains.status='t'
+	alldomains, domain_signatures WHERE alldomains.id = domain_signatures.domain_id AND alldomains.status='t'
 	AND domain_signatures.enabled='t' AND domain_signatures.signature_type = 1
 	UNION
 	-- default
@@ -433,8 +433,8 @@ CREATE VIEW innersigimgfiles AS
 	users, user_sigimgs WHERE users.id = user_sigimgs.user_id AND users.active='t'
 	UNION
 	-- domains
-	SELECT ARRAY_TO_STRING(ARRAY['From: ', '*@', maildomains.name, ' %signature-dir%/domains/', maildomains.name, '/', dom_sigimgs.name], '') ruleset,
-	2 AS num FROM maildomains, dom_sigimgs WHERE maildomains.id = dom_sigimgs.domain_id AND maildomains.status='t'
+	SELECT ARRAY_TO_STRING(ARRAY['From: ', '*@', alldomains.name, ' %signature-dir%/domains/', alldomains.name, '/', dom_sigimgs.name], '') ruleset,
+	2 AS num FROM alldomains, dom_sigimgs WHERE alldomains.id = dom_sigimgs.domain_id AND alldomains.status='t'
 	UNION
 	-- default
 	SELECT 'FromOrTo: default no' AS ruleset, 3 AS num;
@@ -464,8 +464,8 @@ CREATE VIEW innersigimgs AS
 	users, user_sigimgs WHERE users.id = user_sigimgs.user_id AND users.active='t'
 	UNION
 	-- domains
-	SELECT ARRAY_TO_STRING(ARRAY['From: ', '*@', maildomains.name, ' ', dom_sigimgs.name], '') ruleset,
-	2 AS num FROM maildomains, dom_sigimgs WHERE maildomains.id = dom_sigimgs.domain_id AND maildomains.status='t'
+	SELECT ARRAY_TO_STRING(ARRAY['From: ', '*@', alldomains.name, ' ', dom_sigimgs.name], '') ruleset,
+	2 AS num FROM alldomains, dom_sigimgs WHERE alldomains.id = dom_sigimgs.domain_id AND alldomains.status='t'
 	UNION
 	-- default
 	SELECT 'FromOrTo: default no' AS ruleset, 3 AS num;

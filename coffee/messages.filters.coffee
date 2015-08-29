@@ -1,3 +1,11 @@
+###!
+ * Baruwa Enterprise Edition
+ * http://www.baruwa.com
+ *
+ * Copyright (c) 2013-2015 Andrew Colin Kissa
+ *
+ *
+###
 $ = jQuery
 exports = this
 exports.show_url = filter_url
@@ -11,10 +19,11 @@ process_filter_response = (data)->
         $('#fhl').empty()
         if links != ""
             $('#fhl').append(links)
-            $('.mkbox').removeClass('hide')
+            $('#mailfilter').removeClass('hide')
         else
-            $('.mkbox').removeClass('show')
-            $('.mkbox').addClass('hide')
+            $('#mailfilter').removeClass('show')
+            $('#mailfilter').addClass('hide')
+            $('#mailfilter').remove()
         $('#fhl a').bind 'click', (e)->
             e.preventDefault()
             enable_filters(this.href)
@@ -47,18 +56,17 @@ enable_filters = (url)->
             $('#spinner').hide()
             1
     1
-    
+
 
 ajaxify_form = ->
-    $('#afform .closeflash').bind 'click', (e)->
+    $('#afform .close').bind 'click', (e)->
         e.preventDefault()
         $('.form_area').hide()
-        $('#form-area').hide()
     $('#filter-form').submit (e)->
         e.preventDefault()
         $("#filter_form_submit").attr {disabled:'disabled', value:gettext('Loading')}
         text = gettext 'Processing request.............'
-        $('#afform').after '<div class="grid_16 drow" id="filter-ajax"><div class="grid_7">'+text+'</div></div>'
+        $('#filter-form').before '<div class="row-fluid" id="filter-ajax">'+text+'</div>'
         request_data = {
             filtered_field: $("#filtered_field").val(),
             filtered_by: $("#filtered_by").val(),
@@ -93,17 +101,29 @@ show_filters = ->
             $('#spinner').show()
             1
         success:(data, textStatus, XHR) ->
-            if not $('#applied_filters').length
-                if not $('.form_area').length
-                    $('#sublinks').after(data)
-                else
-                    $('.form_area').after(data)
+            # if not $('#filterrow').length
+            # if $('#filterrow').length
+            $('#reportfilter').prevAll("div.space-6:first").remove()
+            $('#reportfilter').remove()
+            $('#mailfilter').prevAll("div.space-6:first").remove()
+            $('#mailfilter').remove()
+            if not $('.form_area').length
+                $('#sublinks').after(data)
+            else
+                $('.form_area').after(data)
             $('.mkbox').removeClass('hide')
+            $('#mailfilter').removeClass('hide')
             if not $('#fhl a').length
-                $('#fhl').html('<span id="tmpinfo">'+gettext('Non applied at the moment')+'</span>')
+                $('#fhl').html('<span id="tmpinfo">'+gettext('None applied at the moment')+'</span>')
             $('#fhl a').bind 'click', (e)->
                 e.preventDefault()
                 enable_filters(this.href)
+            $('#apfb').bind 'click', (e)->
+                e.preventDefault()
+                $('#applied_filters').prevAll("div.space-6:first").remove()
+                $('#applied_filters').remove()
+                $('#mailfilter').prevAll("div.space-6:first").remove()
+                $('#mailfilter').remove()
             1
         complete:(XHR, textStatus) ->
             exports.inprogress = false
@@ -136,3 +156,4 @@ add_filters = ->
             error:display_ajax_error
     $('.form_area').show()
     1
+

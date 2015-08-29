@@ -1,10 +1,18 @@
+###!
+ * Baruwa Enterprise Edition
+ * http://www.baruwa.com
+ *
+ * Copyright (c) 2013-2015 Andrew Colin Kissa
+ *
+ *
+###
 $ = jQuery
 exports = this
 exports.run = should_run
 
 request_json = ->
-    row = '<tr><td>{{message_id}}</td><td>{{from_address}}</td><td>{{to_address}}</td>' +
-          '<td><img src="{{img}}" alt="{{alt}} />"</td><td>{{error}}</td></tr>'
+    row = '<tr><td>{{{img}}}</td><td class="hidden-phone">{{message_id}}</td><td>{{from_address}}</td>' +
+          '<td class="hidden-phone">{{to_address}}</td><td class="hidden-phone">{{error}}</td></tr>'
     $.ajax location.pathname + '.json',
         type: 'GET'
         cache: false
@@ -29,17 +37,13 @@ request_json = ->
                 rows = []
                 $.each data.results, (i,n) ->
                     if n.errors.length
-                        eimg = 'failed.png'
-                        alt = gettext('FAILED')
+                        n['img'] = '<i class="icon-remove red"></i>'
                         erows = []
                         for error in n.errors
                             erows.push "#{error[0]} : #{error[1]}"
                         n['error'] = erows.join '<br/>'
                     else
-                        eimg = 'passed.png'
-                        alt = gettext('PASSED')
-                    n['img'] = "#{exports.media_url}imgs/#{eimg}"
-                    n['alt'] = "#{alt}"
+                        n['img'] = '<i class="icon-ok green"></i>'
                     html = $.mustache row, n
                     rows.push html
                 replacement = rows.join ''
@@ -63,5 +67,8 @@ $(document).ready ->
             $('#wrap').after exports.loading
         else
             $('#shield').show()
+        $('#shield').empty().append $('<div id="loading-status"><div id="progressbar"></div><br/>Processing tasks...</div>')
+        $("#progressbar").reportprogress(0)
         exports.auto_refresh = setTimeout request_json, 5000
     1
+

@@ -1,69 +1,77 @@
-<div class="alpos">
-	<ul id="msgops">
-		<li>${h.link_to(_('Inbound Queue'), url('server-status-mq-in', serverid=c.server.id)) if c.server else h.link_to(_('Inbound Queue'), url('mailq-status-directed', queue='inbound'))}</li>
-	    <li>${h.link_to(_('Outbound Queue'), url('server-status-mq-out', serverid=c.server.id)) if c.server else h.link_to(_('Outbound Queue'), url('mailq-status-directed', queue='outbound'))}</li>
-		% if c.server:
-		<li>${h.link_to(_('Node details'), url('server-status', serverid=c.server.id))}</li>
-		% endif
-	</ul>
-</div>
-<div class="clear"></div>
-<div class="sp10"></div>
-<div class="alpos">
-	<div class="toolbar">${self.paging(h.do_pagination(c.page), 'mailqnumitemstop')}</div>
-</div>
-<div class="clear"></div>
-<div id="content">
-${h.form(url('mailq-process'), method='post')}
-<div id="form-area">
-	<div class="grid_16 drowlast">
-		<div class="grid_10">&nbsp;</div>
-		<div class="grid_3">${c.form.queue_action(class_="searchrow")}</div>
-		<div class="grid_2">
-			${h.submit('mqs', _("Process"))}
-		</div>
+<div class="row-fluid">
+	<div class="span1 hidden-phone"></div>
+	<div class="span10">
+		<ul id="msgops">
+			<li>${h.link_to(_('Inbound Queue'), url('server-status-mq-in', serverid=c.server.id)) if c.server else h.link_to(_('Inbound Queue'), url('mailq-status-directed', queue='inbound'))}</li>
+		    <li>${h.link_to(_('Outbound Queue'), url('server-status-mq-out', serverid=c.server.id)) if c.server else h.link_to(_('Outbound Queue'), url('mailq-status-directed', queue='outbound'))}</li>
+			% if c.server:
+			<li>${h.link_to(_('Node details'), url('server-status', serverid=c.server.id))}</li>
+			% endif
+		</ul>
 	</div>
+	<div class="span1 hidden-phone"></div>
 </div>
-<div class="clear"></div>
-<div class="sp10"></div>
-<table class="lists">
-<thead>
-<tr class="grid">
-	<th class="select_heading"><input type="checkbox" name="selector" id="allchecker" /></th>
-	<th class="date_time_heading">${header_url('timestamp', 'Received')}</th>
-	<th class="from_heading">${header_url('from_address', 'From')}</th>
-	<th class="to_heading">${header_url('to_address', 'To')}</th>
-	<th class="subject_heading">${header_url('subject', 'Subject')}</th>
-	<th class="size_heading">${header_url('size', 'Size')}</th>
-	<th class="attempts_heading">${header_url('attempts', 'Attempts')}</th>
-</tr>
-</thead>
-<tbody>
-% if hasattr(c, 'page') and c.page.items:
-% for item in c.page.items:
-<tr>
-	<td class="mailq_select_td"><input class="selector" type="checkbox" name="id" value="${item.id}" /></td>
-	<td class="mailq_date_td"><a href="${url('mailq-detail', queueid=item.id)}">${h.format_date(item.timestamp, c.tzinfo)}</a></td>
-	<td class="mailq_from_td"><a href="${url('mailq-detail', queueid=item.id)}">${h.truncate(item.from_address, 30)}</a></td>
-	<td class="mailq_to_td"><a href="${url('mailq-detail', queueid=item.id)}">${item.to_address}</a></td>
-	<td class="mailq_subject_td"><a href="${url('mailq-detail', queueid=item.id)}">${h.truncate(item.subject, 45)}</a></td>
-	<td class="mailq_size_td"><a href="${url('mailq-detail', queueid=item.id)}">${h.format_byte_size(item.size)}</a></td>
-	<td class="mailq_attempts_td"><a href="${url('mailq-detail', queueid=item.id)}">${item.attempts}</a></td>
-</tr>
-% endfor
-% else:
-<tr><td class="spanrow" colspan="7">${_('No items found')}</td></tr>
-% endif
-</tbody>
-</table>
+<div class="space-6"></div>
+<div class="row-fluid">
+	<div class="span1 hidden-phone"></div>
+	<div class="span10 toolbar">${self.paging(h.do_pagination(c.page), 'mailqnumitemstop')}</div>
+	<div class="span1 hidden-phone"></div>
+</div>
+<div class="space-6"></div>
+${h.form(url('mailq-process'), method='post', id='mailqform')}
+<div class="row-fluid">
+	<div class="span1 hidden-phone"></div>
+	<div class="span10" id="form-area">
+		<div class="span8 hidden-phone">&nbsp;</div>
+		<div class="span2">${c.form.queue_action(class_="searchrow")}</div>
+		<div class="span2"><button class="btn btn-small btn-success" id="mqs"><i class="icon-cog"></i> ${_('Process')}</button></div>
+	</div>
+	<div class="span1 hidden-phone"></div>
+</div>
+<div class="space-6"></div>
+<div class="row-fluid">
+	<div class="span1 hidden-phone"></div>
+	<div class="span10">
+		<table class="table table-bordered table-condensed table-hover table-striped">
+		<thead>
+		<tr>
+			<th><input type="checkbox" name="selector" id="allchecker" /></th>
+			<th class="hidden-phone">${header_url('timestamp', 'Received')}</th>
+			<th>${header_url('from_address', 'From')}</th>
+			<th class="hidden-phone">${header_url('to_address', 'To')}</th>
+			<th class="hidden-phone">${header_url('subject', 'Subject')}</th>
+			<th class="hidden-phone">${header_url('size', 'Size')}</th>
+			<th class="hidden-phone">${header_url('attempts', 'Attempts')}</th>
+		</tr>
+		</thead>
+		<tbody>
+		% if hasattr(c, 'page') and c.page.items:
+		% for item in c.page.items:
+		<tr>
+			<td><input class="selector" type="checkbox" name="id" value="${item.id}" /></td>
+			<td class="hidden-phone"><a href="${url('mailq-detail', queueid=item.id)}">${h.format_date(item.timestamp, c.tzinfo)}</a></td>
+			<td><a href="${url('mailq-detail', queueid=item.id)}">${h.truncate(item.from_address, 30)}</a></td>
+			<td class="hidden-phone"><a href="${url('mailq-detail', queueid=item.id)}">${item.to_address}</a></td>
+			<td class="hidden-phone"><a href="${url('mailq-detail', queueid=item.id)}">${h.truncate(item.subject, 45)}</a></td>
+			<td class="hidden-phone"><a href="${url('mailq-detail', queueid=item.id)}">${h.format_byte_size(item.size)}</a></td>
+			<td class="hidden-phone"><a href="${url('mailq-detail', queueid=item.id)}">${item.attempts}</a></td>
+		</tr>
+		% endfor
+		% else:
+		<tr><td colspan="7">${_('No items found')}</td></tr>
+		% endif
+		</tbody>
+		</table>
+	</div>
+	<div class="span1 hidden-phone"></div>
+</div>
 ${h.HTML.div(c.form.csrf_token, style="display: none;")}
 ${h.end_form()}\
+<div class="row-fluid">
+	<div class="span1 hidden-phone"></div>
+	<div class="span10 toolbar">${self.paging(h.do_pagination(c.page), 'mailqnumitemsbottom')}</div>
+	<div class="span1 hidden-phone"></div>
 </div>
-<div class="alpos">
-	<div class="toolbar">${self.paging(h.do_pagination(c.page), 'mailqnumitemsbottom')}</div>
-</div>
-<div class="clear"></div>
-<div class="sp10"></div>
 
 <%def name="paging(page_nums, fieldname)">
 % if c.page.page_count != 0:
@@ -82,13 +90,13 @@ ${_('per page')}
 % endif
 % if c.page.next_page != c.page.first_page and c.page.page != c.page.first_page:
 <span>
-	${h.link_to(h.pager_img('first'), url('server-status-mq-paged', page=c.page.first_page, queue=c.queue) if c.server else url('mailq-status-paged', page=c.page.first_page, queue=c.queue))}
+	${h.link_to(h.literal('<i class="icon-double-angle-left"></i>'), url('server-status-mq-paged', page=c.page.first_page, queue=c.queue) if c.server else url('mailq-status-paged', page=c.page.first_page, queue=c.queue))}
 </span>
 <span>...</span>
 % endif
 % if c.page.previous_page:
 <span>
-	${h.link_to(h.pager_img('previous'), url('server-status-mq-paged', page=c.page.previous_page, queue=c.queue) if c.server else url('mailq-status-paged', page=c.page.previous_page, queue=c.queue))}
+	${h.link_to(h.literal('<i class="icon-angle-left"></i>'), url('server-status-mq-paged', page=c.page.previous_page, queue=c.queue) if c.server else url('mailq-status-paged', page=c.page.previous_page, queue=c.queue))}
 </span>
 % endif
 % for linkpage in page_nums:
@@ -102,13 +110,13 @@ ${_('per page')}
 % endfor
 % if c.page.next_page:
 <span>
-	${h.link_to(h.pager_img('next'), url('server-status-mq-paged', page=c.page.next_page, queue=c.queue) if c.server else url('mailq-status-paged', page=c.page.next_page, queue=c.queue))}
+	${h.link_to(h.literal('<i class="icon-angle-right"></i>'), url('server-status-mq-paged', page=c.page.next_page, queue=c.queue) if c.server else url('mailq-status-paged', page=c.page.next_page, queue=c.queue))}
 </span>
 % endif
 % if c.page.next_page != c.page.page_count and c.page.page != c.page.page_count and c.page.page_count != 0:
 <span>...</span>
 <span>
-	${h.link_to(h.pager_img('last'), url('server-status-mq-paged', page=c.page.page_count, queue=c.queue) if c.server else url('mailq-status-paged', page=c.page.page_count, queue=c.queue))}
+	${h.link_to(h.literal('<i class="icon-double-angle-right"></i>'), url('server-status-mq-paged', page=c.page.page_count, queue=c.queue) if c.server else url('mailq-status-paged', page=c.page.page_count, queue=c.queue))}
 </span>
 % endif
 % if c.page.page_count != 0:
@@ -148,11 +156,27 @@ ${_('Status :: Mail queue :: %(queue)s :: %(s)s') % dict(queue=c.queue, s=c.serv
 
 <%def name="headers()">\
 </%def>
+
+<%def name="submenu()">
+<div class="navbar navbar-static-top">
+    <div class="navbar-inner">
+        <div class="nav-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li class="nav_item"><a href="${url('mailq-status')}">${_("Mail Queues")}</a></li>
+				% if c.user.is_superadmin:
+				<li class="nav_item"><a href="${url('status-audit-logs')}">${_("Audit Logs")}</a></li>
+				% endif
+            </ul>
+        </div>
+    </div>
+</div>
+</%def>
+
 <%def name="localscripts()">\
 <script type="text/javascript">
 var setitems_url = "${url(controller='status', action='setnum')}";
 </script>
-${h.javascript_link(h.media_url() + 'js/baruwa/mailq.js')}
+${h.javascript_link(h.media_url() + 'js/baruwa/mailq.min.js')}
 </%def>
 
-<%inherit file="/base.html"/>
+<%inherit file="../base.html"/>

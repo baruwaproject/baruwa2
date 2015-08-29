@@ -1,18 +1,18 @@
 # -*- coding: utf-8 -*-
 # vim: ai ts=4 sts=4 et sw=4
 # Baruwa - Web 2.0 MailScanner front-end.
-# Copyright (C) 2010-2012  Andrew Colin Kissa <andrew@topdog.za.net>
+# Copyright (C) 2010-2015  Andrew Colin Kissa <andrew@topdog.za.net>
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation, either version 3 of the License, or
 # (at your option) any later version.
-# 
+#
 # This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License for more details.
-# 
+#
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
@@ -31,15 +31,15 @@ class Exim2Mbox(list):
     def __init__(self, headerfile):
         list.__init__([])
         assert (os.path.exists(headerfile) and os.path.isfile(headerfile)), \
-        'The headerfile: %s either does not exist or is not a file' % \
-        headerfile
+            'The headerfile: %s either does not exist or is not a file' % \
+            headerfile
         self.headerfile = headerfile
 
     def __call__(self):
         "process the files"
-        j = None
-        k = None
-        l = None
+        jsentry = None
+        kvalue = None
+        lvalue = None
         # for index, line in enumerate(message):
         with open(self.headerfile) as handle:
             index = 0
@@ -54,16 +54,16 @@ class Exim2Mbox(list):
                             now.strftime("%a %b %d %T %Y")))
                     continue
                 if EXIMQ_XX_RE.match(line):
-                    j = 1
+                    jsentry = 1
                     continue
-                if j and EXIMQ_NUM_RE.match(line):
-                    m = EXIMQ_NUM_RE.match(line)
-                    k = m.group()
-                    k = int(k)
-                    j -= 1
+                if jsentry and EXIMQ_NUM_RE.match(line):
+                    ematch = EXIMQ_NUM_RE.match(line)
+                    kvalue = ematch.group()
+                    kvalue = int(kvalue)
+                    jsentry -= 1
                     continue
-                if k:
-                    k -= 1
+                if kvalue:
+                    kvalue -= 1
                     self.append('X-BaruwaFW-From: %s' % line)
                     continue
                 if EXIMQ_BLANK_RE.match(line):
@@ -72,15 +72,15 @@ class Exim2Mbox(list):
                 if match:
                     groups = match.groups()
                     if groups[1] == '*':
-                        l = 0
+                        lvalue = 0
                     else:
-                        l = int(groups[0]) - len(groups[2]) + 1
+                        lvalue = int(groups[0]) - len(groups[2]) + 1
                     self.append(groups[2] + '\n')
                     continue
                 else:
-                    if l:
+                    if lvalue:
                         self.append(line)
-                        l -= len(line)
+                        lvalue -= len(line)
 
         dirname = os.path.dirname(self.headerfile)
         with open('%s/%s-D' % (dirname, msgid)) as handle:
@@ -106,4 +106,3 @@ if __name__ == '__main__':
         print mbox
     except AssertionError, error:
         print error
-        

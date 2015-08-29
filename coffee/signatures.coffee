@@ -1,3 +1,11 @@
+###!
+ * Baruwa Enterprise Edition
+ * http://www.baruwa.com
+ *
+ * Copyright (c) 2013-2015 Andrew Colin Kissa
+ *
+ *
+###
 $ = jQuery
 
 seteditor = ->
@@ -44,4 +52,5 @@ $(document).ready ->
         $('#imgupload').show()
     )
     1
+
 

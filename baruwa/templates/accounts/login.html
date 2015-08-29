@@ -1,90 +1,155 @@
 ## -*- coding: utf-8 -*-
 <%!
     from pylons.i18n.translation import set_lang, get_lang
+    from baruwa import __version__ as baruwaversion, __copyright__ as baruwacopyr
 %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<title>Baruwa :: ${_("Login") if url.current() == url('accounts-login') else _('Reset my password')}</title>
-<link href="${h.media_url()}css/grid.css" media="screen, projection" rel="stylesheet" type="text/css" />
-<link href="${h.media_url()}css/text.css" media="screen, projection" rel="stylesheet" type="text/css" />
-<link rel="icon" href="${h.media_url()}imgs/favicon.ico" type="image/x-icon" />
-<link rel="shortcut icon" href="${h.media_url()}imgs/favicon.ico" type="image/x-icon" />
-<script type="text/javascript">
-var media_url = "${h.media_url()}";
-</script>
-${h.javascript_link(h.media_url() + 'js/jquery.min.js',
-h.media_url() + 'js/jquery.mustache.min.js',
-url('jsi18n'),
-h.media_url() + 'js/baruwa/common.js',
-h.media_url() + 'js/baruwa/login.js')}
-</head>
-<body>
-<div id="wrap">
-	<div id="header-bar">
-		<div id="header">
-			<img src="${h.media_url()}imgs/logo.png" alt="Baruwa" class="logo" />
-		</div>
-	</div>
-	<div id="login-wrapper">
-		<div id="login-box"${'' if url.current() == url('accounts-login') else ' class="hide"'|n}>
-			<h2>${_('Login')}</h2>
-			% if c.login_counter > 0:
-			    <p class="error">${_("The username or password you entered is incorrect.")}</p>
-			% endif
-			<% 
-			messages = h.flash.pop_messages()
-			if not messages and hasattr(c, 'form') and 'csrf_token' in c.form.errors:
-				message = c.form.errors.pop('csrf_token')[0]
-				msg = h.Msg('error', message)
-				messages.append(msg)
-			%>
-			% if messages:
-			<p class="error">${messages[0]}</p>
-			% endif
-			${h.form(url('/login', came_from=c.came_from, __logins=c.login_counter), id='loginform', method='post')}
-			<label>${_('Username')}</label><input type='text' name="login" />
-			<label>${_('Password')}</label><input type='password' name="password" />
-			<select name="lang" id="globallang">
-				% for lang in h.get_languages():
-	              % if lang.keys()[0] == get_lang()[0]:
-	            <option value="${lang.keys()[0]}" selected='selected'>${lang[lang.keys()[0]]}</option>
-	              % else:
-	            <option value="${lang.keys()[0]}">${lang[lang.keys()[0]]}</option>
-	              % endif
-	            % endfor
-			</select>
-			<input type='submit' value="${_("Login")}" />
-			${h.end_form()}
-			<p><a id="iforgot" href="${url('accounts-pwreset', came_from=c.came_from)}">${_('Forgotten password ?')}</a></p>
-		</div>
-		<div id="forgottenpw"${'' if url.current() == url('accounts-pwreset') else ' class="hide"'|n}>
-		% if c.form.email.errors:
-		<p class="error">${u', '.join([unicode(ferr) for ferr in c.form.email.errors])}</p>
-		% endif
-		<p>${_("Forgotten your password? Enter your e-mail address below, and we'll e-mail instructions on setting a new one.")}</p>
-		<br />
-		${h.form(url('accounts-pwreset', came_from=c.came_from), id='resetform', method='post')}
-			${h.HTML.div(c.form.csrf_token, style="display: none;")}
-			<!-- <label>${_('Email address')}</label> -->
-			${c.form.email.label}
-			${h.highlight_errors(c.form.email)}
-			<!-- <input type="text" name="email" class="field" id="email" /> -->
-			<a id="cancelrset" href="${url('accounts-login', came_from=c.came_from)}">${_('Cancel')}</a>
-			<input type="submit" class="button" id="pwreset" value="${_('Reset my password')}" />
-		${h.end_form()}
-		</div>
-	</div>
-	<div id="footer-bar">
-		<div id="footer">
-			<div id="copyright">
-				<a href="http://www.baruwa.org/">Baruwa</a> &copy; 2011 Andrew Colin Kissa 
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+	<meta http-equiv='Pragma' content='no-cache'>
+	<meta http-equiv='Cache-Control' content='no-cache'>
+    <title>${config.get('baruwa.custom.name', 'Baruwa')} :: ${_("Login") if url.current() == url('accounts-login') else _('Reset my password')}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Baruwa Enterprise Edition Leading Spam protection, Virus protection Email Security software">
+    <meta name="author" content="Andrew Colin Kissa">
+	% if 'lang' in session and session['lang'] and session['lang'] in ['ar', 'he', 'ur', 'fa']:
+	<link href="${h.media_url()}css/vendor/bs-rl.min.css" rel="stylesheet">
+    <link href="${h.media_url()}css/vendor/bsr-rl.min.css" rel="stylesheet">
+    <link href="${h.media_url()}css/vendor/fa-rl.min.css" rel="stylesheet">
+    <link href="${h.media_url()}css/vendor/m-styles-rl.min.css" rel="stylesheet">
+    <link href="${h.media_url()}css/baruwa.login-rl.css" rel="stylesheet">
+    <style>body {direction: rtl;} </style>
+    % else:
+	<link href="${h.media_url()}css/vendor/bs.min.css" rel="stylesheet">
+    <link href="${h.media_url()}css/vendor/bsr.min.css" rel="stylesheet">
+    <link href="${h.media_url()}css/vendor/fa.min.css" rel="stylesheet">
+    <link href="${h.media_url()}css/vendor/m-styles.min.css" rel="stylesheet">
+    <link href="${h.media_url()}css/baruwa.login.min.css" rel="stylesheet">
+    % endif
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="${h.media_url()}imgs/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="${h.media_url()}imgs/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="${h.media_url()}imgs/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="${h.media_url()}img/apple-touch-icon-57-precomposed.png">
+    <link rel="shortcut icon" href="${h.media_url()}imgs/favicon.ico">
+	<script type="text/javascript">
+	var media_url = "${h.media_url()}";
+	</script>
+	${h.javascript_link(h.media_url() + 'js/vendor/jquery.min.js',
+	h.media_url() + 'js/vendor/jquery.mustache.min.js',
+	url('jsi18n'),
+	h.media_url() + 'js/baruwa/common.min.js')}
+  </head>
+  <body class="login">
+    <div class="container-fluid">
+		<div class="row-fluid">
+			<div class="span4 hidden-phone"></div>
+			<div class="span4">
+				<div class="row-fluid">
+					<div class="span12" id="logo">
+						<img src="${h.media_url()}imgs/logo.png" alt="${config.get('baruwa.custom.name', 'Baruwa')}">
+					</div>
+				</div>
 			</div>
+			<div class="span4 hidden-phone"></div>
 		</div>
+		<div class="row-fluid${'' if url.current() == url('accounts-login') else ' hide'|n}">
+			<div class="span4"></div>
+			<div class="span4">
+				<div class="row-fluid">
+					<div class="span12" id="login">
+						<h2 class="form-signin-heading">${_('Please sign in')}</h2>
+						% if c.login_counter > 0:
+						<p class="alert alert-error">${_("The username or password you entered is incorrect.")}</p>
+						% endif
+						<%
+						messages = h.flash.pop_messages()
+						if not messages and hasattr(c, 'form') and 'csrf_token' in c.form.errors:
+							message = c.form.errors.pop('csrf_token')[0]
+							msg = h.Msg('error', message)
+							messages.append(msg)
+						%>
+					    % if messages:
+					    <div class="alert alert-error">
+					    % for message in messages:
+					        ${message} <br/>
+					    % endfor
+					    </div>
+					    % endif
+						<form action="${url('/login', came_from=c.came_from, __logins=c.login_counter)}" method="post" accept-charset="utf-8">
+							<fieldset>
+								<label class="input-icon left">
+									<i class="icon-user"></i>
+									<input class="span12 m-wrap" type="text" placeholder="${_('Username')}" name="login">
+								</label>
+								<label class="input-icon left">
+									<i class="icon-lock"></i>
+									<input class="span12 m-wrap" type="password" placeholder="${_('Password')}" name="password">
+								</label>
+								<label>
+									<select name="lang" id="globallang" class="span6">
+										% for lang in h.get_languages():
+							              % if lang.keys()[0] == get_lang()[0]:
+							            <option value="${lang.keys()[0]}" selected='selected'>${lang[lang.keys()[0]]}</option>
+							              % else:
+							            <option value="${lang.keys()[0]}">${lang[lang.keys()[0]]}</option>
+							              % endif
+							            % endfor
+									</select>
+								</label>
+								<div class="form-actions">
+									<button id="submit-button" class="btn btn-small btn-success"><i class="icon-ok"></i> ${_('Login')}</button>
+								</div>
+							</fieldset>
+						</form>
+						<div class="row-fluid">
+							<div class="span12">
+								<a href="${url('accounts-pwreset', came_from=c.came_from)}"><i class="icon-question-sign"></i> ${_('I forgot my password')}</a>
+							</div>
+						</div>
+						<div class="row-fluid">
+							<div class="span12">
+								<p>
+									<small><a href="${config.get('baruwa.custom.url', 'http://www.baruwa.org')}">${config.get('baruwa.custom.name', 'Baruwa')}</a>
+									Powered by Baruwa [${baruwaversion}] ${baruwacopyr}</small>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="span4"></div>
+		</div>
+		<div class="row-fluid${'' if url.current() == url('accounts-pwreset') else ' hide'|n}">
+			<div class="span4"></div>
+			<div class="span4">
+				<div class="span12" id="lostpass">
+					<h2 class="form-signin-heading">${_('Request Password Reset')}</h2>
+					% if c.form.email.errors:
+					<p class="alert alert-error">${u', '.join([unicode(ferr) for ferr in c.form.email.errors])}</p>
+					% endif
+					${h.form(url('accounts-pwreset', came_from=c.came_from), id='resetform', method='post')}
+					<fieldset>
+						${h.HTML.div(c.form.csrf_token, style="display: none;")}
+						<p>${_("Forgotten your password? Enter your e-mail address below, and we'll e-mail you instructions on setting a new one.")}</p>
+						<label class="input-icon left">
+							<i class="icon-envelope"></i>
+							% if c.form.email.errors:
+							${c.form.email(class_="span12 m-wrap error", placeholder="Enter your Email Address")}
+							% else:
+							${c.form.email(class_="span12 m-wrap", placeholder="Enter your Email Address")}
+							% endif
+						</label>
+						<div class="form-actions">
+							<button id="submit-button" class="btn btn-small btn-success"><i class="icon-reply"></i> ${_('Reset my password')}</button>
+						</div>
+					</fieldset>
+					${h.end_form()}
+				</div>
+			</div>
+			<div class="span4"></div>
+		</div>
+    </div>
 	</div>
-</div>
-</body>
+  </body>
 </html>

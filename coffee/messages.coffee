@@ -1,3 +1,11 @@
+###!
+ * Baruwa Enterprise Edition
+ * http://www.baruwa.com
+ *
+ * Copyright (c) 2013-2015 Andrew Colin Kissa
+ *
+ *
+###
 $ = jQuery
 exports = this
 exports.setitems_url = setitems_url
@@ -17,7 +25,7 @@ buildpage = (data) ->
         $('div.limiter').hide()
     $('div.toolbar p').html pages_html
     $('#title').html title_html
-    $.address.title '.:. Baruwa :: ' + title_html
+    $.address.title '.:. ' + exports.baruwa_custom_name + ' :: ' + title_html
     $('div.pages a').click((e)->
         url = $(this).attr('href') + '.json'
         ajaxify(e, url)
@@ -52,10 +60,10 @@ ajaxrequest = (url) ->
         $('#wrap').after exports.loading
     else
         $('#shield').show()
-    $.ajax url, 
+    $.ajax url,
         type:'GET',
         cache:false,
-        dataType:'json' 
+        dataType:'json'
         success:buildpage,
         beforeSend: (XHR)->
             exports.inprogress = true
@@ -65,8 +73,8 @@ ajaxrequest = (url) ->
             exports.inprogress = false
             $('#shield').hide()
             if $(window).scrollTop()
-                $('html,body').animate 
-                    scrollTop: $("#header-bar").offset().top, 1500
+                $('html,body').animate
+                    scrollTop: $("#wrap").offset().top, 1500
             1
 
 $(document).ready ->
@@ -91,14 +99,26 @@ $(document).ready ->
         n = $(this).val()
         location.href = "#{exports.setitems_url}?n=#{n}"
     )
+    $('.filter_add').unbind 'click'
     $('.filter_add').bind 'click', (e)->
+        if exports.inprogress
+            show_dialog()
+            return false
         e.preventDefault()
+        e.stopPropagation()
         add_filters()
         1
+    $('.filter_show').unbind 'click'
     $('.filter_show').bind 'click', (e)->
+        if exports.inprogress
+            show_dialog()
+            return false
         e.preventDefault()
+        e.stopPropagation()
         show_filters()
         1
     #ajaxify_form()
     1
-    
+
+
+

@@ -1,0 +1,52 @@
+<div class="row-fluid">
+	<div class="span1 hidden-phone"></div>
+	<div class="span10">
+    	<h3 class="head smaller lighter blue">${_('Content Protection')}</h3>
+	</div>
+	<div class="span1 hidden-phone"></div>
+</div>
+<div class="row-fluid">
+	<div class="span1 hidden-phone"></div>
+	<div class="span10">
+		<div class="row-fluid">
+		    <div class="span6">
+		        <ul class="reports">
+					<li><i class="icon-star blue"></i> ${h.link_to(_('Empty Reply Checks Exemptions'), url('mta-setting', setting_type=1))}</li>
+					<li><i class="icon-star blue"></i> ${h.link_to(_('Subject Block List'), url('mta-setting', setting_type=2))}</li>
+					<li><i class="icon-star blue"></i> ${h.link_to(_('Anti-Virus Checks Exemptions'), url('mta-setting', setting_type=5))}</li>
+					<li><i class="icon-star blue"></i> ${h.link_to(_('System Signature Exemptions'), url('mta-setting', setting_type=8))}</li>
+					<li><i class="icon-star blue"></i> ${h.link_to(_('Ratelimit Exemptions'), url('mta-setting', setting_type=9))}</li>
+		        </ul>
+		    </div>
+		    <div class="span6">
+		        <ul class="reports">
+					<li><i class="icon-star blue"></i> ${h.link_to(_('TLS/SSL Exemptions'), url('mta-setting', setting_type=3))}</li>
+					<li><i class="icon-star blue"></i> ${h.link_to(_('Anonymizer List'), url('mta-setting', setting_type=4))}</li>
+					<li><i class="icon-star blue"></i> ${h.link_to(_('DKIM Checks Exemptions'), url('mta-setting', setting_type=6))}</li>
+					<li><i class="icon-star blue"></i> ${h.link_to(_('DNSBL Checks Exemptions'), url('mta-setting', setting_type=7))}</li>
+					<li><i class="icon-star blue"></i> ${h.link_to(_('SPF Checks Exemptions'), url('mta-setting', setting_type=10))}</li>
+		        </ul>
+		    </div>
+		</div>
+	</div>
+	<div class="span1 hidden-phone"></div>
+</div>
+
+<%def name="title()">
+${_('Settings :: MTA Settings')}
+</%def>
+
+<%def name="heading()">
+${_('Settings :: MTA Settings')}
+</%def>
+
+<%def name="submenu()">
+</%def>
+
+<%def name="headers()">
+</%def>
+<%def name="localscripts()">
+</%def>
+
+<%inherit file="../base.html"/>
+

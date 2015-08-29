@@ -1,3 +1,11 @@
+###!
+ * Baruwa Enterprise Edition
+ * http://www.baruwa.com
+ *
+ * Copyright (c) 2013-2015 Andrew Colin Kissa
+ *
+ *
+###
 $ = jQuery
 $(document).ready ->
     csrf = $('#csrf_token').val()
@@ -27,3 +35,4 @@ $(document).ready ->
             ).appendTo($('#imgupload .wysiwyg-dialog-content'))
         $('#imgupload').show())
     1
+

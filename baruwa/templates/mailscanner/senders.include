@@ -1,0 +1,36 @@
+## Email -> anything
+% for item in email2any:
+From:	${item.from_address}	yes
+% endfor
+## Non Email -> anything
+% for item in nonemail2any:
+% if DOM_RE.match(item.from_address):
+From:	*@${item.from_address}	yes
+% else:
+From:	${item.from_address}	yes
+% endif
+% endfor
+## Email -> specific type
+% for item in email2nonany:
+% if DOM_RE.match(item.to_address):
+From:	${item.from_address}	and To:	*@${item.to_address}	yes
+% else:
+From:	${item.from_address}	and To:	${item.to_address}	yes
+% endif
+% endfor
+## Non Email -> specific type
+% for item in nonemail2nonany:
+% if DOM_RE.match(item.from_address):
+% if DOM_RE.match(item.to_address):
+From:	*@${item.from_address}	and To: *@${item.to_address}	yes
+% else:
+From:	*@${item.from_address}	and To: ${item.to_address}	yes
+% endif
+% else:
+% if DOM_RE.match(item.to_address):
+From:	${item.from_address}	and To: *@${item.to_address}	yes
+% else:
+From:	${item.from_address}	and To: ${item.to_address}	yes
+% endif
+% endif
+% endfor

@@ -1,5 +1,38 @@
+###!
+ * Baruwa Enterprise Edition
+ * http://www.baruwa.com
+ *
+ * Copyright (c) 2013-2015 Andrew Colin Kissa
+ *
+ *
+###
 $ = jQuery
 exports = this
+
+generate_pie = (mydata)->
+    data = []
+    $.each mydata, (i, f)->
+        f['label'] = f['tooltip']
+        f['data'] = f['y']
+        data.push f
+        1
+    placeholder = $('#chart')
+    $.plot(placeholder, data, exports.pieoptions)
+    $tooltip = $("<div class='tooltip top in' style='display:none;'><div class='tooltip-inner'></div></div>").appendTo('body')
+    placeholder.data('tooltip', $tooltip)
+    previousPoint = null
+    placeholder.on 'plothover', (event, pos, item)->
+        if item
+            if previousPoint != item.seriesIndex
+                previousPoint = item.seriesIndex
+                tip = item.series['label']
+                $(this).data('tooltip').show().children(0).text(tip)
+            $(this).data('tooltip').css({top:pos.pageY + 10, left:pos.pageX + 10})
+        else
+            $(this).data('tooltip').hide()
+            previousPoint = null
+        1
+    1
 
 process_response = (data)->
     if data.success
@@ -7,10 +40,10 @@ process_response = (data)->
         $('#fhl').empty()
         if links != ""
             $('#fhl').append(links)
-            $('.mkbox').removeClass('hide')
+            $('.mkbox').parent().removeClass('hide')
         else
-            $('.mkbox').removeClass('show')
-            $('.mkbox').addClass('hide')
+            $('.mkbox').parent().removeClass('show')
+            $('.mkbox').parent().addClass('hide')
         $('#fhl a').bind 'click', (e)->
             remove_filter(e, this.href)
             1
@@ -22,17 +55,9 @@ process_response = (data)->
             success: (data, textStatus, XHR) ->
                 d = `new Date()`
                 rows = []
-                tmpl = '<tr class="graph_row"><td class="graph_hash_td">{{counter}}.</td>' +
-                       '<td class="graph_ip_td"><div class="pie_{{counter}} pie"></div>&nbsp;{{address}}</td>' +
-                       '<td class="graph_hostname_td">{{hostname}}</td>' +
-                       '<td class="graph_country_td">{{{flag}}}</td>' +
-                       '<td class="graph_count_td">{{count}}</td>' +
-                       '<td class="graph_volume_td">{{size}}</td></tr>'
-                if $('#alertmsg').length
-                    $('#alertmsg').empty()
-                    $('#alertmsg').remove()
-                if $('.notice').length
-                    $('.notice').remove()
+                tmpl = '<tr><td>{{counter}}.</td><td><span class="label label-{{counter}}">&nbsp;&nbsp;</span>' +
+                       '&nbsp;{{address}}</td><td class="hidden-phone">{{hostname}}</td><td>{{{flag}}}</td>' +
+                       '<td class="hidden-phone">{{count}}</td><td class="hidden-phone">{{size}}</td></tr>'
                 $.each data.items, (i, f)->
                     item = {}
                     item['counter'] = i + 1
@@ -44,13 +69,13 @@ process_response = (data)->
                     html = $.mustache tmpl, item
                     rows.push html
                     1
-                if rows
+                if rows.length
                     replacement = rows.join('')
                 else
                     text = gettext('No items found')
-                    replacement = '<tr class="graph_row"><td colspan="6">'+text+'</td></tr>'
+                    replacement = '<tr><td colspan="6">'+text+'</td></tr>'
                 $('#pietbody').empty().append(replacement)
-                $('#chart img').attr {src: url + '.png?' + d.getTime()}
+                generate_pie data.pie_data
                 1
             error: ajax_error_redirect,
             complete: (XHR, textStatus) ->
@@ -58,21 +83,52 @@ process_response = (data)->
                 $("#filter-ajax").remove()
                 1
     else
-        display_ajax_response_error(response.errors.msg)
+        $("#filter_form_submit").removeAttr('disabled').attr {value:gettext('Add Filter')}
+        $("#filter-ajax").remove()
+        display_ajax_response_error(data.errors.msg)
     1
 
 
 $(document).ready ->
+    exports.pieoptions = {
+        series: {
+            pie: {
+                show: true,
+                tilt:0.6,
+                highlight: {
+                    opacity: 0.25
+                },
+                stroke: {
+                    color: '#fff',
+                    width: 2
+                },
+                startAngle: 2
+            }
+        },
+        grid: {
+            hoverable: true,
+            clickable: true
+        },
+        tooltip: true,
+        tooltipOpts: {
+            content: "%s",
+            shifts: {
+                x: -30,
+                y: -50
+            }
+        },
+    }
     init_form()
-    $('#form-area').hide()
+    $('.form_area').hide()
     $('#addfilter a').bind 'click', (e)->
         e.preventDefault()
-        $('#form-area').show()
+        $('.form_area').show()
         $('#addfilter').hide()
         1
-    $('#afform .closeflash').bind 'click', (e)->
+    $('.form_area .close').unbind()
+    $('.form_area .close').bind 'click', (e)->
         e.preventDefault()
-        $('#form-area').hide()
+        $('.form_area').hide()
         $('#addfilter').show()
         1
     $('#fhl a').bind 'click', (e)->
@@ -82,7 +138,7 @@ $(document).ready ->
         e.preventDefault()
         $("#filter_form_submit").attr {disabled:'disabled', value:gettext('Loading')}
         text = gettext 'Processing request.............'
-        $('#afform').after '<div class="grid_16 drow" id="filter-ajax"><div class="grid_7">'+text+'</div></div>'
+        $('#afform .row-fluid').before '<div class="row-fluid" id="filter-ajax"><div class="span12">'+text+'</div></div>'
         request_data = {
             filtered_field: $("#filtered_field").val(),
             filtered_by: $("#filtered_by").val(),
@@ -98,12 +154,6 @@ $(document).ready ->
             dataType: 'json'
             error: display_ajax_error
         1
-    $('#spinner').ajaxStart(->
-        $(this).show()
-        timg = exports.media_url + 'imgs/large-progress.gif'
-        $('#chart img').attr {src: timg}
-    ).ajaxStop(->
-        $(this).hide()
-    ).ajaxError(
-        ajax_global_error_redirect
-    )
+    generate_pie rdata
+    1
+

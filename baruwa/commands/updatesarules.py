@@ -1,18 +1,18 @@
 # -*- coding: utf-8 -*-
 # vim: ai ts=4 sts=4 et sw=4
 # Baruwa - Web 2.0 MailScanner front-end.
-# Copyright (C) 2010-2012  Andrew Colin Kissa <andrew@topdog.za.net>
+# Copyright (C) 2010-2015  Andrew Colin Kissa <andrew@topdog.za.net>
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation, either version 3 of the License, or
 # (at your option) any later version.
-# 
+#
 # This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License for more details.
-# 
+#
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
@@ -21,7 +21,7 @@ import os
 import sys
 import codecs
 
-from sqlalchemy.orm.exc import NoResultFound
+from sqlalchemy.orm.exc import NoResultFound, StaleDataError
 
 from baruwa.model.messages import SARule
 from baruwa.model.meta import Session
@@ -41,7 +41,7 @@ def _get_rule(ruleid):
 class UpdateSaRules(BaseCommand):
     "Update Spamassassin rules"
     summary = 'Update the Spamassassin rule descriptions'
-    #usage = 'NAME '
+    # usage = 'NAME '
     group_name = 'baruwa'
 
     def command(self):
@@ -90,14 +90,18 @@ class UpdateSaRules(BaseCommand):
                                 score = scores[3]
                             else:
                                 score = scores[0]
-                            rule.score = score
-                            Session.add(rule)
-                            Session.commit()
+                            try:
+                                rule.score = score
+                                Session.add(rule)
+                                Session.commit()
+                            except StaleDataError:
+                                pass
 
         for directory in self.conf['spamassassin.dirs'].split(','):
             directory = directory.strip()
             if not os.path.isdir(directory):
-                print >> sys.stderr, "Directory '%s' does not exist" % directory
+                print >> sys.stderr, "Directory '%s' does not exist" % \
+                    directory
                 continue
             for (dirname, dirs, files) in os.walk(directory):
                 for saconf in files:
@@ -105,3 +109,4 @@ class UpdateSaRules(BaseCommand):
                         saconfpath = os.path.join(dirname, saconf)
                         processfile(saconfpath)
                         updatescores(saconfpath)
+        Session.close()

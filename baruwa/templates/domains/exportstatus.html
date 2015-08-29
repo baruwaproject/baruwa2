@@ -1,12 +1,16 @@
-<div id="content">
-<div class="grid_16 omega">
-	<h3 class="head">${_('Domains Export Status')}</h3>
-	<div class="clear"></div>
-	<div class="sp10"></div>
+<div class="row-fluid">
+	<div class="span1 hidden-phone"></div>
+	<div class="span10">
+		<h3 class="head smaller lighter blue">${_('Domains Export Status')}</h3>
+	</div>
+	<div class="span1 hidden-phone"></div>
 </div>
-<div class="grid_16 omega">
+<div class="row-fluid">
+	<div class="span1 hidden-phone"></div>
+	<div class="span10">
+		<div class="row-fluid">
 	% if c.finished:
-		<div class="grid_15">
+		<div class="span12">
 		% if c.results and c.results['f']:
 		${_('The export has been processed, ')}${h.link_to(_('Download the csv file'), url('domains-export-status', taskid=c.results['id'], d='y'))}
 		% else:
@@ -14,11 +18,13 @@
 		% endif
 		</div>
 	% else:
-	<div class="grid_15">
+	<div class="span12">
 		${h.portable_img('imgs/ajax-pager.gif', alt="")} ${_('The request is being processed.')}
 	</div>
 	% endif
-</div>
+		</div>
+	</div>
+	<div class="span1 hidden-phone"></div>
 </div>
 
 
@@ -33,7 +39,12 @@ ${_('Domains :: export status')}
 <%def name="heading()">\
 ${_('Domains :: export status')}
 </%def>
-
+<%def name="submenu()"></%def>
 <%def name="localscripts()">\
+<script type="text/javascript">
+$(function() {
+	$('.settings-popover').popover();
+});
+</script>
 </%def>
-<%inherit file="/base.html"/>
+<%inherit file="../base.html"/>

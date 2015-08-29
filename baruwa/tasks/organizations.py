@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # Baruwa - Web 2.0 MailScanner front-end.
-# Copyright (C) 2010-2012  Andrew Colin Kissa <andrew@topost_dataog.za.net>
+# Copyright (C) 2010-2015  Andrew Colin Kissa <andrew@topdog.za.net>
 # vim: ai ts=4 sts=4 et sw=4
 
 "Organization tasks"
@@ -19,6 +19,7 @@ from sqlalchemy import engine_from_config
 from sqlalchemy.exc import IntegrityError
 from pylons.i18n.translation import _get_translator
 
+from baruwa.forms import make_csrf
 from baruwa.model.meta import Session
 from baruwa.model.accounts import Group
 from baruwa.model.domains import Domain, DomainAlias, DeliveryServer
@@ -30,20 +31,24 @@ from baruwa.forms.domains import AddDeliveryServerForm, AddAuthForm
 BOOLFIELDS = ('status', 'smtp_callout', 'ldap_callout',
                 'virus_checks', 'spam_checks', 'status',
                 'enabled', 'ds_enabled', 'da_status',
-                'as_split_address')
+                'as_split_address', 'virus_checks_at_smtp')
 DOMAINFIELDS = ['name', 'site_url', 'status', 'smtp_callout',
                 'ldap_callout', 'virus_checks', 'spam_checks',
                 'spam_actions', 'highspam_actions', 'low_score',
                 'high_score', 'message_size', 'delivery_mode',
-                'language', 'report_every', 'timezone']
-DAFIELDS = ['da_name', 'da_status',]
-DSFIELDS = ['ds_address', 'ds_protocol', 'ds_port', 'ds_enabled',]
+                'language', 'report_every', 'timezone',
+                'virus_actions', 'virus_checks_at_smtp']
+DAFIELDS = ['da_name', 'da_status', ]
+DSFIELDS = ['ds_address', 'ds_protocol', 'ds_port', 'ds_enabled', ]
 ASFIELDS = ['as_address', 'as_protocol', 'as_port', 'as_enabled',
             'as_split_address', 'as_user_map_template']
 
 if not Session.registry.has():
-    engine = engine_from_config(config, 'sqlalchemy.', poolclass=NullPool)
-    Session.configure(bind=engine)
+    try:
+        engine = engine_from_config(config, 'sqlalchemy.', poolclass=NullPool)
+        Session.configure(bind=engine)
+    except KeyError:
+        pass
 
 
 def dict2mdict(values):
@@ -52,10 +57,11 @@ def dict2mdict(values):
     for key in values:
         if (key in BOOLFIELDS and
             (values[key] == '' or values[key] == 'False'
-            or values[key] is None)):
+                or values[key] is None)):
             continue
         muld.add(key, values[key])
     return muld
+
 
 def getkeys(row, form=None):
     "get for a specific form"
@@ -90,18 +96,20 @@ def savemodel(model, form, domainid=None):
         Session.commit()
     except IntegrityError:
         Session.rollback()
+    finally:
+        Session.close()
 
 
 def process_aux(row, domainid):
     "process auxillary domain data"
     try:
         session_dict = {}
-        dummy = AddDomainAlias(dict2mdict({}), csrf_context=session_dict)
+        token = make_csrf(session_dict)
         # domain alias
         fields = getkeys(row, 'da')
         post_data = dict2mdict(fields)
         post_data.add('domain', str(domainid))
-        post_data.add('csrf_token', dummy.csrf_token.current_token)
+        post_data.add('csrf_token', token)
         form = AddDomainAlias(post_data, csrf_context=session_dict)
         qry = Session.query(Domain).filter(Domain.id == domainid)
         form.domain.query = qry
@@ -111,7 +119,7 @@ def process_aux(row, domainid):
         # delivery server
         fields = getkeys(row, 'ds')
         post_data = dict2mdict(fields)
-        post_data.add('csrf_token', dummy.csrf_token.current_token)
+        post_data.add('csrf_token', token)
         form = AddDeliveryServerForm(post_data, csrf_context=session_dict)
         if form.validate():
             mod = DeliveryServer()
@@ -119,7 +127,7 @@ def process_aux(row, domainid):
         # authentication server
         fields = getkeys(row, 'as')
         post_data = dict2mdict(fields)
-        post_data.add('csrf_token', dummy.csrf_token.current_token)
+        post_data.add('csrf_token', token)
         form = AddAuthForm(post_data, csrf_context=session_dict)
         if form.validate():
             mod = AuthServer()
@@ -157,17 +165,15 @@ def importdomains(orgid, filename, skipfirst):
                                 error=None)
                     try:
                         session_dict = {}
-                        dummy = AddDomainForm(dict2mdict({}),
-                                csrf_context=session_dict)
+                        token = make_csrf(session_dict)
                         fields = getkeys(row)
                         post_data = dict2mdict(fields)
-                        post_data.add('csrf_token',
-                                    dummy.csrf_token.current_token)
+                        post_data.add('csrf_token', token)
                         form = AddDomainForm(post_data,
-                                csrf_context=session_dict)
+                                            csrf_context=session_dict)
                         form.organizations.query = query
                         if form.validate():
-                            #insert to db
+                            # insert to db
                             domain = Domain()
                             for field in form:
                                 if field.name != 'csrf_token':
@@ -178,7 +184,7 @@ def importdomains(orgid, filename, skipfirst):
                             result['id'] = domain.id
                             result['imported'] = True
                             logger.info("Imported domain: %s" % row['name'])
-                            ## process other data
+                            # process other data
                             process_aux(row, domain.id)
                         else:
                             logger.info("Import failed domain: %s" %
@@ -211,12 +217,11 @@ def importdomains(orgid, filename, skipfirst):
     except (csv.Error, IOError), err:
         results['global_error'] = str(err)
         logger.info("Error: %s, processing %s" % (str(err), filename))
-    # finally:
-    #     Session.close()
+    finally:
+        Session.close()
     try:
         os.unlink(filename)
     except OSError:
         pass
     pylons.translator._pop_object()
     return results
-
