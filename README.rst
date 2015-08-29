@@ -56,9 +56,7 @@ Features
 	* IPv6 Support
 	* Asynchronous MailScanner logging
 	* Import and Export of User accounts and Domains
-	* AD/Exchange integration to auto populate account and group information
 	* Easy plug-in authentication to external authentication systems
-	* AD/LDAP, POP3, IMAP, SMTP, RADIUS Authentication support
 	* Tools for housekeeping tasks
 	* Easy clustering of multiple servers
 	* Works both with and without Javascript enabled
@@ -92,11 +90,6 @@ Download the latest version of Baruwa 2.0 from http://pypi.python.org/pypi/baruw
 The last command must be executed as a privileged user if you are not currently
 using a virtualenv.
 
-Packages
-========
-Binary packages for Ubuntu/Debian and RHEL/SL/CENTOS are available from
-`Baruwa Enterprise <https://www.baruwa.com>`_ 
-
 Documentation
 =============
 Documentation is included in the docs directory of the tar ball and can also be
@@ -113,7 +106,5 @@ You can get free and friendly support from the `list <http://lists.baruwa.org>`_
 Commercial support
 ------------------
 
-Paid for support is available from the `Developer <http://www.topdog.za.net>`_ or
-other `companies that support baruwa <http://www.baruwa.org/support/>`_.
-
-
+Should your require commercial support, you should purchase the
+`Enterprise Edition<https://www.baruwa.com>`_
