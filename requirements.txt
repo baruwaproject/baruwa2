@@ -23,7 +23,7 @@ WebTest
 amqplib
 anyjson
 billiard
-celery==3.0.24
+celery==5.2.2
 cracklib
 decorator
 distribute
